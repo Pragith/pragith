@@ -1,0 +1,10 @@
+---
+layout: post
+title: Certified "Certification Maniac"
+categories: [Uncategorized]
+tags: [Untagged]
+comments: false
+show-avatar: true
+---
+
+b'Yes, that\'s what I have been in the past few days. I have been giving online exams(free) and earning certificates. BrainBench doesn\'t give the certificates, so I only have my score. Here they are :-\r\n\r\n1) Cambridge Certified Linux Administrator -\r\n![linux](http://img480.imageshack.us/img480/629/certpr7.th.jpg)\r\n[Please follow this link for higher resolution of the certificate](http://pragith.net/linux_admin.jpg)\r\n\r\n(You might have to refresh your page if the above link gives any sort of error)\r\n\r\n2) BrainBench Certifications :-\r\n>> ![Master of Computer Literacy (Windows XP)](http://www.brainbench.com/images/certlogo/color/mastercert/computerliteracy.gif)\r\n>> ![Master of Fundamentals (Windows XP)](http://www.brainbench.com/images/certlogo/color/mastercert/computerfundamentalswinxp.gif)\r\n>> ![Participation for Information Technology Terminologies Exam](http://www.brainbench.com/images/certlogo/color/cert/informationtechnologyterminology.gif)\r\n>> ![Participation for Information Technology Terminologies Exam](http://www.brainbench.com/images/certlogo/color/cert/computerforensics.gif)\r\n>> ![Participation for Information Technology Terminologies Exam](http://www.brainbench.com/images/certlogo/color/cert/computertechnician.gif)\r\n>> ![](http://brainbench.com/images/certlogo/color/cert/networkauthentication.gif)\r\n>> ![](http://brainbench.com/images/certlogo/color/cert/technicalhelpdeskmicrosoft.gif)\r\n\r\n>> ![](http://www.brainbench.com/images/certlogo/color/cert/cppprogrammer.gif)\r\n\r\n>> ![](http://www.brainbench.com/images/certlogo/color/cert/mswindowsxpdesktopadministration.gif)\r\n\r\n[Click here for my BrainBench Transcript aka Profile. My scores are also in this page.](http://www.brainbench.com/transcript.jsp?pid=6911418)'
