@@ -7,4 +7,34 @@ comments: false
 show-avatar: true
 ---
 
-b'Dear readers,\r\n\r\nAfter coming to know about the controversy relating to plagiarism, that 3 Idiots is almost entirely based on Five Point Someone (FPS),\xc2\xa0 I\'m forming an opinion that this is a *mili-bhagat* (rhymes with his last name, doesn\'t it?).\r\n\r\nHere are few points I observed from this controversy :\r\n\r\n1) The readers of the book, after knowing about this, will go and WATCH the movie just for confirming whether it\'s been copied or not.\r\n\r\n2) The viewers of the movie, after knowing about this, will go and BUY the book to confirm whether the storyline has been copied or not.\r\n\r\nEither way, it\'s a benefit for the makers of the movie, and Chetan.\r\n\r\nIf you are thinking about the black-mark on the makers of the movie, and the pity face of Chetan, well, you must know that public won\'t remember this incident for a long time. That\'s how it works. Public\'s memory is indeed weak, and is often replaced by the controversy of the upcoming movie.\r\n\r\nI wonder how much Chetan was paid by the makers of the movie for writing this article on his personal blog :\r\n<http://www.chetanbhagat.com/blog/general/a-book-a-film-and-the-truth>\r\n\r\nRemember readers, he\'s a great writer, and don\'t get carried away by reading his blog article.\r\n\r\nA couple of\xc2\xa0 quotes from the above article :\r\n\r\n**Quote #1** :* Still, don\xe2\x80\x99t take my word for it \xe2\x80\x93** go read the book, watch the film**.*\r\n\r\n**Quote #2** : *I urge you to not believe me at face value.** Read the book, see the movie** \xe2\x80\x93 and like the movie says \xe2\x80\x93 think for yourself and decide.*\r\n\r\nSo my friends, did you get the point?\r\nIf you were to\xc2\xa0read these lines while reading the article, your blood would have boiled(supporting Chetan) and you would have gone this instant to the cinema hall to watch the movie.\r\n\r\nBut after reading my article, what do you say?\r\n\r\n*What an Idea Sirji!*'
+Dear readers,
+
+After coming to know about the controversy relating to plagiarism, that 3 Idiots is almost entirely based on Five Point Someone (FPS),  I'm forming an opinion that this is a <em>mili-bhagat</em> (rhymes with his last name, doesn't it?).
+
+Here are few points I observed from this controversy :
+
+1) The readers of the book, after knowing about this, will go and WATCH the movie just for confirming whether it's been copied or not.
+
+2) The viewers of the movie, after knowing about this, will go and BUY the book to confirm whether the storyline has been copied or not.
+
+Either way, it's a benefit for the makers of the movie, and Chetan.
+
+If you are thinking about the black-mark on the makers of the movie, and the pity face of Chetan, well, you must know that public won't remember this incident for a long time. That's how it works. Public's memory is indeed weak, and is often replaced by the controversy of the upcoming movie.
+
+I wonder how much Chetan was paid by the makers of the movie for writing this article on his personal blog :
+<a href="http://www.chetanbhagat.com/blog/general/a-book-a-film-and-the-truth">http://www.chetanbhagat.com/blog/general/a-book-a-film-and-the-truth</a>
+
+Remember readers, he's a great writer, and don't get carried away by reading his blog article.
+
+A couple of  quotes from the above article :
+
+<strong>Quote #1</strong> :<em> Still, don’t take my word for it –<strong> go read the book, watch the film</strong>.</em>
+
+<strong>Quote #2</strong> : <em>I urge you to not believe me at face value.<strong> Read the book, see the movie</strong> – and like the movie says – think for yourself and decide.</em>
+
+So my friends, did you get the point?
+If you were to read these lines while reading the article, your blood would have boiled(supporting Chetan) and you would have gone this instant to the cinema hall to watch the movie.
+
+But after reading my article, what do you say?
+
+<em>What an Idea Sirji!</em>

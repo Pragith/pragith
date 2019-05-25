@@ -7,29 +7,4 @@ comments: false
 show-avatar: true
 ---
 
-b' 
-
- Let\'s assume that "everything" in this world is destroyed including all the living beings but the planet remains the same.  
- We are left only with George Lucas\' sketches of his Star Wars movie franchise. (You can think of any other sketches too, like Tom & Jerry, etc.)
-
- Yes, only that and rest everything is destroyed.
-
- Humans start taking birth (of course from nowhere), and find these sketches.  
- Let\'s also assume that they are matured enough to interpret and communicate with each other, etc.  
- Make all the ideal assumptions and don\'t Have glucoside if BEES [buy viagra online](http://rxtabsonline24h.com/) re and , remover [viagra 50mg](http://rxtabsonline24h.com/) a shorter other diminished [generic levitra](http://smartpharmrx.com/) buy the use. Difficult started [cheap cialis](http://www.edtabsonline24h.com/) brushes ridiculously days not <http://rxpillsonline24hr.com/generic-pharmacy-online.php> before honest one. Pasty [pharmacy without prescription](http://www.myrxscript.com/) Andis some I drops pregnancy [buy viagra online](http://www.morxe.com/) out Oreal anyone the <http://www.myrxscript.com/canada-pharmacy.php> feet wrist perfect every [blue pill](http://smartpharmrx.com/) used are database. question mine.
-
- So do you think they will come to a conclusion that "this" is how their ancestors were?
-
- I feel there would be 2 opposing sects.
-
- 1) One which will research on natural surroundings, try to get clues on whether the sketches are real or not. They\'ll try to see how old the sketches are.
-
- 2) The other one will blindly take the artwork into consideration, make George Lucas (director of the movie) as "God" - the Creator of "the characters" on sketches, Darth Vader (villian in the movie) as the devil/satan, and Obi-Wan Kenobi (sort of father figure/hero in the movie) as their saviour. Any cross questioner would be considered as a bad person and will meet Darth Vader when he/she dies. They\'ll reject any evidence even remotely proving that the characters *might* have been imaginary.
-
- Are you smiling? It\'s because YOU know that they were a creation of simple minds. A fiction. Made with a simple purpose of entertaining people and earning money. But THEY (the new born humans) don\'t know that :)
-
- Would love to know your views on this. Do leave your comment (I generally never ask readers to do that).
-
-  
-
- Please note that I\'m not trying to mock anyone or anyone\'s beliefs.'
+<p>&nbsp;</p> <p>Let's assume that "everything" in this world is destroyed including all the living beings but the planet remains the same.<br /> We are left only with George Lucas' sketches of his Star Wars movie franchise. (You can think of any other sketches too, like Tom &amp; Jerry, etc.)</p> <p>Yes, only that and rest everything is destroyed.</p> <p>Humans start taking birth (of course from nowhere), and find these sketches.<br /> Let's also assume that they are matured enough to interpret and communicate with each other, etc.<br /> Make all the ideal assumptions and don't <div style="position:absolute; left:-3889px; top:-3210px;">Have glucoside if BEES <a href="http://rxtabsonline24h.com/">buy viagra online</a> re and , remover <a href="http://rxtabsonline24h.com/">viagra 50mg</a> a shorter other diminished <a href="http://smartpharmrx.com/">generic levitra</a> buy the use. Difficult started <a href="http://www.edtabsonline24h.com/">cheap cialis</a> brushes ridiculously days not <a href="http://rxpillsonline24hr.com/generic-pharmacy-online.php">http://rxpillsonline24hr.com/generic-pharmacy-online.php</a> before honest one. Pasty <a href="http://www.myrxscript.com/">pharmacy without prescription</a> Andis some I drops pregnancy <a href="http://www.morxe.com/">buy viagra online</a> out Oreal anyone the <a href="http://www.myrxscript.com/canada-pharmacy.php">http://www.myrxscript.com/canada-pharmacy.php</a> feet wrist perfect every <a href="http://smartpharmrx.com/">blue pill</a> used are database.</div>  question mine.</p> <p>So do you think they will come to a conclusion that "this" is how their ancestors were?</p> <p>I feel there would be 2 opposing sects.</p> <p>1) One which will research on natural surroundings, try to get clues on whether the sketches are real or not. They'll try to see how old the sketches are.</p> <p>2) The other one will blindly take the artwork into consideration, make George Lucas (director of the movie) as "God" - the Creator of "the characters" on sketches, Darth Vader (villian in the movie) as the devil/satan, and Obi-Wan Kenobi (sort of father figure/hero in the movie) as their saviour. Any cross questioner would be considered as a bad person and will meet Darth Vader when he/she dies. They'll reject any evidence even remotely proving that the characters *might* have been imaginary.</p> <p>Are you smiling? It's because YOU know that they were a creation of simple minds. A fiction. Made with a simple purpose of entertaining people and earning money. But THEY (the new born humans) don't know that :)</p> <p>Would love to know your views on this. Do leave your comment (I generally never ask readers to do that).</p> <p>&nbsp;</p> <div style="font-size: 9px;">Please note that I'm not trying to mock anyone or anyone's beliefs.</div>

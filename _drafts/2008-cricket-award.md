@@ -7,4 +7,32 @@ comments: false
 show-avatar: true
 ---
 
-b'**2008 Cricket Award\r\n**by Kaddy on Jan 07, 2008 08:25 PM\r\n\r\nCricket Awards\r\n\r\n2008 AWARDS:\r\n\r\nBest Umpire: Ricky Ponting\r\nBest Australian Players: Steve Bucknor, Mark Benson\r\nHonest Team: Australia\r\nBest Actor: Michael Clarke\r\nHonest Player: Symonds\r\n\r\nmore\r\n\r\nPonting and Co\r\n\r\nProcter:Did you call Symonds as Monkey?\r\nBhajji: No,I called a monkey as Symonds.\r\nProcter:So you did\r\nBhajji : (Silence)\r\nProcter : How dare,you insulted a monkey.You are banned for 3 matches.\r\nBhajji : Sad\r\nPonting& Co : !!???\r\nPonting : hey,Symonds.What he said?\r\nS ymonds : What ever,he is banned.You can bat well next game.\r\nPonting : No,Anil is also there,ask him whether he can ban him also.\r\nSymonds : We\'ll see in next match,if he takes your wicket,we\'ll complain.\r\nPonting; Then ok. Come'
+<span style="font-family: Times New Roman; font-size: 12pt"><strong>2008 Cricket Award
+</strong>by Kaddy on Jan 07, 2008 08:25 PM</span>
+
+Cricket Awards
+
+2008 AWARDS:
+
+Best Umpire: Ricky Ponting
+Best Australian Players: Steve Bucknor, Mark Benson
+Honest Team: Australia
+Best Actor: Michael Clarke
+Honest Player: Symonds
+
+<!--more-->
+
+Ponting and Co
+
+Procter:Did you call Symonds as Monkey?
+Bhajji: No,I called a monkey as Symonds.
+Procter:So you did
+Bhajji : (Silence)
+Procter : How dare,you insulted a monkey.You are banned for 3 matches.
+Bhajji : Sad
+Ponting&amp; Co : !!???
+Ponting : hey,Symonds.What he said?
+S ymonds : What ever,he is banned.You can bat well next game.
+Ponting : No,Anil is also there,ask him whether he can ban him also.
+Symonds : We'll see in next match,if he takes your wicket,we'll complain.
+Ponting; Then ok. Come

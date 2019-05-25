@@ -7,4 +7,6 @@ comments: false
 show-avatar: true
 ---
 
-b'I got this picture in my mail :-\r\n\r\n![Never Give Up!!!](http://pragith.etheni.com/nevergiveup.jpg)'
+I got this picture in my mail :-
+
+<img src="http://pragith.etheni.com/nevergiveup.jpg" alt="Never Give Up!!!" />

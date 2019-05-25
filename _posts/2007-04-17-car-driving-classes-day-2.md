@@ -7,4 +7,4 @@ comments: false
 show-avatar: true
 ---
 
-b'Well, today it was about TURNINGS. I managed to do well, expect 1-2 glitches during U-Turns, but took control soon. :self pat:'
+Well, today it was about TURNINGS. I managed to do well, expect 1-2 glitches during U-Turns, but took control soon. :self pat:

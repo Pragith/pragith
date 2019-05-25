@@ -7,4 +7,6 @@ comments: false
 show-avatar: true
 ---
 
-b'Stumbled upon this funny picture :\r\n\r\n![](http://www.hahakiri.com/images/out.php/i761_TheBirthOfGoogleChrome.jpg "Birth of Google Chrome")'
+Stumbled upon this funny picture :
+
+<img class="aligncenter" title="Birth of Google Chrome" src="http://www.hahakiri.com/images/out.php/i761_TheBirthOfGoogleChrome.jpg" alt="" width="550" height="413" />

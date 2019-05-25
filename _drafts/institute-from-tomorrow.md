@@ -7,4 +7,4 @@ comments: false
 show-avatar: true
 ---
 
-b'Huh! Happy moments over. Now time to go to institute for AIEEE and DCE classes.'
+Huh! Happy moments over. Now time to go to institute for AIEEE and DCE classes.

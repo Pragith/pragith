@@ -7,4 +7,4 @@ comments: false
 show-avatar: true
 ---
 
-b'[Click here to download ](http://www.pragith.net/HoneyTherapy.pps)the pps file which contains remedies to almost all common diseases with just the help of Honey and Cinnamon.'
+<a href="http://www.pragith.net/HoneyTherapy.pps">Click here to download </a>the pps file which contains remedies to almost all common diseases with just the help of Honey and Cinnamon.

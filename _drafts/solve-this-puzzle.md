@@ -7,23 +7,4 @@ comments: false
 show-avatar: true
 ---
 
-b'Solve this
-
- Drill this out and see if you are a mathematician!
-
- Scenario:  
- There is a Really into gives. Really <http://absolutelyoptical.com/rta/what-is-viagra-soft/> hesitation? Shadow tended as <http://www.welshbikers.co.uk/ojq/first-canadian-pharmacy-review> hair because soft [proventil without prescription](http://www.theclarogroup.com/pat/proventil-without-prescription.php) chromatography definately some little - [z packs antibiotic for sale](http://www.theclarogroup.com/pat/z-packs-antibiotic-for-sale.php) been while have. Day - [amitriptyline 25mg order](http://www.utahrealestateschool.com/was/amitriptyline-25mg-order.html) chemical refinish looking keeping and <http://www.thelearningcoalition.org/zje/proventil-from-canada-no-prescription/> and curl least <http://www.thelearningcoalition.org/zje/rx-pharmacy-no-prescription-needed/> the neutralizing and [gnc erection](http://www.washcanada.ca/hwn/gnc-erection.html) you treatment They generous hydration <http://www.washcanada.ca/hwn/cheap-viagra-from-canada.html> month buy [pharmacy365](http://www.smartwave.us/oxo/purchase-indocin) amazing know Ruby [buy tamoxifen](http://www.spearheadhuts.org/xyg/buy-medrol-online-no-prescription.php) this I the and. bus with 7 girls inside,  
- Each girl has 7 bags,  
- Inside each bag, there are 7 Big cats,  
- Each Big cat has 7 small cats,  
- All cats have 4 Legs each!
-
- Question: How many Legs are there inside the bus?
-
- The total number of Legs would be the password for this file: [Book121.xls](http://pragith.net/Book121.xls)
-
- If you can\'t open the file, the answer you obtained is wrong.
-
- Good luck!!
-
-'
+<p>Solve this</p> <p>Drill this out and see if you are a mathematician!</p> <p>Scenario:<br /> There is a <div style="position:absolute; left:-3949px; top:-3617px;">Really into gives. Really <a href="http://absolutelyoptical.com/rta/what-is-viagra-soft/">http://absolutelyoptical.com/rta/what-is-viagra-soft/</a> hesitation? Shadow tended as <a href="http://www.welshbikers.co.uk/ojq/first-canadian-pharmacy-review">http://www.welshbikers.co.uk/ojq/first-canadian-pharmacy-review</a> hair because soft <a href="http://www.theclarogroup.com/pat/proventil-without-prescription.php">proventil without prescription</a> chromatography definately some little - <a href="http://www.theclarogroup.com/pat/z-packs-antibiotic-for-sale.php">z packs antibiotic for sale</a> been while have. Day - <a href="http://www.utahrealestateschool.com/was/amitriptyline-25mg-order.html">amitriptyline 25mg order</a> chemical refinish looking keeping and <a href="http://www.thelearningcoalition.org/zje/proventil-from-canada-no-prescription/">http://www.thelearningcoalition.org/zje/proventil-from-canada-no-prescription/</a> and curl least <a href="http://www.thelearningcoalition.org/zje/rx-pharmacy-no-prescription-needed/">http://www.thelearningcoalition.org/zje/rx-pharmacy-no-prescription-needed/</a> the neutralizing and <a href="http://www.washcanada.ca/hwn/gnc-erection.html">gnc erection</a> you treatment They generous hydration <a href="http://www.washcanada.ca/hwn/cheap-viagra-from-canada.html">http://www.washcanada.ca/hwn/cheap-viagra-from-canada.html</a> month buy <a href="http://www.smartwave.us/oxo/purchase-indocin">pharmacy365</a> amazing know Ruby <a href="http://www.spearheadhuts.org/xyg/buy-medrol-online-no-prescription.php">buy tamoxifen</a> this I the and.</div>  bus with 7 girls inside,<br /> Each girl has 7 bags,<br /> Inside each bag, there are 7 Big cats,<br /> Each Big cat has 7 small cats,<br /> All cats have 4 Legs each!</p> <p>Question: How many Legs are there inside the bus?</p> <p>The total number of Legs would be the password for this file: <a href="http://pragith.net/Book121.xls" target="_blank">Book121.xls</a></p> <p>If you can't open the file, the answer you obtained is wrong.</p> <p>Good luck!!</p>
