@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Pragith.Net
+title: Blog | Pragith.Net
 subtitle: Data Scientist, Gamer, Father
 use-site-title: true
 ---
