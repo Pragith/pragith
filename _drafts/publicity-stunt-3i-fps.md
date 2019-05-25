@@ -9,7 +9,7 @@ show-avatar: true
 
 Dear readers,
 
-After coming to know about the controversy relating to plagiarism, that 3 Idiots is almost entirely based on Five Point Someone (FPS),  I'm forming an opinion that this is a <em>mili-bhagat</em> (rhymes with his last name, doesn't it?).
+After coming to know about the controversy relating to plagiarism, that 3 Idiots is almost entirely based on Five Point Someone (FPS),Â  I'm forming an opinion that this is a <em>mili-bhagat</em> (rhymes with his last name, doesn't it?).
 
 Here are few points I observed from this controversy :
 
@@ -26,14 +26,14 @@ I wonder how much Chetan was paid by the makers of the movie for writing this ar
 
 Remember readers, he's a great writer, and don't get carried away by reading his blog article.
 
-A couple of  quotes from the above article :
+A couple ofÂ  quotes from the above article :
 
-<strong>Quote #1</strong> :<em> Still, don’t take my word for it –<strong> go read the book, watch the film</strong>.</em>
+<strong>Quote #1</strong> :<em> Still, donâ€™t take my word for it â€“<strong> go read the book, watch the film</strong>.</em>
 
-<strong>Quote #2</strong> : <em>I urge you to not believe me at face value.<strong> Read the book, see the movie</strong> – and like the movie says – think for yourself and decide.</em>
+<strong>Quote #2</strong> : <em>I urge you to not believe me at face value.<strong> Read the book, see the movie</strong> â€“ and like the movie says â€“ think for yourself and decide.</em>
 
 So my friends, did you get the point?
-If you were to read these lines while reading the article, your blood would have boiled(supporting Chetan) and you would have gone this instant to the cinema hall to watch the movie.
+If you were toÂ read these lines while reading the article, your blood would have boiled(supporting Chetan) and you would have gone this instant to the cinema hall to watch the movie.
 
 But after reading my article, what do you say?
 

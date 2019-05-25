@@ -7,7 +7,7 @@ comments: false
 show-avatar: true
 ---
 
-<blockquote><strong><span style="font-size: 14pt; color: navy;">MINDBLOWING:  VIJAYAKANTH’S Dialogues in English</span></strong>
+<blockquote><strong><span style="font-size: 14pt; color: navy;">MINDBLOWING:  VIJAYAKANTHâ€™S Dialogues in English</span></strong>
 <em>(Vijaykanth is a popular <span class="mw-redirect">Tamil film</span> actor from India)</em>
 
 <img class="alignnone" src="http://i34.tinypic.com/2npt3.jpg" alt="" width="50" height="50" />

@@ -21,16 +21,16 @@ In this movie, Kamal (whose mannerism I often compare with my uncle) plays 10 ro
 
 Let me list out the roles in comparison with the avatars of Lord Vishnu:
 
-Matchumm    - Ramanujadasan Nambi Rajan
-Koorma         - Mr. President of America (everyone knows who)
-Varaha           - Krishnaveni Paati
-Narsima        - Singael Narasahi
-Vaamana       - Khalifulla Khan
-Parasuraama  - Fletcher (I call him the Terminator)
-Rama             - Avatar Singh
-Krishna          - Vincent Bhoovaraghan
-Balrama          - Balram Naidu
-Kalki              - Govindarajan
+MatchummÂ Â Â  - Ramanujadasan Nambi Rajan
+Koorma Â  Â  Â  Â  - Mr. President of America (everyone knows who)
+VarahaÂ Â Â Â Â Â Â Â Â Â  - Krishnaveni Paati
+NarsimaÂ Â Â Â Â Â Â  - Singael Narasahi
+VaamanaÂ Â Â Â Â Â  - Khalifulla Khan
+ParasuraamaÂ  - Fletcher (I call him the Terminator)
+RamaÂ Â Â Â Â Â Â Â Â Â Â Â  - Avatar Singh
+KrishnaÂ Â Â Â Â Â Â Â Â  - Vincent Bhoovaraghan
+BalramaÂ Â Â Â Â Â Â Â Â  - Balram Naidu
+KalkiÂ Â Â Â Â Â Â Â Â Â Â Â Â  - Govindarajan
 
 (Forgive the spellings)
 
@@ -38,11 +38,11 @@ What is this Butterfly Effect?
 
 The phrase refers to the idea that a <a title="Butterfly" href="http://en.wikipedia.org/wiki/Butterfly" target="_blank"><span style="color: #000000;">butterfly's</span></a> wings might create tiny changes in the <a title="Earth's atmosphere" href="http://en.wikipedia.org/wiki/Earth%27s_atmosphere" target="_blank"><span style="color: #000000;">atmosphere</span></a> that may ultimately alter the path of a <a title="Tornado" href="http://en.wikipedia.org/wiki/Tornado" target="_blank"><span style="color: #000000;">tornado</span></a> or delay, accelerate or even prevent the occurrence of a tornado in a certain location. The flapping wing represents a small change in the initial condition of the system, which causes a chain of events leading to large-scale alterations of events. Had the butterfly not flapped its wings, the trajectory of the system might have been vastly different. Of course the butterfly cannot literally <em>cause</em> a tornado. The kinetic energy in a tornado is enormously larger than the energy in the turbulence of a butterfly. The kinetic energy of a tornado is ultimately provided by the sun and the butterfly can only influence certain details of weather events in a chaotic manner.
 
-<a title="Poincaré recurrence theorem" href="http://en.wikipedia.org/wiki/Poincar%C3%A9_recurrence_theorem" target="_blank"><span style="color: #000000;">Recurrence</span></a>, the approximate return of a system towards its initial conditions, together with sensitive dependence on initial conditions are the two main ingredients for chaotic motion. They have the practical consequence of making <a title="Complex system" href="http://en.wikipedia.org/wiki/Complex_system" target="_blank"><span style="color: #000000;">complex systems</span></a>, such as the <a title="Weather" href="http://en.wikipedia.org/wiki/Weather" target="_blank"><span style="color: #000000;">weather</span></a>, difficult to predict past a certain time range (approximately a week in the case of weather).
+<a title="PoincarÃ© recurrence theorem" href="http://en.wikipedia.org/wiki/Poincar%C3%A9_recurrence_theorem" target="_blank"><span style="color: #000000;">Recurrence</span></a>, the approximate return of a system towards its initial conditions, together with sensitive dependence on initial conditions are the two main ingredients for chaotic motion. They have the practical consequence of making <a title="Complex system" href="http://en.wikipedia.org/wiki/Complex_system" target="_blank"><span style="color: #000000;">complex systems</span></a>, such as the <a title="Weather" href="http://en.wikipedia.org/wiki/Weather" target="_blank"><span style="color: #000000;">weather</span></a>, difficult to predict past a certain time range (approximately a week in the case of weather).
 
 <strong>ACTING - </strong>
 
-Starting with the Legend, Padmashree Kamal Hassan spent over 500 hours of make-up, which I say was immaculate. The American accent was guided by his daughter Shruti. The song played during the credit-roll, "Ulaga Naayagan" perfectly suits him. Few special roles, like that of Krishnaveni Paati and Balrama Naidu were really uber cool. He said that while searching for taking the reference of an old lady for the make-up, after a brainstorming session, they came up with his real grand mother. But after watching for so many times,  I was able to notice similar mannerisms like the nodding of head same amongst different roles.
+Starting with the Legend, Padmashree Kamal Hassan spent over 500 hours of make-up, which I say was immaculate. The American accent was guided by his daughter Shruti. The song played during the credit-roll, "Ulaga Naayagan" perfectly suits him. Few special roles, like that of Krishnaveni Paati and Balrama Naidu were really uber cool. He said that while searching for taking the reference of an old lady for the make-up, after a brainstorming session, they came up with his real grand mother. But after watching for so many times,Â  I was able to notice similar mannerisms like the nodding of head same amongst different roles.
 
 Mallika showed an effort to mimic Tamil dialogues. Poor her, she tried her best, but I personally didn't like her acting. It's her acting which made me feel that Kamal didn't take up that character (well, the make-up was so jaw dropping that for a second I thought even Mallika was Kamal).
 

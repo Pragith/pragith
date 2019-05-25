@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Mint.com – Money Management
+title: Mint.com â€“ Money Management
 categories: [Uncategorized]
 tags: [Untagged]
 comments: false

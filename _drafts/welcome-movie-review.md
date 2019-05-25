@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Welcome – Movie Review
+title: Welcome â€“ Movie Review
 categories: [Uncategorized]
 tags: [Untagged]
 comments: false

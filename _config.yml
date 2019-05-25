@@ -1,8 +1,6 @@
 title: Pragith.Net
-url: "http://pragith.net"
+url: "https://pragith.net"
 baseurl: ""
-
-# Short description of your site
 description: "Data Scientist, Gamer, Father"
 
 # --- Navigation bar options --- #
@@ -152,7 +150,7 @@ highlighter: rouge
 #permalink: /:year-:month-:day/:title/
 permalink: /:title
 paginate: 5
-
+encoding: utf-8
 kramdown:
   input: GFM
 

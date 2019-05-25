@@ -9,12 +9,12 @@ show-avatar: true
 
 Now this small math equation made me dumb struck. My friend, Venkat told me about this.
 
-<strong>The Hypothesis – <span style="text-decoration: underline">Folding a paper sheet 50 equal times can make you reach the Sun!
+<strong>The Hypothesis â€“ <span style="text-decoration: underline">Folding a paper sheet 50 equal times can make you reach the Sun!
 </span></strong>
 
-<strong>Apparatus Required</strong> – A sheet of paper (any size)
+<strong>Apparatus Required</strong> â€“ A sheet of paper (any size)
 
-<strong>Method</strong> – All you have to do is to fold it to 50 equal times. Practically speaking, it's impossible. So, I would suggest the readers to not to go and practically do it and waste your time. Instead pay attention to equation below and leave your thoughts about it.
+<strong>Method</strong> â€“ All you have to do is to fold it to 50 equal times. Practically speaking, it's impossible. So, I would suggest the readers to not to go and practically do it and waste your time. Instead pay attention to equation below and leave your thoughts about it.
 
 Let's assume that the thickness of the paper is 0.1mm.
 

@@ -16,6 +16,6 @@ I've been using it for a while now, but keeping the Grooveshark tab open along w
 
 Grooveshark now appears like a windows application with its shortcut on the desktop.
 
- 
+Â 
 
 You can use the same trick even for Tweetdeck (<a href="http://web.tweetdeck.com/" target="_blank">http://web.tweetdeck.com/</a>)

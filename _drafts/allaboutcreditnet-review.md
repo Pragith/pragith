@@ -8,7 +8,7 @@ show-avatar: true
 ---
 
 Find best <a href="http://www.allaboutcredit.net/">credit</a> card offer and Apply online!
-AllAboutCredit.Net is a website where people can get to know about various types of online credit offers from major companies and top banks in the world. All major credit card companies are present which include – MasterCard, Visa, Discover and Amex.
+AllAboutCredit.Net is a website where people can get to know about various types of online credit offers from major companies and top banks in the world. All major credit card companies are present which include â€“ MasterCard, Visa, Discover and Amex.
 
 Filters like Features, Transfers, Credit Limit, Card right for, etc. help customers to sort out which scheme is best for them. And also consumers can look for the best rewards for credit card deals to save money on each purchase. Not only do they offer various schemes, but they are also secure
 

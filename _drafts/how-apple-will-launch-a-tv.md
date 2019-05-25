@@ -7,7 +7,7 @@ comments: false
 show-avatar: true
 ---
 
-From the keynotes in past few years, I'm getting sick of their repetitive catch-phrases. They used to sound cool when their products really had an essence of innovation, but now it is just sad.
+From the keynotes in past few years, I'm getting sick of theirÂ repetitiveÂ catch-phrases. They used to sound cool when their products really had an essence of innovation, but now it is just sad.
 
 Based on that pattern, I feel this is how they will launch a TV (if they ever do):
 
@@ -43,7 +43,7 @@ Keynote #1:
 
 <em>"We love making videos, and here is one."</em>
 
-*Video plays where there is an Indian, an African American, a Caucasian and an Oriental family all smiling, enjoying watching the programs on the TV along with their kids."
+*Video plays where there is an Indian, an African American, aÂ Caucasian and an Oriental family all smiling, enjoying watching the programs on the TV along with their kids."
 
 <em>"There is <strong>no HDMI port</strong> and <strong>no provision for power supply</strong>. This will run on the same battery which we use on our new iPad. This is the "Post-TV" era and we don't want any sort of tethering. Plus, we did research in our labs and found out that main reason for divorces between couples is because of the TV wires."</em>
 
@@ -66,7 +66,7 @@ Keynote #2:
 
 *The next iTV model falls from above*
 
-<em>"This is the new iTV. It is the best iTV we have ever made. It is the best thing to happen to iTV since an iTV. It has color and it is longer. Isn't it gorgeous? Just look at it. It is awesome. I'm really proud of our engineering team. It is cool. This is what Apple is all about. It is awesome. At Apple, we care about people. It is cool. We have made a TV with color display. How about that? None of our competitors are even close to our feat in engineering. This is awesome."</em>
+<em>"This is the new iTV. It is the best iTV we have ever made. It is the best thing to happen to iTV since an iTV. It has color and it is longer. Isn't it gorgeous? Just look at it. It is awesome. I'm really proud of our engineering team. It is cool. This is what Apple is all about. It is awesome. At Apple, we care about people. It is cool.Â We have made a TV with color display. How about that? None of our competitors are even close to our feat in engineering. This is awesome."</em>
 
 <hr />
 
