@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="flipclock.css">
+		<script src="jquery.js"></script>
+		<script src="flipclock.js"></script>	
+	</head>
+	<body>
+		<div class="clock1" style="margin:2em;"></div>
+		<div class="clock2" style="margin:2em;"></div>	
+		<script type="text/javascript">
+	    var date = new Date(2015, 4, 22);
+	    var now = new Date();
+	    var diff = (date.getTime()/1000) - (now.getTime()/1000);
+	    console.log(date,now,diff)
+	    var clock = $('.clock1').FlipClock(diff,{
+	        clockFace: 'DailyCounter',
+	        countdown: true
+	    });  
+
+	   	var date = new Date(2015, 10, 18);
+	    var now = new Date();
+	    var diff = (date.getTime()/1000) - (now.getTime()/1000);
+	    console.log(date,now,diff)
+	    var clock = $('.clock2').FlipClock(diff,{
+	        clockFace: 'DailyCounter',
+	        countdown: true
+	    }); 
+
+	    var date = new Date(2016, 9, 30);
+	    var now = new Date();
+	    var diff = (date.getTime()/1000) - (now.getTime()/1000);
+	    console.log(date,now,diff)
+	    var clock = $('.clock3').FlipClock(diff,{
+	        clockFace: 'DailyCounter',
+	        countdown: true
+	    }); 
+		</script>	
+	</body>
+</html>
