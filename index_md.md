@@ -1,15 +1,14 @@
 ---
 layout: page
-title: Pragith.Net
-subtitle: Data Scientist, Gamer, Father
+title: Pragith Prakash
+subtitle: Data Educator, Adjunct Professor, Gamer, Father
 use-site-title: true
 ---
 
 [Critical Thinker](https://en.wikipedia.org/wiki/Critical_thinking) R & Python Ninja. Love to talk on various topics.
 **Age**: 28 (25 June 1990)
-**Profession**: Staff Consultant, Data Science at Cardinal Path (Saint John, New Brunswick, Canada)
 **Interests**:
-Astronomy | Business Intelligence | Card Magic | Cubing (Rubik\'s) | Data Science | Driving | Gadgets | Machine Learning | PC & Console Gaming | Photography | Puzzles | Python | R | Reading
+Astronomy | Card Magic | Cubing (Rubik's) | Data Engineering | Data Science | DevOps | Driving | Education | Gadgets | PC &amp; Console Gaming | Photography | Puzzles (HackThisSite-style) | Python | R | Scripting
 
 **Blogs**:
 * [Personal](http://pragith.net/blog)
