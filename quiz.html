@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Playable Ad Quiz</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+  }
+  .ad-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f2f2f2;
+  }
+  .video {
+    width: 100%;
+    max-width: 600px;
+  }
+  .question {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  .options {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  .option {
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .score-screen {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+  }
+  .score {
+    font-size: 36px;
+    margin-top: 20px;
+    color: #32CD32;
+  }
+</style>
+</head>
+<body>
+<div class="ad-container">
+  <iframe class="video" src="https://www.youtube.com/embed/9h_-vBYui_U" frameborder="0" allowfullscreen></iframe>
+  <div class="question" id="question-container"></div>
+  <div class="score-screen" id="score-screen">
+    <p>Your score:</p>
+    <p class="score" id="score">0</p>
+  </div>
+</div>
+
+<script>
+  const questions = [
+    {
+      question: "What is the capital of France?",
+      options: ["Paris", "London", "Berlin", "Rome"],
+      correctIndex: 0
+    },
+    {
+      question: "Which planet is known as the Red Planet?",
+      options: ["Mars", "Jupiter", "Venus", "Saturn"],
+      correctIndex: 0
+    },
+    {
+      question: "What is the largest mammal?",
+      options: ["Elephant", "Blue Whale", "Giraffe", "Hippopotamus"],
+      correctIndex: 1
+    },
+    {
+      question: "Who wrote the play 'Romeo and Juliet'?",
+      options: ["William Shakespeare", "Mark Twain", "Jane Austen", "George Orwell"],
+      correctIndex: 0
+    }
+  ];
+
+  let currentQuestionIndex = 0;
+  let score = 0;
+  const questionContainer = document.getElementById("question-container");
+  const scoreScreen = document.getElementById("score-screen");
+  const scoreDisplay = document.getElementById("score");
+
+  function loadQuestion() {
+    if (currentQuestionIndex < questions.length) {
+      const currentQuestion = questions[currentQuestionIndex];
+      const questionHTML = `
+        <p>Question ${currentQuestionIndex + 1}: ${currentQuestion.question}</p>
+        <div class="options">
+          ${currentQuestion.options.map((option, index) =>
+            `<div class="option" onclick="checkAnswer(this, ${index === currentQuestion.correctIndex})">${option}</div>`
+          ).join('')}
+        </div>
+      `;
+      questionContainer.innerHTML = questionHTML;
+      currentQuestionIndex++;
+    } else {
+      questionContainer.style.display = "none";
+      scoreScreen.style.display = "flex";
+      scoreDisplay.textContent = `${score}/${questions.length}`;
+    }
+  }
+
+  function checkAnswer(option, isCorrect) {
+    const options = option.parentElement.getElementsByClassName('option');
+    for (const opt of options) {
+      if (opt === option) {
+        opt.style.backgroundColor = isCorrect ? '#32CD32' : '#FF5733';
+        opt.style.color = '#fff';
+        opt.style.pointerEvents = 'none';
+        if (isCorrect) {
+          score++;
+        }
+      } else if (opt.innerText === questions[currentQuestionIndex - 1].options[questions[currentQuestionIndex - 1].correctIndex]) {
+        opt.style.backgroundColor = isCorrect ? '#32CD32' : '#0000FF';
+      } else {
+        opt.style.backgroundColor = '#FF5733';
+        opt.style.color = '#fff';
+        opt.style.pointerEvents = 'none';
+      }
+    }
+    setTimeout(() => {
+      loadQuestion();
+    }, 2000);
+  }
+
+  // Initialize the first question
+  loadQuestion();
+</script>
+</body>
+</html>
