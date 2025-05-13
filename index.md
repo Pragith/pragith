@@ -4,10 +4,6 @@ title: Pragith Prakash
 subtitle: Data Educator, Adjunct Professor, Gamer, Father
 use-site-title: true
 ---
-# Pragith Prakash  
-**Data & Cloud Educator | Adjunct Professor | Gamer | Father**
-
----
 
 ## About Me
 
