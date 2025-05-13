@@ -60,8 +60,8 @@ I currently educate and lead cloud and data initiatives in the industry. Outside
 
 Check out my latest photos on:
 
-- [Flickr](https://flickr.com/yourprofile)
-- [500px](https://500px.com/yourprofile)
+- [Flickr](https://flickr.com/pragith)
+- [500px](https://500px.com/pragith)
 
 ---
 
