@@ -51,6 +51,25 @@
                     </div>
                 </div>
 
+                <!-- Value Anchors -->
+                <div class="border-2 border-black p-8 bg-accent/5">
+                    <h3 class="font-bold text-black mb-4">What You Get</h3>
+                    <div class="space-y-3 text-sm text-black/70">
+                        <div class="flex items-start gap-3">
+                            <span class="text-accent mt-0.5 font-bold">→</span>
+                            <span>Actionable architecture recommendations — not slide decks</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-accent mt-0.5 font-bold">→</span>
+                            <span>Direct access to 13+ years of enterprise platform experience</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-accent mt-0.5 font-bold">→</span>
+                            <span>Production-tested patterns across GCP, AWS, and Azure</span>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Rate Card -->
                 <div class="border-2 border-black p-8 bg-white">
                     <div class="text-xs font-bold uppercase tracking-widest text-black/40 mb-2">Standard Rate</div>
@@ -149,10 +168,28 @@
                     </div>
 
                     <div>
-                        <label for="company" class="block text-sm font-bold text-black mb-2">Company</label>
-                        <input type="text" name="company" id="company" autocomplete="organization"
-                            value="{{ form.company if form else '' }}"
-                            class="block w-full border-2 border-black px-4 py-3 text-black focus:outline-none focus:border-accent">
+                        <label for="inquiry_type" class="block text-sm font-bold text-black mb-2">Nature of Inquiry
+                            *</label>
+                        <select name="inquiry_type" id="inquiry_type" required
+                            class="block w-full border-2 border-black px-4 py-3 text-black bg-white focus:outline-none focus:border-accent appearance-none">
+                            <option value="" disabled {{ 'selected' if not form or not form.inquiry_type else '' }}>
+                                Select one...</option>
+                            <option value="Architecture Review" {{ 'selected' if form and
+                                form.inquiry_type=='Architecture Review' else '' }}>Architecture Review</option>
+                            <option value="AI Strategy & Implementation" {{ 'selected' if form and
+                                form.inquiry_type=='AI Strategy & Implementation' else '' }}>AI Strategy &
+                                Implementation</option>
+                            <option value="Data Platform Modernization" {{ 'selected' if form and
+                                form.inquiry_type=='Data Platform Modernization' else '' }}>Data Platform Modernization
+                            </option>
+                            <option value="Fractional CTO / Advisory" {{ 'selected' if form and
+                                form.inquiry_type=='Fractional CTO / Advisory' else '' }}>Fractional CTO / Advisory
+                            </option>
+                            <option value="Technical Due Diligence" {{ 'selected' if form and
+                                form.inquiry_type=='Technical Due Diligence' else '' }}>Technical Due Diligence</option>
+                            <option value="General Inquiry" {{ 'selected' if form and
+                                form.inquiry_type=='General Inquiry' else '' }}>General Inquiry</option>
+                        </select>
                     </div>
 
                     <div>

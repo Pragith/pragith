@@ -33,6 +33,16 @@ class SecurityHeadersMiddleware(BaseHTTPMiddleware):
         response.headers["X-Frame-Options"] = "DENY"
         response.headers["X-XSS-Protection"] = "1; mode=block"
         response.headers["Strict-Transport-Security"] = "max-age=31536000; includeSubDomains"
+        response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
+        response.headers["Content-Security-Policy"] = (
+            "default-src 'self'; "
+            "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google.com https://www.gstatic.com; "
+            "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
+            "font-src 'self' https://fonts.gstatic.com; "
+            "img-src 'self' data:; "
+            "frame-src https://www.google.com https://calendly.com; "
+            "connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com"
+        )
         return response
 
 app.add_middleware(SecurityHeadersMiddleware)
@@ -133,7 +143,7 @@ async def contact_submit(
     request: Request,
     name: str = Form(...),
     email: str = Form(...),
-    company: str = Form(""),
+    inquiry_type: str = Form(...),
     message: str = Form(...),
     website: str = Form(""),
     recaptcha_response: str = Form(alias="g-recaptcha-response", default="")
@@ -147,11 +157,11 @@ async def contact_submit(
         return templates.TemplateResponse("contact.html", {
             "request": request, 
             "error": "reCAPTCHA verification failed. Please try again.",
-            "form": {"name": name, "email": email, "company": company, "message": message},
+            "form": {"name": name, "email": email, "inquiry_type": inquiry_type, "message": message},
             "recaptcha_site_key": settings.RECAPTCHA_SITE_KEY,
         })
 
-    success = mailer_service.send_contact_email(name, email, company, message)
+    success = mailer_service.send_contact_email(name, email, inquiry_type, message)
 
     if success:
         return templates.TemplateResponse("contact_success.html", {"request": request})
@@ -159,7 +169,7 @@ async def contact_submit(
         return templates.TemplateResponse("contact.html", {
             "request": request, 
             "error": "Failed to send message. Please try again later.",
-            "form": {"name": name, "email": email, "company": company, "message": message},
+            "form": {"name": name, "email": email, "inquiry_type": inquiry_type, "message": message},
             "recaptcha_site_key": settings.RECAPTCHA_SITE_KEY,
         })
 

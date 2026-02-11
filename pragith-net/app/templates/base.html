@@ -8,20 +8,34 @@
     <meta name="description"
         content="{% block description %}Principal AI & Data Engineer specializing in enterprise platforms, multi-cloud architecture, and AI-assisted delivery.{% endblock %}">
 
+    <!-- Canonical -->
+    <link rel="canonical" href="{% block canonical %}https://pragith.net{% endblock %}">
+
     <!-- OpenGraph -->
     <meta property="og:title"
-        content="{% block og_title %}Pragith Prakash | Enterprise AI & Cloud Platform Architect{% endblock %}">
+        content="{% block og_title %}Pragith Prakash | Enterprise AI & Data Platform Architect{% endblock %}">
     <meta property="og:description"
-        content="{% block og_description %}Enterprise AI & Cloud Platform Architect specializing in multi-cloud architecture, data platforms, and production AI systems.{% endblock %}">
+        content="{% block og_description %}Enterprise AI & Data Platform Architect specializing in multi-cloud architecture, data platforms, and production AI systems.{% endblock %}">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="Pragith Prakash">
+    <meta property="og:image" content="https://pragith.net/static/og-image.png">
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Pragith Prakash | Enterprise AI & Cloud Platform Architect">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pragith Prakash | Enterprise AI & Data Platform Architect">
     <meta name="twitter:description"
-        content="Enterprise AI & Cloud Platform Architect specializing in multi-cloud architecture, data platforms, and production AI systems.">
+        content="Enterprise AI & Data Platform Architect specializing in multi-cloud architecture, data platforms, and production AI systems.">
+    <meta name="twitter:image" content="https://pragith.net/static/og-image.png">
+
+    <!-- Dark mode: apply before render to prevent flash -->
+    <script>
+        (function () {
+            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            }
+        })();
+    </script>
 
     <!-- Optimized Tailwind CSS -->
     <link rel="stylesheet" href="/static/css/style.min.css">
@@ -56,45 +70,54 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "ProfessionalService",
+        "@type": "Person",
         "name": "Pragith Prakash",
-        "description": "Enterprise AI & Cloud Platform Architect specializing in multi-cloud architecture, data platforms, and production AI systems.",
+        "jobTitle": "Enterprise AI & Data Platform Architect",
+        "description": "Enterprise AI & Data Platform Architect specializing in multi-cloud architecture, data platforms, and production AI systems.",
         "url": "https://pragith.net",
-        "founder": {
-            "@type": "Person",
-            "name": "Pragith Prakash",
-            "jobTitle": "Enterprise AI & Cloud Platform Architect",
-            "url": "https://pragith.net",
-            "sameAs": [
-                "https://linkedin.com/in/pragith",
-                "https://github.com/pragith"
-            ]
-        },
-        "serviceType": ["Cloud Architecture", "AI Strategy", "Data Platform Engineering", "Technical Advisory"],
-        "areaServed": ["United Arab Emirates", "North America"]
+        "sameAs": [
+            "https://linkedin.com/in/pragith",
+            "https://github.com/pragith"
+        ],
+        "knowsAbout": ["Cloud Architecture", "AI Strategy", "Data Platform Engineering", "Technical Advisory", "Multi-Cloud", "Machine Learning"],
+        "hasOccupation": {
+            "@type": "Occupation",
+            "name": "Enterprise AI & Data Platform Architect",
+            "occupationLocation": {
+                "@type": "Country",
+                "name": "United Arab Emirates"
+            }
+        }
     }
     </script>
 </head>
 
-<body class="flex flex-col min-h-screen bg-white text-black font-sans selection:bg-accent selection:text-black">
+<body
+    class="flex flex-col min-h-screen bg-white dark:bg-[#0A0A0A] text-black dark:text-white font-sans selection:bg-accent selection:text-black transition-colors duration-200">
 
     <!-- Header -->
-    <header class="w-full bg-white sticky top-0 z-50 border-b border-black">
+    <header class="w-full bg-white dark:bg-[#0A0A0A] sticky top-0 z-50 border-b border-black dark:border-white/20">
         <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="/" class="font-display text-lg font-semibold text-black hover:text-accent transition-colors">
+            <a href="/"
+                class="font-display text-lg font-semibold text-black dark:text-white hover:text-accent transition-colors">
                 Pragith Prakash
             </a>
 
             <nav class="hidden md:flex gap-8 text-sm font-medium">
-                <a href="/work" class="text-black hover:text-accent transition-colors">Work</a>
-                <a href="/agents" class="text-black hover:text-accent transition-colors">Agents</a>
-                <a href="/build" class="text-black hover:text-accent transition-colors">Build</a>
-                <a href="/stack" class="text-black hover:text-accent transition-colors">Stack</a>
-                <a href="/blog" class="text-black hover:text-accent transition-colors">Blog</a>
+                <a href="/work"
+                    class="text-black dark:text-white hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent">Work</a>
+                <a href="/agents"
+                    class="text-black dark:text-white hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent">Agents</a>
+                <a href="/build"
+                    class="text-black dark:text-white hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent">Build</a>
+                <a href="/stack"
+                    class="text-black dark:text-white hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent">Stack</a>
+                <a href="/blog"
+                    class="text-black dark:text-white hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent">Blog</a>
             </nav>
 
             <a href="/contact"
-                class="inline-flex items-center justify-center text-sm font-medium bg-black text-white hover:bg-accent hover:text-black transition-all h-10 px-6">
+                class="inline-flex items-center justify-center text-sm font-medium bg-black dark:bg-white text-white dark:text-black hover:bg-accent hover:text-black transition-all h-10 px-6 border border-black dark:border-white focus:outline-none focus:ring-2 focus:ring-accent">
                 Contact
             </a>
         </div>
@@ -106,7 +129,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-black text-white border-t border-white/10 mt-20">
+    <footer class="bg-black dark:bg-[#111] text-white border-t border-white/10 mt-20">
         <div class="max-w-6xl mx-auto px-6 py-16">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-12 mb-12">
                 <div>
@@ -120,7 +143,7 @@
                 <div>
                     <h3 class="text-sm font-semibold mb-4 text-accent">Services</h3>
                     <ul class="space-y-3 text-sm text-white/60">
-                        <li><a href="/contact" class="hover:text-white transition-colors">Advisory</a></li>
+                        <li><a href="/consult" class="hover:text-white transition-colors">Advisory</a></li>
                         <li><a href="/agents" class="hover:text-white transition-colors">AI Teams</a></li>
                         <li><a href="/build" class="hover:text-white transition-colors">Build</a></li>
                     </ul>
@@ -146,8 +169,8 @@
             </div>
             <div
                 class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/40">
-                <p>&copy; {{ now().year }} Pragith Prakash</p>
-                <p>Principal Data & AI Engineer</p>
+                <p>&copy; {{ now().year }} Pragith Prakash · Vriksh Consulting Services Inc.</p>
+                <p>Remote-first · Serving North America & UAE</p>
             </div>
         </div>
     </footer>

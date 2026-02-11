@@ -28,7 +28,7 @@ class MailerService:
             print(f"reCAPTCHA verification failed: {e}")
             return False
 
-    def send_contact_email(self, name: str, email: str, company: str, message: str) -> bool:
+    def send_contact_email(self, name: str, email: str, inquiry_type: str, message: str) -> bool:
         """
         Sends contact form submission via SMTP.
         """
@@ -36,14 +36,14 @@ class MailerService:
             msg = MIMEMultipart()
             msg['From'] = settings.MAIL_FROM
             msg['To'] = settings.MAIL_TO
-            msg['Subject'] = f"New Contact from {name} ({company})"
+            msg['Subject'] = f"[{inquiry_type}] New inquiry from {name}"
             
             body = f"""
             New Contact Request
             -------------------
             Name: {name}
             Email: {email}
-            Company: {company}
+            Inquiry Type: {inquiry_type}
             
             Message:
             {message}

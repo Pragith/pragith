@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./app/templates/**/*.html"],
+  darkMode: 'class',
   theme: {
     extend: {
       fontFamily: {
@@ -9,12 +10,9 @@ module.exports = {
         mono: ['JetBrains Mono', 'monospace'],
       },
       colors: {
-        accent: '#00FF00', // Electric lime
+        accent: '#E8590C', // Professional burnt orange
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-    require('@tailwindcss/forms'),
-  ],
+  plugins: [],
 }
