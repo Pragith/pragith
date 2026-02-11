@@ -1,0 +1,1889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Content Snapshot - 20260211_163742</title>
+    <style>
+        body {
+            font-family: monospace;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .file-section {
+            background: white;
+            margin: 30px 0;
+            padding: 20px;
+            border: 2px solid #333;
+            box-shadow: 4px 4px 0px 0px #000;
+        }
+        .file-header {
+            background: #000;
+            color: #0f0;
+            padding: 10px 15px;
+            margin: -20px -20px 20px -20px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .file-path {
+            color: #0f0;
+            opacity: 0.7;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+        .file-content {
+            background: #fafafa;
+            border-left: 4px solid #0f0;
+            padding: 15px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .separator {
+            border-top: 3px dashed #333;
+            margin: 50px 0;
+        }
+        .index {
+            background: white;
+            border: 2px solid #333;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .index h2 {
+            margin-top: 0;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+        .index ul {
+            list-style: none;
+            padding: 0;
+        }
+        .index li {
+            padding: 5px 0;
+        }
+        .index a {
+            color: #000;
+            text-decoration: none;
+        }
+        .index a:hover {
+            color: #0f0;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Website Content Snapshot</h1>
+    <p><strong>Generated:</strong> 2026-02-11 16:37:42</p>
+    <p><strong>Total Files:</strong> 17</p>
+    
+    <div class="index">
+        <h2>📋 File Index</h2>
+        <ul>
+
+        </ul>
+    </div>
+
+
+    <div class="file-section" id="file-1">
+        <div class="file-header">
+            📄 404.html
+            <div class="file-path">404.html</div>
+        </div>
+        <div class="file-content">{% extends "base.html" %}
+
+{% block title %}Page Not Found | Pragith Prakash{% endblock %}
+
+{% block content %}
+&lt;section class="py-32 text-center"&gt;
+    &lt;div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8"&gt;
+        &lt;h1 class="text-6xl font-bold text-slate-900 mb-4"&gt;404&lt;/h1&gt;
+        &lt;p class="text-xl text-slate-600 mb-8"&gt;Page not found.&lt;/p&gt;
+        &lt;a href="/" class="text-indigo-600 hover:text-indigo-500 font-medium"&gt;Return Home &amp;rarr;&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+{% endblock %}</div>
+    </div>
+    
+    <div class="separator"></div>
+
+
+    <div class="file-section" id="file-2">
+        <div class="file-header">
+            📄 500.html
+            <div class="file-path">500.html</div>
+        </div>
+        <div class="file-content">{% extends "base.html" %}
+
+{% block title %}Server Error | Pragith Prakash{% endblock %}
+
+{% block content %}
+&lt;section class="py-32 text-center"&gt;
+    &lt;div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8"&gt;
+        &lt;h1 class="text-6xl font-bold text-slate-900 mb-4"&gt;500&lt;/h1&gt;
+        &lt;p class="text-xl text-slate-600 mb-8"&gt;Internal Server Error. Something went wrong.&lt;/p&gt;
+        &lt;a href="/" class="text-indigo-600 hover:text-indigo-500 font-medium"&gt;Return Home &amp;rarr;&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+{% endblock %}</div>
+    </div>
+    
+    <div class="separator"></div>
+
+
+    <div class="file-section" id="file-3">
+        <div class="file-header">
+            📄 agents.html
+            <div class="file-path">agents.html</div>
+        </div>
+        <div class="file-content">{% extends "base.html" %}
+
+{% block title %}AI Agents | Pragith Prakash{% endblock %}
+
+{% block content %}
+&lt;style&gt;
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes pulse {
+
+        0%,
+        100% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 0.5;
+        }
+    }
+
+    .animate-fade-in {
+        animation: fadeInUp 0.6s ease-out forwards;
+    }
+
+    .animate-pulse-slow {
+        animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    .agent-card {
+        transition: all 0.3s ease;
+    }
+
+    .agent-card:hover {
+        transform: translateY(-4px);
+    }
+&lt;/style&gt;
+
+&lt;section class="py-20 border-t border-black"&gt;
+    &lt;div class="max-w-6xl mx-auto px-6"&gt;
+        &lt;!-- Hero --&gt;
+        &lt;div class="mb-20 text-center"&gt;
+            &lt;div
+                class="inline-block border border-black bg-accent text-black px-4 py-2 text-xs font-bold uppercase tracking-wider mb-8 animate-fade-in"&gt;
+                How I Work
+            &lt;/div&gt;
+            &lt;h1 class="font-display text-5xl sm:text-6xl font-bold tracking-tight text-black mb-6 animate-fade-in"&gt;
+                Human-Led,&lt;br&gt;AI-Amplified
+            &lt;/h1&gt;
+            &lt;p class="text-xl text-black/60 max-w-3xl mx-auto leading-relaxed animate-fade-in"&gt;
+                I use structured AI workflows to accelerate delivery across engineering, data, infrastructure, and
+                product.
+                &lt;strong class="text-black"&gt;Faster results, consistent quality.&lt;/strong&gt;
+            &lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;!-- How It Works --&gt;
+        &lt;div class="mb-20"&gt;
+            &lt;h2 class="font-display text-3xl font-bold text-black mb-4 text-center"&gt;How It Works&lt;/h2&gt;
+            &lt;div class="w-16 h-1 bg-accent mx-auto mb-12"&gt;&lt;/div&gt;
+
+            &lt;div class="grid md:grid-cols-3 gap-8"&gt;
+                &lt;div class="text-center"&gt;
+                    &lt;div class="w-16 h-16 border-2 border-black bg-white mx-auto mb-6 flex items-center justify-center"&gt;
+                        &lt;span class="text-2xl font-bold"&gt;1&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;h3 class="font-display text-xl font-bold text-black mb-3"&gt;You Define Goals&lt;/h3&gt;
+                    &lt;p class="text-black/60"&gt;
+                        Tell me what you need: a new feature, data pipeline, infrastructure upgrade, or full system
+                        build.
+                    &lt;/p&gt;
+                &lt;/div&gt;
+
+                &lt;div class="text-center"&gt;
+                    &lt;div
+                        class="w-16 h-16 border-2 border-accent bg-accent/10 mx-auto mb-6 flex items-center justify-center"&gt;
+                        &lt;span class="text-2xl font-bold"&gt;2&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;h3 class="font-display text-xl font-bold text-black mb-3"&gt;AI Agents Execute&lt;/h3&gt;
+                    &lt;p class="text-black/60"&gt;
+                        AI handles repetitive tasks like boilerplate, testing, and documentation, while I focus on
+                        architecture and complex decisions.
+                    &lt;/p&gt;
+                &lt;/div&gt;
+
+                &lt;div class="text-center"&gt;
+                    &lt;div class="w-16 h-16 border-2 border-black bg-white mx-auto mb-6 flex items-center justify-center"&gt;
+                        &lt;span class="text-2xl font-bold"&gt;3&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;h3 class="font-display text-xl font-bold text-black mb-3"&gt;You Get Results&lt;/h3&gt;
+                    &lt;p class="text-black/60"&gt;
+                        Production-ready code, deployed infrastructure, and comprehensive documentation.
+                    &lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Agent Capabilities --&gt;
+        &lt;div class="mb-20"&gt;
+            &lt;h2 class="font-display text-3xl font-bold text-black mb-4 text-center"&gt;AI-Assisted Capabilities&lt;/h2&gt;
+            &lt;div class="w-16 h-1 bg-accent mx-auto mb-12"&gt;&lt;/div&gt;
+
+            &lt;div class="grid md:grid-cols-2 gap-6"&gt;
+                &lt;!-- Engineering Agent --&gt;
+                &lt;div class="agent-card border-2 border-black p-8 bg-white"&gt;
+                    &lt;div class="flex items-center gap-4 mb-6"&gt;
+                        &lt;div
+                            class="w-12 h-12 border-2 border-black bg-accent flex items-center justify-center flex-shrink-0"&gt;
+                            &lt;span class="text-xl font-bold"&gt;01&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;h3 class="font-display text-2xl font-bold text-black"&gt;Engineering Agent&lt;/h3&gt;
+                    &lt;/div&gt;
+                    &lt;p class="text-black/70 mb-4 leading-relaxed"&gt;
+                        &lt;strong class="text-black"&gt;What it does:&lt;/strong&gt; Writes boilerplate code, generates tests,
+                        handles refactoring, and maintains documentation.
+                    &lt;/p&gt;
+                    &lt;p class="text-black/60 text-sm mb-4"&gt;
+                        &lt;strong class="text-black"&gt;Why it matters:&lt;/strong&gt; You get fully-tested, well-documented code
+                        without the manual grunt work.
+                    &lt;/p&gt;
+                    &lt;ul class="space-y-2 text-sm text-black/70"&gt;
+                        &lt;li class="flex items-start gap-2"&gt;
+                            &lt;span class="text-accent mt-1"&gt;✓&lt;/span&gt;
+                            &lt;span&gt;Automated test coverage for all new features&lt;/span&gt;
+                        &lt;/li&gt;
+                        &lt;li class="flex items-start gap-2"&gt;
+                            &lt;span class="text-accent mt-1"&gt;✓&lt;/span&gt;
+                            &lt;span&gt;Zero technical debt from skipped documentation&lt;/span&gt;
+                        &lt;/li&gt;
+                        &lt;li class="flex items-start gap-2"&gt;
+                            &lt;span class="text-accent mt-1"&gt;✓&lt;/span&gt;
+                            &lt;span&gt;Code migrations completed in hours, not weeks&lt;/span&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Data Agent --&gt;
+                &lt;div class="agent-card border-2 border-black p-8 bg-white"&gt;
+                    &lt;div class="flex items-center gap-4 mb-6"&gt;
+                        &lt;div
+                            class="w-12 h-12 border-2 border-black bg-accent flex items-center justify-center flex-shrink-0"&gt;
+                            &lt;span class="text-xl font-bold"&gt;02&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;h3 class="font-display text-2xl font-bold text-black"&gt;Data Agent&lt;/h3&gt;
+                    &lt;/div&gt;
+                    &lt;p class="text-black/70 mb-4 leading-relaxed"&gt;
+                        &lt;strong class="text-black"&gt;What it does:&lt;/strong&gt; Monitors data quality, validates schemas,
+                        detects anomalies, and profiles datasets automatically.
+                    &lt;/p&gt;
+                    &lt;p class="text-black/60 text-sm mb-4"&gt;
+                        &lt;strong class="text-black"&gt;Why it matters:&lt;/strong&gt; Bad data kills projects. This agent catches
+                        issues before they reach production.
+                    &lt;/p&gt;
+                    &lt;ul class="space-y-2 text-sm text-black/70"&gt;
+                        &lt;li class="flex items-start gap-2"&gt;
+                            &lt;span class="text-accent mt-1"&gt;✓&lt;/span&gt;
+                            &lt;span&gt;Real-time data quality monitoring&lt;/span&gt;
+                        &lt;/li&gt;
+                        &lt;li class="flex items-start gap-2"&gt;
+                            &lt;span class="text-accent mt-1"&gt;✓&lt;/span&gt;
+                            &lt;span&gt;Automated anomaly detection and alerts&lt;/span&gt;
+                        &lt;/li&gt;
+                        &lt;li class="flex items-start gap-2"&gt;
+                            &lt;span class="text-accent mt-1"&gt;✓&lt;/span&gt;
+                            &lt;span&gt;Schema evolution tracking and validation&lt;/span&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Infrastructure Agent --&gt;
+                &lt;div class="agent-card border-2 border-black p-8 bg-white"&gt;
+                    &lt;div class="flex items-center gap-4 mb-6"&gt;
+                        &lt;div
+                            class="w-12 h-12 border-2 border-black bg-accent flex items-center justify-center flex-shrink-0"&gt;
+                            &lt;span class="text-xl font-bold"&gt;03&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;h3 class="font-display text-2xl font-bold text-black"&gt;Infrastructure Agent&lt;/h3&gt;
+                    &lt;/div&gt;
+                    &lt;p class="text-black/70 mb-4 leading-relaxed"&gt;
+                        &lt;strong class="text-black"&gt;What it does:&lt;/strong&gt; Generates Infrastructure as Code, validates
+                        security policies, and optimizes cloud costs.
+                    &lt;/p&gt;
+                    &lt;p class="text-black/60 text-sm mb-4"&gt;
+                        &lt;strong class="text-black"&gt;Why it matters:&lt;/strong&gt; Your infrastructure follows best practices
+                        from day one, saving time and money.
+                    &lt;/p&gt;
+                    &lt;ul class="space-y-2 text-sm text-black/70"&gt;
+                        &lt;li class="flex items-start gap-2"&gt;
+                            &lt;span class="text-accent mt-1"&gt;✓&lt;/span&gt;
+                            &lt;span&gt;Security compliance built-in, not bolted-on&lt;/span&gt;
+                        &lt;/li&gt;
+                        &lt;li class="flex items-start gap-2"&gt;
+                            &lt;span class="text-accent mt-1"&gt;✓&lt;/span&gt;
+                            &lt;span&gt;Cost optimization recommendations in real-time&lt;/span&gt;
+                        &lt;/li&gt;
+                        &lt;li class="flex items-start gap-2"&gt;
+                            &lt;span class="text-accent mt-1"&gt;✓&lt;/span&gt;
+                            &lt;span&gt;Terraform/CloudFormation generated &amp; validated&lt;/span&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Product Agent --&gt;
+                &lt;div class="agent-card border-2 border-black p-8 bg-white"&gt;
+                    &lt;div class="flex items-center gap-4 mb-6"&gt;
+                        &lt;div
+                            class="w-12 h-12 border-2 border-black bg-accent flex items-center justify-center flex-shrink-0"&gt;
+                            &lt;span class="text-xl font-bold"&gt;04&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;h3 class="font-display text-2xl font-bold text-black"&gt;Product Agent&lt;/h3&gt;
+                    &lt;/div&gt;
+                    &lt;p class="text-black/70 mb-4 leading-relaxed"&gt;
+                        &lt;strong class="text-black"&gt;What it does:&lt;/strong&gt; Parses requirements, maps user journeys, and
+                        rapidly prototypes UI/UX concepts.
+                    &lt;/p&gt;
+                    &lt;p class="text-black/60 text-sm mb-4"&gt;
+                        &lt;strong class="text-black"&gt;Why it matters:&lt;/strong&gt; Go from idea to validated prototype in days,
+                        not months.
+                    &lt;/p&gt;
+                    &lt;ul class="space-y-2 text-sm text-black/70"&gt;
+                        &lt;li class="flex items-start gap-2"&gt;
+                            &lt;span class="text-accent mt-1"&gt;✓&lt;/span&gt;
+                            &lt;span&gt;Functional prototypes ready for user testing&lt;/span&gt;
+                        &lt;/li&gt;
+                        &lt;li class="flex items-start gap-2"&gt;
+                            &lt;span class="text-accent mt-1"&gt;✓&lt;/span&gt;
+                            &lt;span&gt;User journey maps from requirements&lt;/span&gt;
+                        &lt;/li&gt;
+                        &lt;li class="flex items-start gap-2"&gt;
+                            &lt;span class="text-accent mt-1"&gt;✓&lt;/span&gt;
+                            &lt;span&gt;Faster iteration on product-market fit&lt;/span&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Tech Stack --&gt;
+        &lt;div class="mb-20 border-2 border-black p-10 bg-accent/5"&gt;
+            &lt;h3 class="font-display text-2xl font-bold text-black mb-4 text-center"&gt;Powered By&lt;/h3&gt;
+            &lt;div class="flex flex-wrap justify-center gap-3 text-sm"&gt;
+                &lt;span class="border border-black bg-white px-3 py-2 font-medium"&gt;Google ADK&lt;/span&gt;
+                &lt;span class="border border-black bg-white px-3 py-2 font-medium"&gt;Gemini 2.0&lt;/span&gt;
+                &lt;span class="border border-black bg-white px-3 py-2 font-medium"&gt;Claude Sonnet&lt;/span&gt;
+                &lt;span class="border border-black bg-white px-3 py-2 font-medium"&gt;GPT-4&lt;/span&gt;
+                &lt;span class="border border-black bg-white px-3 py-2 font-medium"&gt;OpenAI Codex&lt;/span&gt;
+                &lt;span class="border border-black bg-white px-3 py-2 font-medium"&gt;Vertex AI&lt;/span&gt;
+                &lt;span class="border border-black bg-white px-3 py-2 font-medium"&gt;Model Context Protocol&lt;/span&gt;
+                &lt;span class="border border-black bg-white px-3 py-2 font-medium"&gt;ElevenLabs&lt;/span&gt;
+                &lt;span class="border border-black bg-white px-3 py-2 font-medium"&gt;Veo&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;p class="text-center text-black/60 text-sm mt-6 max-w-2xl mx-auto"&gt;
+                Production-grade AI platforms used in a multi-model approach for reliability and best-in-class
+                results.
+            &lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;!-- CTA Section --&gt;
+        &lt;div class="border-2 border-black p-12 bg-white text-center"&gt;
+            &lt;h3 class="font-display text-3xl font-bold text-black mb-4"&gt;Interested in Working Together?&lt;/h3&gt;
+            &lt;p class="text-black/60 mb-8 max-w-2xl mx-auto leading-relaxed"&gt;
+                I help teams move faster with structured AI workflows across engineering, data, and infrastructure.
+            &lt;/p&gt;
+            &lt;div class="flex flex-wrap justify-center gap-4"&gt;
+                &lt;a href="/contact"
+                    class="inline-flex items-center justify-center text-sm font-semibold bg-black text-white hover:bg-accent hover:text-black transition-all h-12 px-8 border border-black"
+                    data-analytics="cta-agents-page-contact"&gt;
+                    Let's Discuss Your Project →
+                &lt;/a&gt;
+                &lt;a href="/work"
+                    class="inline-flex items-center justify-center text-sm font-semibold border border-black bg-white hover:bg-black hover:text-white transition-all h-12 px-8"
+                    data-analytics="cta-agents-page-work"&gt;
+                    View Case Studies
+                &lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+{% endblock %}</div>
+    </div>
+    
+    <div class="separator"></div>
+
+
+    <div class="file-section" id="file-4">
+        <div class="file-header">
+            📄 base.html
+            <div class="file-path">base.html</div>
+        </div>
+        <div class="file-content">&lt;!DOCTYPE html&gt;
+&lt;html lang="en" class="antialiased"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;{% block title %}Pragith Prakash | Principal AI &amp; Data Engineer{% endblock %}&lt;/title&gt;
+    &lt;meta name="description"
+        content="{% block description %}Principal AI &amp; Data Engineer specializing in enterprise platforms, multi-cloud architecture, and AI-assisted delivery.{% endblock %}"&gt;
+
+    &lt;!-- Tailwind CSS (CDN) --&gt;
+    &lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        display: ['DM Sans', 'Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        accent: '#00FF00', // Electric lime
+                    }
+                }
+            }
+        }
+    &lt;/script&gt;
+
+    &lt;script src="https://www.google.com/recaptcha/api.js" async defer&gt;&lt;/script&gt;
+    &lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+    &lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
+    &lt;link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+        rel="stylesheet"&gt;
+
+    {% if ga_tag %}
+    &lt;!-- Google Analytics --&gt;
+    &lt;script async src="https://www.googletagmanager.com/gtag/js?id={{ ga_tag }}"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', '{{ ga_tag }}');
+    &lt;/script&gt;
+    {% endif %}
+&lt;/head&gt;
+
+&lt;body class="flex flex-col min-h-screen bg-white text-black font-sans selection:bg-accent selection:text-black"&gt;
+
+    &lt;!-- Header --&gt;
+    &lt;header class="w-full bg-white sticky top-0 z-50 border-b border-black"&gt;
+        &lt;div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between"&gt;
+            &lt;a href="/" class="font-display text-lg font-semibold text-black hover:text-accent transition-colors"&gt;
+                PRAGITH.NET
+            &lt;/a&gt;
+
+            &lt;nav class="hidden md:flex gap-8 text-sm font-medium"&gt;
+                &lt;a href="/work" class="text-black hover:text-accent transition-colors"&gt;Work&lt;/a&gt;
+                &lt;a href="/agents" class="text-black hover:text-accent transition-colors"&gt;Agents&lt;/a&gt;
+                &lt;a href="/build" class="text-black hover:text-accent transition-colors"&gt;Build&lt;/a&gt;
+                &lt;a href="/stack" class="text-black hover:text-accent transition-colors"&gt;Stack&lt;/a&gt;
+                &lt;a href="/blog" class="text-black hover:text-accent transition-colors"&gt;Blog&lt;/a&gt;
+            &lt;/nav&gt;
+
+            &lt;a href="/contact"
+                class="inline-flex items-center justify-center text-sm font-medium bg-black text-white hover:bg-accent hover:text-black transition-all h-10 px-6"&gt;
+                Contact
+            &lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+
+    &lt;!-- Main Content --&gt;
+    &lt;main class="flex-grow"&gt;
+        {% block content %}{% endblock %}
+    &lt;/main&gt;
+
+    &lt;!-- Footer --&gt;
+    &lt;footer class="bg-black text-white border-t border-white/10 mt-20"&gt;
+        &lt;div class="max-w-6xl mx-auto px-6 py-16"&gt;
+            &lt;div class="grid grid-cols-2 md:grid-cols-4 gap-12 mb-12"&gt;
+                &lt;div&gt;
+                    &lt;h3 class="text-sm font-semibold mb-4 text-accent"&gt;Site&lt;/h3&gt;
+                    &lt;ul class="space-y-3 text-sm text-white/60"&gt;
+                        &lt;li&gt;&lt;a href="/" class="hover:text-white transition-colors"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="/work" class="hover:text-white transition-colors"&gt;Work&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="/blog" class="hover:text-white transition-colors"&gt;Blog&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;h3 class="text-sm font-semibold mb-4 text-accent"&gt;Services&lt;/h3&gt;
+                    &lt;ul class="space-y-3 text-sm text-white/60"&gt;
+                        &lt;li&gt;&lt;a href="/contact" class="hover:text-white transition-colors"&gt;Advisory&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="/agents" class="hover:text-white transition-colors"&gt;AI Teams&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="/build" class="hover:text-white transition-colors"&gt;Build&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;h3 class="text-sm font-semibold mb-4 text-accent"&gt;Legal&lt;/h3&gt;
+                    &lt;ul class="space-y-3 text-sm text-white/60"&gt;
+                        &lt;li&gt;&lt;a href="/legal" class="hover:text-white transition-colors"&gt;Terms&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="/privacy" class="hover:text-white transition-colors"&gt;Privacy&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="/faq" class="hover:text-white transition-colors"&gt;FAQ&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;h3 class="text-sm font-semibold mb-4 text-accent"&gt;Connect&lt;/h3&gt;
+                    &lt;ul class="space-y-3 text-sm text-white/60"&gt;
+                        &lt;li&gt;&lt;a href="https://linkedin.com/in/pragith" target="_blank"
+                                class="hover:text-white transition-colors"&gt;LinkedIn&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="https://github.com/pragith" target="_blank"
+                                class="hover:text-white transition-colors"&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="/contact" class="hover:text-white transition-colors"&gt;Email&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div
+                class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/40"&gt;
+                &lt;p&gt;&amp;copy; {{ now().year }} Pragith Prakash&lt;/p&gt;
+                &lt;p&gt;Principal Data &amp; AI Engineer&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</div>
+    </div>
+    
+    <div class="separator"></div>
+
+
+    <div class="file-section" id="file-5">
+        <div class="file-header">
+            📄 blog_detail.html
+            <div class="file-path">blog_detail.html</div>
+        </div>
+        <div class="file-content">{% extends "base.html" %}
+
+{% block title %}{{ post.title }} | Pragith Prakash{% endblock %}
+{% block description %}{{ post.summary }}{% endblock %}
+
+{% block content %}
+&lt;article class="py-20"&gt;
+    &lt;div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8"&gt;
+        &lt;header class="mb-10 text-center"&gt;
+            &lt;div class="flex items-center justify-center gap-2 text-sm text-slate-500 font-mono mb-4"&gt;
+                &lt;time datetime="{{ post.date }}"&gt;{{ post.date }}&lt;/time&gt;
+                &lt;span&gt;&amp;bull;&lt;/span&gt;
+                &lt;span&gt;Blog&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 mb-6"&gt;
+                {{ post.title }}
+            &lt;/h1&gt;
+            &lt;div class="flex flex-wrap justify-center gap-2"&gt;
+                {% for t in post.tags %}
+                &lt;a href="/blog/tag/{{ t }}"
+                    class="inline-flex items-center rounded-full bg-slate-50 px-2.5 py-0.5 text-xs font-medium text-slate-600 ring-1 ring-inset ring-slate-500/10 hover:bg-slate-100 transition-colors"&gt;
+                    #{{ t }}
+                &lt;/a&gt;
+                {% endfor %}
+            &lt;/div&gt;
+        &lt;/header&gt;
+
+        &lt;div class="prose prose-slate prose-lg mx-auto prose-a:text-indigo-600 hover:prose-a:text-indigo-500"&gt;
+            {{ post.content | safe }}
+        &lt;/div&gt;
+
+        &lt;div class="mt-16 pt-8 border-t border-slate-100"&gt;
+            &lt;a href="/blog" class="text-sm font-medium text-slate-600 hover:text-indigo-600 flex items-center gap-2"&gt;
+                &amp;larr; Back to all posts
+            &lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/article&gt;
+{% endblock %}</div>
+    </div>
+    
+    <div class="separator"></div>
+
+
+    <div class="file-section" id="file-6">
+        <div class="file-header">
+            📄 blog_list.html
+            <div class="file-path">blog_list.html</div>
+        </div>
+        <div class="file-content">{% extends "base.html" %}
+
+{% block title %}Blog | Pragith Prakash{% endblock %}
+
+{% block content %}
+&lt;section class="py-20"&gt;
+    &lt;div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"&gt;
+        &lt;div class="mb-12"&gt;
+            &lt;h1 class="text-3xl font-bold tracking-tight text-slate-900 mb-4"&gt;Engineering Log&lt;/h1&gt;
+            &lt;p class="text-lg text-slate-600"&gt;
+                Thoughts on systems engineering, AI architecture, and building for scale.
+            &lt;/p&gt;
+        &lt;/div&gt;
+
+        {% if tag %}
+        &lt;div class="mb-8 flex items-center gap-2"&gt;
+            &lt;span class="text-sm text-slate-500"&gt;Filtering by:&lt;/span&gt;
+            &lt;span
+                class="inline-flex items-center rounded-full bg-indigo-50 px-2 py-1 text-xs font-medium text-indigo-700 ring-1 ring-inset ring-indigo-700/10"&gt;
+                #{{ tag }}
+                &lt;a href="/blog" class="ml-1 hover:text-indigo-900"&gt;&amp;times;&lt;/a&gt;
+            &lt;/span&gt;
+        &lt;/div&gt;
+        {% endif %}
+
+        &lt;div class="space-y-12"&gt;
+            {% for post in posts %}
+            &lt;article class="relative group"&gt;
+                &lt;div class="flex flex-col sm:flex-row gap-4 sm:gap-8"&gt;
+                    &lt;div class="sm:w-32 shrink-0"&gt;
+                        &lt;time datetime="{{ post.date }}" class="text-sm text-slate-500 font-mono"&gt;{{ post.date }}&lt;/time&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;h2 class="text-xl font-semibold text-slate-900 group-hover:text-indigo-600 mb-2"&gt;
+                            &lt;a href="/blog/{{ post.slug }}"&gt;
+                                &lt;span class="absolute inset-0"&gt;&lt;/span&gt;
+                                {{ post.title }}
+                            &lt;/a&gt;
+                        &lt;/h2&gt;
+                        &lt;p class="text-slate-600 mb-4 line-clamp-3"&gt;
+                            {{ post.summary }}
+                        &lt;/p&gt;
+                        &lt;div class="flex flex-wrap gap-2 relative z-10"&gt;
+                            {% for t in post.tags %}
+                            &lt;a href="/blog/tag/{{ t }}"
+                                class="inline-flex items-center rounded-md bg-slate-50 px-2 py-1 text-xs font-medium text-slate-600 ring-1 ring-inset ring-slate-500/10 hover:bg-slate-100 transition-colors"&gt;
+                                #{{ t }}
+                            &lt;/a&gt;
+                            {% endfor %}
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+            {% else %}
+            &lt;p class="text-slate-500 italic"&gt;No posts found.&lt;/p&gt;
+            {% endfor %}
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+{% endblock %}</div>
+    </div>
+    
+    <div class="separator"></div>
+
+
+    <div class="file-section" id="file-7">
+        <div class="file-header">
+            📄 build.html
+            <div class="file-path">build.html</div>
+        </div>
+        <div class="file-content">{% extends "base.html" %}
+
+{% block title %}Build Methodology | Pragith Prakash{% endblock %}
+
+{% block content %}
+&lt;section class="py-20 border-t border-black"&gt;
+    &lt;div class="max-w-6xl mx-auto px-6"&gt;
+        &lt;div class="mb-16"&gt;
+            &lt;h1 class="font-display text-5xl font-bold tracking-tight text-black mb-4"&gt;PoC to Production&lt;/h1&gt;
+            &lt;div class="w-20 h-1 bg-accent mb-6"&gt;&lt;/div&gt;
+            &lt;p class="text-xl text-black/60 max-w-2xl"&gt;
+                A disciplined framework for taking ideas from "works on my machine" to "scales globally" without the
+                bloat.
+            &lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;div class="space-y-0"&gt;
+            &lt;div class="border-2 border-black p-10 bg-white border-b-0"&gt;
+                &lt;div class="flex flex-col md:flex-row gap-8 md:items-start"&gt;
+                    &lt;div class="md:w-1/3"&gt;
+                        &lt;div class="text-xs font-bold uppercase tracking-widest text-accent mb-2"&gt;Phase 01&lt;/div&gt;
+                        &lt;h2 class="font-display text-2xl font-bold text-black"&gt;Rapid Prototyping&lt;/h2&gt;
+                    &lt;/div&gt;
+                    &lt;div class="md:w-2/3"&gt;
+                        &lt;p class="text-black/60 mb-4 leading-relaxed"&gt;
+                            We validate the core value proposition immediately. I build functional, throw-away
+                            prototypes in days, not months, to test assumptions before committing to architecture.
+                        &lt;/p&gt;
+                        &lt;div class="flex gap-2 text-sm"&gt;
+                            &lt;span class="border border-black bg-white px-3 py-1 font-medium"&gt;FastAPI&lt;/span&gt;
+                            &lt;span class="border border-black bg-white px-3 py-1 font-medium"&gt;Streamlit&lt;/span&gt;
+                            &lt;span class="border border-black bg-white px-3 py-1 font-medium"&gt;Docker Compose&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class="border-2 border-black p-10 bg-white border-b-0"&gt;
+                &lt;div class="flex flex-col md:flex-row gap-8 md:items-start"&gt;
+                    &lt;div class="md:w-1/3"&gt;
+                        &lt;div class="text-xs font-bold uppercase tracking-widest text-accent mb-2"&gt;Phase 02&lt;/div&gt;
+                        &lt;h2 class="font-display text-2xl font-bold text-black"&gt;Cloud-Native Architecture&lt;/h2&gt;
+                    &lt;/div&gt;
+                    &lt;div class="md:w-2/3"&gt;
+                        &lt;p class="text-black/60 mb-4 leading-relaxed"&gt;
+                            Designing for durability and scale. I select the right managed services (AWS/GCP/Azure) to
+                            minimize operational overhead while maximizing performance.
+                        &lt;/p&gt;
+                        &lt;div class="flex gap-2 text-sm"&gt;
+                            &lt;span class="border border-black bg-white px-3 py-1 font-medium"&gt;Kubernetes&lt;/span&gt;
+                            &lt;span class="border border-black bg-white px-3 py-1 font-medium"&gt;Serverless&lt;/span&gt;
+                            &lt;span class="border border-black bg-white px-3 py-1 font-medium"&gt;Event-Driven&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class="border-2 border-black p-10 bg-white"&gt;
+                &lt;div class="flex flex-col md:flex-row gap-8 md:items-start"&gt;
+                    &lt;div class="md:w-1/3"&gt;
+                        &lt;div class="text-xs font-bold uppercase tracking-widest text-accent mb-2"&gt;Phase 03&lt;/div&gt;
+                        &lt;h2 class="font-display text-2xl font-bold text-black"&gt;Production Hardening&lt;/h2&gt;
+                    &lt;/div&gt;
+                    &lt;div class="md:w-2/3"&gt;
+                        &lt;p class="text-black/60 mb-4 leading-relaxed"&gt;
+                            Observability, security, and automation. No system is production-ready without comprehensive
+                            logging, monitoring, and CI/CD pipelines.
+                        &lt;/p&gt;
+                        &lt;div class="flex gap-2 text-sm"&gt;
+                            &lt;span class="border border-black bg-white px-3 py-1 font-medium"&gt;Terraform&lt;/span&gt;
+                            &lt;span class="border border-black bg-white px-3 py-1 font-medium"&gt;GitHub Actions&lt;/span&gt;
+                            &lt;span class="border border-black bg-white px-3 py-1 font-medium"&gt;Datadog/Prometheus&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- CTA: Let's Build Together --&gt;
+        &lt;div class="mt-16 border-2 border-black p-12 bg-accent/10"&gt;
+            &lt;div class="max-w-3xl"&gt;
+                &lt;h3 class="font-display text-2xl font-bold text-black mb-4"&gt;Ready to Build Your System?&lt;/h3&gt;
+                &lt;p class="text-black/70 mb-6 leading-relaxed"&gt;
+                    Whether you're starting from scratch or modernizing legacy infrastructure, I can help you ship
+                    production-grade systems that scale.
+                &lt;/p&gt;
+                &lt;div class="flex flex-wrap gap-4"&gt;
+                    &lt;a href="/contact"
+                        class="inline-flex items-center justify-center text-sm font-semibold bg-black text-white hover:bg-accent hover:text-black transition-all h-12 px-8 border border-black"
+                        data-analytics="cta-build-page-consult"&gt;
+                        Discuss Your Project →
+                    &lt;/a&gt;
+                    &lt;a href="/work"
+                        class="inline-flex items-center justify-center text-sm font-semibold border border-black bg-white hover:bg-black hover:text-white transition-all h-12 px-8"
+                        data-analytics="cta-build-page-work"&gt;
+                        View Case Studies
+                    &lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+{% endblock %}</div>
+    </div>
+    
+    <div class="separator"></div>
+
+
+    <div class="file-section" id="file-8">
+        <div class="file-header">
+            📄 consult.html
+            <div class="file-path">consult.html</div>
+        </div>
+        <div class="file-content">{% extends "base.html" %}
+
+{% block title %}Consulting | Pragith Prakash{% endblock %}
+
+{% block content %}
+&lt;section class="py-20 border-t border-black"&gt;
+    &lt;div class="max-w-6xl mx-auto px-6"&gt;
+        &lt;div class="max-w-4xl mx-auto"&gt;
+            &lt;h1 class="font-display text-5xl font-bold tracking-tight text-black mb-6"&gt;Advisory &amp; Consulting&lt;/h1&gt;
+            &lt;div class="w-20 h-1 bg-accent mb-12"&gt;&lt;/div&gt;
+
+            &lt;p class="text-xl text-black/60 mb-16 leading-relaxed"&gt;
+                Strategic advisory and technical consulting for organizations dealing with complex data and AI
+                challenges.
+            &lt;/p&gt;
+
+            &lt;div class="grid md:grid-cols-2 gap-12 mb-16"&gt;
+                &lt;div class="space-y-10"&gt;
+                    &lt;div class="border-l-4 border-black pl-6"&gt;
+                        &lt;h3 class="font-display text-xl font-bold text-black mb-3"&gt;Architecture Review&lt;/h3&gt;
+                        &lt;p class="text-black/60 leading-relaxed"&gt;
+                            Deep dive into your current cloud architecture. Identification of bottlenecks, security
+                            risks, and cost optimization opportunities.
+                        &lt;/p&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="border-l-4 border-accent pl-6"&gt;
+                        &lt;h3 class="font-display text-xl font-bold text-black mb-3"&gt;AI Strategy &amp; Roadmap&lt;/h3&gt;
+                        &lt;p class="text-black/60 leading-relaxed"&gt;
+                            Pragmatic assessment of where AI can drive value. Roadmap development from PoC to
+                            production.
+                        &lt;/p&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="border-l-4 border-black pl-6"&gt;
+                        &lt;h3 class="font-display text-xl font-bold text-black mb-3"&gt;Data Platform Modernization&lt;/h3&gt;
+                        &lt;p class="text-black/60 leading-relaxed"&gt;
+                            Migration strategies from legacy on-prem systems to modern cloud lakehouses.
+                        &lt;/p&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="border-l-4 border-accent pl-6"&gt;
+                        &lt;h3 class="font-display text-xl font-bold text-black mb-3"&gt;CTO Advisory&lt;/h3&gt;
+                        &lt;p class="text-black/60 leading-relaxed"&gt;
+                            Technical leadership support for startup founders and non-technical executives.
+                        &lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;div class="space-y-8"&gt;
+                    &lt;div class="border-2 border-black p-8 bg-white"&gt;
+                        &lt;div class="text-xs font-bold uppercase tracking-widest text-black/40 mb-2"&gt;Standard Rate&lt;/div&gt;
+                        &lt;div class="text-5xl font-bold text-black mb-2"&gt;
+                            {{ currency_symbol }}{{ hourly_rate }}&lt;span
+                                class="text-2xl font-semibold text-black/60"&gt;/hr&lt;/span&gt;
+                        &lt;/div&gt;
+                        {% if currency_code != 'USD' %}
+                        &lt;div class="text-xs text-black/40 mb-6"&gt;~${{ base_rate_usd }} USD&lt;/div&gt;
+                        {% else %}
+                        &lt;div class="mb-6"&gt;&lt;/div&gt;
+                        {% endif %}
+                        &lt;p class="text-black/60 mb-6"&gt;
+                            Engagements typically start with a 1-hour discovery call to assess fit and scope.
+                        &lt;/p&gt;
+                        &lt;a href="/contact"
+                            class="inline-flex items-center justify-center text-sm font-semibold bg-black text-white hover:bg-accent hover:text-black transition-all h-12 px-8 border border-black w-full"
+                            data-analytics="cta-consult-book-call"&gt;
+                            Book Discovery Call →
+                        &lt;/a&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="border-2 border-black p-8 bg-accent/10"&gt;
+                        &lt;h4 class="font-display text-lg font-bold text-black mb-4"&gt;Engagement Types&lt;/h4&gt;
+                        &lt;ul class="space-y-3 text-sm text-black/70"&gt;
+                            &lt;li class="flex items-start gap-2"&gt;
+                                &lt;span class="mt-1"&gt;→&lt;/span&gt;
+                                &lt;span&gt;One-time architecture reviews&lt;/span&gt;
+                            &lt;/li&gt;
+                            &lt;li class="flex items-start gap-2"&gt;
+                                &lt;span class="mt-1"&gt;→&lt;/span&gt;
+                                &lt;span&gt;Ongoing fractional CTO advisory&lt;/span&gt;
+                            &lt;/li&gt;
+                            &lt;li class="flex items-start gap-2"&gt;
+                                &lt;span class="mt-1"&gt;→&lt;/span&gt;
+                                &lt;span&gt;Workshop facilitation &amp; training&lt;/span&gt;
+                            &lt;/li&gt;
+                            &lt;li class="flex items-start gap-2"&gt;
+                                &lt;span class="mt-1"&gt;→&lt;/span&gt;
+                                &lt;span&gt;Technical due diligence&lt;/span&gt;
+                            &lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+{% endblock %}</div>
+    </div>
+    
+    <div class="separator"></div>
+
+
+    <div class="file-section" id="file-9">
+        <div class="file-header">
+            📄 contact.html
+            <div class="file-path">contact.html</div>
+        </div>
+        <div class="file-content">{% extends "base.html" %}
+
+{% block title %}Contact &amp; Consulting | Pragith Prakash{% endblock %}
+
+{% block content %}
+&lt;section class="py-20 border-t border-black"&gt;
+    &lt;div class="max-w-6xl mx-auto px-6"&gt;
+        &lt;!-- Header --&gt;
+        &lt;div class="mb-16"&gt;
+            &lt;h1 class="font-display text-5xl font-bold tracking-tight text-black mb-4"&gt;Let's Work Together&lt;/h1&gt;
+            &lt;div class="w-20 h-1 bg-accent mb-6"&gt;&lt;/div&gt;
+            &lt;p class="text-xl text-black/60 max-w-3xl"&gt;
+                Strategic advisory, technical consulting, and architecture reviews for data and AI challenges.
+            &lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;div class="grid lg:grid-cols-2 gap-12"&gt;
+            &lt;!-- Left Column: Services &amp; Rates --&gt;
+            &lt;div class="space-y-8"&gt;
+                &lt;h2 class="font-display text-2xl font-bold text-black"&gt;Consulting Services&lt;/h2&gt;
+
+                &lt;div class="space-y-6"&gt;
+                    &lt;div class="border-l-4 border-black pl-6"&gt;
+                        &lt;h3 class="font-bold text-black mb-2"&gt;Architecture Review&lt;/h3&gt;
+                        &lt;p class="text-black/60 text-sm leading-relaxed"&gt;
+                            Deep dive into your current cloud architecture. Identification of bottlenecks, security
+                            risks, and cost optimization opportunities.
+                        &lt;/p&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="border-l-4 border-accent pl-6"&gt;
+                        &lt;h3 class="font-bold text-black mb-2"&gt;AI Strategy &amp; Roadmap&lt;/h3&gt;
+                        &lt;p class="text-black/60 text-sm leading-relaxed"&gt;
+                            Pragmatic assessment of where AI can drive value. Roadmap development from PoC to
+                            production.
+                        &lt;/p&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="border-l-4 border-black pl-6"&gt;
+                        &lt;h3 class="font-bold text-black mb-2"&gt;Data Platform Modernization&lt;/h3&gt;
+                        &lt;p class="text-black/60 text-sm leading-relaxed"&gt;
+                            Migration strategies from legacy on-prem systems to modern cloud lakehouses.
+                        &lt;/p&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="border-l-4 border-accent pl-6"&gt;
+                        &lt;h3 class="font-bold text-black mb-2"&gt;CTO Advisory&lt;/h3&gt;
+                        &lt;p class="text-black/60 text-sm leading-relaxed"&gt;
+                            Technical leadership support for startup founders and non-technical executives.
+                        &lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Rate Card --&gt;
+                &lt;div class="border-2 border-black p-8 bg-white mt-8"&gt;
+                    &lt;div class="text-xs font-bold uppercase tracking-widest text-black/40 mb-2"&gt;Standard Rate&lt;/div&gt;
+                    &lt;div class="text-5xl font-bold text-black mb-2"&gt;
+                        {{ currency_symbol }}{{ hourly_rate }}&lt;span
+                            class="text-2xl font-semibold text-black/60"&gt;/hr&lt;/span&gt;
+                    &lt;/div&gt;
+                    {% if currency_code != 'USD' %}
+                    &lt;div class="text-xs text-black/40 mb-6"&gt;~${{ base_rate_usd }} USD&lt;/div&gt;
+                    {% else %}
+                    &lt;div class="mb-6"&gt;&lt;/div&gt;
+                    {% endif %}
+                    &lt;p class="text-black/60 text-sm"&gt;
+                        Engagements typically start with a 1-hour discovery call to assess fit and scope.
+                    &lt;/p&gt;
+                &lt;/div&gt;
+
+                &lt;!-- Engagement Types --&gt;
+                &lt;div class="border-2 border-black p-8 bg-accent/10"&gt;
+                    &lt;h4 class="font-bold text-black mb-4"&gt;Engagement Types&lt;/h4&gt;
+                    &lt;ul class="space-y-3 text-sm text-black/70"&gt;
+                        &lt;li class="flex items-start gap-2"&gt;
+                            &lt;span class="mt-1"&gt;→&lt;/span&gt;
+                            &lt;span&gt;One-time architecture reviews&lt;/span&gt;
+                        &lt;/li&gt;
+                        &lt;li class="flex items-start gap-2"&gt;
+                            &lt;span class="mt-1"&gt;→&lt;/span&gt;
+                            &lt;span&gt;Ongoing fractional CTO advisory&lt;/span&gt;
+                        &lt;/li&gt;
+                        &lt;li class="flex items-start gap-2"&gt;
+                            &lt;span class="mt-1"&gt;→&lt;/span&gt;
+                            &lt;span&gt;Workshop facilitation &amp; training&lt;/span&gt;
+                        &lt;/li&gt;
+                        &lt;li class="flex items-start gap-2"&gt;
+                            &lt;span class="mt-1"&gt;→&lt;/span&gt;
+                            &lt;span&gt;Technical due diligence&lt;/span&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;!-- Right Column: Contact Form --&gt;
+            &lt;div&gt;
+                &lt;h2 class="font-display text-2xl font-bold text-black mb-6"&gt;Send a Message&lt;/h2&gt;
+
+                {% if error %}
+                &lt;div class="border-2 border-black bg-red-50 p-4 mb-6"&gt;
+                    &lt;div class="flex items-start gap-3"&gt;
+                        &lt;svg class="w-5 h-5 text-black mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"&gt;
+                            &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /&gt;
+                        &lt;/svg&gt;
+                        &lt;p class="text-sm font-medium text-black"&gt;{{ error }}&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                {% endif %}
+
+                &lt;form action="/contact" method="POST" class="space-y-6"&gt;
+                    &lt;div class="grid grid-cols-1 sm:grid-cols-2 gap-6"&gt;
+                        &lt;div&gt;
+                            &lt;label for="name" class="block text-sm font-bold text-black mb-2"&gt;Name *&lt;/label&gt;
+                            &lt;input type="text" name="name" id="name" autocomplete="name" required
+                                value="{{ form.name if form else '' }}"
+                                class="block w-full border-2 border-black px-4 py-3 text-black focus:outline-none focus:border-accent"&gt;
+                        &lt;/div&gt;
+                        &lt;div&gt;
+                            &lt;label for="email" class="block text-sm font-bold text-black mb-2"&gt;Email *&lt;/label&gt;
+                            &lt;input type="email" name="email" id="email" autocomplete="email" required
+                                value="{{ form.email if form else '' }}"
+                                class="block w-full border-2 border-black px-4 py-3 text-black focus:outline-none focus:border-accent"&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;div&gt;
+                        &lt;label for="company" class="block text-sm font-bold text-black mb-2"&gt;Company&lt;/label&gt;
+                        &lt;input type="text" name="company" id="company" autocomplete="organization"
+                            value="{{ form.company if form else '' }}"
+                            class="block w-full border-2 border-black px-4 py-3 text-black focus:outline-none focus:border-accent"&gt;
+                    &lt;/div&gt;
+
+                    &lt;div&gt;
+                        &lt;label for="message" class="block text-sm font-bold text-black mb-2"&gt;Message *&lt;/label&gt;
+                        &lt;textarea id="message" name="message" rows="6" required
+                            class="block w-full border-2 border-black px-4 py-3 text-black focus:outline-none focus:border-accent"&gt;{{ form.message if form else '' }}&lt;/textarea&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY_HERE"&gt;&lt;/div&gt;
+
+                    &lt;button type="submit"
+                        class="w-full inline-flex items-center justify-center text-sm font-semibold bg-black text-white hover:bg-accent hover:text-black transition-all h-12 px-8 border border-black"
+                        data-analytics="cta-contact-form-submit"&gt;
+                        Send Message →
+                    &lt;/button&gt;
+                &lt;/form&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+{% endblock %}</div>
+    </div>
+    
+    <div class="separator"></div>
+
+
+    <div class="file-section" id="file-10">
+        <div class="file-header">
+            📄 contact_success.html
+            <div class="file-path">contact_success.html</div>
+        </div>
+        <div class="file-content">{% extends "base.html" %}
+
+{% block title %}Message Sent | Pragith Prakash{% endblock %}
+
+{% block content %}
+&lt;section class="py-32"&gt;
+    &lt;div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center"&gt;
+        &lt;div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100 mb-6"&gt;
+            &lt;svg class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"&gt;
+                &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /&gt;
+            &lt;/svg&gt;
+        &lt;/div&gt;
+        &lt;h2 class="text-3xl font-bold tracking-tight text-slate-900 mb-4"&gt;Message Sent&lt;/h2&gt;
+        &lt;p class="text-lg text-slate-600 mb-10"&gt;
+            Thank you for reaching out. I will review your message and get back to you shortly.
+        &lt;/p&gt;
+        &lt;a href="/" class="text-sm font-medium text-indigo-600 hover:text-indigo-500"&gt;
+            Return home &amp;rarr;
+        &lt;/a&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+{% endblock %}</div>
+    </div>
+    
+    <div class="separator"></div>
+
+
+    <div class="file-section" id="file-11">
+        <div class="file-header">
+            📄 faq.html
+            <div class="file-path">faq.html</div>
+        </div>
+        <div class="file-content">{% extends "base.html" %}
+
+{% block title %}FAQ | Pragith Prakash{% endblock %}
+
+{% block content %}
+&lt;section class="py-20"&gt;
+    &lt;div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8"&gt;
+        &lt;h1 class="text-3xl font-bold tracking-tight text-slate-900 mb-12"&gt;Frequently Asked Questions&lt;/h1&gt;
+
+        &lt;div class="space-y-12"&gt;
+
+            &lt;div&gt;
+                &lt;h3 class="font-bold text-slate-900 mb-2"&gt;Do you sign NDAs?&lt;/h3&gt;
+                &lt;p class="text-slate-600"&gt;
+                    Yes. I routinely work with sensitive IP and regulated data. I am happy to sign a standard mutual NDA
+                    before discussing proprietary details.
+                &lt;/p&gt;
+            &lt;/div&gt;
+
+            &lt;div&gt;
+                &lt;h3 class="font-bold text-slate-900 mb-2"&gt;Do you work on-site?&lt;/h3&gt;
+                &lt;p class="text-slate-600"&gt;
+                    I primarily work remotely. I can travel for critical workshops, kick-offs, or deployments in the UAE
+                    or North America, subject to schedule availability and expense coverage.
+                &lt;/p&gt;
+            &lt;/div&gt;
+
+            &lt;div&gt;
+                &lt;h3 class="font-bold text-slate-900 mb-2"&gt;What is your billing model?&lt;/h3&gt;
+                &lt;p class="text-slate-600"&gt;
+                    For advisory work, I bill hourly. For defined projects (e.g., specific PoC, platform migration), I
+                    prefer fixed-price contracts with milestone-based payments.
+                &lt;/p&gt;
+            &lt;/div&gt;
+
+            &lt;div&gt;
+                &lt;h3 class="font-bold text-slate-900 mb-2"&gt;Who owns the IP?&lt;/h3&gt;
+                &lt;p class="text-slate-600"&gt;
+                    You do. Upon full payment, all code, documentation, and artifacts produced during the engagement
+                    become your exclusive property.
+                &lt;/p&gt;
+            &lt;/div&gt;
+
+            &lt;div&gt;
+                &lt;h3 class="font-bold text-slate-900 mb-2"&gt;Are you available for full-time roles?&lt;/h3&gt;
+                &lt;p class="text-slate-600"&gt;
+                    I am currently focused on independent consulting and my own ventures. I am open to discussing
+                    fractional CTO or Principal Architect roles.
+                &lt;/p&gt;
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+{% endblock %}</div>
+    </div>
+    
+    <div class="separator"></div>
+
+
+    <div class="file-section" id="file-12">
+        <div class="file-header">
+            📄 index.html
+            <div class="file-path">index.html</div>
+        </div>
+        <div class="file-content">{% extends "base.html" %}
+
+{% block content %}
+&lt;!-- Hero Section --&gt;
+&lt;section class="border-b border-black"&gt;
+    &lt;div class="max-w-6xl mx-auto px-6 py-32 sm:py-40"&gt;
+        &lt;div class="max-w-4xl"&gt;
+            &lt;div
+                class="inline-block border border-black bg-accent text-black px-4 py-2 text-xs font-bold uppercase tracking-wider mb-8"&gt;
+                Available for Select Projects
+            &lt;/div&gt;
+
+            &lt;h1
+                class="font-display text-6xl sm:text-7xl lg:text-8xl font-bold tracking-tight text-black mb-8 leading-[1.05]"&gt;
+                Principal AI &amp; Data Engineer
+            &lt;/h1&gt;
+
+            &lt;p class="text-xl sm:text-2xl text-black/60 max-w-3xl mb-12 leading-relaxed"&gt;
+                Architecting high-performance platforms. Scaling multi-terabyte analytics. Shipping production AI
+                systems.
+            &lt;/p&gt;
+
+            &lt;div class="flex flex-wrap gap-4"&gt;
+                &lt;a href="/work"
+                    class="inline-flex items-center justify-center text-sm font-semibold bg-black text-white hover:bg-accent hover:text-black transition-all h-12 px-8 border border-black"
+                    data-analytics="cta-hero-view-work" aria-label="View portfolio work"&gt;
+                    View Work →
+                &lt;/a&gt;
+                &lt;a href="/contact"
+                    class="inline-flex items-center justify-center text-sm font-semibold border border-black bg-white hover:bg-black hover:text-white transition-all h-12 px-8"
+                    data-analytics="cta-hero-start-project" aria-label="Start a new project"&gt;
+                    Start a Project
+                &lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;!-- Stats Section --&gt;
+&lt;section class="border-b border-black"&gt;
+    &lt;div class="max-w-6xl mx-auto px-6 py-16"&gt;
+        &lt;div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-black"&gt;
+            &lt;div class="py-8 md:py-0 md:pr-12"&gt;
+                &lt;div class="text-6xl font-bold text-black mb-2"&gt;13+&lt;/div&gt;
+                &lt;div class="text-xs font-semibold uppercase tracking-wider text-black/40 mb-1"&gt;Years&lt;/div&gt;
+                &lt;div class="text-sm text-black/60"&gt;Enterprise Delivery&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="py-8 md:py-0 md:px-12"&gt;
+                &lt;div class="text-6xl font-bold text-black mb-2"&gt;3&lt;/div&gt;
+                &lt;div class="text-xs font-semibold uppercase tracking-wider text-black/40 mb-1"&gt;Platforms&lt;/div&gt;
+                &lt;div class="text-sm text-black/60"&gt;AWS · GCP · Azure&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="py-8 md:py-0 md:pl-12"&gt;
+                &lt;div class="text-6xl font-bold text-accent mb-2"&gt;AI&lt;/div&gt;
+                &lt;div class="text-xs font-semibold uppercase tracking-wider text-black/40 mb-1"&gt;Approach&lt;/div&gt;
+                &lt;div class="text-sm text-black/60"&gt;AI-Assisted Delivery&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;!-- Quick Navigation Section --&gt;
+&lt;section class="py-20 border-b border-black"&gt;
+    &lt;div class="max-w-6xl mx-auto px-6"&gt;
+        &lt;div class="mb-12"&gt;
+            &lt;h2 class="font-display text-3xl font-bold text-black mb-2"&gt;Explore&lt;/h2&gt;
+            &lt;div class="w-16 h-1 bg-accent"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"&gt;
+            &lt;!-- Work Tile --&gt;
+            &lt;a href="/work" class="group border-2 border-black p-8 hover:bg-black hover:text-white transition-all"
+                data-analytics="nav-tile-work" aria-label="Navigate to Work page"&gt;
+                &lt;div class="flex items-center justify-between mb-4"&gt;
+                    &lt;h3 class="font-display text-xl font-bold"&gt;Work&lt;/h3&gt;
+                    &lt;svg class="w-6 h-6 transform group-hover:translate-x-1 transition-transform" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor"&gt;
+                        &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3" /&gt;
+                    &lt;/svg&gt;
+                &lt;/div&gt;
+                &lt;p class="text-sm opacity-70"&gt;Case studies &amp; portfolio projects&lt;/p&gt;
+            &lt;/a&gt;
+
+            &lt;!-- Agents Tile --&gt;
+            &lt;a href="/agents" class="group border-2 border-black p-8 hover:bg-accent hover:text-black transition-all"
+                data-analytics="nav-tile-agents" aria-label="Navigate to Agents page"&gt;
+                &lt;div class="flex items-center justify-between mb-4"&gt;
+                    &lt;h3 class="font-display text-xl font-bold"&gt;Agents&lt;/h3&gt;
+                    &lt;svg class="w-6 h-6 transform group-hover:translate-x-1 transition-transform" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor"&gt;
+                        &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3" /&gt;
+                    &lt;/svg&gt;
+                &lt;/div&gt;
+                &lt;p class="text-sm opacity-70"&gt;AI systems and automation&lt;/p&gt;
+            &lt;/a&gt;
+
+            &lt;!-- Build Tile --&gt;
+            &lt;a href="/build" class="group border-2 border-black p-8 hover:bg-black hover:text-white transition-all"
+                data-analytics="nav-tile-build" aria-label="Navigate to Build page"&gt;
+                &lt;div class="flex items-center justify-between mb-4"&gt;
+                    &lt;h3 class="font-display text-xl font-bold"&gt;Build&lt;/h3&gt;
+                    &lt;svg class="w-6 h-6 transform group-hover:translate-x-1 transition-transform" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor"&gt;
+                        &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3" /&gt;
+                    &lt;/svg&gt;
+                &lt;/div&gt;
+                &lt;p class="text-sm opacity-70"&gt;Services &amp; engagement models&lt;/p&gt;
+            &lt;/a&gt;
+
+            &lt;!-- Stack Tile --&gt;
+            &lt;a href="/stack" class="group border-2 border-black p-8 hover:bg-accent hover:text-black transition-all"
+                data-analytics="nav-tile-stack" aria-label="Navigate to Stack page"&gt;
+                &lt;div class="flex items-center justify-between mb-4"&gt;
+                    &lt;h3 class="font-display text-xl font-bold"&gt;Stack&lt;/h3&gt;
+                    &lt;svg class="w-6 h-6 transform group-hover:translate-x-1 transition-transform" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor"&gt;
+                        &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3" /&gt;
+                    &lt;/svg&gt;
+                &lt;/div&gt;
+                &lt;p class="text-sm opacity-70"&gt;Technologies &amp; tools&lt;/p&gt;
+            &lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;!-- Capabilities Section --&gt;
+&lt;section class="py-32"&gt;
+    &lt;div class="max-w-6xl mx-auto px-6"&gt;
+        &lt;div class="mb-20"&gt;
+            &lt;h2 class="font-display text-4xl sm:text-5xl font-bold tracking-tight text-black mb-4"&gt;
+                Core Capabilities
+            &lt;/h2&gt;
+            &lt;div class="w-20 h-1 bg-accent"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-black"&gt;
+            &lt;!-- Card 1 --&gt;
+            &lt;div class="bg-white p-10 hover:bg-accent transition-colors group"&gt;
+                &lt;div class="flex items-start justify-between mb-6"&gt;
+                    &lt;h3 class="font-display text-2xl font-bold text-black"&gt;Cloud Architecture&lt;/h3&gt;
+                    &lt;span class="text-4xl font-bold text-black/10 group-hover:text-black/20"&gt;01&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;p class="text-black/60 mb-6 leading-relaxed"&gt;
+                    Architecting secure, scalable infrastructure on GCP, AWS, and Azure. Serverless and containerized
+                    specialists.
+                &lt;/p&gt;
+                &lt;ul class="space-y-2 text-sm text-black/70"&gt;
+                    &lt;li&gt;→ Google Cloud (BigQuery, GKE, Dataflow)&lt;/li&gt;
+                    &lt;li&gt;→ AWS (Lambda, Kinesis, DynamoDB)&lt;/li&gt;
+                    &lt;li&gt;→ Azure (Databricks, Synapse)&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+
+            &lt;!-- Card 2 --&gt;
+            &lt;div class="bg-white p-10 hover:bg-accent transition-colors group"&gt;
+                &lt;div class="flex items-start justify-between mb-6"&gt;
+                    &lt;h3 class="font-display text-2xl font-bold text-black"&gt;Data Engineering&lt;/h3&gt;
+                    &lt;span class="text-4xl font-bold text-black/10 group-hover:text-black/20"&gt;02&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;p class="text-black/60 mb-6 leading-relaxed"&gt;
+                    High-volume analytics, real-time streaming pipelines, and robust data warehouses at petabyte scale.
+                &lt;/p&gt;
+                &lt;ul class="space-y-2 text-sm text-black/70"&gt;
+                    &lt;li&gt;→ Apache Spark, Kafka, Airflow&lt;/li&gt;
+                    &lt;li&gt;→ Real-time Streaming Systems&lt;/li&gt;
+                    &lt;li&gt;→ Petabyte-Scale Processing&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+
+            &lt;!-- Card 3 --&gt;
+            &lt;div class="bg-white p-10 hover:bg-accent transition-colors group"&gt;
+                &lt;div class="flex items-start justify-between mb-6"&gt;
+                    &lt;h3 class="font-display text-2xl font-bold text-black"&gt;DevOps &amp; Infrastructure&lt;/h3&gt;
+                    &lt;span class="text-4xl font-bold text-black/10 group-hover:text-black/20"&gt;03&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;p class="text-black/60 mb-6 leading-relaxed"&gt;
+                    Automated infrastructure and deployments. Built for velocity, reliability, and production
+                    observability.
+                &lt;/p&gt;
+                &lt;ul class="space-y-2 text-sm text-black/70"&gt;
+                    &lt;li&gt;→ Kubernetes, Terraform, Docker&lt;/li&gt;
+                    &lt;li&gt;→ CI/CD Pipeline Automation&lt;/li&gt;
+                    &lt;li&gt;→ Production Observability&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+
+            &lt;!-- Card 4 --&gt;
+            &lt;div class="bg-white p-10 hover:bg-accent transition-colors group"&gt;
+                &lt;div class="flex items-start justify-between mb-6"&gt;
+                    &lt;h3 class="font-display text-2xl font-bold text-black"&gt;AI &amp; Automation&lt;/h3&gt;
+                    &lt;span class="text-4xl font-bold text-black/10 group-hover:text-black/20"&gt;04&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;p class="text-black/60 mb-6 leading-relaxed"&gt;
+                    Deploying AI and automation systems in production environments at enterprise scale.
+                &lt;/p&gt;
+                &lt;ul class="space-y-2 text-sm text-black/70"&gt;
+                    &lt;li&gt;→ Google ADK &amp; Model Context Protocol&lt;/li&gt;
+                    &lt;li&gt;→ AI Workflow Automation&lt;/li&gt;
+                    &lt;li&gt;→ Model Deployment &amp; Operations&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;!-- CTA Section --&gt;
+&lt;section class="bg-black text-white border-t border-white/10"&gt;
+    &lt;div class="max-w-6xl mx-auto px-6 py-32 text-center"&gt;
+        &lt;h2 class="font-display text-4xl sm:text-5xl font-bold mb-6"&gt;Ready to Build?&lt;/h2&gt;
+        &lt;p class="text-xl text-white/60 mb-12 max-w-2xl mx-auto"&gt;
+            I partner with founders, CTOs, and engineering leaders to ship production-grade systems.
+        &lt;/p&gt;
+        &lt;a href="/contact"
+            class="inline-flex items-center justify-center text-sm font-semibold bg-accent text-black hover:bg-white transition-all h-12 px-10"
+            data-analytics="cta-footer-start-project" aria-label="Contact to start a project"&gt;
+            Start a Project →
+        &lt;/a&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+{% endblock %}</div>
+    </div>
+    
+    <div class="separator"></div>
+
+
+    <div class="file-section" id="file-13">
+        <div class="file-header">
+            📄 legal.html
+            <div class="file-path">legal.html</div>
+        </div>
+        <div class="file-content">{% extends "base.html" %}
+
+{% block title %}Legal | Pragith Prakash{% endblock %}
+
+{% block content %}
+&lt;section class="py-20"&gt;
+    &lt;div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8"&gt;
+        &lt;h1 class="text-3xl font-bold tracking-tight text-slate-900 mb-8"&gt;Legal &amp; Terms&lt;/h1&gt;
+        &lt;div class="prose prose-slate"&gt;
+            &lt;p&gt;&lt;strong&gt;Effective Date:&lt;/strong&gt; February 2024&lt;/p&gt;
+
+            &lt;h3&gt;Terms of Engagement&lt;/h3&gt;
+            &lt;p&gt;All consulting engagements are governed by a Master Services Agreement (MSA) signed prior to the
+                commencement of work.&lt;/p&gt;
+
+            &lt;h3&gt;Confidentiality&lt;/h3&gt;
+            &lt;p&gt;I maintain strict confidentiality regarding all client data, trade secrets, and business logic. Standard
+                security practices are employed to protect all shared assets.&lt;/p&gt;
+
+            &lt;h3&gt;Payment Terms&lt;/h3&gt;
+            &lt;p&gt;Invoices are due upon receipt unless otherwise specified in the MSA. Late payments may incur interest.
+            &lt;/p&gt;
+
+            &lt;h3&gt;Governing Law&lt;/h3&gt;
+            &lt;p&gt;These terms shall be governed by the laws of Canada.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+{% endblock %}</div>
+    </div>
+    
+    <div class="separator"></div>
+
+
+    <div class="file-section" id="file-14">
+        <div class="file-header">
+            📄 privacy.html
+            <div class="file-path">privacy.html</div>
+        </div>
+        <div class="file-content">{% extends "base.html" %}
+
+{% block title %}Privacy Policy | Pragith Prakash{% endblock %}
+
+{% block content %}
+&lt;section class="py-20"&gt;
+    &lt;div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8"&gt;
+        &lt;h1 class="text-3xl font-bold tracking-tight text-slate-900 mb-8"&gt;Privacy Policy&lt;/h1&gt;
+        &lt;div class="prose prose-slate"&gt;
+            &lt;p&gt;&lt;strong&gt;Effective Date:&lt;/strong&gt; February 2024&lt;/p&gt;
+
+            &lt;h3&gt;Overview&lt;/h3&gt;
+            &lt;p&gt;I respect your privacy. This website is designed to be minimal and intrusive.&lt;/p&gt;
+
+            &lt;h3&gt;Data Collection&lt;/h3&gt;
+            &lt;p&gt;&lt;strong&gt;Contact Form:&lt;/strong&gt; If you submit the contact form, I collect your name, email, company, and
+                message solely for the purpose of replying to you.&lt;/p&gt;
+            &lt;p&gt;&lt;strong&gt;Analytics:&lt;/strong&gt; This site may use minimal, privacy-focused analytics (server logs) to track
+                performance. No invasive cookies are used.&lt;/p&gt;
+
+            &lt;h3&gt;Third-Party Services&lt;/h3&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;strong&gt;Google reCAPTCHA:&lt;/strong&gt; Used to prevent spam on the contact form. Subject to Google's
+                    Privacy Policy and Terms of Use.&lt;/li&gt;
+                &lt;li&gt;&lt;strong&gt;Calendly:&lt;/strong&gt; Used for scheduling. If you use the booking widget, your data is
+                    processed by Calendly.&lt;/li&gt;
+            &lt;/ul&gt;
+
+            &lt;h3&gt;Data Sharing&lt;/h3&gt;
+            &lt;p&gt;I do not sell, trade, or transfer your personally identifiable information to outside parties.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+{% endblock %}</div>
+    </div>
+    
+    <div class="separator"></div>
+
+
+    <div class="file-section" id="file-15">
+        <div class="file-header">
+            📄 stack.html
+            <div class="file-path">stack.html</div>
+        </div>
+        <div class="file-content">{% extends "base.html" %}
+
+{% block title %}Tech Stack | Pragith Prakash{% endblock %}
+
+{% block content %}
+&lt;section class="py-20 border-t border-black"&gt;
+    &lt;div class="max-w-6xl mx-auto px-6"&gt;
+        &lt;div class="mb-16"&gt;
+            &lt;h1 class="font-display text-5xl font-bold tracking-tight text-black mb-4"&gt;Technology Stack&lt;/h1&gt;
+            &lt;div class="w-20 h-1 bg-accent mb-6"&gt;&lt;/div&gt;
+            &lt;p class="text-xl text-black/60 max-w-3xl"&gt;
+                Every technology choice is deliberate. These tools solve real problems at scale and are selected based
+                on project requirements.
+            &lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;div class="space-y-12"&gt;
+            &lt;!-- Cloud Infrastructure --&gt;
+            &lt;div class="border-2 border-black p-10 bg-white"&gt;
+                &lt;h3 class="font-display text-2xl font-bold text-black mb-6"&gt;Cloud Infrastructure&lt;/h3&gt;
+
+                &lt;div class="space-y-6"&gt;
+                    &lt;div class="border-l-4 border-black pl-6"&gt;
+                        &lt;h4 class="font-bold text-black mb-2"&gt;Google Cloud Platform&lt;/h4&gt;
+                        &lt;p class="text-black/60 text-sm mb-3"&gt;
+                            Best-in-class for data analytics and ML workflows. BigQuery's serverless architecture
+                            eliminates operational overhead. GKE provides managed Kubernetes without the complexity.
+                        &lt;/p&gt;
+                        &lt;div class="flex gap-2 flex-wrap"&gt;
+                            &lt;span class="text-xs border border-black bg-white px-2 py-1"&gt;BigQuery&lt;/span&gt;
+                            &lt;span class="text-xs border border-black bg-white px-2 py-1"&gt;GKE&lt;/span&gt;
+                            &lt;span class="text-xs border border-black bg-white px-2 py-1"&gt;Dataflow&lt;/span&gt;
+                            &lt;span class="text-xs border border-black bg-white px-2 py-1"&gt;Pub/Sub&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="border-l-4 border-accent pl-6"&gt;
+                        &lt;h4 class="font-bold text-black mb-2"&gt;Amazon Web Services&lt;/h4&gt;
+                        &lt;p class="text-black/60 text-sm mb-3"&gt;
+                            Unmatched service breadth and maturity. Lambda for event-driven compute. Kinesis for
+                            real-time data streams. DynamoDB for single-digit millisecond latency at any scale.
+                        &lt;/p&gt;
+                        &lt;div class="flex gap-2 flex-wrap"&gt;
+                            &lt;span class="text-xs border border-black bg-white px-2 py-1"&gt;Lambda&lt;/span&gt;
+                            &lt;span class="text-xs border border-black bg-white px-2 py-1"&gt;Kinesis&lt;/span&gt;
+                            &lt;span class="text-xs border border-black bg-white px-2 py-1"&gt;DynamoDB&lt;/span&gt;
+                            &lt;span class="text-xs border border-black bg-white px-2 py-1"&gt;ECS/EKS&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="border-l-4 border-black pl-6"&gt;
+                        &lt;h4 class="font-bold text-black mb-2"&gt;Microsoft Azure&lt;/h4&gt;
+                        &lt;p class="text-black/60 text-sm mb-3"&gt;
+                            Enterprise integration strength. Databricks for unified analytics. Azure Synapse for data
+                            warehousing at scale. Native Active Directory integration for governance.
+                        &lt;/p&gt;
+                        &lt;div class="flex gap-2 flex-wrap"&gt;
+                            &lt;span class="text-xs border border-black bg-white px-2 py-1"&gt;Databricks&lt;/span&gt;
+                            &lt;span class="text-xs border border-black bg-white px-2 py-1"&gt;Synapse&lt;/span&gt;
+                            &lt;span class="text-xs border border-black bg-white px-2 py-1"&gt;AKS&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;!-- Data Engineering --&gt;
+            &lt;div class="border-2 border-black p-10 bg-white"&gt;
+                &lt;h3 class="font-display text-2xl font-bold text-black mb-6"&gt;Data Engineering&lt;/h3&gt;
+
+                &lt;div class="grid md:grid-cols-2 gap-6"&gt;
+                    &lt;div class="border-l-4 border-accent pl-6"&gt;
+                        &lt;h4 class="font-bold text-black mb-2"&gt;Apache Spark&lt;/h4&gt;
+                        &lt;p class="text-black/60 text-sm"&gt;
+                            Proven for distributed data processing. Handles petabyte-scale transformations. Native
+                            support across cloud providers.
+                        &lt;/p&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="border-l-4 border-black pl-6"&gt;
+                        &lt;h4 class="font-bold text-black mb-2"&gt;Apache Airflow&lt;/h4&gt;
+                        &lt;p class="text-black/60 text-sm"&gt;
+                            Industry standard for workflow orchestration. Code-first approach. Rich plugin ecosystem for
+                            extensibility.
+                        &lt;/p&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="border-l-4 border-accent pl-6"&gt;
+                        &lt;h4 class="font-bold text-black mb-2"&gt;Kafka / Pub/Sub&lt;/h4&gt;
+                        &lt;p class="text-black/60 text-sm"&gt;
+                            Real-time streaming backbone. High-throughput, fault-tolerant message queues for
+                            event-driven architectures.
+                        &lt;/p&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="border-l-4 border-black pl-6"&gt;
+                        &lt;h4 class="font-bold text-black mb-2"&gt;dbt (Data Build Tool)&lt;/h4&gt;
+                        &lt;p class="text-black/60 text-sm"&gt;
+                            Analytics engineering standard. Version-controlled transformations. Automated testing and
+                            documentation.
+                        &lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;!-- DevOps &amp; Infrastructure --&gt;
+            &lt;div class="border-2 border-black p-10 bg-white"&gt;
+                &lt;h3 class="font-display text-2xl font-bold text-black mb-6"&gt;DevOps &amp; Infrastructure&lt;/h3&gt;
+
+                &lt;div class="grid md:grid-cols-2 gap-6"&gt;
+                    &lt;div class="border-l-4 border-black pl-6"&gt;
+                        &lt;h4 class="font-bold text-black mb-2"&gt;Docker &amp; Kubernetes&lt;/h4&gt;
+                        &lt;p class="text-black/60 text-sm"&gt;
+                            Container orchestration at scale. Reproducible environments. Resource efficiency and
+                            auto-scaling out of the box.
+                        &lt;/p&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="border-l-4 border-accent pl-6"&gt;
+                        &lt;h4 class="font-bold text-black mb-2"&gt;Terraform / OpenTofu&lt;/h4&gt;
+                        &lt;p class="text-black/60 text-sm"&gt;
+                            Infrastructure as Code. Multi-cloud compatibility. State management for reliable
+                            deployments.
+                        &lt;/p&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="border-l-4 border-black pl-6"&gt;
+                        &lt;h4 class="font-bold text-black mb-2"&gt;GitHub Actions&lt;/h4&gt;
+                        &lt;p class="text-black/60 text-sm"&gt;
+                            Native CI/CD integration. Minimal configuration. Fast feedback loops for continuous
+                            delivery.
+                        &lt;/p&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="border-l-4 border-accent pl-6"&gt;
+                        &lt;h4 class="font-bold text-black mb-2"&gt;Prometheus &amp; Grafana&lt;/h4&gt;
+                        &lt;p class="text-black/60 text-sm"&gt;
+                            Production observability. Metrics scraping and alerting. Visual dashboards for real-time
+                            monitoring.
+                        &lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;!-- AI &amp; Machine Learning --&gt;
+            &lt;div class="border-2 border-black p-10 bg-accent/10"&gt;
+                &lt;h3 class="font-display text-2xl font-bold text-black mb-6"&gt;AI &amp; Automation&lt;/h3&gt;
+
+                &lt;div class="space-y-6"&gt;
+                    &lt;div class="border-l-4 border-accent pl-6"&gt;
+                        &lt;h4 class="font-bold text-black mb-2"&gt;Google GenAI Agent Development Kit (ADK)&lt;/h4&gt;
+                        &lt;p class="text-black/60 text-sm"&gt;
+                            Purpose-built for production AI agents. Native integration with Gemini. Structured tool
+                            calling and state management.
+                        &lt;/p&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="border-l-4 border-black pl-6"&gt;
+                        &lt;h4 class="font-bold text-black mb-2"&gt;Model Context Protocol (MCP)&lt;/h4&gt;
+                        &lt;p class="text-black/60 text-sm"&gt;
+                            Standardized tool interface for AI systems. Decouples tools from models. Enables flexible,
+                            modular AI architectures.
+                        &lt;/p&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="border-l-4 border-accent pl-6"&gt;
+                        &lt;h4 class="font-bold text-black mb-2"&gt;Vector Databases (Pinecone, Milvus)&lt;/h4&gt;
+                        &lt;p class="text-black/60 text-sm"&gt;
+                            Semantic search at scale. Low-latency similarity queries. Foundation for intelligent
+                            document retrieval and knowledge search.
+                        &lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;!-- Backend --&gt;
+            &lt;div class="border-2 border-black p-10 bg-white"&gt;
+                &lt;h3 class="font-display text-2xl font-bold text-black mb-6"&gt;Backend &amp; API&lt;/h3&gt;
+
+                &lt;div class="grid md:grid-cols-2 gap-6"&gt;
+                    &lt;div class="border-l-4 border-black pl-6"&gt;
+                        &lt;h4 class="font-bold text-black mb-2"&gt;Python (FastAPI, Flask)&lt;/h4&gt;
+                        &lt;p class="text-black/60 text-sm"&gt;
+                            Rapid development velocity. Rich data science ecosystem. Async support for high-concurrency
+                            workloads.
+                        &lt;/p&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="border-l-4 border-accent pl-6"&gt;
+                        &lt;h4 class="font-bold text-black mb-2"&gt;Go&lt;/h4&gt;
+                        &lt;p class="text-black/60 text-sm"&gt;
+                            High-performance services. Low memory footprint. Compiled binaries for simple deployment.
+                        &lt;/p&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="border-l-4 border-black pl-6"&gt;
+                        &lt;h4 class="font-bold text-black mb-2"&gt;GraphQL&lt;/h4&gt;
+                        &lt;p class="text-black/60 text-sm"&gt;
+                            Client-driven data fetching. Eliminates over-fetching. Strong typing and introspection.
+                        &lt;/p&gt;
+                    &lt;/div&gt;
+
+                    &lt;div class="border-l-4 border-accent pl-6"&gt;
+                        &lt;h4 class="font-bold text-black mb-2"&gt;gRPC&lt;/h4&gt;
+                        &lt;p class="text-black/60 text-sm"&gt;
+                            High-performance RPC. Binary serialization. Bi-directional streaming for real-time
+                            communication.
+                        &lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- CTA --&gt;
+        &lt;div class="mt-16 border-2 border-black p-12 text-center bg-white"&gt;
+            &lt;h3 class="font-display text-2xl font-bold text-black mb-4"&gt;Need the Right Stack for Your Project?&lt;/h3&gt;
+            &lt;p class="text-black/60 mb-6 max-w-2xl mx-auto"&gt;
+                I help teams make pragmatic technology choices that align with business goals and scale requirements.
+            &lt;/p&gt;
+            &lt;a href="/contact"
+                class="inline-flex items-center justify-center text-sm font-semibold bg-black text-white hover:bg-accent hover:text-black transition-all h-12 px-8 border border-black"
+                data-analytics="cta-stack-page-consult"&gt;
+                Discuss Your Architecture →
+            &lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+{% endblock %}</div>
+    </div>
+    
+    <div class="separator"></div>
+
+
+    <div class="file-section" id="file-16">
+        <div class="file-header">
+            📄 work.html
+            <div class="file-path">work.html</div>
+        </div>
+        <div class="file-content">{% extends "base.html" %}
+
+{% block title %}Work | Pragith Prakash{% endblock %}
+
+{% block content %}
+&lt;section class="py-20 border-t border-black"&gt;
+    &lt;div class="max-w-6xl mx-auto px-6"&gt;
+        &lt;div class="mb-16"&gt;
+            &lt;h1 class="font-display text-5xl font-bold tracking-tight text-black mb-4"&gt;Selected Work&lt;/h1&gt;
+            &lt;div class="w-20 h-1 bg-accent mb-6"&gt;&lt;/div&gt;
+            &lt;p class="text-xl text-black/60 max-w-2xl"&gt;
+                Case studies in building scalable data platforms, real-time systems, and AI infrastructure.
+            &lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;div class="grid gap-8"&gt;
+            {% for work in works %}
+            &lt;div class="group relative border-2 border-black hover:border-accent transition-all"&gt;
+                &lt;div class="p-8 bg-white hover:bg-accent/5 transition-colors"&gt;
+                    &lt;div class="flex flex-col md:flex-row gap-6 md:gap-12 md:items-start"&gt;
+                        &lt;div class="flex-1"&gt;
+                            &lt;div
+                                class="flex items-center gap-3 text-xs font-bold uppercase tracking-wider text-black/40 mb-3"&gt;
+                                &lt;span&gt;{{ work.industry }}&lt;/span&gt;
+                                &lt;span&gt;•&lt;/span&gt;
+                                &lt;span&gt;{{ work.subtitle }}&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;h2 class="font-display text-2xl font-bold text-black mb-3"&gt;
+                                &lt;a href="/work/{{ work.slug }}" class="hover:text-accent transition-colors"&gt;
+                                    {{ work.title }}
+                                &lt;/a&gt;
+                            &lt;/h2&gt;
+                            &lt;p class="text-black/60 mb-6 leading-relaxed"&gt;
+                                {{ work.summary }}
+                            &lt;/p&gt;
+                            &lt;div class="flex flex-wrap gap-2"&gt;
+                                {% for tech in work.stack %}
+                                &lt;span
+                                    class="inline-flex items-center border border-black bg-white px-3 py-1 text-xs font-medium text-black"&gt;
+                                    {{ tech }}
+                                &lt;/span&gt;
+                                {% endfor %}
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class="shrink-0"&gt;
+                            &lt;a href="/work/{{ work.slug }}"
+                                class="inline-flex items-center justify-center w-12 h-12 border-2 border-black bg-white group-hover:bg-black group-hover:text-white transition-all"&gt;
+                                &lt;svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"&gt;
+                                    &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14 5l7 7m0 0l-7 7m7-7H3" /&gt;
+                                &lt;/svg&gt;
+                            &lt;/a&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            {% endfor %}
+        &lt;/div&gt;
+
+        &lt;!-- CTA: Work with Me --&gt;
+        &lt;div class="mt-20 border-2 border-black p-12 text-center bg-white"&gt;
+            &lt;h3 class="font-display text-2xl font-bold text-black mb-4"&gt;Like What You See?&lt;/h3&gt;
+            &lt;p class="text-black/60 mb-6 max-w-xl mx-auto"&gt;
+                I'm available for select consulting engagements and strategic advisory roles.
+            &lt;/p&gt;
+            &lt;a href="/contact"
+                class="inline-flex items-center justify-center text-sm font-semibold bg-black text-white hover:bg-accent hover:text-black transition-all h-12 px-8 border border-black"
+                data-analytics="cta-work-page-consult"&gt;
+                Explore Consulting →
+            &lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+{% endblock %}</div>
+    </div>
+    
+    <div class="separator"></div>
+
+
+    <div class="file-section" id="file-17">
+        <div class="file-header">
+            📄 work_detail.html
+            <div class="file-path">work_detail.html</div>
+        </div>
+        <div class="file-content">{% extends "base.html" %}
+
+{% block title %}{{ work.title }} | Pragith Prakash{% endblock %}
+
+{% block content %}
+&lt;article class="py-20"&gt;
+    &lt;div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"&gt;
+        &lt;header class="mb-16 border-b border-slate-100 pb-16"&gt;
+            &lt;div class="text-sm font-medium text-indigo-600 mb-4 uppercase tracking-wider"&gt;{{ work.industry }}&lt;/div&gt;
+            &lt;h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-slate-900 mb-6"&gt;
+                {{ work.title }}
+            &lt;/h1&gt;
+            &lt;p class="text-xl text-slate-600 max-w-3xl leading-relaxed"&gt;
+                {{ work.summary }}
+            &lt;/p&gt;
+
+            &lt;div class="mt-8 flex flex-wrap gap-2"&gt;
+                {% for tech in work.stack %}
+                &lt;span
+                    class="inline-flex items-center rounded-md bg-slate-100 px-2.5 py-0.5 text-sm font-medium text-slate-700"&gt;
+                    {{ tech }}
+                &lt;/span&gt;
+                {% endfor %}
+            &lt;/div&gt;
+        &lt;/header&gt;
+
+        &lt;div class="grid grid-cols-1 md:grid-cols-3 gap-12"&gt;
+            &lt;div class="md:col-span-2 space-y-12"&gt;
+                &lt;section&gt;
+                    &lt;h2 class="text-xl font-bold text-slate-900 mb-4"&gt;The Challenge&lt;/h2&gt;
+                    &lt;p class="text-slate-600 leading-relaxed"&gt;{{ work.challenge }}&lt;/p&gt;
+                &lt;/section&gt;
+
+                &lt;section&gt;
+                    &lt;h2 class="text-xl font-bold text-slate-900 mb-4"&gt;Architecture &amp; Solution&lt;/h2&gt;
+                    &lt;p class="text-slate-600 leading-relaxed"&gt;{{ work.solution }}&lt;/p&gt;
+                &lt;/section&gt;
+
+                &lt;section class="bg-indigo-50 rounded-2xl p-8 border border-indigo-100"&gt;
+                    &lt;h2 class="text-xl font-bold text-indigo-900 mb-4"&gt;Key Outcomes&lt;/h2&gt;
+                    &lt;p class="text-indigo-800 leading-relaxed font-medium"&gt;{{ work.outcome }}&lt;/p&gt;
+                &lt;/section&gt;
+            &lt;/div&gt;
+
+            &lt;div class="md:col-span-1 border-l border-slate-100 pl-8 md:pl-12"&gt;
+                &lt;h3 class="text-sm font-semibold text-slate-900 uppercase tracking-wider mb-6"&gt;Technicals&lt;/h3&gt;
+                &lt;dl class="space-y-8"&gt;
+                    &lt;div&gt;
+                        &lt;dt class="text-sm text-slate-500 mb-1"&gt;Role&lt;/dt&gt;
+                        &lt;dd class="font-medium text-slate-900"&gt;Principal Architect&lt;/dd&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;dt class="text-sm text-slate-500 mb-1"&gt;Focus&lt;/dt&gt;
+                        &lt;dd class="font-medium text-slate-900"&gt;{{ work.subtitle }}&lt;/dd&gt;
+                    &lt;/div&gt;
+                &lt;/dl&gt;
+
+                &lt;div class="mt-12 pt-12 border-t border-slate-100"&gt;
+                    &lt;a href="/work"
+                        class="text-sm font-medium text-slate-600 hover:text-indigo-600 flex items-center gap-2"&gt;
+                        &amp;larr; Back to all work
+                    &lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/article&gt;
+{% endblock %}</div>
+    </div>
+    
+    <div class="separator"></div>
+
+
+    <footer style="text-align: center; margin-top: 50px; padding: 20px; border-top: 2px solid #333;">
+        <p>End of Website Content Snapshot</p>
+        <p style="color: #666; font-size: 12px;">Generated by pragith.net helper script</p>
+    </footer>
+</body>
+</html>

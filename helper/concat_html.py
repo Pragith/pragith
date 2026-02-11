@@ -205,8 +205,8 @@ def concat_html_files(
 
 if __name__ == "__main__":
     # Configuration
-    TEMPLATES_DIR = Path(r"D:\Personal\pragith_2025\pragith-net\app\templates")
-    OUTPUT_DIR = Path(r"D:\Personal\pragith_2025\helper")
+    TEMPLATES_DIR = Path(r"../pragith-net/app/templates")
+    OUTPUT_DIR = Path(r"../helper")
     
     # Files to exclude (if any)
     EXCLUDE_PATTERNS = [
