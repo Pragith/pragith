@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}Consulting | Pragith Prakash{% endblock %}
+
+{% block content %}
+<section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 gap-16">
+            <div>
+                <h1 class="text-3xl font-bold tracking-tight text-slate-900 mb-6">Consulting Services</h1>
+                <p class="text-lg text-slate-600 mb-8">
+                    I offer strategic advisory and technical consulting for organizations dealing with complex data and
+                    AI challenges.
+                </p>
+
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="font-bold text-slate-900 mb-2">Architecture Review</h3>
+                        <p class="text-slate-600 text-sm">
+                            Deep dive into your current cloud architecture. Identification of bottlenecks, security
+                            risks, and cost optimization opportunities.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="font-bold text-slate-900 mb-2">AI Strategy & Roadmap</h3>
+                        <p class="text-slate-600 text-sm">
+                            Pragmatic assessment of where AI can drive value in your business. roadmap development from
+                            PoC to production.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="font-bold text-slate-900 mb-2">Data Platform Modernization</h3>
+                        <p class="text-slate-600 text-sm">
+                            Migration strategies from legacy on-prem systems to modern cloud lakehouses.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="font-bold text-slate-900 mb-2">CTO Advisory</h3>
+                        <p class="text-slate-600 text-sm">
+                            Technical leadership support for startup founders and non-technical executives.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-12 p-6 bg-slate-50 rounded-xl border border-slate-100">
+                    <div class="text-sm font-medium text-slate-500 uppercase tracking-wider mb-1">Standard Rate</div>
+                    <div class="text-3xl font-bold text-slate-900 mb-4">$X/hour</div>
+                    <p class="text-sm text-slate-600">
+                        Engagements typically start with a 1-hour discovery call to assess fit and scope.
+                    </p>
+                </div>
+            </div>
+
+            <div class="h-full min-h-[600px] border border-slate-100 rounded-xl overflow-hidden bg-slate-50">
+                <!-- Calendly inline widget begin -->
+                <div class="calendly-inline-widget" data-url="https://calendly.com/YOUR_LINK"
+                    style="min-width:320px;height:700px;"></div>
+                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"
+                    async></script>
+                <!-- Calendly inline widget end -->
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

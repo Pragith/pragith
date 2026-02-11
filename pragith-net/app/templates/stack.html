@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block title %}Tech Stack | Pragith Prakash{% endblock %}
+
+{% block content %}
+<section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-3xl font-bold tracking-tight text-slate-900 mb-12">Technology Stack</h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div class="bg-slate-50 rounded-xl p-6 border border-slate-100">
+                <h3 class="font-bold text-slate-900 mb-4">Cloud Infrastructure</h3>
+                <ul class="space-y-2 text-slate-600 text-sm">
+                    <li>Google Cloud Platform</li>
+                    <li>Amazon Web Services</li>
+                    <li>Microsoft Azure</li>
+                </ul>
+            </div>
+
+            <div class="bg-slate-50 rounded-xl p-6 border border-slate-100">
+                <h3 class="font-bold text-slate-900 mb-4">Data Engineering</h3>
+                <ul class="space-y-2 text-slate-600 text-sm">
+                    <li>Apache Spark</li>
+                    <li>Apache Airflow</li>
+                    <li>Kafka / PubSub</li>
+                    <li>dbt (Data Build Tool)</li>
+                    <li>BigQuery / Redshift / Snowflake</li>
+                </ul>
+            </div>
+
+            <div class="bg-slate-50 rounded-xl p-6 border border-slate-100">
+                <h3 class="font-bold text-slate-900 mb-4">Backend & API</h3>
+                <ul class="space-y-2 text-slate-600 text-sm">
+                    <li>Python (FastAPI, Flask)</li>
+                    <li>Node.js</li>
+                    <li>Go</li>
+                    <li>GraphQL</li>
+                    <li>gRPC</li>
+                </ul>
+            </div>
+
+            <div class="bg-slate-50 rounded-xl p-6 border border-slate-100">
+                <h3 class="font-bold text-slate-900 mb-4">DevOps & SRE</h3>
+                <ul class="space-y-2 text-slate-600 text-sm">
+                    <li>Docker & Kubernetes</li>
+                    <li>Terraform / OpenTofu</li>
+                    <li>GitHub Actions</li>
+                    <li>Ansible</li>
+                    <li>Prometheus & Grafana</li>
+                </ul>
+            </div>
+
+            <div class="bg-slate-50 rounded-xl p-6 border border-slate-100">
+                <h3 class="font-bold text-slate-900 mb-4">AI & Machine Learning</h3>
+                <ul class="space-y-2 text-slate-600 text-sm">
+                    <li>OpenAI API</li>
+                    <li>LangChain</li>
+                    <li>TensorFlow / PyTorch (Inference)</li>
+                    <li>Vector Databases (Pinecone, Milvus)</li>
+                </ul>
+            </div>
+
+            <div class="bg-slate-50 rounded-xl p-6 border border-slate-100">
+                <h3 class="font-bold text-slate-900 mb-4">Databases</h3>
+                <ul class="space-y-2 text-slate-600 text-sm">
+                    <li>PostgreSQL</li>
+                    <li>MongoDB</li>
+                    <li>Redis</li>
+                    <li>Elasticsearch</li>
+                    <li>DynamoDB</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</section>
+{% endblock %}

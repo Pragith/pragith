@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}Blog | Pragith Prakash{% endblock %}
+
+{% block content %}
+<section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-12">
+            <h1 class="text-3xl font-bold tracking-tight text-slate-900 mb-4">Engineering Log</h1>
+            <p class="text-lg text-slate-600">
+                Thoughts on systems engineering, AI architecture, and building for scale.
+            </p>
+        </div>
+
+        {% if tag %}
+        <div class="mb-8 flex items-center gap-2">
+            <span class="text-sm text-slate-500">Filtering by:</span>
+            <span
+                class="inline-flex items-center rounded-full bg-indigo-50 px-2 py-1 text-xs font-medium text-indigo-700 ring-1 ring-inset ring-indigo-700/10">
+                #{{ tag }}
+                <a href="/blog" class="ml-1 hover:text-indigo-900">&times;</a>
+            </span>
+        </div>
+        {% endif %}
+
+        <div class="space-y-12">
+            {% for post in posts %}
+            <article class="relative group">
+                <div class="flex flex-col sm:flex-row gap-4 sm:gap-8">
+                    <div class="sm:w-32 shrink-0">
+                        <time datetime="{{ post.date }}" class="text-sm text-slate-500 font-mono">{{ post.date }}</time>
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-semibold text-slate-900 group-hover:text-indigo-600 mb-2">
+                            <a href="/blog/{{ post.slug }}">
+                                <span class="absolute inset-0"></span>
+                                {{ post.title }}
+                            </a>
+                        </h2>
+                        <p class="text-slate-600 mb-4 line-clamp-3">
+                            {{ post.summary }}
+                        </p>
+                        <div class="flex flex-wrap gap-2 relative z-10">
+                            {% for t in post.tags %}
+                            <a href="/blog/tag/{{ t }}"
+                                class="inline-flex items-center rounded-md bg-slate-50 px-2 py-1 text-xs font-medium text-slate-600 ring-1 ring-inset ring-slate-500/10 hover:bg-slate-100 transition-colors">
+                                #{{ t }}
+                            </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </article>
+            {% else %}
+            <p class="text-slate-500 italic">No posts found.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

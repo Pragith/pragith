@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}Work | Pragith Prakash{% endblock %}
+
+{% block content %}
+<section class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-16">
+            <h1 class="text-3xl font-bold tracking-tight text-slate-900 mb-4">Selected Work</h1>
+            <p class="text-lg text-slate-600 max-w-2xl">
+                Case studies in building scalable data platforms, real-time systems, and AI infrastructure.
+            </p>
+        </div>
+
+        <div class="grid gap-12">
+            {% for work in works %}
+            <div class="group relative flex flex-col items-start">
+                <div
+                    class="w-full flex flex-col md:flex-row gap-6 md:gap-12 md:items-start p-6 rounded-2xl bg-slate-50 hover:bg-slate-100 transition-colors border border-slate-100">
+                    <div class="flex-1">
+                        <div
+                            class="flex items-center gap-3 text-xs font-medium text-slate-500 mb-3 uppercase tracking-wider">
+                            <span>{{ work.industry }}</span>
+                            <span>&bull;</span>
+                            <span>{{ work.subtitle }}</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-slate-900 mb-3">
+                            <a href="/work/{{ work.slug }}">
+                                <span class="absolute inset-0"></span>
+                                {{ work.title }}
+                            </a>
+                        </h2>
+                        <p class="text-slate-600 mb-6 leading-relaxed">
+                            {{ work.summary }}
+                        </p>
+                        <div class="flex flex-wrap gap-2 relative z-10">
+                            {% for tech in work.stack %}
+                            <span
+                                class="inline-flex items-center rounded-md bg-white px-2 py-1 text-xs font-medium text-slate-600 ring-1 ring-inset ring-slate-200">
+                                {{ tech }}
+                            </span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="shrink-0">
+                        <div
+                            class="flex items-center justify-center w-12 h-12 rounded-full bg-white border border-slate-200 text-slate-400 group-hover:text-indigo-600 group-hover:border-indigo-200 transition-colors">
+                            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

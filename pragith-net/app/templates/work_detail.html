@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}{{ work.title }} | Pragith Prakash{% endblock %}
+
+{% block content %}
+<article class="py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <header class="mb-16 border-b border-slate-100 pb-16">
+            <div class="text-sm font-medium text-indigo-600 mb-4 uppercase tracking-wider">{{ work.industry }}</div>
+            <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-slate-900 mb-6">
+                {{ work.title }}
+            </h1>
+            <p class="text-xl text-slate-600 max-w-3xl leading-relaxed">
+                {{ work.summary }}
+            </p>
+
+            <div class="mt-8 flex flex-wrap gap-2">
+                {% for tech in work.stack %}
+                <span
+                    class="inline-flex items-center rounded-md bg-slate-100 px-2.5 py-0.5 text-sm font-medium text-slate-700">
+                    {{ tech }}
+                </span>
+                {% endfor %}
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="md:col-span-2 space-y-12">
+                <section>
+                    <h2 class="text-xl font-bold text-slate-900 mb-4">The Challenge</h2>
+                    <p class="text-slate-600 leading-relaxed">{{ work.challenge }}</p>
+                </section>
+
+                <section>
+                    <h2 class="text-xl font-bold text-slate-900 mb-4">Architecture & Solution</h2>
+                    <p class="text-slate-600 leading-relaxed">{{ work.solution }}</p>
+                </section>
+
+                <section class="bg-indigo-50 rounded-2xl p-8 border border-indigo-100">
+                    <h2 class="text-xl font-bold text-indigo-900 mb-4">Key Outcomes</h2>
+                    <p class="text-indigo-800 leading-relaxed font-medium">{{ work.outcome }}</p>
+                </section>
+            </div>
+
+            <div class="md:col-span-1 border-l border-slate-100 pl-8 md:pl-12">
+                <h3 class="text-sm font-semibold text-slate-900 uppercase tracking-wider mb-6">Technicals</h3>
+                <dl class="space-y-8">
+                    <div>
+                        <dt class="text-sm text-slate-500 mb-1">Role</dt>
+                        <dd class="font-medium text-slate-900">Principal Architect</dd>
+                    </div>
+                    <div>
+                        <dt class="text-sm text-slate-500 mb-1">Focus</dt>
+                        <dd class="font-medium text-slate-900">{{ work.subtitle }}</dd>
+                    </div>
+                </dl>
+
+                <div class="mt-12 pt-12 border-t border-slate-100">
+                    <a href="/work"
+                        class="text-sm font-medium text-slate-600 hover:text-indigo-600 flex items-center gap-2">
+                        &larr; Back to all work
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+{% endblock %}

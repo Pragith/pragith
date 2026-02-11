@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" class="antialiased text-slate-900 bg-white">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Pragith Prakash | Principal AI & Data Engineer{% endblock %}</title>
+    <meta name="description" content="{% block description %}Principal AI & Data Engineer specializing in enterprise platforms, multi-cloud architecture, and AI-augmented execution.{% endblock %}">
+    <link href="/static/css/style.min.css" rel="stylesheet">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body class="flex flex-col min-h-screen font-sans selection:bg-indigo-100 selection:text-indigo-900">
+
+    <!-- Header -->
+    <header class="w-full border-b border-slate-100 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="/" class="text-lg font-bold tracking-tight text-slate-900 hover:text-indigo-600 transition-colors">
+                pragith<span class="text-indigo-600">.net</span>
+            </a>
+            
+            <nav class="hidden md:flex gap-6 text-sm font-medium text-slate-600">
+                <a href="/work" class="hover:text-indigo-600 transition-colors">Work</a>
+                <a href="/agents" class="hover:text-indigo-600 transition-colors">Agents</a>
+                <a href="/build" class="hover:text-indigo-600 transition-colors">Build</a>
+                <a href="/stack" class="hover:text-indigo-600 transition-colors">Stack</a>
+                <a href="/blog" class="hover:text-indigo-600 transition-colors">Blog</a>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="/consult" class="hidden md:inline-flex text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">Consulting</a>
+                <a href="/contact" class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none bg-slate-900 text-white hover:bg-slate-800 h-9 px-4 py-2">
+                    Contact
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-100 bg-slate-50 mt-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-sm font-semibold text-slate-900 tracking-wider uppercase mb-4">Site</h3>
+                    <ul class="space-y-3 text-sm text-slate-600">
+                        <li><a href="/" class="hover:text-indigo-600">Home</a></li>
+                        <li><a href="/work" class="hover:text-indigo-600">Work</a></li>
+                        <li><a href="/blog" class="hover:text-indigo-600">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-slate-900 tracking-wider uppercase mb-4">Services</h3>
+                    <ul class="space-y-3 text-sm text-slate-600">
+                        <li><a href="/consult" class="hover:text-indigo-600">Advisory</a></li>
+                        <li><a href="/agents" class="hover:text-indigo-600">AI Teams</a></li>
+                        <li><a href="/build" class="hover:text-indigo-600">Build</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-slate-900 tracking-wider uppercase mb-4">Legal</h3>
+                    <ul class="space-y-3 text-sm text-slate-600">
+                        <li><a href="/legal" class="hover:text-indigo-600">Terms</a></li>
+                        <li><a href="/privacy" class="hover:text-indigo-600">Privacy</a></li>
+                        <li><a href="/faq" class="hover:text-indigo-600">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-slate-900 tracking-wider uppercase mb-4">Connect</h3>
+                    <ul class="space-y-3 text-sm text-slate-600">
+                        <li><a href="https://linkedin.com/in/pragith" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-600">LinkedIn</a></li>
+                        <li><a href="https://github.com/pragith" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-600">GitHub</a></li>
+                        <li><a href="/contact" class="hover:text-indigo-600">Email</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-sm text-slate-500">&copy; {{ now().year }} Pragith Prakash. All rights reserved.</p>
+                <p class="text-sm text-slate-400">Principal Data & AI Engineer</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
