@@ -52,20 +52,44 @@
                 </div>
 
                 <!-- Rate Card -->
-                <div class="border-2 border-black p-8 bg-white mt-8">
+                <div class="border-2 border-black p-8 bg-white">
                     <div class="text-xs font-bold uppercase tracking-widest text-black/40 mb-2">Standard Rate</div>
                     <div class="text-5xl font-bold text-black mb-2">
-                        {{ currency_symbol }}{{ hourly_rate }}<span
+                        {{ currency_symbol }}{{ "%.0f"|format(hourly_rate) }}<span
                             class="text-2xl font-semibold text-black/60">/hr</span>
                     </div>
                     {% if currency_code != 'USD' %}
-                    <div class="text-xs text-black/40 mb-6">~${{ base_rate_usd }} USD</div>
+                    <div class="text-xs text-black/40 mb-4">~${{ "%.0f"|format(base_rate_usd) }} USD</div>
                     {% else %}
-                    <div class="mb-6"></div>
+                    <div class="mb-4"></div>
                     {% endif %}
-                    <p class="text-black/60 text-sm">
-                        Engagements typically start with a 1-hour discovery call to assess fit and scope.
-                    </p>
+
+                    <!-- Engagement Funnel -->
+                    <div class="space-y-3 mb-6">
+                        <div class="flex items-start gap-3 text-sm text-black/70">
+                            <span
+                                class="w-6 h-6 border border-black bg-accent/20 flex items-center justify-center flex-shrink-0 text-xs font-bold">1</span>
+                            <span>15-min intro call (free) to assess fit</span>
+                        </div>
+                        <div class="flex items-start gap-3 text-sm text-black/70">
+                            <span
+                                class="w-6 h-6 border border-black bg-accent/20 flex items-center justify-center flex-shrink-0 text-xs font-bold">2</span>
+                            <span>1-hour paid architecture review</span>
+                        </div>
+                        <div class="flex items-start gap-3 text-sm text-black/70">
+                            <span
+                                class="w-6 h-6 border border-black bg-accent/20 flex items-center justify-center flex-shrink-0 text-xs font-bold">3</span>
+                            <span>Fixed-scope proposal with milestones</span>
+                        </div>
+                    </div>
+
+                    {% if calendly_url %}
+                    <a href="{{ calendly_url }}" target="_blank" rel="noopener"
+                        class="inline-flex items-center justify-center text-sm font-semibold bg-accent text-black hover:bg-black hover:text-white transition-all h-12 px-8 border border-black w-full"
+                        data-analytics="cta-contact-calendly">
+                        Book Intro Call →
+                    </a>
+                    {% endif %}
                 </div>
 
                 <!-- Engagement Types -->
@@ -137,13 +161,23 @@
                             class="block w-full border-2 border-black px-4 py-3 text-black focus:outline-none focus:border-accent">{{ form.message if form else '' }}</textarea>
                     </div>
 
-                    <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY_HERE"></div>
+                    <!-- Honeypot anti-spam -->
+                    <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+
+                    {% if recaptcha_site_key %}
+                    <div class="g-recaptcha" data-sitekey="{{ recaptcha_site_key }}"></div>
+                    {% endif %}
 
                     <button type="submit"
                         class="w-full inline-flex items-center justify-center text-sm font-semibold bg-black text-white hover:bg-accent hover:text-black transition-all h-12 px-8 border border-black"
                         data-analytics="cta-contact-form-submit">
                         Send Message →
                     </button>
+
+                    <p class="text-xs text-black/40 text-center leading-relaxed">
+                        Your message is securely delivered via encrypted email. I typically respond within 24–48
+                        hours.
+                    </p>
                 </form>
             </div>
         </div>

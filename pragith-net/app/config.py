@@ -18,12 +18,14 @@ class Settings(BaseSettings):
     
     # reCAPTCHA
     RECAPTCHA_SECRET_KEY: str = os.getenv("RECAPTCHA_SECRET_KEY", "")
+    RECAPTCHA_SITE_KEY: str = os.getenv("RECAPTCHA_SITE_KEY", "")
     
     # Analytics
     GA_TAG: str = os.getenv("GA_TAG", "")
     
     # Consulting
     HOURLY_RATE: float = float(os.getenv("HOURLY_RATE", "95.0"))
+    CALENDLY_URL: str = os.getenv("CALENDLY_URL", "")
     
     class Config:
         case_sensitive = True

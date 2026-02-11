@@ -8,6 +8,21 @@
     <meta name="description"
         content="{% block description %}Principal AI & Data Engineer specializing in enterprise platforms, multi-cloud architecture, and AI-assisted delivery.{% endblock %}">
 
+    <!-- OpenGraph -->
+    <meta property="og:title"
+        content="{% block og_title %}Pragith Prakash | Enterprise AI & Cloud Platform Architect{% endblock %}">
+    <meta property="og:description"
+        content="{% block og_description %}Enterprise AI & Cloud Platform Architect specializing in multi-cloud architecture, data platforms, and production AI systems.{% endblock %}">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Pragith Prakash">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Pragith Prakash | Enterprise AI & Cloud Platform Architect">
+    <meta name="twitter:description"
+        content="Enterprise AI & Cloud Platform Architect specializing in multi-cloud architecture, data platforms, and production AI systems.">
+
     <!-- Optimized Tailwind CSS -->
     <link rel="stylesheet" href="/static/css/style.min.css">
 
@@ -36,6 +51,29 @@
         gtag('config', '{{ ga_tag }}');
     </script>
     {% endif %}
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Pragith Prakash",
+        "description": "Enterprise AI & Cloud Platform Architect specializing in multi-cloud architecture, data platforms, and production AI systems.",
+        "url": "https://pragith.net",
+        "founder": {
+            "@type": "Person",
+            "name": "Pragith Prakash",
+            "jobTitle": "Enterprise AI & Cloud Platform Architect",
+            "url": "https://pragith.net",
+            "sameAs": [
+                "https://linkedin.com/in/pragith",
+                "https://github.com/pragith"
+            ]
+        },
+        "serviceType": ["Cloud Architecture", "AI Strategy", "Data Platform Engineering", "Technical Advisory"],
+        "areaServed": ["United Arab Emirates", "North America"]
+    }
+    </script>
 </head>
 
 <body class="flex flex-col min-h-screen bg-white text-black font-sans selection:bg-accent selection:text-black">

@@ -88,7 +88,6 @@ async def stack(request: Request):
     return templates.TemplateResponse("stack.html", {"request": request})
 
 
-
 @app.get("/blog", response_class=HTMLResponse)
 async def blog_list(request: Request):
     posts = blog_service.get_all()
@@ -110,10 +109,7 @@ async def blog_detail(request: Request, slug: str):
 async def contact(request: Request):
     from app.services.currency import convert_rate
     
-    # Get client IP
     client_ip = request.client.host if request.client else "127.0.0.1"
-    
-    # Convert rate to user's currency
     converted_rate, currency_code, currency_symbol = await convert_rate(
         settings.HOURLY_RATE,
         client_ip
@@ -126,7 +122,8 @@ async def contact(request: Request):
         "currency_code": currency_code,
         "currency_symbol": currency_symbol,
         "base_rate_usd": settings.HOURLY_RATE,
-        "site_key": "TODO-PUBLIC-KEY-ENV"
+        "recaptcha_site_key": settings.RECAPTCHA_SITE_KEY,
+        "calendly_url": settings.CALENDLY_URL,
     })
 
 
@@ -136,25 +133,24 @@ async def contact_submit(
     request: Request,
     name: str = Form(...),
     email: str = Form(...),
-    company: str = Form(...),
+    company: str = Form(""),
     message: str = Form(...),
-    recaptcha_response: str = Form(alias="g-recaptcha-response")
+    website: str = Form(""),
+    recaptcha_response: str = Form(alias="g-recaptcha-response", default="")
 ):
-    # Verify captcha
-    # In dev, we might skip if key is missing, handled in service.
-    if not mailer_service.verify_recaptcha(recaptcha_response):
+    # Honeypot check — bots fill hidden fields
+    if website:
+        return RedirectResponse("/contact", status_code=303)
+    
+    # Verify captcha (skip if no key configured)
+    if settings.RECAPTCHA_SECRET_KEY and not mailer_service.verify_recaptcha(recaptcha_response):
         return templates.TemplateResponse("contact.html", {
             "request": request, 
             "error": "reCAPTCHA verification failed. Please try again.",
-            "form": {"name": name, "email": email, "company": company, "message": message}
+            "form": {"name": name, "email": email, "company": company, "message": message},
+            "recaptcha_site_key": settings.RECAPTCHA_SITE_KEY,
         })
 
-    # Send email
-    success = mailer_service.send_contact_email(name, email, company, message) 
-    # mailer_service.send_contact_error(name, email, company, message) - Check signature in mailer.py
-    # Signature: send_contact_email(name, email, company, message)
-    
-    # Correct call:
     success = mailer_service.send_contact_email(name, email, company, message)
 
     if success:
@@ -163,7 +159,8 @@ async def contact_submit(
         return templates.TemplateResponse("contact.html", {
             "request": request, 
             "error": "Failed to send message. Please try again later.",
-            "form": {"name": name, "email": email, "company": company, "message": message}
+            "form": {"name": name, "email": email, "company": company, "message": message},
+            "recaptcha_site_key": settings.RECAPTCHA_SITE_KEY,
         })
 
 @app.get("/faq", response_class=HTMLResponse)
