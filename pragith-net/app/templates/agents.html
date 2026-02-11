@@ -57,6 +57,43 @@
             </div>
         </div>
 
+        <!-- Section 1: Deployment Lifecycle Animation -->
+        <div class="mb-32">
+            <h2 class="font-display text-2xl font-bold text-ink mb-12 text-center">Lifecycle of an Intelligent System
+            </h2>
+
+            <!-- Desktop Horizontal Flow -->
+            <div class="options-bar hidden md:flex justify-between items-center relative">
+                <!-- Connecting Line -->
+                <div class="absolute top-1/2 left-0 w-full h-0.5 bg-line/20 -z-10"></div>
+
+                {% for step in [
+                {"label": "Prototype", "sub": "FastAPI Logic"},
+                {"label": "Evaluation", "sub": "Vertex AI Eval"},
+                {"label": "Infrastructure", "sub": "Terraform / IaC"},
+                {"label": "CI/CD", "sub": "GitHub Actions"},
+                {"label": "Observability", "sub": "Cloud Logging"},
+                {"label": "Production", "sub": "Hardened Scale"}
+                ] %}
+                <div class="lifecycle-node opacity-0 translate-y-4 transition-all duration-500 ease-out bg-page border border-line/30 px-4 py-3 text-center min-w-[140px]"
+                    style="transition-delay: {{ loop.index * 100 }}ms">
+                    <div class="text-sm font-bold text-ink uppercase tracking-wider mb-1">{{ step.label }}</div>
+                    <div class="text-xs text-ink/50">{{ step.sub }}</div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Mobile Vertical Flow -->
+            <div class="md:hidden space-y-4 pl-8 border-l border-line/20">
+                {% for step in ["Prototype", "Evaluation", "Infrastructure", "CI/CD", "Observability", "Production"] %}
+                <div
+                    class="lifecycle-node opacity-0 translate-x-4 transition-all duration-500 ease-out text-sm font-bold text-ink">
+                    <span class="text-accent mr-2">→</span> {{ step }}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
         <!-- Agent Capabilities -->
         <div class="mb-20">
             <h2 class="font-display text-3xl font-bold text-ink mb-4 text-center">AI-Assisted Capabilities</h2>
@@ -67,23 +104,25 @@
                 {"num": "01", "name": "Engineering Agent",
                 "does": "Writes boilerplate code, generates tests, handles refactoring, and maintains documentation.",
                 "why": "You get fully-tested, well-documented code without the manual grunt work.",
-                "items": ["Automated test coverage for all new features", "Minimized technical debt from documentation
+                "benefits": ["Automated test coverage for all new features", "Minimized technical debt from
+                documentation
                 gaps", "Accelerated migration timelines"]},
                 {"num": "02", "name": "Data Agent",
                 "does": "Monitors data quality, validates schemas, detects anomalies, and profiles datasets
                 automatically.",
                 "why": "Bad data kills projects. This agent catches issues before they reach production.",
-                "items": ["Real-time data quality monitoring", "Automated anomaly detection and alerts", "Schema
+                "benefits": ["Real-time data quality monitoring", "Automated anomaly detection and alerts", "Schema
                 evolution tracking and validation"]},
                 {"num": "03", "name": "Infrastructure Agent",
                 "does": "Generates Infrastructure as Code, validates security policies, and optimizes cloud costs.",
                 "why": "Your infrastructure follows best practices from day one, saving time and money.",
-                "items": ["Security compliance built-in, not bolted-on", "Cost optimization recommendations in
+                "benefits": ["Security compliance built-in, not bolted-on", "Cost optimization recommendations in
                 real-time", "Terraform/CloudFormation generated & validated"]},
                 {"num": "04", "name": "Product Agent",
                 "does": "Parses requirements, maps user journeys, and rapidly prototypes UI/UX concepts.",
                 "why": "Go from idea to validated prototype in days, not months.",
-                "items": ["Functional prototypes ready for user testing", "User journey maps from requirements", "Faster
+                "benefits": ["Functional prototypes ready for user testing", "User journey maps from requirements",
+                "Faster
                 iteration on product-market fit"]}
                 ] %}
 
@@ -103,7 +142,7 @@
                         <strong class="text-ink">Why it matters:</strong> {{ agent.why }}
                     </p>
                     <ul class="space-y-2 text-sm text-ink/70">
-                        {% for item in agent.items %}
+                        {% for item in agent.benefits %}
                         <li class="flex items-start gap-2">
                             <span class="text-accent mt-1">✓</span>
                             <span>{{ item }}</span>
@@ -115,82 +154,114 @@
             </div>
         </div>
 
+        <!-- Section 4: Why Most AI Projects Fail -->
+        <div class="mb-32 bg-black text-white p-12 border border-line/20 relative overflow-hidden">
+            <h2 class="font-display text-3xl font-bold mb-8 relative z-10">Why Most AI Projects Fail in Production</h2>
+            <div class="grid md:grid-cols-2 gap-12 relative z-10">
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3 opacity-60">
+                        <span class="text-red-500 min-w-[24px]">✕</span><span>No infrastructure automation</span>
+                    </div>
+                    <div class="flex items-center gap-3 opacity-60">
+                        <span class="text-red-500 min-w-[24px]">✕</span><span>No CI/CD for prompt engineering</span>
+                    </div>
+                    <div class="flex items-center gap-3 opacity-60">
+                        <span class="text-red-500 min-w-[24px]">✕</span><span>No rollback strategy</span>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3 opacity-60">
+                        <span class="text-red-500 min-w-[24px]">✕</span><span>No observability or tracing</span>
+                    </div>
+                    <div class="flex items-center gap-3 opacity-60">
+                        <span class="text-red-500 min-w-[24px]">✕</span><span>No cost governance models</span>
+                    </div>
+                    <p class="text-accent/90 mt-6 font-medium text-lg pt-4 border-t border-white/10">
+                        My approach embeds production discipline from day one.
+                    </p>
+                </div>
+            </div>
+            <!-- Subtle Grid Background -->
+            <div class="absolute inset-0 opacity-10"
+                style="background-image: linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px); background-size: 20px 20px;">
+            </div>
+        </div>
+
         <!-- Tech Stack -->
-        <div class="mb-20 border-2 border-line/30 p-10 bg-accent/5">
-            <h3 class="font-display text-2xl font-bold text-ink mb-4 text-center">Built On</h3>
-            <div class="flex flex-wrap justify-center gap-3 text-sm">
-                {% for tech in ["Google Cloud AI", "Google ADK", "OpenAI Platform", "Anthropic", "Vertex AI", "Model
+        <div class="mb-32 border-y border-line/20 py-12">
+            <h3 class="font-display text-sm font-bold text-ink/40 uppercase tracking-widest mb-8 text-center">Powering
+                The Stack</h3>
+            <div
+                class="flex flex-wrap justify-center gap-6 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+                {% for tech in ["Google Cloud AI", "Vertex AI", "OpenAI Platform", "Anthropic", "Terraform", "Model
                 Context Protocol"] %}
-                <span class="border border-line/30 bg-surface px-3 py-2 font-medium text-ink">{{ tech }}</span>
+                <span class="border border-line/30 bg-surface px-4 py-2 text-sm font-medium text-ink">{{ tech }}</span>
                 {% endfor %}
             </div>
-            <p class="text-center text-ink/60 text-sm mt-6 max-w-2xl mx-auto">
-                Multi-model architecture using commercial AI platforms, selected per task for reliability and quality.
-            </p>
         </div>
 
-        <!-- Concrete Workflow Example -->
-        <div class="mb-20">
-            <h3 class="font-display text-2xl font-bold text-ink mb-4 text-center">Example: Terraform Module Generation
-            </h3>
-            <div class="w-16 h-1 bg-accent mx-auto mb-10"></div>
-
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="border-2 border-line/30 p-6 bg-surface">
-                    <div class="text-xs font-bold uppercase tracking-widest text-ink/40 mb-3">Input</div>
-                    <div class="bg-black text-white p-4 font-mono text-xs leading-relaxed">
-                        <span class="text-accent">prompt:</span> "Create a GCS bucket<br>
-                        with versioning, lifecycle<br>
-                        rules (90d archive, 365d<br>
-                        delete), and IAM bindings<br>
-                        for the data-eng team."
-                    </div>
-                </div>
-
-                <div class="border-2 border-accent p-6 bg-accent/5">
-                    <div class="text-xs font-bold uppercase tracking-widest text-ink/40 mb-3">AI-Generated Output</div>
-                    <div class="bg-black text-white p-4 font-mono text-xs leading-relaxed">
-                        <span class="text-accent">resource</span> "google_storage_bucket" {<br>
-                        &nbsp;&nbsp;name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= var.bucket_name<br>
-                        &nbsp;&nbsp;location = var.region<br>
-                        &nbsp;&nbsp;versioning { enabled = true }<br>
-                        &nbsp;&nbsp;lifecycle_rule {<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;action { type = "SetStorageClass"<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;storage_class = "ARCHIVE" }<br>
-                        &nbsp;&nbsp;&nbsp;&nbsp;condition { age = 90 }<br>
-                        &nbsp;&nbsp;}<br>
-                        &nbsp;&nbsp;<span class="text-accent">// + IAM, deletion rule...</span><br>
-                        }
-                    </div>
-                </div>
-
-                <div class="border-2 border-line/30 p-6 bg-surface">
-                    <div class="text-xs font-bold uppercase tracking-widest text-ink/40 mb-3">Human Review</div>
-                    <div class="space-y-3 text-sm text-ink/70">
-                        <div class="flex items-start gap-2">
-                            <span class="text-accent mt-0.5">✓</span>
-                            <span>Validate IAM bindings against org policy</span>
-                        </div>
-                        <div class="flex items-start gap-2">
-                            <span class="text-accent mt-0.5">✓</span>
-                            <span>Review lifecycle cost implications</span>
-                        </div>
-                        <div class="flex items-start gap-2">
-                            <span class="text-accent mt-0.5">✓</span>
-                            <span>Run <code class="bg-ink/5 px-1 text-xs font-mono">terraform plan</code></span>
-                        </div>
-                        <div class="flex items-start gap-2">
-                            <span class="text-accent mt-0.5">→</span>
-                            <span class="font-semibold text-ink">Ship to production</span>
-                        </div>
-                    </div>
-                </div>
+        <!-- Section 3: Production-Grade GenAI Delivery -->
+        <div class="mb-32 text-center max-w-3xl mx-auto">
+            <h2 class="font-display text-4xl font-bold text-ink mb-6">Production-Grade GenAI Delivery</h2>
+            <p class="text-xl text-ink/60 leading-relaxed mb-8">
+                I build and deploy production-ready AI agents using structured infrastructure templates.
+            </p>
+            <div class="inline-block text-sm font-medium text-ink/40 border border-line/30 px-4 py-2 bg-accent/5">
+                Powered by Google’s Agent Starter Pack and custom extensions.
             </div>
 
-            <p class="text-center text-ink/50 text-sm mt-6">
-                Every AI-generated artifact goes through human review before deployment. No exceptions.
-            </p>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-12 text-sm text-ink/70">
+                <div class="p-4 border border-line/20 bg-surface">Infrastructure as Code</div>
+                <div class="p-4 border border-line/20 bg-surface">CI/CD Automation</div>
+                <div class="p-4 border border-line/20 bg-surface">Structured Observability</div>
+                <div class="p-4 border border-line/20 bg-surface">Secure IAM Config</div>
+                <div class="p-4 border border-line/20 bg-surface">Scalable Cloud Run</div>
+                <div class="p-4 border border-line/20 bg-surface">Vertex AI Integration</div>
+            </div>
         </div>
+
+        <!-- Section 2: AI Agent Workflow Animation -->
+        <div class="mb-20">
+            <h3 class="font-display text-2xl font-bold text-ink mb-12 text-center">Human-Led, AI-Amplified Workflow</h3>
+
+            <div class="grid md:grid-cols-4 gap-6" id="workflow-steps">
+                <!-- Step 1 -->
+                <div class="workflow-step border-2 border-line/20 p-6 bg-surface relative transition-all duration-300">
+                    <div class="text-xs font-bold uppercase tracking-widest text-ink/40 mb-3">Client Requirement</div>
+                    <p class="text-sm text-ink/70 leading-relaxed">
+                        A raw requirements document is converted into a structured architecture brief, defining
+                        constraints and success metrics.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="workflow-step border-2 border-line/20 p-6 bg-surface relative transition-all duration-300">
+                    <div class="text-xs font-bold uppercase tracking-widest text-ink/40 mb-3">Agent Draft</div>
+                    <p class="text-sm text-ink/70 leading-relaxed">
+                        Infrastructure modules, data schemas, and agent logic generated by specialized AI agents.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="workflow-step border-2 border-line/20 p-6 bg-surface relative transition-all duration-300">
+                    <div class="text-xs font-bold uppercase tracking-widest text-ink/40 mb-3">Human Review</div>
+                    <p class="text-sm text-ink/70 leading-relaxed">
+                        Architecture validation, security hardening, cost optimization, and logic verification.
+                    </p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="workflow-step border-2 border-line/20 p-6 bg-surface relative transition-all duration-300">
+                    <div class="text-xs font-bold uppercase tracking-widest text-ink/40 mb-3">Production Deployment
+                    </div>
+                    <p class="text-sm text-ink/70 leading-relaxed">
+                        CI/CD-driven release with structured logging, monitoring, and automated rollback controls.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
 
         <!-- CTA Section -->
         <div class="border-2 border-line/30 p-12 bg-surface text-center">
@@ -213,4 +284,31 @@
         </div>
     </div>
 </section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.remove('opacity-0', 'translate-y-4', 'translate-x-4');
+                    if (entry.target.classList.contains('workflow-step')) {
+                        entry.target.classList.add('border-accent');
+                        entry.target.classList.remove('border-line/20');
+                    }
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.lifecycle-node, .agent-card, .workflow-step').forEach(el => {
+            if (el.classList.contains('workflow-step')) {
+                // Add initial animation state and stagger
+                el.classList.add('opacity-0', 'translate-y-4');
+                const idx = Array.from(el.parentNode.children).indexOf(el);
+                el.style.transitionDelay = `${idx * 200}ms`;
+            }
+            observer.observe(el);
+        });
+    });
+</script>
 {% endblock %}

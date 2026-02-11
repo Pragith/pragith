@@ -1,0 +1,10 @@
+{
+    "name": "Dubai",
+    "description": "A bold, desert-inspired theme with sand, charcoal, and teal tones.",
+    "fonts": {
+        "google_fonts_url": "https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono&display=swap",
+        "display": "Playfair Display, serif",
+        "body": "Outfit, sans-serif",
+        "mono": "JetBrains Mono, monospace"
+    }
+}

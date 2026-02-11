@@ -5,12 +5,12 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['DM Sans', 'Inter', 'sans-serif'],
-        mono: ['JetBrains Mono', 'monospace'],
+        sans: ['var(--font-body)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        display: ['var(--font-display)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-mono)', 'ui-monospace', 'SFMono-Regular', 'monospace'],
       },
       colors: {
-        accent: '#E8590C',
+        accent: 'rgb(var(--color-accent) / <alpha-value>)',
         // Semantic colors that auto-switch via CSS variables
         ink: 'rgb(var(--color-ink) / <alpha-value>)',
         page: 'rgb(var(--color-page) / <alpha-value>)',

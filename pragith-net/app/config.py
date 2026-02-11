@@ -8,6 +8,9 @@ class Settings(BaseSettings):
     SECRET_KEY: str = os.getenv("SECRET_KEY", "change-me-in-production")
     ALLOWED_HOSTS: list[str] = ["localhost", "127.0.0.1", "pragith.net"]
     
+    # Theme
+    THEME: str = os.getenv("THEME", "default")
+    
     # Email / SMTP
     SMTP_HOST: str = os.getenv("SMTP_HOST", "smtp.gmail.com")
     SMTP_PORT: int = int(os.getenv("SMTP_PORT", "587"))

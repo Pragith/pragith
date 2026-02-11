@@ -43,17 +43,50 @@
     <!-- Optimized Tailwind CSS -->
     <link rel="stylesheet" href="/static/css/style.min.css">
 
+    <!-- Theme Variables & Font Mappings -->
+    <style>
+        /* Inject Theme Variables */
+            {
+                {
+                theme.css|safe
+            }
+        }
+
+        /* Map Theme Fonts to Tailwind Variables */
+        :root {
+            --font-display: {
+                    {
+                    theme.font_display|safe
+                }
+            }
+
+            ;
+
+            --font-body: {
+                    {
+                    theme.font_body|safe
+                }
+            }
+
+            ;
+
+            --font-mono: {
+                    {
+                    theme.font_mono|safe
+                }
+            }
+
+            ;
+        }
+    </style>
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
 
     <!-- Preload critical fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style"
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap">
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="{{ theme.fonts_url|safe }}">
 
     <!-- reCAPTCHA -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
@@ -88,7 +121,7 @@
             "name": "Enterprise AI & Data Platform Architect",
             "occupationLocation": {
                 "@type": "Country",
-                "name": "United Arab Emirates"
+                "name": "North America"
             }
         }
     }
@@ -203,8 +236,8 @@
             </div>
             <div
                 class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/40">
-                <p>&copy; {{ now().year }} Pragith Prakash · Vriksh Consulting Services Inc.</p>
-                <p>Remote-first · Serving North America & UAE</p>
+                <p>&copy; {{ now().year }} Pragith Prakash · <strong>Vriksh Consulting Services Inc.</strong></p>
+                <p>Remote-first · Serving North America & Global Clients</p>
             </div>
         </div>
     </footer>

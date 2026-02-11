@@ -56,6 +56,11 @@ templates = Jinja2Templates(directory=str(_APP_DIR / "templates"))
 from datetime import datetime
 templates.env.globals["now"] = datetime.now
 
+# Initialize Theme Service
+from app.themes import ThemeService
+theme_service = ThemeService(settings.THEME)
+templates.env.globals["theme"] = theme_service
+
 # Context Processor for common variables
 @app.middleware("http")
 async def add_context(request: Request, call_next):

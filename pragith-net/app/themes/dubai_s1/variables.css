@@ -1,0 +1,31 @@
+:root {
+    /* 
+   * Dubai S1 - Light Mode 
+   */
+    --color-ink: 3 60 137;
+    /* #033c89 - Dark Blue */
+    --color-page: 252 237 200;
+    /* #fcedc8 - Light Sand */
+    --color-surface: 255 255 255;
+    /* Clean White */
+    --color-line: 148 38 69;
+    /* #942645 - Dark Red (Borders) */
+    --color-accent: 242 145 17;
+    /* #f29111 - Vibrant Orange */
+}
+
+.dark {
+    /* 
+   * Dubai S1 - Dark Mode 
+   */
+    --color-ink: 252 237 200;
+    /* #fcedc8 - Light Sand */
+    --color-page: 3 60 137;
+    /* #033c89 - Dark Blue */
+    --color-surface: 148 38 69;
+    /* #942645 - Dark Red Surface */
+    --color-line: 19 182 207;
+    /* #13b6cf - Cyan Lines */
+    --color-accent: 19 182 207;
+    /* #13b6cf - Cyan Accent */
+}

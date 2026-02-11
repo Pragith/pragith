@@ -1,0 +1,31 @@
+:root {
+    /* 
+   * Default Light Mode 
+   */
+    --color-ink: 26 26 26;
+    /* #1A1A1A - soft black */
+    --color-page: 250 250 249;
+    /* #FAFAF9 - warm off-white */
+    --color-surface: 255 255 255;
+    /* #FFFFFF */
+    --color-line: 212 212 212;
+    /* #D4D4D4 */
+    --color-accent: 232 89 12;
+    /* #E8590C - vibrant orange */
+}
+
+.dark {
+    /* 
+   * Default Dark Mode 
+   */
+    --color-ink: 229 229 229;
+    /* #E5E5E5 - warm white */
+    --color-page: 10 10 10;
+    /* #0A0A0A - deep black */
+    --color-surface: 23 23 23;
+    /* #171717 */
+    --color-line: 64 64 64;
+    /* #404040 */
+    --color-accent: 232 89 12;
+    /* #E8590C */
+}

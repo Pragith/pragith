@@ -35,60 +35,79 @@
 
                 <!-- Value Anchors -->
                 <div class="border-2 border-line/30 p-8 bg-accent/5">
-                    <h3 class="font-bold text-ink mb-4">What You Get</h3>
+                    <h3 class="font-bold text-ink mb-4">What Clients Typically Gain</h3>
                     <div class="space-y-3 text-sm text-ink/70">
-                        {% for val in ["Actionable architecture recommendations — not slide decks", "Direct access to
-                        13+ years of enterprise platform experience", "Production-tested patterns across GCP, AWS, and
-                        Azure"] %}
+                        {% for val in [
+                        "Architecture clarity and reduced technical ambiguity",
+                        "Measurable reduction in cloud inefficiencies",
+                        "Structured AI adoption without hype",
+                        "Hardened production systems with clear operational ownership",
+                        "Faster delivery cycles using AI-assisted workflows"
+                        ] %}
                         <div class="flex items-start gap-3"><span class="text-accent mt-0.5 font-bold">→</span><span>{{
                                 val }}</span></div>
                         {% endfor %}
                     </div>
                 </div>
 
-                <!-- Rate Card -->
+                <!-- Engagement Flow -->
                 <div class="border-2 border-line/30 p-8 bg-surface">
-                    <div class="text-xs font-bold uppercase tracking-widest text-ink/40 mb-2">Standard Rate</div>
-                    <div class="text-5xl font-bold text-ink mb-2">
-                        {{ currency_symbol }}{{ "%.0f"|format(hourly_rate) }}<span
-                            class="text-2xl font-semibold text-ink/60">/hr</span>
-                    </div>
-                    {% if currency_code != 'USD' %}
-                    <div class="text-xs text-ink/40 mb-4">~${{ "%.0f"|format(base_rate_usd) }} USD</div>
-                    {% else %}
-                    <div class="mb-4"></div>
-                    {% endif %}
+                    <h3 class="font-bold text-ink mb-6">Engagement Flow</h3>
 
-                    <div class="space-y-3 mb-6">
-                        {% for step in ["15-min intro call (free) to assess fit", "1-hour paid architecture review",
-                        "Fixed-scope proposal with milestones"] %}
-                        <div class="flex items-start gap-3 text-sm text-ink/70">
+                    <div
+                        class="space-y-6 relative before:absolute before:inset-y-0 before:left-3 before:w-0.5 before:bg-line/20">
+                        <!-- Step 1 -->
+                        <div class="relative pl-10">
                             <span
-                                class="w-6 h-6 border border-line/30 bg-accent/20 flex items-center justify-center flex-shrink-0 text-xs font-bold">{{
-                                loop.index }}</span>
-                            <span>{{ step }}</span>
+                                class="absolute left-0 top-0 w-6 h-6 rounded-full bg-accent text-white text-xs font-bold flex items-center justify-center">1</span>
+                            <h4 class="font-bold text-ink text-sm">15-Minute Intro Call</h4>
+                            <p class="text-sm text-ink/60 mt-1">We assess fit, scope, and business constraints.</p>
                         </div>
-                        {% endfor %}
+
+                        <!-- Step 2 -->
+                        <div class="relative pl-10">
+                            <span
+                                class="absolute left-0 top-0 w-6 h-6 rounded-full bg-surface border-2 border-line text-ink/60 text-xs font-bold flex items-center justify-center">2</span>
+                            <h4 class="font-bold text-ink text-sm">60-Minute Deep Architecture Review</h4>
+                            <p class="text-sm text-ink/60 mt-1">We identify bottlenecks, risks, and optimization
+                                opportunities.</p>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="relative pl-10">
+                            <span
+                                class="absolute left-0 top-0 w-6 h-6 rounded-full bg-surface border-2 border-line text-ink/60 text-xs font-bold flex items-center justify-center">3</span>
+                            <h4 class="font-bold text-ink text-sm">Structured Proposal</h4>
+                            <p class="text-sm text-ink/60 mt-1 mb-4">You receive a clear engagement model:</p>
+                            <ul class="text-xs text-ink/60 space-y-1 list-disc pl-4">
+                                <li>Fixed-scope implementation</li>
+                                <li>Ongoing advisory (Retainer)</li>
+                                <li>Fractional architecture leadership</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rate Card -->
+                <div class="border-2 border-line/30 p-8 bg-surface opacity-80 hover:opacity-100 transition-opacity">
+                    <div class="flex items-baseline justify-between mb-2">
+                        <div class="text-xs font-bold uppercase tracking-widest text-ink/40">Advisory Rate</div>
+                        {% if currency_code != 'USD' %}
+                        <div class="text-xs text-ink/40">~${{ "%.0f"|format(base_rate_usd) }} USD</div>
+                        {% endif %}
+                    </div>
+                    <div class="text-4xl font-bold text-ink mb-6">
+                        {{ currency_symbol }}{{ "%.0f"|format(hourly_rate) }}<span
+                            class="text-lg font-semibold text-ink/60">/hr</span>
                     </div>
 
                     {% if calendly_url %}
                     <a href="{{ calendly_url }}" target="_blank" rel="noopener"
-                        class="inline-flex items-center justify-center text-sm font-semibold bg-accent text-black hover:bg-ink hover:text-page transition-all h-12 px-8 border border-line w-full"
+                        class="inline-flex items-center justify-center text-sm font-semibold bg-ink text-page hover:bg-accent hover:text-black transition-all h-12 px-8 w-full"
                         data-analytics="cta-contact-calendly">
                         Book Intro Call →
                     </a>
                     {% endif %}
-                </div>
-
-                <!-- Engagement Types -->
-                <div class="border-2 border-line/30 p-8 bg-accent/10">
-                    <h4 class="font-bold text-ink mb-4">Engagement Types</h4>
-                    <ul class="space-y-3 text-sm text-ink/70">
-                        {% for eng in ["One-time architecture reviews", "Ongoing fractional CTO advisory", "Workshop
-                        facilitation & training", "Technical due diligence"] %}
-                        <li class="flex items-start gap-2"><span class="mt-1">→</span><span>{{ eng }}</span></li>
-                        {% endfor %}
-                    </ul>
                 </div>
             </div>
 
