@@ -7,12 +7,12 @@ from app.config import settings
 class MailerService:
     def verify_recaptcha(self, token: str) -> bool:
         """
-        Verifies reCAPTCHA v2 token with Google.
+        Verifies reCAPTCHA v3 token with Google.
+        Returns True if score >= 0.5 (likely human).
         """
         if not settings.RECAPTCHA_SECRET_KEY:
-             # In strict prod, fail. Logic same as before.
             print("WARNING: RECAPTCHA_SECRET_KEY is missing.")
-            return False
+            return True  # Allow form submission if CAPTCHA not configured
 
         payload = {
             'secret': settings.RECAPTCHA_SECRET_KEY,
@@ -23,7 +23,15 @@ class MailerService:
             resp = requests.post('https://www.google.com/recaptcha/api/siteverify', data=payload)
             resp.raise_for_status()
             result = resp.json()
-            return result.get('success', False)
+            
+            # v3 returns a score between 0.0 (bot) and 1.0 (human)
+            success = result.get('success', False)
+            score = result.get('score', 0.0)
+            
+            print(f"reCAPTCHA v3 score: {score}")
+            
+            # Threshold: 0.5 is recommended by Google
+            return success and score >= 0.5
         except Exception as e:
             print(f"reCAPTCHA verification failed: {e}")
             return False

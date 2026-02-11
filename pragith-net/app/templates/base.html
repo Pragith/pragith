@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Pragith Prakash | Structured Automation & AI Systems · 2–4 Week Delivery{% endblock %}
+    <title>{% block title %}Structured Automation & AI Systems · 2–4 Week Delivery | Pragith Prakash{% endblock %}
     </title>
     <meta name="description"
         content="{% block description %}Structured, production-ready AI systems delivered in 2–4 weeks. 20–50 hour fixed-scope builds. Clean handover. No long-term lock-in.{% endblock %}">
@@ -14,7 +14,7 @@
 
     <!-- OpenGraph -->
     <meta property="og:title"
-        content="{% block og_title %}Pragith Prakash | Structured Automation & AI Systems · 2–4 Week Delivery{% endblock %}">
+        content="{% block og_title %}Structured Automation & AI Systems · 2–4 Week Delivery | Pragith Prakash{% endblock %}">
     <meta property="og:description"
         content="{% block og_description %}Structured, production-ready AI systems delivered in 2–4 weeks. Fixed scope. Clean handover.{% endblock %}">
     <meta property="og:type" content="website">
@@ -24,7 +24,7 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Pragith Prakash | Structured Automation & AI Systems · 2–4 Week Delivery">
+    <meta name="twitter:title" content="Structured Automation & AI Systems · 2–4 Week Delivery | Pragith Prakash">
     <meta name="twitter:description"
         content="Structured, production-ready AI systems delivered in 2–4 weeks. Fixed scope. Clean handover.">
     <meta name="twitter:image" content="https://pragith.net/static/og-image.png">
@@ -55,8 +55,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="{{ theme.fonts_url|safe }}">
 
-    <!-- reCAPTCHA -->
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    {% if recaptcha_site_key %}
+    <!-- reCAPTCHA v3 -->
+    <script src="https://www.google.com/recaptcha/api.js?render={{ recaptcha_site_key }}"></script>
+    {% endif %}
 
     {% if ga_tag %}
     <!-- Google Analytics -->
@@ -75,7 +77,7 @@
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Pragith Prakash",
-        "jobTitle": "AI Systems Engineer",
+        "jobTitle": "Operational Systems Architect",
         "description": "Structured, production-ready AI systems delivered in 2–4 weeks. Fixed-scope builds with clean handover.",
         "url": "https://pragith.net",
         "sameAs": [
@@ -85,7 +87,7 @@
         "knowsAbout": ["AI Systems", "Data Engineering", "Operational Automation", "System Integration", "Production AI"],
         "hasOccupation": {
             "@type": "Occupation",
-            "name": "AI Systems Engineer",
+            "name": "Operational Systems Architect",
             "occupationLocation": {
                 "@type": "Country",
                 "name": "North America"
@@ -305,7 +307,7 @@
             <div
                 class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/40">
                 <p>&copy; {{ now().year }} Pragith Prakash · <strong>Vriksh Consulting Services Inc.</strong></p>
-                <p>Remote-first · Structured Short-Cycle Builds</p>
+                <p>Structured Operational Systems</p>
             </div>
         </div>
     </footer>

@@ -13,6 +13,9 @@
     /* #d4d4d4 - Soft gray borders */
     --color-accent: 242 145 17;
     /* #f29111 - Vibrant orange */
+
+    /* Increase base font size for better readability */
+    font-size: 18px;
 }
 
 .dark {
@@ -30,4 +33,7 @@
     /* #13b6cf - Cyan accent lines */
     --color-accent: 19 182 207;
     /* #13b6cf - Cyan accent */
+
+    /* Increase base font size for better readability */
+    font-size: 18px;
 }

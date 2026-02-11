@@ -62,6 +62,7 @@ theme_service = ThemeService(settings.THEME)
 templates.env.globals["theme"] = theme_service
 templates.env.globals["show_products"] = settings.SHOW_PRODUCTS
 templates.env.globals["ga_tag"] = settings.GA_TAG
+templates.env.globals["recaptcha_site_key"] = settings.RECAPTCHA_SITE_KEY
 
 # Context Processor for common variables
 @app.middleware("http")
