@@ -296,7 +296,6 @@ Answer common contractor questions:
 
 - NDA policy
 - Fixed vs hourly
-- Onsite in UAE
 - Remote engagements
 - IP ownership
 - Payment terms

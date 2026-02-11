@@ -1,135 +1,220 @@
 {% extends "base.html" %}
 
 {% block content %}
-<section class="py-20 sm:py-32">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-slate-900 mb-6">
-            Principal Data & AI Engineer building<br class="hidden sm:inline">
-            <span class="text-indigo-600">enterprise-scale platforms.</span>
-        </h1>
-        <p class="text-xl text-slate-600 max-w-2xl mb-10 leading-relaxed">
-            I help companies architect revenue-critical systems, scale multi-terabyte analytics platforms, and
-            operationalize AI in production. 13+ years of experience across Cloud, Data, and DevOps.
-        </p>
-        <div class="flex flex-wrap gap-4">
-            <a href="/work"
-                class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2 bg-slate-900 text-white hover:bg-slate-800 h-11 px-8">
-                View Work
-            </a>
-            <a href="/consult"
-                class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-600 focus-visible:ring-offset-2 border border-slate-200 bg-white hover:bg-slate-100 hover:text-slate-900 h-11 px-8">
-                Book a Call
-            </a>
-        </div>
-    </div>
-</section>
+<!-- Hero Section -->
+<section class="relative overflow-hidden">
+    <!-- Decorative Elements -->
+    <div class="absolute top-20 right-10 w-24 h-24 border-4 border-accent rotate-12 hidden lg:block"></div>
+    <div class="absolute bottom-20 left-10 w-32 h-32 bg-accent2 rotate-45 opacity-20 hidden lg:block"></div>
 
-<section class="py-16 bg-slate-50 border-y border-slate-100">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-            <div>
-                <dt class="text-sm font-medium text-slate-500 uppercase tracking-wider">Experience</dt>
-                <dd class="mt-2 text-3xl font-bold text-slate-900">13+ Years</dd>
-                <dd class="mt-1 text-sm text-slate-600">Enterprise Delivery</dd>
-            </div>
-            <div>
-                <dt class="text-sm font-medium text-slate-500 uppercase tracking-wider">Specialty</dt>
-                <dd class="mt-2 text-3xl font-bold text-slate-900">Multi-Cloud</dd>
-                <dd class="mt-1 text-sm text-slate-600">AWS, GCP, Azure</dd>
-            </div>
-            <div>
-                <dt class="text-sm font-medium text-slate-500 uppercase tracking-wider">Model</dt>
-                <dd class="mt-2 text-3xl font-bold text-slate-900">AI-Augmented</dd>
-                <dd class="mt-1 text-sm text-slate-600">Human-led, AI-amplified</dd>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="py-20">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-2xl font-bold text-slate-900 mb-12">Core Capabilities</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
-            <div>
-                <h3 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
-                    <svg class="w-5 h-5 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                    </svg>
-                    Cloud Platforms
-                </h3>
-                <p class="text-slate-600 mb-4">Architecting secure, scalable infrastructure on GCP, AWS, and Azure.
-                    Specializing in serverless and containerized environments.</p>
-                <ul class="text-sm text-slate-500 space-y-1">
-                    <li>• Google Cloud Platform (BigQuery, Dataflow, GKE)</li>
-                    <li>• AWS (Lambda, Kinesis, DynamoDB)</li>
-                    <li>• Azure (Databricks, Synapse)</li>
-                </ul>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-32 sm:py-40">
+        <div class="max-w-5xl">
+            <div
+                class="inline-block bg-accent text-white px-4 py-2 mb-6 font-display text-sm font-bold uppercase tracking-wider transform -rotate-1">
+                Principal Engineer
             </div>
 
-            <div>
-                <h3 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
-                    <svg class="w-5 h-5 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
-                    </svg>
-                    Data Engineering
-                </h3>
-                <p class="text-slate-600 mb-4">Building high-volume analytics systems, real-time streaming pipelines,
-                    and robust data warehouses.</p>
-                <ul class="text-sm text-slate-500 space-y-1">
-                    <li>• Apache Spark, Kafka, Airflow</li>
-                    <li>• Real-time streaming systems</li>
-                    <li>• Multi-terabyte scale processing</li>
-                </ul>
+            <h1 class="font-display text-6xl sm:text-8xl font-bold tracking-tight text-black mb-8 leading-[0.95]">
+                Building<br>
+                <span class="relative inline-block">
+                    <span class="text-white relative z-10">Enterprise</span>
+                    <span class="absolute inset-0 bg-black transform translate-x-2 translate-y-2"></span>
+                    <span class="absolute inset-0 bg-accent"></span>
+                </span><br>
+                Data Systems
+            </h1>
+
+            <div class="border-l-4 border-accent2 pl-8 mb-12 max-w-3xl">
+                <p class="text-2xl sm:text-3xl font-semibold text-black leading-tight">
+                    Architecting revenue-critical platforms, scaling multi-terabyte analytics, and shipping Agentic AI
+                    to production.
+                </p>
             </div>
 
-            <div>
-                <h3 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
-                    <svg class="w-5 h-5 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                    </svg>
-                    DevOps & Infrastructure
-                </h3>
-                <p class="text-slate-600 mb-4">Automating infrastructure and deployments to ensure reliability and
-                    velocity.</p>
-                <ul class="text-sm text-slate-500 space-y-1">
-                    <li>• Kubernetes, Terraform, Docker</li>
-                    <li>• CI/CD Automation (GitHub Actions)</li>
-                    <li>• Observability & Monitoring</li>
-                </ul>
-            </div>
-
-            <div>
-                <h3 class="text-lg font-semibold text-slate-900 mb-4 flex items-center gap-2">
-                    <svg class="w-5 h-5 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M13 10V3L4 14h7v7l9-11h-7z" />
-                    </svg>
-                    AI & ML Ops
-                </h3>
-                <p class="text-slate-600 mb-4">Operationalizing AI models and integrating agents into production
-                    workflows.</p>
-                <ul class="text-sm text-slate-500 space-y-1">
-                    <li>• Google ADK & MCP Patterns</li>
-                    <li>• ML Ops & AI Ops</li>
-                    <li>• AI-Augmented execution</li>
-                </ul>
+            <div class="flex flex-wrap gap-6">
+                <a href="/work"
+                    class="group relative inline-flex items-center justify-center font-display text-sm font-bold uppercase tracking-wider border-3 border-black bg-black text-white hover:bg-white hover:text-black transition-all h-16 px-12 shadow-hard transform hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none">
+                    <span class="relative z-10">View Projects</span>
+                </a>
+                <a href="/consult"
+                    class="group relative inline-flex items-center justify-center font-display text-sm font-bold uppercase tracking-wider border-3 border-black bg-white hover:bg-zinc-50 transition-all h-16 px-12 shadow-hard transform hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none">
+                    <span class="relative z-10">Start a Project</span>
+                </a>
             </div>
         </div>
     </div>
 </section>
 
-<section class="py-20 bg-slate-900 text-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-2xl font-bold mb-6">Ready to build something scalable?</h2>
-        <p class="text-slate-300 max-w-2xl mx-auto mb-10 text-lg">
-            I work with founders, CTOs, and enterprise teams to deliver production-grade data and AI systems.
+<!-- Stats Grid -->
+<section class="border-t-4 border-black">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3">
+            <!-- Stat 1 -->
+            <div
+                class="relative border-b-4 md:border-b-0 md:border-r-4 border-black p-12 bg-white hover:bg-accent hover:text-white transition-all group">
+                <div class="absolute top-4 right-4 w-12 h-12 border-3 border-current opacity-20 transform rotate-45">
+                </div>
+                <dt class="font-display text-xs font-black uppercase tracking-widest mb-4 opacity-60">Experience</dt>
+                <dd class="font-display text-7xl font-black mb-3">13+</dd>
+                <dd class="font-semibold uppercase text-sm">Years Shipping Enterprise Systems</dd>
+            </div>
+
+            <!-- Stat 2 -->
+            <div
+                class="relative border-b-4 md:border-b-0 md:border-r-4 border-black p-12 bg-zinc-50 hover:bg-accent2 hover:text-white transition-all group">
+                <div class="absolute top-4 right-4 w-12 h-12 bg-current opacity-10"></div>
+                <dt class="font-display text-xs font-black uppercase tracking-widest mb-4 opacity-60">Cloud Stack</dt>
+                <dd class="font-display text-7xl font-black mb-3">3</dd>
+                <dd class="font-semibold uppercase text-sm">Major Platforms (AWS · GCP · Azure)</dd>
+            </div>
+
+            <!-- Stat 3 -->
+            <div class="relative p-12 bg-white hover:bg-black hover:text-white transition-all group">
+                <div class="absolute top-4 right-4 w-12 h-12 border-3 border-current opacity-20"></div>
+                <dt class="font-display text-xs font-black uppercase tracking-widest mb-4 opacity-60">Approach</dt>
+                <dd class="font-display text-7xl font-black mb-3">AI</dd>
+                <dd class="font-semibold uppercase text-sm">Augmented Engineering Team</dd>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Capabilities Section -->
+<section class="py-32 bg-zinc-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <div class="mb-20">
+            <h2
+                class="font-display text-5xl sm:text-6xl font-bold tracking-tight mb-6 inline-block border-b-4 border-black pb-4">
+                Core Capabilities
+            </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Capability Card 1 -->
+            <div
+                class="relative border-4 border-black p-10 bg-white shadow-hard transform hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none transition-all group">
+                <div class="absolute top-0 left-0 w-16 h-2 bg-accent"></div>
+                <h3 class="font-display text-2xl font-bold mb-4 group-hover:text-accent transition-colors">Cloud
+                    Architecture</h3>
+                <p class="text-lg mb-6 text-zinc-700">Secure, scalable infrastructure on GCP, AWS, and Azure. Serverless
+                    and containerized specialists.</p>
+                <ul class="space-y-3">
+                    <li class="flex items-start gap-3">
+                        <span
+                            class="flex-shrink-0 w-6 h-6 bg-black flex items-center justify-center text-white text-xs font-bold">→</span>
+                        <span class="font-semibold">Google Cloud (BigQuery, GKE, Dataflow)</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span
+                            class="flex-shrink-0 w-6 h-6 bg-black flex items-center justify-center text-white text-xs font-bold">→</span>
+                        <span class="font-semibold">AWS (Lambda, Kinesis, DynamoDB)</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span
+                            class="flex-shrink-0 w-6 h-6 bg-black flex items-center justify-center text-white text-xs font-bold">→</span>
+                        <span class="font-semibold">Azure (Databricks, Synapse)</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Capability Card 2 -->
+            <div
+                class="relative border-4 border-black p-10 bg-white shadow-hard transform hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none transition-all group">
+                <div class="absolute top-0 left-0 w-16 h-2 bg-accent2"></div>
+                <h3 class="font-display text-2xl font-bold mb-4 group-hover:text-accent2 transition-colors">Data
+                    Engineering</h3>
+                <p class="text-lg mb-6 text-zinc-700">High-volume analytics, real-time streaming pipelines, and robust
+                    data warehouses at scale.</p>
+                <ul class="space-y-3">
+                    <li class="flex items-start gap-3">
+                        <span
+                            class="flex-shrink-0 w-6 h-6 bg-black flex items-center justify-center text-white text-xs font-bold">→</span>
+                        <span class="font-semibold">Apache Spark, Kafka, Airflow</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span
+                            class="flex-shrink-0 w-6 h-6 bg-black flex items-center justify-center text-white text-xs font-bold">→</span>
+                        <span class="font-semibold">Real-time Streaming Systems</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span
+                            class="flex-shrink-0 w-6 h-6 bg-black flex items-center justify-center text-white text-xs font-bold">→</span>
+                        <span class="font-semibold">Petabyte-Scale Processing</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Capability Card 3 -->
+            <div
+                class="relative border-4 border-black p-10 bg-white shadow-hard transform hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none transition-all group">
+                <div class="absolute top-0 left-0 w-16 h-2 bg-black"></div>
+                <h3 class="font-display text-2xl font-bold mb-4 group-hover:text-black transition-colors">DevOps &
+                    Infrastructure</h3>
+                <p class="text-lg mb-6 text-zinc-700">Automated infrastructure and deployments. Built for velocity and
+                    reliability.</p>
+                <ul class="space-y-3">
+                    <li class="flex items-start gap-3">
+                        <span
+                            class="flex-shrink-0 w-6 h-6 bg-black flex items-center justify-center text-white text-xs font-bold">→</span>
+                        <span class="font-semibold">Kubernetes, Terraform, Docker</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span
+                            class="flex-shrink-0 w-6 h-6 bg-black flex items-center justify-center text-white text-xs font-bold">→</span>
+                        <span class="font-semibold">CI/CD Pipeline Automation</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span
+                            class="flex-shrink-0 w-6 h-6 bg-black flex items-center justify-center text-white text-xs font-bold">→</span>
+                        <span class="font-semibold">Production Observability</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Capability Card 4 -->
+            <div
+                class="relative border-4 border-black p-10 bg-white shadow-hard transform hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none transition-all group">
+                <div class="absolute top-0 left-0 w-16 h-2 bg-accent"></div>
+                <h3 class="font-display text-2xl font-bold mb-4 group-hover:text-accent transition-colors">AI & Agentic
+                    Systems</h3>
+                <p class="text-lg mb-6 text-zinc-700">Operationalizing LLMs and agents. Production AI, not demos.</p>
+                <ul class="space-y-3">
+                    <li class="flex items-start gap-3">
+                        <span
+                            class="flex-shrink-0 w-6 h-6 bg-black flex items-center justify-center text-white text-xs font-bold">→</span>
+                        <span class="font-semibold">Google ADK & Model Context Protocol</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span
+                            class="flex-shrink-0 w-6 h-6 bg-black flex items-center justify-center text-white text-xs font-bold">→</span>
+                        <span class="font-semibold">Agentic Workflow Orchestration</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span
+                            class="flex-shrink-0 w-6 h-6 bg-black flex items-center justify-center text-white text-xs font-bold">→</span>
+                        <span class="font-semibold">LLM Integration & ML Ops</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="relative py-32 border-t-4 border-black bg-black text-white overflow-hidden">
+    <div
+        class="absolute top-0 right-0 w-64 h-64 bg-accent opacity-20 transform rotate-45 translate-x-32 -translate-y-32">
+    </div>
+    <div class="absolute bottom-0 left-0 w-48 h-48 border-4 border-white opacity-10 transform -rotate-12"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 text-center">
+        <h2 class="font-display text-5xl sm:text-6xl font-bold mb-8">Ready to Build?</h2>
+        <p class="text-xl sm:text-2xl mb-12 max-w-3xl mx-auto font-medium opacity-90">
+            I partner with founders, CTOs, and engineering leaders to ship production-grade systems that scale.
         </p>
         <a href="/contact"
-            class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 bg-white text-slate-900 hover:bg-slate-100 h-11 px-8">
-            Start a Project
+            class="inline-flex items-center justify-center font-display text-sm font-bold uppercase tracking-wider border-3 border-white bg-white text-black hover:bg-accent hover:border-accent hover:text-white transition-all h-16 px-12 shadow-hard transform hover:translate-x-[3px] hover:translate-y-[3px] hover:shadow-none">
+            Start a Project →
         </a>
     </div>
 </section>

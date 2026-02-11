@@ -43,7 +43,7 @@ RUN addgroup --system app && adduser --system --group app
 COPY . .
 
 # Copy built CSS from builder stage
-COPY --from=builder /app/static/css/style.min.css /app/app/static/css/style.min.css
+COPY --from=builder /app/app/static/css/style.min.css /app/app/static/css/style.min.css
 
 # Chown all files to the app user
 RUN chown -R app:app /app
