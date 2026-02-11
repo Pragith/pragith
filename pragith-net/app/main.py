@@ -41,6 +41,9 @@ app.add_middleware(SecurityHeadersMiddleware)
 app.mount("/static", StaticFiles(directory="app/static"), name="static")
 templates = Jinja2Templates(directory="app/templates")
 
+from datetime import datetime
+templates.env.globals["now"] = datetime.now
+
 # Context Processor for common variables
 @app.middleware("http")
 async def add_context(request: Request, call_next):

@@ -3,19 +3,18 @@ FROM node:20-slim AS builder
 
 WORKDIR /app
 
-# Install Tailwind CLI standalone (to avoid node_modules in final image if possible, but using npm here for ease of maintenance)
-# We will use standard npm approach to generate the css file
+# Install Tailwind CLI standalone
 COPY package.json .
 COPY tailwind.config.js .
 COPY app/static/css/input.css ./app/static/css/input.css
 # We need templates to purge unused styles
 COPY app/templates ./app/templates
 
-# Initialize package.json if not present (simplified for this context)
-RUN npm install -g tailwindcss
+# Initialize package.json if not present
+RUN npm install
 RUN npx tailwindcss -i ./app/static/css/input.css -o ./static/css/style.min.css --minify
 
-# Stage 2: Production Python Image
+# Stage 2: Production Python Image with uv
 FROM python:3.11-slim-bookworm
 
 # Set environment variables
@@ -25,9 +24,17 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 
 WORKDIR /app
 
+# Install uv
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
+
+# Copy project definition
+COPY pyproject.toml .
+# Copy lock file if it exists, otherwise we'll generate one (best practice is to commit lock file)
+# COPY uv.lock . 
+
 # Install dependencies
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+# --system installs into the system python, avoiding the need for venv in docker
+RUN uv pip install --system -r pyproject.toml
 
 # Create non-root user
 RUN addgroup --system app && adduser --system --group app

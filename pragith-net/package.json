@@ -4,7 +4,7 @@
   "description": "Tailwind build for pragith.net",
   "main": "index.js",
   "scripts": {
-    "build:css": "tailwindcss -i ./app/static/css/input.css -o ./static/css/style.min.css --minify"
+    "build:css": "tailwindcss -i ./app/static/css/input.css -o ./app/static/css/style.min.css --minify"
   },
   "dependencies": {
     "tailwindcss": "^3.4.1",
