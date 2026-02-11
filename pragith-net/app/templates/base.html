@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" class="antialiased bg-zinc-50 text-black">
+<html lang="en" class="antialiased">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Pragith Prakash | Principal AI & Data Engineer{% endblock %}</title>
     <meta name="description"
-        content="{% block description %}Principal AI & Data Engineer specializing in enterprise platforms, multi-cloud architecture, and AI-augmented execution.{% endblock %}">
+        content="{% block description %}Principal AI & Data Engineer specializing in enterprise platforms, multi-cloud architecture, and AI-assisted delivery.{% endblock %}">
 
     <!-- Tailwind CSS (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -16,15 +16,10 @@
                 extend: {
                     fontFamily: {
                         sans: ['Inter', 'system-ui', 'sans-serif'],
-                        display: ['Space Grotesk', 'Inter', 'sans-serif'],
+                        display: ['DM Sans', 'Inter', 'sans-serif'],
                     },
                     colors: {
-                        accent: '#2563eb',
-                        accent2: '#f97316',
-                    },
-                    boxShadow: {
-                        'hard': '6px 6px 0px 0px #000000',
-                        'hard-sm': '3px 3px 0px 0px #000000',
+                        accent: '#00FF00', // Electric lime
                     }
                 }
             }
@@ -35,36 +30,42 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet">
+
+    {% if ga_tag %}
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ ga_tag }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', '{{ ga_tag }}');
+    </script>
+    {% endif %}
 </head>
 
-<body class="flex flex-col min-h-screen font-sans selection:bg-accent selection:text-white">
+<body class="flex flex-col min-h-screen bg-white text-black font-sans selection:bg-accent selection:text-black">
 
     <!-- Header -->
-    <header class="w-full border-b-2 border-black bg-white sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-            <a href="/"
-                class="text-xl font-bold tracking-tighter uppercase border-2 border-transparent hover:border-black hover:bg-black hover:text-white px-2 py-1 transition-all">
-                PRAGITH<span class="text-accent">.NET</span>
+    <header class="w-full bg-white sticky top-0 z-50 border-b border-black">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="/" class="font-display text-lg font-semibold text-black hover:text-accent transition-colors">
+                PRAGITH.NET
             </a>
 
-            <nav class="hidden md:flex gap-8 text-xs font-bold uppercase tracking-widest">
-                <a href="/work" class="hover:underline decoration-2 underline-offset-4">Work</a>
-                <a href="/agents" class="hover:underline decoration-2 underline-offset-4">Agents</a>
-                <a href="/build" class="hover:underline decoration-2 underline-offset-4">Build</a>
-                <a href="/stack" class="hover:underline decoration-2 underline-offset-4">Stack</a>
-                <a href="/blog" class="hover:underline decoration-2 underline-offset-4">Blog</a>
+            <nav class="hidden md:flex gap-8 text-sm font-medium">
+                <a href="/work" class="text-black hover:text-accent transition-colors">Work</a>
+                <a href="/agents" class="text-black hover:text-accent transition-colors">Agents</a>
+                <a href="/build" class="text-black hover:text-accent transition-colors">Build</a>
+                <a href="/stack" class="text-black hover:text-accent transition-colors">Stack</a>
+                <a href="/blog" class="text-black hover:text-accent transition-colors">Blog</a>
             </nav>
 
-            <div class="flex items-center gap-4">
-                <a href="/consult"
-                    class="hidden md:inline-flex text-xs font-bold uppercase tracking-widest hover:text-accent">Consulting</a>
-                <a href="/contact"
-                    class="inline-flex items-center justify-center text-xs font-bold uppercase tracking-widest border-2 border-black bg-black text-white hover:bg-white hover:text-black transition-colors h-9 px-4 shadow-hard hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]">
-                    Contact
-                </a>
-            </div>
+            <a href="/contact"
+                class="inline-flex items-center justify-center text-sm font-medium bg-black text-white hover:bg-accent hover:text-black transition-all h-10 px-6">
+                Contact
+            </a>
         </div>
     </header>
 
@@ -74,55 +75,47 @@
     </main>
 
     <!-- Footer -->
-    <footer class="border-t-2 border-black bg-white mt-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+    <footer class="bg-black text-white border-t border-white/10 mt-20">
+        <div class="max-w-6xl mx-auto px-6 py-16">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 mb-12">
                 <div>
-                    <h3
-                        class="text-xs font-black uppercase tracking-widest mb-4 border-b-2 border-black pb-2 inline-block">
-                        Site</h3>
-                    <ul class="space-y-2 text-sm font-medium">
-                        <li><a href="/" class="hover:bg-black hover:text-white px-1 -ml-1">Home</a></li>
-                        <li><a href="/work" class="hover:bg-black hover:text-white px-1 -ml-1">Work</a></li>
-                        <li><a href="/blog" class="hover:bg-black hover:text-white px-1 -ml-1">Blog</a></li>
+                    <h3 class="text-sm font-semibold mb-4 text-accent">Site</h3>
+                    <ul class="space-y-3 text-sm text-white/60">
+                        <li><a href="/" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="/work" class="hover:text-white transition-colors">Work</a></li>
+                        <li><a href="/blog" class="hover:text-white transition-colors">Blog</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3
-                        class="text-xs font-black uppercase tracking-widest mb-4 border-b-2 border-black pb-2 inline-block">
-                        Services</h3>
-                    <ul class="space-y-2 text-sm font-medium">
-                        <li><a href="/consult" class="hover:bg-black hover:text-white px-1 -ml-1">Advisory</a></li>
-                        <li><a href="/agents" class="hover:bg-black hover:text-white px-1 -ml-1">AI Teams</a></li>
-                        <li><a href="/build" class="hover:bg-black hover:text-white px-1 -ml-1">Build</a></li>
+                    <h3 class="text-sm font-semibold mb-4 text-accent">Services</h3>
+                    <ul class="space-y-3 text-sm text-white/60">
+                        <li><a href="/contact" class="hover:text-white transition-colors">Advisory</a></li>
+                        <li><a href="/agents" class="hover:text-white transition-colors">AI Teams</a></li>
+                        <li><a href="/build" class="hover:text-white transition-colors">Build</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3
-                        class="text-xs font-black uppercase tracking-widest mb-4 border-b-2 border-black pb-2 inline-block">
-                        Legal</h3>
-                    <ul class="space-y-2 text-sm font-medium">
-                        <li><a href="/legal" class="hover:bg-black hover:text-white px-1 -ml-1">Terms</a></li>
-                        <li><a href="/privacy" class="hover:bg-black hover:text-white px-1 -ml-1">Privacy</a></li>
-                        <li><a href="/faq" class="hover:bg-black hover:text-white px-1 -ml-1">FAQ</a></li>
+                    <h3 class="text-sm font-semibold mb-4 text-accent">Legal</h3>
+                    <ul class="space-y-3 text-sm text-white/60">
+                        <li><a href="/legal" class="hover:text-white transition-colors">Terms</a></li>
+                        <li><a href="/privacy" class="hover:text-white transition-colors">Privacy</a></li>
+                        <li><a href="/faq" class="hover:text-white transition-colors">FAQ</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h3
-                        class="text-xs font-black uppercase tracking-widest mb-4 border-b-2 border-black pb-2 inline-block">
-                        Connect</h3>
-                    <ul class="space-y-2 text-sm font-medium">
+                    <h3 class="text-sm font-semibold mb-4 text-accent">Connect</h3>
+                    <ul class="space-y-3 text-sm text-white/60">
                         <li><a href="https://linkedin.com/in/pragith" target="_blank"
-                                class="hover:bg-accent hover:text-white px-1 -ml-1">LinkedIn</a></li>
+                                class="hover:text-white transition-colors">LinkedIn</a></li>
                         <li><a href="https://github.com/pragith" target="_blank"
-                                class="hover:bg-accent hover:text-white px-1 -ml-1">GitHub</a></li>
-                        <li><a href="/contact" class="hover:bg-accent hover:text-white px-1 -ml-1">Email</a></li>
+                                class="hover:text-white transition-colors">GitHub</a></li>
+                        <li><a href="/contact" class="hover:text-white transition-colors">Email</a></li>
                     </ul>
                 </div>
             </div>
             <div
-                class="border-t-2 border-black pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-bold uppercase tracking-widest">
-                <p>&copy; {{ now().year }} Pragith Prakash.</p>
+                class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/40">
+                <p>&copy; {{ now().year }} Pragith Prakash</p>
                 <p>Principal Data & AI Engineer</p>
             </div>
         </div>

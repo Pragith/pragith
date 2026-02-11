@@ -1,80 +1,152 @@
 {% extends "base.html" %}
 
-{% block title %}Contact | Pragith Prakash{% endblock %}
+{% block title %}Contact & Consulting | Pragith Prakash{% endblock %}
 
 {% block content %}
-<section class="py-20">
-    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 class="text-3xl font-bold tracking-tight text-slate-900 mb-6">Contact</h1>
-        <p class="text-lg text-slate-600 mb-10">
-            Interested in working together? Fill out the form below to discuss your project, architecture review, or AI
-            strategy.
-        </p>
+<section class="py-20 border-t border-black">
+    <div class="max-w-6xl mx-auto px-6">
+        <!-- Header -->
+        <div class="mb-16">
+            <h1 class="font-display text-5xl font-bold tracking-tight text-black mb-4">Let's Work Together</h1>
+            <div class="w-20 h-1 bg-accent mb-6"></div>
+            <p class="text-xl text-black/60 max-w-3xl">
+                Strategic advisory, technical consulting, and architecture reviews for data and AI challenges.
+            </p>
+        </div>
 
-        {% if error %}
-        <div class="rounded-md bg-red-50 p-4 mb-8">
-            <div class="flex">
-                <div class="flex-shrink-0">
-                    <svg class="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd"
-                            d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-                            clip-rule="evenodd" />
-                    </svg>
+        <div class="grid lg:grid-cols-2 gap-12">
+            <!-- Left Column: Services & Rates -->
+            <div class="space-y-8">
+                <h2 class="font-display text-2xl font-bold text-black">Consulting Services</h2>
+
+                <div class="space-y-6">
+                    <div class="border-l-4 border-black pl-6">
+                        <h3 class="font-bold text-black mb-2">Architecture Review</h3>
+                        <p class="text-black/60 text-sm leading-relaxed">
+                            Deep dive into your current cloud architecture. Identification of bottlenecks, security
+                            risks, and cost optimization opportunities.
+                        </p>
+                    </div>
+
+                    <div class="border-l-4 border-accent pl-6">
+                        <h3 class="font-bold text-black mb-2">AI Strategy & Roadmap</h3>
+                        <p class="text-black/60 text-sm leading-relaxed">
+                            Pragmatic assessment of where AI can drive value. Roadmap development from PoC to
+                            production.
+                        </p>
+                    </div>
+
+                    <div class="border-l-4 border-black pl-6">
+                        <h3 class="font-bold text-black mb-2">Data Platform Modernization</h3>
+                        <p class="text-black/60 text-sm leading-relaxed">
+                            Migration strategies from legacy on-prem systems to modern cloud lakehouses.
+                        </p>
+                    </div>
+
+                    <div class="border-l-4 border-accent pl-6">
+                        <h3 class="font-bold text-black mb-2">CTO Advisory</h3>
+                        <p class="text-black/60 text-sm leading-relaxed">
+                            Technical leadership support for startup founders and non-technical executives.
+                        </p>
+                    </div>
                 </div>
-                <div class="ml-3">
-                    <h3 class="text-sm font-medium text-red-800">{{ error }}</h3>
+
+                <!-- Rate Card -->
+                <div class="border-2 border-black p-8 bg-white mt-8">
+                    <div class="text-xs font-bold uppercase tracking-widest text-black/40 mb-2">Standard Rate</div>
+                    <div class="text-5xl font-bold text-black mb-2">
+                        {{ currency_symbol }}{{ hourly_rate }}<span
+                            class="text-2xl font-semibold text-black/60">/hr</span>
+                    </div>
+                    {% if currency_code != 'USD' %}
+                    <div class="text-xs text-black/40 mb-6">~${{ base_rate_usd }} USD</div>
+                    {% else %}
+                    <div class="mb-6"></div>
+                    {% endif %}
+                    <p class="text-black/60 text-sm">
+                        Engagements typically start with a 1-hour discovery call to assess fit and scope.
+                    </p>
                 </div>
+
+                <!-- Engagement Types -->
+                <div class="border-2 border-black p-8 bg-accent/10">
+                    <h4 class="font-bold text-black mb-4">Engagement Types</h4>
+                    <ul class="space-y-3 text-sm text-black/70">
+                        <li class="flex items-start gap-2">
+                            <span class="mt-1">→</span>
+                            <span>One-time architecture reviews</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="mt-1">→</span>
+                            <span>Ongoing fractional CTO advisory</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="mt-1">→</span>
+                            <span>Workshop facilitation & training</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="mt-1">→</span>
+                            <span>Technical due diligence</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Right Column: Contact Form -->
+            <div>
+                <h2 class="font-display text-2xl font-bold text-black mb-6">Send a Message</h2>
+
+                {% if error %}
+                <div class="border-2 border-black bg-red-50 p-4 mb-6">
+                    <div class="flex items-start gap-3">
+                        <svg class="w-5 h-5 text-black mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <p class="text-sm font-medium text-black">{{ error }}</p>
+                    </div>
+                </div>
+                {% endif %}
+
+                <form action="/contact" method="POST" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-bold text-black mb-2">Name *</label>
+                            <input type="text" name="name" id="name" autocomplete="name" required
+                                value="{{ form.name if form else '' }}"
+                                class="block w-full border-2 border-black px-4 py-3 text-black focus:outline-none focus:border-accent">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-bold text-black mb-2">Email *</label>
+                            <input type="email" name="email" id="email" autocomplete="email" required
+                                value="{{ form.email if form else '' }}"
+                                class="block w-full border-2 border-black px-4 py-3 text-black focus:outline-none focus:border-accent">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="company" class="block text-sm font-bold text-black mb-2">Company</label>
+                        <input type="text" name="company" id="company" autocomplete="organization"
+                            value="{{ form.company if form else '' }}"
+                            class="block w-full border-2 border-black px-4 py-3 text-black focus:outline-none focus:border-accent">
+                    </div>
+
+                    <div>
+                        <label for="message" class="block text-sm font-bold text-black mb-2">Message *</label>
+                        <textarea id="message" name="message" rows="6" required
+                            class="block w-full border-2 border-black px-4 py-3 text-black focus:outline-none focus:border-accent">{{ form.message if form else '' }}</textarea>
+                    </div>
+
+                    <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY_HERE"></div>
+
+                    <button type="submit"
+                        class="w-full inline-flex items-center justify-center text-sm font-semibold bg-black text-white hover:bg-accent hover:text-black transition-all h-12 px-8 border border-black"
+                        data-analytics="cta-contact-form-submit">
+                        Send Message →
+                    </button>
+                </form>
             </div>
         </div>
-        {% endif %}
-
-        <form action="/contact" method="POST" class="space-y-6">
-            <div class="grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-2">
-                <div>
-                    <label for="name" class="block text-sm font-medium text-slate-700">Name</label>
-                    <div class="mt-1">
-                        <input type="text" name="name" id="name" autocomplete="name" required
-                            value="{{ form.name if form else '' }}"
-                            class="block w-full rounded-md border-slate-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-                    </div>
-                </div>
-                <div>
-                    <label for="email" class="block text-sm font-medium text-slate-700">Email</label>
-                    <div class="mt-1">
-                        <input type="email" name="email" id="email" autocomplete="email" required
-                            value="{{ form.email if form else '' }}"
-                            class="block w-full rounded-md border-slate-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-                    </div>
-                </div>
-            </div>
-
-            <div>
-                <label for="company" class="block text-sm font-medium text-slate-700">Company</label>
-                <div class="mt-1">
-                    <input type="text" name="company" id="company" autocomplete="organization"
-                        value="{{ form.company if form else '' }}"
-                        class="block w-full rounded-md border-slate-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">
-                </div>
-            </div>
-
-            <div>
-                <label for="message" class="block text-sm font-medium text-slate-700">Message</label>
-                <div class="mt-1">
-                    <textarea id="message" name="message" rows="4" required
-                        class="block w-full rounded-md border-slate-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm">{{ form.message if form else '' }}</textarea>
-                </div>
-            </div>
-
-            <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY_HERE"></div>
-            <!-- TODO: Inject site key from env -->
-
-            <div>
-                <button type="submit"
-                    class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-slate-900 hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                    Send Message
-                </button>
-            </div>
-        </form>
     </div>
 </section>
 {% endblock %}

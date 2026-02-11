@@ -3,68 +3,98 @@
 {% block title %}Build Methodology | Pragith Prakash{% endblock %}
 
 {% block content %}
-<section class="py-20">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+<section class="py-20 border-t border-black">
+    <div class="max-w-6xl mx-auto px-6">
         <div class="mb-16">
-            <h1 class="text-3xl font-bold tracking-tight text-slate-900 mb-4">PoC to Production</h1>
-            <p class="text-lg text-slate-600 max-w-2xl">
+            <h1 class="font-display text-5xl font-bold tracking-tight text-black mb-4">PoC to Production</h1>
+            <div class="w-20 h-1 bg-accent mb-6"></div>
+            <p class="text-xl text-black/60 max-w-2xl">
                 A disciplined framework for taking ideas from "works on my machine" to "scales globally" without the
                 bloat.
             </p>
         </div>
 
-        <div class="space-y-16">
-            <div class="flex flex-col md:flex-row gap-8 md:items-center">
-                <div class="md:w-1/3">
-                    <div class="text-sm font-mono font-bold text-indigo-600 mb-2">PHASE 01</div>
-                    <h2 class="text-2xl font-bold text-slate-900">Rapid Prototyping</h2>
-                </div>
-                <div class="md:w-2/3">
-                    <p class="text-slate-600 mb-4">
-                        We validate the core value proposition immediately. I build functional, throw-away prototypes in
-                        days, not months, to test assumptions before committing to architecture.
-                    </p>
-                    <div class="flex gap-2 text-sm text-slate-500">
-                        <span class="bg-slate-100 px-2 py-1 rounded">FastAPI</span>
-                        <span class="bg-slate-100 px-2 py-1 rounded">Streamlit</span>
-                        <span class="bg-slate-100 px-2 py-1 rounded">Docker Compose</span>
+        <div class="space-y-0">
+            <div class="border-2 border-black p-10 bg-white border-b-0">
+                <div class="flex flex-col md:flex-row gap-8 md:items-start">
+                    <div class="md:w-1/3">
+                        <div class="text-xs font-bold uppercase tracking-widest text-accent mb-2">Phase 01</div>
+                        <h2 class="font-display text-2xl font-bold text-black">Rapid Prototyping</h2>
+                    </div>
+                    <div class="md:w-2/3">
+                        <p class="text-black/60 mb-4 leading-relaxed">
+                            We validate the core value proposition immediately. I build functional, throw-away
+                            prototypes in days, not months, to test assumptions before committing to architecture.
+                        </p>
+                        <div class="flex gap-2 text-sm">
+                            <span class="border border-black bg-white px-3 py-1 font-medium">FastAPI</span>
+                            <span class="border border-black bg-white px-3 py-1 font-medium">Streamlit</span>
+                            <span class="border border-black bg-white px-3 py-1 font-medium">Docker Compose</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="border-t border-slate-100 pt-16 flex flex-col md:flex-row gap-8 md:items-center">
-                <div class="md:w-1/3">
-                    <div class="text-sm font-mono font-bold text-indigo-600 mb-2">PHASE 02</div>
-                    <h2 class="text-2xl font-bold text-slate-900">Cloud-Native Architecture</h2>
-                </div>
-                <div class="md:w-2/3">
-                    <p class="text-slate-600 mb-4">
-                        Designing for durability and scale. I select the right managed services (AWS/GCP/Azure) to
-                        minimize operational overhead while maximizing performance.
-                    </p>
-                    <div class="flex gap-2 text-sm text-slate-500">
-                        <span class="bg-slate-100 px-2 py-1 rounded">Kubernetes</span>
-                        <span class="bg-slate-100 px-2 py-1 rounded">Serverless</span>
-                        <span class="bg-slate-100 px-2 py-1 rounded">Event-Driven</span>
+            <div class="border-2 border-black p-10 bg-white border-b-0">
+                <div class="flex flex-col md:flex-row gap-8 md:items-start">
+                    <div class="md:w-1/3">
+                        <div class="text-xs font-bold uppercase tracking-widest text-accent mb-2">Phase 02</div>
+                        <h2 class="font-display text-2xl font-bold text-black">Cloud-Native Architecture</h2>
+                    </div>
+                    <div class="md:w-2/3">
+                        <p class="text-black/60 mb-4 leading-relaxed">
+                            Designing for durability and scale. I select the right managed services (AWS/GCP/Azure) to
+                            minimize operational overhead while maximizing performance.
+                        </p>
+                        <div class="flex gap-2 text-sm">
+                            <span class="border border-black bg-white px-3 py-1 font-medium">Kubernetes</span>
+                            <span class="border border-black bg-white px-3 py-1 font-medium">Serverless</span>
+                            <span class="border border-black bg-white px-3 py-1 font-medium">Event-Driven</span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="border-t border-slate-100 pt-16 flex flex-col md:flex-row gap-8 md:items-center">
-                <div class="md:w-1/3">
-                    <div class="text-sm font-mono font-bold text-indigo-600 mb-2">PHASE 03</div>
-                    <h2 class="text-2xl font-bold text-slate-900">Production Hardening</h2>
-                </div>
-                <div class="md:w-2/3">
-                    <p class="text-slate-600 mb-4">
-                        Observability, security, and automation. No system is production-ready without comprehensive
-                        logging, monitoring, and CI/CD pipelines.
-                    </p>
-                    <div class="flex gap-2 text-sm text-slate-500">
-                        <span class="bg-slate-100 px-2 py-1 rounded">Terraform</span>
-                        <span class="bg-slate-100 px-2 py-1 rounded">GitHub Actions</span>
-                        <span class="bg-slate-100 px-2 py-1 rounded">Datadog/Prometheus</span>
+            <div class="border-2 border-black p-10 bg-white">
+                <div class="flex flex-col md:flex-row gap-8 md:items-start">
+                    <div class="md:w-1/3">
+                        <div class="text-xs font-bold uppercase tracking-widest text-accent mb-2">Phase 03</div>
+                        <h2 class="font-display text-2xl font-bold text-black">Production Hardening</h2>
                     </div>
+                    <div class="md:w-2/3">
+                        <p class="text-black/60 mb-4 leading-relaxed">
+                            Observability, security, and automation. No system is production-ready without comprehensive
+                            logging, monitoring, and CI/CD pipelines.
+                        </p>
+                        <div class="flex gap-2 text-sm">
+                            <span class="border border-black bg-white px-3 py-1 font-medium">Terraform</span>
+                            <span class="border border-black bg-white px-3 py-1 font-medium">GitHub Actions</span>
+                            <span class="border border-black bg-white px-3 py-1 font-medium">Datadog/Prometheus</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA: Let's Build Together -->
+        <div class="mt-16 border-2 border-black p-12 bg-accent/10">
+            <div class="max-w-3xl">
+                <h3 class="font-display text-2xl font-bold text-black mb-4">Ready to Build Your System?</h3>
+                <p class="text-black/70 mb-6 leading-relaxed">
+                    Whether you're starting from scratch or modernizing legacy infrastructure, I can help you ship
+                    production-grade systems that scale.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="/contact"
+                        class="inline-flex items-center justify-center text-sm font-semibold bg-black text-white hover:bg-accent hover:text-black transition-all h-12 px-8 border border-black"
+                        data-analytics="cta-build-page-consult">
+                        Discuss Your Project →
+                    </a>
+                    <a href="/work"
+                        class="inline-flex items-center justify-center text-sm font-semibold border border-black bg-white hover:bg-black hover:text-white transition-all h-12 px-8"
+                        data-analytics="cta-build-page-work">
+                        View Case Studies
+                    </a>
                 </div>
             </div>
         </div>

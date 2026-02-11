@@ -3,77 +3,224 @@
 {% block title %}Tech Stack | Pragith Prakash{% endblock %}
 
 {% block content %}
-<section class="py-20">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 class="text-3xl font-bold tracking-tight text-slate-900 mb-12">Technology Stack</h1>
+<section class="py-20 border-t border-black">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="mb-16">
+            <h1 class="font-display text-5xl font-bold tracking-tight text-black mb-4">Technology Stack</h1>
+            <div class="w-20 h-1 bg-accent mb-6"></div>
+            <p class="text-xl text-black/60 max-w-3xl">
+                Every technology choice is deliberate. These tools solve real problems at scale and are selected based
+                on project requirements.
+            </p>
+        </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="space-y-12">
+            <!-- Cloud Infrastructure -->
+            <div class="border-2 border-black p-10 bg-white">
+                <h3 class="font-display text-2xl font-bold text-black mb-6">Cloud Infrastructure</h3>
 
-            <div class="bg-slate-50 rounded-xl p-6 border border-slate-100">
-                <h3 class="font-bold text-slate-900 mb-4">Cloud Infrastructure</h3>
-                <ul class="space-y-2 text-slate-600 text-sm">
-                    <li>Google Cloud Platform</li>
-                    <li>Amazon Web Services</li>
-                    <li>Microsoft Azure</li>
-                </ul>
+                <div class="space-y-6">
+                    <div class="border-l-4 border-black pl-6">
+                        <h4 class="font-bold text-black mb-2">Google Cloud Platform</h4>
+                        <p class="text-black/60 text-sm mb-3">
+                            Best-in-class for data analytics and ML workflows. BigQuery's serverless architecture
+                            eliminates operational overhead. GKE provides managed Kubernetes without the complexity.
+                        </p>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="text-xs border border-black bg-white px-2 py-1">BigQuery</span>
+                            <span class="text-xs border border-black bg-white px-2 py-1">GKE</span>
+                            <span class="text-xs border border-black bg-white px-2 py-1">Dataflow</span>
+                            <span class="text-xs border border-black bg-white px-2 py-1">Pub/Sub</span>
+                        </div>
+                    </div>
+
+                    <div class="border-l-4 border-accent pl-6">
+                        <h4 class="font-bold text-black mb-2">Amazon Web Services</h4>
+                        <p class="text-black/60 text-sm mb-3">
+                            Unmatched service breadth and maturity. Lambda for event-driven compute. Kinesis for
+                            real-time data streams. DynamoDB for single-digit millisecond latency at any scale.
+                        </p>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="text-xs border border-black bg-white px-2 py-1">Lambda</span>
+                            <span class="text-xs border border-black bg-white px-2 py-1">Kinesis</span>
+                            <span class="text-xs border border-black bg-white px-2 py-1">DynamoDB</span>
+                            <span class="text-xs border border-black bg-white px-2 py-1">ECS/EKS</span>
+                        </div>
+                    </div>
+
+                    <div class="border-l-4 border-black pl-6">
+                        <h4 class="font-bold text-black mb-2">Microsoft Azure</h4>
+                        <p class="text-black/60 text-sm mb-3">
+                            Enterprise integration strength. Databricks for unified analytics. Azure Synapse for data
+                            warehousing at scale. Native Active Directory integration for governance.
+                        </p>
+                        <div class="flex gap-2 flex-wrap">
+                            <span class="text-xs border border-black bg-white px-2 py-1">Databricks</span>
+                            <span class="text-xs border border-black bg-white px-2 py-1">Synapse</span>
+                            <span class="text-xs border border-black bg-white px-2 py-1">AKS</span>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="bg-slate-50 rounded-xl p-6 border border-slate-100">
-                <h3 class="font-bold text-slate-900 mb-4">Data Engineering</h3>
-                <ul class="space-y-2 text-slate-600 text-sm">
-                    <li>Apache Spark</li>
-                    <li>Apache Airflow</li>
-                    <li>Kafka / PubSub</li>
-                    <li>dbt (Data Build Tool)</li>
-                    <li>BigQuery / Redshift / Snowflake</li>
-                </ul>
+            <!-- Data Engineering -->
+            <div class="border-2 border-black p-10 bg-white">
+                <h3 class="font-display text-2xl font-bold text-black mb-6">Data Engineering</h3>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="border-l-4 border-accent pl-6">
+                        <h4 class="font-bold text-black mb-2">Apache Spark</h4>
+                        <p class="text-black/60 text-sm">
+                            Proven for distributed data processing. Handles petabyte-scale transformations. Native
+                            support across cloud providers.
+                        </p>
+                    </div>
+
+                    <div class="border-l-4 border-black pl-6">
+                        <h4 class="font-bold text-black mb-2">Apache Airflow</h4>
+                        <p class="text-black/60 text-sm">
+                            Industry standard for workflow orchestration. Code-first approach. Rich plugin ecosystem for
+                            extensibility.
+                        </p>
+                    </div>
+
+                    <div class="border-l-4 border-accent pl-6">
+                        <h4 class="font-bold text-black mb-2">Kafka / Pub/Sub</h4>
+                        <p class="text-black/60 text-sm">
+                            Real-time streaming backbone. High-throughput, fault-tolerant message queues for
+                            event-driven architectures.
+                        </p>
+                    </div>
+
+                    <div class="border-l-4 border-black pl-6">
+                        <h4 class="font-bold text-black mb-2">dbt (Data Build Tool)</h4>
+                        <p class="text-black/60 text-sm">
+                            Analytics engineering standard. Version-controlled transformations. Automated testing and
+                            documentation.
+                        </p>
+                    </div>
+                </div>
             </div>
 
-            <div class="bg-slate-50 rounded-xl p-6 border border-slate-100">
-                <h3 class="font-bold text-slate-900 mb-4">Backend & API</h3>
-                <ul class="space-y-2 text-slate-600 text-sm">
-                    <li>Python (FastAPI, Flask)</li>
-                    <li>Node.js</li>
-                    <li>Go</li>
-                    <li>GraphQL</li>
-                    <li>gRPC</li>
-                </ul>
+            <!-- DevOps & Infrastructure -->
+            <div class="border-2 border-black p-10 bg-white">
+                <h3 class="font-display text-2xl font-bold text-black mb-6">DevOps & Infrastructure</h3>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="border-l-4 border-black pl-6">
+                        <h4 class="font-bold text-black mb-2">Docker & Kubernetes</h4>
+                        <p class="text-black/60 text-sm">
+                            Container orchestration at scale. Reproducible environments. Resource efficiency and
+                            auto-scaling out of the box.
+                        </p>
+                    </div>
+
+                    <div class="border-l-4 border-accent pl-6">
+                        <h4 class="font-bold text-black mb-2">Terraform / OpenTofu</h4>
+                        <p class="text-black/60 text-sm">
+                            Infrastructure as Code. Multi-cloud compatibility. State management for reliable
+                            deployments.
+                        </p>
+                    </div>
+
+                    <div class="border-l-4 border-black pl-6">
+                        <h4 class="font-bold text-black mb-2">GitHub Actions</h4>
+                        <p class="text-black/60 text-sm">
+                            Native CI/CD integration. Minimal configuration. Fast feedback loops for continuous
+                            delivery.
+                        </p>
+                    </div>
+
+                    <div class="border-l-4 border-accent pl-6">
+                        <h4 class="font-bold text-black mb-2">Prometheus & Grafana</h4>
+                        <p class="text-black/60 text-sm">
+                            Production observability. Metrics scraping and alerting. Visual dashboards for real-time
+                            monitoring.
+                        </p>
+                    </div>
+                </div>
             </div>
 
-            <div class="bg-slate-50 rounded-xl p-6 border border-slate-100">
-                <h3 class="font-bold text-slate-900 mb-4">DevOps & SRE</h3>
-                <ul class="space-y-2 text-slate-600 text-sm">
-                    <li>Docker & Kubernetes</li>
-                    <li>Terraform / OpenTofu</li>
-                    <li>GitHub Actions</li>
-                    <li>Ansible</li>
-                    <li>Prometheus & Grafana</li>
-                </ul>
+            <!-- AI & Machine Learning -->
+            <div class="border-2 border-black p-10 bg-accent/10">
+                <h3 class="font-display text-2xl font-bold text-black mb-6">AI & Automation</h3>
+
+                <div class="space-y-6">
+                    <div class="border-l-4 border-accent pl-6">
+                        <h4 class="font-bold text-black mb-2">Google GenAI Agent Development Kit (ADK)</h4>
+                        <p class="text-black/60 text-sm">
+                            Purpose-built for production AI agents. Native integration with Gemini. Structured tool
+                            calling and state management.
+                        </p>
+                    </div>
+
+                    <div class="border-l-4 border-black pl-6">
+                        <h4 class="font-bold text-black mb-2">Model Context Protocol (MCP)</h4>
+                        <p class="text-black/60 text-sm">
+                            Standardized tool interface for AI systems. Decouples tools from models. Enables flexible,
+                            modular AI architectures.
+                        </p>
+                    </div>
+
+                    <div class="border-l-4 border-accent pl-6">
+                        <h4 class="font-bold text-black mb-2">Vector Databases (Pinecone, Milvus)</h4>
+                        <p class="text-black/60 text-sm">
+                            Semantic search at scale. Low-latency similarity queries. Foundation for intelligent
+                            document retrieval and knowledge search.
+                        </p>
+                    </div>
+                </div>
             </div>
 
-            <div class="bg-slate-50 rounded-xl p-6 border border-slate-100">
-                <h3 class="font-bold text-slate-900 mb-4">AI & Machine Learning</h3>
-                <ul class="space-y-2 text-slate-600 text-sm">
-                    <li>Google GenAI Agent Development Kit (ADK)</li>
-                    <li>Model Context Protocol (MCP)</li>
-                    <li>OpenAI API</li>
-                    <li>LangChain</li>
-                    <li>TensorFlow / PyTorch (Inference)</li>
-                    <li>Vector Databases (Pinecone, Milvus)</li>
-                </ul>
-            </div>
+            <!-- Backend -->
+            <div class="border-2 border-black p-10 bg-white">
+                <h3 class="font-display text-2xl font-bold text-black mb-6">Backend & API</h3>
 
-            <div class="bg-slate-50 rounded-xl p-6 border border-slate-100">
-                <h3 class="font-bold text-slate-900 mb-4">Databases</h3>
-                <ul class="space-y-2 text-slate-600 text-sm">
-                    <li>PostgreSQL</li>
-                    <li>MongoDB</li>
-                    <li>Redis</li>
-                    <li>Elasticsearch</li>
-                    <li>DynamoDB</li>
-                </ul>
-            </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="border-l-4 border-black pl-6">
+                        <h4 class="font-bold text-black mb-2">Python (FastAPI, Flask)</h4>
+                        <p class="text-black/60 text-sm">
+                            Rapid development velocity. Rich data science ecosystem. Async support for high-concurrency
+                            workloads.
+                        </p>
+                    </div>
 
+                    <div class="border-l-4 border-accent pl-6">
+                        <h4 class="font-bold text-black mb-2">Go</h4>
+                        <p class="text-black/60 text-sm">
+                            High-performance services. Low memory footprint. Compiled binaries for simple deployment.
+                        </p>
+                    </div>
+
+                    <div class="border-l-4 border-black pl-6">
+                        <h4 class="font-bold text-black mb-2">GraphQL</h4>
+                        <p class="text-black/60 text-sm">
+                            Client-driven data fetching. Eliminates over-fetching. Strong typing and introspection.
+                        </p>
+                    </div>
+
+                    <div class="border-l-4 border-accent pl-6">
+                        <h4 class="font-bold text-black mb-2">gRPC</h4>
+                        <p class="text-black/60 text-sm">
+                            High-performance RPC. Binary serialization. Bi-directional streaming for real-time
+                            communication.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="mt-16 border-2 border-black p-12 text-center bg-white">
+            <h3 class="font-display text-2xl font-bold text-black mb-4">Need the Right Stack for Your Project?</h3>
+            <p class="text-black/60 mb-6 max-w-2xl mx-auto">
+                I help teams make pragmatic technology choices that align with business goals and scale requirements.
+            </p>
+            <a href="/contact"
+                class="inline-flex items-center justify-center text-sm font-semibold bg-black text-white hover:bg-accent hover:text-black transition-all h-12 px-8 border border-black"
+                data-analytics="cta-stack-page-consult">
+                Discuss Your Architecture →
+            </a>
         </div>
     </div>
 </section>

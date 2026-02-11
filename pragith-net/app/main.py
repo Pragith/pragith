@@ -47,20 +47,19 @@ templates.env.globals["now"] = datetime.now
 # Context Processor for common variables
 @app.middleware("http")
 async def add_context(request: Request, call_next):
-    # This is not a standard middleware for context, 
-    # but we can pass common data via request state or template globals if needed.
-    # For now, we'll just handle it in routes or use a helper.
+    # Inject GA_TAG into request state so templates can access it
+    request.state.ga_tag = settings.GA_TAG
     return await call_next(request)
 
 # Routes
 
 @app.get("/favicon.ico", include_in_schema=False)
 async def favicon():
-    return RedirectResponse(url="/static/favicon.ico")
+    return RedirectResponse(url="/static/favicon.ico", status_code=301)
 
 @app.get("/", response_class=HTMLResponse)
 async def home(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
+    return templates.TemplateResponse("index.html", {"request": request, "ga_tag": settings.GA_TAG})
 
 @app.get("/agents", response_class=HTMLResponse)
 async def agents(request: Request):
@@ -88,9 +87,7 @@ async def build_page(request: Request):
 async def stack(request: Request):
     return templates.TemplateResponse("stack.html", {"request": request})
 
-@app.get("/consult", response_class=HTMLResponse)
-async def consult(request: Request):
-    return templates.TemplateResponse("consult.html", {"request": request})
+
 
 @app.get("/blog", response_class=HTMLResponse)
 async def blog_list(request: Request):
@@ -111,9 +108,27 @@ async def blog_detail(request: Request, slug: str):
 
 @app.get("/contact", response_class=HTMLResponse)
 async def contact(request: Request):
-    return templates.TemplateResponse("contact.html", {"request": request, "site_key": "TODO-PUBLIC-KEY-ENV"}) 
-    # NOTE: Need to expose PUBLIC key to template too. 
-    # We should add RECAPTCHA_SITE_KEY to config and pass it here.
+    from app.services.currency import convert_rate
+    
+    # Get client IP
+    client_ip = request.client.host if request.client else "127.0.0.1"
+    
+    # Convert rate to user's currency
+    converted_rate, currency_code, currency_symbol = await convert_rate(
+        settings.HOURLY_RATE,
+        client_ip
+    )
+    
+    return templates.TemplateResponse("contact.html", {
+        "request": request,
+        "ga_tag": settings.GA_TAG,
+        "hourly_rate": converted_rate,
+        "currency_code": currency_code,
+        "currency_symbol": currency_symbol,
+        "base_rate_usd": settings.HOURLY_RATE,
+        "site_key": "TODO-PUBLIC-KEY-ENV"
+    })
+
 
 @app.post("/contact", response_class=HTMLResponse)
 @limiter.limit("5/minute")

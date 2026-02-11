@@ -3,102 +3,285 @@
 {% block title %}AI Agents | Pragith Prakash{% endblock %}
 
 {% block content %}
-<section class="py-20">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="mb-16">
-            <h1 class="text-3xl font-bold tracking-tight text-slate-900 mb-4">AI-Augmented Execution</h1>
-            <p class="text-lg text-slate-600 max-w-3xl leading-relaxed">
-                I do not just write code&#59; I orchestrate a structured system of AI agents using the
-                <span class="font-medium text-slate-900">Google Agent Development Kit (ADK)</span> and
-                <span class="font-medium text-slate-900">Model Context Protocol (MCP)</span>.
-                <span class="font-medium text-slate-900">Human-led, AI-amplified.</span>
+<style>
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes pulse {
+
+        0%,
+        100% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 0.5;
+        }
+    }
+
+    .animate-fade-in {
+        animation: fadeInUp 0.6s ease-out forwards;
+    }
+
+    .animate-pulse-slow {
+        animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    .agent-card {
+        transition: all 0.3s ease;
+    }
+
+    .agent-card:hover {
+        transform: translateY(-4px);
+    }
+</style>
+
+<section class="py-20 border-t border-black">
+    <div class="max-w-6xl mx-auto px-6">
+        <!-- Hero -->
+        <div class="mb-20 text-center">
+            <div
+                class="inline-block border border-black bg-accent text-black px-4 py-2 text-xs font-bold uppercase tracking-wider mb-8 animate-fade-in">
+                How I Work
+            </div>
+            <h1 class="font-display text-5xl sm:text-6xl font-bold tracking-tight text-black mb-6 animate-fade-in">
+                Human-Led,<br>AI-Amplified
+            </h1>
+            <p class="text-xl text-black/60 max-w-3xl mx-auto leading-relaxed animate-fade-in">
+                I use structured AI workflows to accelerate delivery across engineering, data, infrastructure, and
+                product.
+                <strong class="text-black">Faster results, consistent quality.</strong>
             </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <!-- How It Works -->
+        <div class="mb-20">
+            <h2 class="font-display text-3xl font-bold text-black mb-4 text-center">How It Works</h2>
+            <div class="w-16 h-1 bg-accent mx-auto mb-12"></div>
 
-            <div class="space-y-8">
-                <div>
-                    <h2 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-                        <span
-                            class="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 text-sm font-mono">01</span>
-                        Engineering
-                    </h2>
-                    <p class="text-slate-600 mb-4">
-                        Agents handle boilerplate, test generation, and refactoring patterns. I focus on core
-                        architecture, complex logic, and system security.
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 border-2 border-black bg-white mx-auto mb-6 flex items-center justify-center">
+                        <span class="text-2xl font-bold">1</span>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-black mb-3">You Define Goals</h3>
+                    <p class="text-black/60">
+                        Tell me what you need: a new feature, data pipeline, infrastructure upgrade, or full system
+                        build.
                     </p>
-                    <ul class="text-sm text-slate-500 list-disc list-inside">
-                        <li>Automated Test Generation</li>
-                        <li>Code Migration & Refactoring</li>
-                        <li>Documentation Maintenance</li>
-                    </ul>
                 </div>
 
-                <div>
-                    <h2 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-                        <span
-                            class="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 text-sm font-mono">02</span>
-                        Data Ops
-                    </h2>
-                    <p class="text-slate-600 mb-4">
-                        Automated tools monitor data quality, schema changes, and pipeline health, surfacing anomalies
-                        for human review.
+                <div class="text-center">
+                    <div
+                        class="w-16 h-16 border-2 border-accent bg-accent/10 mx-auto mb-6 flex items-center justify-center">
+                        <span class="text-2xl font-bold">2</span>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-black mb-3">AI Agents Execute</h3>
+                    <p class="text-black/60">
+                        AI handles repetitive tasks like boilerplate, testing, and documentation, while I focus on
+                        architecture and complex decisions.
                     </p>
-                    <ul class="text-sm text-slate-500 list-disc list-inside">
-                        <li>Schema Validation Agents</li>
-                        <li>Anomaly Detection</li>
-                        <li>Automated Data Profiling</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="space-y-8">
-                <div>
-                    <h2 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-                        <span
-                            class="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 text-sm font-mono">03</span>
-                        Infrastructure
-                    </h2>
-                    <p class="text-slate-600 mb-4">
-                        Infrastructure as Code is generated and validated against best practices. Security scanning is
-                        continuous and automated.
-                    </p>
-                    <ul class="text-sm text-slate-500 list-disc list-inside">
-                        <li>Terraform Generator</li>
-                        <li>Security Policy Compliance</li>
-                        <li>Cost Optimization Analysis</li>
-                    </ul>
                 </div>
 
-                <div>
-                    <h2 class="text-xl font-bold text-slate-900 mb-4 flex items-center gap-3">
-                        <span
-                            class="flex items-center justify-center w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 text-sm font-mono">04</span>
-                        Product
-                    </h2>
-                    <p class="text-slate-600 mb-4">
-                        Rapid prototyping of UI/UX and requirement analysis to move from idea to validated spec faster.
+                <div class="text-center">
+                    <div class="w-16 h-16 border-2 border-black bg-white mx-auto mb-6 flex items-center justify-center">
+                        <span class="text-2xl font-bold">3</span>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-black mb-3">You Get Results</h3>
+                    <p class="text-black/60">
+                        Production-ready code, deployed infrastructure, and comprehensive documentation.
                     </p>
-                    <ul class="text-sm text-slate-500 list-disc list-inside">
-                        <li>Requirement Parsing</li>
-                        <li>User Journey Mapping</li>
-                        <li>Rapid UI Prototyping</li>
-                    </ul>
                 </div>
             </div>
-
         </div>
 
-        <div class="mt-20 bg-slate-50 border border-slate-100 rounded-2xl p-8 sm:p-12 text-center">
-            <h3 class="text-2xl font-bold text-slate-900 mb-4">No Gimmicks. Just Velocity.</h3>
-            <p class="text-slate-600 max-w-2xl mx-auto mb-8">
-                This isn't about replacing engineers. It's about removing friction so I can deliver enterprise-grade
-                value at startup speed.
+        <!-- Agent Capabilities -->
+        <div class="mb-20">
+            <h2 class="font-display text-3xl font-bold text-black mb-4 text-center">AI-Assisted Capabilities</h2>
+            <div class="w-16 h-1 bg-accent mx-auto mb-12"></div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Engineering Agent -->
+                <div class="agent-card border-2 border-black p-8 bg-white">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div
+                            class="w-12 h-12 border-2 border-black bg-accent flex items-center justify-center flex-shrink-0">
+                            <span class="text-xl font-bold">01</span>
+                        </div>
+                        <h3 class="font-display text-2xl font-bold text-black">Engineering Agent</h3>
+                    </div>
+                    <p class="text-black/70 mb-4 leading-relaxed">
+                        <strong class="text-black">What it does:</strong> Writes boilerplate code, generates tests,
+                        handles refactoring, and maintains documentation.
+                    </p>
+                    <p class="text-black/60 text-sm mb-4">
+                        <strong class="text-black">Why it matters:</strong> You get fully-tested, well-documented code
+                        without the manual grunt work.
+                    </p>
+                    <ul class="space-y-2 text-sm text-black/70">
+                        <li class="flex items-start gap-2">
+                            <span class="text-accent mt-1">✓</span>
+                            <span>Automated test coverage for all new features</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-accent mt-1">✓</span>
+                            <span>Zero technical debt from skipped documentation</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-accent mt-1">✓</span>
+                            <span>Code migrations completed in hours, not weeks</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Data Agent -->
+                <div class="agent-card border-2 border-black p-8 bg-white">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div
+                            class="w-12 h-12 border-2 border-black bg-accent flex items-center justify-center flex-shrink-0">
+                            <span class="text-xl font-bold">02</span>
+                        </div>
+                        <h3 class="font-display text-2xl font-bold text-black">Data Agent</h3>
+                    </div>
+                    <p class="text-black/70 mb-4 leading-relaxed">
+                        <strong class="text-black">What it does:</strong> Monitors data quality, validates schemas,
+                        detects anomalies, and profiles datasets automatically.
+                    </p>
+                    <p class="text-black/60 text-sm mb-4">
+                        <strong class="text-black">Why it matters:</strong> Bad data kills projects. This agent catches
+                        issues before they reach production.
+                    </p>
+                    <ul class="space-y-2 text-sm text-black/70">
+                        <li class="flex items-start gap-2">
+                            <span class="text-accent mt-1">✓</span>
+                            <span>Real-time data quality monitoring</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-accent mt-1">✓</span>
+                            <span>Automated anomaly detection and alerts</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-accent mt-1">✓</span>
+                            <span>Schema evolution tracking and validation</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Infrastructure Agent -->
+                <div class="agent-card border-2 border-black p-8 bg-white">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div
+                            class="w-12 h-12 border-2 border-black bg-accent flex items-center justify-center flex-shrink-0">
+                            <span class="text-xl font-bold">03</span>
+                        </div>
+                        <h3 class="font-display text-2xl font-bold text-black">Infrastructure Agent</h3>
+                    </div>
+                    <p class="text-black/70 mb-4 leading-relaxed">
+                        <strong class="text-black">What it does:</strong> Generates Infrastructure as Code, validates
+                        security policies, and optimizes cloud costs.
+                    </p>
+                    <p class="text-black/60 text-sm mb-4">
+                        <strong class="text-black">Why it matters:</strong> Your infrastructure follows best practices
+                        from day one, saving time and money.
+                    </p>
+                    <ul class="space-y-2 text-sm text-black/70">
+                        <li class="flex items-start gap-2">
+                            <span class="text-accent mt-1">✓</span>
+                            <span>Security compliance built-in, not bolted-on</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-accent mt-1">✓</span>
+                            <span>Cost optimization recommendations in real-time</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-accent mt-1">✓</span>
+                            <span>Terraform/CloudFormation generated & validated</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Product Agent -->
+                <div class="agent-card border-2 border-black p-8 bg-white">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div
+                            class="w-12 h-12 border-2 border-black bg-accent flex items-center justify-center flex-shrink-0">
+                            <span class="text-xl font-bold">04</span>
+                        </div>
+                        <h3 class="font-display text-2xl font-bold text-black">Product Agent</h3>
+                    </div>
+                    <p class="text-black/70 mb-4 leading-relaxed">
+                        <strong class="text-black">What it does:</strong> Parses requirements, maps user journeys, and
+                        rapidly prototypes UI/UX concepts.
+                    </p>
+                    <p class="text-black/60 text-sm mb-4">
+                        <strong class="text-black">Why it matters:</strong> Go from idea to validated prototype in days,
+                        not months.
+                    </p>
+                    <ul class="space-y-2 text-sm text-black/70">
+                        <li class="flex items-start gap-2">
+                            <span class="text-accent mt-1">✓</span>
+                            <span>Functional prototypes ready for user testing</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-accent mt-1">✓</span>
+                            <span>User journey maps from requirements</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-accent mt-1">✓</span>
+                            <span>Faster iteration on product-market fit</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tech Stack -->
+        <div class="mb-20 border-2 border-black p-10 bg-accent/5">
+            <h3 class="font-display text-2xl font-bold text-black mb-4 text-center">Powered By</h3>
+            <div class="flex flex-wrap justify-center gap-3 text-sm">
+                <span class="border border-black bg-white px-3 py-2 font-medium">Google ADK</span>
+                <span class="border border-black bg-white px-3 py-2 font-medium">Gemini 2.0</span>
+                <span class="border border-black bg-white px-3 py-2 font-medium">Claude Sonnet</span>
+                <span class="border border-black bg-white px-3 py-2 font-medium">GPT-4</span>
+                <span class="border border-black bg-white px-3 py-2 font-medium">OpenAI Codex</span>
+                <span class="border border-black bg-white px-3 py-2 font-medium">Vertex AI</span>
+                <span class="border border-black bg-white px-3 py-2 font-medium">Model Context Protocol</span>
+                <span class="border border-black bg-white px-3 py-2 font-medium">ElevenLabs</span>
+                <span class="border border-black bg-white px-3 py-2 font-medium">Veo</span>
+            </div>
+            <p class="text-center text-black/60 text-sm mt-6 max-w-2xl mx-auto">
+                Production-grade AI platforms used in a multi-model approach for reliability and best-in-class
+                results.
             </p>
-            <a href="/work" class="text-indigo-600 font-medium hover:text-indigo-500">
-                See the results &rarr;
-            </a>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="border-2 border-black p-12 bg-white text-center">
+            <h3 class="font-display text-3xl font-bold text-black mb-4">Interested in Working Together?</h3>
+            <p class="text-black/60 mb-8 max-w-2xl mx-auto leading-relaxed">
+                I help teams move faster with structured AI workflows across engineering, data, and infrastructure.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="/contact"
+                    class="inline-flex items-center justify-center text-sm font-semibold bg-black text-white hover:bg-accent hover:text-black transition-all h-12 px-8 border border-black"
+                    data-analytics="cta-agents-page-contact">
+                    Let's Discuss Your Project →
+                </a>
+                <a href="/work"
+                    class="inline-flex items-center justify-center text-sm font-semibold border border-black bg-white hover:bg-black hover:text-white transition-all h-12 px-8"
+                    data-analytics="cta-agents-page-work">
+                    View Case Studies
+                </a>
+            </div>
         </div>
     </div>
 </section>

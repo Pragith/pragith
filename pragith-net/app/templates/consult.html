@@ -3,64 +3,94 @@
 {% block title %}Consulting | Pragith Prakash{% endblock %}
 
 {% block content %}
-<section class="py-20">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid md:grid-cols-2 gap-16">
-            <div>
-                <h1 class="text-3xl font-bold tracking-tight text-slate-900 mb-6">Consulting Services</h1>
-                <p class="text-lg text-slate-600 mb-8">
-                    I offer strategic advisory and technical consulting for organizations dealing with complex data and
-                    AI challenges.
-                </p>
+<section class="py-20 border-t border-black">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="font-display text-5xl font-bold tracking-tight text-black mb-6">Advisory & Consulting</h1>
+            <div class="w-20 h-1 bg-accent mb-12"></div>
 
-                <div class="space-y-8">
-                    <div>
-                        <h3 class="font-bold text-slate-900 mb-2">Architecture Review</h3>
-                        <p class="text-slate-600 text-sm">
+            <p class="text-xl text-black/60 mb-16 leading-relaxed">
+                Strategic advisory and technical consulting for organizations dealing with complex data and AI
+                challenges.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-12 mb-16">
+                <div class="space-y-10">
+                    <div class="border-l-4 border-black pl-6">
+                        <h3 class="font-display text-xl font-bold text-black mb-3">Architecture Review</h3>
+                        <p class="text-black/60 leading-relaxed">
                             Deep dive into your current cloud architecture. Identification of bottlenecks, security
                             risks, and cost optimization opportunities.
                         </p>
                     </div>
 
-                    <div>
-                        <h3 class="font-bold text-slate-900 mb-2">AI Strategy & Roadmap</h3>
-                        <p class="text-slate-600 text-sm">
-                            Pragmatic assessment of where AI can drive value in your business. roadmap development from
-                            PoC to production.
+                    <div class="border-l-4 border-accent pl-6">
+                        <h3 class="font-display text-xl font-bold text-black mb-3">AI Strategy & Roadmap</h3>
+                        <p class="text-black/60 leading-relaxed">
+                            Pragmatic assessment of where AI can drive value. Roadmap development from PoC to
+                            production.
                         </p>
                     </div>
 
-                    <div>
-                        <h3 class="font-bold text-slate-900 mb-2">Data Platform Modernization</h3>
-                        <p class="text-slate-600 text-sm">
+                    <div class="border-l-4 border-black pl-6">
+                        <h3 class="font-display text-xl font-bold text-black mb-3">Data Platform Modernization</h3>
+                        <p class="text-black/60 leading-relaxed">
                             Migration strategies from legacy on-prem systems to modern cloud lakehouses.
                         </p>
                     </div>
 
-                    <div>
-                        <h3 class="font-bold text-slate-900 mb-2">CTO Advisory</h3>
-                        <p class="text-slate-600 text-sm">
+                    <div class="border-l-4 border-accent pl-6">
+                        <h3 class="font-display text-xl font-bold text-black mb-3">CTO Advisory</h3>
+                        <p class="text-black/60 leading-relaxed">
                             Technical leadership support for startup founders and non-technical executives.
                         </p>
                     </div>
                 </div>
 
-                <div class="mt-12 p-6 bg-slate-50 rounded-xl border border-slate-100">
-                    <div class="text-sm font-medium text-slate-500 uppercase tracking-wider mb-1">Standard Rate</div>
-                    <div class="text-3xl font-bold text-slate-900 mb-4">$X/hour</div>
-                    <p class="text-sm text-slate-600">
-                        Engagements typically start with a 1-hour discovery call to assess fit and scope.
-                    </p>
-                </div>
-            </div>
+                <div class="space-y-8">
+                    <div class="border-2 border-black p-8 bg-white">
+                        <div class="text-xs font-bold uppercase tracking-widest text-black/40 mb-2">Standard Rate</div>
+                        <div class="text-5xl font-bold text-black mb-2">
+                            {{ currency_symbol }}{{ hourly_rate }}<span
+                                class="text-2xl font-semibold text-black/60">/hr</span>
+                        </div>
+                        {% if currency_code != 'USD' %}
+                        <div class="text-xs text-black/40 mb-6">~${{ base_rate_usd }} USD</div>
+                        {% else %}
+                        <div class="mb-6"></div>
+                        {% endif %}
+                        <p class="text-black/60 mb-6">
+                            Engagements typically start with a 1-hour discovery call to assess fit and scope.
+                        </p>
+                        <a href="/contact"
+                            class="inline-flex items-center justify-center text-sm font-semibold bg-black text-white hover:bg-accent hover:text-black transition-all h-12 px-8 border border-black w-full"
+                            data-analytics="cta-consult-book-call">
+                            Book Discovery Call →
+                        </a>
+                    </div>
 
-            <div class="h-full min-h-[600px] border border-slate-100 rounded-xl overflow-hidden bg-slate-50">
-                <!-- Calendly inline widget begin -->
-                <div class="calendly-inline-widget" data-url="https://calendly.com/YOUR_LINK"
-                    style="min-width:320px;height:700px;"></div>
-                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"
-                    async></script>
-                <!-- Calendly inline widget end -->
+                    <div class="border-2 border-black p-8 bg-accent/10">
+                        <h4 class="font-display text-lg font-bold text-black mb-4">Engagement Types</h4>
+                        <ul class="space-y-3 text-sm text-black/70">
+                            <li class="flex items-start gap-2">
+                                <span class="mt-1">→</span>
+                                <span>One-time architecture reviews</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="mt-1">→</span>
+                                <span>Ongoing fractional CTO advisory</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="mt-1">→</span>
+                                <span>Workshop facilitation & training</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="mt-1">→</span>
+                                <span>Technical due diligence</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
