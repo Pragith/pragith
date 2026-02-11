@@ -1,18 +1,23 @@
-# Stage 1: Build Tailwind CSS
-FROM node:20-slim AS builder
+# Stage 1: Build Tailwind CSS (no Node/npm required)
+FROM debian:bookworm-slim AS builder
 
 WORKDIR /app
 
-# Install Tailwind CLI standalone
-COPY package.json .
+# Install curl for downloading Tailwind binary
+RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
+
+# Download standalone Tailwind CLI
+ARG TAILWIND_VERSION=v3.4.1
+RUN curl -sLO https://github.com/tailwindlabs/tailwindcss/releases/download/${TAILWIND_VERSION}/tailwindcss-linux-x64 \
+    && chmod +x tailwindcss-linux-x64
+
+# Copy config and source files
 COPY tailwind.config.js .
 COPY app/static/css/input.css ./app/static/css/input.css
-# We need templates to purge unused styles
 COPY app/templates ./app/templates
 
-# Initialize package.json if not present
-RUN npm install
-RUN npx tailwindcss -i ./app/static/css/input.css -o ./static/css/style.min.css --minify
+# Build CSS
+RUN ./tailwindcss-linux-x64 -i ./app/static/css/input.css -o ./app/static/css/style.min.css --minify
 
 # Stage 2: Production Python Image with uv
 FROM python:3.11-slim-bookworm

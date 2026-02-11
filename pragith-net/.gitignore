@@ -1,19 +1,36 @@
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
-.env
-venv/
+*.so
+.Python
 .venv/
+venv/
+ENV/
 env/
-.idea/
+
+# Environment
+.env
+.env.local
+
+# IDEs
 .vscode/
-*.log
-static/css/style.min.css
-# Keep input css but maybe ignore output if we rebuild it
-# But we might want to commit the built css for deployment ease? Spec says "This is NOT a demo project."
-# Let's commit the built CSS so it runs without node in prod if needed, though Docker handles it.
-# Actually, ignoring node_modules is key.
-node_modules/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+*.egg-info/
 dist/
 build/
-.DS_Store
+
+# Tailwind standalone binary
+.tailwind/
+
+# Node (no longer needed, but keep for safety)
+node_modules/
+package-lock.json

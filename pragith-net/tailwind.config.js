@@ -5,7 +5,11 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['DM Sans', 'Inter', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
+      },
+      colors: {
+        accent: '#00FF00', // Electric lime
       },
     },
   },

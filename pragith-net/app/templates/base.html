@@ -8,30 +8,23 @@
     <meta name="description"
         content="{% block description %}Principal AI & Data Engineer specializing in enterprise platforms, multi-cloud architecture, and AI-assisted delivery.{% endblock %}">
 
-    <!-- Tailwind CSS (CDN) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
-                        display: ['DM Sans', 'Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        accent: '#00FF00', // Electric lime
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- Optimized Tailwind CSS -->
+    <link rel="stylesheet" href="/static/css/style.min.css">
 
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+
+    <!-- Preload critical fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap">
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
         rel="stylesheet">
+
+    <!-- reCAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     {% if ga_tag %}
     <!-- Google Analytics -->
@@ -51,7 +44,7 @@
     <header class="w-full bg-white sticky top-0 z-50 border-b border-black">
         <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
             <a href="/" class="font-display text-lg font-semibold text-black hover:text-accent transition-colors">
-                PRAGITH.NET
+                Pragith Prakash
             </a>
 
             <nav class="hidden md:flex gap-8 text-sm font-medium">
