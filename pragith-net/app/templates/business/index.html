@@ -1,0 +1,366 @@
+{% extends "base.html" %}
+{% block title %}Operational Systems for Established Businesses | Pragith Prakash{% endblock %}
+{% block description %}Structured operational automation, executive dashboards, and system integration for established
+businesses. Reduce manual work. Gain real-time visibility. Connect your systems.{% endblock %}
+{% block canonical %}https://pragith.net/business{% endblock %}
+{% block og_title %}Operational Systems for Established Businesses | Pragith Prakash{% endblock %}
+{% block og_description %}Structured operational automation, executive dashboards, and system integration for
+established businesses.{% endblock %}
+
+{% block content %}
+<!-- Hero -->
+<section class="border-b border-line/20">
+    <div class="max-w-6xl mx-auto px-6 py-24 sm:py-32">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1
+                class="font-display text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-ink mb-6 leading-[1.1] animate-fade-in">
+                Operational Systems for Established Businesses
+            </h1>
+            <p class="text-xl sm:text-2xl text-ink/80 max-w-3xl mx-auto mb-6 leading-relaxed animate-fade-in">
+                Structured automation, real-time visibility, and connected systems built by a senior
+                engineer and deployed into your operations.
+            </p>
+            <p class="text-lg text-ink/50 mb-12 animate-fade-in">
+                Production-ready systems designed for how your business actually runs.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 animate-fade-in">
+                <a href="/contact"
+                    class="inline-flex items-center justify-center text-sm font-semibold bg-ink text-page hover:bg-accent hover:text-black transition-all h-12 px-8"
+                    data-analytics="cta-business-hero-strategy-call">
+                    Book a Strategy Call →
+                </a>
+                <a href="#solutions"
+                    class="inline-flex items-center justify-center text-sm font-semibold border border-line bg-page hover:bg-ink hover:text-page transition-all h-12 px-8"
+                    data-analytics="cta-business-hero-solutions">
+                    See Solutions
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Problem Section -->
+<section class="border-b border-line/20 bg-surface/50">
+    <div class="max-w-6xl mx-auto px-6 py-16">
+        <div class="mb-12">
+            <h2 class="font-display text-3xl font-bold tracking-tight text-ink mb-4">Common Operational Friction</h2>
+            <div class="w-16 h-1 bg-accent"></div>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+            {% set problems = [
+            {"title": "Manual follow-ups and delayed responses", "desc": "Staff answer the same questions repeatedly.
+            Customer inquiries sit unanswered. Follow-ups depend on someone remembering."},
+            {"title": "No real-time performance visibility", "desc": "Business performance is measured from last month's
+            spreadsheet. Decisions are made on stale data. Nobody trusts the numbers."},
+            {"title": "Disconnected systems and spreadsheet dependency", "desc": "CRM, accounting, inventory, and
+            communication tools operate independently. Data is copied between them by hand, every day."}
+            ] %}
+            {% for prob in problems %}
+            <div class="border-l-4 {{ 'border-accent' if loop.index == 1 else 'border-line' }} pl-6">
+                <h3 class="font-bold text-ink mb-2 text-sm">{{ prob.title }}</h3>
+                <p class="text-ink/60 text-sm leading-relaxed">{{ prob.desc }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Solutions Overview -->
+<section id="solutions" class="py-24 border-b border-line/20">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="mb-16">
+            <h2 class="font-display text-4xl sm:text-5xl font-bold tracking-tight text-ink mb-4">What I Build</h2>
+            <div class="w-20 h-1 bg-accent"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-line/20">
+            <a href="/business/automation" class="bg-page p-10 hover:bg-accent transition-colors group block">
+                <div class="flex items-start justify-between mb-6">
+                    <h3 class="font-display text-2xl font-bold text-ink group-hover:text-black">Operations Automation
+                    </h3>
+                    <svg class="w-6 h-6 text-ink/30 group-hover:text-black/60 transform group-hover:translate-x-1 transition-all"
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </div>
+                <p class="text-ink/60 group-hover:text-black/70 leading-relaxed text-sm">
+                    Automate customer communication, lead routing, approval workflows, and repetitive
+                    administrative tasks. Reduce response time. Eliminate manual errors.
+                </p>
+            </a>
+
+            <a href="/business/dashboards" class="bg-page p-10 hover:bg-accent transition-colors group block">
+                <div class="flex items-start justify-between mb-6">
+                    <h3 class="font-display text-2xl font-bold text-ink group-hover:text-black">Executive Dashboards
+                    </h3>
+                    <svg class="w-6 h-6 text-ink/30 group-hover:text-black/60 transform group-hover:translate-x-1 transition-all"
+                        fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </div>
+                <p class="text-ink/60 group-hover:text-black/70 leading-relaxed text-sm">
+                    Real-time revenue tracking, pipeline visibility, and operational performance metrics.
+                    Decisions based on current data instead of last month's spreadsheet.
+                </p>
+            </a>
+
+            <div class="bg-page p-10 hover:bg-accent transition-colors group">
+                <div class="flex items-start justify-between mb-6">
+                    <h3 class="font-display text-2xl font-bold text-ink group-hover:text-black">System Integration</h3>
+                    <span
+                        class="text-xs font-bold text-ink/30 group-hover:text-black/50 uppercase tracking-wider mt-1">Core</span>
+                </div>
+                <p class="text-ink/60 group-hover:text-black/70 leading-relaxed text-sm">
+                    Connect CRM, accounting, inventory, and communication tools into a single operational
+                    flow. Data moves automatically. Manual entry stops.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Who This Is For -->
+<section class="py-24 border-b border-line/20">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-16 items-start">
+            <div>
+                <h2 class="font-display text-4xl font-bold tracking-tight text-ink mb-4">Who This Is For</h2>
+                <div class="w-20 h-1 bg-accent mb-8"></div>
+                <p class="text-lg text-ink/60 leading-relaxed mb-6">
+                    Best for businesses with a defined operational problem,
+                    decision authority, and readiness to move.
+                </p>
+            </div>
+            <div class="space-y-4">
+                {% set audiences = [
+                {"title": "Real Estate Brokerages", "desc": "Automated lead routing, listing management, and structured
+                client communication across teams."},
+                {"title": "Clinics & Practice Groups", "desc": "Appointment automation, patient communication systems,
+                and operational performance tracking."},
+                {"title": "Multi-Location Retail & Services", "desc": "Inventory sync, order management, and
+                consolidated reporting across branches."},
+                {"title": "Trading & Distribution Companies", "desc": "Document processing, workflow automation, and
+                integrated operational reporting."},
+                {"title": "Managing Directors & Operations Heads", "desc": "Real-time visibility into business
+                performance without asking someone to compile a report."}
+                ] %}
+                {% for aud in audiences %}
+                <div class="border-l-4 {{ 'border-accent' if loop.index is odd else 'border-line' }} pl-6 py-2">
+                    <h3 class="font-bold text-ink mb-1 text-sm">{{ aud.title }}</h3>
+                    <p class="text-ink/60 text-sm leading-relaxed">{{ aud.desc }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Example Builds -->
+<section class="py-24 border-b border-line/20 bg-surface/50">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="mb-12">
+            <h2 class="font-display text-3xl font-bold tracking-tight text-ink mb-4">Example Builds</h2>
+            <div class="w-16 h-1 bg-accent"></div>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="border-2 border-line/20 p-8 bg-page">
+                <div class="text-xs font-bold text-accent uppercase tracking-wider mb-3">~30 hours</div>
+                <h3 class="font-bold text-ink text-lg mb-3">Lead Routing Automation</h3>
+                <p class="text-sm text-ink/60 leading-relaxed">Incoming inquiries automatically classified, routed to
+                    the right team member, and tracked through to resolution.</p>
+            </div>
+            <div class="border-2 border-line/20 p-8 bg-page">
+                <div class="text-xs font-bold text-accent uppercase tracking-wider mb-3">25-40 hours</div>
+                <h3 class="font-bold text-ink text-lg mb-3">WhatsApp Intake System</h3>
+                <p class="text-sm text-ink/60 leading-relaxed">Structured customer intake via WhatsApp with automated
+                    responses, CRM integration, and follow-up sequences.</p>
+            </div>
+            <div class="border-2 border-line/20 p-8 bg-page">
+                <div class="text-xs font-bold text-accent uppercase tracking-wider mb-3">35-50 hours</div>
+                <h3 class="font-bold text-ink text-lg mb-3">Executive Dashboard Layer</h3>
+                <p class="text-sm text-ink/60 leading-relaxed">Real-time dashboard connected to your CRM, accounting,
+                    and operations tools. Revenue, pipeline, and team performance visible at a glance.</p>
+            </div>
+        </div>
+        <p class="text-xs text-ink/40 mt-6">Scope varies by complexity. All projects are scoped before work begins.</p>
+    </div>
+</section>
+
+<!-- Engagement Format -->
+<section class="py-24 border-b border-line/20 bg-surface/30">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-16 items-start">
+            <div>
+                <h2 class="font-display text-4xl font-bold tracking-tight text-ink mb-4">Engagement Format</h2>
+                <div class="w-20 h-1 bg-accent mb-8"></div>
+                <div class="space-y-4 text-ink/70">
+                    {% for item in [
+                    "20–50 hour project scope",
+                    "2–4 week delivery window",
+                    "Defined deliverables",
+                    "Structured deployment",
+                    "Documentation included",
+                    "Optional post-delivery support"
+                    ] %}
+                    <div class="flex items-start gap-3"><span class="text-accent font-bold">→</span><span>{{ item
+                            }}</span></div>
+                    {% endfor %}
+                </div>
+                <div class="mt-8 pt-6 border-t border-line/20">
+                    <p class="text-ink/80 font-medium">
+                        Clear start. Clear finish. No long-term lock-in.
+                    </p>
+                </div>
+            </div>
+            <div class="space-y-6">
+                <div class="border-2 border-accent/30 p-8 bg-accent/5">
+                    <h3 class="font-bold text-ink mb-4">Project Scope</h3>
+                    <p class="text-ink/60 text-sm leading-relaxed mb-4">
+                        Most projects fall within a 20–50 hour scope depending on complexity.
+                        Scope is defined before any work begins.
+                    </p>
+                    <p class="text-ink/60 text-sm leading-relaxed">
+                        Projects are delivered in defined milestones. Production-ready.
+                        Cleanly documented. Fully handed over. Optional ongoing support available.
+                    </p>
+                </div>
+                <div class="border-2 border-line/30 p-8 bg-page">
+                    <h3 class="font-bold text-ink mb-4">Delivery Positioning</h3>
+                    <div class="space-y-2 text-sm text-ink/60">
+                        <p>→ Scoped before execution</p>
+                        <p>→ Delivered in defined milestones</p>
+                        <p>→ Production-ready</p>
+                        <p>→ Cleanly documented</p>
+                        <p>→ Fully handed over</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Engagement Model -->
+<section class="py-24 border-b border-line/20 bg-surface/30">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="mb-16">
+            <h2 class="font-display text-4xl font-bold tracking-tight text-ink mb-4">How Engagements Work</h2>
+            <div class="w-20 h-1 bg-accent"></div>
+        </div>
+
+        <div class="space-y-0">
+            {% set steps = [
+            {"num": "01", "name": "Strategy Call", "desc": "A short conversation to understand your operations, where
+            things break down, and what outcomes matter. No commitment.", "last": false},
+            {"num": "02", "name": "Scope & Proposal", "desc": "You receive a defined project scope with documented
+            deliverables, timeline, and fixed pricing. Nothing starts until you approve.", "last": false},
+            {"num": "03", "name": "Milestone Delivery", "desc": "Work is delivered in structured milestones. You review
+            and approve each phase before the next begins.", "last": false},
+            {"num": "04", "name": "Handover & Support", "desc": "Full documentation, team training, and a support window
+            after deployment. The system belongs to you. All intellectual property transfers after payment.", "last":
+            true}
+            ] %}
+            {% for step in steps %}
+            <div class="border-2 border-line p-10 bg-page {{ '' if step.last else 'border-b-0' }}">
+                <div class="flex flex-col md:flex-row gap-8 md:items-start">
+                    <div class="md:w-1/4">
+                        <div class="text-xs font-bold uppercase tracking-widest text-accent mb-2">Step {{ step.num }}
+                        </div>
+                        <h3 class="font-display text-2xl font-bold text-ink">{{ step.name }}</h3>
+                    </div>
+                    <div class="md:w-3/4">
+                        <p class="text-ink/60 leading-relaxed">{{ step.desc }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="mt-10 border-2 border-line/30 p-8 bg-accent/5">
+            <div class="grid md:grid-cols-2 gap-6 text-sm">
+                <div>
+                    <h4 class="font-bold text-ink mb-2">Project-Based</h4>
+                    <p class="text-ink/60">Defined scope, documented deliverables, clear timeline. Most first
+                        engagements start here.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-ink mb-2">Ongoing Support</h4>
+                    <p class="text-ink/60">System maintenance, iterative improvements, and operational support for
+                        businesses that need continuous engineering.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA + Inquiry Form -->
+<section class="bg-black text-white border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-6 py-24">
+        <div class="grid lg:grid-cols-2 gap-16">
+            <div>
+                <h2 class="font-display text-4xl sm:text-5xl font-bold mb-6">Start With a Strategy Call</h2>
+                <p class="text-xl text-white/60 mb-8 leading-relaxed">
+                    A short call to understand your operations. I will tell you honestly what can
+                    and cannot be improved, and what it will take.
+                </p>
+                <div class="space-y-4 text-white/70 text-sm mb-10">
+                    <div class="flex items-start gap-3"><span class="text-accent font-bold">→</span><span>Scope is
+                            defined before any work begins</span></div>
+                    <div class="flex items-start gap-3"><span class="text-accent font-bold">→</span><span>Systems are
+                            production-ready and secure</span></div>
+                    <div class="flex items-start gap-3"><span class="text-accent font-bold">→</span><span>Documentation
+                            and training included</span></div>
+                    <div class="flex items-start gap-3"><span class="text-accent font-bold">→</span><span>All
+                            intellectual property transfers after payment</span></div>
+                </div>
+                <a href="/contact"
+                    class="inline-flex items-center justify-center text-sm font-semibold bg-accent text-black hover:bg-white transition-all h-12 px-10"
+                    data-analytics="cta-business-footer-strategy-call">
+                    Book a Strategy Call →
+                </a>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-bold mb-6">Quick Inquiry</h3>
+                <form action="/contact" method="POST" class="space-y-5">
+                    <div>
+                        <label for="biz-type" class="block text-sm font-bold text-white/80 mb-2">Business Type</label>
+                        <input type="text" name="name" id="biz-type"
+                            placeholder="e.g. Real estate brokerage, Clinic group, Trading company"
+                            class="block w-full border-2 border-white/20 bg-white/5 px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-accent">
+                    </div>
+                    <div>
+                        <label for="biz-email" class="block text-sm font-bold text-white/80 mb-2">Email *</label>
+                        <input type="email" name="email" id="biz-email" required
+                            class="block w-full border-2 border-white/20 bg-white/5 px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-accent">
+                    </div>
+                    <div>
+                        <label for="biz-problem" class="block text-sm font-bold text-white/80 mb-2">Main Operational
+                            Challenge</label>
+                        <textarea name="message" id="biz-problem" rows="3"
+                            placeholder="What operational bottleneck do you want to solve?"
+                            class="block w-full border-2 border-white/20 bg-white/5 px-4 py-3 text-white placeholder-white/30 focus:outline-none focus:border-accent"></textarea>
+                    </div>
+                    <div>
+                        <label for="biz-timeline" class="block text-sm font-bold text-white/80 mb-2">Timeline</label>
+                        <select name="inquiry_type" id="biz-timeline"
+                            class="block w-full border-2 border-white/20 bg-white/5 px-4 py-3 text-white focus:outline-none focus:border-accent appearance-none">
+                            <option value="Business Inquiry: Within 30 days">Within 30 days</option>
+                            <option value="Business Inquiry: Within 90 days" selected>Within 90 days</option>
+                            <option value="Business Inquiry: Evaluating for Q2">Evaluating for Q2</option>
+                        </select>
+                    </div>
+                    <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+                    <button type="submit"
+                        class="w-full inline-flex items-center justify-center text-sm font-semibold bg-white text-black hover:bg-accent transition-all h-12 px-8"
+                        data-analytics="cta-business-inquiry-submit">
+                        Send Inquiry →
+                    </button>
+                    <p class="text-xs text-white/30 text-center">I typically respond within 24 hours.</p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

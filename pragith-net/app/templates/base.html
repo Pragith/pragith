@@ -4,18 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Pragith Prakash | Principal AI & Data Engineer{% endblock %}</title>
+    <title>{% block title %}Pragith Prakash | Structured AI Systems · 2–4 Week Delivery{% endblock %}</title>
     <meta name="description"
-        content="{% block description %}Principal AI & Data Engineer specializing in enterprise platforms, multi-cloud architecture, and AI-assisted delivery.{% endblock %}">
+        content="{% block description %}Structured, production-ready AI systems delivered in 2–4 weeks. 20–50 hour fixed-scope builds. Clean handover. No long-term lock-in.{% endblock %}">
 
     <!-- Canonical -->
     <link rel="canonical" href="{% block canonical %}https://pragith.net{% endblock %}">
 
     <!-- OpenGraph -->
     <meta property="og:title"
-        content="{% block og_title %}Pragith Prakash | Enterprise AI & Data Platform Architect{% endblock %}">
+        content="{% block og_title %}Pragith Prakash | Structured AI Systems · 2–4 Week Delivery{% endblock %}">
     <meta property="og:description"
-        content="{% block og_description %}Enterprise AI & Data Platform Architect specializing in multi-cloud architecture, data platforms, and production AI systems.{% endblock %}">
+        content="{% block og_description %}Structured, production-ready AI systems delivered in 2–4 weeks. Fixed scope. Clean handover.{% endblock %}">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="Pragith Prakash">
@@ -23,9 +23,9 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Pragith Prakash | Enterprise AI & Data Platform Architect">
+    <meta name="twitter:title" content="Pragith Prakash | Structured AI Systems · 2–4 Week Delivery">
     <meta name="twitter:description"
-        content="Enterprise AI & Data Platform Architect specializing in multi-cloud architecture, data platforms, and production AI systems.">
+        content="Structured, production-ready AI systems delivered in 2–4 weeks. Fixed scope. Clean handover.">
     <meta name="twitter:image" content="https://pragith.net/static/og-image.png">
 
     <!-- Dark mode: apply before render to prevent flash -->
@@ -44,41 +44,7 @@
     <link rel="stylesheet" href="/static/css/style.min.css">
 
     <!-- Theme Variables & Font Mappings -->
-    <style>
-        /* Inject Theme Variables */
-            {
-                {
-                theme.css|safe
-            }
-        }
-
-        /* Map Theme Fonts to Tailwind Variables */
-        :root {
-            --font-display: {
-                    {
-                    theme.font_display|safe
-                }
-            }
-
-            ;
-
-            --font-body: {
-                    {
-                    theme.font_body|safe
-                }
-            }
-
-            ;
-
-            --font-mono: {
-                    {
-                    theme.font_mono|safe
-                }
-            }
-
-            ;
-        }
-    </style>
+    <link rel="stylesheet" href="/theme.css">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
@@ -108,17 +74,17 @@
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Pragith Prakash",
-        "jobTitle": "Enterprise AI & Data Platform Architect",
-        "description": "Enterprise AI & Data Platform Architect specializing in multi-cloud architecture, data platforms, and production AI systems.",
+        "jobTitle": "AI Systems Engineer",
+        "description": "Structured, production-ready AI systems delivered in 2–4 weeks. Fixed-scope builds with clean handover.",
         "url": "https://pragith.net",
         "sameAs": [
             "https://linkedin.com/in/pragith",
             "https://github.com/pragith"
         ],
-        "knowsAbout": ["Cloud Architecture", "AI Strategy", "Data Platform Engineering", "Technical Advisory", "Multi-Cloud", "Machine Learning"],
+        "knowsAbout": ["AI Systems", "Data Engineering", "Operational Automation", "System Integration", "Production AI"],
         "hasOccupation": {
             "@type": "Occupation",
-            "name": "Enterprise AI & Data Platform Architect",
+            "name": "AI Systems Engineer",
             "occupationLocation": {
                 "@type": "Country",
                 "name": "North America"
@@ -130,6 +96,7 @@
 
 <body class="flex flex-col min-h-screen transition-colors duration-200">
 
+
     <!-- Header -->
     <header class="w-full bg-page sticky top-0 z-50 border-b border-line/20">
         <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -137,15 +104,13 @@
                 Pragith Prakash
             </a>
 
-            <nav class="hidden md:flex gap-8 text-sm font-medium">
+            <nav class="hidden md:flex gap-6 text-sm font-medium items-center">
                 <a href="/work"
                     class="text-ink hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent">Work</a>
-                <a href="/agents"
-                    class="text-ink hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent">Agents</a>
                 <a href="/build"
-                    class="text-ink hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent">Build</a>
-                <a href="/stack"
-                    class="text-ink hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent">Stack</a>
+                    class="text-ink hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent">Method</a>
+                <a href="/business"
+                    class="text-ink hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent">Business</a>
                 <a href="/blog"
                     class="text-ink hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent">Blog</a>
             </nav>
@@ -170,10 +135,34 @@
                 </button>
 
                 <a href="/contact"
-                    class="inline-flex items-center justify-center text-sm font-medium bg-ink text-page hover:bg-accent hover:text-black transition-all h-10 px-6 focus:outline-none focus:ring-2 focus:ring-accent">
+                    class="hidden md:inline-flex items-center justify-center text-sm font-medium bg-ink text-page hover:bg-accent hover:text-black transition-all h-10 px-6 focus:outline-none focus:ring-2 focus:ring-accent">
                     Contact
                 </a>
+
+                <!-- Mobile hamburger -->
+                <button id="mobile-menu-toggle"
+                    class="md:hidden w-10 h-10 flex items-center justify-center text-ink hover:text-accent transition-colors focus:outline-none"
+                    aria-label="Toggle menu"
+                    onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
             </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-line/20 bg-page">
+            <nav class="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-3 text-sm font-medium">
+                <a href="/work" class="text-ink hover:text-accent transition-colors py-2">Work</a>
+                <a href="/build" class="text-ink hover:text-accent transition-colors py-2">Method</a>
+                <a href="/business" class="text-ink hover:text-accent transition-colors py-2">Business</a>
+                <a href="/blog" class="text-ink hover:text-accent transition-colors py-2">Blog</a>
+                <a href="/contact"
+                    class="inline-flex items-center justify-center text-sm font-medium bg-ink text-page hover:bg-accent hover:text-black transition-all h-10 px-6 mt-2">
+                    Contact
+                </a>
+            </nav>
         </div>
     </header>
 
@@ -210,9 +199,9 @@
                 <div>
                     <h3 class="text-sm font-semibold mb-4 text-accent">Services</h3>
                     <ul class="space-y-3 text-sm text-white/60">
-                        <li><a href="/consult" class="hover:text-white transition-colors">Advisory</a></li>
-                        <li><a href="/agents" class="hover:text-white transition-colors">AI Teams</a></li>
-                        <li><a href="/build" class="hover:text-white transition-colors">Build</a></li>
+                        <li><a href="/build" class="hover:text-white transition-colors">Method</a></li>
+                        <li><a href="/business" class="hover:text-white transition-colors">Business</a></li>
+                        <li><a href="/contact" class="hover:text-white transition-colors">Contact</a></li>
                     </ul>
                 </div>
                 <div>
@@ -237,7 +226,7 @@
             <div
                 class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/40">
                 <p>&copy; {{ now().year }} Pragith Prakash · <strong>Vriksh Consulting Services Inc.</strong></p>
-                <p>Remote-first · Serving North America & Global Clients</p>
+                <p>Remote-first · Structured Short-Cycle Builds</p>
             </div>
         </div>
     </footer>

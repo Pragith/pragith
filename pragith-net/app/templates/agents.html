@@ -1,283 +1,193 @@
 {% extends "base.html" %}
 
-{% block title %}AI Agents | Pragith Prakash{% endblock %}
+{% block title %}How I Build | Pragith Prakash{% endblock %}
 
 {% block content %}
+<style>
+    .anim-hidden {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+
+    .anim-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .anim-delay-1 {
+        transition-delay: 150ms;
+    }
+
+    .anim-delay-2 {
+        transition-delay: 300ms;
+    }
+
+    .anim-delay-3 {
+        transition-delay: 450ms;
+    }
+
+    .line-grow {
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 1s ease-out 0.3s;
+    }
+
+    .line-grow.anim-visible {
+        transform: scaleX(1);
+    }
+
+    .card-lift {
+        transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+
+    .card-lift:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    }
+</style>
+
 <section class="py-20 border-t border-line/20">
     <div class="max-w-6xl mx-auto px-6">
         <!-- Hero -->
-        <div class="mb-20 text-center">
-            <div
-                class="inline-block border border-line bg-accent text-black px-4 py-2 text-xs font-bold uppercase tracking-wider mb-8 animate-fade-in">
-                How I Work
-            </div>
-            <h1 class="font-display text-5xl sm:text-6xl font-bold tracking-tight text-ink mb-6 animate-fade-in">
-                Human-Led,<br>AI-Amplified
+        <div class="mb-20">
+            <h1 class="font-display text-5xl sm:text-6xl font-bold tracking-tight text-ink mb-6">
+                Structured Engineering Acceleration
             </h1>
-            <p class="text-xl text-ink/60 max-w-3xl mx-auto leading-relaxed animate-fade-in">
-                I use structured AI workflows to accelerate delivery across engineering, data, infrastructure, and
-                product.
-                <strong class="text-ink">Faster results, consistent quality.</strong>
+            <p class="text-xl text-ink/60 max-w-2xl leading-relaxed mb-8">
+                AI agents handle the repetitive engineering work. I handle architecture, logic, and deployment.
+                You get production-ready systems delivered faster.
             </p>
-        </div>
-
-        <!-- How It Works -->
-        <div class="mb-20">
-            <h2 class="font-display text-3xl font-bold text-ink mb-4 text-center">How It Works</h2>
-            <div class="w-16 h-1 bg-accent mx-auto mb-12"></div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="text-center">
-                    <div
-                        class="w-16 h-16 border-2 border-line/30 bg-surface mx-auto mb-6 flex items-center justify-center">
-                        <span class="text-2xl font-bold text-ink">1</span>
-                    </div>
-                    <h3 class="font-display text-xl font-bold text-ink mb-3">You Define Goals</h3>
-                    <p class="text-ink/60">Tell me what you need: a new feature, data pipeline, infrastructure upgrade,
-                        or full system build.</p>
+            <div class="grid sm:grid-cols-3 gap-6 max-w-2xl">
+                <div class="border-l-2 border-accent pl-4">
+                    <div class="text-2xl font-bold text-ink">20-50h</div>
+                    <div class="text-xs text-ink/50">Typical scope</div>
                 </div>
-                <div class="text-center">
-                    <div
-                        class="w-16 h-16 border-2 border-accent bg-accent/10 mx-auto mb-6 flex items-center justify-center">
-                        <span class="text-2xl font-bold text-ink">2</span>
-                    </div>
-                    <h3 class="font-display text-xl font-bold text-ink mb-3">AI Agents Execute</h3>
-                    <p class="text-ink/60">AI handles repetitive tasks like boilerplate, testing, and documentation,
-                        while I focus on architecture and complex decisions.</p>
+                <div class="border-l-2 border-line pl-4">
+                    <div class="text-2xl font-bold text-ink">2-4 wk</div>
+                    <div class="text-xs text-ink/50">Delivery window</div>
                 </div>
-                <div class="text-center">
-                    <div
-                        class="w-16 h-16 border-2 border-line/30 bg-surface mx-auto mb-6 flex items-center justify-center">
-                        <span class="text-2xl font-bold text-ink">3</span>
-                    </div>
-                    <h3 class="font-display text-xl font-bold text-ink mb-3">You Get Results</h3>
-                    <p class="text-ink/60">Production-ready code, deployed infrastructure, and comprehensive
-                        documentation.</p>
+                <div class="border-l-2 border-line pl-4">
+                    <div class="text-2xl font-bold text-ink">100%</div>
+                    <div class="text-xs text-ink/50">IP transfers to you</div>
                 </div>
             </div>
         </div>
 
-        <!-- Section 1: Deployment Lifecycle Animation -->
-        <div class="mb-32">
-            <h2 class="font-display text-2xl font-bold text-ink mb-12 text-center">Lifecycle of an Intelligent System
-            </h2>
+        <!-- What Gets Built -->
+        <div class="mb-24">
+            <h2 class="font-display text-2xl font-bold text-ink mb-12">What Gets Built</h2>
 
-            <!-- Desktop Horizontal Flow -->
-            <div class="options-bar hidden md:flex justify-between items-center relative">
-                <!-- Connecting Line -->
-                <div class="absolute top-1/2 left-0 w-full h-0.5 bg-line/20 -z-10"></div>
-
-                {% for step in [
-                {"label": "Prototype", "sub": "FastAPI Logic"},
-                {"label": "Evaluation", "sub": "Vertex AI Eval"},
-                {"label": "Infrastructure", "sub": "Terraform / IaC"},
-                {"label": "CI/CD", "sub": "GitHub Actions"},
-                {"label": "Observability", "sub": "Cloud Logging"},
-                {"label": "Production", "sub": "Hardened Scale"}
-                ] %}
-                <div class="lifecycle-node opacity-0 translate-y-4 transition-all duration-500 ease-out bg-page border border-line/30 px-4 py-3 text-center min-w-[140px]"
-                    style="transition-delay: {{ loop.index * 100 }}ms">
-                    <div class="text-sm font-bold text-ink uppercase tracking-wider mb-1">{{ step.label }}</div>
-                    <div class="text-xs text-ink/50">{{ step.sub }}</div>
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="border-2 border-line/20 p-8 bg-surface anim-hidden card-lift">
+                    <div class="text-3xl font-bold text-accent/30 mb-4">01</div>
+                    <h3 class="font-bold text-ink mb-3">Operational Automation</h3>
+                    <p class="text-sm text-ink/60 leading-relaxed">Lead routing, customer communication, workflow
+                        automation, approval systems. Manual processes replaced with reliable systems.</p>
                 </div>
-                {% endfor %}
+                <div class="border-2 border-line/20 p-8 bg-surface anim-hidden anim-delay-1 card-lift">
+                    <div class="text-3xl font-bold text-accent/30 mb-4">02</div>
+                    <h3 class="font-bold text-ink mb-3">Executive Dashboards</h3>
+                    <p class="text-sm text-ink/60 leading-relaxed">Real-time visibility into revenue, pipeline, and
+                        operations. Connected to your existing tools. Updated automatically.</p>
+                </div>
+                <div class="border-2 border-line/20 p-8 bg-surface anim-hidden anim-delay-2 card-lift">
+                    <div class="text-3xl font-bold text-accent/30 mb-4">03</div>
+                    <h3 class="font-bold text-ink mb-3">System Integration</h3>
+                    <p class="text-sm text-ink/60 leading-relaxed">CRM, accounting, inventory, and communication tools
+                        connected into a single operational flow. No more manual data entry.</p>
+                </div>
             </div>
+        </div>
 
-            <!-- Mobile Vertical Flow -->
-            <div class="md:hidden space-y-4 pl-8 border-l border-line/20">
-                {% for step in ["Prototype", "Evaluation", "Infrastructure", "CI/CD", "Observability", "Production"] %}
+        <!-- How Delivery Works (animated flow) -->
+        <div class="mb-24">
+            <h2 class="font-display text-2xl font-bold text-ink mb-12">How Delivery Works</h2>
+
+            <div class="grid md:grid-cols-4 gap-0 relative">
+                <!-- Connecting line -->
                 <div
-                    class="lifecycle-node opacity-0 translate-x-4 transition-all duration-500 ease-out text-sm font-bold text-ink">
-                    <span class="text-accent mr-2">→</span> {{ step }}
+                    class="hidden md:block absolute top-10 left-[12.5%] right-[12.5%] h-0.5 bg-accent/30 z-0 line-grow anim-hidden">
                 </div>
-                {% endfor %}
+
+                <div class="text-center px-4 py-6 relative z-10 anim-hidden">
+                    <div
+                        class="w-12 h-12 border-2 border-accent bg-accent/10 mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-lg font-bold text-ink">1</span>
+                    </div>
+                    <h3 class="font-bold text-ink text-sm mb-1">Scope</h3>
+                    <p class="text-xs text-ink/50">Problem defined. Deliverables agreed. Fixed scope.</p>
+                </div>
+
+                <div class="text-center px-4 py-6 relative z-10 anim-hidden anim-delay-1">
+                    <div
+                        class="w-12 h-12 border-2 border-line/30 bg-surface mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-lg font-bold text-ink">2</span>
+                    </div>
+                    <h3 class="font-bold text-ink text-sm mb-1">Build</h3>
+                    <p class="text-xs text-ink/50">AI agents accelerate. I architect and validate.</p>
+                </div>
+
+                <div class="text-center px-4 py-6 relative z-10 anim-hidden anim-delay-2">
+                    <div
+                        class="w-12 h-12 border-2 border-line/30 bg-surface mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-lg font-bold text-ink">3</span>
+                    </div>
+                    <h3 class="font-bold text-ink text-sm mb-1">Deploy</h3>
+                    <p class="text-xs text-ink/50">Tested. Production-ready. Deployed into your operations.</p>
+                </div>
+
+                <div class="text-center px-4 py-6 relative z-10 anim-hidden anim-delay-3">
+                    <div
+                        class="w-12 h-12 border-2 border-accent bg-accent/10 mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-lg font-bold text-ink">4</span>
+                    </div>
+                    <h3 class="font-bold text-ink text-sm mb-1">Handover</h3>
+                    <p class="text-xs text-ink/50">Documented. Training included. You own everything.</p>
+                </div>
             </div>
         </div>
 
-        <!-- Agent Capabilities -->
-        <div class="mb-20">
-            <h2 class="font-display text-3xl font-bold text-ink mb-4 text-center">AI-Assisted Capabilities</h2>
-            <div class="w-16 h-1 bg-accent mx-auto mb-12"></div>
+        <!-- What AI Accelerates -->
+        <div class="mb-24">
+            <h2 class="font-display text-2xl font-bold text-ink mb-4">Where AI Adds Speed</h2>
+            <p class="text-ink/50 mb-8 max-w-xl text-sm">These tasks are delegated to AI agents. Architecture, logic,
+                and deployment decisions stay with me.</p>
 
-            <div class="grid md:grid-cols-2 gap-6">
-                {% set agents = [
-                {"num": "01", "name": "Engineering Agent",
-                "does": "Writes boilerplate code, generates tests, handles refactoring, and maintains documentation.",
-                "why": "You get fully-tested, well-documented code without the manual grunt work.",
-                "benefits": ["Automated test coverage for all new features", "Minimized technical debt from
-                documentation
-                gaps", "Accelerated migration timelines"]},
-                {"num": "02", "name": "Data Agent",
-                "does": "Monitors data quality, validates schemas, detects anomalies, and profiles datasets
-                automatically.",
-                "why": "Bad data kills projects. This agent catches issues before they reach production.",
-                "benefits": ["Real-time data quality monitoring", "Automated anomaly detection and alerts", "Schema
-                evolution tracking and validation"]},
-                {"num": "03", "name": "Infrastructure Agent",
-                "does": "Generates Infrastructure as Code, validates security policies, and optimizes cloud costs.",
-                "why": "Your infrastructure follows best practices from day one, saving time and money.",
-                "benefits": ["Security compliance built-in, not bolted-on", "Cost optimization recommendations in
-                real-time", "Terraform/CloudFormation generated & validated"]},
-                {"num": "04", "name": "Product Agent",
-                "does": "Parses requirements, maps user journeys, and rapidly prototypes UI/UX concepts.",
-                "why": "Go from idea to validated prototype in days, not months.",
-                "benefits": ["Functional prototypes ready for user testing", "User journey maps from requirements",
-                "Faster
-                iteration on product-market fit"]}
+            <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-3">
+                {% for item in [
+                "Boilerplate generation",
+                "Test coverage",
+                "Code refactoring",
+                "Schema validation",
+                "API documentation",
+                "Data quality checks",
+                "Deployment runbooks",
+                "Rapid prototyping"
                 ] %}
-
-                {% for agent in agents %}
-                <div class="agent-card border-2 border-line/30 p-8 bg-surface">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div
-                            class="w-12 h-12 border-2 border-line bg-accent flex items-center justify-center flex-shrink-0">
-                            <span class="text-xl font-bold text-black">{{ agent.num }}</span>
-                        </div>
-                        <h3 class="font-display text-2xl font-bold text-ink">{{ agent.name }}</h3>
-                    </div>
-                    <p class="text-ink/70 mb-4 leading-relaxed">
-                        <strong class="text-ink">What it does:</strong> {{ agent.does }}
-                    </p>
-                    <p class="text-ink/60 text-sm mb-4">
-                        <strong class="text-ink">Why it matters:</strong> {{ agent.why }}
-                    </p>
-                    <ul class="space-y-2 text-sm text-ink/70">
-                        {% for item in agent.benefits %}
-                        <li class="flex items-start gap-2">
-                            <span class="text-accent mt-1">✓</span>
-                            <span>{{ item }}</span>
-                        </li>
-                        {% endfor %}
-                    </ul>
+                <div class="border border-line/20 px-4 py-3 text-sm text-ink/60 bg-surface anim-hidden card-lift"
+                    style="transition-delay: {{ loop.index0 * 80 }}ms">
+                    <span class="text-accent mr-2">&#8594;</span>{{ item }}
                 </div>
                 {% endfor %}
             </div>
         </div>
 
-        <!-- Section 4: Why Most AI Projects Fail -->
-        <div class="mb-32 bg-black text-white p-12 border border-line/20 relative overflow-hidden">
-            <h2 class="font-display text-3xl font-bold mb-8 relative z-10">Why Most AI Projects Fail in Production</h2>
-            <div class="grid md:grid-cols-2 gap-12 relative z-10">
-                <div class="space-y-4">
-                    <div class="flex items-center gap-3 opacity-60">
-                        <span class="text-red-500 min-w-[24px]">✕</span><span>No infrastructure automation</span>
-                    </div>
-                    <div class="flex items-center gap-3 opacity-60">
-                        <span class="text-red-500 min-w-[24px]">✕</span><span>No CI/CD for prompt engineering</span>
-                    </div>
-                    <div class="flex items-center gap-3 opacity-60">
-                        <span class="text-red-500 min-w-[24px]">✕</span><span>No rollback strategy</span>
-                    </div>
-                </div>
-                <div class="space-y-4">
-                    <div class="flex items-center gap-3 opacity-60">
-                        <span class="text-red-500 min-w-[24px]">✕</span><span>No observability or tracing</span>
-                    </div>
-                    <div class="flex items-center gap-3 opacity-60">
-                        <span class="text-red-500 min-w-[24px]">✕</span><span>No cost governance models</span>
-                    </div>
-                    <p class="text-accent/90 mt-6 font-medium text-lg pt-4 border-t border-white/10">
-                        My approach embeds production discipline from day one.
-                    </p>
-                </div>
-            </div>
-            <!-- Subtle Grid Background -->
-            <div class="absolute inset-0 opacity-10"
-                style="background-image: linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px); background-size: 20px 20px;">
-            </div>
-        </div>
-
-        <!-- Tech Stack -->
-        <div class="mb-32 border-y border-line/20 py-12">
-            <h3 class="font-display text-sm font-bold text-ink/40 uppercase tracking-widest mb-8 text-center">Powering
-                The Stack</h3>
-            <div
-                class="flex flex-wrap justify-center gap-6 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
-                {% for tech in ["Google Cloud AI", "Vertex AI", "OpenAI Platform", "Anthropic", "Terraform", "Model
-                Context Protocol"] %}
-                <span class="border border-line/30 bg-surface px-4 py-2 text-sm font-medium text-ink">{{ tech }}</span>
-                {% endfor %}
-            </div>
-        </div>
-
-        <!-- Section 3: Production-Grade GenAI Delivery -->
-        <div class="mb-32 text-center max-w-3xl mx-auto">
-            <h2 class="font-display text-4xl font-bold text-ink mb-6">Production-Grade GenAI Delivery</h2>
-            <p class="text-xl text-ink/60 leading-relaxed mb-8">
-                I build and deploy production-ready AI agents using structured infrastructure templates.
-            </p>
-            <div class="inline-block text-sm font-medium text-ink/40 border border-line/30 px-4 py-2 bg-accent/5">
-                Powered by Google’s Agent Starter Pack and custom extensions.
-            </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-12 text-sm text-ink/70">
-                <div class="p-4 border border-line/20 bg-surface">Infrastructure as Code</div>
-                <div class="p-4 border border-line/20 bg-surface">CI/CD Automation</div>
-                <div class="p-4 border border-line/20 bg-surface">Structured Observability</div>
-                <div class="p-4 border border-line/20 bg-surface">Secure IAM Config</div>
-                <div class="p-4 border border-line/20 bg-surface">Scalable Cloud Run</div>
-                <div class="p-4 border border-line/20 bg-surface">Vertex AI Integration</div>
-            </div>
-        </div>
-
-        <!-- Section 2: AI Agent Workflow Animation -->
-        <div class="mb-20">
-            <h3 class="font-display text-2xl font-bold text-ink mb-12 text-center">Human-Led, AI-Amplified Workflow</h3>
-
-            <div class="grid md:grid-cols-4 gap-6" id="workflow-steps">
-                <!-- Step 1 -->
-                <div class="workflow-step border-2 border-line/20 p-6 bg-surface relative transition-all duration-300">
-                    <div class="text-xs font-bold uppercase tracking-widest text-ink/40 mb-3">Client Requirement</div>
-                    <p class="text-sm text-ink/70 leading-relaxed">
-                        A raw requirements document is converted into a structured architecture brief, defining
-                        constraints and success metrics.
-                    </p>
-                </div>
-
-                <!-- Step 2 -->
-                <div class="workflow-step border-2 border-line/20 p-6 bg-surface relative transition-all duration-300">
-                    <div class="text-xs font-bold uppercase tracking-widest text-ink/40 mb-3">Agent Draft</div>
-                    <p class="text-sm text-ink/70 leading-relaxed">
-                        Infrastructure modules, data schemas, and agent logic generated by specialized AI agents.
-                    </p>
-                </div>
-
-                <!-- Step 3 -->
-                <div class="workflow-step border-2 border-line/20 p-6 bg-surface relative transition-all duration-300">
-                    <div class="text-xs font-bold uppercase tracking-widest text-ink/40 mb-3">Human Review</div>
-                    <p class="text-sm text-ink/70 leading-relaxed">
-                        Architecture validation, security hardening, cost optimization, and logic verification.
-                    </p>
-                </div>
-
-                <!-- Step 4 -->
-                <div class="workflow-step border-2 border-line/20 p-6 bg-surface relative transition-all duration-300">
-                    <div class="text-xs font-bold uppercase tracking-widest text-ink/40 mb-3">Production Deployment
-                    </div>
-                    <p class="text-sm text-ink/70 leading-relaxed">
-                        CI/CD-driven release with structured logging, monitoring, and automated rollback controls.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-
-
-        <!-- CTA Section -->
-        <div class="border-2 border-line/30 p-12 bg-surface text-center">
-            <h3 class="font-display text-3xl font-bold text-ink mb-4">Interested in Working Together?</h3>
-            <p class="text-ink/60 mb-8 max-w-2xl mx-auto leading-relaxed">
-                I help teams move faster with structured AI workflows across engineering, data, and infrastructure.
+        <!-- CTA -->
+        <div class="border-2 border-line/30 p-12 bg-surface text-center anim-hidden">
+            <h3 class="font-display text-2xl font-bold text-ink mb-4">Want This for Your Project?</h3>
+            <p class="text-ink/60 mb-8 max-w-lg mx-auto">
+                20-50 hour scope. 2-4 week delivery. Production-ready output.
             </p>
             <div class="flex flex-wrap justify-center gap-4">
                 <a href="/contact"
                     class="inline-flex items-center justify-center text-sm font-semibold bg-ink text-page hover:bg-accent hover:text-black transition-all h-12 px-8"
-                    data-analytics="cta-agents-page-contact">
-                    Let's Discuss Your Project →
+                    data-analytics="cta-agents-contact">
+                    Book a Strategy Call &#8594;
                 </a>
                 <a href="/work"
                     class="inline-flex items-center justify-center text-sm font-semibold border border-line/30 bg-surface text-ink hover:bg-ink hover:text-page transition-all h-12 px-8"
-                    data-analytics="cta-agents-page-work">
+                    data-analytics="cta-agents-work">
                     View Case Studies
                 </a>
             </div>
@@ -286,27 +196,18 @@
 </section>
 
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
+    document.addEventListener('DOMContentLoaded', function () {
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
                 if (entry.isIntersecting) {
-                    entry.target.classList.remove('opacity-0', 'translate-y-4', 'translate-x-4');
-                    if (entry.target.classList.contains('workflow-step')) {
-                        entry.target.classList.add('border-accent');
-                        entry.target.classList.remove('border-line/20');
-                    }
+                    entry.target.classList.add('anim-visible');
+                    entry.target.classList.remove('anim-hidden');
                     observer.unobserve(entry.target);
                 }
             });
         }, { threshold: 0.15 });
 
-        document.querySelectorAll('.lifecycle-node, .agent-card, .workflow-step').forEach(el => {
-            if (el.classList.contains('workflow-step')) {
-                // Add initial animation state and stagger
-                el.classList.add('opacity-0', 'translate-y-4');
-                const idx = Array.from(el.parentNode.children).indexOf(el);
-                el.style.transitionDelay = `${idx * 200}ms`;
-            }
+        document.querySelectorAll('.anim-hidden').forEach(function (el) {
             observer.observe(el);
         });
     });

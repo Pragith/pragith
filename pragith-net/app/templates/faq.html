@@ -7,17 +7,23 @@
         <div class="w-20 h-1 bg-accent mb-12"></div>
         <div class="space-y-12">
             {% set faqs = [
-            {"q": "Do you sign NDAs?", "a": "Yes. I routinely work with sensitive IP and regulated data. I am happy to
-            sign a standard mutual NDA before discussing proprietary details."},
-            {"q": "Do you work on-site?", "a": "I primarily work remotely. I can travel for critical workshops,
-            kick-offs, or deployments in North America, subject to schedule availability and expense
-            coverage."},
-            {"q": "What is your billing model?", "a": "For advisory work, I bill hourly. For defined projects (e.g.,
-            specific PoC, platform migration), I prefer fixed-price contracts with milestone-based payments."},
+            {"q": "What types of engagements do you take?", "a": "Defined-scope builds, typically 20–50 hours over 2–4
+            weeks. Fixed deliverables. Structured milestones. No open-ended hourly work without a clear objective."},
+            {"q": "What is the typical project size?", "a": "Most projects fall within a 20–50 hour scope depending on
+            complexity. Scope is always defined before execution begins. You know what you are getting before any work
+            starts."},
+            {"q": "How are projects billed?", "a": "Fixed-scope with milestone-based payments. No hourly billing for
+            project work. Scope and pricing are agreed before execution begins."},
+            {"q": "Do you sign NDAs?", "a": "Yes. I routinely handle sensitive operational data. Happy to sign a mutual
+            NDA before discussing details."},
+            {"q": "Do you work on-site?", "a": "Primarily remote. I can travel for critical workshops or deployments in
+            North America, subject to schedule and expense coverage."},
             {"q": "Who owns the IP?", "a": "You do. Upon full payment, all code, documentation, and artifacts produced
-            during the engagement become your exclusive property."},
-            {"q": "Are you available for full-time roles?", "a": "I am focused on consulting engagements and selective
-            leadership roles. Open to discussing fractional CTO or Principal Architect arrangements."}
+            during the engagement are your exclusive property."},
+            {"q": "What happens after delivery?", "a": "Full documentation and team training are included. Optional
+            post-delivery support is available. The system is yours to operate with no dependency on the builder."},
+            {"q": "Are you available for full-time roles?", "a": "No. I focus on independent project-based work.
+            Structured short-cycle builds for businesses ready to act."}
             ] %}
             {% for faq in faqs %}
             <div>

@@ -39,6 +39,30 @@
   ::selection {
     @apply bg-accent text-black;
   }
+
+  /* Form field styling - ensure proper color inheritance */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"],
+  input[type="tel"],
+  input[type="url"],
+  select,
+  textarea {
+    color: rgb(var(--color-ink));
+    background-color: rgb(var(--color-surface));
+  }
+
+  /* Dropdown options - force proper colors */
+  select option {
+    color: rgb(var(--color-ink));
+    background-color: rgb(var(--color-surface));
+  }
+
+  /* Placeholder text */
+  ::placeholder {
+    color: rgb(var(--color-ink) / 0.4);
+  }
 }
 
 @layer components {

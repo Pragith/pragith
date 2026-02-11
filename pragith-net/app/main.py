@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Request, Form, Depends, HTTPException
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-from fastapi.responses import HTMLResponse, RedirectResponse
+from fastapi.responses import HTMLResponse, RedirectResponse, Response
 from fastapi.middleware.trustedhost import TrustedHostMiddleware
 from starlette.middleware.base import BaseHTTPMiddleware
 from slowapi import Limiter, _rate_limit_exceeded_handler
@@ -60,6 +60,8 @@ templates.env.globals["now"] = datetime.now
 from app.themes import ThemeService
 theme_service = ThemeService(settings.THEME)
 templates.env.globals["theme"] = theme_service
+templates.env.globals["show_products"] = settings.SHOW_PRODUCTS
+templates.env.globals["ga_tag"] = settings.GA_TAG
 
 # Context Processor for common variables
 @app.middleware("http")
@@ -69,6 +71,10 @@ async def add_context(request: Request, call_next):
     return await call_next(request)
 
 # Routes
+
+@app.get("/theme.css", include_in_schema=False)
+async def theme_css():
+    return Response(content=theme_service.css, media_type="text/css")
 
 @app.get("/favicon.ico", include_in_schema=False)
 async def favicon():
@@ -124,21 +130,9 @@ async def blog_detail(request: Request, slug: str):
 
 @app.get("/contact", response_class=HTMLResponse)
 async def contact(request: Request):
-    from app.services.currency import convert_rate
-    
-    client_ip = request.client.host if request.client else "127.0.0.1"
-    converted_rate, currency_code, currency_symbol = await convert_rate(
-        settings.HOURLY_RATE,
-        client_ip
-    )
-    
     return templates.TemplateResponse("contact.html", {
         "request": request,
         "ga_tag": settings.GA_TAG,
-        "hourly_rate": converted_rate,
-        "currency_code": currency_code,
-        "currency_symbol": currency_symbol,
-        "base_rate_usd": settings.HOURLY_RATE,
         "recaptcha_site_key": settings.RECAPTCHA_SITE_KEY,
         "calendly_url": settings.CALENDLY_URL,
     })
@@ -191,6 +185,20 @@ async def legal(request: Request):
 @app.get("/privacy", response_class=HTMLResponse)
 async def privacy(request: Request):
     return templates.TemplateResponse("privacy.html", {"request": request})
+
+# Business Section
+@app.get("/business", response_class=HTMLResponse)
+@app.get("/business/", response_class=HTMLResponse)
+async def business_home(request: Request):
+    return templates.TemplateResponse("business/index.html", {"request": request})
+
+@app.get("/business/automation", response_class=HTMLResponse)
+async def business_automation(request: Request):
+    return templates.TemplateResponse("business/automation.html", {"request": request})
+
+@app.get("/business/dashboards", response_class=HTMLResponse)
+async def business_dashboards(request: Request):
+    return templates.TemplateResponse("business/dashboards.html", {"request": request})
 
 # Error Handlers
 @app.exception_handler(404)

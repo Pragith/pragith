@@ -1,48 +1,50 @@
 {% extends "base.html" %}
-{% block title %}Contact & Consulting | Pragith Prakash{% endblock %}
+{% block title %}Start a Project | Pragith Prakash{% endblock %}
 {% block content %}
 <section class="py-20 border-t border-line/20">
     <div class="max-w-6xl mx-auto px-6">
         <div class="mb-16">
-            <h1 class="font-display text-5xl font-bold tracking-tight text-ink mb-4">Let's Work Together</h1>
+            <h1 class="font-display text-5xl font-bold tracking-tight text-ink mb-4">Start a Project</h1>
             <div class="w-20 h-1 bg-accent mb-6"></div>
-            <p class="text-xl text-ink/60 max-w-3xl">Strategic advisory, technical consulting, and architecture reviews
-                for data and AI challenges.</p>
+            <p class="text-xl text-ink/60 max-w-3xl">Structured, defined-scope AI builds for businesses with
+                a clearly defined operational problem and decision authority to move.</p>
         </div>
         <div class="grid lg:grid-cols-2 gap-12">
-            <!-- Left: Services -->
+            <!-- Left: Engagement Format -->
             <div class="space-y-8">
-                <h2 class="font-display text-2xl font-bold text-ink">Consulting Services</h2>
-                <div class="space-y-6">
-                    {% set services = [
-                    {"name": "Architecture Review", "desc": "Deep dive into your current cloud architecture.
-                    Identification of bottlenecks, security risks, and cost optimization opportunities.", "accent":
-                    false},
-                    {"name": "AI Strategy & Roadmap", "desc": "Pragmatic assessment of where AI can drive value. Roadmap
-                    development from PoC to production.", "accent": true},
-                    {"name": "Data Platform Modernization", "desc": "Migration strategies from legacy on-prem systems to
-                    modern cloud lakehouses.", "accent": false},
-                    {"name": "CTO Advisory", "desc": "Technical leadership support for startup founders and
-                    non-technical executives.", "accent": true}
-                    ] %}
-                    {% for svc in services %}
-                    <div class="border-l-4 {{ 'border-accent' if svc.accent else 'border-line' }} pl-6">
-                        <h3 class="font-bold text-ink mb-2">{{ svc.name }}</h3>
-                        <p class="text-ink/60 text-sm leading-relaxed">{{ svc.desc }}</p>
+                <!-- Engagement Format Block -->
+                <div class="border-2 border-accent/40 p-8 bg-accent/5">
+                    <h2 class="font-display text-2xl font-bold text-ink mb-6">Engagement Format</h2>
+                    <div class="space-y-3 text-sm text-ink/70">
+                        {% for item in [
+                        "20–50 hour project scope",
+                        "2–4 week delivery window",
+                        "Defined deliverables",
+                        "Structured deployment",
+                        "Documentation included",
+                        "Optional post-delivery support"
+                        ] %}
+                        <div class="flex items-start gap-3"><span class="text-accent mt-0.5 font-bold">→</span><span>{{
+                                item }}</span></div>
+                        {% endfor %}
                     </div>
-                    {% endfor %}
+                    <div class="mt-6 pt-6 border-t border-line/20">
+                        <p class="text-sm text-ink/80 font-medium leading-relaxed">
+                            Clear start. Clear finish. No long-term lock-in.
+                        </p>
+                    </div>
                 </div>
 
-                <!-- Value Anchors -->
-                <div class="border-2 border-line/30 p-8 bg-accent/5">
-                    <h3 class="font-bold text-ink mb-4">What Clients Typically Gain</h3>
+                <!-- What You Get -->
+                <div class="border-2 border-line/30 p-8 bg-surface">
+                    <h3 class="font-bold text-ink mb-4">What You Get</h3>
                     <div class="space-y-3 text-sm text-ink/70">
                         {% for val in [
-                        "Architecture clarity and reduced technical ambiguity",
-                        "Measurable reduction in cloud inefficiencies",
-                        "Structured AI adoption without hype",
-                        "Hardened production systems with clear operational ownership",
-                        "Faster delivery cycles using AI-assisted workflows"
+                        "Production-ready systems deployed into your operations",
+                        "Faster customer response through structured automation",
+                        "Reduced manual overhead and fewer operational errors",
+                        "Clean documentation and full handover",
+                        "No dependency on the builder after delivery"
                         ] %}
                         <div class="flex items-start gap-3"><span class="text-accent mt-0.5 font-bold">→</span><span>{{
                                 val }}</span></div>
@@ -50,70 +52,31 @@
                     </div>
                 </div>
 
-                <!-- Engagement Flow -->
+                <!-- Pricing Psychology -->
                 <div class="border-2 border-line/30 p-8 bg-surface">
-                    <h3 class="font-bold text-ink mb-6">Engagement Flow</h3>
-
-                    <div
-                        class="space-y-6 relative before:absolute before:inset-y-0 before:left-3 before:w-0.5 before:bg-line/20">
-                        <!-- Step 1 -->
-                        <div class="relative pl-10">
-                            <span
-                                class="absolute left-0 top-0 w-6 h-6 rounded-full bg-accent text-white text-xs font-bold flex items-center justify-center">1</span>
-                            <h4 class="font-bold text-ink text-sm">15-Minute Intro Call</h4>
-                            <p class="text-sm text-ink/60 mt-1">We assess fit, scope, and business constraints.</p>
-                        </div>
-
-                        <!-- Step 2 -->
-                        <div class="relative pl-10">
-                            <span
-                                class="absolute left-0 top-0 w-6 h-6 rounded-full bg-surface border-2 border-line text-ink/60 text-xs font-bold flex items-center justify-center">2</span>
-                            <h4 class="font-bold text-ink text-sm">60-Minute Deep Architecture Review</h4>
-                            <p class="text-sm text-ink/60 mt-1">We identify bottlenecks, risks, and optimization
-                                opportunities.</p>
-                        </div>
-
-                        <!-- Step 3 -->
-                        <div class="relative pl-10">
-                            <span
-                                class="absolute left-0 top-0 w-6 h-6 rounded-full bg-surface border-2 border-line text-ink/60 text-xs font-bold flex items-center justify-center">3</span>
-                            <h4 class="font-bold text-ink text-sm">Structured Proposal</h4>
-                            <p class="text-sm text-ink/60 mt-1 mb-4">You receive a clear engagement model:</p>
-                            <ul class="text-xs text-ink/60 space-y-1 list-disc pl-4">
-                                <li>Fixed-scope implementation</li>
-                                <li>Ongoing advisory (Retainer)</li>
-                                <li>Fractional architecture leadership</li>
-                            </ul>
-                        </div>
-                    </div>
+                    <h3 class="font-bold text-ink mb-4">Project Scope</h3>
+                    <p class="text-ink/60 text-sm leading-relaxed mb-4">
+                        Most projects fall within a 20–50 hour scope depending on complexity.
+                        Scope is defined before execution begins.
+                    </p>
+                    <p class="text-ink/60 text-sm leading-relaxed">
+                        Projects are delivered in defined milestones. Production-ready.
+                        Cleanly documented. Fully handed over.
+                    </p>
                 </div>
 
-                <!-- Rate Card -->
-                <div class="border-2 border-line/30 p-8 bg-surface opacity-80 hover:opacity-100 transition-opacity">
-                    <div class="flex items-baseline justify-between mb-2">
-                        <div class="text-xs font-bold uppercase tracking-widest text-ink/40">Advisory Rate</div>
-                        {% if currency_code != 'USD' %}
-                        <div class="text-xs text-ink/40">~${{ "%.0f"|format(base_rate_usd) }} USD</div>
-                        {% endif %}
-                    </div>
-                    <div class="text-4xl font-bold text-ink mb-6">
-                        {{ currency_symbol }}{{ "%.0f"|format(hourly_rate) }}<span
-                            class="text-lg font-semibold text-ink/60">/hr</span>
-                    </div>
-
-                    {% if calendly_url %}
-                    <a href="{{ calendly_url }}" target="_blank" rel="noopener"
-                        class="inline-flex items-center justify-center text-sm font-semibold bg-ink text-page hover:bg-accent hover:text-black transition-all h-12 px-8 w-full"
-                        data-analytics="cta-contact-calendly">
-                        Book Intro Call →
-                    </a>
-                    {% endif %}
-                </div>
+                {% if calendly_url %}
+                <a href="{{ calendly_url }}" target="_blank" rel="noopener"
+                    class="inline-flex items-center justify-center text-sm font-semibold bg-ink text-page hover:bg-accent hover:text-black transition-all h-12 px-8 w-full"
+                    data-analytics="cta-contact-calendly">
+                    Book Strategy Call →
+                </a>
+                {% endif %}
             </div>
 
             <!-- Right: Form -->
             <div>
-                <h2 class="font-display text-2xl font-bold text-ink mb-6">Send a Message</h2>
+                <h2 class="font-display text-2xl font-bold text-ink mb-6">Send an Inquiry</h2>
 
                 {% if error %}
                 <div class="border-2 border-line bg-red-50 dark:bg-red-900/20 p-4 mb-6">
@@ -128,39 +91,59 @@
                 {% endif %}
 
                 <form action="/contact" method="POST" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-bold text-ink mb-2">Business Type *</label>
+                        <input type="text" name="name" id="name" required
+                            placeholder="e.g. Real estate brokerage, Clinic group, Distribution company"
+                            value="{{ form.name if form else '' }}"
+                            class="block w-full border-2 border-line/30 bg-surface px-4 py-3 text-ink focus:outline-none focus:border-accent">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-bold text-ink mb-2">Email *</label>
+                        <input type="email" name="email" id="email" autocomplete="email" required
+                            value="{{ form.email if form else '' }}"
+                            class="block w-full border-2 border-line/30 bg-surface px-4 py-3 text-ink focus:outline-none focus:border-accent">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-bold text-ink mb-2">Primary Operational Challenge
+                            *</label>
+                        <textarea id="message" name="message" rows="4" required
+                            placeholder="Describe the operational bottleneck you want to solve."
+                            class="block w-full border-2 border-line/30 bg-surface px-4 py-3 text-ink focus:outline-none focus:border-accent">{{ form.message if form else '' }}</textarea>
+                    </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
-                            <label for="name" class="block text-sm font-bold text-ink mb-2">Name *</label>
-                            <input type="text" name="name" id="name" autocomplete="name" required
-                                value="{{ form.name if form else '' }}"
-                                class="block w-full border-2 border-line/30 bg-surface px-4 py-3 text-ink focus:outline-none focus:border-accent">
+                            <label for="inquiry_type" class="block text-sm font-bold text-ink mb-2">Timeline *</label>
+                            <select name="inquiry_type" id="inquiry_type" required
+                                class="block w-full border-2 border-line/30 bg-surface px-4 py-3 text-ink focus:outline-none focus:border-accent appearance-none">
+                                <option value="" disabled {{ 'selected' if not form or not form.inquiry_type else '' }}>
+                                    Select timeline...</option>
+                                {% for opt in ["Ready to start: within 30 days", "Planning: within 90 days", "Evaluating
+                                for Q2"] %}
+                                <option value="{{ opt }}" {{ 'selected' if form and form.inquiry_type==opt else '' }}>{{
+                                    opt }}</option>
+                                {% endfor %}
+                            </select>
                         </div>
                         <div>
-                            <label for="email" class="block text-sm font-bold text-ink mb-2">Email *</label>
-                            <input type="email" name="email" id="email" autocomplete="email" required
-                                value="{{ form.email if form else '' }}"
-                                class="block w-full border-2 border-line/30 bg-surface px-4 py-3 text-ink focus:outline-none focus:border-accent">
+                            <label for="authority" class="block text-sm font-bold text-ink mb-2">Decision
+                                Authority</label>
+                            <select name="authority" id="authority"
+                                class="block w-full border-2 border-line/30 bg-surface px-4 py-3 text-ink focus:outline-none focus:border-accent appearance-none">
+                                <option value="" selected>Select one...</option>
+                                {% for opt in ["I make the decision", "I influence the decision", "Researching for my
+                                team"] %}
+                                <option value="{{ opt }}">{{ opt }}</option>
+                                {% endfor %}
+                            </select>
                         </div>
                     </div>
                     <div>
-                        <label for="inquiry_type" class="block text-sm font-bold text-ink mb-2">Nature of Inquiry
-                            *</label>
-                        <select name="inquiry_type" id="inquiry_type" required
-                            class="block w-full border-2 border-line/30 bg-surface px-4 py-3 text-ink focus:outline-none focus:border-accent appearance-none">
-                            <option value="" disabled {{ 'selected' if not form or not form.inquiry_type else '' }}>
-                                Select one...</option>
-                            {% for opt in ["Architecture Review", "AI Strategy & Implementation", "Data Platform
-                            Modernization", "Fractional CTO / Advisory", "Technical Due Diligence", "General Inquiry"]
-                            %}
-                            <option value="{{ opt }}" {{ 'selected' if form and form.inquiry_type==opt else '' }}>{{ opt
-                                }}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
-                    <div>
-                        <label for="message" class="block text-sm font-bold text-ink mb-2">Message *</label>
-                        <textarea id="message" name="message" rows="6" required
-                            class="block w-full border-2 border-line/30 bg-surface px-4 py-3 text-ink focus:outline-none focus:border-accent">{{ form.message if form else '' }}</textarea>
+                        <label for="outcome" class="block text-sm font-bold text-ink mb-2">What outcome are you trying
+                            to achieve? <span class="font-normal text-ink/40">(optional)</span></label>
+                        <input type="text" name="outcome" id="outcome"
+                            placeholder="e.g. Faster customer response, automated lead routing, real-time dashboards"
+                            class="block w-full border-2 border-line/30 bg-surface px-4 py-3 text-ink focus:outline-none focus:border-accent">
                     </div>
                     <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
                     {% if recaptcha_site_key %}
@@ -169,10 +152,10 @@
                     <button type="submit"
                         class="w-full inline-flex items-center justify-center text-sm font-semibold bg-ink text-page hover:bg-accent hover:text-black transition-all h-12 px-8"
                         data-analytics="cta-contact-form-submit">
-                        Send Message →
+                        Send Inquiry →
                     </button>
                     <p class="text-xs text-ink/40 text-center leading-relaxed">
-                        Your message is securely delivered via encrypted email. I typically respond within 24–48 hours.
+                        Your message is securely delivered via encrypted email. I typically respond within 24 hours.
                     </p>
                 </form>
             </div>

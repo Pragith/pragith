@@ -67,8 +67,16 @@ class ThemeService:
 
     @property
     def css(self) -> str:
-        """Raw CSS string containing :root / .dark variable definitions."""
-        return self._css
+        """Raw CSS string containing :root / .dark variable definitions,
+        plus font-family custom properties."""
+        font_vars = (
+            f":root {{\n"
+            f"    --font-display: {self.font_display};\n"
+            f"    --font-body: {self.font_body};\n"
+            f"    --font-mono: {self.font_mono};\n"
+            f"}}\n"
+        )
+        return self._css + "\n" + font_vars
 
     @property
     def fonts_url(self) -> str:

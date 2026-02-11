@@ -1,5 +1,11 @@
 import os
+from pathlib import Path
+from dotenv import load_dotenv
 from pydantic_settings import BaseSettings
+
+# Load .env file from project root
+env_path = Path(__file__).parent.parent / ".env"
+load_dotenv(dotenv_path=env_path)
 
 class Settings(BaseSettings):
     PROJECT_NAME: str = "pragith.net"
@@ -29,6 +35,9 @@ class Settings(BaseSettings):
     # Consulting
     HOURLY_RATE: float = float(os.getenv("HOURLY_RATE", "95.0"))
     CALENDLY_URL: str = os.getenv("CALENDLY_URL", "")
+    
+    # Feature Flags
+    SHOW_PRODUCTS: bool = os.getenv("SHOW_PRODUCTS", "false").lower() == "true"
     
     class Config:
         case_sensitive = True

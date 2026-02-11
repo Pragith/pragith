@@ -6,8 +6,8 @@
         <div class="mb-16">
             <h1 class="font-display text-5xl font-bold tracking-tight text-ink mb-4">Technology Stack</h1>
             <div class="w-20 h-1 bg-accent mb-6"></div>
-            <p class="text-xl text-ink/60 max-w-3xl">Every technology choice is deliberate. These tools solve real
-                problems at scale and are selected based on project requirements.</p>
+            <p class="text-xl text-ink/60 max-w-3xl">I pick tools based on the problem, not the trend. These are
+                technologies I use in production, across real projects.</p>
         </div>
 
         {% macro tech_tag(name) %}<span class="text-xs border border-line bg-surface px-2 py-1 text-ink">{{ name
@@ -63,6 +63,9 @@
                     message queues for event-driven architectures.", true) }}
                     {{ tech_item("dbt (Data Build Tool)", "Analytics engineering standard. Version-controlled
                     transformations. Automated testing and documentation.") }}
+                    {{ tech_item("Apache Superset", "Open-source BI and data exploration. Interactive dashboards,
+                    SQL-based
+                    analytics, and self-service reporting at scale.", true) }}
                 </div>
             </div>
 
@@ -112,12 +115,12 @@
 
         <!-- CTA -->
         <div class="mt-16 border-2 border-line p-12 text-center bg-surface">
-            <h3 class="font-display text-2xl font-bold text-ink mb-4">Need the Right Stack for Your Project?</h3>
-            <p class="text-ink/60 mb-6 max-w-2xl mx-auto">I help teams make pragmatic technology choices that align with
-                business goals and scale requirements.</p>
+            <h3 class="font-display text-2xl font-bold text-ink mb-4">Need Help Choosing?</h3>
+            <p class="text-ink/60 mb-6 max-w-2xl mx-auto">I help teams pick the right tools and build systems that
+                maintain operational reliability without constant intervention.</p>
             <a href="/contact"
                 class="inline-flex items-center justify-center text-sm font-semibold bg-ink text-page hover:bg-accent hover:text-black transition-all h-12 px-8"
-                data-analytics="cta-stack-page-consult">Discuss Your Architecture →</a>
+                data-analytics="cta-stack-page-consult">Discuss Your Project →</a>
         </div>
     </div>
 </section>
