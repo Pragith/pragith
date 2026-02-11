@@ -47,9 +47,11 @@ class SecurityHeadersMiddleware(BaseHTTPMiddleware):
 
 app.add_middleware(SecurityHeadersMiddleware)
 
-# Static & Templates
-app.mount("/static", StaticFiles(directory="app/static"), name="static")
-templates = Jinja2Templates(directory="app/templates")
+# Static & Templates (use absolute paths so app works from any CWD)
+from pathlib import Path
+_APP_DIR = Path(__file__).parent
+app.mount("/static", StaticFiles(directory=str(_APP_DIR / "static")), name="static")
+templates = Jinja2Templates(directory=str(_APP_DIR / "templates"))
 
 from datetime import datetime
 templates.env.globals["now"] = datetime.now

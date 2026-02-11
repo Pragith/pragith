@@ -1,110 +1,79 @@
 {% extends "base.html" %}
-
 {% block title %}Contact & Consulting | Pragith Prakash{% endblock %}
-
 {% block content %}
-<section class="py-20 border-t border-black">
+<section class="py-20 border-t border-line/20">
     <div class="max-w-6xl mx-auto px-6">
-        <!-- Header -->
         <div class="mb-16">
-            <h1 class="font-display text-5xl font-bold tracking-tight text-black mb-4">Let's Work Together</h1>
+            <h1 class="font-display text-5xl font-bold tracking-tight text-ink mb-4">Let's Work Together</h1>
             <div class="w-20 h-1 bg-accent mb-6"></div>
-            <p class="text-xl text-black/60 max-w-3xl">
-                Strategic advisory, technical consulting, and architecture reviews for data and AI challenges.
-            </p>
+            <p class="text-xl text-ink/60 max-w-3xl">Strategic advisory, technical consulting, and architecture reviews
+                for data and AI challenges.</p>
         </div>
-
         <div class="grid lg:grid-cols-2 gap-12">
-            <!-- Left Column: Services & Rates -->
+            <!-- Left: Services -->
             <div class="space-y-8">
-                <h2 class="font-display text-2xl font-bold text-black">Consulting Services</h2>
-
+                <h2 class="font-display text-2xl font-bold text-ink">Consulting Services</h2>
                 <div class="space-y-6">
-                    <div class="border-l-4 border-black pl-6">
-                        <h3 class="font-bold text-black mb-2">Architecture Review</h3>
-                        <p class="text-black/60 text-sm leading-relaxed">
-                            Deep dive into your current cloud architecture. Identification of bottlenecks, security
-                            risks, and cost optimization opportunities.
-                        </p>
+                    {% set services = [
+                    {"name": "Architecture Review", "desc": "Deep dive into your current cloud architecture.
+                    Identification of bottlenecks, security risks, and cost optimization opportunities.", "accent":
+                    false},
+                    {"name": "AI Strategy & Roadmap", "desc": "Pragmatic assessment of where AI can drive value. Roadmap
+                    development from PoC to production.", "accent": true},
+                    {"name": "Data Platform Modernization", "desc": "Migration strategies from legacy on-prem systems to
+                    modern cloud lakehouses.", "accent": false},
+                    {"name": "CTO Advisory", "desc": "Technical leadership support for startup founders and
+                    non-technical executives.", "accent": true}
+                    ] %}
+                    {% for svc in services %}
+                    <div class="border-l-4 {{ 'border-accent' if svc.accent else 'border-line' }} pl-6">
+                        <h3 class="font-bold text-ink mb-2">{{ svc.name }}</h3>
+                        <p class="text-ink/60 text-sm leading-relaxed">{{ svc.desc }}</p>
                     </div>
-
-                    <div class="border-l-4 border-accent pl-6">
-                        <h3 class="font-bold text-black mb-2">AI Strategy & Roadmap</h3>
-                        <p class="text-black/60 text-sm leading-relaxed">
-                            Pragmatic assessment of where AI can drive value. Roadmap development from PoC to
-                            production.
-                        </p>
-                    </div>
-
-                    <div class="border-l-4 border-black pl-6">
-                        <h3 class="font-bold text-black mb-2">Data Platform Modernization</h3>
-                        <p class="text-black/60 text-sm leading-relaxed">
-                            Migration strategies from legacy on-prem systems to modern cloud lakehouses.
-                        </p>
-                    </div>
-
-                    <div class="border-l-4 border-accent pl-6">
-                        <h3 class="font-bold text-black mb-2">CTO Advisory</h3>
-                        <p class="text-black/60 text-sm leading-relaxed">
-                            Technical leadership support for startup founders and non-technical executives.
-                        </p>
-                    </div>
+                    {% endfor %}
                 </div>
 
                 <!-- Value Anchors -->
-                <div class="border-2 border-black p-8 bg-accent/5">
-                    <h3 class="font-bold text-black mb-4">What You Get</h3>
-                    <div class="space-y-3 text-sm text-black/70">
-                        <div class="flex items-start gap-3">
-                            <span class="text-accent mt-0.5 font-bold">→</span>
-                            <span>Actionable architecture recommendations — not slide decks</span>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <span class="text-accent mt-0.5 font-bold">→</span>
-                            <span>Direct access to 13+ years of enterprise platform experience</span>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <span class="text-accent mt-0.5 font-bold">→</span>
-                            <span>Production-tested patterns across GCP, AWS, and Azure</span>
-                        </div>
+                <div class="border-2 border-line/30 p-8 bg-accent/5">
+                    <h3 class="font-bold text-ink mb-4">What You Get</h3>
+                    <div class="space-y-3 text-sm text-ink/70">
+                        {% for val in ["Actionable architecture recommendations — not slide decks", "Direct access to
+                        13+ years of enterprise platform experience", "Production-tested patterns across GCP, AWS, and
+                        Azure"] %}
+                        <div class="flex items-start gap-3"><span class="text-accent mt-0.5 font-bold">→</span><span>{{
+                                val }}</span></div>
+                        {% endfor %}
                     </div>
                 </div>
 
                 <!-- Rate Card -->
-                <div class="border-2 border-black p-8 bg-white">
-                    <div class="text-xs font-bold uppercase tracking-widest text-black/40 mb-2">Standard Rate</div>
-                    <div class="text-5xl font-bold text-black mb-2">
+                <div class="border-2 border-line/30 p-8 bg-surface">
+                    <div class="text-xs font-bold uppercase tracking-widest text-ink/40 mb-2">Standard Rate</div>
+                    <div class="text-5xl font-bold text-ink mb-2">
                         {{ currency_symbol }}{{ "%.0f"|format(hourly_rate) }}<span
-                            class="text-2xl font-semibold text-black/60">/hr</span>
+                            class="text-2xl font-semibold text-ink/60">/hr</span>
                     </div>
                     {% if currency_code != 'USD' %}
-                    <div class="text-xs text-black/40 mb-4">~${{ "%.0f"|format(base_rate_usd) }} USD</div>
+                    <div class="text-xs text-ink/40 mb-4">~${{ "%.0f"|format(base_rate_usd) }} USD</div>
                     {% else %}
                     <div class="mb-4"></div>
                     {% endif %}
 
-                    <!-- Engagement Funnel -->
                     <div class="space-y-3 mb-6">
-                        <div class="flex items-start gap-3 text-sm text-black/70">
+                        {% for step in ["15-min intro call (free) to assess fit", "1-hour paid architecture review",
+                        "Fixed-scope proposal with milestones"] %}
+                        <div class="flex items-start gap-3 text-sm text-ink/70">
                             <span
-                                class="w-6 h-6 border border-black bg-accent/20 flex items-center justify-center flex-shrink-0 text-xs font-bold">1</span>
-                            <span>15-min intro call (free) to assess fit</span>
+                                class="w-6 h-6 border border-line/30 bg-accent/20 flex items-center justify-center flex-shrink-0 text-xs font-bold">{{
+                                loop.index }}</span>
+                            <span>{{ step }}</span>
                         </div>
-                        <div class="flex items-start gap-3 text-sm text-black/70">
-                            <span
-                                class="w-6 h-6 border border-black bg-accent/20 flex items-center justify-center flex-shrink-0 text-xs font-bold">2</span>
-                            <span>1-hour paid architecture review</span>
-                        </div>
-                        <div class="flex items-start gap-3 text-sm text-black/70">
-                            <span
-                                class="w-6 h-6 border border-black bg-accent/20 flex items-center justify-center flex-shrink-0 text-xs font-bold">3</span>
-                            <span>Fixed-scope proposal with milestones</span>
-                        </div>
+                        {% endfor %}
                     </div>
 
                     {% if calendly_url %}
                     <a href="{{ calendly_url }}" target="_blank" rel="noopener"
-                        class="inline-flex items-center justify-center text-sm font-semibold bg-accent text-black hover:bg-black hover:text-white transition-all h-12 px-8 border border-black w-full"
+                        class="inline-flex items-center justify-center text-sm font-semibold bg-accent text-black hover:bg-ink hover:text-page transition-all h-12 px-8 border border-line w-full"
                         data-analytics="cta-contact-calendly">
                         Book Intro Call →
                     </a>
@@ -112,41 +81,29 @@
                 </div>
 
                 <!-- Engagement Types -->
-                <div class="border-2 border-black p-8 bg-accent/10">
-                    <h4 class="font-bold text-black mb-4">Engagement Types</h4>
-                    <ul class="space-y-3 text-sm text-black/70">
-                        <li class="flex items-start gap-2">
-                            <span class="mt-1">→</span>
-                            <span>One-time architecture reviews</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="mt-1">→</span>
-                            <span>Ongoing fractional CTO advisory</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="mt-1">→</span>
-                            <span>Workshop facilitation & training</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="mt-1">→</span>
-                            <span>Technical due diligence</span>
-                        </li>
+                <div class="border-2 border-line/30 p-8 bg-accent/10">
+                    <h4 class="font-bold text-ink mb-4">Engagement Types</h4>
+                    <ul class="space-y-3 text-sm text-ink/70">
+                        {% for eng in ["One-time architecture reviews", "Ongoing fractional CTO advisory", "Workshop
+                        facilitation & training", "Technical due diligence"] %}
+                        <li class="flex items-start gap-2"><span class="mt-1">→</span><span>{{ eng }}</span></li>
+                        {% endfor %}
                     </ul>
                 </div>
             </div>
 
-            <!-- Right Column: Contact Form -->
+            <!-- Right: Form -->
             <div>
-                <h2 class="font-display text-2xl font-bold text-black mb-6">Send a Message</h2>
+                <h2 class="font-display text-2xl font-bold text-ink mb-6">Send a Message</h2>
 
                 {% if error %}
-                <div class="border-2 border-black bg-red-50 p-4 mb-6">
+                <div class="border-2 border-line bg-red-50 dark:bg-red-900/20 p-4 mb-6">
                     <div class="flex items-start gap-3">
-                        <svg class="w-5 h-5 text-black mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg class="w-5 h-5 text-ink mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
-                        <p class="text-sm font-medium text-black">{{ error }}</p>
+                        <p class="text-sm font-medium text-ink">{{ error }}</p>
                     </div>
                 </div>
                 {% endif %}
@@ -154,66 +111,49 @@
                 <form action="/contact" method="POST" class="space-y-6">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
-                            <label for="name" class="block text-sm font-bold text-black mb-2">Name *</label>
+                            <label for="name" class="block text-sm font-bold text-ink mb-2">Name *</label>
                             <input type="text" name="name" id="name" autocomplete="name" required
                                 value="{{ form.name if form else '' }}"
-                                class="block w-full border-2 border-black px-4 py-3 text-black focus:outline-none focus:border-accent">
+                                class="block w-full border-2 border-line/30 bg-surface px-4 py-3 text-ink focus:outline-none focus:border-accent">
                         </div>
                         <div>
-                            <label for="email" class="block text-sm font-bold text-black mb-2">Email *</label>
+                            <label for="email" class="block text-sm font-bold text-ink mb-2">Email *</label>
                             <input type="email" name="email" id="email" autocomplete="email" required
                                 value="{{ form.email if form else '' }}"
-                                class="block w-full border-2 border-black px-4 py-3 text-black focus:outline-none focus:border-accent">
+                                class="block w-full border-2 border-line/30 bg-surface px-4 py-3 text-ink focus:outline-none focus:border-accent">
                         </div>
                     </div>
-
                     <div>
-                        <label for="inquiry_type" class="block text-sm font-bold text-black mb-2">Nature of Inquiry
+                        <label for="inquiry_type" class="block text-sm font-bold text-ink mb-2">Nature of Inquiry
                             *</label>
                         <select name="inquiry_type" id="inquiry_type" required
-                            class="block w-full border-2 border-black px-4 py-3 text-black bg-white focus:outline-none focus:border-accent appearance-none">
+                            class="block w-full border-2 border-line/30 bg-surface px-4 py-3 text-ink focus:outline-none focus:border-accent appearance-none">
                             <option value="" disabled {{ 'selected' if not form or not form.inquiry_type else '' }}>
                                 Select one...</option>
-                            <option value="Architecture Review" {{ 'selected' if form and
-                                form.inquiry_type=='Architecture Review' else '' }}>Architecture Review</option>
-                            <option value="AI Strategy & Implementation" {{ 'selected' if form and
-                                form.inquiry_type=='AI Strategy & Implementation' else '' }}>AI Strategy &
-                                Implementation</option>
-                            <option value="Data Platform Modernization" {{ 'selected' if form and
-                                form.inquiry_type=='Data Platform Modernization' else '' }}>Data Platform Modernization
-                            </option>
-                            <option value="Fractional CTO / Advisory" {{ 'selected' if form and
-                                form.inquiry_type=='Fractional CTO / Advisory' else '' }}>Fractional CTO / Advisory
-                            </option>
-                            <option value="Technical Due Diligence" {{ 'selected' if form and
-                                form.inquiry_type=='Technical Due Diligence' else '' }}>Technical Due Diligence</option>
-                            <option value="General Inquiry" {{ 'selected' if form and
-                                form.inquiry_type=='General Inquiry' else '' }}>General Inquiry</option>
+                            {% for opt in ["Architecture Review", "AI Strategy & Implementation", "Data Platform
+                            Modernization", "Fractional CTO / Advisory", "Technical Due Diligence", "General Inquiry"]
+                            %}
+                            <option value="{{ opt }}" {{ 'selected' if form and form.inquiry_type==opt else '' }}>{{ opt
+                                }}</option>
+                            {% endfor %}
                         </select>
                     </div>
-
                     <div>
-                        <label for="message" class="block text-sm font-bold text-black mb-2">Message *</label>
+                        <label for="message" class="block text-sm font-bold text-ink mb-2">Message *</label>
                         <textarea id="message" name="message" rows="6" required
-                            class="block w-full border-2 border-black px-4 py-3 text-black focus:outline-none focus:border-accent">{{ form.message if form else '' }}</textarea>
+                            class="block w-full border-2 border-line/30 bg-surface px-4 py-3 text-ink focus:outline-none focus:border-accent">{{ form.message if form else '' }}</textarea>
                     </div>
-
-                    <!-- Honeypot anti-spam -->
                     <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
-
                     {% if recaptcha_site_key %}
                     <div class="g-recaptcha" data-sitekey="{{ recaptcha_site_key }}"></div>
                     {% endif %}
-
                     <button type="submit"
-                        class="w-full inline-flex items-center justify-center text-sm font-semibold bg-black text-white hover:bg-accent hover:text-black transition-all h-12 px-8 border border-black"
+                        class="w-full inline-flex items-center justify-center text-sm font-semibold bg-ink text-page hover:bg-accent hover:text-black transition-all h-12 px-8"
                         data-analytics="cta-contact-form-submit">
                         Send Message →
                     </button>
-
-                    <p class="text-xs text-black/40 text-center leading-relaxed">
-                        Your message is securely delivered via encrypted email. I typically respond within 24–48
-                        hours.
+                    <p class="text-xs text-ink/40 text-center leading-relaxed">
+                        Your message is securely delivered via encrypted email. I typically respond within 24–48 hours.
                     </p>
                 </form>
             </div>

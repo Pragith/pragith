@@ -1,32 +1,24 @@
-# Standalone Tailwind CSS build script for Windows (no Node/npm required)
-
 $ErrorActionPreference = "Stop"
 
-$TAILWIND_VERSION = "v3.4.1"
-$PLATFORM = "windows-x64"
-$BINARY_NAME = "tailwindcss-$PLATFORM.exe"
-$BINARY_PATH = ".\.tailwind\$BINARY_NAME"
+$TAILWIND_DIR = ".tailwind"
+$TAILWIND_EXE = "$TAILWIND_DIR\tailwindcss.exe"
+$URL = "https://github.com/tailwindlabs/tailwindcss/releases/download/v3.4.1/tailwindcss-windows-x64.exe"
 
-# Create .tailwind directory if it doesn't exist
-if (-not (Test-Path ".\.tailwind")) {
-    New-Item -ItemType Directory -Path ".\.tailwind" | Out-Null
+if (-not (Test-Path $TAILWIND_DIR)) {
+    New-Item -ItemType Directory -Path $TAILWIND_DIR | Out-Null
 }
 
-# Download standalone Tailwind CLI if not present
-if (-not (Test-Path $BINARY_PATH)) {
-    Write-Host "Downloading Tailwind CSS standalone binary..." -ForegroundColor Yellow
-    $url = "https://github.com/tailwindlabs/tailwindcss/releases/download/$TAILWIND_VERSION/$BINARY_NAME"
-    Invoke-WebRequest -Uri $url -OutFile $BINARY_PATH
-    Write-Host "✓ Tailwind CLI downloaded" -ForegroundColor Green
-}
-
-# Build CSS
-Write-Host "Building CSS..." -ForegroundColor Yellow
-& $BINARY_PATH -i .\app\static\css\input.css -o .\app\static\css\style.min.css --minify
-
-if ($LASTEXITCODE -eq 0) {
-    Write-Host "✓ CSS built successfully: app\static\css\style.min.css" -ForegroundColor Green
+if (-not (Test-Path $TAILWIND_EXE)) {
+    Write-Host "Downloading Tailwind CSS v3.4.1..."
+    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+    Invoke-WebRequest -Uri $URL -OutFile $TAILWIND_EXE -UseBasicParsing
+    Write-Host "Download complete."
 } else {
-    Write-Host "✗ CSS build failed" -ForegroundColor Red
-    exit 1
+    Write-Host "Tailwind binary already exists."
 }
+
+Write-Host "Building CSS..."
+& $TAILWIND_EXE -i .\app\static\css\input.css -o .\app\static\css\style.min.css --minify -c .\tailwind.config.js
+Write-Host "CSS built successfully!"
+$size = (Get-Item .\app\static\css\style.min.css).Length
+Write-Host "Output: app/static/css/style.min.css ($size bytes)"

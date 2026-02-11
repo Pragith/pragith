@@ -1,26 +1,21 @@
 {% extends "base.html" %}
-
 {% block title %}Blog | Pragith Prakash{% endblock %}
-
 {% block content %}
-<section class="py-20 border-t border-black">
+<section class="py-20 border-t border-line/20">
     <div class="max-w-4xl mx-auto px-6">
         <div class="mb-12">
-            <h1 class="font-display text-3xl font-bold tracking-tight text-black mb-4">Engineering Log</h1>
+            <h1 class="font-display text-3xl font-bold tracking-tight text-ink mb-4">Engineering Log</h1>
             <div class="w-20 h-1 bg-accent mb-6"></div>
-            <p class="text-lg text-black/60">
-                Thoughts on systems engineering, AI architecture, and building for scale.
-            </p>
+            <p class="text-lg text-ink/60">Thoughts on systems engineering, AI architecture, and building for scale.</p>
         </div>
 
         {% if tag %}
         <div class="mb-8 flex items-center gap-2">
-            <span class="text-sm text-black/50">Filtering by:</span>
+            <span class="text-sm text-ink/50">Filtering by:</span>
             <span
-                class="inline-flex items-center border border-black px-2 py-1 text-xs font-medium text-black bg-accent/10">
+                class="inline-flex items-center border border-line/30 px-2 py-1 text-xs font-medium text-ink bg-accent/10">
                 #{{ tag }}
-                <a href="/blog"
-                    class="ml-1 hover:text-accent focus:outline-none focus:ring-2 focus:ring-accent">&times;</a>
+                <a href="/blog" class="ml-1 hover:text-accent">&times;</a>
             </span>
         </div>
         {% endif %}
@@ -30,31 +25,25 @@
             <article class="relative group">
                 <div class="flex flex-col sm:flex-row gap-4 sm:gap-8">
                     <div class="sm:w-32 shrink-0">
-                        <time datetime="{{ post.date }}" class="text-sm text-black/40 font-mono">{{ post.date }}</time>
+                        <time datetime="{{ post.date }}" class="text-sm text-ink/40 font-mono">{{ post.date }}</time>
                     </div>
                     <div>
-                        <h2 class="text-xl font-semibold text-black group-hover:text-accent transition-colors mb-2">
-                            <a href="/blog/{{ post.slug }}" class="focus:outline-none focus:ring-2 focus:ring-accent">
-                                <span class="absolute inset-0"></span>
-                                {{ post.title }}
-                            </a>
+                        <h2 class="text-xl font-semibold text-ink group-hover:text-accent transition-colors mb-2">
+                            <a href="/blog/{{ post.slug }}"><span class="absolute inset-0"></span>{{ post.title }}</a>
                         </h2>
-                        <p class="text-black/60 mb-4 line-clamp-3">
-                            {{ post.summary }}
-                        </p>
+                        <p class="text-ink/60 mb-4 line-clamp-3">{{ post.summary }}</p>
                         <div class="flex flex-wrap gap-2 relative z-10">
                             {% for t in post.tags %}
                             <a href="/blog/tag/{{ t }}"
-                                class="inline-flex items-center border border-black/20 px-2 py-1 text-xs font-medium text-black/60 hover:bg-accent/10 hover:border-black transition-colors focus:outline-none focus:ring-2 focus:ring-accent">
-                                #{{ t }}
-                            </a>
+                                class="inline-flex items-center border border-line/20 px-2 py-1 text-xs font-medium text-ink/60 hover:bg-accent/10 hover:border-line/40 transition-colors">#{{
+                                t }}</a>
                             {% endfor %}
                         </div>
                     </div>
                 </div>
             </article>
             {% else %}
-            <p class="text-black/50 italic">No posts found.</p>
+            <p class="text-ink/50 italic">No posts found.</p>
             {% endfor %}
         </div>
     </div>

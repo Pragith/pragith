@@ -10,7 +10,12 @@ module.exports = {
         mono: ['JetBrains Mono', 'monospace'],
       },
       colors: {
-        accent: '#E8590C', // Professional burnt orange
+        accent: '#E8590C',
+        // Semantic colors that auto-switch via CSS variables
+        ink: 'rgb(var(--color-ink) / <alpha-value>)',
+        page: 'rgb(var(--color-page) / <alpha-value>)',
+        surface: 'rgb(var(--color-surface) / <alpha-value>)',
+        line: 'rgb(var(--color-line) / <alpha-value>)',
       },
     },
   },

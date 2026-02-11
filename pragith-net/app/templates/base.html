@@ -31,8 +31,11 @@
     <!-- Dark mode: apply before render to prevent flash -->
     <script>
         (function () {
+            var d = document.documentElement.classList;
             if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                document.documentElement.classList.add('dark');
+                d.add('dark');
+            } else {
+                d.remove('dark');
             }
         })();
     </script>
@@ -92,36 +95,67 @@
     </script>
 </head>
 
-<body
-    class="flex flex-col min-h-screen bg-white dark:bg-[#0A0A0A] text-black dark:text-white font-sans selection:bg-accent selection:text-black transition-colors duration-200">
+<body class="flex flex-col min-h-screen transition-colors duration-200">
 
     <!-- Header -->
-    <header class="w-full bg-white dark:bg-[#0A0A0A] sticky top-0 z-50 border-b border-black dark:border-white/20">
+    <header class="w-full bg-page sticky top-0 z-50 border-b border-line/20">
         <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="/"
-                class="font-display text-lg font-semibold text-black dark:text-white hover:text-accent transition-colors">
+            <a href="/" class="font-display text-lg font-semibold text-ink hover:text-accent transition-colors">
                 Pragith Prakash
             </a>
 
             <nav class="hidden md:flex gap-8 text-sm font-medium">
                 <a href="/work"
-                    class="text-black dark:text-white hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent">Work</a>
+                    class="text-ink hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent">Work</a>
                 <a href="/agents"
-                    class="text-black dark:text-white hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent">Agents</a>
+                    class="text-ink hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent">Agents</a>
                 <a href="/build"
-                    class="text-black dark:text-white hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent">Build</a>
+                    class="text-ink hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent">Build</a>
                 <a href="/stack"
-                    class="text-black dark:text-white hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent">Stack</a>
+                    class="text-ink hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent">Stack</a>
                 <a href="/blog"
-                    class="text-black dark:text-white hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent">Blog</a>
+                    class="text-ink hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent">Blog</a>
             </nav>
 
-            <a href="/contact"
-                class="inline-flex items-center justify-center text-sm font-medium bg-black dark:bg-white text-white dark:text-black hover:bg-accent hover:text-black transition-all h-10 px-6 border border-black dark:border-white focus:outline-none focus:ring-2 focus:ring-accent">
-                Contact
-            </a>
+            <div class="flex items-center gap-4">
+                <!-- Theme toggle -->
+                <button id="theme-toggle" onclick="toggleTheme()"
+                    class="w-10 h-10 flex items-center justify-center text-ink hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent"
+                    aria-label="Toggle dark mode">
+                    <!-- Moon: visible in light mode -->
+                    <svg class="w-5 h-5 dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                    <!-- Sun: visible in dark mode -->
+                    <svg class="w-5 h-5 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                </button>
+
+                <a href="/contact"
+                    class="inline-flex items-center justify-center text-sm font-medium bg-ink text-page hover:bg-accent hover:text-black transition-all h-10 px-6 focus:outline-none focus:ring-2 focus:ring-accent">
+                    Contact
+                </a>
+            </div>
         </div>
     </header>
+
+    <script>
+        function toggleTheme() {
+            var d = document.documentElement.classList;
+            if (d.contains('dark')) {
+                d.remove('dark');
+                localStorage.theme = 'light';
+            } else {
+                d.add('dark');
+                localStorage.theme = 'dark';
+            }
+        }
+    </script>
 
     <!-- Main Content -->
     <main class="flex-grow">
@@ -129,7 +163,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-black dark:bg-[#111] text-white border-t border-white/10 mt-20">
+    <footer class="bg-black text-white border-t border-white/10 mt-20">
         <div class="max-w-6xl mx-auto px-6 py-16">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-12 mb-12">
                 <div>

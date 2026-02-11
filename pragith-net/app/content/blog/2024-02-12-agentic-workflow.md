@@ -1,52 +1,44 @@
 ---
-title: "The Agentic Workflow: Moving Beyond Copy-Paste AI"
+title: "Agentic Workflows: The Part Nobody Talks About"
 date: "2024-02-12"
 tags: "ai-engineering, agents, architecture"
-summary: "Why the future of software capability isn't just better models, but better orchestration of specialized agents."
+status: "published"
+summary: "Everyone's building AI agents. Very few are building the verification layer that makes them reliable in production."
 ---
 
-The conversation around AI often focuses on the raw capability of the model. Is GPT-4 better than Claude 3? What about Gemini Ultra?
+There's a lot of excitement right now around AI agents. Most of the conversation focuses on model selection — which LLM is best, which one just dropped, what the new benchmarks say.
 
-While model capability matters, the real unlock for enterprise value comes from **orchestration**. 
+That conversation misses the point for production systems.
 
-## The Orchestration Layer
+## The Actual Hard Part
 
-Feeding a prompt to an LLM and getting an answer is valid for a chatbot. It is insufficient for a production system. 
+Picking a model is a one-hour decision. Building a system that reliably decomposes tasks, executes them, and verifies the output — that's the real engineering work.
 
-To build reliable AI systems, we need to decompose complex tasks into atomic units of work that can be routed to specialized agents. This is the **Agentic Workflow**.
+I structure agentic workflows around three components:
 
-### Core Components
+**Planner.** Takes a high-level intent and breaks it into a dependency graph of discrete steps. This isn't prompt engineering — it's workflow design. The planner needs to understand what can run in parallel, what has dependencies, and what the failure modes are.
 
-1.  **Planner**: Decomposes the high-level intent into a DAG (Directed Acyclic Graph) of steps.
-2.  **Executor**: Specialized agents (Coder, Analyst, Reviewer) that perform the work.
-3.  **Verifier**: The most critical and often missing piece. An agent whose sole job is to assert correctness.
+**Executor.** Specialized agents that do the actual work. A code generation agent is different from a data analysis agent. They have different prompts, different tool access, and different output formats. Trying to build one general-purpose agent that does everything is a trap.
 
-```python
-# Pseudo-code for a simple agent loop
-def run_agent_loop(task):
-    plan = planner_agent.create_plan(task)
-    
-    for step in plan:
-        result = executor_agent.execute(step)
-        valid = verifier_agent.check(result)
-        
-        while not valid:
-            result = executor_agent.refine(result, feedback=verifier_agent.last_error)
-            valid = verifier_agent.check(result)
-            
-    return plan.results
+**Verifier.** This is the piece most teams skip. A verification agent whose only job is to check that the output meets the acceptance criteria before it moves forward. Without this, you're shipping the first draft every time.
+
+## The Math on Reliability
+
+A single LLM pass has some accuracy rate — call it 85% for complex tasks. That means 15% of the time, the output is wrong.
+
+Add a verification loop with retry, and the failure rate compounds down:
+
+```
+P(failure) = (1 - accuracy)^N
 ```
 
-## Why This Matters
+With 3 retry attempts at 85% accuracy, the system failure rate drops from 15% to about 0.3%. That's the difference between a demo and a production system.
 
-A single LLM pass has a non-zero error rate. By introducing a verification loop, we change the system from:
+## What I've Learned Building These
 
-$$ P(success) = P(model\_accuracy) $$
+- Keep agents narrow. A code agent that also reviews its own code is worse than two separate agents.
+- The planner is not an LLM prompt. It's structured logic that calls LLMs when needed.
+- Verification is not optional. Every production agentic system I've built has a verification step. The ones I've seen fail in production almost always lacked one.
+- Log everything. Every tool call, every LLM response, every retry. When something goes wrong at 2am, you need the trace.
 
-To:
-
-$$ P(success) = 1 - (1 - P(model\_accuracy))^N $$
-
-Where $N$ is the number of refinement attempts allowed.
-
-This is how we move from "impressive demo" to "production reliability."
+The tooling is getting better fast. But the architecture patterns — decomposition, verification, observability — those are the hard-won lessons that don't change with the next model release.

@@ -12,6 +12,7 @@ class BlogPost(BaseModel):
     slug: str
     summary: str
     tags: List[str] = []
+    status: str = "published"  # draft | published | unpublished
     content: str  # HTML content
     raw_content: str # content without frontmatter
     
@@ -34,7 +35,7 @@ class BlogService:
         for file_path in files:
             try:
                 post = self._parse_file(file_path)
-                if post:
+                if post and post.status == "published":
                     posts.append(post)
             except Exception as e:
                 print(f"Error loading {file_path}: {e}")
@@ -85,6 +86,9 @@ class BlogService:
                 # Normalize tags
                 tags = [t.lower().replace(" ", "-") for t in tags]
 
+                # Parse status (default to "published" for backwards compatibility)
+                status = meta.get('status', 'published').strip().lower()
+
                 # Convert markdown
                 html_content = markdown.markdown(
                     body_raw,
@@ -103,6 +107,7 @@ class BlogService:
                     slug=slug_candidate,
                     summary=meta['summary'],
                     tags=tags,
+                    status=status,
                     content=html_content,
                     raw_content=body_raw
                 )
@@ -131,5 +136,7 @@ class BlogService:
             self.load_posts()
         return self._posts_by_tag.get(tag, [])
 
-# Singleton instance
-blog_service = BlogService(content_dir="app/content/blog")
+# Singleton instance (use absolute path so it works from any CWD)
+from pathlib import Path as _Path
+_CONTENT_DIR = str(_Path(__file__).parent.parent / "content" / "blog")
+blog_service = BlogService(content_dir=_CONTENT_DIR)

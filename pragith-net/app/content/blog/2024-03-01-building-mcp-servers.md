@@ -1,44 +1,49 @@
 ---
-title: "Building Production-Grade MCP Servers"
+title: "Building MCP Servers That Don't Get You Fired"
 date: "2024-03-01"
 tags: "mcp, ai-agents, architecture"
-summary: "How to implement the Model Context Protocol to give your AI agents secure access to your internal data and tools."
+status: "published"
+summary: "The Model Context Protocol is how you give AI agents access to internal systems. Here's how to do it without creating a security incident."
 ---
 
-The **Model Context Protocol (MCP)** is rapidly becoming the standard for connecting AI models to data. 
+The Model Context Protocol is solving a real problem: how do you connect AI agents to your internal tools and data without hardcoding everything into prompts?
 
-Instead of hardcoding tool definitions into every prompt, we can build standard servers that expose:
-1.  **Resources**: File-like data (logs, docs, code).
-2.  **Tools**: Executable functions (API calls, DB queries).
-3.  **Prompts**: Reusable prompt templates.
+Before MCP, every time you wanted an AI agent to query a database or call an internal API, you'd wire it up with custom tool definitions, write bespoke error handling, and hope the agent knew how to use it. With MCP, the interface is standardized. The agent discovers available tools and resources through a protocol, not through prompt engineering.
 
-## Why MCP?
+I've been building MCP servers for internal tooling, and here's what I've learned.
 
-Before MCP, integrating a new tool meant rewriting your agent's system prompt and error handling logic. With MCP, it's plug-and-play.
+## The Three Primitives
 
-### Implementation Pattern
+MCP exposes three types of capabilities:
 
-I typically architect MCP servers using Python and FastAPI (or the native SDK).
+**Resources.** Read-only data — documentation, logs, configuration files, schema definitions. Think of these as "things the agent can read."
 
-```python
-# mcp_server.py
-from mcp.server.fastapi import MCPServer
-from mcp.types import Tool, TextContent
+**Tools.** Executable functions — running a query, calling an API, triggering a deploy. These are "things the agent can do."
 
-app = MCPServer(name="internal-tools")
+**Prompts.** Reusable prompt templates that encode domain-specific reasoning patterns. Often overlooked, but useful for standardizing how agents approach common tasks.
 
-@app.tool()
-async def query_production_db(sql: str) -> str:
-    """Safe, read-only query against the replica DB."""
-    # ... implementation with strict validation ...
-    return json_result
-```
+## Security Is Not Optional
 
-## Security Considerations
+This is where most teams get it wrong. The moment you give an agent the ability to query a production database or call an API, you've introduced a new attack surface.
 
-When giving an agent "Skills" via MCP, security is paramount.
--   **Read-Only by Default**: Resources should not allow mutation unless explicitly scoped.
--   **Human-in-the-Loop**: Critical tools (like `deploy_to_prod`) must require user confirmation.
--   **Audit Logs**: Every tool call typically generates a structured log event.
+Three non-negotiable rules I follow:
 
-By standardizing on MCP, we transform "AI" from a chat interface into a fully integrated team member with access to the right context at the right time.
+**1. Read-only by default.** Every resource and tool starts as read-only. Write access is granted explicitly, scoped narrowly, and logged.
+
+**2. Human-in-the-loop for anything destructive.** If a tool can modify state — deploy code, delete records, update configurations — it requires user confirmation. No exceptions. The agent can prepare the action, but a human approves it.
+
+**3. Structured audit logging.** Every tool invocation generates a log entry with the caller, the parameters, the result, and a timestamp. When the CISO asks "what did the AI do last Tuesday," you need to be able to answer that in seconds.
+
+## Implementation Notes
+
+I build MCP servers in Python, typically with FastAPI as the transport layer. The SDK handles the protocol negotiation. The interesting engineering is in the tool definitions — specifically, how much autonomy you give the agent versus how much you constrain it.
+
+A tool that accepts raw SQL is flexible but dangerous. A tool that accepts structured parameters and generates the SQL internally is safer but less flexible. The right choice depends on who the agent is serving and what the blast radius is if something goes wrong.
+
+Start narrow. Expand scope based on observed usage and audit logs.
+
+## The Payoff
+
+When it's done right, MCP transforms the developer experience. Instead of context-switching between three dashboards and two wikis to answer a question, an engineer asks their IDE and gets an answer grounded in real data.
+
+That's not hype. That's just good tool integration with a standard protocol.

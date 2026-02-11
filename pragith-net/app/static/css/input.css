@@ -3,8 +3,41 @@
 @tailwind utilities;
 
 @layer base {
+
+  /* ── Semantic color tokens ── */
+  /* Softer palette: charcoal/warm-white instead of pure black/white */
+  :root {
+    --color-ink: 26 26 26;
+    /* text: charcoal, not pure black */
+    --color-page: 250 250 249;
+    /* bg: warm off-white */
+    --color-surface: 255 255 255;
+    /* cards: pure white for elevation */
+    --color-line: 212 212 212;
+    /* borders: soft gray */
+  }
+
+  .dark {
+    --color-ink: 229 229 229;
+    /* text: warm white, not pure white */
+    --color-page: 10 10 10;
+    /* bg: deep black */
+    --color-surface: 23 23 23;
+    /* cards: subtle elevation */
+    --color-line: 64 64 64;
+    /* borders: visible but soft */
+  }
+
+  /* Body inherits automatically */
   body {
-    @apply antialiased text-black bg-white;
+    @apply antialiased font-sans;
+    color: rgb(var(--color-ink));
+    background: rgb(var(--color-page));
+  }
+
+  /* Selection highlight */
+  ::selection {
+    @apply bg-accent text-black;
   }
 }
 
