@@ -6,7 +6,7 @@ summary: "AI success is rarely about models. It is about systems architecture, g
 status: "published"
 ---
 
-The hype cycle for Generative AI has settled, and enterprises are now facing the cold reality of production. While prototypes are easy to build—a weekend hackathon can yield a functioning RAG bot—deploying reliable, scalable, and secure AI systems is an entirely different engineering challenge.
+The hype cycle for Generative AI has settled, and enterprises are now facing the cold reality of production. While prototypes are easy to build - a weekend hackathon can yield a functioning RAG bot - deploying reliable, scalable, and secure AI systems is an entirely different engineering challenge.
 
 In my experience auditing and rescuing stalled AI initiatives, I see the same patterns of failure repeat. It’s rarely because the model wasn't smart enough. It’s almost always because the **system around the model** was neglected.
 
@@ -68,7 +68,7 @@ Models drift. APIs go down. Rate limits are hit.
 
 What is your fallback strategy? If OpenAI is down, does your chatbot apologize gracefully or crash the page? If a new prompt version degrades performance, can you rollback to the previous version in seconds?
 
-Resilience patterns—**circuit breakers, retries, fallbacks**—are non-negotiable for critical enterprise systems.
+Resilience patterns - **circuit breakers, retries, fallbacks** - are non-negotiable for critical enterprise systems.
 
 ## Conclusion
 

@@ -3,7 +3,7 @@ title: "Yes, I Can Still Blog!"
 date: "2007-07-03"
 tags: "personal, life-update"
 status: "unpublished"
-summary: "A life update — moving to Bangalore, new gadgets, and new skills."
+summary: "A life update  -  moving to Bangalore, new gadgets, and new skills."
 ---
 
 Whew!!! Blogging after a long time (yes, that's fairly visible). There are many things I have to write about.

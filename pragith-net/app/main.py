@@ -149,7 +149,7 @@ async def contact_submit(
     website: str = Form(""),
     recaptcha_response: str = Form(alias="g-recaptcha-response", default="")
 ):
-    # Honeypot check — bots fill hidden fields
+    # Honeypot check  -  bots fill hidden fields
     if website:
         return RedirectResponse("/contact", status_code=303)
     

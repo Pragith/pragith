@@ -1,13 +1,53 @@
 {% extends "base.html" %}
 {% block title %}Server Error | Pragith Prakash{% endblock %}
 {% block content %}
-<section class="py-32 text-center border-t border-line/20">
-    <div class="max-w-2xl mx-auto px-6">
-        <h1 class="font-display text-6xl font-bold text-ink mb-4">500</h1>
-        <p class="text-xl text-ink/60 mb-8">Internal Server Error. Something went wrong.</p>
-        <a href="/"
-            class="inline-flex items-center justify-center text-sm font-semibold bg-ink text-page hover:bg-accent hover:text-black transition-all h-10 px-6">Return
-            Home →</a>
+<section class="py-20 border-t border-line/20">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+        <h1 class="font-display text-8xl font-bold text-ink mb-4">500</h1>
+        <p class="text-2xl text-ink mb-4">Internal Server Error</p>
+        <p class="text-ink/60 mb-12 max-w-lg mx-auto">
+            Something went wrong on our end. This has been logged and I'll look into it.
+        </p>
+
+        <!-- Quick Links -->
+        <div class="mb-12">
+            <h2 class="text-sm font-semibold text-ink/40 uppercase tracking-wider mb-6">What You Can Do</h2>
+            <div class="grid sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
+                <a href="/" class="border-2 border-line/20 p-4 bg-surface hover:border-accent transition-colors">
+                    <div class="text-sm font-bold text-ink mb-1">Return Home</div>
+                    <div class="text-xs text-ink/50">Start fresh</div>
+                </a>
+                <a href="javascript:history.back()"
+                    class="border-2 border-line/20 p-4 bg-surface hover:border-accent transition-colors">
+                    <div class="text-sm font-bold text-ink mb-1">Go Back</div>
+                    <div class="text-xs text-ink/50">Previous page</div>
+                </a>
+                <a href="/contact" class="border-2 border-accent bg-accent/10 p-4 hover:bg-accent/20 transition-colors">
+                    <div class="text-sm font-bold text-ink mb-1">Report Issue</div>
+                    <div class="text-xs text-ink/50">Let me know</div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Additional Links -->
+        <div class="mb-12">
+            <h2 class="text-sm font-semibold text-ink/40 uppercase tracking-wider mb-6">Or Browse</h2>
+            <div class="flex flex-wrap justify-center gap-3 text-sm">
+                <a href="/work" class="text-ink hover:text-accent transition-colors">Work</a>
+                <span class="text-ink/20">·</span>
+                <a href="/agents" class="text-ink hover:text-accent transition-colors">How I Work</a>
+                <span class="text-ink/20">·</span>
+                <a href="/business" class="text-ink hover:text-accent transition-colors">Business</a>
+                <span class="text-ink/20">·</span>
+                <a href="/blog" class="text-ink hover:text-accent transition-colors">Blog</a>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <a href="/contact"
+            class="inline-flex items-center justify-center text-sm font-semibold bg-ink text-page hover:bg-accent hover:text-black transition-all h-10 px-6">
+            Contact Support →
+        </a>
     </div>
 </section>
 {% endblock %}

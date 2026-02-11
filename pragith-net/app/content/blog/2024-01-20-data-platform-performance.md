@@ -8,7 +8,7 @@ summary: "The bottleneck in most modern data platforms isn't the query engine. I
 
 This keeps coming up in architecture reviews.
 
-A team migrates their analytics to BigQuery or Snowflake. The queries are fast — sub-second on terabytes of data. Everyone celebrates. Then someone builds an API or dashboard on top of it, and the whole thing feels sluggish.
+A team migrates their analytics to BigQuery or Snowflake. The queries are fast  -  sub-second on terabytes of data. Everyone celebrates. Then someone builds an API or dashboard on top of it, and the whole thing feels sluggish.
 
 The instinct is to blame the database. Tune the queries, add more indexes, throw money at the compute tier.
 
@@ -16,7 +16,7 @@ That's almost never the actual problem.
 
 ## Where the Time Goes
 
-The query itself might take 200ms. But fetching 100,000 rows, serializing them to JSON, pushing that over HTTP, then deserializing on the client side — that eats seconds. On larger payloads, it can dominate the total response time by 10x or more.
+The query itself might take 200ms. But fetching 100,000 rows, serializing them to JSON, pushing that over HTTP, then deserializing on the client side  -  that eats seconds. On larger payloads, it can dominate the total response time by 10x or more.
 
 I've seen teams spend weeks optimizing SQL when the real issue was that their API layer was converting columnar data to nested JSON objects row by row.
 

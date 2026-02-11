@@ -3,7 +3,7 @@ title: "Certified \"Certification Maniac\""
 status: "unpublished"
 date: "2007-07-14"
 tags: "personal, certifications, tech"
-summary: "My spree of earning online certifications — from Linux Admin to BrainBench."
+summary: "My spree of earning online certifications  -  from Linux Admin to BrainBench."
 ---
 
 Yes, that's what I have been in the past few days. I have been giving online exams (free) and earning certificates. BrainBench doesn't give the certificates, so I only have my scores. Here they are:

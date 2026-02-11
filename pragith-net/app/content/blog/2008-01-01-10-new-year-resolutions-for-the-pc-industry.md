@@ -3,7 +3,7 @@ title: "10 New Year Resolutions for the PC Industry"
 date: "2008-01-01"
 tags: "tech, opinion"
 status: "unpublished"
-summary: "Humorous New Year resolutions for the tech industry — from Microsoft to Apple to Google."
+summary: "Humorous New Year resolutions for the tech industry  -  from Microsoft to Apple to Google."
 ---
 
 Happy New Year, folks! That means it's time for New Year resolutions. We have some suggested resolutions for the PC industry that will help them... and us!
@@ -20,7 +20,7 @@ Happy New Year, folks! That means it's time for New Year resolutions. We have so
 
 **#6 To Google:** Please make a Project Management extension to Google Calendar!
 
-**#7 To the Blu-ray and HD-DVD consortiums:** Please find a way to work together. You're just slowing down adoption — massively.
+**#7 To the Blu-ray and HD-DVD consortiums:** Please find a way to work together. You're just slowing down adoption  -  massively.
 
 **#8 To Amazon:** Just because you think it might be patentable doesn't mean you should try to patent it.
 
@@ -30,4 +30,4 @@ Happy New Year, folks! That means it's time for New Year resolutions. We have so
 
 Have a Happy New Year!
 
-**Source:** MeraWindows.Com — Post by [Third Eye](http://merawindows.com/Forums/tabid/324/ctl/UserProfile/mid/583/userid/4278/Default.aspx)
+**Source:** MeraWindows.Com  -  Post by [Third Eye](http://merawindows.com/Forums/tabid/324/ctl/UserProfile/mid/583/userid/4278/Default.aspx)

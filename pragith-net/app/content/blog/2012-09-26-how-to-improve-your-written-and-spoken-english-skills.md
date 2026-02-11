@@ -8,7 +8,7 @@ summary: "Personal tips and exercises that drastically improved my English over 
 
 This post is drawn from personal experience.
 
-Over the past five years, I've seen a radical improvement in my English skills. While my English isn't perfect — and you might spot some grammatical mistakes in this very post — the tips I'm about to share will give you confidence and drastically reduce errors in both your written and spoken English.
+Over the past five years, I've seen a radical improvement in my English skills. While my English isn't perfect  -  and you might spot some grammatical mistakes in this very post  -  the tips I'm about to share will give you confidence and drastically reduce errors in both your written and spoken English.
 
 ### Why These Tips Matter
 
@@ -54,7 +54,7 @@ Challenge yourself by using more complex ways to explain simple things. This hel
 
 #### 7. Ditch SMS Lingo
 
-I can't stress this enough — stop using SMS lingo. Writing full sentences properly not only improves your writing but also enhances your typing skills. This habit will pay off in the long run.
+I can't stress this enough  -  stop using SMS lingo. Writing full sentences properly not only improves your writing but also enhances your typing skills. This habit will pay off in the long run.
 
 #### 8. Learn New Words Daily
 
@@ -66,7 +66,7 @@ This might sound funny, but pick a topic and start debating both sides in your m
 
 #### 10. Embrace Corrections
 
-Ask your friends to correct you whenever you make a mistake. It may be frustrating in the moment, but that frustration will ensure the mistake sticks with you forever. Also, never be satisfied with your first draft — keep refining it until you're happy with the result.
+Ask your friends to correct you whenever you make a mistake. It may be frustrating in the moment, but that frustration will ensure the mistake sticks with you forever. Also, never be satisfied with your first draft  -  keep refining it until you're happy with the result.
 
 #### 11. Engage on Twitter
 

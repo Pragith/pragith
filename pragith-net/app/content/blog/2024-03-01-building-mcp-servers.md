@@ -16,9 +16,9 @@ I've been building MCP servers for internal tooling, and here's what I've learne
 
 MCP exposes three types of capabilities:
 
-**Resources.** Read-only data — documentation, logs, configuration files, schema definitions. Think of these as "things the agent can read."
+**Resources.** Read-only data  -  documentation, logs, configuration files, schema definitions. Think of these as "things the agent can read."
 
-**Tools.** Executable functions — running a query, calling an API, triggering a deploy. These are "things the agent can do."
+**Tools.** Executable functions  -  running a query, calling an API, triggering a deploy. These are "things the agent can do."
 
 **Prompts.** Reusable prompt templates that encode domain-specific reasoning patterns. Often overlooked, but useful for standardizing how agents approach common tasks.
 
@@ -30,13 +30,13 @@ Three non-negotiable rules I follow:
 
 **1. Read-only by default.** Every resource and tool starts as read-only. Write access is granted explicitly, scoped narrowly, and logged.
 
-**2. Human-in-the-loop for anything destructive.** If a tool can modify state — deploy code, delete records, update configurations — it requires user confirmation. No exceptions. The agent can prepare the action, but a human approves it.
+**2. Human-in-the-loop for anything destructive.** If a tool can modify state  -  deploy code, delete records, update configurations  -  it requires user confirmation. No exceptions. The agent can prepare the action, but a human approves it.
 
 **3. Structured audit logging.** Every tool invocation generates a log entry with the caller, the parameters, the result, and a timestamp. When the CISO asks "what did the AI do last Tuesday," you need to be able to answer that in seconds.
 
 ## Implementation Notes
 
-I build MCP servers in Python, typically with FastAPI as the transport layer. The SDK handles the protocol negotiation. The interesting engineering is in the tool definitions — specifically, how much autonomy you give the agent versus how much you constrain it.
+I build MCP servers in Python, typically with FastAPI as the transport layer. The SDK handles the protocol negotiation. The interesting engineering is in the tool definitions  -  specifically, how much autonomy you give the agent versus how much you constrain it.
 
 A tool that accepts raw SQL is flexible but dangerous. A tool that accepts structured parameters and generates the SQL internally is safer but less flexible. The right choice depends on who the agent is serving and what the blast radius is if something goes wrong.
 

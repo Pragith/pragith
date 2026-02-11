@@ -1,4 +1,4 @@
-# Website Fixes — 2026-02-11 Session 2
+# Website Fixes  -  2026-02-11 Session 2
 
 All 14 issues addressed. Fixes grouped by priority.
 
@@ -7,7 +7,7 @@ All 14 issues addressed. Fixes grouped by priority.
 ## Priority 1 (Critical)
 
 ### ✅ Fix 1: Removed Duplicate Consulting Content
-**Problem:** Near-identical consulting sections in `/consult` and `/contact` — SEO penalty, maintenance overhead.
+**Problem:** Near-identical consulting sections in `/consult` and `/contact`  -  SEO penalty, maintenance overhead.
 
 **Fix:**
 - `/contact` is now **conversion-focused**: short summary, link to `/consult` for details, form, and booking CTA
@@ -18,12 +18,12 @@ All 14 issues addressed. Fixes grouped by priority.
 **Files:** `contact.html`, `consult.html`, `base.html`, `main.py`
 
 ### ✅ Fix 2: Calendly Integration
-**Problem:** "Book Discovery Call" CTA went to /contact — unnecessary friction.
+**Problem:** "Book Discovery Call" CTA went to /contact  -  unnecessary friction.
 
 **Fix:**
 - Added `CALENDLY_URL` to config and `.env.example`
 - Both `/consult` and `/contact` conditionally render a "Book a Call" button when `CALENDLY_URL` is set
-- When empty, the button is hidden — no broken links
+- When empty, the button is hidden  -  no broken links
 
 **Files:** `config.py`, `main.py`, `consult.html`, `contact.html`, `.env.example`
 
@@ -39,7 +39,7 @@ All 14 issues addressed. Fixes grouped by priority.
 **Files:** `config.py`, `main.py`, `contact.html`, `.env.example`
 
 ### ✅ Fix 5: OpenGraph & Twitter Cards
-**Problem:** Only `<meta name="description">` defined — broken LinkedIn previews.
+**Problem:** Only `<meta name="description">` defined  -  broken LinkedIn previews.
 
 **Fix:**
 - Added `og:title`, `og:description`, `og:type`, `og:locale`, `og:site_name`
@@ -58,7 +58,7 @@ All 14 issues addressed. Fixes grouped by priority.
 **Files:** `base.html`
 
 ### ✅ Fix 8: Currency Formatting
-**Problem:** No decimal formatting or rounding — could look unprofessional.
+**Problem:** No decimal formatting or rounding  -  could look unprofessional.
 
 **Fix:**
 - Applied Jinja `"%.0f"|format()` to hourly_rate and base_rate_usd in both templates
@@ -79,7 +79,7 @@ All 14 issues addressed. Fixes grouped by priority.
 **Files:** `contact.html`
 
 ### ✅ Fix 9: Hero Positioning (Noted, Not Changed)
-The headline "Enterprise AI & Cloud Platform Architect" was updated earlier this session. Your suggestion of "Enterprise AI & Data Platform Architect" is a valid alternative. This is a strategic choice you can make — no code needed, just edit the `<h1>` in `index.html`.
+The headline "Enterprise AI & Cloud Platform Architect" was updated earlier this session. Your suggestion of "Enterprise AI & Data Platform Architect" is a valid alternative. This is a strategic choice you can make  -  no code needed, just edit the `<h1>` in `index.html`.
 
 ### ✅ Fix 11: FAQ Availability Statement
 **Problem:** "my own ventures" could accidentally filter out contract opportunities.
@@ -101,7 +101,7 @@ The headline "Enterprise AI & Cloud Platform Architect" was updated earlier this
 **Files:** `consult.html`
 
 ### ✅ Fix 14: "Powered By" List Risk
-**Problem:** Lists specific model versions (GPT-4, Gemini 2.0, Claude Sonnet) — implies partnerships, ages quickly.
+**Problem:** Lists specific model versions (GPT-4, Gemini 2.0, Claude Sonnet)  -  implies partnerships, ages quickly.
 
 **Fix:**
 - Changed header from "Powered By" to "Built On"
@@ -119,11 +119,11 @@ The headline "Enterprise AI & Cloud Platform Architect" was updated earlier this
 **Problem:** Missing limitation of liability, no advisory disclaimer, no UAE jurisdiction clause.
 
 **Fix:** Added to `legal.html`:
-- **Limitation of liability** — capped at fees paid
+- **Limitation of liability**  -  capped at fees paid
 - **No legal/financial/regulatory advice disclaimer**
-- **IP ownership** — clarified pre-existing IP
-- **Governing law** — Canada default, UAE by agreement
-- **Dispute resolution** — negotiation first, then mediation/arbitration
+- **IP ownership**  -  clarified pre-existing IP
+- **Governing law**  -  Canada default, UAE by agreement
+- **Dispute resolution**  -  negotiation first, then mediation/arbitration
 - Updated effective date to 2025
 
 **Files:** `legal.html`
@@ -131,7 +131,7 @@ The headline "Enterprise AI & Cloud Platform Architect" was updated earlier this
 ### Fix 7: Blog `| safe` XSS vector (Noted)
 The blog content pipeline uses Python markdown rendering. If content is author-controlled (you write the posts), this is safe. If you ever accept user-contributed posts, add `bleach` sanitization before `| safe`.
 
-### Fix 10: Trust Signals (Content Strategy — Not Code)
+### Fix 10: Trust Signals (Content Strategy  -  Not Code)
 Missing client logos, certifications, case study metrics. This requires content creation, not code changes.
 
 ---
@@ -174,5 +174,5 @@ Added hidden `website` field to form. Bots that fill it get silently redirected.
 1. **Set `CALENDLY_URL`** in `.env` once you have a Calendly account
 2. **Set `RECAPTCHA_SITE_KEY`** and `RECAPTCHA_SECRET_KEY` in `.env`
 3. **Decide on headline**: "Enterprise AI & Cloud Platform Architect" vs "Enterprise AI & Data Platform Architect"
-4. **Update `HOURLY_RATE`** — current default is still `95.0` in `.env`
+4. **Update `HOURLY_RATE`**  -  current default is still `95.0` in `.env`
 5. **Create trust content**: case study, certifications section, or client logos
