@@ -1,144 +1,19 @@
 {% extends "base.html" %}
-{% block canonical %}https://pragith.net{% endblock %}
+{% block extra_head %}
+<link rel="canonical" href="https://pragith.net/">
+{% endblock %}
 
 {% block content %}
 <!-- Hero Section -->
 <section class="border-b border-line/20">
     <div class="max-w-6xl mx-auto px-6 py-24 sm:py-32">
-        <div class="max-w-4xl mx-auto text-center">
+        <div class="max-w-4xl">
             <h1
-                class="font-display text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-ink mb-6 leading-[1.1] animate-fade-in">
-                Operational Automation<br>& AI Systems.
+                class="font-display text-5xl sm:text-6xl font-bold tracking-tight text-ink mb-6 leading-[1.1] animate-fade-in">
+                Structured AI Automation & Operational Systems
             </h1>
-
-            <p class="text-xl sm:text-2xl text-ink/80 max-w-3xl mx-auto mb-6 leading-relaxed animate-fade-in">
-                Short-cycle operational automation and system builds for businesses ready to act.
-                Fixed-scope engagements. Rapid delivery. Production-ready. Clean handover.
-            </p>
-
-            <p class="text-lg text-ink/50 mb-12 animate-fade-in">
-                Structured, defined-scope builds. Independent. Project-based.
-            </p>
-
-            <div class="flex flex-wrap justify-center gap-4 animate-fade-in">
-                <a href="/work"
-                    class="inline-flex items-center justify-center text-sm font-semibold bg-ink text-page hover:bg-accent hover:text-black transition-all h-12 px-8"
-                    data-analytics="cta-hero-view-work" aria-label="View portfolio work">
-                    View Work →
-                </a>
-                <a href="/contact"
-                    class="inline-flex items-center justify-center text-sm font-semibold border border-line bg-page hover:bg-ink hover:text-page transition-all h-12 px-8"
-                    data-analytics="cta-hero-strategy-call" aria-label="Book a strategy call">
-                    Book a Strategy Call
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Authority Strip -->
-<section class="border-b border-line/20 bg-surface/50">
-    <div class="max-w-6xl mx-auto px-6 py-8">
-        <div class="grid md:grid-cols-3 gap-8 text-center text-sm divide-y md:divide-y-0 md:divide-x divide-line/10">
-            <div class="pt-4 md:pt-0">
-                <h3 class="font-bold text-ink mb-2 uppercase tracking-wider text-xs">Scope</h3>
-                <p class="text-ink/60">Defined deliverables · Fixed scope · No open-ended commitments</p>
-            </div>
-            <div class="pt-4 md:pt-0">
-                <h3 class="font-bold text-ink mb-2 uppercase tracking-wider text-xs">Delivery</h3>
-                <p class="text-ink/60">Fixed duration · Rapid turnaround · Milestone-based</p>
-            </div>
-            <div class="pt-4 md:pt-0">
-                <h3 class="font-bold text-ink mb-2 uppercase tracking-wider text-xs">Output</h3>
-                <p class="text-ink/60">Production-ready · Documented · Fully handed over</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Stats Section -->
-<section class="border-b border-line/20">
-    <div class="max-w-6xl mx-auto px-6 py-16">
-        <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-line/20">
-            <div class="py-8 md:py-0 md:pr-12">
-                <div class="text-6xl font-bold text-ink mb-2">13+</div>
-                <div class="text-xs font-semibold uppercase tracking-wider text-ink/40 mb-1">Years</div>
-                <div class="text-sm text-ink/60">Shipping Production Systems</div>
-            </div>
-            <div class="py-8 md:py-0 md:px-12">
-                <div class="text-6xl font-bold text-ink mb-2">20–50hr</div>
-                <div class="text-xs font-semibold uppercase tracking-wider text-ink/40 mb-1">Typical Scope</div>
-                <div class="text-sm text-ink/60">Defined Engagement Window</div>
-            </div>
-            <div class="py-8 md:py-0 md:pl-12">
-                <div class="text-6xl font-bold text-accent mb-2">Direct</div>
-                <div class="text-xs font-semibold uppercase tracking-wider text-ink/40 mb-1">Execution</div>
-                <div class="text-sm text-ink/60">End-to-End Delivery & Handover</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Quick Navigation Section -->
-<section class="py-20 border-b border-line/20">
-    <div class="max-w-6xl mx-auto px-6">
-        <div class="mb-12">
-            <h2 class="font-display text-3xl font-bold text-ink mb-2">Explore</h2>
-            <div class="w-16 h-1 bg-accent"></div>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <a href="/work"
-                class="group border-2 border-line/30 p-8 hover:bg-ink hover:text-page transition-all text-ink"
-                data-analytics="nav-tile-work">
-                <div class="flex items-center justify-between mb-4">
-                    <h3 class="font-display text-xl font-bold">Work</h3>
-                    <svg class="w-6 h-6 transform group-hover:translate-x-1 transition-transform" fill="none"
-                        viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                </div>
-                <p class="text-sm opacity-70">Case studies & delivered projects</p>
-            </a>
-
-            <a href="/engagement"
-                class="group border-2 border-line/30 p-8 hover:bg-accent hover:text-black transition-all text-ink"
-                data-analytics="nav-tile-engagement">
-                <div class="flex items-center justify-between mb-4">
-                    <h3 class="font-display text-xl font-bold">Engagement</h3>
-                    <svg class="w-6 h-6 transform group-hover:translate-x-1 transition-transform" fill="none"
-                        viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                </div>
-                <p class="text-sm opacity-70">How projects are scoped, delivered, and handed over</p>
-            </a>
-
-            <a href="/business"
-                class="group border-2 border-line/30 p-8 hover:bg-ink hover:text-page transition-all text-ink"
-                data-analytics="nav-tile-business">
-                <div class="flex items-center justify-between mb-4">
-                    <h3 class="font-display text-xl font-bold">Platform</h3>
-                    <svg class="w-6 h-6 transform group-hover:translate-x-1 transition-transform" fill="none"
-                        viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                </div>
-                <p class="text-sm opacity-70">Operational systems for established businesses</p>
-            </a>
-        </div>
-    </div>
-</section>
-
-<!-- What You Get Section -->
-<section class="py-32">
-    <div class="max-w-6xl mx-auto px-6">
-        <div class="mb-20">
-            <h2 class="font-display text-4xl sm:text-5xl font-bold tracking-tight text-ink mb-4">
-                What You Get
+            <h2 class="text-xl sm:text-2xl font-medium text-accent mb-6 animate-fade-in">
+                Fixed-Scope Builds Delivered in 2–4 Weeks
             </h2>
             <div class="w-20 h-1 bg-accent"></div>
         </div>

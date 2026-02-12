@@ -20,7 +20,7 @@ class BlogPost(BaseModel):
     summary: str
     tags: List[Tag] = []
     status: str = "published"  # draft | published | unpublished
-    content: str  # HTML content (sanitized)
+    content: Any  # HTML content (sanitized)
     raw_content: str # content without frontmatter
     
     class Config:
@@ -137,6 +137,7 @@ class BlogService:
                 # Remove date prefix and extension
                 slug_candidate = filename[11:-3] 
                 
+                from markupsafe import Markup
                 return BlogPost(
                     title=meta['title'],
                     date=post_date,
@@ -144,7 +145,7 @@ class BlogService:
                     summary=meta['summary'],
                     tags=tags,
                     status=status,
-                    content=html_content,
+                    content=Markup(html_content),
                     raw_content=body_raw
                 )
         return None

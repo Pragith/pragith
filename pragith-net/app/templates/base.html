@@ -9,12 +9,7 @@
     <meta name="description"
         content="{% block description %}Structured, production-ready AI systems delivered rapidly. 20–50 hour fixed-scope builds. Clean handover. No long-term lock-in.{% endblock %}">
 
-    <!-- Canonical -->
-    {% if self.canonical() %}
-    <link rel="canonical" href="{% block canonical %}{% endblock %}">
-    {% else %}
-    <!-- WARNING: No canonical URL defined for this page -->
-    {% endif %}
+    <!-- Canonical: Explicitly defined in child templates -->
 
     <!-- OpenGraph -->
     <meta property="og:title"

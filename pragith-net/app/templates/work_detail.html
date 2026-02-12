@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% block title %}{{ work.title }} | Pragith Prakash{% endblock %}
-{% block content %}
+{% block extra_head %}
+<link rel="canonical" href="https://pragith.net/work/{{ work.slug }}">
+{% endblock %}
 <article class="min-h-screen border-t border-line/20">
     <!-- Technical Header -->
     <header class="bg-surface/50 border-b border-line/20 py-20">
