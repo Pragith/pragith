@@ -53,7 +53,7 @@
     <!-- Preload critical fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="{{ theme.fonts_url|safe }}">
+    <link rel="stylesheet" href="{{ theme.fonts_url|safe }}" media="print" onload="this.media='all'">
 
     {% if recaptcha_site_key %}
     <!-- reCAPTCHA v3 -->
@@ -62,14 +62,18 @@
 
     {% if ga_tag %}
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ ga_tag }}"></script>
+    <script async defer src="https://www.googletagmanager.com/gtag/js?id={{ ga_tag }}"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-        gtag('config', '{{ ga_tag }}');
+        gtag('config', '{{ ga_tag }}', {
+            'anonymize_ip': true
+        });
     </script>
     {% endif %}
+
+    {% block extra_head %}{% endblock %}
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -77,7 +81,7 @@
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Pragith Prakash",
-        "jobTitle": "Operational Systems Architect",
+        "jobTitle": "Senior AI & Data Engineer",
         "description": "Structured, production-ready AI systems delivered in 2–4 weeks. Fixed-scope builds with clean handover.",
         "url": "https://pragith.net",
         "sameAs": [
@@ -87,7 +91,7 @@
         "knowsAbout": ["AI Systems", "Data Engineering", "Operational Automation", "System Integration", "Production AI"],
         "hasOccupation": {
             "@type": "Occupation",
-            "name": "Operational Systems Architect",
+            "name": "Senior AI & Data Engineer",
             "occupationLocation": {
                 "@type": "Country",
                 "name": "North America"
@@ -114,9 +118,11 @@
                 <!-- Method Dropdown -->
                 <div class="relative">
                     <button onclick="toggleDropdown('method-dropdown')"
-                        class="text-ink hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent flex items-center gap-1">
+                        class="text-ink hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent flex items-center gap-1"
+                        aria-expanded="false" aria-controls="method-dropdown">
                         Method
-                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <svg class="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
                         </svg>
                     </button>
@@ -137,9 +143,11 @@
                 <!-- Business Dropdown -->
                 <div class="relative">
                     <button onclick="toggleDropdown('business-dropdown')"
-                        class="text-ink hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent flex items-center gap-1">
-                        Business
-                        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        class="text-ink hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent flex items-center gap-1"
+                        aria-expanded="false" aria-controls="business-dropdown">
+                        Business Solutions
+                        <svg class="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
                         </svg>
                     </button>
@@ -214,8 +222,8 @@
 
                 <a href="/blog" class="text-ink hover:text-accent transition-colors py-2 mt-2">Blog</a>
                 <a href="/contact"
-                    class="inline-flex items-center justify-center text-sm font-medium bg-ink text-page hover:bg-accent hover:text-black transition-all h-10 px-6 mt-2">
-                    Contact
+                    class="inline-flex items-center justify-center text-sm font-semibold bg-ink text-page hover:bg-accent hover:text-black transition-all h-10 px-6 mt-2">
+                    Book Strategy Call →
                 </a>
             </nav>
         </div>
@@ -296,9 +304,9 @@
                 <div>
                     <h3 class="text-sm font-semibold mb-4 text-accent">Connect</h3>
                     <ul class="space-y-3 text-sm text-white/60">
-                        <li><a href="https://linkedin.com/in/pragith" target="_blank"
+                        <li><a href="https://linkedin.com/in/pragith" target="_blank" rel="noopener noreferrer"
                                 class="hover:text-white transition-colors">LinkedIn</a></li>
-                        <li><a href="https://github.com/pragith" target="_blank"
+                        <li><a href="https://github.com/pragith" target="_blank" rel="noopener noreferrer"
                                 class="hover:text-white transition-colors">GitHub</a></li>
                         <li><a href="/contact" class="hover:text-white transition-colors">Email</a></li>
                     </ul>
@@ -307,7 +315,8 @@
             <div
                 class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/40">
                 <p>&copy; {{ now().year }} Pragith Prakash · <strong>Vriksh Consulting Services Inc.</strong></p>
-                <p>Structured Operational Systems</p>
+                <p>Structured Operational Systems · <a href="/legal"
+                        class="hover:text-white transition-colors">Legal</a></p>
             </div>
         </div>
     </footer>

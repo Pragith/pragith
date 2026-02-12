@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% block title %}Server Error | Pragith Prakash{% endblock %}
+{% block extra_head %}
+<meta name="robots" content="noindex">{% endblock %}
 {% block content %}
 <section class="py-20 border-t border-line/20">
     <div class="max-w-3xl mx-auto px-6 text-center">
@@ -17,11 +19,11 @@
                     <div class="text-sm font-bold text-ink mb-1">Return Home</div>
                     <div class="text-xs text-ink/50">Start fresh</div>
                 </a>
-                <a href="javascript:history.back()"
-                    class="border-2 border-line/20 p-4 bg-surface hover:border-accent transition-colors">
+                <button onclick="history.back()"
+                    class="border-2 border-line/20 p-4 bg-surface hover:border-accent transition-colors cursor-pointer w-full text-left">
                     <div class="text-sm font-bold text-ink mb-1">Go Back</div>
                     <div class="text-xs text-ink/50">Previous page</div>
-                </a>
+                </button>
                 <a href="/contact" class="border-2 border-accent bg-accent/10 p-4 hover:bg-accent/20 transition-colors">
                     <div class="text-sm font-bold text-ink mb-1">Report Issue</div>
                     <div class="text-xs text-ink/50">Let me know</div>

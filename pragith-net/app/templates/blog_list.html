@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block title %}Blog | Pragith Prakash{% endblock %}
+{% block canonical %}https://pragith.net/blog{% endblock %}
 {% block content %}
 <section class="py-20 border-t border-line/20">
     <div class="max-w-4xl mx-auto px-6">
@@ -34,7 +35,7 @@
                         <p class="text-ink/60 mb-4 line-clamp-3">{{ post.summary }}</p>
                         <div class="flex flex-wrap gap-2 relative z-10">
                             {% for t in post.tags %}
-                            <a href="/blog/tag/{{ t }}"
+                            <a href="/blog/tag/{{ t | lower | replace(' ', '-') }}"
                                 class="inline-flex items-center border border-line/20 px-2 py-1 text-xs font-medium text-ink/60 hover:bg-accent/10 hover:border-line/40 transition-colors">#{{
                                 t }}</a>
                             {% endfor %}

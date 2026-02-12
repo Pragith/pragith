@@ -7,13 +7,33 @@ established businesses. See your business performance clearly.{% endblock %}
 {% block og_description %}Real-time dashboards, automated reports, and connected data sources for established
 businesses.{% endblock %}
 
+{% block extra_head %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Executive Dashboard Services",
+  "description": "Real-time executive dashboards and automated reporting for established businesses",
+  "provider": {
+    "@type": "Person",
+    "name": "Pragith Prakash"
+  },
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": "North America"
+  },
+  "serviceType": "Business Intelligence & Dashboards"
+}
+</script>
+{% endblock %}
+
 {% block content %}
 <!-- Hero -->
 <section class="border-b border-line/20">
     <div class="max-w-6xl mx-auto px-6 py-24 sm:py-32">
         <div class="max-w-4xl">
             <div class="text-xs font-bold uppercase tracking-widest text-accent mb-4 animate-fade-in">
-                <a href="/business" class="hover:text-ink transition-colors">Business</a> → Dashboards
+                BUSINESS SOLUTIONS
             </div>
             <h1
                 class="font-display text-5xl sm:text-6xl font-bold tracking-tight text-ink mb-6 leading-[1.1] animate-fade-in">
@@ -38,6 +58,9 @@ businesses.{% endblock %}
                     Delivery Model
                 </a>
             </div>
+            <p class="text-xs text-ink/40 mt-4">Limited concurrent projects accepted.</p>
+            <p class="text-xs text-ink/50 mt-2">Or email: <a href="mailto:pragith@pragith.net"
+                    class="text-accent hover:underline">pragith@pragith.net</a></p>
         </div>
     </div>
 </section>
@@ -109,7 +132,7 @@ businesses.{% endblock %}
         <div class="mb-12">
             <h2 class="font-display text-3xl font-bold tracking-tight text-ink mb-4">Example Builds</h2>
             <div class="w-16 h-1 bg-accent mb-3"></div>
-            <p class="text-sm text-ink/50">Most engagements fall within these patterns.</p>
+            <p class="text-sm text-ink/50">Common engagement patterns include:</p>
         </div>
         <div class="grid md:grid-cols-2 gap-6">
             <div class="border-2 border-line/20 p-8 bg-page">
