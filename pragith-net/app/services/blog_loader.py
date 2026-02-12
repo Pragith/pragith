@@ -53,8 +53,8 @@ class BlogService:
     def load_posts(self):
         """Loads and parses all blog posts from the content directory."""
         posts = []
-        # Pattern: YYYY-MM-DD-title.md
-        files = glob.glob(os.path.join(self.content_dir, "*.md"))
+        # Pattern: YYYY-MM-DD-title.md (recursive)
+        files = glob.glob(os.path.join(self.content_dir, "**/*.md"), recursive=True)
         
         for file_path in files:
             try:

@@ -1,53 +1,106 @@
 {% extends "base.html" %}
 {% block title %}{{ work.title }} | Pragith Prakash{% endblock %}
 {% block content %}
-<article class="py-20 border-t border-line/20">
-    <div class="max-w-4xl mx-auto px-6">
-        <header class="mb-16 border-b border-line/10 pb-16">
-            <div class="flex items-center gap-3 text-xs font-bold uppercase tracking-wider text-ink/40 mb-4">
-                <span>{{ work.industry }}</span><span>•</span><span>{{ work.role }}</span>
-            </div>
-            <h1 class="font-display text-3xl sm:text-5xl font-bold tracking-tight text-ink mb-6">{{ work.title }}</h1>
-            <p class="text-xl text-ink/60 max-w-3xl leading-relaxed">{{ work.summary }}</p>
-            <div class="mt-8 flex flex-wrap gap-2">
-                {% for tech in work.stack %}
-                <span class="inline-flex items-center border border-line/30 px-3 py-1 text-xs font-medium text-ink">{{
-                    tech }}</span>
-                {% endfor %}
-            </div>
-        </header>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-            <div class="md:col-span-2 space-y-12">
-                <section>
-                    <h2 class="font-display text-xl font-bold text-ink mb-4">The Challenge</h2>
-                    <p class="text-ink/60 leading-relaxed">{{ work.challenge }}</p>
-                </section>
-                <section>
-                    <h2 class="font-display text-xl font-bold text-ink mb-4">Architecture & Solution</h2>
-                    <p class="text-ink/60 leading-relaxed">{{ work.solution }}</p>
-                </section>
-                <section class="border-2 border-accent p-8 bg-accent/5">
-                    <h2 class="font-display text-xl font-bold text-ink mb-4">Key Outcomes</h2>
-                    <p class="text-ink/80 leading-relaxed font-medium">{{ work.outcome }}</p>
-                </section>
-            </div>
-            <div class="md:col-span-1 border-l border-line/10 pl-8 md:pl-12">
-                <h3 class="text-xs font-bold text-ink uppercase tracking-wider mb-6">Details</h3>
-                <dl class="space-y-8">
-                    <div>
-                        <dt class="text-xs text-ink/40 mb-1">Role</dt>
-                        <dd class="font-medium text-ink">{{ work.role }}</dd>
+<article class="min-h-screen border-t border-line/20">
+    <!-- Technical Header -->
+    <header class="bg-surface/50 border-b border-line/20 py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row gap-12 md:items-end justify-between">
+                <div class="max-w-3xl">
+                    <div
+                        class="flex items-center gap-3 text-xs font-mono font-medium uppercase tracking-widest text-accent mb-6">
+                        <span>{{ work.industry }}</span>
+                        <span class="text-line">/</span>
+                        <span>{{ work.role }}</span>
                     </div>
-                    <div>
-                        <dt class="text-xs text-ink/40 mb-1">Focus</dt>
-                        <dd class="font-medium text-ink">{{ work.subtitle }}</dd>
-                    </div>
-                </dl>
-                <div class="mt-12 pt-12 border-t border-line/10">
-                    <a href="/work"
-                        class="text-sm font-medium text-ink/60 hover:text-accent flex items-center gap-2 transition-colors">&larr;
-                        Back to all work</a>
+                    <h1 class="font-display text-4xl sm:text-5xl font-bold tracking-tight text-ink mb-6 leading-[1.1]">
+                        {{ work.title }}</h1>
+                    <p class="text-xl text-ink/70 leading-relaxed font-light">{{ work.summary }}</p>
                 </div>
+
+                <!-- Stack Summary -->
+                <div class="w-full md:w-auto shrink-0 flex flex-wrap gap-2 max-w-xs md:justify-end">
+                    {% for tech in work.stack %}
+                    <span class="arch-node">{{ tech }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-6 py-16">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
+
+            <!-- Sidebar Metadata -->
+            <aside class="lg:col-span-3 lg:order-2">
+                <div class="sticky top-24 space-y-8">
+                    <div class="border border-line/20 bg-surface p-6 rounded-sm">
+                        <h3
+                            class="text-xs font-bold text-ink uppercase tracking-widest mb-6 border-b border-line/10 pb-2">
+                            System Specs</h3>
+                        <dl class="space-y-6">
+                            <div>
+                                <dt class="text-[10px] uppercase text-ink/40 font-mono mb-1">Role</dt>
+                                <dd class="font-medium text-ink text-sm">{{ work.role }}</dd>
+                            </div>
+                            <div>
+                                <dt class="text-[10px] uppercase text-ink/40 font-mono mb-1">Focus Area</dt>
+                                <dd class="font-medium text-ink text-sm">{{ work.subtitle }}</dd>
+                            </div>
+                            <div>
+                                <dt class="text-[10px] uppercase text-ink/40 font-mono mb-1">Deliverables</dt>
+                                <dd class="font-medium text-ink text-sm">Architecture, Implementation, Documentation
+                                </dd>
+                            </div>
+                        </dl>
+                    </div>
+
+                    <a href="/work" class="block text-sm font-mono text-ink/60 hover:text-accent transition-colors">
+                        ← RETURN_TO_REGISTRY
+                    </a>
+                </div>
+            </aside>
+
+            <!-- Main Documentation Content -->
+            <div class="lg:col-span-9 lg:order-1 space-y-16">
+                <!-- Section 1: Problem Space -->
+                <section>
+                    <div class="flex items-center gap-4 mb-6">
+                        <span class="text-4xl font-bold text-line/40 font-display">01</span>
+                        <h2 class="font-display text-2xl font-bold text-ink">Problem Space & Constraints</h2>
+                    </div>
+                    <div class="prose prose-lg prose-slate max-w-none text-ink/70 leading-relaxed">
+                        {{ work.challenge }}
+                    </div>
+                </section>
+
+                <!-- Section 2: Architecture -->
+                <section>
+                    <div class="flex items-center gap-4 mb-6">
+                        <span class="text-4xl font-bold text-line/40 font-display">02</span>
+                        <h2 class="font-display text-2xl font-bold text-ink">System Architecture</h2>
+                    </div>
+                    <div class="prose prose-lg prose-slate max-w-none text-ink/70 leading-relaxed">
+                        {{ work.solution }}
+                    </div>
+
+                    <!-- Placeholder for Diagram if we had one -->
+                    <div class="mt-8 bg-surface border border-dashed border-line/40 p-8 rounded-sm text-center">
+                        <p class="text-sm font-mono text-ink/40">[Architecture Diagram Placeholder]</p>
+                    </div>
+                </section>
+
+                <!-- Section 3: Outcomes -->
+                <section class="bg-accent/5 border-l-4 border-accent p-8 rounded-r-sm">
+                    <div class="flex items-center gap-4 mb-6">
+                        <span
+                            class="text-sm font-bold bg-accent text-white px-2 py-1 rounded-sm uppercase tracking-wider">Results</span>
+                        <h2 class="font-display text-xl font-bold text-ink">Performance & Impact</h2>
+                    </div>
+                    <div class="prose prose-lg prose-slate max-w-none text-ink/80 font-medium">
+                        {{ work.outcome }}
+                    </div>
+                </section>
             </div>
         </div>
     </div>
