@@ -1,0 +1,283 @@
+{% extends "base.html" %}
+
+{% block title %}Corporate AI & Data Engineering Training | Pragith Prakash{% endblock %}
+{% block description %}Advanced AI and Data Engineering training for enterprise teams. Architecture-first bootcamps,
+production systems focus, and real-world constraint analysis.{% endblock %}
+
+{% block extra_head %}
+<link rel="canonical" href="https://pragith.net/training">
+{% endblock %}
+
+{% block og_title %}Corporate AI & Data Engineering Training | Pragith Prakash{% endblock %}
+{% block og_description %}Production-grade AI & Data Engineering bootcamps. Architecture-first. No fluff.{% endblock %}
+
+{% block content %}
+<!-- Hero -->
+<section class="border-b border-line/20">
+    <div class="max-w-6xl mx-auto px-6 py-24 sm:py-32">
+        <h1
+            class="font-display text-5xl sm:text-6xl font-bold tracking-tight text-ink mb-6 leading-[1.1] animate-fade-in">
+            Corporate AI & Data Engineering Training
+        </h1>
+        <p class="text-xl sm:text-2xl text-ink/80 max-w-3xl mb-12 leading-relaxed animate-fade-in animate-delay-100">
+            Advanced technical bootcamps for engineering teams. <br>
+            Focus on production architecture, system constraints, and operational reality.
+        </p>
+
+        <div class="flex flex-wrap gap-4 animate-fade-in animate-delay-200">
+            <a href="/contact"
+                class="inline-flex items-center justify-center text-sm font-semibold bg-ink text-page hover:bg-accent hover:text-black transition-all h-12 px-8">
+                Inquire About Training →
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Target Audience -->
+<section class="py-24 border-b border-line/20">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-16 items-start">
+            <div>
+                <h2 class="font-display text-3xl font-bold tracking-tight text-ink mb-6">Target Audience</h2>
+                <div class="w-16 h-1 bg-accent mb-6"></div>
+                <p class="text-lg text-ink/70 leading-relaxed">
+                    This is not an introductory course. It is structured upskilling for technical professionals building
+                    production systems.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {% set audience = [
+                "Engineering Teams",
+                "Data Platform Leads",
+                "AI Engineers",
+                "Cloud Architects",
+                "Platform Engineering Teams",
+                "Tech Leads"
+                ] %}
+                {% for item in audience %}
+                <div class="flex items-center gap-3 p-4 border border-line/20 bg-surface/30">
+                    <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                    <span class="font-bold text-ink">{{ item }}</span>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Core Training Tracks -->
+<section class="py-24 border-b border-line/20 bg-surface/30">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="mb-16">
+            <h2 class="font-display text-4xl font-bold tracking-tight text-ink mb-4">Core Training Tracks</h2>
+            <div class="w-20 h-1 bg-accent mb-4"></div>
+            <p class="text-ink/60">Organized by architecture layer. Customizable to team needs.</p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- AI Infrastructure -->
+            <div class="bg-page p-8 border border-line/20 hover:border-accent transition-colors">
+                <h3 class="font-display text-2xl font-bold text-ink mb-6">AI Infrastructure Engineering</h3>
+                <ul class="space-y-3 text-sm text-ink/70 mb-4">
+                    <li class="flex items-start gap-3"><span class="text-accent mt-0.5">›</span> LLM system architecture
+                        & RAG pipelines</li>
+                    <li class="flex items-start gap-3"><span class="text-accent mt-0.5">›</span> Model serving &
+                        inference scaling</li>
+                    <li class="flex items-start gap-3"><span class="text-accent mt-0.5">›</span> GPU cost optimization
+                        strategies</li>
+                    <li class="flex items-start gap-3"><span class="text-accent mt-0.5">›</span> Observability for
+                        probabilistic systems</li>
+                </ul>
+            </div>
+
+            <!-- Data Platform -->
+            <div class="bg-page p-8 border border-line/20 hover:border-accent transition-colors">
+                <h3 class="font-display text-2xl font-bold text-ink mb-6">Data Platform Engineering</h3>
+                <ul class="space-y-3 text-sm text-ink/70 mb-4">
+                    <li class="flex items-start gap-3"><span class="text-accent mt-0.5">›</span> Modern data stack
+                        architecture</li>
+                    <li class="flex items-start gap-3"><span class="text-accent mt-0.5">›</span> Batch vs. streaming
+                        tradeoffs</li>
+                    <li class="flex items-start gap-3"><span class="text-accent mt-0.5">›</span> Data reliability
+                        engineering (DRE)</li>
+                    <li class="flex items-start gap-3"><span class="text-accent mt-0.5">›</span> Metadata management &
+                        governance</li>
+                </ul>
+            </div>
+
+            <!-- Distributed Systems -->
+            <div class="bg-page p-8 border border-line/20 hover:border-accent transition-colors">
+                <h3 class="font-display text-2xl font-bold text-ink mb-6">Distributed Systems & Cloud</h3>
+                <ul class="space-y-3 text-sm text-ink/70 mb-4">
+                    <li class="flex items-start gap-3"><span class="text-accent mt-0.5">›</span> Kubernetes for data
+                        workloads</li>
+                    <li class="flex items-start gap-3"><span class="text-accent mt-0.5">›</span> Scaling microservices &
+                        failure analysis</li>
+                    <li class="flex items-start gap-3"><span class="text-accent mt-0.5">›</span> Infrastructure as Code
+                        (IaC) discipline</li>
+                    <li class="flex items-start gap-3"><span class="text-accent mt-0.5">›</span> Multi-cloud
+                        architectural considerations</li>
+                </ul>
+            </div>
+
+            <!-- MLOps -->
+            <div class="bg-page p-8 border border-line/20 hover:border-accent transition-colors">
+                <h3 class="font-display text-2xl font-bold text-ink mb-6">MLOps & Production AI</h3>
+                <ul class="space-y-3 text-sm text-ink/70 mb-4">
+                    <li class="flex items-start gap-3"><span class="text-accent mt-0.5">›</span> CI/CD pipelines for ML
+                        systems</li>
+                    <li class="flex items-start gap-3"><span class="text-accent mt-0.5">›</span> Model versioning &
+                        feature stores</li>
+                    <li class="flex items-start gap-3"><span class="text-accent mt-0.5">›</span> Monitoring drift &
+                        performance</li>
+                    <li class="flex items-start gap-3"><span class="text-accent mt-0.5">›</span> Deployment strategies
+                        (Canary, Shadow)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Methodology & Formats -->
+<section class="py-24 border-b border-line/20">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-16">
+            <div>
+                <h2 class="font-display text-3xl font-bold tracking-tight text-ink mb-6">Methodology</h2>
+                <div class="w-16 h-1 bg-accent mb-6"></div>
+                <ul class="space-y-4 text-ink/80">
+                    <li class="flex items-center gap-3"><span class="font-bold text-accent">01</span> Architecture-first
+                        teaching</li>
+                    <li class="flex items-center gap-3"><span class="font-bold text-accent">02</span> Real production
+                        production examples</li>
+                    <li class="flex items-center gap-3"><span class="font-bold text-accent">03</span> Tradeoff-driven
+                        learning</li>
+                    <li class="flex items-center gap-3"><span class="font-bold text-accent">04</span> Systems breakdown
+                        & design exercises</li>
+                </ul>
+            </div>
+            <div>
+                <h2 class="font-display text-3xl font-bold tracking-tight text-ink mb-6">Delivery Formats</h2>
+                <div class="w-16 h-1 bg-accent mb-6"></div>
+                <ul class="space-y-4 text-ink/80">
+                    <li class="flex items-center gap-3"><span class="w-2 h-2 bg-ink rounded-sm"></span> Corporate
+                        on-site workshops</li>
+                    <li class="flex items-center gap-3"><span class="w-2 h-2 bg-ink rounded-sm"></span> Remote live
+                        training series</li>
+                    <li class="flex items-center gap-3"><span class="w-2 h-2 bg-ink rounded-sm"></span> Multi-day
+                        architecture bootcamps</li>
+                    <li class="flex items-center gap-3"><span class="w-2 h-2 bg-ink rounded-sm"></span> Executive
+                        technical briefings</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sample Curriculum -->
+<section class="py-24 border-b border-line/20 bg-surface/30">
+    <div class="max-w-4xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="font-display text-3xl font-bold tracking-tight text-ink mb-4">Sample Curriculum</h2>
+            <p class="text-ink/60">AI Infrastructure Bootcamp – 5 Day Intensive</p>
+        </div>
+
+        <div class="space-y-6">
+            <!-- Day 1 -->
+            <div class="flex flex-col md:flex-row gap-6 p-6 border border-line/20 bg-page">
+                <div class="w-32 flex-shrink-0 font-bold text-accent uppercase tracking-wider">Day 1</div>
+                <div>
+                    <h3 class="font-bold text-ink mb-2">System Architecture & Lifecycle</h3>
+                    <p class="text-sm text-ink/70">Modern AI platform architecture, LLM lifecycle overview,
+                        infrastructure constraints and capacity planning.</p>
+                </div>
+            </div>
+
+            <!-- Day 2 -->
+            <div class="flex flex-col md:flex-row gap-6 p-6 border border-line/20 bg-page">
+                <div class="w-32 flex-shrink-0 font-bold text-accent uppercase tracking-wider">Day 2</div>
+                <div>
+                    <h3 class="font-bold text-ink mb-2">Inference & Compute</h3>
+                    <p class="text-sm text-ink/70">Model serving strategies, inference scaling, GPU cost implications,
+                        batching and caching patterns.</p>
+                </div>
+            </div>
+
+            <!-- Day 3 -->
+            <div class="flex flex-col md:flex-row gap-6 p-6 border border-line/20 bg-page">
+                <div class="w-32 flex-shrink-0 font-bold text-accent uppercase tracking-wider">Day 3</div>
+                <div>
+                    <h3 class="font-bold text-ink mb-2">Retrieval Systems (RAG)</h3>
+                    <p class="text-sm text-ink/70">RAG system design, vector storage tradeoffs, retrieval optimization,
+                        hybrid search architectures.</p>
+                </div>
+            </div>
+
+            <!-- Day 4 -->
+            <div class="flex flex-col md:flex-row gap-6 p-6 border border-line/20 bg-page">
+                <div class="w-32 flex-shrink-0 font-bold text-accent uppercase tracking-wider">Day 4</div>
+                <div>
+                    <h3 class="font-bold text-ink mb-2">Observability & Reliability</h3>
+                    <p class="text-sm text-ink/70">Monitoring probabilistic systems, failure mode analysis, evaluation
+                        frameworks, circuit breakers.</p>
+                </div>
+            </div>
+
+            <!-- Day 5 -->
+            <div class="flex flex-col md:flex-row gap-6 p-6 border border-line/20 bg-page">
+                <div class="w-32 flex-shrink-0 font-bold text-accent uppercase tracking-wider">Day 5</div>
+                <div>
+                    <h3 class="font-bold text-ink mb-2">Governance & Production</h3>
+                    <p class="text-sm text-ink/70">Cost governance, platform abstraction, security/compliance,
+                        enterprise rollout strategy.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Outcomes -->
+<section class="py-24 border-b border-line/20">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+        <h2 class="font-display text-3xl font-bold tracking-tight text-ink mb-12">Corporate Outcomes</h2>
+        <div class="grid sm:grid-cols-3 gap-8">
+            <div class="p-6">
+                <div class="text-4xl font-bold text-accent/20 mb-4">01</div>
+                <h3 class="font-bold text-ink mb-2">Reduced Misdesign</h3>
+                <p class="text-sm text-ink/60">Avoid costly architectural mistakes before implementation begins.</p>
+            </div>
+            <div class="p-6">
+                <div class="text-4xl font-bold text-accent/20 mb-4">02</div>
+                <h3 class="font-bold text-ink mb-2">Lower Inference Costs</h3>
+                <p class="text-sm text-ink/60">Optimize token usage and GPU resource allocation.</p>
+            </div>
+            <div class="p-6">
+                <div class="text-4xl font-bold text-accent/20 mb-4">03</div>
+                <h3 class="font-bold text-ink mb-2">Faster Productionization</h3>
+                <p class="text-sm text-ink/60">Move from proof-of-concept to stable production systems reliability.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Engagement Model CTA -->
+<section class="bg-black text-white border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-6 py-24 text-center">
+        <h2 class="font-display text-4xl font-bold mb-6">Engagement Model</h2>
+        <div class="flex flex-wrap justify-center gap-8 text-sm text-white/60 mb-12">
+            <span class="flex items-center gap-2">1. Scope Assessment</span>
+            <span class="text-white/20">→</span>
+            <span class="flex items-center gap-2">2. Curriculum Alignment</span>
+            <span class="text-white/20">→</span>
+            <span class="flex items-center gap-2">3. Training Delivery</span>
+            <span class="text-white/20">→</span>
+            <span class="flex items-center gap-2">4. Implementation Guidance</span>
+        </div>
+
+        <a href="/contact"
+            class="inline-flex items-center justify-center text-lg font-semibold bg-accent text-black hover:bg-white transition-all h-14 px-10 rounded-sm">
+            Schedule a Custom Scope Assessment
+        </a>
+    </div>
+</section>
+{% endblock %}

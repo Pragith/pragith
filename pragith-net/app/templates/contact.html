@@ -15,9 +15,17 @@
         <h1 class="font-display text-4xl sm:text-5xl font-bold tracking-tight text-ink mb-6">
             Define Your Automation or Dashboard Build
         </h1>
-        <p class="text-xl text-ink/60 mb-12 leading-relaxed">
-            This is not suitable for exploratory AI experimentation or undefined transformation programs.
+        <p class="text-xl text-ink/60 mb-8 leading-relaxed">
+            I work with established businesses to solve specific operational problems through structured systems.
         </p>
+        <ul class="flex flex-wrap justify-center gap-4 text-sm text-ink/50 mb-12">
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent"></span> Fixed-Scope
+                Deliverables</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                Production-Ready Handovers</li>
+            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent"></span> Rapid Delivery
+                Windows</li>
+        </ul>
 
         <form action="/contact" method="POST" class="text-left space-y-6 bg-surface/30 p-8 border border-line/20">
             <div>
@@ -48,29 +56,62 @@
                     </select>
                 </div>
             </div>
+    </div>
 
-            <div>
-                <label for="message" class="block text-sm font-bold text-ink mb-2">Operational Challenge</label>
-                <textarea name="message" id="message" rows="4" required
-                    placeholder="Describe the bottleneck, manual process, or visibility gap."
-                    class="block w-full border-2 border-line/20 bg-page px-4 py-3 text-ink placeholder-ink/20 focus:outline-none focus:border-accent transition-colors"></textarea>
-            </div>
-
-            <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
-            <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
-
-            <button type="submit"
-                class="w-full inline-flex items-center justify-center text-sm font-bold uppercase tracking-wider bg-ink text-page hover:bg-accent hover:text-black transition-all h-14 mt-4"
-                data-analytics="submit-contact-form">
-                Send Inquiry
-            </button>
-        </form>
-
-        <div class="mt-12 pt-12 border-t border-line/20">
-            <h3 class="text-sm font-bold text-ink mb-2">Direct Contact</h3>
-            <a href="mailto:pragith@pragith.net"
-                class="text-lg text-ink/60 hover:text-accent transition-colors font-mono">pragith@pragith.net</a>
+    <div class="grid md:grid-cols-2 gap-6">
+        <div>
+            <label for="project_type" class="block text-sm font-bold text-ink mb-2">Project Type</label>
+            <select name="project_type" id="project_type"
+                class="block w-full border-2 border-line/20 bg-page px-4 py-3 text-ink focus:outline-none focus:border-accent appearance-none transition-colors">
+                <option value="Automation Build">Automation Build</option>
+                <option value="Dashboard System">Dashboard System</option>
+                <option value="Corporate Training">Corporate Training</option>
+                <option value="Platform Architecture">Platform Architecture</option>
+                <option value="Other / Unsure">Other / Unsure</option>
+            </select>
         </div>
+        <div>
+            <label for="timeline" class="block text-sm font-bold text-ink mb-2">Desired Timeline</label>
+            <select name="inquiry_type" id="timeline"
+                class="block w-full border-2 border-line/20 bg-page px-4 py-3 text-ink focus:outline-none focus:border-accent appearance-none transition-colors">
+                <option value="Immediate (This Month)">Immediate (This Month)</option>
+                <option value="Next 30-60 Days">Next 30-60 Days</option>
+                <option value="Next Quarter">Next Quarter</option>
+                <option value="Planning Phase">Planning Phase</option>
+            </select>
+        </div>
+    </div>
+
+    <div>
+        <label for="message" class="block text-sm font-bold text-ink mb-2">Operational Challenge</label>
+        <div class="text-xs text-ink/40 mb-2">Please describe the specific bottleneck, manual process, or data
+            visibility gap.</div>
+        <textarea name="message" id="message" rows="4" required
+            placeholder="Example: 'Our sales team manually copies leads from email to HubSpot, causing delays...'"
+            class="block w-full border-2 border-line/20 bg-page px-4 py-3 text-ink placeholder-ink/20 focus:outline-none focus:border-accent transition-colors"></textarea>
+    </div>
+
+    <div class="bg-surface/50 p-4 border-l-2 border-accent text-sm text-ink/60">
+        <span class="font-bold text-ink">The "Define the Build" Process:</span>
+        I review inquiries to confirm if the problem fits a fixed-scope engagement. If it does, we schedule a brief
+        alignment call to define the exact deliverables.
+    </div>
+
+    <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+    <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
+
+    <button type="submit"
+        class="w-full inline-flex items-center justify-center text-sm font-bold uppercase tracking-wider bg-ink text-page hover:bg-accent hover:text-black transition-all h-14 mt-4"
+        data-analytics="submit-contact-form">
+        Send Inquiry
+    </button>
+    </form>
+
+    <div class="mt-12 pt-12 border-t border-line/20">
+        <h3 class="text-sm font-bold text-ink mb-2">Direct Contact</h3>
+        <a href="mailto:pragith@pragith.net"
+            class="text-lg text-ink/60 hover:text-accent transition-colors font-mono">pragith@pragith.net</a>
+    </div>
     </div>
 </section>
 

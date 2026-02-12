@@ -235,6 +235,10 @@ async def business_automation(request: Request):
 async def business_dashboards(request: Request):
     return templates.TemplateResponse("business/dashboards.html", {"request": request})
 
+@app.get("/training", response_class=HTMLResponse)
+async def training(request: Request):
+    return templates.TemplateResponse("training.html", {"request": request})
+
 # Error Handlers
 @app.exception_handler(404)
 async def not_found_exception_handler(request: Request, exc: HTTPException):
