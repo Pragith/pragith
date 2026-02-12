@@ -24,3 +24,9 @@ Retrieval: The model finds the page image with the bar chart showing Q3 revenue.
 Generation: The VLM (GPT-4o) looks at the image and answers "Revenue grew by 15%."
 
 This bypasses the OCR step entirely. It handles tables, charts, and diagrams natively. It is computationally expensive (embedding images is heavy), but for high-value documents, it is the only way to get accurate answers.
+
+## What I Would Pilot Carefully
+
+The first risk is cost. Image embeddings are expensive, so we should only index the documents that matter.
+
+The second risk is evaluation. You need ground truth for chart questions, otherwise you cannot tell if the system is improving or hallucinating.

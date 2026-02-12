@@ -52,4 +52,10 @@ We do *not* write the transformation logic for the Checkout team. They do.
 
 This is not an easy transition. Backend engineers hate writing SQL. They see it as "someone else's job." We are having to negotiate hard to make "data quality" a part of their Definition of Done.
 
-But the alternative—a monolithic team attempting to understand the entire business logic of a unicorn startup—is mathematically impossible.
+But the alternative, a monolithic team attempting to understand the entire business logic of a unicorn startup, is mathematically impossible.
+
+## What I Expect to Be Hard
+
+The biggest risk is uneven quality. Some domain teams will move fast and ship great datasets. Others will treat data as a checkbox. That is why the platform team still matters.
+
+We are setting minimum standards for ownership, documentation, and freshness. If a domain cannot meet those, their data does not get published. Self-service does not mean no standards.

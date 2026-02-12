@@ -1,5 +1,5 @@
 ---
-title: "Hitting the Wall: Why We Are rewriting Critical Paths in Rust"
+title: "Hitting the Wall: Why We Are Rewriting Critical Paths in Rust"
 date: "2021-11-26"
 tags: ["Python", "Rust", "Performance", "Data Engineering"]
 summary: "Python is great for glue code. It is terrible for high-throughput stream processing. We explain why we are moving our Kafka consumers to Rust."
@@ -30,3 +30,9 @@ The results were embarrassing for Python.
 We are not rewriting our Airflow DAGs or our web APIs in Rust. The developer velocity of Python is unbeatable for 90% of our codebase.
 
 But for the "Hot Path" - the 10% of code that runs billions of times a day - Python is a luxury we can no longer afford. We are adopting a polyglot strategy: Python for orchestration, Rust for execution.
+
+## What I Tell the Team
+
+Do not rewrite for fun. Rewrite when a profile proves you are blocked and scaling costs more than the rewrite. Rust is not a status symbol. It is a tool for a very specific job.
+
+If you cannot measure a performance bottleneck, you probably do not need a new language. Start with metrics, not with enthusiasm.

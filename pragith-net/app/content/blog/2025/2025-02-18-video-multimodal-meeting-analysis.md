@@ -21,3 +21,9 @@ We switched our "Meeting Intelligence" bot to use native video models (Gemini 1.
 The model found the exact moment (minute 14:20) where the Lead Architect drew a diagram on the whiteboard and nodded. It understood the visual confirmation that the transcript missed.
 
 This is the next frontier of enterprise search. Not searching for what was *said*, but searching for what *happened*.
+
+## What I Would Protect
+
+Video is sensitive. We now default to shorter retention windows and strict access controls. If a recording is not business critical, it should not be stored.
+
+I would also add a human review step for high-stakes summaries. Video models are strong, but a mistaken decision summary can cause real damage.

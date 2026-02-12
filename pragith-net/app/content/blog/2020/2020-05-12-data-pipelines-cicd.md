@@ -66,6 +66,12 @@ When an engineer modifies a core revenue model, the CI system runs the *old* log
 
 If the new logic changes the total revenue by 0.01%, that's likely a rounding fix. If it changes it by 15%, that is either a massive breakthrough or a massive bug. The CI bot posts this "impact analysis" directly on the Pull Request.
 
+## What I Would Tighten
+
+If I could change one thing, I would standardize the test data contracts earlier. The first month was chaos because every team invented its own synthetic datasets. A shared catalog of test fixtures made the pipeline stable and the tests more meaningful.
+
+I would also push harder on ownership. If a pipeline has no clear owner, it will eventually fail quietly. CI does not replace accountability. It amplifies it.
+
 ## Conclusion
 
 Building this infrastructure took time. It slowed down feature delivery for two months. But the result is a dramatic drop in production incidents.

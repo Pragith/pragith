@@ -48,6 +48,12 @@ source = "git::https://github.com/org/infra-modules.git//s3-secure-bucket?ref=v1
 
 This acts like a software dependency. We can release `v1.3.0` of the bucket module, and teams can upgrade at their own pace. It prevents the "monolith" problem where a single `terraform apply` takes 45 minutes and touches every resource in the account.
 
+## What We Enforced After the Refactor
+
+Every module now has a README with inputs, outputs, and examples. If you cannot explain a module in one page, it is too complex.
+
+We also added CI checks that prevent raw resources from being declared outside approved modules. It feels strict, but it forces reuse and keeps the codebase sane.
+
 ## Conclusion
 
 DRY (Don't Repeat Yourself) applies to infrastructure just as much as application code. But unlike code, refactoring stateful infrastructure is dangerous. Plan carefully.

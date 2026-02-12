@@ -19,3 +19,9 @@ It outperformed GPT-4-Turbo on 40% of the tasks. It was particularly good at low
 While the code generation is stellar, the reasoning in English nuance lags behind Llama-3. It is a specialist tool.
 
 We are integrating it into our "Model Router" specifically for code-heavy queries, proving that a multi-model future is inevitable.
+
+## What I Would Validate
+
+I would validate licensing and export constraints early. Open weights are only open if your legal team agrees.
+
+I would also maintain a clear fallback path. If a specialist model fails, the router should degrade gracefully to a general model.

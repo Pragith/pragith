@@ -38,3 +38,9 @@ We debated building a custom metadata crawler to check these metrics. We prototy
 However, the maintenance burden of "monitoring the monitor" became too high. We are evaluating commercial tools in this space. The "Data Observability" category is nascent but critical.
 
 We treat "Data Downtime" just like "Site Downtime." If the data is wrong, the product is broken.
+
+## What I Require Now
+
+Every table that powers an executive dashboard must have freshness and volume alerts. That rule is non-negotiable. If we cannot measure those two things, we do not claim the table is production-ready.
+
+We also started a lightweight "data incident review" ritual. When a table goes stale, we do a short postmortem and fix the root cause. The goal is to reduce repeat incidents, not just clear alerts.

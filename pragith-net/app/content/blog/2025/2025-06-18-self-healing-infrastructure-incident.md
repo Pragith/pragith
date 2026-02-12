@@ -30,3 +30,9 @@ Last Tuesday at 3:14 AM, a log rotation script failed on Node 4. Disk filled up.
 7.  Closed the PagerDuty ticket.
 
 The on-call engineer read the report at 9 AM and smiled. The future of Ops is delegation.
+
+## What I Would Require
+
+Every self-healing action must produce a clear audit trail and a diff of what changed. If the agent fixes something, it must also explain it.
+
+I would also restrict automation to low-risk fixes first. Trust is earned by a hundred small wins, not one heroic save.

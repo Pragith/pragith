@@ -32,3 +32,9 @@ We need to move from "Chatting with the bot" to "Building systems that use the b
 *   **Cost Control:** How do we prevent a $50k OpenAI bill?
 
 The experimental phase is over. The engineering phase begins now.
+
+## What I Want to Avoid
+
+I do not want us to chase shiny demos and ignore core data hygiene. If our lineage and contracts are weak, every AI feature will be fragile.
+
+We will prioritize boring infrastructure work first, then build the flashy parts. That ordering is the difference between a prototype and a platform.

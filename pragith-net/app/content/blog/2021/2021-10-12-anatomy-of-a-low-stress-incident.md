@@ -42,3 +42,9 @@ We didn't fire the engineer. We updated the linter.
 If you fire the engineer, you lose the person who knows the most about that failure mode. If you fix the system, you prevent anyone from making that mistake again.
 
 Reliability is not about perfect code. It is about resilient systems and psychological safety.
+
+## What Made This Work
+
+We rehearsed. We ran incident simulations before we ever had a real outage. That practice made the actual incident feel routine instead of catastrophic.
+
+We also kept the IC role clean. No one is allowed to both coordinate and debug. That single separation cut our time-to-recover more than any tool.

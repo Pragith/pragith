@@ -76,6 +76,12 @@ Moving to Kubernetes introduces a layer of operational complexity that cannot be
 
 We specifically ran into issues with **Database Connection Pooling**. The Scheduler opens a connection to the Postgres metadata database. With the KubernetesExecutor, the scheduler can become quite chatty. We had to implement **PgBouncer** as a connection pooler in front of Cloud SQL to prevent the scheduler from exhausting the available connections during high-concurrency periods.
 
+## What I Would Do Again
+
+If I had to rerun this migration, I would still pick KubernetesExecutor, but I would start with stricter guardrails. Task-level resource limits, log retention policies, and a clear ownership model for DAGs should be defined before the first task ever runs in production. We learned those after the fact, which made the first few months noisier than they needed to be.
+
+I would also invest earlier in developer ergonomics. A working `kind` or local Airflow setup with mocked credentials goes a long way. It reduces the amount of debugging that gets pushed into the cluster and keeps the feedback loop tight.
+
 ## Closing Thoughts
 
 The migration to Airflow on Kubernetes has stabilized our platform. We have traded the simplicity of `cron` for the rigorous (but complex) guarantees of a container orchestrator.

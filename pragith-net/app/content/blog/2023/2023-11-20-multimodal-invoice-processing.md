@@ -23,3 +23,9 @@ It worked. It understood the table structure. It understood that "Total" was at 
 This automation saves us 200 hours of manual data entry per month. The cost per API call ($0.03 for an image) is high compared to Tesseract ($0), but trivial compared to human labor ($30/hour).
 
 Multimodal models are not just "chatbots that can see." They are "processors that can reason."
+
+## What I Would Scale Carefully
+
+The model is strong, but the integration is fragile. We need strict validation of the JSON output before it hits accounting systems.
+
+I would also build a human review loop for low-confidence extractions. The fastest way to lose trust is to push a few bad invoices into the ledger.

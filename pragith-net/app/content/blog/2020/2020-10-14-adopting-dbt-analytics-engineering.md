@@ -63,3 +63,9 @@ These are team members who sit between the raw infrastructure and the business q
 By empowering this layer, our core Data Engineering team can focus on the platform - the Airflow instances, the Kafka clusters, the ingestion frameworks - while the Analytics Engineers own the business logic.
 
 It is a separation of concerns that actually works.
+
+## What I Learned the Hard Way
+
+dbt only works if you treat it like production code. That means code review, test coverage, and documentation of model intent. Without that, you just move the mess from Python to SQL.
+
+If I started again, I would also invest more in naming conventions. A clean `stg_`, `dim_`, and `fct_` structure sounds boring, but it scales better than any fancy DAG diagram.

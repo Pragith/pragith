@@ -24,3 +24,9 @@ We have reached the "slope of enlightenment." The technology is demystified, the
 
 The next frontier is **Physics**. Simulating the real world, not just the text world. Robotics and spatial intelligence are waking up.
 But for now, I'm just happy that my pager didn't go off this year.
+
+## What I Want to Keep
+
+Boring is good. It means we can focus on fundamentals instead of chasing hype.
+
+I want to keep the discipline of measuring outcomes, not novelty. That is how we keep AI useful instead of distracting.

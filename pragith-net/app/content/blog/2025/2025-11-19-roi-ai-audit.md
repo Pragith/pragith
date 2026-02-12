@@ -18,3 +18,9 @@ We tracked three metrics:
 The ROI is positive, but it wasn't instant. It took 18 months of infrastructure build-out (Vector DBs, Gateways, Evaluators) to reach the break-even point.
 
 AI is not a lottery ticket. It is a capital expenditure with a J-curve return.
+
+## What I Would Do Next
+
+I would link every AI project to a single measurable KPI before it starts. If there is no KPI, there is no project.
+
+I would also be honest about ongoing costs. A model in production is not a one-time cost. It is a living system that needs maintenance.

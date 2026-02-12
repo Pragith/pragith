@@ -45,3 +45,9 @@ This gives us:
 3.  **Observability:** We can see exactly which service is returning 500s on the service graph.
 
 The complexity of Istio is high, but the visibility it provides into the black box of Kubernetes networking is worth it.
+
+## What I Document Now
+
+After this incident, we wrote a one-page "service discovery primer" for every engineer. It includes the DNS format, the service types, and the default search paths for each base image.
+
+Networking bugs are rarely a single issue. They are a chain of assumptions. The only way to break that chain is to make the assumptions explicit.

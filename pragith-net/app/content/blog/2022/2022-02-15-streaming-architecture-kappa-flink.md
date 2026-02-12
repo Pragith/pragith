@@ -40,3 +40,9 @@ We can run this Flink job against historical data in S3 (Batch Mode) to backfill
 Same code. Same logic. One truth.
 
 The operational complexity of running a Flink cluster on Kubernetes is high (Checkpoints, Savepoints, State Backends). But the semantic simplicity of "one codebase" is worth the infrastructure investment.
+
+## What I Would Guard Against
+
+Kappa only works if you take state seriously. If you cannot restore a job from a savepoint, you do not have reliability. We invested in backup policies for state and in rehearsing restore drills before we trusted Flink in production.
+
+I also learned to push back on overusing streaming. The unified codebase is powerful, but not every dataset needs sub-minute processing. Pick the streams that actually matter.

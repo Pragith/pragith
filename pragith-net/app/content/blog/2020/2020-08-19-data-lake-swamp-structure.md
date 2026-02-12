@@ -46,6 +46,12 @@ This is the new standard.
 ### Gold (Aggregated)
 Business-level aggregates (Daily Active Users, MRR) ready for BI tools.
 
+## What I Tell New Teams
+
+If your data platform cannot answer "what is the source of truth" in under a minute, you do not have a platform. You have a pile of files. That is why we now require every dataset to have an owner, a schema file, and a short README before it gets promoted past Bronze.
+
+We are still permissive at the raw layer, but we are strict once data is meant for analytics. That boundary alone has saved weeks of debugging and has made onboarding faster.
+
 ## Conclusion
 
 Schemaless architecture is a loan you take out against future productivity. The interest rate is higher than you think. By enforcing schemas early, we are slowing down ingestion slightly to speed up analysis exponentially.

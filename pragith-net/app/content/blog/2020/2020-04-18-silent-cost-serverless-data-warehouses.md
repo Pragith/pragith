@@ -54,3 +54,9 @@ The biggest change wasn't technical; it was cultural. We started publishing a "C
 This gamification worked. Engineers and analysts naturally want to be efficient. By making the cost visible - bringing it out of the monthly billing report and into the daily standup - we turned "cost optimization" from a management nagging point into an engineering challenge.
 
 In the cloud, cost awareness is a technical skill. If you can't estimate the cost of your query, you don't understand how the database executes it.
+
+## What I Would Add Next
+
+If I had to improve this further, I would add cost simulations into CI. Every PR that touches a warehouse model should have a before-and-after cost diff. That makes cost as measurable as test coverage.
+
+I would also invest in training. The best guardrail is still a developer who understands how columnar engines work. A short internal workshop saved us more money than any quota ever did.

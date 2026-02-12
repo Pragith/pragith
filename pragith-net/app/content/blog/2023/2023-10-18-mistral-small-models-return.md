@@ -22,3 +22,9 @@ We ran 1,000 internal documents through both models.
 The biggest win isn't cost; it's data sovereignty. We can run Mistral *inside* our VPC. No data leaves our network. This unblocks healthcare and legal use cases that were previously off-limits for cloud LLMs.
 
 Small models are the future of enterprise AI. Specialized, cheap, and private.
+
+## What I Would Validate
+
+Before shifting everything, I would validate long-tail quality. Summarization is easy. The real test is edge cases and messy inputs.
+
+I would also invest in deployment hygiene. A self-hosted model is only cheaper if you can run it reliably with clear autoscaling and monitoring.

@@ -22,3 +22,9 @@ We built a **Migration Swarm**.
 A human senior engineer still has to review and merge the PR. But the "grunt work" - the changing of imports, the updating of pom.xml files - is done.
 
 We upgraded 50 services in 2 weeks. It used to take 6 months.
+
+## What I Would Keep Manual
+
+I would keep dependency upgrades and API compatibility checks in human hands. Agents are good at repetitive refactors, not at architectural judgment.
+
+The best pattern is delegation with review. Let the agent do the boring work, then make a human responsible for the decision.

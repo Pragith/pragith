@@ -22,3 +22,9 @@ One week per month, we are allowed to touch zero AI code.
 *   Take a long lunch.
 
 We need to remind ourselves that we are building software for a business, not competing in a Kaggle competition. Stability is a feature. Rest is a prerequisite for performance.
+
+## What I Would Normalize
+
+I would normalize saying "no" to model upgrades. If a new model does not unlock a real business outcome, it does not get adopted.
+
+We also track on-call load and context switching as first-class metrics. Velocity without sustainability is a short-term illusion.

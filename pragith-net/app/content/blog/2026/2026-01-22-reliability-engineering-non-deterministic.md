@@ -27,3 +27,9 @@ We now run critical tests 100 times. If the success rate drops below 99%, the bu
 We are no longer testing for "Correctness." We are testing for "Confidence Intervals."
 
 Welcome to Reliability Engineering 2.0. The math is harder, but the systems are smarter.
+
+## What I Would Require
+
+Every stochastic system should expose its confidence. If we cannot measure uncertainty, we cannot manage it.
+
+I would also default critical workflows to low-temperature or deterministic modes. Creativity is great, but not in incident triage.

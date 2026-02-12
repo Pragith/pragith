@@ -56,3 +56,9 @@ You cannot improve what you do not measure. We added a specific Prometheus metri
 When we started, P95 latency was 400 seconds. After these fixes, it dropped to 15 seconds.
 
 If your Airflow tasks are starting late, don't just throw more hardware at the database. Look at the scheduler loop. It is likely choking on your Python code.
+
+## What I Changed in Our Team Habits
+
+We made a rule: no database calls at module import time, ever. It sounds obvious, but it was not obvious until we paid the price. We also added a lightweight linter that fails PRs if it finds top-level network calls in DAGs.
+
+The scheduler bottleneck was not just an infrastructure issue. It was a code hygiene problem. Once we treated DAGs as production code, the latency problem almost disappeared.

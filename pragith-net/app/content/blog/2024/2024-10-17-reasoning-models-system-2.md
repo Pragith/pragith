@@ -24,3 +24,9 @@ We gave it a complex Terraform plan and asked for security vulnerabilities.
 *   **o1:** Found them all. It reasoned: "If this role can assume X, and X has access to Y, then..."
 
 The latency is high (45 seconds), but for an async code review, we don't care. Correctness > Latency for high-stakes decisions.
+
+## What I Would Adopt
+
+I would add a router that chooses reasoning models only when the task is truly complex. If every request goes to o1, you will burn budget and patience.
+
+Reasoning is a premium capability. Use it where the cost of mistakes is higher than the cost of latency.

@@ -26,3 +26,9 @@ The attention mechanism has limits. When everything is in context, nothing is im
 Processing 500k tokens takes 60 seconds and costs significant money per call. RAG costs pennies and takes 200ms.
 
 RAG is not dead. It is evolving into a filtering mechanism to feed the context window only the highest quality information.
+
+## What I Would Do Now
+
+I would keep RAG as the default and treat long context as a fallback for edge cases. It is too expensive and too noisy to be the primary path.
+
+The right question is not "How much can we fit?" It is "How little do we need?"

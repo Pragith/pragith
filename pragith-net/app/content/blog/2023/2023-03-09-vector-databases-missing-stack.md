@@ -34,3 +34,9 @@ We chose **Pinecone**.
 Why? Because in the current AI gold rush, speed of implementation is the only metric that matters. I can spin up an index in 5 seconds. I don't need to configure persistent volumes or worry about replication lag.
 
 We treat the Vector DB as a "Cache of Knowledge." If it goes down, we can rebuild it from the source (Confluence/Snowflake). It is not the system of record.
+
+## What I Would Decide Early
+
+Decide whether the vector store is a cache or a source of truth. If it is a cache, optimize for rebuild speed and observability. If it is a source of truth, you need backups, SLAs, and long-term retention.
+
+We chose cache, and that decision saved us from over-engineering. It kept the system simple while we proved the use cases.

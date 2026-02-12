@@ -41,3 +41,9 @@ We use these validations as circuit breakers.
 When we ingest data from unstable external partners, we run strict validation suites. If the error rate exceeds 5% (to account for minor noise), we trip the circuit breaker. The DAG stops, sends a PagerDuty alert to the on-call engineer, and does not proceed to the transformation step.
 
 Stopping the line is painful, but cleaning up 30 days of corrupted data is agonizing. We choose the immediate pain of a stopped pipeline over the chronic pain of untrustworthy data.
+
+## What I Would Formalize Next
+
+The next step for us is to encode expectations into data contracts, not just runtime checks. I want every upstream team to agree to what the data should look like before it ever hits our pipeline.
+
+I would also tie validation failures back to owners. It should be obvious who can fix the source. Otherwise, the on-call engineer becomes a glorified messenger.

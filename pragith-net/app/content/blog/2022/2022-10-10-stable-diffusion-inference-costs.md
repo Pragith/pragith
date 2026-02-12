@@ -29,3 +29,9 @@ The cold start is painful (15 seconds to load the model into VRAM), but for an i
 The designers love it for prototyping. But legal is nervous. "Who owns the copyright of a generated image?"
 
 We have restricted usage to *internal mockups only*. No generated assets go to production. The technology is moving faster than the law.
+
+## What I Would Optimize Next
+
+If this moves beyond internal use, we need a proper cost model. That means tracking cost per image, not just total GPU spend.
+
+I would also explore model quantization and lower precision inference. Most internal use cases do not need photorealistic quality, but they do need speed.

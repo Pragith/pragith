@@ -42,6 +42,12 @@ The Insights team (Analytics Engineers and Data Scientists) drives on that road.
 
 This specialization allowed us to scale. One platform engineer can support ten analytics engineers if the abstractions are clean.
 
+## What I Would Repeat and What I Would Avoid
+
+The best decision we made was investing in boring foundations. CI/CD, idempotency, and monitoring are not glamorous, but they saved us when everything went remote overnight.
+
+The worst decision was delaying documentation. We built systems faster than we documented them, and onboarding suffered for it. If I could redo Q2, I would have slowed down feature delivery just to write clear runbooks.
+
 ## Looking to 2021
 
 As we head into 2021, our focus shifts from "stability" to "usability." We have built a robust engine; now we need to make it easier to drive.

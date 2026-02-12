@@ -55,3 +55,9 @@ The backend teams pushed back. "This slows us down."
 Yes, it does. It slows down breaking changes. That is the point.
 
 Speed at the expense of stability is not velocity; it is chaos. By making the "cost" of breaking data visible to the producer, we align incentives. The friction is the feature.
+
+## What I Would Add Next
+
+The next step is automated diffing between contracts and reality. If the contract says `amount` is a float, we should alert the moment it becomes a string in production. Contracts that are not enforced drift into fiction.
+
+I would also publish contract changes in a single changelog channel. Downstream consumers should not have to guess when a breaking change is coming.

@@ -1,7 +1,7 @@
 ---
 title: "Why Your Data Platform is Slow (And It's Not the Database)"
 date: "2024-01-20"
-tags: "data-engineering, cloud, performance"
+tags: ["Data Engineering", "Cloud", "Performance"]
 status: "published"
 summary: "The bottleneck in most modern data platforms isn't the query engine. It's the serialization layer between your warehouse and everything downstream."
 ---
@@ -37,3 +37,9 @@ Three things I recommend in every architecture review where this comes up:
 When I design data APIs now, the default protocol is gRPC with Arrow serialization. REST/JSON endpoints exist for external consumers and low-volume use cases. The internal data mesh runs on binary streams.
 
 This isn't exotic technology. It's just a different default.
+
+## What I Would Check First
+
+Before touching the database, profile the serialization and transport layer. Most teams are staring at the wrong dashboard.
+
+If the payload is big, the fix is almost always to move less data, not faster data. Query engines are fast. Your application code usually is not.

@@ -32,3 +32,9 @@ Maybe our job isn't to build dashboards anymore. Maybe our job is to:
 3.  Manage the cost of the queries.
 
 We are calling an emergency strategy meeting next week. "Natural Language Interfaces" was on our 2024 roadmap. It is now on our Q1 2023 roadmap.
+
+## What I Would Build First
+
+The first thing is not a flashy UI. It is a safe query layer with rate limits, query validation, and cost controls. If the model can run any query, the warehouse will melt.
+
+I would also start with read-only use cases. Write-back and action-taking can come later, after we trust the system.

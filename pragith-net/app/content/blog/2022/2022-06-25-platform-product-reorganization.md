@@ -33,3 +33,9 @@ We also created a small "Enabling Team" of senior architects. Their job is to fl
 
 ## The Result
 Velocity has increased, but standardization has decreased. Each squad is optimizing locally. The Platform Team's challenge for H2 2022 is to rein in the divergence without killing the speed.
+
+## What I Would Put in Writing
+
+We made one mistake early: we assumed the interface between teams would be "obvious." It was not. Every platform capability needs a clear SLA, an owner, and a published roadmap.
+
+I would also publish a short "decision guide" for when work should live in a stream-aligned team versus the platform team. Without that, everything becomes a debate.

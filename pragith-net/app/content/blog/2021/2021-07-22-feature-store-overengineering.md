@@ -40,3 +40,9 @@ We set a threshold for revisiting this decision:
 Until then, a well-governed dbt model called `dim_user_features` is our Feature Store. It's simple, version-controlled, and "good enough."
 
 Engineering is the art of solving the problems you actually have, not the problems Google has.
+
+## What Would Change My Mind
+
+If model retraining moves from monthly to hourly, I will reconsider immediately. The moment we need true online features with hard latency budgets, a feature store becomes a real need.
+
+Until then, I would rather invest in better feature definitions, clearer ownership, and consistent refresh schedules. Most teams are failing there, not on the tooling.

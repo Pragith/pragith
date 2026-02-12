@@ -38,3 +38,9 @@ Focus on the numbers.
 If a change in the prompt causes the model to hallucinate on 5% more inputs, the build fails. We measure "drift" not just in data, but in model behavior.
 
 Prompt Engineering isn't about being clever. It's about being rigorous.
+
+## What I Would Standardize
+
+Every prompt should have an owner, a changelog, and a rollback plan. If a prompt ships without a test suite, it should be considered experimental.
+
+The real work is not writing the prompt. The real work is proving that it behaves the way you expect over time.

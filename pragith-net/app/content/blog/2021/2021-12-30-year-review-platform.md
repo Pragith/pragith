@@ -21,6 +21,12 @@ We doubled the engineering team size this year. The strategies that worked at 10
 1.  **Hiring Complexity:** finding engineers who know Kubernetes, Airflow, *and* distributed systems theory is impossibly hard. We realized we need to hire for aptitude and train for skills.
 2.  **Cloud Costs:** despite our optimizations, usage grew faster than revenue for a quarter. We are still fighting the entropy of cloud spend.
 
+## What I Would Do Differently
+
+We should have documented more of the platform surface area as we scaled. Instead, we scaled the team first and the documentation later. It made onboarding slower than it needed to be.
+
+We also waited too long to set explicit SLAs for internal tooling. When a platform is a product, it needs clear expectations, not just goodwill.
+
 ## Looking to 2022
 
 The buzz around "AI" is getting louder again. Not the sci-fi kind, but the practical kind. GPT-3 is showing us that Large Language Models might actually be useful for more than just text generation.

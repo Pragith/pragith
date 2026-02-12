@@ -23,3 +23,9 @@ Now, every service calls `https://ai-gateway.internal/v1/chat/completions`.
 4.  **Guardrails:** The Gateway rejects any prompt containing PII patterns before it leaves our network.
 
 Infrastructure is about control. The Gateway gives us control back.
+
+## What I Would Enforce
+
+Every model call should include a service name and an owner. If a request has no owner, it should not pass.
+
+The gateway is also the right place for evaluation hooks. If you are not measuring quality at the boundary, you are guessing.

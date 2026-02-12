@@ -28,3 +28,9 @@ This means:
 *   Cost Governance (FinOps for AI).
 
 The honeymoon is over. Time to build the marriage.
+
+## What I Want to Fix
+
+We should have spent more time on evaluation frameworks earlier. We built prototypes without measurement and then struggled to justify production investment.
+
+In 2024, I want every AI feature to have a reliability budget, a latency target, and a documented rollback plan. If it cannot meet those, it stays a demo.

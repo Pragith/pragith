@@ -24,3 +24,9 @@ This feels circular. Are we just amplifying the biases of GPT-4?
 Yes. But for coding tasks, correctness is verifiable (the code runs or it doesn't).
 
 We found that mixing 50% synthetic data with 50% "Golden Human Data" yields the best results. The synthetic data provides volume and diversity; the human data provides style and nuance.
+
+## What I Would Guard Against
+
+Synthetic data is easy to generate and easy to overuse. If your student model only sees synthetic examples, it will become brittle and overly confident.
+
+I also insist on periodic human audits. If the teacher drifts, the student will drift faster.

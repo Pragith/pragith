@@ -25,3 +25,9 @@ We mark the first 12k tokens as "cacheable."
 We optimized our prompt structure to maximize cache hits. We moved dynamic content (User Name, Timestamp) to the *end* of the prompt, keeping the prefix static.
 
 This is exactly how we optimize HTTP caching (CDNs) or Database caching. The principles of computer science remain true, even when the computer is a neural network.
+
+## What I Would Watch
+
+Cache hit rates can hide logic bugs. If your cached prefix is wrong, you are repeatedly wrong at scale.
+
+I also track cache invalidation rules like a hawk. If the underlying context changes, you must bust the cache or you will serve stale answers.

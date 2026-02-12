@@ -47,6 +47,12 @@ The other shift is the move away from "local" development entirely. If the lapto
 
 We are experimenting with cloud-based IDE backends. The code lives on a VM in the cloud; the interface runs locally or in the browser. This solves the bandwidth issue (pulling a 5GB base image happens at cloud-to-cloud speeds, not residential fiber speeds) and the security issue (code never leaves the controlled environment).
 
+## What We Changed Immediately
+
+We did a few tactical fixes while the larger architectural shift was happening. We reduced the number of things that needed the VPN, broke internal tools into smaller trust domains, and gave engineers a faster path to rotate credentials when laptops were shared at home. None of these were perfect, but they stopped the bleeding.
+
+The more important change was cultural. We stopped treating remote work as an exception. When all code reviews, runbooks, and incident bridges are remote-first by default, the organization stops fighting the medium and starts improving the system.
+
 ## Conclusion
 
 This forced experiment in distributed work is not a temporary blip. It is a forcing function for architectural modernization. The teams that cling to physical network perimeters will suffer from degraded developer experience and productivity bottlenecks.

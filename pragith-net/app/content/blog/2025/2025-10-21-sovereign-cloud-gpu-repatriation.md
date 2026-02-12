@@ -20,3 +20,9 @@ We invested \$2M in a dedicated H200 cluster collocated in a Tier 3 datacenter.
 *   **Control:** No more "CapacityError" when a new region launches.
 
 The cloud is for bursting. Metal is for baseload.
+
+## What I Would Plan For
+
+Owning hardware means owning operations. We hired staff with datacenter experience and built a replacement plan before the first GPU arrived.
+
+If your workload is spiky, do not do this. The economics only work when utilization stays high.

@@ -44,6 +44,12 @@ We use Kafka as the centralized ingestion buffer. All events land in Kafka first
 
 This gives us the best of both worlds. We have the raw capability for real-time where it moves the needle, but we rely on the stability and cost-efficiency of batch processing for the heavy lifting.
 
+## What I Tell Stakeholders Now
+
+I stopped promising "real-time" and started promising "reliable." When a dashboard is consistent and correct, people trust it. When it's fast but wrong twice a week, they stop looking at it.
+
+If you can quantify the dollar value of shaving 55 minutes off a report, I will build the stream. If you cannot, I will keep the batch and spend the time on data quality.
+
 ## Conclusion
 
 Don't let "real-time" become a vanity metric for your engineering team. It creates a maintenance burden that is orders of magnitude higher than batch.

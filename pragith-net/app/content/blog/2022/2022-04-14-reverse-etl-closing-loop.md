@@ -22,7 +22,7 @@ This manual step is where value dies.
 
 ## Enter Reverse ETL
 
-Verify ETL allows us to sync data from the warehouse *back* into the operational systems.
+Reverse ETL allows us to sync data from the warehouse *back* into the operational systems.
 
 We implemented a sync that takes our `churn_probability_score` model output (calculated nightly in Snowflake) and pushes it into a custom field in Salesforce.
 
@@ -35,3 +35,9 @@ We evaluated building this ourselves (Airflow Operators writing to Salesforce AP
 We bought a dedicated Reverse ETL tool (Census). It handles the diffing, the retries, and the API quotas.
 
 The Data Warehouse is no longer just a reporting engine. It is now part of the production application stack. If the warehouse goes down, the sales team cannot work.
+
+## What I Would Standardize
+
+Once you push data back into operational tools, you need a contract for it. We now document field ownership and refresh cadence the same way we document an API.
+
+I would also add monitoring around "time to action." If a churn score updates but the sales system does not reflect it within an hour, that is a production incident, not a data bug.

@@ -25,3 +25,9 @@ Every request to an LLM goes through Airlock first.
 This works for 95% of cases. But sometimes, the name *is* the context. If you are asking "Who is the CEO of Apple?", and you redact "Apple" to "<ORG_1>", the model can't answer.
 
 We added an allow-list for public entities. But for private customer data, we default to paranoid.
+
+## What I Would Improve
+
+I would add structured logging of redaction events. If we are constantly redacting a field, we should consider whether it belongs in the prompt at all.
+
+The other missing piece is testing. Redaction failures are silent until you leak data. That is not a failure mode I want in production.

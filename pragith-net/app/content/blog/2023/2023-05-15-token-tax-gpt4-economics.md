@@ -34,3 +34,9 @@ This saves money *and* reduces latency to zero.
 ## Conclusion
 
 Intelligence is now a commodity, but it is a tiered commodity. You don't use a Ferrari to drive to the grocery store. You don't use GPT-4 to extract a JSON field.
+
+## What I Would Add to the Router
+
+I would add budget-aware routing. If a team exceeds its monthly budget, the default model should downgrade automatically unless there is an approved exception.
+
+The other missing piece is evaluation. If GPT-3.5 fails a task three times in a row, the router should escalate to GPT-4 for that class of prompts. Cost control should never be blind to quality.

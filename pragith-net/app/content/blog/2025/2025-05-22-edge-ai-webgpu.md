@@ -23,3 +23,9 @@ It downloads (2GB) once, caches, and runs inference locally using the user's GPU
 ## Use Cases
 
 We are moving our "Grammar Check" and "PII Detection" features to the edge. There is no reason to send a credit card number to the cloud just to verify it is a credit card number. The edge is smarter than we think.
+
+## What I Would Be Careful About
+
+The first risk is payload size. A 2GB download is a non-starter on mobile or slow networks. We need lighter models and progressive loading.
+
+The second risk is observability. When inference happens on the client, debugging quality issues becomes harder. We need client-side telemetry that respects privacy.

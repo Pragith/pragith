@@ -8,7 +8,7 @@ status: "published"
 
 In January, our cloud bill triggered a CFO alert. We had exceeded our budget by 40%.
 
-The easy answer is "growth." But when we looked at the unit economics—cost per active user—it was trending up, not down. That means we were getting less efficient as we scaled.
+The easy answer is "growth." But when we looked at the unit economics, cost per active user, it was trending up, not down. That means we were getting less efficient as we scaled.
 
 We spent two weeks auditing our AWS spend. Here is where the money was bleeding.
 
@@ -32,9 +32,15 @@ We saw a 60-70% reduction in compute costs for these workloads. The trade-off is
 
 When you terminate an EC2 instance, the attached EBS volume persists unless you explicitly check "Delete on Termination."
 
-We found 40TB of "orphaned" EBS volumes—disks attached to nothing, just sitting there accruing storage charges. Some were from 2018.
+We found 40TB of "orphaned" EBS volumes, disks attached to nothing, just sitting there accruing storage charges. Some were from 2018.
 
 **The Fix:** We wrote a Lambda function that runs daily, identifies unattached volumes older than 7 days, snapshots them (just in case), and deletes them.
+
+## What We Track Now
+
+We now review unit economics every month, not just total bill. If cost per user creeps up, we know a workload drifted or a new team shipped something expensive without guardrails.
+
+We also made tagging mandatory. If a resource does not have an owner and an environment tag, it does not get created. That single rule prevents most of the "orphaned resource" class of waste.
 
 ## Conclusion
 

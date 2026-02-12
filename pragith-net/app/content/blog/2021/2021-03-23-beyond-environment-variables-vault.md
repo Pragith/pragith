@@ -53,3 +53,9 @@ If an attacker steals those credentials, they are useless after an hour. We can 
 Vault is not free. It is a distributed system that needs high availability (HA) storage (Consul). Running it is a full-time job.
 
 But for a fintech or healthcare company, the cost of a leaked database credential is infinite. The operational tax of Vault is the price of sleeping at night.
+
+## What I Would Do First
+
+If you are just starting, do not boil the ocean. Start with a single critical secret and wire up the audit trail. Once you prove the pattern, move the rest.
+
+The biggest cultural shift is getting engineers to stop treating secrets as configuration. Secrets are identity, and identity has to be managed like production data.

@@ -36,3 +36,9 @@ Once the VP realized that dashboard cost $50/day, they killed it immediately.
 You cannot optimize what you do not allocate. By shifting the budget responsibility to the consumers of the data, we aligned incentives.
 
 We are not "gatekeeping" compute. We are just putting a price tag on the menu.
+
+## What I Would Watch For
+
+Chargeback can become blame. I tell teams that the goal is understanding, not punishment. The moment people start hiding costs, the model breaks.
+
+We also review spend in context of outcomes. If a team spends more but ships more revenue, that is a good trade. Unit economics, not raw totals, should drive decisions.

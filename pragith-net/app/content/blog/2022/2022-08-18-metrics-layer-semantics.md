@@ -43,3 +43,9 @@ You query the *Metric*, not the table. The semantic layer compiles the SQL on th
 ## The Hard Part
 
 The technology is ready. The hard part is organizational. Getting Finance and Sales to agree on the definition of "Gross Margin" is a negotiation, not an engineering problem.
+
+## What I Would Formalize
+
+I would publish a short "metric definition charter" that forces sign-off. If a metric is not approved by the domain owner, it cannot be marked as canonical.
+
+The metrics layer only works if you treat it as a source of truth, not a convenience. That requires governance, not just YAML.

@@ -1,7 +1,7 @@
 ---
 title: "Agentic Workflows: The Part Nobody Talks About"
 date: "2024-02-12"
-tags: "ai-engineering, agents, architecture"
+tags: ["AI Engineering", "Agents", "Architecture"]
 status: "published"
 summary: "Everyone's building AI agents. Very few are building the verification layer that makes them reliable in production."
 ---
@@ -42,3 +42,9 @@ With 3 retry attempts at 85% accuracy, the system failure rate drops from 15% to
 - Log everything. Every tool call, every LLM response, every retry. When something goes wrong at 2am, you need the trace.
 
 The tooling is getting better fast. But the architecture patterns  -  decomposition, verification, observability  -  those are the hard-won lessons that don't change with the next model release.
+
+## What I Would Add
+
+I would add a cost budget to every workflow. If retries explode, you should fail fast and alert, not silently burn API credits.
+
+I also require explicit acceptance criteria for each step. If you cannot define "done," the verifier cannot protect you.

@@ -27,3 +27,9 @@ On a single A10G GPU:
 *   **vLLM:** 48 requests/second.
 
 We quadrupled our capacity without buying a single new GPU. This is pure software optimization.
+
+## What I Would Monitor
+
+PagedAttention is powerful, but you still need guardrails. I monitor max context length, concurrency, and tail latency every hour. If you let long prompts run wild, any serving stack will collapse.
+
+I also enforce prompt size limits per customer tier. Shared infrastructure only works when usage is predictable.

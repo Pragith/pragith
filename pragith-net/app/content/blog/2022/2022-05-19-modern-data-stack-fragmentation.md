@@ -37,3 +37,9 @@ I predict we are reaching "peak fragmentation." The next phase of the industry w
 We are starting to look at "All-in-One" platforms again. Databricks and Snowflake are both expanding aggressively to eat the peripheral workloads.
 
 We need fewer tools that do more, not more tools that do less. The cognitive load of maintaining 15 vendor relationships is not sustainable for a team of 8 engineers.
+
+## What I Would Cut First
+
+The first tools to cut are the ones with unclear ownership. If no one can explain why a tool exists, it should not exist. That single rule would remove a third of most stacks.
+
+Consolidation should not mean giving up best-in-class by default. It should mean reducing integration risk and focusing the team on a smaller surface area.

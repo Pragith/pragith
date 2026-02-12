@@ -30,3 +30,9 @@ However, we cannot put this in production yet.
 For now, we are using it for "Offline Enrichment." We run it nightly on a sample of support tickets to generate "Topic Summaries" for the Product team.
 
 The capability is there. The engineering harness is missing.
+
+## What I Would Invest In
+
+The first investment is evaluation. If we cannot measure accuracy and drift, we cannot use it in production. Prompt engineering without benchmarks is guessing.
+
+I would also build a caching layer from day one. If the same ticket or paragraph shows up twice, we should not pay twice.

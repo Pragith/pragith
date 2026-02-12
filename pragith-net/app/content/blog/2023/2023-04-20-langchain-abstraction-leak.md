@@ -41,3 +41,9 @@ response = openai.ChatCompletion.create(
 ```
 
 It is verbose, but it is explicit. In the deterministic world of software engineering, "magic" is bad. In the non-deterministic world of LLMs, "magic" is catastrophic.
+
+## What I Would Keep
+
+LangChain still has value for teaching and prototyping. I would keep it in a sandbox repo with a clear rule: never ship it without rewriting the critical path.
+
+If a tool hides the prompt, it hides the product. That is not a trade I am willing to make.

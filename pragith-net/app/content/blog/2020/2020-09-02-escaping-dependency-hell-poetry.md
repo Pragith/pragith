@@ -42,3 +42,9 @@ Packaging Python code for internal distribution (via private PyPI) used to requi
 Transitioning a monorepo wasn't painless. We had conflicts that `pip` had been silently ignoring (or just installing the last one wins) that Poetry refused to resolve. We had to fix our code to be compatible with a consistent set of libraries.
 
 Constraints are liberating. By preventing "dependency drift," we have eliminated an entire category of build failures.
+
+## What I Would Do Differently
+
+I would have started with a single service and documented every edge case before touching the monorepo. The migration was not hard, but it was noisy. The more visible the plan was, the less people resisted it.
+
+Also, enforce the lock file in CI. If the lock is not updated, the build should fail. It is the only way to keep the repo deterministic.

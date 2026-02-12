@@ -28,3 +28,9 @@ We can now say:
 "Try to search 3 times. If it fails 3 times, escalate to a human."
 
 This is no longer "AI Magic." It is a State Machine with a probabilistic transition function. And state machines are something we know how to debug.
+
+## What I Would Add
+
+I would add explicit timeouts for each node. A stuck tool should not stall the entire graph.
+
+I also require a human escalation path for any graph that touches production systems. If the agent cannot complete a task, it should fail loudly and deterministically.

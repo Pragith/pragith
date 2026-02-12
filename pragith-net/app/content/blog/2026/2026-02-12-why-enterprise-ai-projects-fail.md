@@ -77,3 +77,9 @@ Building a demo is about **capabilities**. Building a product is about **reliabi
 The organizations that succeed with AI are those that stop chasing the latest model benchmark and start investing in the boring, unsexy work of infrastructure, governance, and testing.
 
 AI success is rarely about models. It is about systems architecture, governance, and disciplined execution.
+
+## What I Would Start With
+
+If I had to pick one place to start, it would be governance and observability. Without those two, every other investment is guesswork.
+
+Once you can measure what the system is doing and who it is affecting, the rest becomes an engineering problem, not a political fight.

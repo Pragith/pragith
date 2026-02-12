@@ -22,3 +22,9 @@ We are moving our sensitive PII workloads off OpenAI.
 Previously, we used the "Airlock" pattern (redaction). Now, we can just use a local Llama 3.1 70B model housed in our VPC.
 
 The quality gap is now small enough that the privacy gain outweighs the intelligence loss.
+
+## What I Would Plan For
+
+Running open weights is not free. You trade API bills for GPU clusters, scheduling, and ops burden. If you cannot run reliable inference, you will be worse off than before.
+
+We will start with a narrow set of workloads where privacy matters most, then expand once the operational path is proven.

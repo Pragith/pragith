@@ -26,3 +26,9 @@ We learned the hard way:
 If you want the model to know about your Q2 sales report, put the report in the prompt (Context Injection). Don't bake it into the weights.
 
 Weights are expensive to update and impossible to debug. Context is cheap and transparent.
+
+## What I Would Do First
+
+Before fine-tuning, I would build a minimal RAG system and measure its failure rate. If RAG cannot solve the problem, then consider fine-tuning for behavior, not knowledge.
+
+Fine-tuning is a scalpel, not a hammer. Most teams reach for it too early.

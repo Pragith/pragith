@@ -39,3 +39,9 @@ This requires a mindset shift. The Platform team needs Product Managers. They ne
 If the platform is hard to use, developers will build "Shadow IT" (or Shadow Cloud) to bypass it. The platform must be the path of least resistance.
 
 We are moving from "ticket-driven operations" to "product-driven infrastructure."
+
+## What I Expect From the Team
+
+We are holding the platform team to the same standard as any product team. They ship roadmaps, they track adoption, and they own support. A platform that no one uses is not a platform.
+
+The fastest way to kill this initiative is to make it bureaucratic. The fastest way to make it stick is to make it ridiculously easy.

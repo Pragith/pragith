@@ -1,5 +1,5 @@
 ---
-title: "LLM Evaluation: The 'Vibe Check' Is Not a Metic"
+title: "LLM Evaluation: The 'Vibe Check' Is Not a Metric"
 date: "2023-08-24"
 tags: ["Evaluation", "Testing", "LLM", "Quality Assurance"]
 summary: "How do you test a chatbot? 'It looks good to me' is not an engineering standard. We are building an automated evaluation framework."
@@ -30,3 +30,9 @@ We also track:
 *   **Relevance:** Does the answer actually address the question?
 
 We finally have a CI pipeline that turns red if the bot gets dumber.
+
+## What I Would Add
+
+I would add adversarial tests. Simple prompts are easy. The real failures happen with ambiguous or leading questions.
+
+I would also track cost per evaluation run. If evals are too expensive, teams will skip them, and the system will regress in silence.

@@ -1,7 +1,7 @@
 ---
 title: "Building MCP Servers That Don't Get You Fired"
 date: "2024-03-01"
-tags: "mcp, ai-agents, architecture"
+tags: ["MCP", "AI Agents", "Architecture"]
 status: "published"
 summary: "The Model Context Protocol is how you give AI agents access to internal systems. Here's how to do it without creating a security incident."
 ---
@@ -47,3 +47,9 @@ Start narrow. Expand scope based on observed usage and audit logs.
 When it's done right, MCP transforms the developer experience. Instead of context-switching between three dashboards and two wikis to answer a question, an engineer asks their IDE and gets an answer grounded in real data.
 
 That's not hype. That's just good tool integration with a standard protocol.
+
+## What I Would Enforce
+
+I would require per-tool rate limits and timeouts. Agents are curious, and curiosity can DOS your own systems.
+
+I also insist on test environments first. If the tool cannot be safely used in staging, it should not exist in production.

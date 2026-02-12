@@ -1,5 +1,5 @@
 ---
-title: "Autonomous Agents: A solution Looking for a Problem"
+title: "Autonomous Agents: A Solution Looking for a Problem"
 date: "2023-07-28"
 tags: ["Agents", "AutoGPT", "BabyAGI", "Hype"]
 summary: "AutoGPT broke GitHub star records. We tried to build a production agent with it. It got stuck in a loop and spent $50 in API credits."
@@ -32,3 +32,9 @@ For an enterprise tool, 34% reliability is useless.
 We are pivoting to "DAGs with Agency." We define the high-level flow (Research -> Summarize -> Format) and only allow the LLM to make decisions *within* those boxes.
 
 We don't want a "General Intelligence." We want a "Reliable Worker."
+
+## What I Would Build Instead
+
+If a task needs more than three tool calls, I would not use an agent. I would build a deterministic workflow and use the LLM only for the ambiguous steps.
+
+Agents are fun to demo. Reliability is what users pay for.

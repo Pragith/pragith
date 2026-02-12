@@ -35,3 +35,9 @@ We now combine:
 We re-rank the results using a Cross-Encoder model (Cohere Rerank) to ensure the LLM only sees the highest-quality context.
 
 RAG is easy to prototype, but hard to productionize. The quality of your retrieval determines the IQ of your bot.
+
+## What I Would Add
+
+I would add feedback loops early. If users mark an answer as wrong, that should automatically trace back to the retrieved chunks and update the ranking.
+
+We also learned to log everything. Every query should capture the prompt, the retrieved context, and the final response. Without that, you cannot debug retrieval failures.

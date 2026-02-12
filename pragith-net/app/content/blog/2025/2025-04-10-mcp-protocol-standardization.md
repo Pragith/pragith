@@ -23,3 +23,9 @@ Any agent - whether it is Claude Desktop, our internal bot, or a future IDE plug
 This allows us to treat tools as microservices. The AI doesn't need to know *how* to call the API; it just asks the MCP server "What can you do?" and "Please do this."
 
 It is the final abstraction layer needed to make agents portable.
+
+## What I Would Standardize Next
+
+I would standardize error formats and rate-limit headers. If every MCP server reports errors differently, you lose the portability you were trying to gain.
+
+The protocol is the easy part. Operational consistency is the hard part.

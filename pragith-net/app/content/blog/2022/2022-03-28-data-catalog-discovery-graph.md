@@ -43,6 +43,12 @@ We are pushing this metadata *into the tools they use*.
 
 Instead of asking users to go to a separate "Catalog URL," we wrote a Chrome Extension that injects this metadata directly into the BigQuery UI and the Looker UI.
 
-When a user types `SELECT * FROM raw_revenue`, a warning pops up: "⚠️ This table is deprecated. Use `fct_revenue_v2` instead."
+When a user types `SELECT * FROM raw_revenue`, a warning pops up: "Warning: This table is deprecated. Use `fct_revenue_v2` instead."
 
 Don't expect users to come to your tool. Bring the context to their workflow.
+
+## What I Would Measure
+
+The first metric is not "number of tables indexed." It is "number of weekly queries on certified tables." If certified assets are not being used, the catalog is theatre.
+
+I would also track how often people click through lineage. If no one looks at upstream sources, the lineage graph is a nice diagram, not a decision tool.

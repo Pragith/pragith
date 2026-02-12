@@ -46,3 +46,9 @@ We are compromising by building a CI/CD wrapper.
 We effectively automated the "Engineering" part of the handoff. The scientist stays in Python, the infrastructure handles the containerization.
 
 It is not perfect, but it reduced the "productionization" time from 3 weeks to 3 days.
+
+## What I Enforce Now
+
+Every model has to pass through the same pipeline template. If it cannot run in CI, it cannot run in production. This sounds strict, but it prevents the most common failure modes.
+
+I also push for smaller, reusable components. A single 1,000-line notebook is not a pipeline, it is a liability. The more you can split into discrete steps, the easier it is to debug and iterate.
