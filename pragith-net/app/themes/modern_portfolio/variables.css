@@ -1,0 +1,28 @@
+:root {
+    /* 
+   * Modern Portfolio - Light Mode
+   * Based on Dubai S1 Palette but engineered for higher contrast and structure.
+   */
+    --color-ink: 3 60 137;      /* #033c89 - Deep blue text (Heritage from dubai_s1) */
+    --color-page: 250 250 249;  /* #fafaf9 - Clean off-white */
+    --color-surface: 255 255 255; /* #FFFFFF - Pure white */
+    --color-line: 212 212 212;  /* #d4d4d4 - Soft gray borders */
+    --color-accent: 242 145 17; /* #f29111 - Vibrant orange (Heritage from dubai_s1) */
+    
+    /* Semantic mapping for technical feel */
+    --color-subtle: 100 116 139; /* Slate 500 equivalent for secondary text */
+}
+
+.dark {
+    /* 
+   * Modern Portfolio - Dark Mode
+   * Highly technical, IDE-like environment.
+   */
+    --color-ink: 241 245 249;    /* Slate 100 - High contrast text */
+    --color-page: 15 23 42;      /* Slate 900 - Deep technical blue-black */
+    --color-surface: 30 41 59;   /* Slate 800 - Component background */
+    --color-line: 51 65 85;      /* Slate 700 - UI Borders */
+    --color-accent: 242 145 17;  /* #f29111 - Keeping the orange pop for cursors/highlights */
+    
+    --color-subtle: 148 163 184; /* Slate 400 */
+}

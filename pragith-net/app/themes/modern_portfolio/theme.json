@@ -1,0 +1,10 @@
+{
+  "name": "Modern Portfolio",
+  "description": "Elite UI/UX for Senior AI Engineer. Technical, structured, and architectural.",
+  "fonts": {
+    "google_fonts_url": "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap",
+    "display": "\"Inter\", sans-serif",
+    "body": "\"Inter\", sans-serif",
+    "mono": "\"JetBrains Mono\", monospace"
+  }
+}

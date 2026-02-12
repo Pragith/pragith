@@ -5,39 +5,58 @@
 @layer base {
 
   /* ── Semantic color tokens ── */
-  /* Softer palette: charcoal/warm-white instead of pure black/white */
+  /* Modern Portfolio: High contrast, technical feel */
   :root {
-    --color-ink: 26 26 26;
-    /* text: charcoal, not pure black */
+    --color-ink: 3 60 137;
+    /* #033c89 */
     --color-page: 250 250 249;
-    /* bg: warm off-white */
+    /* #fafaf9 */
     --color-surface: 255 255 255;
-    /* cards: pure white for elevation */
     --color-line: 212 212 212;
-    /* borders: soft gray */
+    --color-accent: 242 145 17;
+    --color-subtle: 100 116 139;
+    /* Slate 500 */
   }
 
   .dark {
-    --color-ink: 229 229 229;
-    /* text: warm white, not pure white */
-    --color-page: 10 10 10;
-    /* bg: deep black */
-    --color-surface: 23 23 23;
-    /* cards: subtle elevation */
-    --color-line: 64 64 64;
-    /* borders: visible but soft */
+    --color-ink: 241 245 249;
+    /* Slate 100 */
+    --color-page: 15 23 42;
+    /* Slate 900 */
+    --color-surface: 30 41 59;
+    /* Slate 800 */
+    --color-line: 51 65 85;
+    /* Slate 700 */
+    --color-accent: 242 145 17;
+    --color-subtle: 148 163 184;
+    /* Slate 400 */
   }
 
   /* Body inherits automatically */
   body {
-    @apply antialiased font-sans;
+    @apply antialiased font-sans transition-colors duration-300;
     color: rgb(var(--color-ink));
     background: rgb(var(--color-page));
+    line-height: 1.6;
+  }
+
+  /* Typography Refinement */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display tracking-tight text-ink;
+  }
+
+  h1 {
+    @apply leading-none;
   }
 
   /* Selection highlight */
   ::selection {
-    @apply bg-accent text-black;
+    @apply bg-accent/20 text-ink;
   }
 
   /* Form field styling - ensure proper color inheritance */
@@ -51,6 +70,7 @@
   textarea {
     color: rgb(var(--color-ink));
     background-color: rgb(var(--color-surface));
+    @apply border border-line/20 focus:border-accent focus:ring-1 focus:ring-accent transition-all duration-200 outline-none rounded-none;
   }
 
   /* Dropdown options - force proper colors */
@@ -61,17 +81,36 @@
 
   /* Placeholder text */
   ::placeholder {
-    color: rgb(var(--color-ink) / 0.4);
+    color: rgb(var(--color-subtle) / 0.5);
+  }
+
+  /* Scrollbar for Webkit */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-line/40 hover:bg-line/60 rounded-full transition-colors;
   }
 }
 
 @layer components {
 
-  /* Agent card animations */
+  /* 
+   * Motion System 
+   * "Motion Density Rule: If the user notices the animation before the content, it is too much."
+   */
+
   @keyframes fadeInUp {
     from {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(12px);
+      /* Reduced movement */
     }
 
     to {
@@ -80,31 +119,64 @@
     }
   }
 
-  @keyframes pulse {
-
-    0%,
-    100% {
-      opacity: 1;
-    }
-
-    50% {
-      opacity: 0.5;
-    }
+  .animate-reveal {
+    animation: fadeInUp 0.4s cubic-bezier(0.2, 0.65, 0.3, 0.9) forwards;
+    /* Custom easing */
+    opacity: 0;
+    /* Star hidden */
   }
 
-  .animate-fade-in {
-    animation: fadeInUp 0.6s ease-out forwards;
+  .delay-100 {
+    animation-delay: 100ms;
   }
 
-  .animate-pulse-slow {
-    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  .delay-200 {
+    animation-delay: 200ms;
   }
 
-  .agent-card {
-    transition: all 0.3s ease;
+  .delay-300 {
+    animation-delay: 300ms;
   }
 
-  .agent-card:hover {
-    transform: translateY(-4px);
+  /* Micro-interactions */
+  .link-underline {
+    position: relative;
+    text-decoration: none;
+  }
+
+  .link-underline::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: rgb(var(--color-accent));
+    transform-origin: bottom right;
+    transition: transform 0.2s cubic-bezier(0.2, 0.65, 0.3, 0.9);
+  }
+
+  .link-underline:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+  /* Card interactive states - "Engineered feel" */
+  .card-tech {
+    @apply transition-all duration-200 border border-line/20 hover:border-accent/40 bg-surface/50 hover:bg-surface;
+  }
+
+  /* Architecture Diagram Nodes */
+  .arch-node {
+    @apply border border-line/40 bg-surface text-xs font-mono px-3 py-2 rounded-sm text-ink/80;
+  }
+
+  /* Technical Grid Background */
+  .bg-grid-pattern {
+    background-size: 40px 40px;
+    background-image: linear-gradient(to right, rgb(var(--color-line) / 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(var(--color-line) / 0.05) 1px, transparent 1px);
+    mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
   }
 }
