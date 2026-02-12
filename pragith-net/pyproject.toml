@@ -18,6 +18,8 @@ dependencies = [
     "slowapi>=0.1.9",
     "email-validator>=2.1.0",
     "httpx>=0.26.0",
+    "bleach>=6.0.0",
+    "python-slugify>=8.0.0",
 ]
 
 [dependency-groups]

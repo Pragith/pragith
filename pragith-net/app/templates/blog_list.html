@@ -23,26 +23,29 @@
 
         <div class="space-y-12">
             {% for post in posts %}
-            <article class="relative group">
-                <div class="flex flex-col sm:flex-row gap-4 sm:gap-8">
-                    <div class="sm:w-32 shrink-0">
-                        <time datetime="{{ post.date }}" class="text-sm text-ink/40 font-mono">{{ post.date }}</time>
-                    </div>
-                    <div>
-                        <h2 class="text-xl font-semibold text-ink group-hover:text-accent transition-colors mb-2">
-                            <a href="/blog/{{ post.slug }}"><span class="absolute inset-0"></span>{{ post.title }}</a>
-                        </h2>
-                        <p class="text-ink/60 mb-4 line-clamp-3">{{ post.summary }}</p>
-                        <div class="flex flex-wrap gap-2 relative z-10">
-                            {% for t in post.tags %}
-                            <a href="/blog/tag/{{ t | lower | replace(' ', '-') }}"
-                                class="inline-flex items-center border border-line/20 px-2 py-1 text-xs font-medium text-ink/60 hover:bg-accent/10 hover:border-line/40 transition-colors">#{{
-                                t }}</a>
-                            {% endfor %}
+            <a href="/blog/{{ post.slug }}" class="block">
+                <article class="relative group">
+                    <div class="flex flex-col sm:flex-row gap-4 sm:gap-8">
+                        <div class="sm:w-32 shrink-0">
+                            <time datetime="{{ post.date }}" class="text-sm text-ink/40 font-mono">{{ post.date
+                                }}</time>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-semibold text-ink group-hover:text-accent transition-colors mb-2">
+                                {{ post.title }}
+                            </h2>
+                            <p class="text-ink/60 mb-4 line-clamp-3">{{ post.summary }}</p>
+                            <div class="flex flex-wrap gap-2">
+                                {% for t in post.tags %}
+                                <span
+                                    class="inline-flex items-center border border-line/20 px-2 py-1 text-xs font-medium text-ink/60">#{{
+                                    t.name }}</span>
+                                {% endfor %}
+                            </div>
                         </div>
                     </div>
-                </div>
-            </article>
+                </article>
+            </a>
             {% else %}
             <p class="text-ink/50 italic">No posts found.</p>
             {% endfor %}

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Content Snapshot - 20260211_191545</title>
+    <title>Website Content Snapshot - 20260211_200522</title>
     <style>
         body {
             font-family: 'Inter', monospace;
@@ -81,7 +81,7 @@
 </head>
 <body>
     <h1>Website Content Snapshot</h1>
-    <p><strong>Generated:</strong> 2026-02-11 19:15:45</p>
+    <p><strong>Generated:</strong> 2026-02-11 20:05:22</p>
     <p><strong>Total Files:</strong> 20</p>
     
     <div class="index">
@@ -196,11 +196,11 @@
                     &lt;div class="text-sm font-bold text-ink mb-1"&gt;Return Home&lt;/div&gt;
                     &lt;div class="text-xs text-ink/50"&gt;Start fresh&lt;/div&gt;
                 &lt;/a&gt;
-                &lt;button onclick="history.back()"
-                    class="border-2 border-line/20 p-4 bg-surface hover:border-accent transition-colors cursor-pointer w-full text-left"&gt;
+                &lt;a href="javascript:history.back()"
+                    class="border-2 border-line/20 p-4 bg-surface hover:border-accent transition-colors"&gt;
                     &lt;div class="text-sm font-bold text-ink mb-1"&gt;Go Back&lt;/div&gt;
                     &lt;div class="text-xs text-ink/50"&gt;Previous page&lt;/div&gt;
-                &lt;/button&gt;
+                &lt;/a&gt;
                 &lt;a href="/contact" class="border-2 border-accent bg-accent/10 p-4 hover:bg-accent/20 transition-colors"&gt;
                     &lt;div class="text-sm font-bold text-ink mb-1"&gt;Report Issue&lt;/div&gt;
                     &lt;div class="text-xs text-ink/50"&gt;Let me know&lt;/div&gt;
@@ -245,49 +245,10 @@
 {% block canonical %}https://pragith.net/agents{% endblock %}
 
 {% block content %}
-&lt;style&gt;
-    .anim-hidden {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-    }
+{% block extra_head %}
+&lt;link rel="stylesheet" href="/static/css/agents.css"&gt;
+{% endblock %}
 
-    .anim-visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    .anim-delay-1 {
-        transition-delay: 150ms;
-    }
-
-    .anim-delay-2 {
-        transition-delay: 300ms;
-    }
-
-    .anim-delay-3 {
-        transition-delay: 450ms;
-    }
-
-    .line-grow {
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 1s ease-out 0.3s;
-    }
-
-    .line-grow.anim-visible {
-        transform: scaleX(1);
-    }
-
-    .card-lift {
-        transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.7s ease-out, transform 0.7s ease-out;
-    }
-
-    .card-lift:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-    }
-&lt;/style&gt;
 
 &lt;section class="py-20 border-t border-line/20"&gt;
     &lt;div class="max-w-6xl mx-auto px-6"&gt;
@@ -393,7 +354,7 @@
         &lt;div class="border-2 border-line/30 p-12 bg-surface text-center anim-hidden"&gt;
             &lt;h3 class="font-display text-2xl font-bold text-ink mb-4"&gt;Want This for Your Project?&lt;/h3&gt;
             &lt;p class="text-ink/60 mb-8 max-w-lg mx-auto"&gt;
-                20-50 hour scope. 2-4 week delivery. Production-ready output.
+                20–50 hour scope. 2–4 week delivery. Production-ready output.
             &lt;/p&gt;
             &lt;div class="flex flex-wrap justify-center gap-4"&gt;
                 &lt;a href="/contact"
@@ -411,23 +372,7 @@
     &lt;/div&gt;
 &lt;/section&gt;
 
-&lt;script&gt;
-    document.addEventListener('DOMContentLoaded', function () {
-        var observer = new IntersectionObserver(function (entries) {
-            entries.forEach(function (entry) {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('anim-visible');
-                    entry.target.classList.remove('anim-hidden');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.15 });
-
-        document.querySelectorAll('.anim-hidden').forEach(function (el) {
-            observer.observe(el);
-        });
-    });
-&lt;/script&gt;
+&lt;script src="/static/js/agents.js" defer&gt;&lt;/script&gt;
 {% endblock %}</div>
     </div>
     
@@ -450,7 +395,11 @@
         content="{% block description %}Structured, production-ready AI systems delivered in 2–4 weeks. 20–50 hour fixed-scope builds. Clean handover. No long-term lock-in.{% endblock %}"&gt;
 
     &lt;!-- Canonical --&gt;
-    &lt;link rel="canonical" href="{% block canonical %}https://pragith.net{% endblock %}"&gt;
+    {% if self.canonical() %}
+    &lt;link rel="canonical" href="{% block canonical %}{% endblock %}"&gt;
+    {% else %}
+    &lt;!-- WARNING: No canonical URL defined for this page --&gt;
+    {% endif %}
 
     &lt;!-- OpenGraph --&gt;
     &lt;meta property="og:title"
@@ -460,7 +409,7 @@
     &lt;meta property="og:type" content="website"&gt;
     &lt;meta property="og:locale" content="en_US"&gt;
     &lt;meta property="og:site_name" content="Pragith Prakash"&gt;
-    &lt;meta property="og:image" content="https://pragith.net/static/og-image.png"&gt;
+    &lt;meta property="og:image" content="{% block og_image %}https://pragith.net/static/og-image.png{% endblock %}"&gt;
 
     &lt;!-- Twitter Card --&gt;
     &lt;meta name="twitter:card" content="summary_large_image"&gt;
@@ -490,26 +439,29 @@
     &lt;!-- Favicon --&gt;
     &lt;link rel="icon" type="image/x-icon" href="/static/favicon.ico"&gt;
 
+    &lt;!-- Sitemap --&gt;
+    &lt;link rel="sitemap" type="application/xml" href="/sitemap.xml"&gt;
+
     &lt;!-- Preload critical fonts --&gt;
     &lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
     &lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
     &lt;link rel="stylesheet" href="{{ theme.fonts_url|safe }}" media="print" onload="this.media='all'"&gt;
 
-    {% if recaptcha_site_key %}
-    &lt;!-- reCAPTCHA v3 --&gt;
-    &lt;script src="https://www.google.com/recaptcha/api.js?render={{ recaptcha_site_key }}"&gt;&lt;/script&gt;
-    {% endif %}
+
 
     {% if ga_tag %}
-    &lt;!-- Google Analytics --&gt;
-    &lt;script async defer src="https://www.googletagmanager.com/gtag/js?id={{ ga_tag }}"&gt;&lt;/script&gt;
+    &lt;!-- Google Analytics (consent-gated loading) --&gt;
     &lt;script&gt;
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', '{{ ga_tag }}', {
-            'anonymize_ip': true
-        });
+        window.gaTag = '{{ ga_tag }}';
+        // Only load GA script if consent was previously granted
+        if (localStorage.getItem('ga_consent') === 'granted') {
+            var script = document.createElement('script');
+            script.async = true;
+            script.defer = true;
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.gaTag;
+            script.id = 'ga-script';
+            document.head.appendChild(script);
+        }
     &lt;/script&gt;
     {% endif %}
 
@@ -669,44 +621,7 @@
         &lt;/div&gt;
     &lt;/header&gt;
 
-    &lt;script&gt;
-        function toggleTheme() {
-            var d = document.documentElement.classList;
-            if (d.contains('dark')) {
-                d.remove('dark');
-                localStorage.theme = 'light';
-            } else {
-                d.add('dark');
-                localStorage.theme = 'dark';
-            }
-        }
 
-        // Dropdown toggle functionality
-        function toggleDropdown(id) {
-            const dropdown = document.getElementById(id);
-            const allDropdowns = document.querySelectorAll('[id$="-dropdown"]');
-
-            // Close all other dropdowns
-            allDropdowns.forEach(d =&gt; {
-                if (d.id !== id) {
-                    d.classList.add('hidden');
-                }
-            });
-
-            // Toggle current dropdown
-            dropdown.classList.toggle('hidden');
-        }
-
-        // Close dropdowns when clicking outside
-        document.addEventListener('click', function (event) {
-            const dropdowns = document.querySelectorAll('[id$="-dropdown"]');
-            const isDropdownButton = event.target.closest('button[onclick*="toggleDropdown"]');
-
-            if (!isDropdownButton) {
-                dropdowns.forEach(d =&gt; d.classList.add('hidden'));
-            }
-        });
-    &lt;/script&gt;
 
     &lt;!-- Main Content --&gt;
     &lt;main class="flex-grow"&gt;
@@ -754,13 +669,14 @@
             &lt;/div&gt;
             &lt;div
                 class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/40"&gt;
-                &lt;p&gt;&amp;copy; {{ now().year }} Pragith Prakash · &lt;strong&gt;Vriksh Consulting Services Inc.&lt;/strong&gt;&lt;/p&gt;
+                &lt;p&gt;&amp;copy; {{ now().year }} Pragith Prakash&lt;/p&gt;
                 &lt;p&gt;Structured Operational Systems · &lt;a href="/legal"
                         class="hover:text-white transition-colors"&gt;Legal&lt;/a&gt;&lt;/p&gt;
             &lt;/div&gt;
         &lt;/div&gt;
     &lt;/footer&gt;
 
+    &lt;script src="/static/js/main.js" defer&gt;&lt;/script&gt;
 &lt;/body&gt;
 
 &lt;/html&gt;</div>
@@ -775,9 +691,39 @@
         </div>
         <div class="file-content">{% extends "base.html" %}
 {% block title %}{{ post.title }} | Pragith Prakash{% endblock %}
+{% block canonical %}https://pragith.net/blog/{{ post.slug }}{% endblock %}
 {% block description %}{{ post.summary }}{% endblock %}
 {% block og_title %}{{ post.title }} | Pragith Prakash{% endblock %}
 {% block og_description %}{{ post.summary }}{% endblock %}
+{% block extra_head %}
+&lt;meta property="og:image" content="https://pragith.net/static/og-image-blog.png"&gt;
+&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://pragith.net"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://pragith.net/blog"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "{{ post.title }}",
+      "item": "https://pragith.net/blog/{{ post.slug }}"
+    }
+  ]
+}
+&lt;/script&gt;
+{% endblock %}
 
 {% block content %}
 &lt;article class="py-20 border-t border-line/20"&gt;
@@ -791,9 +737,9 @@
             &lt;h1 class="font-display text-3xl sm:text-4xl font-bold tracking-tight text-ink mb-6"&gt;{{ post.title }}&lt;/h1&gt;
             &lt;div class="flex flex-wrap justify-center gap-2"&gt;
                 {% for t in post.tags %}
-                &lt;a href="/blog/tag/{{ t }}"
+                &lt;a href="/blog/tag/{{ t.slug }}"
                     class="inline-flex items-center border border-line/20 px-2.5 py-0.5 text-xs font-medium text-ink/60 hover:bg-accent/10 hover:border-line/40 transition-colors"&gt;#{{
-                    t }}&lt;/a&gt;
+                    t.name }}&lt;/a&gt;
                 {% endfor %}
             &lt;/div&gt;
         &lt;/header&gt;
@@ -855,26 +801,29 @@
 
         &lt;div class="space-y-12"&gt;
             {% for post in posts %}
-            &lt;article class="relative group"&gt;
-                &lt;div class="flex flex-col sm:flex-row gap-4 sm:gap-8"&gt;
-                    &lt;div class="sm:w-32 shrink-0"&gt;
-                        &lt;time datetime="{{ post.date }}" class="text-sm text-ink/40 font-mono"&gt;{{ post.date }}&lt;/time&gt;
-                    &lt;/div&gt;
-                    &lt;div&gt;
-                        &lt;h2 class="text-xl font-semibold text-ink group-hover:text-accent transition-colors mb-2"&gt;
-                            &lt;a href="/blog/{{ post.slug }}"&gt;&lt;span class="absolute inset-0"&gt;&lt;/span&gt;{{ post.title }}&lt;/a&gt;
-                        &lt;/h2&gt;
-                        &lt;p class="text-ink/60 mb-4 line-clamp-3"&gt;{{ post.summary }}&lt;/p&gt;
-                        &lt;div class="flex flex-wrap gap-2 relative z-10"&gt;
-                            {% for t in post.tags %}
-                            &lt;a href="/blog/tag/{{ t | lower | replace(' ', '-') }}"
-                                class="inline-flex items-center border border-line/20 px-2 py-1 text-xs font-medium text-ink/60 hover:bg-accent/10 hover:border-line/40 transition-colors"&gt;#{{
-                                t }}&lt;/a&gt;
-                            {% endfor %}
+            &lt;a href="/blog/{{ post.slug }}" class="block"&gt;
+                &lt;article class="relative group"&gt;
+                    &lt;div class="flex flex-col sm:flex-row gap-4 sm:gap-8"&gt;
+                        &lt;div class="sm:w-32 shrink-0"&gt;
+                            &lt;time datetime="{{ post.date }}" class="text-sm text-ink/40 font-mono"&gt;{{ post.date
+                                }}&lt;/time&gt;
+                        &lt;/div&gt;
+                        &lt;div&gt;
+                            &lt;h2 class="text-xl font-semibold text-ink group-hover:text-accent transition-colors mb-2"&gt;
+                                {{ post.title }}
+                            &lt;/h2&gt;
+                            &lt;p class="text-ink/60 mb-4 line-clamp-3"&gt;{{ post.summary }}&lt;/p&gt;
+                            &lt;div class="flex flex-wrap gap-2"&gt;
+                                {% for t in post.tags %}
+                                &lt;span
+                                    class="inline-flex items-center border border-line/20 px-2 py-1 text-xs font-medium text-ink/60"&gt;#{{
+                                    t.name }}&lt;/span&gt;
+                                {% endfor %}
+                            &lt;/div&gt;
                         &lt;/div&gt;
                     &lt;/div&gt;
-                &lt;/div&gt;
-            &lt;/article&gt;
+                &lt;/article&gt;
+            &lt;/a&gt;
             {% else %}
             &lt;p class="text-ink/50 italic"&gt;No posts found.&lt;/p&gt;
             {% endfor %}
@@ -994,6 +943,7 @@ lead routing, approval workflows, and repetitive administrative tasks.{% endbloc
 established businesses.{% endblock %}
 
 {% block extra_head %}
+&lt;meta property="og:image" content="https://pragith.net/static/og-image-automation.png"&gt;
 &lt;script type="application/ld+json"&gt;
 {
   "@context": "https://schema.org",
@@ -1377,6 +1327,7 @@ established businesses. See your business performance clearly.{% endblock %}
 businesses.{% endblock %}
 
 {% block extra_head %}
+&lt;meta property="og:image" content="https://pragith.net/static/og-image-dashboards.png"&gt;
 &lt;script type="application/ld+json"&gt;
 {
   "@context": "https://schema.org",
@@ -1889,13 +1840,13 @@ established businesses.{% endblock %}
                     the right team member, and tracked through to resolution.&lt;/p&gt;
             &lt;/div&gt;
             &lt;div class="border-2 border-line/20 p-8 bg-page"&gt;
-                &lt;div class="text-xs font-bold text-accent uppercase tracking-wider mb-3"&gt;25-40 hours&lt;/div&gt;
+                &lt;div class="text-xs font-bold text-accent uppercase tracking-wider mb-3"&gt;25–40 hours&lt;/div&gt;
                 &lt;h3 class="font-bold text-ink text-lg mb-3"&gt;WhatsApp Intake System&lt;/h3&gt;
                 &lt;p class="text-sm text-ink/60 leading-relaxed"&gt;Structured customer intake via WhatsApp with automated
                     responses, CRM integration, and follow-up sequences.&lt;/p&gt;
             &lt;/div&gt;
             &lt;div class="border-2 border-line/20 p-8 bg-page"&gt;
-                &lt;div class="text-xs font-bold text-accent uppercase tracking-wider mb-3"&gt;35-50 hours&lt;/div&gt;
+                &lt;div class="text-xs font-bold text-accent uppercase tracking-wider mb-3"&gt;35–50 hours&lt;/div&gt;
                 &lt;h3 class="font-bold text-ink text-lg mb-3"&gt;Executive Dashboard Layer&lt;/h3&gt;
                 &lt;p class="text-sm text-ink/50"&gt;Common engagement patterns include: Real-time dashboard connected to your
                     CRM, accounting,
@@ -2094,6 +2045,11 @@ established businesses.{% endblock %}
         <div class="file-content">{% extends "base.html" %}
 {% block title %}Start a Project | Pragith Prakash{% endblock %}
 {% block canonical %}https://pragith.net/contact{% endblock %}
+{% block extra_head %}
+{% if recaptcha_site_key %}
+&lt;script src="https://www.google.com/recaptcha/api.js?render={{ recaptcha_site_key }}"&gt;&lt;/script&gt;
+{% endif %}
+{% endblock %}
 {% block content %}
 &lt;section class="py-20 border-t border-line/20"&gt;
     &lt;div class="max-w-6xl mx-auto px-6"&gt;
@@ -2357,6 +2313,7 @@ established businesses.{% endblock %}
             <div class="file-path">index.html</div>
         </div>
         <div class="file-content">{% extends "base.html" %}
+{% block canonical %}https://pragith.net{% endblock %}
 
 {% block content %}
 &lt;!-- Hero Section --&gt;

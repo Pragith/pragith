@@ -1,8 +1,38 @@
 {% extends "base.html" %}
 {% block title %}{{ post.title }} | Pragith Prakash{% endblock %}
+{% block canonical %}https://pragith.net/blog/{{ post.slug }}{% endblock %}
 {% block description %}{{ post.summary }}{% endblock %}
 {% block og_title %}{{ post.title }} | Pragith Prakash{% endblock %}
 {% block og_description %}{{ post.summary }}{% endblock %}
+{% block extra_head %}
+<meta property="og:image" content="https://pragith.net/static/og-image-blog.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://pragith.net"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://pragith.net/blog"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "{{ post.title }}",
+      "item": "https://pragith.net/blog/{{ post.slug }}"
+    }
+  ]
+}
+</script>
+{% endblock %}
 
 {% block content %}
 <article class="py-20 border-t border-line/20">
@@ -16,9 +46,9 @@
             <h1 class="font-display text-3xl sm:text-4xl font-bold tracking-tight text-ink mb-6">{{ post.title }}</h1>
             <div class="flex flex-wrap justify-center gap-2">
                 {% for t in post.tags %}
-                <a href="/blog/tag/{{ t }}"
+                <a href="/blog/tag/{{ t.slug }}"
                     class="inline-flex items-center border border-line/20 px-2.5 py-0.5 text-xs font-medium text-ink/60 hover:bg-accent/10 hover:border-line/40 transition-colors">#{{
-                    t }}</a>
+                    t.name }}</a>
                 {% endfor %}
             </div>
         </header>

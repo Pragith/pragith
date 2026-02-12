@@ -10,7 +10,11 @@
         content="{% block description %}Structured, production-ready AI systems delivered in 2–4 weeks. 20–50 hour fixed-scope builds. Clean handover. No long-term lock-in.{% endblock %}">
 
     <!-- Canonical -->
-    <link rel="canonical" href="{% block canonical %}https://pragith.net{% endblock %}">
+    {% if self.canonical() %}
+    <link rel="canonical" href="{% block canonical %}{% endblock %}">
+    {% else %}
+    <!-- WARNING: No canonical URL defined for this page -->
+    {% endif %}
 
     <!-- OpenGraph -->
     <meta property="og:title"
@@ -20,7 +24,7 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="Pragith Prakash">
-    <meta property="og:image" content="https://pragith.net/static/og-image.png">
+    <meta property="og:image" content="{% block og_image %}https://pragith.net/static/og-image.png{% endblock %}">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
@@ -50,6 +54,9 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
 
+    <!-- Sitemap -->
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
     <!-- Preload critical fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,15 +65,18 @@
 
 
     {% if ga_tag %}
-    <!-- Google Analytics -->
-    <script async defer src="https://www.googletagmanager.com/gtag/js?id={{ ga_tag }}"></script>
+    <!-- Google Analytics (consent-gated loading) -->
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', '{{ ga_tag }}', {
-            'anonymize_ip': true
-        });
+        window.gaTag = '{{ ga_tag }}';
+        // Only load GA script if consent was previously granted
+        if (localStorage.getItem('ga_consent') === 'granted') {
+            var script = document.createElement('script');
+            script.async = true;
+            script.defer = true;
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.gaTag;
+            script.id = 'ga-script';
+            document.head.appendChild(script);
+        }
     </script>
     {% endif %}
 
@@ -226,44 +236,7 @@
         </div>
     </header>
 
-    <script>
-        function toggleTheme() {
-            var d = document.documentElement.classList;
-            if (d.contains('dark')) {
-                d.remove('dark');
-                localStorage.theme = 'light';
-            } else {
-                d.add('dark');
-                localStorage.theme = 'dark';
-            }
-        }
 
-        // Dropdown toggle functionality
-        function toggleDropdown(id) {
-            const dropdown = document.getElementById(id);
-            const allDropdowns = document.querySelectorAll('[id$="-dropdown"]');
-
-            // Close all other dropdowns
-            allDropdowns.forEach(d => {
-                if (d.id !== id) {
-                    d.classList.add('hidden');
-                }
-            });
-
-            // Toggle current dropdown
-            dropdown.classList.toggle('hidden');
-        }
-
-        // Close dropdowns when clicking outside
-        document.addEventListener('click', function (event) {
-            const dropdowns = document.querySelectorAll('[id$="-dropdown"]');
-            const isDropdownButton = event.target.closest('button[onclick*="toggleDropdown"]');
-
-            if (!isDropdownButton) {
-                dropdowns.forEach(d => d.classList.add('hidden'));
-            }
-        });
-    </script>
 
     <!-- Main Content -->
     <main class="flex-grow">
@@ -311,14 +284,14 @@
             </div>
             <div
                 class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/40">
-                <p>&copy; {{ now().year }} Pragith Prakash · <strong>Vriksh Consulting Services Inc.</strong></p>
+                <p>&copy; {{ now().year }} Pragith Prakash</p>
                 <p>Structured Operational Systems · <a href="/legal"
                         class="hover:text-white transition-colors">Legal</a></p>
             </div>
         </div>
     </footer>
 
-    <script src="/static/js/dropdown.js" defer></script>
+    <script src="/static/js/main.js" defer></script>
 </body>
 
 </html>

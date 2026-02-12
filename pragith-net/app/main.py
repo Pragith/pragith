@@ -11,6 +11,7 @@ from slowapi.errors import RateLimitExceeded
 from app.config import settings
 from app.services.blog_loader import blog_service
 from app.services.mailer import mailer_service
+from app.services.sitemap import sitemap_service
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
@@ -80,6 +81,20 @@ async def theme_css():
 @app.get("/favicon.ico", include_in_schema=False)
 async def favicon():
     return RedirectResponse(url="/static/favicon.ico", status_code=301)
+
+@app.get("/sitemap.xml", include_in_schema=False)
+async def sitemap():
+    """Generate and serve XML sitemap."""
+    # Reset and rebuild sitemap
+    sitemap_service._urls = []
+    sitemap_service.generate_static_urls()
+    sitemap_service.add_blog_posts(blog_service.get_all())
+    
+    from app.services.work_loader import work_service
+    sitemap_service.add_work_items(work_service.get_all())
+    
+    xml_content = sitemap_service.generate_xml()
+    return Response(content=xml_content, media_type="application/xml")
 
 @app.get("/", response_class=HTMLResponse)
 async def home(request: Request):
