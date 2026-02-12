@@ -2,166 +2,91 @@
 
 {% block extra_head %}
 <link rel="canonical" href="https://pragith.net/contact">
-{% endblock %}
-{% block title %}Start a Project | Pragith Prakash{% endblock %}
-{% block canonical %}https://pragith.net/contact{% endblock %}
-{% block extra_head %}
 {% if recaptcha_site_key %}
 <script src="https://www.google.com/recaptcha/api.js?render={{ recaptcha_site_key }}"></script>
 {% endif %}
 {% endblock %}
+{% block title %}Start a Project | Pragith Prakash{% endblock %}
+{% block canonical %}https://pragith.net/contact{% endblock %}
+
 {% block content %}
-<section class="py-20 border-t border-line/20">
-    <div class="max-w-6xl mx-auto px-6">
-        <div class="mb-16">
-            <h1 class="font-display text-5xl font-bold tracking-tight text-ink mb-4">Start a Project</h1>
-            <div class="w-20 h-1 bg-accent mb-6"></div>
-            <p class="text-xl text-ink/60 max-w-3xl">Structured, defined-scope AI builds for businesses with
-                a clearly defined operational problem and decision authority to move.</p>
-        </div>
-        <div class="grid lg:grid-cols-2 gap-12">
-            <!-- Left: Engagement Format -->
-            <div class="space-y-8">
-                <!-- Engagement Format Block -->
-                <div class="border-2 border-accent/40 p-8 bg-accent/5">
-                    <h2 class="font-display text-2xl font-bold text-ink mb-6">Engagement Format</h2>
-                    <div class="space-y-3 text-sm text-ink/70">
-                        {% for item in [
-                        "Fixed project scope",
-                        "Short delivery window",
-                        "Detailed Statement of Work (SoW)",
-                        "Defined deliverables",
-                        "Structured deployment",
-                        "Documentation included",
-                        "Optional post-delivery support"
-                        ] %}
-                        <div class="flex items-start gap-3"><span class="text-accent mt-0.5 font-bold">→</span><span>{{
-                                item }}</span></div>
-                        {% endfor %}
-                    </div>
-                    <div class="mt-6 pt-6 border-t border-line/20">
-                        <p class="text-sm text-ink/80 font-medium leading-relaxed">
-                            Clear start. Clear finish. No long-term lock-in.
-                        </p>
-                    </div>
-                </div>
+<section class="py-24 sm:py-32 border-b border-line/20">
+    <div class="max-w-2xl mx-auto px-6 text-center">
+        <h1 class="font-display text-4xl sm:text-5xl font-bold tracking-tight text-ink mb-6">
+            Define Your Automation or Dashboard Build
+        </h1>
+        <p class="text-xl text-ink/60 mb-12 leading-relaxed">
+            This is not suitable for exploratory AI experimentation or undefined transformation programs.
+        </p>
 
-                <!-- What You Get -->
-                <div class="border-2 border-line/30 p-8 bg-surface">
-                    <h3 class="font-bold text-ink mb-4">What You Get</h3>
-                    <div class="space-y-3 text-sm text-ink/70">
-                        {% for val in [
-                        "Production-ready systems deployed into your operations",
-                        "Faster customer response through structured automation",
-                        "Reduced manual overhead and fewer operational errors",
-                        "Clean documentation and full handover",
-                        "No dependency on the builder after delivery"
-                        ] %}
-                        <div class="flex items-start gap-3"><span class="text-accent mt-0.5 font-bold">→</span><span>{{
-                                val }}</span></div>
-                        {% endfor %}
-                    </div>
-                </div>
-
-                <!-- Pricing Psychology -->
-                <div class="border-2 border-line/30 p-8 bg-surface">
-                    <h3 class="font-bold text-ink mb-4">Project Scope</h3>
-                    <p class="text-ink/60 text-sm leading-relaxed mb-4">
-                        Most projects are structured as fixed, short-cycle builds depending on complexity.
-                        Scope is defined before execution begins.
-                    </p>
-                    <p class="text-ink/60 text-sm leading-relaxed">
-                        Projects are delivered in defined milestones. Production-ready.
-                        Cleanly documented. Fully handed over.
-                    </p>
-                </div>
-
-                {% if calendly_url %}
-                <a href="{{ calendly_url }}" target="_blank" rel="noopener"
-                    class="inline-flex items-center justify-center text-sm font-semibold bg-ink text-page hover:bg-accent hover:text-black transition-all h-12 px-8 w-full"
-                    data-analytics="cta-contact-calendly">
-                    Book Strategy Call →
-                </a>
-                {% endif %}
-            </div>
-
-            <!-- Right: Form -->
+        <form action="/contact" method="POST" class="text-left space-y-6 bg-surface/30 p-8 border border-line/20">
             <div>
-                <h1 class="font-display text-4xl sm:text-5xl font-bold tracking-tight text-ink mb-6">
-                    Initiate Engagement
-                </h1>
-                <p class="text-xl text-ink/70 leading-relaxed max-w-lg mb-8">
-                    Engagement is limited to businesses with defined operational bottlenecks and readiness to execute.
-                </p>
+                <label for="name" class="block text-sm font-bold text-ink mb-2">Name</label>
+                <input type="text" name="name" id="name" required
+                    class="block w-full border-2 border-line/20 bg-page px-4 py-3 text-ink placeholder-ink/20 focus:outline-none focus:border-accent transition-colors">
+            </div>
 
-                <div class="space-y-6 pt-8 border-t border-line/20">
-                    <div>
-                        <h3 class="text-xs font-bold text-accent uppercase tracking-wider mb-2">Before Submitting</h3>
-                        <p class="text-sm text-ink/60 leading-relaxed">
-                            Ensure you have decision-making authority and budget allocated for a structured build.
-                        </p>
-                    </div>
-                    <div>
-                        <h3 class="text-xs font-bold text-accent uppercase tracking-wider mb-2">Typical Timeline</h3>
-                        <p class="text-sm text-ink/60 leading-relaxed">
-                            Response within 24 hours. Strategy call within 3 days. Proposal within 1 week.
-                        </p>
-                    </div>
+            <div>
+                <label for="email" class="block text-sm font-bold text-ink mb-2">Work Email</label>
+                <input type="email" name="email" id="email" required
+                    class="block w-full border-2 border-line/20 bg-page px-4 py-3 text-ink placeholder-ink/20 focus:outline-none focus:border-accent transition-colors">
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <label for="company" class="block text-sm font-bold text-ink mb-2">Company / Organization</label>
+                    <input type="text" name="company" id="company"
+                        class="block w-full border-2 border-line/20 bg-page px-4 py-3 text-ink placeholder-ink/20 focus:outline-none focus:border-accent transition-colors">
+                </div>
+                <div>
+                    <label for="timeline" class="block text-sm font-bold text-ink mb-2">Timeline</label>
+                    <select name="inquiry_type" id="timeline"
+                        class="block w-full border-2 border-line/20 bg-page px-4 py-3 text-ink focus:outline-none focus:border-accent appearance-none transition-colors">
+                        <option value="Within 30 days">Within 30 days</option>
+                        <option value="Within 90 days">Within 90 days</option>
+                        <option value="This quarter">This quarter</option>
+                    </select>
                 </div>
             </div>
 
-            <!-- Inquiry Form -->
-            <div class="bg-surface border border-line/20 p-8 shadow-sm">
-                <form action="/contact" method="POST" class="space-y-6">
-                    <div>
-                        <label for="name" class="block text-sm font-bold text-ink mb-2">Name</label>
-                        <input type="text" name="name" id="name" required
-                            class="block w-full border-2 border-line/30 bg-surface px-4 py-3 text-ink focus:outline-none focus:border-accent appearance-none">
-                        <option value="" selected>Select one...</option>
-                        {% for opt in ["I make the decision", "I influence the decision", "Researching for my
-                        team"] %}
-                        <option value="{{ opt }}">{{ opt }}</option>
-                        {% endfor %}
-                        </select>
-                    </div>
-            </div>
             <div>
-                <label for="outcome" class="block text-sm font-bold text-ink mb-2">What outcome are you trying
-                    to achieve? <span class="font-normal text-ink/40">(optional)</span></label>
-                <input type="text" name="outcome" id="outcome"
-                    placeholder="e.g. Faster customer response, automated lead routing, real-time dashboards"
-                    class="block w-full border-2 border-line/30 bg-surface px-4 py-3 text-ink focus:outline-none focus:border-accent">
+                <label for="message" class="block text-sm font-bold text-ink mb-2">Operational Challenge</label>
+                <textarea name="message" id="message" rows="4" required
+                    placeholder="Describe the bottleneck, manual process, or visibility gap."
+                    class="block w-full border-2 border-line/20 bg-page px-4 py-3 text-ink placeholder-ink/20 focus:outline-none focus:border-accent transition-colors"></textarea>
             </div>
+
             <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
             <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
 
-            <button type="submit" id="contact-submit"
-                class="w-full inline-flex items-center justify-center text-sm font-semibold bg-ink text-page hover:bg-accent hover:text-black transition-all h-12 px-8"
-                data-analytics="cta-contact-form-submit">
-                Send Inquiry →
+            <button type="submit"
+                class="w-full inline-flex items-center justify-center text-sm font-bold uppercase tracking-wider bg-ink text-page hover:bg-accent hover:text-black transition-all h-14 mt-4"
+                data-analytics="submit-contact-form">
+                Send Inquiry
             </button>
-            <p class="text-xs text-ink/40 text-center leading-relaxed">
-                Your message is securely delivered via encrypted email. I typically respond within 24 hours.
-            </p>
-            </form>
+        </form>
 
-            {% if recaptcha_site_key %}
-            <script>
-                document.querySelector('form[action="/contact"]').addEventListener('submit', function (e) {
-                    e.preventDefault();
-                    var form = this;
-
-                    grecaptcha.ready(function () {
-                        grecaptcha.execute('{{ recaptcha_site_key }}', { action: 'contact' }).then(function (token) {
-                            document.getElementById('g-recaptcha-response').value = token;
-                            form.submit();
-                        });
-                    });
-                });
-            </script>
-            {% endif %}
+        <div class="mt-12 pt-12 border-t border-line/20">
+            <h3 class="text-sm font-bold text-ink mb-2">Direct Contact</h3>
+            <a href="mailto:pragith@pragith.net"
+                class="text-lg text-ink/60 hover:text-accent transition-colors font-mono">pragith@pragith.net</a>
         </div>
     </div>
-    </div>
 </section>
+
+{% if recaptcha_site_key %}
+<script>
+    document.querySelector('form[action="/contact"]').addEventListener('submit', function (e) {
+        e.preventDefault();
+        var form = this;
+
+        grecaptcha.ready(function () {
+            grecaptcha.execute('{{ recaptcha_site_key }}', { action: 'contact' }).then(function (token) {
+                document.getElementById('g-recaptcha-response').value = token;
+                form.submit();
+            });
+        });
+    });
+</script>
+{% endif %}
 {% endblock %}
