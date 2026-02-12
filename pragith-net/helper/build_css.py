@@ -13,13 +13,37 @@ from pathlib import Path
 SCRIPT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = SCRIPT_DIR.parent
 BINARY_DIR = PROJECT_ROOT / ".tailwind"
-BINARY_PATH = BINARY_DIR / "tailwindcss.exe"
+BINARY_DIR = PROJECT_ROOT / ".tailwind"
+# BINARY_PATH is now defined dynamically below based on OS
 INPUT_CSS = PROJECT_ROOT / "app" / "static" / "css" / "input.css"
 OUTPUT_CSS = PROJECT_ROOT / "app" / "static" / "css" / "style.min.css"
 CONFIG = PROJECT_ROOT / "tailwind.config.js"
 
+import platform
+
 TAILWIND_VERSION = "v3.4.1"
-URL = f"https://github.com/tailwindlabs/tailwindcss/releases/download/{TAILWIND_VERSION}/tailwindcss-windows-x64.exe"
+
+def get_binary_url():
+    system = platform.system().lower()
+    machine = platform.machine().lower()
+
+    if system == "linux":
+        if machine == "aarch64":
+            return f"https://github.com/tailwindlabs/tailwindcss/releases/download/{TAILWIND_VERSION}/tailwindcss-linux-arm64", "tailwindcss-linux-arm64"
+        elif machine == "x86_64":
+            return f"https://github.com/tailwindlabs/tailwindcss/releases/download/{TAILWIND_VERSION}/tailwindcss-linux-x64", "tailwindcss-linux-x64"
+    elif system == "darwin":
+        if machine == "arm64":
+            return f"https://github.com/tailwindlabs/tailwindcss/releases/download/{TAILWIND_VERSION}/tailwindcss-macos-arm64", "tailwindcss-macos-arm64"
+        elif machine == "x86_64":
+            return f"https://github.com/tailwindlabs/tailwindcss/releases/download/{TAILWIND_VERSION}/tailwindcss-macos-x64", "tailwindcss-macos-x64"
+    elif system == "windows":
+        return f"https://github.com/tailwindlabs/tailwindcss/releases/download/{TAILWIND_VERSION}/tailwindcss-windows-x64.exe", "tailwindcss.exe"
+
+    raise RuntimeError(f"Unsupported platform: {system} {machine}")
+
+URL, BINARY_NAME = get_binary_url()
+BINARY_PATH = BINARY_DIR / BINARY_NAME
 
 
 def download_binary():
@@ -50,6 +74,12 @@ def download_binary():
                 print(f"\r  [{bar}] {pct}%", end="", flush=True)
 
     print(f"\n  Saved: {BINARY_PATH} ({BINARY_PATH.stat().st_size:,} bytes)")
+    
+    # Make executable on Linux/macOS
+    if platform.system().lower() != "windows":
+        st = os.stat(BINARY_PATH)
+        os.chmod(BINARY_PATH, st.st_mode | 0o111)
+        print(f"  Made executable: {BINARY_PATH}")
 
 
 def build_css():

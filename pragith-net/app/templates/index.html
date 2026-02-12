@@ -2,306 +2,235 @@
 {% block canonical %}https://pragith.net{% endblock %}
 
 {% block content %}
-<!-- Hero Section: Engineered Minimalist -->
-<section class="border-b border-line/20 relative overflow-hidden">
-    <!-- Subtle Grid Background -->
-    <div class="absolute inset-0 bg-grid-pattern opacity-[0.03] pointer-events-none"></div>
-
-    <div class="max-w-7xl mx-auto px-6 py-32 sm:py-40 relative z-10">
-        <div class="max-w-4xl">
-            <div
-                class="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-accent/5 text-accent text-xs font-mono font-medium mb-8 animate-reveal">
-                <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
-                SYSTEMS_ARCHITECT_V1
-            </div>
-
+<!-- Hero Section -->
+<section class="border-b border-line/20">
+    <div class="max-w-6xl mx-auto px-6 py-24 sm:py-32">
+        <div class="max-w-4xl mx-auto text-center">
             <h1
-                class="font-display text-5xl sm:text-7xl font-bold tracking-tight text-ink mb-8 leading-[1.0] animate-reveal delay-100">
-                Principal AI Architect<br>
-                <span class="text-ink/40">& Distributed Systems Engineer.</span>
+                class="font-display text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-ink mb-6 leading-[1.1] animate-fade-in">
+                Operational Automation<br>& AI Systems.
             </h1>
 
-            <p class="text-xl text-ink/70 max-w-2xl mb-10 leading-relaxed font-light animate-reveal delay-200">
-                Designing scalable infrastructure for production AI.
-                Focusing on high-throughput data platforms, reliable distributed systems, and enterprise-grade machine
-                learning operations.
+            <p class="text-xl sm:text-2xl text-ink/80 max-w-3xl mx-auto mb-6 leading-relaxed animate-fade-in">
+                Short-cycle operational automation and system builds for businesses ready to act.
+                Fixed-scope engagements. Rapid delivery. Production-ready. Clean handover.
             </p>
 
-            <div class="flex flex-wrap gap-4 animate-reveal delay-300">
+            <p class="text-lg text-ink/50 mb-12 animate-fade-in">
+                Structured, defined-scope builds. Independent. Project-based.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-4 animate-fade-in">
                 <a href="/work"
-                    class="inline-flex items-center justify-center text-sm font-semibold bg-ink text-page hover:bg-accent hover:text-black transition-all h-12 px-8 shadow-sm hover:shadow-md"
-                    data-analytics="cta-hero-systems">
-                    View Architecture
+                    class="inline-flex items-center justify-center text-sm font-semibold bg-ink text-page hover:bg-accent hover:text-black transition-all h-12 px-8"
+                    data-analytics="cta-hero-view-work" aria-label="View portfolio work">
+                    View Work →
                 </a>
                 <a href="/contact"
-                    class="inline-flex items-center justify-center text-sm font-semibold border border-line bg-surface hover:border-accent hover:text-accent transition-all h-12 px-8"
-                    data-analytics="cta-hero-contact">
-                    System Consultation
+                    class="inline-flex items-center justify-center text-sm font-semibold border border-line bg-page hover:bg-ink hover:text-page transition-all h-12 px-8"
+                    data-analytics="cta-hero-strategy-call" aria-label="Book a strategy call">
+                    Book a Strategy Call
                 </a>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Capability Layer: "The Stack" -->
-<section class="border-b border-line/20 bg-surface/30">
-    <div class="max-w-7xl mx-auto px-6 py-12">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 opacity-60 hover:opacity-100 transition-opacity duration-500">
-            <div class="flex flex-col gap-2">
-                <span class="text-[10px] font-mono text-ink/40 uppercase tracking-widest">Core Infrastructure</span>
-                <span class="text-sm font-medium text-ink">Kubernetes / Terraform / AWS</span>
+<!-- Authority Strip -->
+<section class="border-b border-line/20 bg-surface/50">
+    <div class="max-w-6xl mx-auto px-6 py-8">
+        <div class="grid md:grid-cols-3 gap-8 text-center text-sm divide-y md:divide-y-0 md:divide-x divide-line/10">
+            <div class="pt-4 md:pt-0">
+                <h3 class="font-bold text-ink mb-2 uppercase tracking-wider text-xs">Scope</h3>
+                <p class="text-ink/60">Defined deliverables · Fixed scope · No open-ended commitments</p>
             </div>
-            <div class="flex flex-col gap-2">
-                <span class="text-[10px] font-mono text-ink/40 uppercase tracking-widest">Data Engineering</span>
-                <span class="text-sm font-medium text-ink">Kafka / Spark / Airflow</span>
+            <div class="pt-4 md:pt-0">
+                <h3 class="font-bold text-ink mb-2 uppercase tracking-wider text-xs">Delivery</h3>
+                <p class="text-ink/60">Fixed duration · Rapid turnaround · Milestone-based</p>
             </div>
-            <div class="flex flex-col gap-2">
-                <span class="text-[10px] font-mono text-ink/40 uppercase tracking-widest">AI Systems</span>
-                <span class="text-sm font-medium text-ink">PyTorch / Ray / MLflow</span>
-            </div>
-            <div class="flex flex-col gap-2">
-                <span class="text-[10px] font-mono text-ink/40 uppercase tracking-widest">Backend Systems</span>
-                <span class="text-sm font-medium text-ink">FastAPI / Go / gRPC</span>
+            <div class="pt-4 md:pt-0">
+                <h3 class="font-bold text-ink mb-2 uppercase tracking-wider text-xs">Output</h3>
+                <p class="text-ink/60">Production-ready · Documented · Fully handed over</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Engineered Systems Section -->
-<section class="py-32 border-b border-line/20">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-6">
-            <div>
-                <h2 class="font-display text-3xl sm:text-4xl font-bold text-ink mb-4">Engineered Systems</h2>
-                <div class="w-12 h-1 bg-accent"></div>
+<!-- Stats Section -->
+<section class="border-b border-line/20">
+    <div class="max-w-6xl mx-auto px-6 py-16">
+        <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-line/20">
+            <div class="py-8 md:py-0 md:pr-12">
+                <div class="text-6xl font-bold text-ink mb-2">13+</div>
+                <div class="text-xs font-semibold uppercase tracking-wider text-ink/40 mb-1">Years</div>
+                <div class="text-sm text-ink/60">Shipping Production Systems</div>
             </div>
-            <p class="text-ink/60 max-w-lg text-sm leading-relaxed">
-                Selected architectural implementations focusing on scale, reliability, and performance.
-                Not just code, but complete production systems.
-            </p>
+            <div class="py-8 md:py-0 md:px-12">
+                <div class="text-6xl font-bold text-ink mb-2">20–50hr</div>
+                <div class="text-xs font-semibold uppercase tracking-wider text-ink/40 mb-1">Typical Scope</div>
+                <div class="text-sm text-ink/60">Defined Engagement Window</div>
+            </div>
+            <div class="py-8 md:py-0 md:pl-12">
+                <div class="text-6xl font-bold text-accent mb-2">Direct</div>
+                <div class="text-xs font-semibold uppercase tracking-wider text-ink/40 mb-1">Execution</div>
+                <div class="text-sm text-ink/60">End-to-End Delivery & Handover</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Quick Navigation Section -->
+<section class="py-20 border-b border-line/20">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="mb-12">
+            <h2 class="font-display text-3xl font-bold text-ink mb-2">Explore</h2>
+            <div class="w-16 h-1 bg-accent"></div>
         </div>
 
-        <div class="grid grid-cols-1 gap-12">
-            <!-- System 1 -->
-            <a href="/work/rag-platform"
-                class="group block relative pl-8 border-l-2 border-line hover:border-accent transition-colors duration-300">
-                <div
-                    class="absolute left-[-5px] top-0 w-2 h-2 rounded-full bg-line group-hover:bg-accent transition-colors">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <a href="/work"
+                class="group border-2 border-line/30 p-8 hover:bg-ink hover:text-page transition-all text-ink"
+                data-analytics="nav-tile-work">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="font-display text-xl font-bold">Work</h3>
+                    <svg class="w-6 h-6 transform group-hover:translate-x-1 transition-transform" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
                 </div>
-
-                <div class="flex flex-col md:flex-row justify-between md:items-start gap-8">
-                    <div class="flex-1">
-                        <div class="flex items-center gap-3 mb-3">
-                            <span
-                                class="text-xs font-mono bg-line/20 px-2 py-1 rounded text-ink/70">DISTRIBUTED_SYSTEMS</span>
-                            <span class="text-xs font-mono text-ink/40">v2.1</span>
-                        </div>
-                        <h3
-                            class="font-display text-2xl font-bold text-ink mb-3 group-hover:text-accent transition-colors">
-                            Enterprise RAG Knowledge Platform
-                        </h3>
-                        <p class="text-ink/60 mb-6 max-w-2xl">
-                            Architected a high-throughput Retrieval-Augmented Generation system handling 50k+ daily
-                            queries.
-                            Implemented hybrid search (dense + sparse), custom re-ranking pipeline, and multi-tenant
-                            isolation.
-                        </p>
-                        <div class="flex gap-2 text-xs font-mono text-ink/50">
-                            <span>VectorDB</span> · <span>LangChain</span> · <span>Kubernetes</span>
-                        </div>
-                    </div>
-
-                    <div class="md:text-right">
-                        <span
-                            class="inline-flex items-center gap-1 text-sm font-semibold text-ink group-hover:translate-x-1 transition-transform">
-                            View Architecture <span class="text-accent">→</span>
-                        </span>
-                    </div>
-                </div>
+                <p class="text-sm opacity-70">Case studies & delivered projects</p>
             </a>
 
-            <!-- System 2 -->
-            <a href="/work/data-pipeline"
-                class="group block relative pl-8 border-l-2 border-line hover:border-accent transition-colors duration-300">
-                <div
-                    class="absolute left-[-5px] top-0 w-2 h-2 rounded-full bg-line group-hover:bg-accent transition-colors">
+            <a href="/engagement"
+                class="group border-2 border-line/30 p-8 hover:bg-accent hover:text-black transition-all text-ink"
+                data-analytics="nav-tile-engagement">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="font-display text-xl font-bold">Engagement</h3>
+                    <svg class="w-6 h-6 transform group-hover:translate-x-1 transition-transform" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
                 </div>
-
-                <div class="flex flex-col md:flex-row justify-between md:items-start gap-8">
-                    <div class="flex-1">
-                        <div class="flex items-center gap-3 mb-3">
-                            <span
-                                class="text-xs font-mono bg-line/20 px-2 py-1 rounded text-ink/70">DATA_INFRASTRUCTURE</span>
-                            <span class="text-xs font-mono text-ink/40">v1.4</span>
-                        </div>
-                        <h3
-                            class="font-display text-2xl font-bold text-ink mb-3 group-hover:text-accent transition-colors">
-                            Real-time Event Streaming Architecture
-                        </h3>
-                        <p class="text-ink/60 mb-6 max-w-2xl">
-                            Designed a fault-tolerant event ingestion pipeline processing 10k events/sec.
-                            Leveraged Kafka Connect for CDC, stream processing with Flink, and data lake sink for
-                            analytical queries.
-                        </p>
-                        <div class="flex gap-2 text-xs font-mono text-ink/50">
-                            <span>Apache Kafka</span> · <span>Flink</span> · <span>ClickHouse</span>
-                        </div>
-                    </div>
-
-                    <div class="md:text-right">
-                        <span
-                            class="inline-flex items-center gap-1 text-sm font-semibold text-ink group-hover:translate-x-1 transition-transform">
-                            View Architecture <span class="text-accent">→</span>
-                        </span>
-                    </div>
-                </div>
+                <p class="text-sm opacity-70">How projects are scoped, delivered, and handed over</p>
             </a>
 
-            <!-- System 3 -->
-            <a href="/work/ml-platform"
-                class="group block relative pl-8 border-l-2 border-line hover:border-accent transition-colors duration-300">
-                <div
-                    class="absolute left-[-5px] top-0 w-2 h-2 rounded-full bg-line group-hover:bg-accent transition-colors">
+            <a href="/business"
+                class="group border-2 border-line/30 p-8 hover:bg-ink hover:text-page transition-all text-ink"
+                data-analytics="nav-tile-business">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="font-display text-xl font-bold">Platform</h3>
+                    <svg class="w-6 h-6 transform group-hover:translate-x-1 transition-transform" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
                 </div>
-
-                <div class="flex flex-col md:flex-row justify-between md:items-start gap-8">
-                    <div class="flex-1">
-                        <div class="flex items-center gap-3 mb-3">
-                            <span class="text-xs font-mono bg-line/20 px-2 py-1 rounded text-ink/70">MLOPS</span>
-                            <span class="text-xs font-mono text-ink/40">v3.0</span>
-                        </div>
-                        <h3
-                            class="font-display text-2xl font-bold text-ink mb-3 group-hover:text-accent transition-colors">
-                            Self-Service ML Training Platform
-                        </h3>
-                        <p class="text-ink/60 mb-6 max-w-2xl">
-                            Internal platform enabling data scientists to spin up distributed training jobs via CLI.
-                            Automated resource provisioning, experiment tracking, and model registry integration
-                            reducing time-to-production by 60%.
-                        </p>
-                        <div class="flex gap-2 text-xs font-mono text-ink/50">
-                            <span>Ray</span> · <span>MLflow</span> · <span>Terraform</span>
-                        </div>
-                    </div>
-
-                    <div class="md:text-right">
-                        <span
-                            class="inline-flex items-center gap-1 text-sm font-semibold text-ink group-hover:translate-x-1 transition-transform">
-                            View Architecture <span class="text-accent">→</span>
-                        </span>
-                    </div>
-                </div>
+                <p class="text-sm opacity-70">Operational systems for established businesses</p>
             </a>
         </div>
     </div>
 </section>
 
-<!-- Deep Dive: Technical Case Study -->
-<section class="py-32 bg-page border-b border-line/20">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-                <div
-                    class="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-ink/5 text-ink text-xs font-mono font-medium mb-6">
-                    CASE_STUDY: SCALABILITY
+<!-- What You Get Section -->
+<section class="py-32">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="mb-20">
+            <h2 class="font-display text-4xl sm:text-5xl font-bold tracking-tight text-ink mb-4">
+                What You Get
+            </h2>
+            <div class="w-20 h-1 bg-accent"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-line/20">
+            <div class="bg-page p-10 hover:bg-accent transition-colors group">
+                <div class="flex items-start justify-between mb-6">
+                    <h3 class="font-display text-2xl font-bold text-ink group-hover:text-black">Automated Lead Handling
+                    </h3>
+                    <span class="text-4xl font-bold text-ink/10 group-hover:text-black/20">01</span>
                 </div>
-                <h2 class="font-display text-3xl sm:text-4xl font-bold text-ink mb-6">
-                    Scaling to 100M+ Vectors<br>with Low Latency
-                </h2>
-                <div class="space-y-6 text-ink/70 leading-relaxed">
-                    <p>
-                        <strong>The Challenge:</strong> A financial services client needed to perform semantic search
-                        across millions of documents with sub-200ms latency, while adhering to strict compliance and
-                        isolation requirements.
-                    </p>
-                    <p>
-                        <strong>The Architecture:</strong> Implemented a sharded Qdrant cluster on Kubernetes with
-                        custom routing sidecars. Optimized HNSW index parameters for memory/recall tradeoff.
-                    </p>
-                    <ul class="space-y-3 mt-4 border-l-2 border-line/30 pl-4">
-                        <li class="text-sm"><span class="text-accent font-bold">→</span> <strong>Latency:</strong>
-                            Reduced p95 from 800ms to 120ms</li>
-                        <li class="text-sm"><span class="text-accent font-bold">→</span> <strong>Cost:</strong> 40%
-                            reduction in infrastructure spend via spot instances</li>
-                        <li class="text-sm"><span class="text-accent font-bold">→</span> <strong>Reliability:</strong>
-                            Zero downtime during index rebalancing</li>
-                    </ul>
-                </div>
-                <div class="mt-8">
-                    <a href="/work/vector-scaling"
-                        class="text-sm font-bold text-ink underline decoration-line hover:decoration-accent decoration-2 underline-offset-4 transition-all">
-                        Read Full Technical Breakdown
-                    </a>
-                </div>
+                <p class="text-ink/60 group-hover:text-black/70 mb-6 leading-relaxed">
+                    Customer inquiries routed, responded to, and tracked without manual effort.
+                    Faster response times. Fewer missed opportunities. Clear ownership of every lead.
+                </p>
+                <ul class="space-y-2 text-sm text-ink/70 group-hover:text-black/80">
+                    <li>→ Automated inquiry routing and response</li>
+                    <li>→ CRM-integrated lead tracking</li>
+                    <li>→ After-hours handling with structured follow-up</li>
+                </ul>
             </div>
 
-            <!-- Abstract Architecture Visual -->
-            <div
-                class="relative bg-surface border border-line/20 p-8 rounded-sm aspect-video flex items-center justify-center overflow-hidden">
-                <div class="absolute inset-0 bg-grid-pattern opacity-[0.05]"></div>
-
-                <!-- Diagram Nodes (CSS only) -->
-                <div class="grid grid-cols-3 gap-8 w-full max-w-md relative z-10">
-                    <div class="col-span-1 flex flex-col gap-4">
-                        <div class="arch-node text-center">Load Balancer</div>
-                        <div class="h-8 border-r border-dashed border-line/40 w-1/2 self-end mr-4"></div>
-                    </div>
-                    <div class="col-span-2 flex flex-col gap-4">
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="arch-node text-center bg-accent/5 border-accent/20">Shard 01</div>
-                            <div class="arch-node text-center bg-accent/5 border-accent/20">Shard 02</div>
-                            <div class="arch-node text-center bg-accent/5 border-accent/20">Shard 03</div>
-                            <div class="arch-node text-center bg-accent/5 border-accent/20">Shard 04</div>
-                        </div>
-                    </div>
+            <div class="bg-page p-10 hover:bg-accent transition-colors group">
+                <div class="flex items-start justify-between mb-6">
+                    <h3 class="font-display text-2xl font-bold text-ink group-hover:text-black">Integrated Systems</h3>
+                    <span class="text-4xl font-bold text-ink/10 group-hover:text-black/20">02</span>
                 </div>
+                <p class="text-ink/60 group-hover:text-black/70 mb-6 leading-relaxed">
+                    Your CRM, accounting, inventory, and communication tools connected into a single
+                    operational flow. Data moves automatically. Manual entry stops.
+                </p>
+                <ul class="space-y-2 text-sm text-ink/70 group-hover:text-black/80">
+                    <li>→ Secure system integration</li>
+                    <li>→ Automated data synchronization</li>
+                    <li>→ Elimination of manual data entry</li>
+                </ul>
+            </div>
+
+            <div class="bg-page p-10 hover:bg-accent transition-colors group">
+                <div class="flex items-start justify-between mb-6">
+                    <h3 class="font-display text-2xl font-bold text-ink group-hover:text-black">Clear Dashboards
+                    </h3>
+                    <span class="text-4xl font-bold text-ink/10 group-hover:text-black/20">03</span>
+                </div>
+                <p class="text-ink/60 group-hover:text-black/70 mb-6 leading-relaxed">
+                    Real-time visibility into business performance. Revenue, pipeline, and operational
+                    metrics accessible without asking someone to compile a report.
+                </p>
+                <ul class="space-y-2 text-sm text-ink/70 group-hover:text-black/80">
+                    <li>→ Executive visibility into operations</li>
+                    <li>→ Real-time performance tracking</li>
+                    <li>→ Decisions based on current data</li>
+                </ul>
+            </div>
+
+            <div class="bg-page p-10 hover:bg-accent transition-colors group">
+                <div class="flex items-start justify-between mb-6">
+                    <h3 class="font-display text-2xl font-bold text-ink group-hover:text-black">Reduced Manual Overhead
+                    </h3>
+                    <span class="text-4xl font-bold text-ink/10 group-hover:text-black/20">04</span>
+                </div>
+                <p class="text-ink/60 group-hover:text-black/70 mb-6 leading-relaxed">
+                    Structured automation that handles the repetitive work your team does every day.
+                    Fewer operational errors. More time for decisions that matter.
+                </p>
+                <ul class="space-y-2 text-sm text-ink/70 group-hover:text-black/80">
+                    <li>→ Structured operational automation</li>
+                    <li>→ Fewer errors from manual handling</li>
+                    <li>→ Staff focused on high-value work</li>
+                </ul>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Technical Philosophy (Minimal) -->
-<section class="py-24 border-b border-line/20">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-        <h2 class="font-display text-2xl font-bold text-ink mb-8">Engineering Philosophy</h2>
-        <div class="grid md:grid-cols-3 gap-12 text-left">
-            <div>
-                <h3 class="font-bold text-ink mb-2 text-sm uppercase tracking-wide">Simplicity</h3>
-                <p class="text-sm text-ink/60">
-                    Complexity is technical debt. I default to boring, proven technologies until unique requirements
-                    demand novelty.
-                </p>
-            </div>
-            <div>
-                <h3 class="font-bold text-ink mb-2 text-sm uppercase tracking-wide">Observability</h3>
-                <p class="text-sm text-ink/60">
-                    If you can't measure it, you can't improve it. Logs, metrics, and traces are first-class citizens in
-                    every design.
-                </p>
-            </div>
-            <div>
-                <h3 class="font-bold text-ink mb-2 text-sm uppercase tracking-wide">Automation</h3>
-                <p class="text-sm text-ink/60">
-                    Humans shouldn't do machine work. CI/CD, IaC, and automated remediation are non-negotiable
-                    standards.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
+<!-- Case Study Removed -->
 
-<!-- Consulting CTA -->
-<section class="bg-surface border-t border-line/10">
-    <div class="max-w-6xl mx-auto px-6 py-24 text-center">
-        <h2 class="font-display text-3xl sm:text-4xl font-bold text-ink mb-6">Need Architectural Advisory?</h2>
-        <p class="text-lg text-ink/60 mb-12 max-w-2xl mx-auto">
-            Available for high-level system design reviews, infrastructure strategy planning, and fractional architect
-            engagements.
+<!-- CTA Section -->
+<section class="bg-black text-white border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-6 py-32 text-center">
+        <h2 class="font-display text-4xl sm:text-5xl font-bold mb-6">Have a Defined Problem?</h2>
+        <p class="text-xl text-white/60 mb-4 max-w-2xl mx-auto">
+            I work with established businesses that have a clearly defined operational problem
+            and decision authority to move.
+        </p>
+        <p class="text-sm text-white/40 mb-12 max-w-xl mx-auto">
+            Best suited for established businesses ready to formalize operations.
         </p>
         <a href="/contact"
-            class="inline-flex items-center justify-center text-sm font-semibold bg-ink text-page hover:bg-accent hover:text-black transition-all h-14 px-10 shadow-lg hover:shadow-xl hover:-translate-y-1"
+            class="inline-flex items-center justify-center text-sm font-semibold bg-accent text-black hover:bg-white transition-all h-12 px-10"
             data-analytics="cta-footer-strategy-call">
-            Schedule Technical Consultation →
+            Book a Strategy Call →
         </a>
     </div>
 </section>

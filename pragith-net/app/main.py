@@ -118,9 +118,9 @@ async def work_detail(request: Request, slug: str):
         raise HTTPException(status_code=404, detail="Project not found")
     return templates.TemplateResponse("work_detail.html", {"request": request, "work": work_item})
 
-@app.get("/build", response_class=HTMLResponse)
+@app.get("/build", response_class=RedirectResponse)
 async def build_page(request: Request):
-    return templates.TemplateResponse("build.html", {"request": request})
+    return RedirectResponse(url="/agents", status_code=301)
 
 @app.get("/stack", response_class=HTMLResponse)
 async def stack(request: Request):

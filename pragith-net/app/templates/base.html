@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Senior AI Architect & Distributed Systems Engineer | Pragith Prakash{% endblock %}
+    <title>{% block title %}Structured Automation & AI Systems · Rapid Delivery | Pragith Prakash{% endblock %}
     </title>
     <meta name="description"
-        content="{% block description %}Principal AI Architect designing scalable infrastructure and production systems. Enterprise-grade AI engineering and data platform strategy.{% endblock %}">
+        content="{% block description %}Structured, production-ready AI systems delivered rapidly. 20–50 hour fixed-scope builds. Clean handover. No long-term lock-in.{% endblock %}">
 
     <!-- Canonical -->
     {% if self.canonical() %}
@@ -18,9 +18,9 @@
 
     <!-- OpenGraph -->
     <meta property="og:title"
-        content="{% block og_title %}Senior AI Architect & Distributed Systems Engineer | Pragith Prakash{% endblock %}">
+        content="{% block og_title %}Structured Automation & AI Systems · Rapid Delivery | Pragith Prakash{% endblock %}">
     <meta property="og:description"
-        content="{% block og_description %}Principal AI Architect designing scalable infrastructure and production systems.{% endblock %}">
+        content="{% block og_description %}Structured, production-ready AI systems delivered rapidly. Fixed scope. Clean handover.{% endblock %}">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="Pragith Prakash">
@@ -28,9 +28,9 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Senior AI Architect & Distributed Systems Engineer | Pragith Prakash">
+    <meta name="twitter:title" content="Structured Automation & AI Systems · Rapid Delivery | Pragith Prakash">
     <meta name="twitter:description"
-        content="Principal AI Architect designing scalable infrastructure and production systems.">
+        content="Structured, production-ready AI systems delivered rapidly. Fixed scope. Clean handover.">
     <meta name="twitter:image" content="https://pragith.net/static/og-image.png">
 
     <!-- Dark mode: apply before render to prevent flash -->
@@ -62,6 +62,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="{{ theme.fonts_url|safe }}" media="print" onload="this.media='all'">
 
+
+
     {% if ga_tag %}
     <!-- Google Analytics (consent-gated loading) -->
     <script>
@@ -86,17 +88,17 @@
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Pragith Prakash",
-        "jobTitle": "Senior AI Architect",
-        "description": "Principal AI Architect designing scalable infrastructure and production systems.",
+        "jobTitle": "Senior AI & Data Engineer",
+        "description": "Structured, production-ready AI systems delivered rapidly. Fixed-scope builds with clean handover.",
         "url": "https://pragith.net",
         "sameAs": [
             "https://linkedin.com/in/pragith",
             "https://github.com/pragith"
         ],
-        "knowsAbout": ["AI Systems", "Data Engineering", "Distributed Systems", "Cloud Infrastructure", "Machine Learning Ops"],
+        "knowsAbout": ["AI Systems", "Data Engineering", "Operational Automation", "System Integration", "Production AI"],
         "hasOccupation": {
             "@type": "Occupation",
-            "name": "Senior AI Architect",
+            "name": "Senior AI & Data Engineer",
             "occupationLocation": {
                 "@type": "Country",
                 "name": "North America"
@@ -106,60 +108,55 @@
     </script>
 </head>
 
-<body class="flex flex-col min-h-screen text-base selection:bg-accent/20 selection:text-ink">
+<body class="flex flex-col min-h-screen transition-colors duration-200">
 
-    <!-- Technical Header -->
-    <header class="w-full bg-page/90 backdrop-blur-sm sticky top-0 z-50 border-b border-line/20 h-16">
-        <div class="max-w-7xl mx-auto px-6 h-full flex items-center justify-between">
-            <a href="/"
-                class="group flex items-center gap-2 font-mono text-sm font-semibold text-ink hover:text-accent transition-colors">
-                <span
-                    class="text-accent opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">./</span>
+
+    <!-- Header -->
+    <header class="w-full bg-page sticky top-0 z-50 border-b border-line/20">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="/" class="font-display text-lg font-semibold text-ink hover:text-accent transition-colors">
                 Pragith Prakash
             </a>
 
-            <nav class="hidden md:flex gap-8 text-sm font-medium items-center">
-                <a href="/work" class="link-underline text-ink/80 hover:text-ink transition-colors">Systems</a>
+            <nav class="hidden md:flex gap-6 text-sm font-medium items-center">
+                <a href="/work"
+                    class="text-ink hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent">Work</a>
 
-                <!-- Architecture Dropdown (was Method) -->
-                <div class="relative group">
-                    <button
-                        class="link-underline text-ink/80 hover:text-ink transition-colors flex items-center gap-1 focus:outline-none">
+                <!-- Architecture Dropdown -->
+                <div class="relative">
+                    <button onclick="toggleDropdown('architecture-dropdown')"
+                        class="text-ink hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent flex items-center gap-1"
+                        aria-expanded="false" aria-controls="architecture-dropdown">
                         Architecture
-                        <svg class="w-3 h-3 opacity-50 group-hover:opacity-100 transition-opacity" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <svg class="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
                         </svg>
                     </button>
-                    <!-- Invisible bridge to prevent menu closing when moving cursor -->
-                    <div class="absolute top-full left-0 w-full h-2"></div>
-                    <div
-                        class="hidden group-hover:block absolute left-0 top-[calc(100%+0.5rem)] w-48 bg-page border border-line/20 shadow-lg z-50 animate-fade-in-up">
+                    <div id="architecture-dropdown"
+                        class="hidden absolute left-0 mt-2 w-56 bg-page border border-line/20 shadow-lg z-50">
                         <a href="/agents"
-                            class="block px-4 py-3 text-ink hover:bg-surface hover:text-accent transition-colors border-b border-line/10">How
-                            I Work</a>
-                        <a href="/build"
-                            class="block px-4 py-3 text-ink hover:bg-surface hover:text-accent transition-colors border-b border-line/10">Engagement</a>
+                            class="block px-4 py-3 text-ink hover:bg-surface hover:text-accent transition-colors border-b border-line/10">Engagement
+                            & Method</a>
                         <a href="/stack"
                             class="block px-4 py-3 text-ink hover:bg-surface hover:text-accent transition-colors">Technology
                             Stack</a>
                     </div>
                 </div>
 
-                <!-- Platform Dropdown (was Business) -->
-                <div class="relative group">
-                    <button
-                        class="link-underline text-ink/80 hover:text-ink transition-colors flex items-center gap-1 focus:outline-none">
+                <!-- Platform Dropdown -->
+                <div class="relative">
+                    <button onclick="toggleDropdown('platform-dropdown')"
+                        class="text-ink hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent flex items-center gap-1"
+                        aria-expanded="false" aria-controls="platform-dropdown">
                         Platform
-                        <svg class="w-3 h-3 opacity-50 group-hover:opacity-100 transition-opacity" fill="none"
-                            viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <svg class="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
                         </svg>
                     </button>
-                    <!-- Invisible bridge -->
-                    <div class="absolute top-full left-0 w-full h-2"></div>
-                    <div
-                        class="hidden group-hover:block absolute left-0 top-[calc(100%+0.5rem)] w-48 bg-page border border-line/20 shadow-lg z-50 animate-fade-in-up">
+                    <div id="platform-dropdown"
+                        class="hidden absolute left-0 mt-2 w-56 bg-page border border-line/20 shadow-lg z-50">
                         <a href="/business"
                             class="block px-4 py-3 text-ink hover:bg-surface hover:text-accent transition-colors border-b border-line/10">Overview</a>
                         <a href="/business/automation"
@@ -169,28 +166,31 @@
                     </div>
                 </div>
 
-                <a href="/blog" class="link-underline text-ink/80 hover:text-ink transition-colors">Log</a>
+                <a href="/blog"
+                    class="text-ink hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent">Blog</a>
             </nav>
 
-            <div class="flex items-center gap-6">
-                <!-- Theme toggle (Technical Switch) -->
+            <div class="flex items-center gap-4">
+                <!-- Theme toggle -->
                 <button id="theme-toggle" onclick="toggleTheme()"
-                    class="w-9 h-9 flex items-center justify-center text-ink hover:text-accent transition-colors focus:outline-none border border-transparent hover:border-line/30 rounded-sm"
+                    class="w-10 h-10 flex items-center justify-center text-ink hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent"
                     aria-label="Toggle dark mode">
-                    <!-- Sun icon for dark mode -->
-                    <svg class="w-4 h-4 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                    </svg>
-                    <!-- Moon icon for light mode -->
-                    <svg class="w-4 h-4 dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    <!-- Moon: visible in light mode -->
+                    <svg class="w-5 h-5 dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
                             d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                    <!-- Sun: visible in dark mode -->
+                    <svg class="w-5 h-5 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
                     </svg>
                 </button>
 
                 <a href="/contact"
-                    class="hidden md:inline-flex items-center justify-center text-xs font-mono font-bold bg-ink text-page hover:bg-accent hover:text-black transition-all h-9 px-6 uppercase tracking-wider">
+                    class="hidden md:inline-flex items-center justify-center text-sm font-medium bg-ink text-page hover:bg-accent hover:text-black transition-all h-10 px-6 focus:outline-none focus:ring-2 focus:ring-accent">
                     Contact
                 </a>
 
@@ -199,74 +199,91 @@
                     class="md:hidden w-10 h-10 flex items-center justify-center text-ink hover:text-accent transition-colors focus:outline-none"
                     aria-label="Toggle menu"
                     onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
-                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
+                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                 </button>
             </div>
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden border-t border-line/20 bg-page animate-fade-in absolute w-full">
-            <nav class="flex flex-col p-6 gap-4 text-base font-medium">
-                <a href="/work" class="text-ink hover:text-accent transition-colors">Systems</a>
+        <div id="mobile-menu" class="hidden md:hidden border-t border-line/20 bg-page">
+            <nav class="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-3 text-sm font-medium">
+                <a href="/work" class="text-ink hover:text-accent transition-colors py-2">Work</a>
 
                 <div class="text-ink/40 text-xs uppercase tracking-wider mt-2">Architecture</div>
-                <a href="/agents" class="text-ink hover:text-accent transition-colors pl-4">How I Work</a>
-                <a href="/build" class="text-ink hover:text-accent transition-colors pl-4">Engagement</a>
-                <a href="/stack" class="text-ink hover:text-accent transition-colors pl-4">Stack</a>
+                <a href="/agents" class="text-ink hover:text-accent transition-colors py-2 pl-4">Engagement & Method</a>
+                <a href="/stack" class="text-ink hover:text-accent transition-colors py-2 pl-4">Technology Stack</a>
 
                 <div class="text-ink/40 text-xs uppercase tracking-wider mt-2">Platform</div>
-                <a href="/business" class="text-ink hover:text-accent transition-colors pl-4">Overview</a>
-                <a href="/business/automation" class="text-ink hover:text-accent transition-colors pl-4">Automation</a>
-                <a href="/business/dashboards" class="text-ink hover:text-accent transition-colors pl-4">Dashboards</a>
+                <a href="/business" class="text-ink hover:text-accent transition-colors py-2 pl-4">Overview</a>
+                <a href="/business/automation"
+                    class="text-ink hover:text-accent transition-colors py-2 pl-4">Automation</a>
+                <a href="/business/dashboards"
+                    class="text-ink hover:text-accent transition-colors py-2 pl-4">Dashboards</a>
 
-                <a href="/blog" class="text-ink hover:text-accent transition-colors mt-2">Engineering Log</a>
+                <a href="/blog" class="text-ink hover:text-accent transition-colors py-2 mt-2">Blog</a>
                 <a href="/contact"
-                    class="inline-flex items-center justify-center text-sm font-bold bg-ink text-page hover:bg-accent hover:text-black transition-all h-10 px-6 mt-4">Contact
-                    Terminal →</a>
+                    class="inline-flex items-center justify-center text-sm font-semibold bg-ink text-page hover:bg-accent hover:text-black transition-all h-10 px-6 mt-2">
+                    Book Strategy Call →
+                </a>
             </nav>
         </div>
     </header>
+
+
 
     <!-- Main Content -->
     <main class="flex-grow">
         {% block content %}{% endblock %}
     </main>
 
-    <!-- Technical Footer -->
-    <footer class="bg-page border-t border-line/20 mt-24">
-        <div class="max-w-7xl mx-auto px-6 py-12">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 text-sm font-mono text-ink/60">
-                <div class="flex flex-col gap-4">
-                    <span class="text-ink font-bold uppercase tracking-widest text-xs">Status</span>
-                    <div class="flex items-center gap-2">
-                        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                        <span>Systems Operational</span>
-                    </div>
-                    <span>v2.4.0-stable</span>
+    <!-- Footer -->
+    <footer class="bg-black text-white border-t border-white/10 mt-20">
+        <div class="max-w-6xl mx-auto px-6 py-16">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 mb-12">
+                <div>
+                    <h3 class="text-sm font-semibold mb-4 text-accent">Site</h3>
+                    <ul class="space-y-3 text-sm text-white/60">
+                        <li><a href="/" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="/work" class="hover:text-white transition-colors">Work</a></li>
+                        <li><a href="/blog" class="hover:text-white transition-colors">Blog</a></li>
+                    </ul>
                 </div>
-
-                <div class="flex flex-col gap-4">
-                    <span class="text-ink font-bold uppercase tracking-widest text-xs">Directory</span>
-                    <a href="/work" class="hover:text-accent transition-colors">/work</a>
-                    <a href="/build" class="hover:text-accent transition-colors">/method</a>
-                    <a href="/blog" class="hover:text-accent transition-colors">/log</a>
+                <div>
+                    <h3 class="text-sm font-semibold mb-4 text-accent">Services</h3>
+                    <ul class="space-y-3 text-sm text-white/60">
+                        <a href="/agents"
+                            class="text-ink hover:text-accent transition-colors pb-1 border-b border-transparent hover:border-accent">Engagement
+                            & Method</a></li>
+                        <li><a href="/business" class="hover:text-white transition-colors">Business</a></li>
+                        <li><a href="/contact" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
                 </div>
-
-                <div class="flex flex-col gap-4">
-                    <span class="text-ink font-bold uppercase tracking-widest text-xs">Network</span>
-                    <a href="https://linkedin.com/in/pragith" target="_blank" rel="noopener noreferrer"
-                        class="hover:text-accent transition-colors">LinkedIn</a>
-                    <a href="https://github.com/pragith" target="_blank" rel="noopener noreferrer"
-                        class="hover:text-accent transition-colors">GitHub</a>
+                <div>
+                    <h3 class="text-sm font-semibold mb-4 text-accent">Legal</h3>
+                    <ul class="space-y-3 text-sm text-white/60">
+                        <li><a href="/legal" class="hover:text-white transition-colors">Terms</a></li>
+                        <li><a href="/privacy" class="hover:text-white transition-colors">Privacy</a></li>
+                        <li><a href="/faq" class="hover:text-white transition-colors">FAQ</a></li>
+                    </ul>
                 </div>
-
-                <div class="flex flex-col gap-4">
-                    <span class="text-ink font-bold uppercase tracking-widest text-xs">Deployment</span>
-                    <span>&copy; {{ now().year }} Pragith Prakash</span>
-                    <a href="/legal" class="hover:text-accent transition-colors">Legal Terms</a>
+                <div>
+                    <h3 class="text-sm font-semibold mb-4 text-accent">Connect</h3>
+                    <ul class="space-y-3 text-sm text-white/60">
+                        <li><a href="https://linkedin.com/in/pragith" target="_blank" rel="noopener noreferrer"
+                                class="hover:text-white transition-colors">LinkedIn</a></li>
+                        <li><a href="https://github.com/pragith" target="_blank" rel="noopener noreferrer"
+                                class="hover:text-white transition-colors">GitHub</a></li>
+                        <li><a href="/contact" class="hover:text-white transition-colors">Email</a></li>
+                    </ul>
                 </div>
+            </div>
+            <div
+                class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/40">
+                <p>&copy; {{ now().year }} Pragith Prakash</p>
+                <p>Structured Operational Systems · <a href="/legal"
+                        class="hover:text-white transition-colors">Legal</a></p>
             </div>
         </div>
     </footer>
