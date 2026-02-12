@@ -4,49 +4,10 @@
 {% block canonical %}https://pragith.net/agents{% endblock %}
 
 {% block content %}
-<style>
-    .anim-hidden {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-    }
+{% block extra_head %}
+<link rel="stylesheet" href="/static/css/agents.css">
+{% endblock %}
 
-    .anim-visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    .anim-delay-1 {
-        transition-delay: 150ms;
-    }
-
-    .anim-delay-2 {
-        transition-delay: 300ms;
-    }
-
-    .anim-delay-3 {
-        transition-delay: 450ms;
-    }
-
-    .line-grow {
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 1s ease-out 0.3s;
-    }
-
-    .line-grow.anim-visible {
-        transform: scaleX(1);
-    }
-
-    .card-lift {
-        transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.7s ease-out, transform 0.7s ease-out;
-    }
-
-    .card-lift:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-    }
-</style>
 
 <section class="py-20 border-t border-line/20">
     <div class="max-w-6xl mx-auto px-6">
@@ -170,21 +131,5 @@
     </div>
 </section>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var observer = new IntersectionObserver(function (entries) {
-            entries.forEach(function (entry) {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('anim-visible');
-                    entry.target.classList.remove('anim-hidden');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.15 });
-
-        document.querySelectorAll('.anim-hidden').forEach(function (el) {
-            observer.observe(el);
-        });
-    });
-</script>
+<script src="/static/js/agents.js" defer></script>
 {% endblock %}

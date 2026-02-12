@@ -1,0 +1,42 @@
+/* Agents page animations */
+.anim-hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.anim-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.anim-delay-1 {
+    transition-delay: 150ms;
+}
+
+.anim-delay-2 {
+    transition-delay: 300ms;
+}
+
+.anim-delay-3 {
+    transition-delay: 450ms;
+}
+
+.line-grow {
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 1s ease-out 0.3s;
+}
+
+.line-grow.anim-visible {
+    transform: scaleX(1);
+}
+
+.card-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.card-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}

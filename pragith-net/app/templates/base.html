@@ -55,10 +55,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="{{ theme.fonts_url|safe }}" media="print" onload="this.media='all'">
 
-    {% if recaptcha_site_key %}
-    <!-- reCAPTCHA v3 -->
-    <script src="https://www.google.com/recaptcha/api.js?render={{ recaptcha_site_key }}"></script>
-    {% endif %}
+
 
     {% if ga_tag %}
     <!-- Google Analytics -->
@@ -321,6 +318,7 @@
         </div>
     </footer>
 
+    <script src="/static/js/dropdown.js" defer></script>
 </body>
 
 </html>
