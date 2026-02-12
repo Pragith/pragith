@@ -10,6 +10,20 @@
             <p class="text-lg text-ink/60">Operational engineering for real-world businesses.</p>
         </div>
 
+        <!-- Year Navigation -->
+        <div class="mb-12 flex flex-wrap gap-2">
+            {% for year in years %}
+            <a href="/blog?year={{ year }}" class="px-4 py-2 text-sm font-mono font-medium rounded-sm border transition-all 
+                      {% if year == selected_year %}
+                        bg-ink text-page border-ink
+                      {% else %}
+                        bg-page text-ink/60 border-line/30 hover:border-accent hover:text-accent
+                      {% endif %}">
+                {{ year }}
+            </a>
+            {% endfor %}
+        </div>
+
         {% if tag %}
         <div class="mb-8 flex items-center gap-2">
             <span class="text-sm text-ink/50">Filtering by:</span>

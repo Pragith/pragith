@@ -127,10 +127,29 @@ async def stack(request: Request):
     return templates.TemplateResponse("stack.html", {"request": request})
 
 
+from typing import Optional
+
 @app.get("/blog", response_class=HTMLResponse)
-async def blog_list(request: Request):
-    posts = blog_service.get_all()
-    return templates.TemplateResponse("blog_list.html", {"request": request, "posts": posts})
+async def blog_list(request: Request, year: Optional[int] = None):
+    all_posts = blog_service.get_all()
+    
+    # Extract years
+    years = sorted(list(set([p.date.year for p in all_posts])), reverse=True)
+    current_year = datetime.now().year
+    
+    # Default to current year if not specified
+    selected_year = year if year else current_year
+    
+    # Filter posts
+    posts = [p for p in all_posts if p.date.year == selected_year]
+    
+    return templates.TemplateResponse("blog_list.html", {
+        "request": request, 
+        "posts": posts, 
+        "years": years, 
+        "selected_year": selected_year,
+        "current_year": current_year
+    })
 
 @app.get("/blog/tag/{tag}", response_class=HTMLResponse)
 async def blog_tag(request: Request, tag: str):
