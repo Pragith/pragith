@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block title %}{{ offering.title }} | Pragith Prakash{% endblock %}
+{% block description %}{{ offering.outcome }}{% endblock %}
+{% block extra_head %}
+<link rel="canonical" href="https://pragith.net/o/{{ offering.slug }}">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "{{ offering.title }}",
+  "description": "{{ offering.outcome }}",
+  "provider": {
+    "@type": "Person",
+    "name": "Pragith Prakash"
+  },
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": "United Arab Emirates"
+  }
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<section class="border-b border-line/20">
+    <div class="max-w-5xl mx-auto px-6 py-24">
+        <div class="max-w-3xl">
+            <div class="text-xs font-semibold tracking-wider uppercase text-accent mb-3">
+                Catalog Offering
+            </div>
+            <h1 class="font-display text-5xl font-bold tracking-tight text-ink mb-4">{{ offering.title }}</h1>
+            <p class="text-xl text-ink/70 leading-relaxed">{{ offering.outcome }}</p>
+        </div>
+    </div>
+</section>
+
+<section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="border border-line/30 bg-page p-6">
+                <div class="text-xs text-ink/50 uppercase tracking-wide mb-2">Target Client</div>
+                <div class="text-lg text-ink">{{ offering.target_client }}</div>
+            </div>
+            <div class="border border-line/30 bg-page p-6">
+                <div class="text-xs text-ink/50 uppercase tracking-wide mb-2">Estimated Delivery Effort</div>
+                <div class="text-lg text-ink">{{ offering.estimated_hours }}</div>
+            </div>
+        </div>
+
+        <div class="mt-8 border border-line/30 bg-surface/30 p-6">
+            <div class="text-xs text-ink/50 uppercase tracking-wide mb-2">Direct Link</div>
+            <div class="font-mono text-sm text-ink">https://pragith.net/o/{{ offering.slug }}</div>
+        </div>
+
+        <div class="mt-8 flex flex-wrap gap-4">
+            <a href="/contact"
+                class="inline-flex items-center justify-center text-sm font-semibold bg-ink text-page hover:bg-accent hover:text-black transition-all h-11 px-6">
+                Start This Offering
+            </a>
+            <a href="/offerings"
+                class="inline-flex items-center justify-center text-sm font-semibold border border-line bg-page hover:bg-surface transition-all h-11 px-6">
+                View All Offerings
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -31,6 +31,8 @@ class SitemapService:
         self.add_url("/", priority=1.0, changefreq="weekly")
         self.add_url("/work", priority=0.9, changefreq="weekly")
         self.add_url("/blog", priority=0.9, changefreq="daily")
+        self.add_url("/pricing", priority=0.8, changefreq="weekly")
+        self.add_url("/offerings", priority=0.8, changefreq="weekly")
         
         # Business pages
         self.add_url("/business", priority=0.8, changefreq="monthly")
@@ -63,6 +65,15 @@ class SitemapService:
             self.add_url(
                 f"/work/{item.slug}",
                 priority=0.8,
+                changefreq="monthly"
+            )
+
+    def add_offerings(self, offerings):
+        """Add offering pages to the sitemap."""
+        for offering in offerings:
+            self.add_url(
+                f"/o/{offering.slug}",
+                priority=0.7,
                 changefreq="monthly"
             )
     

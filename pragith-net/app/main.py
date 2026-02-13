@@ -12,6 +12,8 @@ from app.config import settings
 from app.services.blog_loader import blog_service
 from app.services.mailer import mailer_service
 from app.services.sitemap import sitemap_service
+from app.services.offering_loader import offering_service
+from app.services.currency import convert_rate
 
 app = FastAPI(
     title=settings.PROJECT_NAME,
@@ -92,6 +94,7 @@ async def sitemap():
     
     from app.services.work_loader import work_service
     sitemap_service.add_work_items(work_service.get_all())
+    sitemap_service.add_offerings(offering_service.get_all())
     
     xml_content = sitemap_service.generate_xml()
     return Response(content=xml_content, media_type="application/xml")
@@ -234,6 +237,48 @@ async def business_automation(request: Request):
 @app.get("/business/dashboards", response_class=HTMLResponse)
 async def business_dashboards(request: Request):
     return templates.TemplateResponse("business/dashboards.html", {"request": request})
+
+def _get_client_ip(request: Request) -> str:
+    for header in ("cf-connecting-ip", "x-forwarded-for", "x-real-ip"):
+        value = request.headers.get(header, "").strip()
+        if value:
+            if header == "x-forwarded-for":
+                return value.split(",")[0].strip()
+            return value
+    if request.client and request.client.host:
+        return request.client.host
+    return "127.0.0.1"
+
+@app.get("/pricing", response_class=HTMLResponse)
+async def pricing(request: Request):
+    ip_address = _get_client_ip(request)
+    local_rate, currency_code, currency_symbol = await convert_rate(1.0, ip_address)
+    return templates.TemplateResponse(
+        "pricing.html",
+        {
+            "request": request,
+            "offerings": offering_service.get_all(),
+            "my_hourly_usd": 95.0,
+            "market_hourly_usd": 145.0,
+            "currency_code": currency_code,
+            "currency_symbol": currency_symbol,
+            "currency_rate": local_rate,
+        },
+    )
+
+@app.get("/offerings", response_class=HTMLResponse)
+async def offerings(request: Request):
+    return templates.TemplateResponse(
+        "offerings.html",
+        {"request": request, "offerings": offering_service.get_all()},
+    )
+
+@app.get("/o/{slug}", response_class=HTMLResponse)
+async def offering_detail(request: Request, slug: str):
+    offering = offering_service.get_by_slug(slug)
+    if not offering:
+        raise HTTPException(status_code=404, detail="Offering not found")
+    return templates.TemplateResponse("offering_detail.html", {"request": request, "offering": offering})
 
 @app.get("/training", response_class=HTMLResponse)
 async def training(request: Request):
