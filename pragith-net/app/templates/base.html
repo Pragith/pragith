@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        :root {
+            --nav-offset-top: {{ nav_offset_top }};
+            --nav-offset-left: {{ nav_offset_left }};
+            --nav-left-width: {{ nav_left_width }};
+        }
+
         html,
         body,
         * {
@@ -13,6 +19,17 @@
             -ms-user-select: none;
             user-select: none;
             -webkit-touch-callout: none;
+        }
+
+        @media (min-width: 768px) {
+            .nav-layout-left-main {
+                margin-left: calc(var(--nav-offset-left) + var(--nav-left-width));
+                padding-top: var(--nav-offset-top);
+            }
+
+            .nav-layout-left-footer {
+                margin-left: calc(var(--nav-offset-left) + var(--nav-left-width));
+            }
         }
     </style>
     <title>{% block title %}Structured Automation & AI Systems · Rapid Delivery | Pragith Prakash{% endblock %}
@@ -139,62 +156,116 @@
 </head>
 
 <body class="flex flex-col min-h-screen transition-colors duration-200">
+    {% set is_left_nav = nav_mode == "left" %}
+    {% set nav_links = navigation_config.links %}
+    {% set nav_brand = navigation_config.brand %}
+    {% set nav_cta = navigation_config.cta %}
 
-
-    <!-- Header -->
-    <header class="w-full bg-page sticky top-0 z-50 border-b border-line/20">
+    {% if is_left_nav %}
+    <header class="w-full bg-page sticky top-0 z-50 border-b border-line/20 md:hidden">
         <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="/" class="font-display text-lg font-semibold text-ink hover:text-accent transition-colors">
-                Pragith Prakash
+            <a href="{{ nav_brand.href }}" class="font-display text-lg font-semibold text-ink hover:text-accent transition-colors">
+                {{ nav_brand.label }}
             </a>
-
-            <nav class="hidden md:flex gap-6 text-sm font-medium items-center">
-                <a href="/work"
-                    class="text-ink hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent">Work</a>
-                <a href="/about"
-                    class="text-ink hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent">About</a>
-                <a href="/agents"
-                    class="text-ink hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent">How
-                    I Build</a>
-                <a href="/business/automation"
-                    class="text-ink hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent">Automation</a>
-                <a href="/business/dashboards"
-                    class="text-ink hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent">Dashboards</a>
-
-                <a href="/training"
-                    class="text-ink hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent">Training</a>
-                <a href="/speaking"
-                    class="text-ink hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent">Speaking</a>
-
-                <a href="/blog"
-                    class="text-ink hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent">Blog</a>
-            </nav>
-
             <div class="flex items-center gap-4">
-                <!-- Theme toggle -->
-                <button id="theme-toggle" onclick="toggleTheme()"
+                <button onclick="toggleTheme()"
                     class="w-10 h-10 flex items-center justify-center text-ink hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent"
                     aria-label="Toggle dark mode">
-                    <!-- Moon: visible in light mode -->
                     <svg class="w-5 h-5 dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                         stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
                     </svg>
-                    <!-- Sun: visible in dark mode -->
                     <svg class="w-5 h-5 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                         stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
                     </svg>
                 </button>
-
-                <a href="/contact"
-                    class="hidden md:inline-flex items-center justify-center text-sm font-medium bg-ink text-page hover:bg-accent hover:text-black transition-all h-10 px-6 focus:outline-none focus:ring-2 focus:ring-accent">
-                    Define the Build →
+                <button id="mobile-menu-toggle"
+                    class="w-10 h-10 flex items-center justify-center text-ink hover:text-accent transition-colors focus:outline-none"
+                    aria-label="Toggle menu"
+                    onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden border-t border-line/20 bg-page">
+            <nav class="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-3 text-sm font-medium">
+                {% for item in nav_links %}
+                <a href="{{ item.href }}" class="text-ink hover:text-accent transition-colors py-2">{{ item.label }}</a>
+                {% endfor %}
+                <a href="{{ nav_cta.href }}"
+                    class="inline-flex items-center justify-center text-sm font-semibold bg-ink text-page hover:bg-accent hover:text-black transition-all h-10 px-6 mt-2">
+                    {{ nav_cta.label }}
                 </a>
+            </nav>
+        </div>
+    </header>
 
-                <!-- Mobile hamburger -->
+    <aside class="hidden md:block fixed z-50 border-r border-line/20 bg-page"
+        style="top: var(--nav-offset-top); left: var(--nav-offset-left); width: var(--nav-left-width); height: calc(100vh - var(--nav-offset-top));">
+        <div class="px-6 py-6 h-full flex flex-col">
+            <a href="{{ nav_brand.href }}" class="font-display text-lg font-semibold text-ink hover:text-accent transition-colors">
+                {{ nav_brand.label }}
+            </a>
+            <nav class="mt-6 flex flex-col gap-3 text-sm font-medium">
+                {% for item in nav_links %}
+                <a href="{{ item.href }}"
+                    class="text-ink hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent py-1">
+                    {{ item.label }}
+                </a>
+                {% endfor %}
+            </nav>
+            <div class="mt-auto pt-6 flex flex-col gap-3">
+                <a href="{{ nav_cta.href }}"
+                    class="inline-flex items-center justify-center text-sm font-medium bg-ink text-page hover:bg-accent hover:text-black transition-all h-10 px-6 focus:outline-none focus:ring-2 focus:ring-accent">
+                    {{ nav_cta.label }}
+                </a>
+                <button onclick="toggleTheme()"
+                    class="inline-flex items-center justify-center text-sm font-medium border border-line/30 text-ink hover:text-accent transition-colors h-10 px-6 focus:outline-none focus:ring-2 focus:ring-accent"
+                    aria-label="Toggle dark mode">
+                    Theme
+                </button>
+            </div>
+        </div>
+    </aside>
+    {% else %}
+    <header class="w-full bg-page sticky top-0 z-50 border-b border-line/20"
+        style="top: var(--nav-offset-top); left: var(--nav-offset-left);">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="{{ nav_brand.href }}" class="font-display text-lg font-semibold text-ink hover:text-accent transition-colors">
+                {{ nav_brand.label }}
+            </a>
+            <nav class="hidden md:flex gap-6 text-sm font-medium items-center">
+                {% for item in nav_links %}
+                <a href="{{ item.href }}"
+                    class="text-ink hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent">
+                    {{ item.label }}
+                </a>
+                {% endfor %}
+            </nav>
+            <div class="flex items-center gap-4">
+                <button onclick="toggleTheme()"
+                    class="w-10 h-10 flex items-center justify-center text-ink hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent"
+                    aria-label="Toggle dark mode">
+                    <svg class="w-5 h-5 dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                    <svg class="w-5 h-5 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                </button>
+                <a href="{{ nav_cta.href }}"
+                    class="hidden md:inline-flex items-center justify-center text-sm font-medium bg-ink text-page hover:bg-accent hover:text-black transition-all h-10 px-6 focus:outline-none focus:ring-2 focus:ring-accent">
+                    {{ nav_cta.label }}
+                </a>
                 <button id="mobile-menu-toggle"
                     class="md:hidden w-10 h-10 flex items-center justify-center text-ink hover:text-accent transition-colors focus:outline-none"
                     aria-label="Toggle menu"
@@ -205,35 +276,29 @@
                 </button>
             </div>
         </div>
-
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden border-t border-line/20 bg-page">
             <nav class="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-3 text-sm font-medium">
-                <a href="/work" class="text-ink hover:text-accent transition-colors py-2">Work</a>
-                <a href="/about" class="text-ink hover:text-accent transition-colors py-2">About</a>
-                <a href="/agents" class="text-ink hover:text-accent transition-colors py-2">How I Build</a>
-                <a href="/business/automation" class="text-ink hover:text-accent transition-colors py-2">Automation</a>
-                <a href="/business/dashboards" class="text-ink hover:text-accent transition-colors py-2">Dashboards</a>
-                <a href="/training" class="text-ink hover:text-accent transition-colors py-2">Training</a>
-                <a href="/speaking" class="text-ink hover:text-accent transition-colors py-2">Speaking</a>
-                <a href="/blog" class="text-ink hover:text-accent transition-colors py-2">Blog</a>
-                <a href="/contact"
+                {% for item in nav_links %}
+                <a href="{{ item.href }}" class="text-ink hover:text-accent transition-colors py-2">{{ item.label }}</a>
+                {% endfor %}
+                <a href="{{ nav_cta.href }}"
                     class="inline-flex items-center justify-center text-sm font-semibold bg-ink text-page hover:bg-accent hover:text-black transition-all h-10 px-6 mt-2">
-                    Define the Build →
+                    {{ nav_cta.label }}
                 </a>
             </nav>
         </div>
     </header>
+    {% endif %}
 
 
 
     <!-- Main Content -->
-    <main id="app-main" class="flex-grow">
+    <main id="app-main" class="flex-grow {% if is_left_nav %}nav-layout-left-main{% endif %}">
         {% block content %}{% endblock %}
     </main>
 
     <!-- Footer -->
-    <footer class="bg-black text-white border-t border-white/10 mt-20">
+    <footer class="bg-black text-white border-t border-white/10 mt-20 {% if is_left_nav %}nav-layout-left-footer{% endif %}">
         <div class="max-w-6xl mx-auto px-6 py-16">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-12 mb-12">
                 <div>

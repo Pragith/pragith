@@ -16,6 +16,12 @@ class Settings(BaseSettings):
     
     # Theme
     THEME: str = os.getenv("THEME", "default")
+
+    # Navigation Layout
+    NAV_MODE: str = os.getenv("NAV_MODE", "top").lower()  # top | left
+    NAV_OFFSET_TOP: str = os.getenv("NAV_OFFSET_TOP", "0px")
+    NAV_OFFSET_LEFT: str = os.getenv("NAV_OFFSET_LEFT", "0px")
+    NAV_LEFT_WIDTH: str = os.getenv("NAV_LEFT_WIDTH", "280px")
     
     # Email / SMTP
     SMTP_HOST: str = os.getenv("SMTP_HOST", "smtp.gmail.com")

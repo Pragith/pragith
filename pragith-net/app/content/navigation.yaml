@@ -1,0 +1,25 @@
+brand:
+  label: Pragith Prakash
+  href: /
+
+cta:
+  label: Define the Build →
+  href: /contact
+
+links:
+  - label: Work
+    href: /work
+  - label: How I Build
+    href: /agents
+  - label: Automation
+    href: /business/automation
+  - label: Dashboards
+    href: /business/dashboards
+  - label: Training
+    href: /training
+  - label: Speaking
+    href: /speaking
+  - label: Blog
+    href: /blog
+  - label: About
+    href: /about

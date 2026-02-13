@@ -14,6 +14,7 @@ from app.services.mailer import mailer_service
 from app.services.sitemap import sitemap_service
 from app.services.offering_loader import offering_service
 from app.services.marketing_loader import marketing_service
+from app.services.navigation_loader import navigation_service
 from app.services.currency import convert_rate
 
 app = FastAPI(
@@ -70,6 +71,11 @@ templates.env.globals["hotjar_site_id"] = settings.HOTJAR_SITE_ID
 templates.env.globals["clarity_project_id"] = settings.CLARITY_PROJECT_ID
 templates.env.globals["recaptcha_site_key"] = settings.RECAPTCHA_SITE_KEY
 templates.env.globals["marketing_config"] = marketing_service.get_client_config()
+templates.env.globals["navigation_config"] = navigation_service.get_client_config()
+templates.env.globals["nav_mode"] = settings.NAV_MODE
+templates.env.globals["nav_offset_top"] = settings.NAV_OFFSET_TOP
+templates.env.globals["nav_offset_left"] = settings.NAV_OFFSET_LEFT
+templates.env.globals["nav_left_width"] = settings.NAV_LEFT_WIDTH
 
 # Context Processor for common variables
 @app.middleware("http")

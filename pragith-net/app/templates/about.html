@@ -7,71 +7,68 @@
 
 {% block content %}
 <section class="border-b border-line/20" data-panel-title="About">
-    <div class="max-w-6xl mx-auto px-6 py-16 sm:py-20">
-        <div class="grid lg:grid-cols-12 gap-6">
-            <div class="lg:col-span-8 border border-line/30 bg-page p-6 sm:p-8">
-                <p class="text-[10px] font-bold uppercase tracking-widest text-accent mb-3">About</p>
-                <h1 class="font-display text-4xl sm:text-5xl font-bold tracking-tight text-ink mb-3">Pragith Prakash</h1>
-                <p class="text-base sm:text-lg text-ink/80 mb-5">Data Educator, Adjunct Professor, Gamer, Father</p>
-                <p class="text-sm sm:text-base text-ink/75 leading-relaxed mb-4">
-                    <a href="https://en.wikipedia.org/wiki/Critical_thinking" target="_blank" rel="noopener noreferrer" class="underline hover:text-accent transition-colors">Critical thinker</a>.
-                    I work at the intersection of data systems, cloud engineering, and applied AI.
-                    I enjoy teaching, building, and speaking across technical and operational topics.
-                </p>
-                <p class="text-sm text-ink/70"><span class="font-semibold text-ink">Birthday:</span> 25 June</p>
+    <div class="max-w-6xl mx-auto px-6 py-14 sm:py-16">
+        <div class="border border-line/30 bg-page p-6 sm:p-8">
+            <p class="text-[10px] font-bold uppercase tracking-widest text-accent mb-3">About</p>
+            <h1 class="font-display text-4xl sm:text-5xl font-bold tracking-tight text-ink mb-2">Pragith Prakash</h1>
+            <p class="text-base sm:text-lg text-ink/80 mb-5">Data Educator, Adjunct Professor, Gamer, Father</p>
+            <p class="text-sm sm:text-base text-ink/75 leading-relaxed max-w-4xl">
+                <a href="https://en.wikipedia.org/wiki/Critical_thinking" target="_blank" rel="noopener noreferrer" class="underline hover:text-accent transition-colors">Critical thinker</a>.
+                Data and cloud educator. I build systems, teach engineering patterns, and speak on practical execution.
+            </p>
+            <p class="text-sm text-ink/70 mt-4"><span class="font-semibold text-ink">Birthday:</span> 25 June</p>
+        </div>
+    </div>
+</section>
+
+<section class="border-b border-line/20 bg-surface/30" data-panel-title="Interests">
+    <div class="max-w-6xl mx-auto px-6 py-10">
+        <h2 class="font-display text-2xl font-bold tracking-tight text-ink mb-4">Interests</h2>
+        <div class="flex flex-wrap gap-2 text-xs text-ink/80">
+            {% set interests = [
+            "Astronomy", "Card Magic", "Cubing (Rubik's)", "Data Engineering", "Data Science", "DevOps",
+            "Driving", "Education", "Gadgets", "PC and Console Gaming", "Photography", "Puzzles (HackThisSite-style)",
+            "Python", "R", "Scripting"
+            ] %}
+            {% for interest in interests %}
+            <span class="px-2.5 py-1 border border-line/30 bg-page">{{ interest }}</span>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="border-b border-line/20" data-panel-title="Profiles">
+    <div class="max-w-6xl mx-auto px-6 py-10">
+        <div class="grid md:grid-cols-2 gap-4">
+            <div class="border border-line/30 bg-page p-5">
+                <h3 class="font-display text-xl font-bold tracking-tight text-ink mb-3">Social</h3>
+                <ul class="space-y-2 text-sm text-ink/75">
+                    <li><a href="https://github.com/pragith" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors underline">GitHub</a></li>
+                    <li><a href="https://facebook.com/crabbie" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors underline">Facebook</a></li>
+                    <li><a href="https://linkedin.com/in/Pragith" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors underline">LinkedIn</a></li>
+                </ul>
             </div>
 
-            <div class="lg:col-span-4 border border-line/30 bg-surface/30 p-6 sm:p-8">
-                <h2 class="font-display text-2xl font-bold tracking-tight text-ink mb-4">Interests</h2>
-                <div class="flex flex-wrap gap-2 text-xs text-ink/80">
-                    {% set interests = [
-                    "Astronomy", "Card Magic", "Cubing", "Data Engineering", "Data Science", "DevOps",
-                    "Driving", "Education", "Gadgets", "PC and Console Gaming", "Photography", "Puzzles",
-                    "Python", "R", "Scripting"
-                    ] %}
-                    {% for interest in interests %}
-                    <span class="px-2.5 py-1 border border-line/30 bg-page">{{ interest }}</span>
-                    {% endfor %}
-                </div>
+            <div class="border border-line/30 bg-page p-5">
+                <h3 class="font-display text-xl font-bold tracking-tight text-ink mb-3">Photography</h3>
+                <ul class="space-y-2 text-sm text-ink/75">
+                    <li><a href="https://flickr.com/pragith" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors underline">Flickr</a></li>
+                    <li><a href="https://500px.com/pragith" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors underline">500px</a></li>
+                </ul>
             </div>
         </div>
     </div>
 </section>
 
-<section class="border-b border-line/20" data-panel-title="Links">
-    <div class="max-w-6xl mx-auto px-6 py-12">
-        <div class="grid md:grid-cols-2 gap-6">
-            <div class="border border-line/30 bg-page p-6">
-                <h3 class="font-display text-2xl font-bold tracking-tight text-ink mb-4">Social</h3>
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-sm">
-                    <a href="https://github.com/pragith" target="_blank" rel="noopener noreferrer" class="border border-line/30 px-3 py-2 hover:bg-accent hover:text-black transition-colors text-center">GitHub</a>
-                    <a href="https://facebook.com/crabbie" target="_blank" rel="noopener noreferrer" class="border border-line/30 px-3 py-2 hover:bg-accent hover:text-black transition-colors text-center">Facebook</a>
-                    <a href="https://linkedin.com/in/Pragith" target="_blank" rel="noopener noreferrer" class="border border-line/30 px-3 py-2 hover:bg-accent hover:text-black transition-colors text-center">LinkedIn</a>
-                </div>
-            </div>
-
-            <div class="border border-line/30 bg-page p-6">
-                <h3 class="font-display text-2xl font-bold tracking-tight text-ink mb-4">Photography</h3>
-                <div class="grid grid-cols-2 gap-2 text-sm">
-                    <a href="https://flickr.com/pragith" target="_blank" rel="noopener noreferrer" class="border border-line/30 px-3 py-2 hover:bg-accent hover:text-black transition-colors text-center">Flickr</a>
-                    <a href="https://500px.com/pragith" target="_blank" rel="noopener noreferrer" class="border border-line/30 px-3 py-2 hover:bg-accent hover:text-black transition-colors text-center">500px</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="border-b border-line/20 bg-surface/30" data-panel-title="Favorites">
-    <div class="max-w-6xl mx-auto px-6 py-12">
-        <div class="mb-6">
-            <h2 class="font-display text-3xl font-bold tracking-tight text-ink">Favorites</h2>
-        </div>
+<section class="border-b border-line/20" data-panel-title="Favorites">
+    <div class="max-w-6xl mx-auto px-6 py-10">
+        <h2 class="font-display text-2xl font-bold tracking-tight text-ink mb-4">Favorites</h2>
 
         {% set favorites = [
         ["Game", "Portal, Team Fortress 2, Overwatch"],
         ["Movie", "Andaaz Apna Apna, Primer"],
         ["Song", "Riders on the Storm, Alaipayuthe"],
-        ["Show", "Friends, Blackadder, The Big Bang Theory, QI, Black Mirror"],
+        ["Show", "Friends, Blackadder, The Big Bang Theory, QI, Black Mirror and more"],
         ["Genre", "Dry/Sarcasm, Comedy, Thriller, Psych, Mystery"],
         ["Actor", "Hugh Laurie, Rowan Atkinson, Stephen Fry"],
         ["Character", "Blackadder, Sherlock Holmes, Jeeves"],
@@ -84,20 +81,17 @@
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {% for fav in favorites %}
-            <details class="border border-line/30 bg-page p-4" {% if loop.index <= 3 %}open{% endif %}>
-                <summary class="cursor-pointer list-none flex items-center justify-between gap-3">
-                    <span class="text-sm font-semibold text-ink">{{ fav[0] }}</span>
-                    <span class="text-ink/40 text-xs">Open</span>
-                </summary>
-                <p class="text-sm text-ink/75 mt-3 leading-relaxed">{{ fav[1] }}</p>
-            </details>
+            <div class="border border-line/30 bg-page p-4">
+                <p class="text-[10px] font-bold uppercase tracking-widest text-accent mb-2">{{ fav[0] }}</p>
+                <p class="text-sm text-ink/75 leading-relaxed">{{ fav[1] }}</p>
+            </div>
             {% endfor %}
         </div>
     </div>
 </section>
 
 <section class="bg-black text-white border-t border-white/10" data-panel-title="Quote">
-    <div class="max-w-6xl mx-auto px-6 py-12">
+    <div class="max-w-6xl mx-auto px-6 py-10">
         <p class="text-[10px] font-bold uppercase tracking-widest text-accent mb-2">Phrase</p>
         <blockquote class="text-base sm:text-lg leading-relaxed text-white/85 max-w-4xl">
             Absolute certainty is a privilege of uneducated minds and fanatics. It is, for scientific folk, an unattainable ideal.
