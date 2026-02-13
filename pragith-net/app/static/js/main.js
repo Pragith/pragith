@@ -3,6 +3,19 @@ function toggleMobileMenu() {
     document.getElementById('mobile-menu').classList.toggle('hidden');
 }
 
+// Content protection: disable common copy/select interactions globally.
+document.addEventListener('copy', function (e) { e.preventDefault(); }, true);
+document.addEventListener('cut', function (e) { e.preventDefault(); }, true);
+document.addEventListener('contextmenu', function (e) { e.preventDefault(); }, true);
+document.addEventListener('selectstart', function (e) { e.preventDefault(); }, true);
+document.addEventListener('dragstart', function (e) { e.preventDefault(); }, true);
+document.addEventListener('keydown', function (e) {
+    const key = (e.key || '').toLowerCase();
+    if ((e.ctrlKey || e.metaKey) && (key === 'c' || key === 'x' || key === 'a' || key === 's' || key === 'u' || key === 'p')) {
+        e.preventDefault();
+    }
+}, true);
+
 // Theme toggle
 function toggleTheme() {
     var d = document.documentElement.classList;

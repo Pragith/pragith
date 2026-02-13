@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block title %}AI & Data Engineering Bootcamps | Pragith Prakash{% endblock %}
+{% block description %}Advanced AI Infrastructure, Data Engineering, and Cloud Architecture bootcamps for serious
+engineers and technical founders.{% endblock %}
+
+{% block content %}
+
+<section class="border-b border-line/20">
+    <div class="max-w-6xl mx-auto px-6 py-28">
+        <h1 class="font-display text-5xl font-bold text-ink mb-6">
+            Advanced AI & Data Bootcamps
+        </h1>
+        <p class="text-xl text-ink/70 max-w-4xl">
+            Intensive, architecture-first technical training for engineers who want production-level clarity.
+        </p>
+    </div>
+</section>
+
+<section class="py-24 border-b border-line/20 bg-surface/30">
+    <div class="max-w-6xl mx-auto px-6">
+
+        <h2 class="font-display text-3xl font-bold mb-12">Bootcamp Tracks</h2>
+
+        <div class="grid md:grid-cols-2 gap-10">
+
+            <div class="p-8 border border-line/20 bg-page hover:border-accent transition-colors">
+                <h3 class="font-bold text-xl mb-4 text-ink">LLM Systems & RAG Engineering</h3>
+                <p class="text-sm text-ink/70 leading-relaxed">
+                    End-to-end production RAG systems, vector databases, evaluation, cost modeling.
+                </p>
+            </div>
+
+            <div class="p-8 border border-line/20 bg-page hover:border-accent transition-colors">
+                <h3 class="font-bold text-xl mb-4 text-ink">Modern Data Platform Architecture</h3>
+                <p class="text-sm text-ink/70 leading-relaxed">
+                    Lakehouse patterns, streaming systems, reliability engineering.
+                </p>
+            </div>
+
+            <div class="p-8 border border-line/20 bg-page hover:border-accent transition-colors">
+                <h3 class="font-bold text-xl mb-4 text-ink">Kubernetes for AI Workloads</h3>
+                <p class="text-sm text-ink/70 leading-relaxed">
+                    Scaling inference, workload isolation, GPU orchestration patterns.
+                </p>
+            </div>
+
+            <div class="p-8 border border-line/20 bg-page hover:border-accent transition-colors">
+                <h3 class="font-bold text-xl mb-4 text-ink">MLOps & Production Rollouts</h3>
+                <p class="text-sm text-ink/70 leading-relaxed">
+                    CI/CD for ML, monitoring drift, canary deployments, governance.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="bg-black text-white">
+    <div class="max-w-6xl mx-auto px-6 py-24 text-center">
+        <h2 class="font-display text-4xl font-bold mb-6">
+            Upcoming Cohorts
+        </h2>
+        <p class="text-white/70 mb-8 max-w-2xl mx-auto">
+            Limited seats. Live interactive sessions. Practical system breakdowns.
+        </p>
+        <a href="/contact?project_type=Training"
+            class="inline-flex items-center justify-center text-lg font-semibold bg-accent text-black hover:bg-white transition-all h-14 px-10 rounded-sm">
+            Join Interest List
+        </a>
+    </div>
+</section>
+
+{% endblock %}

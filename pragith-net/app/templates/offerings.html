@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block title %}Offerings Catalog | Pragith Prakash{% endblock %}
-{% block description %}Catalog-ready offerings with simple unique links for direct checkout and messaging channels.{% endblock %}
+{% block description %}Catalog-ready offerings with simple unique links for direct checkout and messaging channels.{%
+endblock %}
 {% block extra_head %}
 <link rel="canonical" href="https://pragith.net/offerings">
 {% endblock %}
@@ -19,35 +20,32 @@
 
 <section class="py-16">
     <div class="max-w-6xl mx-auto px-6">
-        <div class="grid gap-6">
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {% for offering in offerings %}
-            <article class="border border-line/30 bg-page p-6">
-                <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
-                    <h2 class="font-display text-2xl font-bold text-ink">{{ offering.title }}</h2>
-                    <a href="/packages/{{ offering.slug }}"
-                        class="inline-flex items-center justify-center text-xs font-semibold bg-ink text-page hover:bg-accent hover:text-black transition-all h-9 px-4">
-                        Open Link
+            {% if offering.public %}
+            <article class="flex flex-col border border-line/30 bg-page p-8 hover:border-accent transition-colors">
+                <div class="flex-grow">
+                    <h3 class="font-display text-2xl font-bold text-ink mb-2">
+                        <a href="/offerings/{{ offering.slug }}" class="hover:text-accent transition-colors">{{
+                            offering.title }}</a>
+                    </h3>
+                    <p class="text-sm text-ink/70 mb-6">{{ offering.target_client }}</p>
+
+                    <div class="space-y-4 text-sm text-ink/80">
+                        <div>
+                            <div class="text-ink/50 uppercase tracking-wide mb-1">Outcome</div>
+                            <div>{{ offering.outcome }}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 pt-6 border-t border-line/10">
+                    <a href="/offerings/{{ offering.slug }}"
+                        class="text-sm font-semibold text-accent hover:text-ink transition-colors">
+                        View Details →
                     </a>
                 </div>
-                <div class="grid sm:grid-cols-3 gap-4 text-sm">
-                    <div>
-                        <div class="text-ink/50 uppercase tracking-wide mb-1">Target Client</div>
-                        <div class="text-ink/80">{{ offering.target_client }}</div>
-                    </div>
-                    <div>
-                        <div class="text-ink/50 uppercase tracking-wide mb-1">Estimated Hours</div>
-                        <div class="text-ink/80">{{ offering.estimated_hours }}</div>
-                    </div>
-                    <div>
-                        <div class="text-ink/50 uppercase tracking-wide mb-1">Short Link</div>
-                        <a href="/packages/{{ offering.slug }}" class="text-accent hover:underline">pragith.net/packages/{{ offering.slug }}</a>
-                    </div>
-                </div>
-                <div class="mt-4 border-t border-line/20 pt-4">
-                    <div class="text-ink/50 uppercase tracking-wide text-sm mb-1">Outcome</div>
-                    <div class="text-ink/80 text-sm">{{ offering.outcome }}</div>
-                </div>
             </article>
+            {% endif %}
             {% endfor %}
         </div>
     </div>

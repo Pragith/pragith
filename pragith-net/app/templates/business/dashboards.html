@@ -49,11 +49,11 @@ businesses.{% endblock %}
                 class="flex flex-wrap gap-6 items-center text-sm font-medium text-ink/60 mb-10 animate-fade-in animate-delay-400">
                 <span class="flex items-center gap-2">
                     <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
-                    Typical engagement: 30–50 hours
+                    Delivered within a defined 2–4 week implementation window
                 </span>
                 <span class="flex items-center gap-2">
                     <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
-                    Delivered in 2–4 weeks
+                    Fixed scope
                 </span>
                 <span class="flex items-center gap-2">
                     <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
@@ -61,11 +61,26 @@ businesses.{% endblock %}
                 </span>
             </div>
 
-            <div class="flex flex-wrap gap-4 animate-fade-in animate-delay-500">
+            <div class="flex flex-wrap gap-4 animate-fade-in animate-delay-500 mb-12">
                 <a href="/contact"
                     class="inline-flex items-center justify-center text-sm font-semibold bg-ink text-page hover:bg-accent hover:text-black transition-all h-12 px-8">
                     Define the Dashboard Build →
                 </a>
+                <a href="https://dashboards.pragith.net" target="_blank" rel="noopener noreferrer"
+                    class="inline-flex items-center justify-center text-sm font-semibold border border-line bg-page hover:bg-surface transition-all h-12 px-8">
+                    Open Live Demo ↗
+                </a>
+            </div>
+
+            <div class="mb-12 border border-line/30 bg-surface/30 p-5 text-sm text-ink/70">
+                <p class="font-semibold text-ink mb-1">Superset Demo Environment</p>
+                <p>Demo dashboard access is provisioned after contact form submission. Demo login instructions are sent by email.</p>
+            </div>
+
+            <div class="animate-fade-in animate-delay-500">
+                <img src="{{ url_for('static', path='img/offering-dashboard.jpeg') }}"
+                    alt="Executive KPI Dashboard Interface"
+                    class="w-full h-auto border border-line/20 shadow-lg grayscale hover:grayscale-0 transition-all duration-500">
             </div>
         </div>
     </div>
@@ -137,16 +152,20 @@ businesses.{% endblock %}
         <div class="mb-16">
             <h2 class="font-display text-4xl font-bold tracking-tight text-ink mb-4">Executive KPI Dashboard</h2>
             <div class="w-20 h-1 bg-accent mb-4"></div>
-            <p class="text-ink/60">Defined scope. 20–50 hour effort range. 2–4 week delivery window.</p>
+            <p class="text-ink/60">Defined scope. Structured delivery cycles.</p>
         </div>
 
         <div class="border-2 border-line/20 p-8 bg-page">
             <h3 class="font-display text-2xl font-bold text-ink mb-4">Real-time revenue and operational visibility</h3>
             <ul class="space-y-2 text-ink/70 text-sm mb-6">
-                <li class="flex items-center gap-2"><span class="w-1 h-1 bg-ink/40 rounded-full"></span> Live revenue and pipeline metrics</li>
-                <li class="flex items-center gap-2"><span class="w-1 h-1 bg-ink/40 rounded-full"></span> Automated refresh without manual spreadsheet work</li>
-                <li class="flex items-center gap-2"><span class="w-1 h-1 bg-ink/40 rounded-full"></span> Mobile-ready executive KPI visibility</li>
-                <li class="flex items-center gap-2"><span class="w-1 h-1 bg-ink/40 rounded-full"></span> Defined handover with documentation</li>
+                <li class="flex items-center gap-2"><span class="w-1 h-1 bg-ink/40 rounded-full"></span> Live revenue
+                    and pipeline metrics</li>
+                <li class="flex items-center gap-2"><span class="w-1 h-1 bg-ink/40 rounded-full"></span> Automated
+                    refresh without manual spreadsheet work</li>
+                <li class="flex items-center gap-2"><span class="w-1 h-1 bg-ink/40 rounded-full"></span> Mobile-ready
+                    executive KPI visibility</li>
+                <li class="flex items-center gap-2"><span class="w-1 h-1 bg-ink/40 rounded-full"></span> Defined
+                    handover with documentation</li>
             </ul>
             <p class="text-xs uppercase tracking-wide text-ink/50">Fixed-scope engagement. Dedicated project focus.</p>
         </div>

@@ -40,12 +40,12 @@ class SecurityHeadersMiddleware(BaseHTTPMiddleware):
         response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
         response.headers["Content-Security-Policy"] = (
             "default-src 'self'; "
-            "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google.com https://www.gstatic.com https://static.hotjar.com https://script.hotjar.com https://t.contentsquare.net; "
+            "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google.com https://www.gstatic.com https://static.hotjar.com https://script.hotjar.com https://t.contentsquare.net https://www.clarity.ms; "
             "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
             "font-src 'self' https://fonts.gstatic.com; "
-            "img-src 'self' data: https://*.hotjar.com https://*.contentsquare.net; "
+            "img-src 'self' data: https://*.hotjar.com https://*.contentsquare.net https://www.clarity.ms https://c.clarity.ms; "
             "frame-src https://www.google.com https://calendly.com; "
-            "connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://*.hotjar.com wss://*.hotjar.com https://*.contentsquare.net"
+            "connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://*.hotjar.com wss://*.hotjar.com https://*.contentsquare.net https://www.clarity.ms https://c.clarity.ms"
         )
         return response
 
@@ -67,8 +67,7 @@ templates.env.globals["theme"] = theme_service
 templates.env.globals["show_products"] = settings.SHOW_PRODUCTS
 templates.env.globals["ga_tag"] = settings.GA_TAG
 templates.env.globals["hotjar_site_id"] = settings.HOTJAR_SITE_ID
-templates.env.globals["hotjar_version"] = settings.HOTJAR_VERSION
-templates.env.globals["contentsquare_script_url"] = settings.CONTENTSQUARE_SCRIPT_URL
+templates.env.globals["clarity_project_id"] = settings.CLARITY_PROJECT_ID
 templates.env.globals["recaptcha_site_key"] = settings.RECAPTCHA_SITE_KEY
 templates.env.globals["marketing_config"] = marketing_service.get_client_config()
 
@@ -424,6 +423,18 @@ async def offering_short_redirect(slug: str):
 @app.get("/training", response_class=HTMLResponse)
 async def training(request: Request):
     return templates.TemplateResponse("training.html", {"request": request})
+
+@app.get("/training/corporate", response_class=HTMLResponse)
+async def training_corporate(request: Request):
+    return templates.TemplateResponse("training/corporate.html", {"request": request})
+
+@app.get("/training/bootcamps", response_class=HTMLResponse)
+async def training_bootcamps(request: Request):
+    return templates.TemplateResponse("training/bootcamps.html", {"request": request})
+
+@app.get("/speaking", response_class=HTMLResponse)
+async def speaking(request: Request):
+    return templates.TemplateResponse("speaking.html", {"request": request})
 
 # Error Handlers
 @app.exception_handler(404)

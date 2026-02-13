@@ -13,6 +13,11 @@ class Offering:
     outcome: str
     estimated_hours: str
     base_hours: int
+    price_usd_min: int
+    price_usd_max: int
+    price_usd_high_min: int
+    price_usd_high_max: int
+    public: bool
 
 
 class OfferingService:
@@ -35,6 +40,11 @@ class OfferingService:
                     outcome=str(item.get("outcome", "")).strip(),
                     estimated_hours=str(item.get("estimated_hours", "")).strip(),
                     base_hours=int(item.get("base_hours", 30)),
+                    price_usd_min=int(item.get("price_usd_min", 0)),
+                    price_usd_max=int(item.get("price_usd_max", 0)),
+                    price_usd_high_min=int(item.get("price_usd_high_min", 0)),
+                    price_usd_high_max=int(item.get("price_usd_high_max", 0)),
+                    public=item.get("public", True),
                 )
             )
         return offerings

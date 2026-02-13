@@ -1,77 +1,44 @@
 offerings:
-  - slug: ai-audit
-    title: AI Readiness Audit
-    target_client: SMEs
-    outcome: AI adoption roadmap with prioritized automation plan
-    estimated_hours: 15-20 hours
-    base_hours: 18
-
-  - slug: wa-agent
-    title: WhatsApp AI Agent Setup
+  - slug: lead-whatsapp-automation
+    title: Lead and WhatsApp Automation
     target_client: Clinics, salons, consultants
-    outcome: Automated lead capture and appointment booking
-    estimated_hours: 30-40 hours
+    outcome: Automated lead capture, WhatsApp routing, CRM sync, and structured follow-up
+    estimated_hours: Defined 2-4 week build window
     base_hours: 34
+    price_usd_min: 3500
+    price_usd_max: 5000
+    price_usd_high_min: 5000
+    price_usd_high_max: 7500
 
-  - slug: clinic-booking
-    title: Appointment and Clinic Booking Automation
+  - slug: booking-automation
+    title: 24/7 Booking Automation
     target_client: Medical, dental, physio, wellness
-    outcome: 24/7 booking, reminders, and rescheduling
-    estimated_hours: 30-45 hours
+    outcome: Booking system, calendar sync, reminder flows, and basic routing logic
+    estimated_hours: Defined 2-4 week build window
     base_hours: 38
+    price_usd_min: 4000
+    price_usd_max: 5500
+    price_usd_high_min: 5500
+    price_usd_high_max: 8000
 
-  - slug: voice-receptionist
-    title: Voice AI Receptionist
+  - slug: ai-voice-receptionist
+    title: AI Voice Receptionist
     target_client: Clinics, real estate, service businesses
-    outcome: AI call answering, booking, and call logging
-    estimated_hours: 40-50 hours
+    outcome: Call answering, booking via voice, inquiry routing, and CRM logging
+    estimated_hours: Defined 2-4 week premium build window
     base_hours: 46
+    price_usd_min: 5000
+    price_usd_max: 7000
+    price_usd_high_min: 7000
+    price_usd_high_max: 10000
 
-  - slug: crm-wa-sync
-    title: CRM and WhatsApp Integration
-    target_client: Sales-driven SMEs
-    outcome: Automated lead capture and CRM pipeline sync
-    estimated_hours: 25-35 hours
-    base_hours: 30
-
-  - slug: kpi-dashboard
-    title: Analytics Dashboard Setup
+  - slug: executive-kpi-dashboard
+    title: Executive KPI Dashboard
     target_client: SMBs, marketing teams
-    outcome: Executive KPI dashboard with automated refresh
-    estimated_hours: 30-40 hours
+    outcome: Revenue tracking, pipeline visibility, and operational performance
+    estimated_hours: Defined 2-4 week build window
     base_hours: 35
-
-  - slug: cloud-setup
-    title: Cloud Infrastructure Setup
-    target_client: Growing startups, SMEs
-    outcome: Production-ready cloud architecture with CI/CD
-    estimated_hours: 35-50 hours
-    base_hours: 42
-
-  - slug: data-pipeline
-    title: Data Pipeline Build
-    target_client: Data-driven companies
-    outcome: Automated ingestion, transformation, and storage
-    estimated_hours: 35-50 hours
-    base_hours: 42
-
-  - slug: clinic-suite
-    title: Clinic Automation Package
-    target_client: Healthcare businesses
-    outcome: Booking, voice AI, reminders, and dashboard in one system
-    estimated_hours: 50-60 hours
-    base_hours: 55
-
-  - slug: real-estate-leads
-    title: Real Estate Lead Automation
-    target_client: Real estate agencies
-    outcome: WhatsApp lead capture, viewing booking, and CRM sync
-    estimated_hours: 35-45 hours
-    base_hours: 40
-
-  - slug: custom-ai-agent
-    title: Custom AI Agent Build
-    target_client: SMEs, enterprises
-    outcome: Tailored AI agent for sales, operations, or analytics
-    estimated_hours: 40-60 hours
-    base_hours: 50
+    price_usd_min: 4000
+    price_usd_max: 6000
+    price_usd_high_min: 6000
+    price_usd_high_max: 9000

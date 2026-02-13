@@ -42,8 +42,8 @@
                 <div class="text-lg text-ink">{{ offering.target_client }}</div>
             </div>
             <div class="border border-line/30 bg-page p-6">
-                <div class="text-xs text-ink/50 uppercase tracking-wide mb-2">Estimated Delivery Effort</div>
-                <div class="text-lg text-ink">{{ offering.estimated_hours }}</div>
+                <div class="text-xs text-ink/50 uppercase tracking-wide mb-2">Scope</div>
+                <div class="text-lg text-ink">Fixed-scope implementation</div>
             </div>
         </div>
 
@@ -51,6 +51,16 @@
             <div class="text-xs text-ink/50 uppercase tracking-wide mb-2">Direct Link</div>
             <div class="font-mono text-sm text-ink">https://pragith.net/packages/{{ offering.slug }}</div>
         </div>
+
+        {% if offering.slug == "executive-kpi-dashboard" %}
+        <div class="mt-6 border border-line/30 bg-surface/30 p-6">
+            <div class="text-xs text-ink/50 uppercase tracking-wide mb-2">Live Demo</div>
+            <p class="text-sm text-ink/70 mb-2">
+                Demo environment: <a href="https://dashboards.pragith.net" target="_blank" rel="noopener noreferrer" class="underline hover:text-accent">dashboards.pragith.net</a>
+            </p>
+            <p class="text-sm text-ink/60">Demo login instructions are sent by email after inquiry submission.</p>
+        </div>
+        {% endif %}
 
         <div class="mt-8 flex flex-wrap gap-4">
             <a href="/contact"

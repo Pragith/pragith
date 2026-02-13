@@ -4,6 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        html,
+        body,
+        * {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-touch-callout: none;
+        }
+    </style>
     <title>{% block title %}Structured Automation & AI Systems · Rapid Delivery | Pragith Prakash{% endblock %}
     </title>
     <meta name="description"
@@ -76,19 +87,29 @@
     <script>
         (function (h, o, t, j, a, r) {
             h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments); };
-            h._hjSettings = { hjid: {{ hotjar_site_id }}, hjsv: {{ hotjar_version }} };
-            a = o.getElementsByTagName('head')[0];
-            r = o.createElement('script'); r.async = 1;
-            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+            h._hjSettings = { hjid: {{ hotjar_site_id }
+        }, hjsv: 6 };
+        a = o.getElementsByTagName('head')[0];
+        r = o.createElement('script'); r.async = 1;
+        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+        a.appendChild(r);
+        }) (window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
     </script>
     {% endif %}
 
-    {% if contentsquare_script_url %}
-    <!-- ContentSquare -->
-    <script src="{{ contentsquare_script_url }}" defer></script>
+    {% if clarity_project_id %}
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "{{ clarity_project_id }}");
+    </script>
     {% endif %}
+
+    <!-- ContentSquare -->
+    <script src="https://t.contentsquare.net/uxa/2b750a2633c1e.js"></script>
 
     {% block extra_head %}{% endblock %}
 
@@ -141,6 +162,8 @@
 
                 <a href="/training"
                     class="text-ink hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent">Training</a>
+                <a href="/speaking"
+                    class="text-ink hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent">Speaking</a>
 
                 <a href="/blog"
                     class="text-ink hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent">Blog</a>
@@ -190,6 +213,7 @@
                 <a href="/business/automation" class="text-ink hover:text-accent transition-colors py-2">Automation</a>
                 <a href="/business/dashboards" class="text-ink hover:text-accent transition-colors py-2">Dashboards</a>
                 <a href="/training" class="text-ink hover:text-accent transition-colors py-2">Training</a>
+                <a href="/speaking" class="text-ink hover:text-accent transition-colors py-2">Speaking</a>
                 <a href="/blog" class="text-ink hover:text-accent transition-colors py-2">Blog</a>
                 <a href="/contact"
                     class="inline-flex items-center justify-center text-sm font-semibold bg-ink text-page hover:bg-accent hover:text-black transition-all h-10 px-6 mt-2">
@@ -222,9 +246,12 @@
                     <h3 class="text-sm font-semibold mb-4 text-accent">Services</h3>
                     <ul class="space-y-3 text-sm text-white/60">
                         <li><a href="/agents" class="hover:text-white transition-colors">How I Build</a></li>
-                        <li><a href="/business/automation" class="hover:text-white transition-colors">Automation</a></li>
-                        <li><a href="/business/dashboards" class="hover:text-white transition-colors">Dashboards</a></li>
+                        <li><a href="/business/automation" class="hover:text-white transition-colors">Automation</a>
+                        </li>
+                        <li><a href="/business/dashboards" class="hover:text-white transition-colors">Dashboards</a>
+                        </li>
                         <li><a href="/training" class="hover:text-white transition-colors">Training</a></li>
+                        <li><a href="/speaking" class="hover:text-white transition-colors">Speaking</a></li>
                         <li><a href="/contact" class="hover:text-white transition-colors">Contact</a></li>
                     </ul>
                 </div>
@@ -259,11 +286,6 @@
     <script src="/static/js/main.js" defer></script>
     <script>
         window.appMarketing = {{ marketing_config | tojson }};
-        window.appAnalytics = {
-            ga_tag: {{ ga_tag | tojson }},
-            hotjar_site_id: {{ hotjar_site_id | tojson }},
-            hotjar_version: {{ hotjar_version | tojson }}
-        };
     </script>
 </body>
 

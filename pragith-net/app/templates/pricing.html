@@ -1,6 +1,7 @@
 {% extends "base.html" %}
-{% block title %}Pricing Calculator | Pragith Prakash{% endblock %}
-{% block description %}Interactive pricing calculator with scoped levers and side-by-side market pricing versus your rate.{% endblock %}
+{% block title %}Investment Estimator | Pragith Prakash{% endblock %}
+{% block description %}Estimate investment for structured AI automation builds based on scope and complexity.{% endblock
+%}
 {% block extra_head %}
 <link rel="canonical" href="https://pragith.net/pricing">
 {% endblock %}
@@ -9,108 +10,110 @@
 <section class="border-b border-line/20">
     <div class="max-w-6xl mx-auto px-6 py-20">
         <div class="max-w-4xl">
-            <h1 class="font-display text-5xl sm:text-6xl font-bold tracking-tight text-ink mb-4">Pricing Calculator</h1>
+            <h1 class="font-display text-5xl sm:text-6xl font-bold tracking-tight text-ink mb-4">Investment Estimator
+            </h1>
             <p class="text-lg text-ink/70 leading-relaxed">
-                Estimate project effort based on scope complexity and operational constraints.
-                Compare market-typical pricing with your delivery model.
+                Estimate project investment based on scope, complexity, and integration depth.
+                <br>Investments are outcome-based, not hourly.
             </p>
         </div>
     </div>
 </section>
 
-<section class="py-16">
-    <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-5 gap-8">
-        <div class="lg:col-span-3 space-y-6">
-            <div class="border border-line/30 bg-page p-6">
-                <label for="projectType" class="block text-sm font-semibold text-ink mb-2">Offering Type</label>
-                <select id="projectType" class="w-full border border-line/30 bg-page text-ink p-3">
-                    {% for offering in offerings %}
-                    <option value="{{ offering.slug }}">{{ offering.title }}</option>
-                    {% endfor %}
-                </select>
+<section class="py-20 bg-page">
+    <div class="max-w-4xl mx-auto px-6">
+        <div class="border border-line/30 bg-white p-8 sm:p-12 shadow-sm">
+            <h2 class="font-display text-3xl font-bold text-ink mb-8">Build Estimator</h2>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="md:col-span-2">
+                    <label for="offeringSelect" class="block text-sm font-semibold text-ink mb-3">Service Focus</label>
+                    <select id="offeringSelect" class="w-full border border-line/30 bg-page text-ink p-4 text-lg">
+                        <option value="" disabled selected>Select a build type...</option>
+                        {% for offering in offerings %}
+                        {% if offering.public and offering.price_usd_min > 0 %}
+                        <option value="{{ offering.slug }}" data-min="{{ offering.price_usd_min }}"
+                            data-max="{{ offering.price_usd_max }}" data-high-min="{{ offering.price_usd_high_min }}"
+                            data-high-max="{{ offering.price_usd_high_max }}">
+                            {{ offering.title }}
+                        </option>
+                        {% endif %}
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div>
+                    <label for="complexitySelect" class="block text-sm font-semibold text-ink mb-3">Operational
+                        Complexity</label>
+                    <select id="complexitySelect" class="w-full border border-line/30 bg-page text-ink p-4 text-lg">
+                        <option value="standard">Standard Implementation</option>
+                        <option value="high">Multi-location / High Volume</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="integrationSelect" class="block text-sm font-semibold text-ink mb-3">System Integration
+                        Level</label>
+                    <select id="integrationSelect" class="w-full border border-line/30 bg-page text-ink p-4 text-lg">
+                        <option value="standard">Standalone / Single Source</option>
+                        <option value="high">Multi-System Sync / Deep CRM</option>
+                    </select>
+                </div>
             </div>
 
-            <div class="border border-line/30 bg-page p-6">
-                <label for="complexity" class="block text-sm font-semibold text-ink mb-2">Complexity Level</label>
-                <select id="complexity" class="w-full border border-line/30 bg-page text-ink p-3">
-                    <option value="1.0">Standard implementation</option>
-                    <option value="1.2">Advanced integrations and logic</option>
-                    <option value="1.45">Enterprise controls and compliance</option>
-                </select>
+            <div id="resultContainer" class="hidden text-center border-t border-line/10 pt-10 animate-fade-in">
+                <div class="text-xs font-bold text-accent uppercase tracking-wider mb-3">Estimated Investment Range
+                </div>
+                <div class="font-display text-5xl sm:text-6xl font-bold text-ink mb-6">
+                    <span id="priceMin">-</span> – <span id="priceMax">-</span>
+                    <span class="text-2xl text-ink/40 font-normal">USD</span>
+                </div>
+
+                <div class="flex flex-col gap-2 text-ink/70 text-sm max-w-md mx-auto">
+                    <p>Delivered in a defined implementation window.</p>
+                    <p>Scope formalized before execution.</p>
+                    <p>Production-ready system handover included.</p>
+                </div>
+
+                <div class="mt-12 pt-10 border-t border-line/10 text-left bg-surface/30 p-8">
+                    <h3 class="font-bold text-ink mb-4 text-lg">What Happens Next?</h3>
+                    <ul class="space-y-3 text-sm text-ink/80">
+                        <li class="flex items-center gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                            Structured scoping call to validate requirements.
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                            Defined implementation scope and fixed investment.
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                            Formal proposal and agreement.
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                            Scheduled build window allocated.
+                        </li>
+                    </ul>
+
+                    <div class="mt-8 text-center">
+                        <a href="/contact"
+                            class="inline-flex items-center justify-center text-sm font-semibold bg-ink text-page hover:bg-accent hover:text-black transition-all h-12 px-10 w-full md:w-auto">
+                            Start Scoping Call
+                        </a>
+                    </div>
+                </div>
             </div>
 
-            <div class="border border-line/30 bg-page p-6 space-y-4">
-                <div>
-                    <label for="integrations" class="block text-sm font-semibold text-ink mb-2">External Integrations</label>
-                    <input id="integrations" type="range" min="0" max="8" value="2" class="w-full">
-                    <div class="text-xs text-ink/60 mt-1"><span id="integrationsValue">2</span> connected systems</div>
-                </div>
-                <div>
-                    <label for="channels" class="block text-sm font-semibold text-ink mb-2">Customer Channels</label>
-                    <input id="channels" type="range" min="1" max="4" value="2" class="w-full">
-                    <div class="text-xs text-ink/60 mt-1"><span id="channelsValue">2</span> channels (e.g. WhatsApp, calls, forms)</div>
-                </div>
-                <div>
-                    <label for="supportWeeks" class="block text-sm font-semibold text-ink mb-2">Post-Launch Support</label>
-                    <input id="supportWeeks" type="range" min="0" max="8" value="2" class="w-full">
-                    <div class="text-xs text-ink/60 mt-1"><span id="supportWeeksValue">2</span> weeks</div>
-                </div>
-            </div>
-
-            <div class="border border-line/30 bg-page p-6 space-y-3">
-                <label class="flex items-center justify-between gap-3">
-                    <span class="text-sm font-medium text-ink">Urgent delivery window</span>
-                    <input id="urgent" type="checkbox">
-                </label>
-                <label class="flex items-center justify-between gap-3">
-                    <span class="text-sm font-medium text-ink">Legacy data migration required</span>
-                    <input id="migration" type="checkbox">
-                </label>
-                <label class="flex items-center justify-between gap-3">
-                    <span class="text-sm font-medium text-ink">Team handover and training</span>
-                    <input id="training" type="checkbox">
-                </label>
+            <div id="emptyState" class="text-center py-10 text-ink/40 italic">
+                Select a service to view investment ranges.
             </div>
         </div>
 
-        <div class="lg:col-span-2 space-y-6">
-            <div class="border-2 border-line/30 bg-page p-6">
-                <div class="text-xs uppercase tracking-wider text-ink/50 mb-2">Estimated Effort</div>
-                <div id="hoursOutput" class="font-display text-4xl font-bold text-ink">0 hrs</div>
-                <p class="text-xs text-ink/60 mt-2">Built from scope + complexity + operational levers.</p>
-            </div>
-
-            <div class="border-2 border-line/30 bg-surface/40 p-6">
-                <div class="text-xs uppercase tracking-wider text-ink/50 mb-1">Typical Market Pricing</div>
-                <div id="marketLocal" class="font-display text-3xl font-bold text-ink">-</div>
-                <div id="marketUSD" class="text-sm text-ink/60 mt-1">-</div>
-                <div class="text-xs text-ink/50 mt-2">Assumes ${{ market_hourly_usd | int }}/hr market rate.</div>
-            </div>
-
-            <div class="border-2 border-accent/40 bg-accent/10 p-6">
-                <div class="text-xs uppercase tracking-wider text-ink/60 mb-1">Your Pricing ({{ currency_code }})</div>
-                <div id="myLocal" class="font-display text-3xl font-bold text-ink">-</div>
-                <div id="myUSD" class="text-sm text-ink/70 mt-1">-</div>
-                <div class="text-xs text-ink/60 mt-2">Fixed at ${{ my_hourly_usd | int }}/hr.</div>
-            </div>
-
-            <div class="border border-line/30 bg-page p-6">
-                <div class="text-xs uppercase tracking-wider text-ink/50 mb-1">Indicative Savings</div>
-                <div id="savingsLocal" class="text-2xl font-bold text-accent">-</div>
-                <div id="savingsUSD" class="text-sm text-ink/60 mt-1">-</div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="pb-20">
-    <div class="max-w-6xl mx-auto px-6">
-        <div class="border border-line/30 bg-page p-6">
-            <h2 class="font-display text-2xl font-bold text-ink mb-3">How the estimate is calculated</h2>
-            <p class="text-sm text-ink/70 leading-relaxed">
-                Base hours are taken from the selected offering profile. The calculator then applies a complexity
-                multiplier, integration/channel additions, support window effort, and optional migration/training/urgency adjustments.
-                Final prices are shown in your local currency using IP-based currency conversion and in USD for reference.
+        <div class="max-w-2xl mx-auto mt-12 text-center">
+            <p class="text-ink/50 text-sm">
+                * Investments are scoped based on outcomes, not hours.
+                <br>Capacity is limited to ensure execution quality.
             </p>
         </div>
     </div>
@@ -118,107 +121,58 @@
 
 <script>
     (function () {
-        const baseHours = {
-            {% for offering in offerings %}
-            "{{ offering.slug }}": {{ offering.base_hours }}{% if not loop.last %},{% endif %}
-            {% endfor %}
-        };
+        const offeringSelect = document.getElementById('offeringSelect');
+        const complexitySelect = document.getElementById('complexitySelect');
+        const integrationSelect = document.getElementById('integrationSelect');
+        const resultContainer = document.getElementById('resultContainer');
+        const emptyState = document.getElementById('emptyState');
+        const priceMinEl = document.getElementById('priceMin');
+        const priceMaxEl = document.getElementById('priceMax');
 
-        const myHourlyUSD = Number({{ my_hourly_usd }});
-        const marketHourlyUSD = Number({{ market_hourly_usd }});
-        const currencyCode = "{{ currency_code }}";
-        const currencyRate = Number({{ currency_rate }});
-        const currencySymbol = "{{ currency_symbol }}";
+        function formatMoney(amount) {
+            return "$" + parseInt(amount).toLocaleString('en-US');
+        }
 
-        const el = (id) => document.getElementById(id);
-        const refs = {
-            projectType: el("projectType"),
-            complexity: el("complexity"),
-            integrations: el("integrations"),
-            channels: el("channels"),
-            supportWeeks: el("supportWeeks"),
-            urgent: el("urgent"),
-            migration: el("migration"),
-            training: el("training"),
-            integrationsValue: el("integrationsValue"),
-            channelsValue: el("channelsValue"),
-            supportWeeksValue: el("supportWeeksValue"),
-            hoursOutput: el("hoursOutput"),
-            marketLocal: el("marketLocal"),
-            marketUSD: el("marketUSD"),
-            myLocal: el("myLocal"),
-            myUSD: el("myUSD"),
-            savingsLocal: el("savingsLocal"),
-            savingsUSD: el("savingsUSD")
-        };
+        function update() {
+            const option = offeringSelect.options[offeringSelect.selectedIndex];
+            if (!option.value) {
+                resultContainer.classList.add('hidden');
+                emptyState.classList.remove('hidden');
+                return;
+            }
 
-        function moneyLocal(amount) {
-            try {
-                return new Intl.NumberFormat(undefined, {
-                    style: "currency",
-                    currency: currencyCode,
-                    maximumFractionDigits: 0
-                }).format(amount);
-            } catch (_) {
-                return currencySymbol + " " + Math.round(amount).toLocaleString();
+            const baseMin = parseInt(option.getAttribute('data-min'));
+            const baseMax = parseInt(option.getAttribute('data-max'));
+            const highMin = parseInt(option.getAttribute('data-high-min')) || baseMin; // Fallback
+            const highMax = parseInt(option.getAttribute('data-high-max')) || baseMax; // Fallback
+
+            const isHighComplexity = complexitySelect.value === 'high';
+            const isHighIntegration = integrationSelect.value === 'high';
+
+            let finalMin, finalMax;
+
+            if (isHighComplexity || isHighIntegration) {
+                finalMin = highMin;
+                finalMax = highMax;
+            } else {
+                finalMin = baseMin;
+                finalMax = baseMax;
+            }
+
+            if (finalMin && finalMax) {
+                priceMinEl.textContent = formatMoney(finalMin);
+                priceMaxEl.textContent = formatMoney(finalMax);
+
+                resultContainer.classList.remove('hidden');
+                emptyState.classList.add('hidden');
             }
         }
 
-        function moneyUSD(amount) {
-            return new Intl.NumberFormat("en-US", {
-                style: "currency",
-                currency: "USD",
-                maximumFractionDigits: 0
-            }).format(amount);
-        }
+        offeringSelect.addEventListener('change', update);
+        complexitySelect.addEventListener('change', update);
+        integrationSelect.addEventListener('change', update);
 
-        function calculate() {
-            const selected = refs.projectType.value;
-            const base = baseHours[selected] || 30;
-            const complexity = Number(refs.complexity.value);
-            const integrations = Number(refs.integrations.value);
-            const channels = Number(refs.channels.value);
-            const supportWeeks = Number(refs.supportWeeks.value);
-            const urgent = refs.urgent.checked;
-            const migration = refs.migration.checked;
-            const training = refs.training.checked;
-
-            let hours = base * complexity;
-            hours += integrations * 2.5;
-            hours += Math.max(0, channels - 1) * 4;
-            hours += supportWeeks * 1.5;
-
-            if (migration) hours += 12;
-            if (training) hours += 8;
-            if (urgent) hours *= 1.2;
-
-            hours = Math.max(8, Math.round(hours));
-
-            const myUSD = hours * myHourlyUSD;
-            const marketUSD = hours * marketHourlyUSD;
-            const myLocal = myUSD * currencyRate;
-            const marketLocal = marketUSD * currencyRate;
-            const savingsUSD = marketUSD - myUSD;
-            const savingsLocal = marketLocal - myLocal;
-
-            refs.integrationsValue.textContent = String(integrations);
-            refs.channelsValue.textContent = String(channels);
-            refs.supportWeeksValue.textContent = String(supportWeeks);
-            refs.hoursOutput.textContent = hours + " hrs";
-            refs.marketLocal.textContent = moneyLocal(marketLocal);
-            refs.marketUSD.textContent = moneyUSD(marketUSD) + " USD";
-            refs.myLocal.textContent = moneyLocal(myLocal);
-            refs.myUSD.textContent = moneyUSD(myUSD) + " USD";
-            refs.savingsLocal.textContent = moneyLocal(savingsLocal);
-            refs.savingsUSD.textContent = moneyUSD(savingsUSD) + " USD";
-        }
-
-        [
-            refs.projectType, refs.complexity, refs.integrations, refs.channels, refs.supportWeeks,
-            refs.urgent, refs.migration, refs.training
-        ].forEach((node) => node.addEventListener("input", calculate));
-
-        calculate();
+        update();
     })();
 </script>
 {% endblock %}
