@@ -201,12 +201,6 @@ async def contact(request: Request):
             lines.append(f"Target outcome: {outcome}")
         if ref_page:
             lines.append(f"Ref page: {ref_page}")
-        if utm_source or utm_medium or utm_campaign:
-            lines.append(
-                f"Attribution: source={utm_source or '-'} medium={utm_medium or '-'} campaign={utm_campaign or '-'} content={utm_content or '-'}"
-            )
-        if cta_id:
-            lines.append(f"CTA ID: {cta_id}")
         prefill_message = "\n".join(lines)
 
     form_defaults = {
