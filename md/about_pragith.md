@@ -183,7 +183,7 @@ Experienced in:
 2. Prototype rapidly, validate early.
 3. Automate infrastructure.
 4. Treat observability as a first-class concern.
-5. Deploy production-grade systems, not demos.
+5. Deploy production-grade systems.
 6. Leverage AI agents to accelerate execution velocity while maintaining human oversight.
 
 ---
@@ -200,7 +200,7 @@ Operates with structured AI-assisted workflows across:
 - Testing
 - Refactoring
 
-AI is used as an execution amplifier, not as a replacement for engineering judgment.
+AI acts as an execution amplifier that supports engineering judgment.
 
 All systems remain human-supervised and production-oriented.
 
@@ -264,8 +264,8 @@ The website must portray:
 - AI-augmented leverage
 - Enterprise credibility
 - Calm confidence
-- No hype
-- No marketing exaggeration
+- Grounded and factual
+- Focus on verifiable facts
 
 ---
 

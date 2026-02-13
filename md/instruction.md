@@ -3,8 +3,7 @@
 You are a senior full-stack engineer building a production-grade personal consulting website for a Principal AI & Data Engineer.  
 You must generate a clean, minimal, secure FastAPI monolith application suitable for Docker deployment in a professional environment.
 
-This is NOT a demo project.  
-This must be production-ready, cleanly structured, secure, and maintainable.
+Deliver a production-ready, cleanly structured, secure, and maintainable application.
 
 ---
 
@@ -29,11 +28,9 @@ Build a minimalist, authoritative consulting website that:
 - Is built as a single FastAPI monolith
 - Runs inside Docker
 - Uses clean URLs
-- Has no public JSON APIs
+- Keeps all system internals secure and private
 
-No overengineering.
-No microservices.
-No unnecessary abstractions.
+Maintain a straightforward, monolithic architecture.
 
 ---
 
@@ -47,7 +44,7 @@ Backend:
 Frontend:
 - Clean minimal CSS (Tailwind via CDN or lightweight custom CSS)
 - Minimal JavaScript
-- No heavy frontend framework
+- Standard HTML/CSS implementation
 
 Blog:
 - Markdown rendering
@@ -88,12 +85,6 @@ Public routes:
  /legal
  /privacy
 
-NO:
-- /api
-- /v1
-- versioned endpoints
-- JSON public APIs
-
 All URLs must be:
 - Lowercase
 - Hyphen-separated
@@ -123,7 +114,7 @@ Tone:
 - Senior
 - Confident
 - Technical
-- No marketing fluff
+- Precise and professional
 
 ---
 
@@ -150,8 +141,7 @@ Each capability must include:
 - Tools
 - How it integrates into delivery lifecycle
 
-No gimmicks.
-No cartoon personas.
+Maintain a professional, enterprise-focused presentation.
 
 ---
 
@@ -211,8 +201,7 @@ Organized clearly:
 - Infra
 - Languages
 
-No buzzwords.
-Concrete technologies only.
+List concrete technologies.
 
 ---
 
@@ -259,7 +248,7 @@ System must:
 - Render HTML safely
 - Support individual post pages
 
-NO database required.
+Use a file-based storage system.
 
 ---
 
@@ -285,7 +274,7 @@ Security requirements:
 
 - Rate limiting
 - CSRF protection
-- No exposed credentials
+- Secure credential management
 - Environment variable configuration
 
 ---
@@ -363,12 +352,12 @@ pragith-net/
 - Generous whitespace
 - Professional aesthetic
 - Dark or light theme acceptable
-- No template marketplace look
-- No bootstrap clutter
+- Custom, refined aesthetic
+- Clean, semantic markup
 
 Must feel like:
 Principal engineer website.
-Not freelancer marketplace page.
+Professional consultancy platform.
 
 ---
 
@@ -378,7 +367,7 @@ Not freelancer marketplace page.
 - Rate limiting on POST /contact
 - CSRF token validation
 - reCAPTCHA verification server-side
-- No debug mode in production
+- Production-safe configuration
 - Strict exception handling
 
 ---
@@ -387,7 +376,7 @@ Not freelancer marketplace page.
 
 - Fast load times
 - Minimal JS
-- No heavy libraries
+- Lightweight dependencies
 - Static files cached properly
 
 ---
@@ -398,8 +387,8 @@ The output must:
 
 - Be runnable immediately
 - Be cleanly structured
-- Avoid dead code
-- Avoid overengineering
+- Remove unused code
+- Implement streamlined logic
 - Be production-grade
 - Be suitable for deployment behind Nginx
 
@@ -420,8 +409,6 @@ Generate:
 9. requirements.txt
 10. .env.example
 
-No explanations.
-No commentary.
-Only code and configuration files.
+Provide only the code and configuration files.
 
 Build it as if delivering to a senior AI engineer who will deploy it immediately.

@@ -1,0 +1,20 @@
+utm_defaults:
+  source: pragith_net
+  medium: website_cta
+  campaign: inbound_consulting
+
+default_project_type: Lead and WhatsApp Automation
+
+project_type_rules:
+  - contains: /business/dashboards
+    project_type: Executive KPI Dashboard
+  - contains: /business/whatsapp-automation
+    project_type: Lead and WhatsApp Automation
+  - contains: /training
+    project_type: Corporate Training
+  - contains: /business/automation
+    project_type: Lead and WhatsApp Automation
+  - contains: /offerings
+    project_type: Lead and WhatsApp Automation
+  - contains: /packages/
+    project_type: Lead and WhatsApp Automation

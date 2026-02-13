@@ -72,7 +72,7 @@ class SitemapService:
         """Add offering pages to the sitemap."""
         for offering in offerings:
             self.add_url(
-                f"/o/{offering.slug}",
+                f"/packages/{offering.slug}",
                 priority=0.7,
                 changefreq="monthly"
             )

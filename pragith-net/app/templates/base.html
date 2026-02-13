@@ -60,19 +60,34 @@
 
 
     {% if ga_tag %}
-    <!-- Google Analytics (consent-gated loading) -->
+    <!-- Google Analytics -->
     <script>
         window.gaTag = '{{ ga_tag }}';
-        // Only load GA script if consent was previously granted
-        if (localStorage.getItem('ga_consent') === 'granted') {
-            var script = document.createElement('script');
-            script.async = true;
-            script.defer = true;
-            script.src = 'https://www.googletagmanager.com/gtag/js?id=' + window.gaTag;
-            script.id = 'ga-script';
-            document.head.appendChild(script);
-        }
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function () { dataLayer.push(arguments); };
+        window.gtag('js', new Date());
+        window.gtag('config', window.gaTag, { anonymize_ip: true });
     </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ ga_tag }}"></script>
+    {% endif %}
+
+    {% if hotjar_site_id %}
+    <!-- Hotjar -->
+    <script>
+        (function (h, o, t, j, a, r) {
+            h.hj = h.hj || function () { (h.hj.q = h.hj.q || []).push(arguments); };
+            h._hjSettings = { hjid: {{ hotjar_site_id }}, hjsv: {{ hotjar_version }} };
+            a = o.getElementsByTagName('head')[0];
+            r = o.createElement('script'); r.async = 1;
+            r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+            a.appendChild(r);
+        })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
+    {% endif %}
+
+    {% if contentsquare_script_url %}
+    <!-- ContentSquare -->
+    <script src="{{ contentsquare_script_url }}" defer></script>
     {% endif %}
 
     {% block extra_head %}{% endblock %}
@@ -116,54 +131,13 @@
             <nav class="hidden md:flex gap-6 text-sm font-medium items-center">
                 <a href="/work"
                     class="text-ink hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent">Work</a>
-
-                <!-- Architecture Dropdown -->
-                <div class="relative">
-                    <button onclick="toggleDropdown('architecture-dropdown')"
-                        class="text-ink hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent flex items-center gap-1"
-                        aria-expanded="false" aria-controls="architecture-dropdown">
-                        Architecture
-                        <svg class="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                            stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </button>
-                    <div id="architecture-dropdown"
-                        class="hidden absolute left-0 mt-2 w-56 bg-page border border-line/20 shadow-lg z-50">
-                        <a href="/agents"
-                            class="block px-4 py-3 text-ink hover:bg-surface hover:text-accent transition-colors border-b border-line/10">Engagement
-                            & Method</a>
-                        <a href="/stack"
-                            class="block px-4 py-3 text-ink hover:bg-surface hover:text-accent transition-colors">Technology
-                            Stack</a>
-                    </div>
-                </div>
-
-                <!-- Platform Dropdown -->
-                <div class="relative">
-                    <button onclick="toggleDropdown('platform-dropdown')"
-                        class="text-ink hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent flex items-center gap-1"
-                        aria-expanded="false" aria-controls="platform-dropdown">
-                        Platform
-                        <svg class="w-4 h-4 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                            stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-                        </svg>
-                    </button>
-                    <div id="platform-dropdown"
-                        class="hidden absolute left-0 mt-2 w-56 bg-page border border-line/20 shadow-lg z-50">
-                        <a href="/business"
-                            class="block px-4 py-3 text-ink hover:bg-surface hover:text-accent transition-colors border-b border-line/10">Overview</a>
-                        <a href="/pricing"
-                            class="block px-4 py-3 text-ink hover:bg-surface hover:text-accent transition-colors border-b border-line/10">Pricing</a>
-                        <a href="/offerings"
-                            class="block px-4 py-3 text-ink hover:bg-surface hover:text-accent transition-colors border-b border-line/10">Offerings</a>
-                        <a href="/business/automation"
-                            class="block px-4 py-3 text-ink hover:bg-surface hover:text-accent transition-colors border-b border-line/10">Automation</a>
-                        <a href="/business/dashboards"
-                            class="block px-4 py-3 text-ink hover:bg-surface hover:text-accent transition-colors">Dashboards</a>
-                    </div>
-                </div>
+                <a href="/agents"
+                    class="text-ink hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent">How
+                    I Build</a>
+                <a href="/business/automation"
+                    class="text-ink hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent">Automation</a>
+                <a href="/business/dashboards"
+                    class="text-ink hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent">Dashboards</a>
 
                 <a href="/training"
                     class="text-ink hover:text-accent transition-colors focus:outline-none focus:ring-2 focus:ring-accent">Training</a>
@@ -193,7 +167,7 @@
 
                 <a href="/contact"
                     class="hidden md:inline-flex items-center justify-center text-sm font-medium bg-ink text-page hover:bg-accent hover:text-black transition-all h-10 px-6 focus:outline-none focus:ring-2 focus:ring-accent">
-                    Contact
+                    Define the Build →
                 </a>
 
                 <!-- Mobile hamburger -->
@@ -212,22 +186,11 @@
         <div id="mobile-menu" class="hidden md:hidden border-t border-line/20 bg-page">
             <nav class="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-3 text-sm font-medium">
                 <a href="/work" class="text-ink hover:text-accent transition-colors py-2">Work</a>
-
-                <div class="text-ink/40 text-xs uppercase tracking-wider mt-2">Architecture</div>
-                <a href="/agents" class="text-ink hover:text-accent transition-colors py-2 pl-4">Engagement & Method</a>
-                <a href="/stack" class="text-ink hover:text-accent transition-colors py-2 pl-4">Technology Stack</a>
-
-                <div class="text-ink/40 text-xs uppercase tracking-wider mt-2">Platform</div>
-                <a href="/business" class="text-ink hover:text-accent transition-colors py-2 pl-4">Overview</a>
-                <a href="/pricing" class="text-ink hover:text-accent transition-colors py-2 pl-4">Pricing</a>
-                <a href="/offerings" class="text-ink hover:text-accent transition-colors py-2 pl-4">Offerings</a>
-                <a href="/business/automation"
-                    class="text-ink hover:text-accent transition-colors py-2 pl-4">Automation</a>
-                <a href="/business/dashboards"
-                    class="text-ink hover:text-accent transition-colors py-2 pl-4">Dashboards</a>
-
-                <a href="/training" class="text-ink hover:text-accent transition-colors py-2 mt-2">Training</a>
-                <a href="/blog" class="text-ink hover:text-accent transition-colors py-2 mt-2">Blog</a>
+                <a href="/agents" class="text-ink hover:text-accent transition-colors py-2">How I Build</a>
+                <a href="/business/automation" class="text-ink hover:text-accent transition-colors py-2">Automation</a>
+                <a href="/business/dashboards" class="text-ink hover:text-accent transition-colors py-2">Dashboards</a>
+                <a href="/training" class="text-ink hover:text-accent transition-colors py-2">Training</a>
+                <a href="/blog" class="text-ink hover:text-accent transition-colors py-2">Blog</a>
                 <a href="/contact"
                     class="inline-flex items-center justify-center text-sm font-semibold bg-ink text-page hover:bg-accent hover:text-black transition-all h-10 px-6 mt-2">
                     Define the Build →
@@ -258,12 +221,9 @@
                 <div>
                     <h3 class="text-sm font-semibold mb-4 text-accent">Services</h3>
                     <ul class="space-y-3 text-sm text-white/60">
-                        <a href="/agents"
-                            class="text-ink hover:text-accent transition-colors pb-1 border-b border-transparent hover:border-accent">Engagement
-                            & Method</a></li>
-                        <li><a href="/pricing" class="hover:text-white transition-colors">Pricing</a></li>
-                        <li><a href="/offerings" class="hover:text-white transition-colors">Offerings</a></li>
-                        <li><a href="/business" class="hover:text-white transition-colors">Business</a></li>
+                        <li><a href="/agents" class="hover:text-white transition-colors">How I Build</a></li>
+                        <li><a href="/business/automation" class="hover:text-white transition-colors">Automation</a></li>
+                        <li><a href="/business/dashboards" class="hover:text-white transition-colors">Dashboards</a></li>
                         <li><a href="/training" class="hover:text-white transition-colors">Training</a></li>
                         <li><a href="/contact" class="hover:text-white transition-colors">Contact</a></li>
                     </ul>
@@ -297,6 +257,14 @@
     </footer>
 
     <script src="/static/js/main.js" defer></script>
+    <script>
+        window.appMarketing = {{ marketing_config | tojson }};
+        window.appAnalytics = {
+            ga_tag: {{ ga_tag | tojson }},
+            hotjar_site_id: {{ hotjar_site_id | tojson }},
+            hotjar_version: {{ hotjar_version | tojson }}
+        };
+    </script>
 </body>
 
 </html>

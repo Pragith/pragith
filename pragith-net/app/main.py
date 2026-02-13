@@ -13,6 +13,7 @@ from app.services.blog_loader import blog_service
 from app.services.mailer import mailer_service
 from app.services.sitemap import sitemap_service
 from app.services.offering_loader import offering_service
+from app.services.marketing_loader import marketing_service
 from app.services.currency import convert_rate
 
 app = FastAPI(
@@ -39,12 +40,12 @@ class SecurityHeadersMiddleware(BaseHTTPMiddleware):
         response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
         response.headers["Content-Security-Policy"] = (
             "default-src 'self'; "
-            "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google.com https://www.gstatic.com; "
+            "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google.com https://www.gstatic.com https://static.hotjar.com https://script.hotjar.com https://t.contentsquare.net; "
             "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
             "font-src 'self' https://fonts.gstatic.com; "
-            "img-src 'self' data:; "
+            "img-src 'self' data: https://*.hotjar.com https://*.contentsquare.net; "
             "frame-src https://www.google.com https://calendly.com; "
-            "connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com"
+            "connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://*.hotjar.com wss://*.hotjar.com https://*.contentsquare.net"
         )
         return response
 
@@ -65,7 +66,11 @@ theme_service = ThemeService(settings.THEME)
 templates.env.globals["theme"] = theme_service
 templates.env.globals["show_products"] = settings.SHOW_PRODUCTS
 templates.env.globals["ga_tag"] = settings.GA_TAG
+templates.env.globals["hotjar_site_id"] = settings.HOTJAR_SITE_ID
+templates.env.globals["hotjar_version"] = settings.HOTJAR_VERSION
+templates.env.globals["contentsquare_script_url"] = settings.CONTENTSQUARE_SCRIPT_URL
 templates.env.globals["recaptcha_site_key"] = settings.RECAPTCHA_SITE_KEY
+templates.env.globals["marketing_config"] = marketing_service.get_client_config()
 
 # Context Processor for common variables
 @app.middleware("http")
@@ -168,11 +173,68 @@ async def blog_detail(request: Request, slug: str):
 
 @app.get("/contact", response_class=HTMLResponse)
 async def contact(request: Request):
+    q = request.query_params
+
+    project_type = q.get("project_type", "").strip()
+    if not project_type:
+        ref_page = (q.get("ref_page", "") or "").lower()
+        project_type = marketing_service.resolve_project_type(ref_page)
+
+    inquiry_type = q.get("inquiry_type", "").strip() or "Within 90 days"
+    decision_authority = q.get("decision_authority", "").strip()
+    challenge_type = q.get("challenge_type", "").strip()
+    team_size = q.get("team_size", "").strip()
+    package = q.get("package", "").strip()
+    outcome = q.get("outcome", "").strip()
+    ref_page = q.get("ref_page", "").strip()
+    utm_source = q.get("utm_source", "").strip()
+    utm_medium = q.get("utm_medium", "").strip()
+    utm_campaign = q.get("utm_campaign", "").strip()
+    utm_content = q.get("utm_content", "").strip()
+    cta_id = q.get("cta_id", "").strip()
+
+    prefill_message = q.get("message", "").strip()
+    if not prefill_message:
+        lines = ["I want to discuss a scoped build."]
+        if package:
+            lines.append(f"Package of interest: {package}")
+        if outcome:
+            lines.append(f"Target outcome: {outcome}")
+        if ref_page:
+            lines.append(f"Ref page: {ref_page}")
+        if utm_source or utm_medium or utm_campaign:
+            lines.append(
+                f"Attribution: source={utm_source or '-'} medium={utm_medium or '-'} campaign={utm_campaign or '-'} content={utm_content or '-'}"
+            )
+        if cta_id:
+            lines.append(f"CTA ID: {cta_id}")
+        prefill_message = "\n".join(lines)
+
+    form_defaults = {
+        "name": q.get("name", ""),
+        "email": q.get("email", ""),
+        "company": q.get("company", ""),
+        "team_size": team_size,
+        "project_type": project_type,
+        "inquiry_type": inquiry_type,
+        "decision_authority": decision_authority,
+        "challenge_type": challenge_type,
+        "message": prefill_message,
+        "utm_source": utm_source,
+        "utm_medium": utm_medium,
+        "utm_campaign": utm_campaign,
+        "utm_content": utm_content,
+        "ref_page": ref_page,
+        "cta_id": cta_id,
+        "package": package,
+    }
+
     return templates.TemplateResponse("contact.html", {
         "request": request,
         "ga_tag": settings.GA_TAG,
         "recaptcha_site_key": settings.RECAPTCHA_SITE_KEY,
         "calendly_url": settings.CALENDLY_URL,
+        "form": form_defaults,
     })
 
 
@@ -183,7 +245,19 @@ async def contact_submit(
     name: str = Form(...),
     email: str = Form(...),
     inquiry_type: str = Form(...),
-    message: str = Form(...),
+    message: str = Form(""),
+    company: str = Form(""),
+    team_size: str = Form(""),
+    project_type: str = Form(""),
+    decision_authority: str = Form(...),
+    challenge_type: str = Form(...),
+    utm_source: str = Form(""),
+    utm_medium: str = Form(""),
+    utm_campaign: str = Form(""),
+    utm_content: str = Form(""),
+    ref_page: str = Form(""),
+    cta_id: str = Form(""),
+    package: str = Form(""),
     website: str = Form(""),
     recaptcha_response: str = Form(alias="g-recaptcha-response", default="")
 ):
@@ -196,11 +270,53 @@ async def contact_submit(
         return templates.TemplateResponse("contact.html", {
             "request": request, 
             "error": "reCAPTCHA verification failed. Please try again.",
-            "form": {"name": name, "email": email, "inquiry_type": inquiry_type, "message": message},
+            "form": {
+                "name": name,
+                "email": email,
+                "company": company,
+                "team_size": team_size,
+                "project_type": project_type,
+                "inquiry_type": inquiry_type,
+                "decision_authority": decision_authority,
+                "challenge_type": challenge_type,
+                "message": message,
+                "utm_source": utm_source,
+                "utm_medium": utm_medium,
+                "utm_campaign": utm_campaign,
+                "utm_content": utm_content,
+                "ref_page": ref_page,
+                "cta_id": cta_id,
+                "package": package,
+            },
             "recaptcha_site_key": settings.RECAPTCHA_SITE_KEY,
         })
 
-    success = mailer_service.send_contact_email(name, email, inquiry_type, message)
+    enriched_message = message
+    metadata = []
+    if company:
+        metadata.append(f"Company: {company}")
+    if project_type:
+        metadata.append(f"Project Type: {project_type}")
+    if decision_authority:
+        metadata.append(f"Decision Authority: {decision_authority}")
+    if challenge_type:
+        metadata.append(f"Primary Challenge: {challenge_type}")
+    if team_size:
+        metadata.append(f"Team Size: {team_size}")
+    if package:
+        metadata.append(f"Package: {package}")
+    if ref_page:
+        metadata.append(f"Ref Page: {ref_page}")
+    if cta_id:
+        metadata.append(f"CTA ID: {cta_id}")
+    if utm_source or utm_medium or utm_campaign or utm_content:
+        metadata.append(
+            f"UTM: source={utm_source or '-'} medium={utm_medium or '-'} campaign={utm_campaign or '-'} content={utm_content or '-'}"
+        )
+    if metadata:
+        enriched_message = f"{message}\n\n---\n" + "\n".join(metadata)
+
+    success = mailer_service.send_contact_email(name, email, inquiry_type, enriched_message)
 
     if success:
         return templates.TemplateResponse("contact_success.html", {"request": request})
@@ -208,7 +324,24 @@ async def contact_submit(
         return templates.TemplateResponse("contact.html", {
             "request": request, 
             "error": "Failed to send message. Please try again later.",
-            "form": {"name": name, "email": email, "inquiry_type": inquiry_type, "message": message},
+            "form": {
+                "name": name,
+                "email": email,
+                "company": company,
+                "team_size": team_size,
+                "project_type": project_type,
+                "inquiry_type": inquiry_type,
+                "decision_authority": decision_authority,
+                "challenge_type": challenge_type,
+                "message": message,
+                "utm_source": utm_source,
+                "utm_medium": utm_medium,
+                "utm_campaign": utm_campaign,
+                "utm_content": utm_content,
+                "ref_page": ref_page,
+                "cta_id": cta_id,
+                "package": package,
+            },
             "recaptcha_site_key": settings.RECAPTCHA_SITE_KEY,
         })
 
@@ -233,6 +366,10 @@ async def business_home(request: Request):
 @app.get("/business/automation", response_class=HTMLResponse)
 async def business_automation(request: Request):
     return templates.TemplateResponse("business/automation.html", {"request": request})
+
+@app.get("/business/whatsapp-automation", response_class=HTMLResponse)
+async def business_whatsapp_automation(request: Request):
+    return templates.TemplateResponse("business/whatsapp_automation.html", {"request": request})
 
 @app.get("/business/dashboards", response_class=HTMLResponse)
 async def business_dashboards(request: Request):
@@ -273,12 +410,16 @@ async def offerings(request: Request):
         {"request": request, "offerings": offering_service.get_all()},
     )
 
-@app.get("/o/{slug}", response_class=HTMLResponse)
+@app.get("/packages/{slug}", response_class=HTMLResponse)
 async def offering_detail(request: Request, slug: str):
     offering = offering_service.get_by_slug(slug)
     if not offering:
         raise HTTPException(status_code=404, detail="Offering not found")
     return templates.TemplateResponse("offering_detail.html", {"request": request, "offering": offering})
+
+@app.get("/o/{slug}", response_class=RedirectResponse)
+async def offering_short_redirect(slug: str):
+    return RedirectResponse(url=f"/packages/{slug}", status_code=301)
 
 @app.get("/training", response_class=HTMLResponse)
 async def training(request: Request):

@@ -119,17 +119,9 @@
 <script>
     (function () {
         const baseHours = {
-            "ai-audit": 18,
-            "wa-agent": 34,
-            "clinic-booking": 38,
-            "voice-receptionist": 46,
-            "crm-wa-sync": 30,
-            "kpi-dashboard": 35,
-            "cloud-setup": 42,
-            "data-pipeline": 42,
-            "clinic-suite": 55,
-            "real-estate-leads": 40,
-            "custom-ai-agent": 50
+            {% for offering in offerings %}
+            "{{ offering.slug }}": {{ offering.base_hours }}{% if not loop.last %},{% endif %}
+            {% endfor %}
         };
 
         const myHourlyUSD = Number({{ my_hourly_usd }});

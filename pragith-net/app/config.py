@@ -31,6 +31,9 @@ class Settings(BaseSettings):
     
     # Analytics
     GA_TAG: str = os.getenv("GA_TAG", "")
+    HOTJAR_SITE_ID: str = os.getenv("HOTJAR_SITE_ID", "")
+    HOTJAR_VERSION: str = os.getenv("HOTJAR_VERSION", "6")
+    CONTENTSQUARE_SCRIPT_URL: str = os.getenv("CONTENTSQUARE_SCRIPT_URL", "")
     
     # Consulting
     HOURLY_RATE: float = float(os.getenv("HOURLY_RATE", "95.0"))

@@ -1,5 +1,8 @@
 from dataclasses import dataclass
+from pathlib import Path
 from typing import List, Optional
+
+import yaml
 
 
 @dataclass
@@ -9,92 +12,32 @@ class Offering:
     target_client: str
     outcome: str
     estimated_hours: str
-
-
-OFFERINGS: List[Offering] = [
-    Offering(
-        slug="ai-audit",
-        title="AI Readiness Audit",
-        target_client="SMEs",
-        outcome="AI adoption roadmap with prioritized automation plan",
-        estimated_hours="15-20 hours",
-    ),
-    Offering(
-        slug="wa-agent",
-        title="WhatsApp AI Agent Setup",
-        target_client="Clinics, salons, consultants",
-        outcome="Automated lead capture and appointment booking",
-        estimated_hours="30-40 hours",
-    ),
-    Offering(
-        slug="clinic-booking",
-        title="Appointment and Clinic Booking Automation",
-        target_client="Medical, dental, physio, wellness",
-        outcome="24/7 booking, reminders, and rescheduling",
-        estimated_hours="30-45 hours",
-    ),
-    Offering(
-        slug="voice-receptionist",
-        title="Voice AI Receptionist",
-        target_client="Clinics, real estate, service businesses",
-        outcome="AI call answering, booking, and call logging",
-        estimated_hours="40-50 hours",
-    ),
-    Offering(
-        slug="crm-wa-sync",
-        title="CRM and WhatsApp Integration",
-        target_client="Sales-driven SMEs",
-        outcome="Automated lead capture and CRM pipeline sync",
-        estimated_hours="25-35 hours",
-    ),
-    Offering(
-        slug="kpi-dashboard",
-        title="Analytics Dashboard Setup",
-        target_client="SMBs, marketing teams",
-        outcome="Executive KPI dashboard with automated refresh",
-        estimated_hours="30-40 hours",
-    ),
-    Offering(
-        slug="cloud-setup",
-        title="Cloud Infrastructure Setup",
-        target_client="Growing startups, SMEs",
-        outcome="Production-ready cloud architecture with CI/CD",
-        estimated_hours="35-50 hours",
-    ),
-    Offering(
-        slug="data-pipeline",
-        title="Data Pipeline Build",
-        target_client="Data-driven companies",
-        outcome="Automated ingestion, transformation, and storage",
-        estimated_hours="35-50 hours",
-    ),
-    Offering(
-        slug="clinic-suite",
-        title="Clinic Automation Package",
-        target_client="Healthcare businesses",
-        outcome="Booking, voice AI, reminders, and dashboard in one system",
-        estimated_hours="50-60 hours",
-    ),
-    Offering(
-        slug="real-estate-leads",
-        title="Real Estate Lead Automation",
-        target_client="Real estate agencies",
-        outcome="WhatsApp lead capture, viewing booking, and CRM sync",
-        estimated_hours="35-45 hours",
-    ),
-    Offering(
-        slug="custom-ai-agent",
-        title="Custom AI Agent Build",
-        target_client="SMEs, enterprises",
-        outcome="Tailored AI agent for sales, operations, or analytics",
-        estimated_hours="40-60 hours",
-    ),
-]
+    base_hours: int
 
 
 class OfferingService:
     def __init__(self) -> None:
-        self._offerings = OFFERINGS
+        self._offerings = self._load_offerings()
+
+    def _load_offerings(self) -> List[Offering]:
+        content_path = Path(__file__).resolve().parent.parent / "content" / "offerings.yaml"
+        with content_path.open("r", encoding="utf-8") as f:
+            data = yaml.safe_load(f) or {}
+
+        offerings_raw = data.get("offerings", [])
+        offerings: List[Offering] = []
+        for item in offerings_raw:
+            offerings.append(
+                Offering(
+                    slug=str(item.get("slug", "")).strip(),
+                    title=str(item.get("title", "")).strip(),
+                    target_client=str(item.get("target_client", "")).strip(),
+                    outcome=str(item.get("outcome", "")).strip(),
+                    estimated_hours=str(item.get("estimated_hours", "")).strip(),
+                    base_hours=int(item.get("base_hours", 30)),
+                )
+            )
+        return offerings
 
     def get_all(self) -> List[Offering]:
         return self._offerings
