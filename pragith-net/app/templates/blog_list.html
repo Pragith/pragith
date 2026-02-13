@@ -3,21 +3,21 @@
 {% block extra_head %}
 <link rel="canonical" href="https://pragith.net/notes">
 {% endblock %}
-{% block title %}Notes | Pragith Prakash{% endblock %}
-{% block canonical %}https://pragith.net/notes{% endblock %}
+{% block title %}Writing | Pragith Prakash{% endblock %}
+{% block canonical %}https://pragith.net/writing{% endblock %}
 {% block content %}
 <section class="py-20 border-t border-line/20">
     <div class="max-w-4xl mx-auto px-6">
         <div class="mb-8">
-            <h1 class="page-hero-title">Systems & Automation Notes</h1>
-            <div class="page-hero-rule"></div>
-            <p class="page-hero-subtitle">Operational engineering for real-world businesses.</p>
+            <h1 class="page-hero-title">Writing</h1>
+            
+            <p class="page-hero-subtitle">Articles on production systems, architecture, and engineering leadership.</p>
         </div>
 
         <!-- Year Navigation -->
         <div class="mb-8 flex flex-wrap gap-2">
             {% for year in years %}
-            <a href="/notes?year={{ year }}" class="px-4 py-2 text-sm font-mono font-medium rounded-sm border transition-all 
+            <a href="/writing?year={{ year }}" class="px-4 py-2 text-sm font-mono font-medium rounded-sm border transition-all 
                       {% if year == selected_year %}
                         bg-ink text-page border-ink
                       {% else %}
@@ -34,14 +34,14 @@
             <span
                 class="inline-flex items-center border border-line/30 px-2 py-1 text-xs font-medium text-ink bg-accent/10">
                 #{{ tag }}
-                <a href="/notes" class="ml-1 hover:text-accent">&times;</a>
+                <a href="/writing" class="ml-1 hover:text-accent">&times;</a>
             </span>
         </div>
         {% endif %}
 
         <div class="space-y-12">
             {% for post in posts %}
-            <a href="/notes/{{ post.slug }}" class="block">
+            <a href="/writing/{{ post.slug }}" class="block">
                 <article class="relative group">
                     <div class="flex flex-col sm:flex-row gap-4 sm:gap-8">
                         <div class="sm:w-32 shrink-0">

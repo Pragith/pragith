@@ -1,44 +1,27 @@
 offerings:
-  - slug: lead-whatsapp-automation
-    title: Lead and WhatsApp Automation
-    target_client: Clinics, salons, consultants
-    outcome: Automated lead capture, WhatsApp routing, CRM sync, and structured follow-up
-    estimated_hours: Defined 2-4 week build window
-    base_hours: 34
-    price_usd_min: 3500
+  - slug: architecture-design-sprint
+    title: Architecture Design Sprint
+    target_client: Teams with a defined problem
+    outcome: A clear technical plan for a production-grade system.
+    estimated_hours: 1-2 week design sprint
+    base_hours: 20
+    price_usd_min: 2500
     price_usd_max: 5000
-    price_usd_high_min: 5000
-    price_usd_high_max: 7500
 
-  - slug: booking-automation
-    title: 24/7 Booking Automation
-    target_client: Medical, dental, physio, wellness
-    outcome: Booking system, calendar sync, reminder flows, and basic routing logic
-    estimated_hours: Defined 2-4 week build window
-    base_hours: 38
-    price_usd_min: 4000
-    price_usd_max: 5500
-    price_usd_high_min: 5500
-    price_usd_high_max: 8000
+  - slug: system-build-engagement
+    title: System Build Engagement
+    target_client: Teams with a clear architecture plan
+    outcome: A production-ready system, deployed and documented.
+    estimated_hours: 4-8 week build engagement
+    base_hours: 80
+    price_usd_min: 10000
+    price_usd_max: 25000
 
-  - slug: ai-voice-receptionist
-    title: AI Voice Receptionist
-    target_client: Clinics, real estate, service businesses
-    outcome: Call answering, booking via voice, inquiry routing, and CRM logging
-    estimated_hours: Defined 2-4 week premium build window
-    base_hours: 46
+  - slug: technical-audit-stabilization
+    title: Technical Audit & Stabilization
+    target_client: Teams with existing systems under strain
+    outcome: A detailed audit report and a plan for stabilization.
+    estimated_hours: 2-4 week audit
+    base_hours: 40
     price_usd_min: 5000
-    price_usd_max: 7000
-    price_usd_high_min: 7000
-    price_usd_high_max: 10000
-
-  - slug: executive-kpi-dashboard
-    title: Executive KPI Dashboard
-    target_client: SMBs, marketing teams
-    outcome: Revenue tracking, pipeline visibility, and operational performance
-    estimated_hours: Defined 2-4 week build window
-    base_hours: 35
-    price_usd_min: 4000
-    price_usd_max: 6000
-    price_usd_high_min: 6000
-    price_usd_high_max: 9000
+    price_usd_max: 10000

@@ -14,11 +14,6 @@
         <div class="text-center mb-10">
             <h1 class="font-display text-4xl sm:text-5xl font-bold tracking-tight text-ink mb-4">{{ contact_meta.title if contact_meta else 'Start Your Build Inquiry' }}</h1>
             <p class="text-lg text-ink/60 mb-6">{{ contact_meta.subtitle if contact_meta else 'Qualified intake for defined-scope operational builds.' }}</p>
-            <ul class="flex flex-wrap justify-center gap-4 text-sm text-ink/50">
-                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent"></span>Defined scope</li>
-                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent"></span>20–50 hour effort range</li>
-                <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent"></span>2–4 week delivery window</li>
-            </ul>
         </div>
 
         <div class="grid lg:grid-cols-3 gap-6 items-start">
@@ -27,100 +22,38 @@
                 <ul class="space-y-2 text-sm text-ink/70">
                     <li><span class="text-accent mr-2">•</span>This form is for defined-scope builds only.</li>
                     <li><span class="text-accent mr-2">•</span>Concise operational context helps faster scoping.</li>
-                    <li><span class="text-accent mr-2">•</span>For dashboard builds, demo access is sent by email.</li>
                 </ul>
             </aside>
 
             <form action="/contact" method="POST" class="lg:col-span-2 border border-line/20 bg-page p-7 space-y-5" style="text-align:left;">
                 <div class="grid sm:grid-cols-2 gap-5">
                     <div>
-                        <label for="name" class="block text-sm font-semibold text-ink mb-2" style="text-align:left;">Name</label>
-                        <input type="text" name="name" id="name" required value="{{ form.name if form else '' }}"
+                        <label for="company" class="block text-sm font-semibold text-ink mb-2" style="text-align:left;">Company</label>
+                        <input type="text" name="company" id="company" required value="{{ form.company if form else '' }}"
                             class="block w-full border border-line/30 bg-page px-4 py-3 text-ink placeholder-ink/30 focus:outline-none focus:border-accent transition-colors">
                     </div>
                     <div>
-                        <label for="email" class="block text-sm font-semibold text-ink mb-2" style="text-align:left;">Work Email</label>
-                        <input type="email" name="email" id="email" required value="{{ form.email if form else '' }}"
-                            class="block w-full border border-line/30 bg-page px-4 py-3 text-ink placeholder-ink/30 focus:outline-none focus:border-accent transition-colors">
-                    </div>
-                </div>
-
-                <div class="grid sm:grid-cols-2 gap-5">
-                    <div>
-                        <label for="company" class="block text-sm font-semibold text-ink mb-2" style="text-align:left;">Company / Organization</label>
-                        <input type="text" name="company" id="company" value="{{ form.company if form else '' }}"
-                            class="block w-full border border-line/30 bg-page px-4 py-3 text-ink placeholder-ink/30 focus:outline-none focus:border-accent transition-colors">
-                    </div>
-                    <div>
-                        <label for="team_size" class="block text-sm font-semibold text-ink mb-2" style="text-align:left;">Team Size (Optional)</label>
-                        <input type="text" name="team_size" id="team_size" value="{{ form.team_size if form else '' }}" placeholder="e.g. 5-15"
-                            class="block w-full border border-line/30 bg-page px-4 py-3 text-ink placeholder-ink/30 focus:outline-none focus:border-accent transition-colors">
-                    </div>
-                </div>
-
-                <div class="grid sm:grid-cols-2 gap-5">
-                    <div>
-                        <label for="project_type" class="block text-sm font-semibold text-ink mb-2" style="text-align:left;">Project Type</label>
-                        <select name="project_type" id="project_type" required
+                        <label for="timeline" class="block text-sm font-semibold text-ink mb-2" style="text-align:left;">Timeline</label>
+                        <select name="timeline" id="timeline" required
                             class="block w-full border border-line/30 bg-page px-4 py-3 text-ink focus:outline-none focus:border-accent appearance-none transition-colors">
-                            <option value="" {% if not form or not form.project_type %}selected{% endif %} disabled>Select</option>
-                            <option value="Lead and WhatsApp Automation" {% if form and form.project_type == "Lead and WhatsApp Automation" %}selected{% endif %}>Lead and WhatsApp Automation</option>
-                            <option value="24/7 Booking Automation" {% if form and form.project_type == "24/7 Booking Automation" %}selected{% endif %}>24/7 Booking Automation</option>
-                            <option value="AI Voice Receptionist" {% if form and form.project_type == "AI Voice Receptionist" %}selected{% endif %}>AI Voice Receptionist</option>
-                            <option value="Executive KPI Dashboard" {% if form and form.project_type == "Executive KPI Dashboard" %}selected{% endif %}>Executive KPI Dashboard</option>
-                            <option value="Corporate Training" {% if form and form.project_type == "Corporate Training" %}selected{% endif %}>Corporate Training</option>
-                            <option value="Others" {% if form and form.project_type == "Others" %}selected{% endif %}>Others</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="desired_timeline" class="block text-sm font-semibold text-ink mb-2" style="text-align:left;">Timeline</label>
-                        <select name="inquiry_type" id="desired_timeline" required
-                            class="block w-full border border-line/30 bg-page px-4 py-3 text-ink focus:outline-none focus:border-accent appearance-none transition-colors">
-                            <option value="Within 30 days" {% if form and form.inquiry_type == "Within 30 days" %}selected{% endif %}>Within 30 days</option>
-                            <option value="Within 90 days" {% if form and form.inquiry_type == "Within 90 days" %}selected{% endif %}>Within 90 days</option>
-                            <option value="This quarter" {% if form and form.inquiry_type == "This quarter" %}selected{% endif %}>This quarter</option>
-                            <option value="Others" {% if form and form.inquiry_type == "Others" %}selected{% endif %}>Others</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="grid sm:grid-cols-2 gap-5">
-                    <div>
-                        <label for="decision_authority" class="block text-sm font-semibold text-ink mb-2" style="text-align:left;">Decision Authority</label>
-                        <select name="decision_authority" id="decision_authority" required
-                            class="block w-full border border-line/30 bg-page px-4 py-3 text-ink focus:outline-none focus:border-accent appearance-none transition-colors">
-                            <option value="" {% if not form or not form.decision_authority %}selected{% endif %} disabled>Select</option>
-                            <option value="I am the decision maker" {% if form and form.decision_authority == "I am the decision maker" %}selected{% endif %}>I am the decision maker</option>
-                            <option value="I am part of the decision team" {% if form and form.decision_authority == "I am part of the decision team" %}selected{% endif %}>I am part of the decision team</option>
-                            <option value="Others" {% if form and form.decision_authority == "Others" %}selected{% endif %}>Others</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="challenge_type" class="block text-sm font-semibold text-ink mb-2" style="text-align:left;">Primary Challenge</label>
-                        <select name="challenge_type" id="challenge_type" required
-                            class="block w-full border border-line/30 bg-page px-4 py-3 text-ink focus:outline-none focus:border-accent appearance-none transition-colors">
-                            <option value="" {% if not form or not form.challenge_type %}selected{% endif %} disabled>Select</option>
-                            <option value="Lead and WhatsApp Automation" {% if form and form.challenge_type == "Lead and WhatsApp Automation" %}selected{% endif %}>Lead and WhatsApp Automation</option>
-                            <option value="24/7 Booking Automation" {% if form and form.challenge_type == "24/7 Booking Automation" %}selected{% endif %}>24/7 Booking Automation</option>
-                            <option value="AI Voice Receptionist" {% if form and form.challenge_type == "AI Voice Receptionist" %}selected{% endif %}>AI Voice Receptionist</option>
-                            <option value="Executive KPI Dashboard" {% if form and form.challenge_type == "Executive KPI Dashboard" %}selected{% endif %}>Executive KPI Dashboard</option>
-                            <option value="Other defined workflow" {% if form and form.challenge_type == "Other defined workflow" %}selected{% endif %}>Other defined workflow</option>
-                            <option value="Others" {% if form and form.challenge_type == "Others" %}selected{% endif %}>Others</option>
+                            <option value="Within 30 days" {% if form and form.timeline == "Within 30 days" %}selected{% endif %}>Within 30 days</option>
+                            <option value="Within 90 days" {% if form and form.timeline == "Within 90 days" %}selected{% endif %}>Within 90 days</option>
+                            <option value="This quarter" {% if form and form.timeline == "This quarter" %}selected{% endif %}>This quarter</option>
+                            <option value="Others" {% if form and form.timeline == "Others" %}selected{% endif %}>Others</option>
                         </select>
                     </div>
                 </div>
 
                 <div>
-                    <label for="message" class="block text-sm font-semibold text-ink mb-2" style="text-align:left;">Context (Optional)</label>
-                    <textarea name="message" id="message" rows="4" placeholder="Concise operational context."
-                        class="block w-full border border-line/30 bg-page px-4 py-3 text-ink placeholder-ink/30 focus:outline-none focus:border-accent transition-colors">{{ form.message if form else '' }}</textarea>
+                    <label for="what_do_you_need_built" class="block text-sm font-semibold text-ink mb-2" style="text-align:left;">What do you need built?</label>
+                    <textarea name="what_do_you_need_built" id="what_do_you_need_built" rows="4" placeholder="Describe what you need built."
+                        class="block w-full border border-line/30 bg-page px-4 py-3 text-ink placeholder-ink/30 focus:outline-none focus:border-accent transition-colors">{{ form.what_do_you_need_built if form else '' }}</textarea>
                 </div>
-
-                <div class="bg-surface/30 p-4 border border-line/20 text-sm text-ink/70">
-                    <span class="font-semibold text-ink">Dashboard Demo Access:</span>
-                    For Executive KPI Dashboard inquiries, Superset demo access for
-                    <a href="https://dashboards.pragith.net" target="_blank" rel="noopener noreferrer" class="underline hover:text-accent">dashboards.pragith.net</a>
-                    is sent by email after form submission.
+                
+                <div>
+                    <label for="budget_range" class="block text-sm font-semibold text-ink mb-2" style="text-align:left;">Budget Range (Optional)</label>
+                    <input type="text" name="budget_range" id="budget_range" value="{{ form.budget_range if form else '' }}"
+                        class="block w-full border border-line/30 bg-page px-4 py-3 text-ink placeholder-ink/30 focus:outline-none focus:border-accent transition-colors">
                 </div>
 
                 <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
@@ -131,20 +64,13 @@
                 <input type="hidden" name="utm_content" value="{{ form.utm_content if form else '' }}">
                 <input type="hidden" name="ref_page" value="{{ form.ref_page if form else '' }}">
                 <input type="hidden" name="cta_id" value="{{ form.cta_id if form else '' }}">
-                <input type="hidden" name="package" value="{{ form.package if form else '' }}">
 
                 <div class="grid sm:grid-cols-2 gap-3 pt-1">
-                    <button type="submit" name="submit_channel" value="both"
-                        class="w-full inline-flex items-center justify-center gap-2 text-sm font-semibold bg-ink text-page hover:bg-accent hover:text-black transition-all h-12"
-                        data-analytics="submit-contact-form-both">
-                        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-                        Send + WhatsApp
-                    </button>
                     <button type="submit" name="submit_channel" value="email"
                         class="w-full inline-flex items-center justify-center gap-2 text-sm font-semibold border border-line/30 text-ink hover:bg-surface transition-all h-12"
                         data-analytics="submit-contact-form-email">
                         <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-                        Send Email Only
+                        Send Intake
                     </button>
                 </div>
             </form>
@@ -179,4 +105,3 @@
     });
 </script>
 {% endif %}
-{% endblock %}

@@ -3,23 +3,19 @@ brand:
   href: /
 
 cta:
-  label: Define the Build →
+  label: Book a Discovery Call
   href: /contact
 
 links:
+  - label: Home
+    href: /
+  - label: Solutions
+    href: /#solutions
+  - label: Live Demos
+    href: /#live-demos
   - label: Work
     href: /work
-  - label: How I Build
-    href: /agents
-  - label: Automation
-    href: /business/automation
-  - label: Dashboards
-    href: /business/dashboards
-  - label: Training
-    href: /training
-  - label: Speaking
-    href: /speaking
-  - label: Notes
-    href: /notes
   - label: About
     href: /about
+  - label: Contact
+    href: /contact

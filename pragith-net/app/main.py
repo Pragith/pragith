@@ -150,9 +150,9 @@ async def sitemap():
 async def home(request: Request):
     return templates.TemplateResponse("index.html", {"request": request, "ga_tag": settings.GA_TAG})
 
-@app.get("/agents", response_class=HTMLResponse)
-async def agents(request: Request):
-    return templates.TemplateResponse("agents.html", {"request": request})
+@app.get("/engagement", response_class=HTMLResponse)
+async def engagement(request: Request):
+    return templates.TemplateResponse("engagement.html", {"request": request})
 
 from app.services.work_loader import work_service
 
@@ -174,7 +174,7 @@ async def about(request: Request):
 
 @app.get("/build", response_class=RedirectResponse)
 async def build_page(request: Request):
-    return RedirectResponse(url="/agents", status_code=301)
+    return RedirectResponse(url="/engagement", status_code=301)
 
 @app.get("/stack", response_class=HTMLResponse)
 async def stack(request: Request):
@@ -183,8 +183,8 @@ async def stack(request: Request):
 
 from typing import Optional
 
-@app.get("/notes", response_class=HTMLResponse)
-async def notes_list(request: Request, year: Optional[int] = None):
+@app.get("/writing", response_class=HTMLResponse)
+async def writing_list(request: Request, year: Optional[int] = None):
     all_posts = blog_service.get_all()
     
     # Extract years
@@ -205,17 +205,51 @@ async def notes_list(request: Request, year: Optional[int] = None):
         "current_year": current_year
     })
 
-@app.get("/notes/tag/{tag}", response_class=HTMLResponse)
-async def notes_tag(request: Request, tag: str):
+@app.get("/writing/tag/{tag}", response_class=HTMLResponse)
+async def writing_tag(request: Request, tag: str):
     posts = blog_service.get_by_tag(tag)
     return templates.TemplateResponse("blog_list.html", {"request": request, "posts": posts, "tag": tag})
 
-@app.get("/notes/{slug}", response_class=HTMLResponse)
-async def notes_detail(request: Request, slug: str):
+@app.get("/writing/{slug}", response_class=HTMLResponse)
+async def writing_detail(request: Request, slug: str):
     post = blog_service.get_by_slug(slug)
     if not post:
         raise HTTPException(status_code=404, detail="Post not found")
     return templates.TemplateResponse("blog_detail.html", {"request": request, "post": post})
+
+def _contact_meta(project_type: str = "", ref_page: str = "", cta_id: str = "") -> dict:
+    signal = " ".join([
+        (project_type or "").strip().lower(),
+        (ref_page or "").strip().lower(),
+        (cta_id or "").strip().lower(),
+    ])
+
+    title = "Start Your Build Inquiry"
+    subtitle = "Qualified intake for defined-scope operational builds."
+
+    if "dashboard" in signal:
+        title = "Define the Dashboard Build"
+        subtitle = "Qualified intake for executive KPI dashboard implementation."
+    elif "training" in signal:
+        title = "Request Corporate Training"
+        subtitle = "Qualified intake for enterprise AI and data training engagements."
+    elif "keynote" in signal or "speaking" in signal:
+        title = "Discuss Speaking Engagement"
+        subtitle = "Share event format, audience, and outcomes to scope the right session."
+    elif "voice receptionist" in signal:
+        title = "Define the Voice Receptionist Build"
+        subtitle = "Qualified intake for AI voice receptionist implementation."
+    elif "booking" in signal:
+        title = "Define the Booking Automation Build"
+        subtitle = "Qualified intake for 24/7 booking automation implementation."
+    elif "whatsapp" in signal:
+        title = "Define the WhatsApp Automation Build"
+        subtitle = "Qualified intake for lead and WhatsApp automation implementation."
+    elif "automation" in signal:
+        title = "Define the Automation Build"
+        subtitle = "Qualified intake for fixed-scope operational automation implementation."
+
+    return {"title": title, "subtitle": subtitle}
 
 @app.get("/contact", response_class=HTMLResponse)
 async def contact(request: Request):
@@ -400,6 +434,7 @@ async def contact_submit(
             "recaptcha_site_key": settings.RECAPTCHA_SITE_KEY,
         })
 
+
 @app.get("/faq", response_class=HTMLResponse)
 async def faq(request: Request):
     return templates.TemplateResponse("faq.html", {"request": request})
@@ -417,14 +452,6 @@ async def privacy(request: Request):
 @app.get("/business/", response_class=HTMLResponse)
 async def business_home(request: Request):
     return templates.TemplateResponse("business/index.html", {"request": request})
-
-@app.get("/business/automation", response_class=HTMLResponse)
-async def business_automation(request: Request):
-    return templates.TemplateResponse("business/automation.html", {"request": request})
-
-@app.get("/business/whatsapp-automation", response_class=HTMLResponse)
-async def business_whatsapp_automation(request: Request):
-    return templates.TemplateResponse("business/whatsapp_automation.html", {"request": request})
 
 @app.get("/business/dashboards", response_class=HTMLResponse)
 async def business_dashboards(request: Request):

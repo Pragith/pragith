@@ -11,7 +11,7 @@
         <div class="grid lg:grid-cols-[1.5fr_1fr] gap-12 items-start">
             <div>
                 <h1 class="page-hero-title">Pragith Prakash</h1>
-                <div class="page-hero-rule"></div>
+                
                 <p class="page-hero-subtitle mb-8">Data educator, adjunct professor, systems builder, and operator focused on practical execution.</p>
 
                 <p class="text-base text-ink/80 leading-relaxed max-w-3xl">
@@ -20,7 +20,6 @@
                 </p>
 
                 <div class="mt-8 grid sm:grid-cols-3 gap-5 text-sm text-ink/75">
-                    <div class="pb-3 border-b border-line/25"><span class="font-semibold text-ink">Birthday:</span> 25 June</div>
                     <div class="pb-3 border-b border-line/25"><span class="font-semibold text-ink">Role:</span> Adjunct Professor</div>
                     <div class="pb-3 border-b border-line/25"><span class="font-semibold text-ink">Focus:</span> Systems Delivery</div>
                 </div>
@@ -29,30 +28,11 @@
             <aside class="pt-2">
                 <h2 class="text-[1.2rem] font-semibold text-ink mb-4">Current Focus</h2>
                 <ul class="space-y-3 text-base text-ink/75">
-                    <li class="pb-3 border-b border-line/20">Operational automation design</li>
                     <li class="pb-3 border-b border-line/20">Cloud-native execution</li>
                     <li class="pb-3 border-b border-line/20">Technical team upskilling</li>
                     <li class="pb-3 border-b border-line/20">Applied AI systems delivery</li>
                 </ul>
             </aside>
-        </div>
-    </div>
-</section>
-
-<section class="section-block border-b border-line/20" data-panel-title="Interests">
-    <div class="max-w-[1040px] mx-auto px-6 md:px-8">
-        <h2 class="text-[1.95rem] font-semibold text-ink mb-3">Interests</h2>
-        <p class="text-base text-ink/62 mb-10">Technical and personal interests that shape how I work and think.</p>
-
-        {% set interests = [
-        "Astronomy", "Card Magic", "Cubing", "Data Engineering", "Data Science", "DevOps", "Driving", "Education",
-        "Gadgets", "PC and Console Gaming", "Photography", "Puzzles", "Python", "R", "Scripting"
-        ] %}
-
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-4 text-base text-ink/78">
-            {% for interest in interests %}
-            <div class="pb-2 border-b border-line/20">{{ interest }}</div>
-            {% endfor %}
         </div>
     </div>
 </section>
@@ -79,50 +59,6 @@
                     <li><a href="https://500px.com/pragith" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 hover:text-accent transition-colors"><i class="fa-brands fa-500px text-[1.05rem] opacity-70" aria-hidden="true"></i>500px</a></li>
                 </ul>
             </article>
-        </div>
-    </div>
-</section>
-
-<section class="section-block border-b border-line/20" data-panel-title="Favorites">
-    <div class="max-w-[1040px] mx-auto px-6 md:px-8">
-        <h2 class="text-[1.95rem] font-semibold text-ink mb-2">Favorites</h2>
-        <p class="text-base text-ink/62 mb-10">Personal interests and influences</p>
-
-        {% set left_col = [
-        ["Games", "Portal, Team Fortress 2, Overwatch"],
-        ["Songs", "Riders on the Storm, Alaipayuthe"],
-        ["Genres", "Dry/Sarcasm, Comedy, Thriller, Psych, Mystery"],
-        ["Characters", "Blackadder, Sherlock Holmes, Jeeves"],
-        ["Drinks", "Lemon Ice Tea, Cola"],
-        ["Authors", "Agatha Christie, P.G. Wodehouse"]
-        ] %}
-
-        {% set right_col = [
-        ["Movies", "Andaaz Apna Apna, Primer"],
-        ["Shows", "Friends, Blackadder, The Big Bang Theory, QI, Black Mirror"],
-        ["Actors", "Hugh Laurie, Rowan Atkinson, Stephen Fry"],
-        ["Food", "Anything involving Paneer"],
-        ["Books", "The Murder of Roger Ackroyd, Jeeves and Wooster series"],
-        ["Photography Type", "Bokeh, Night and Low Light, Abstract, Nature"]
-        ] %}
-
-        <div class="grid lg:grid-cols-2 gap-x-12 gap-y-2">
-            <div>
-                {% for item in left_col %}
-                <article class="py-5 {% if not loop.last %}border-b border-line/20{% endif %}">
-                    <h3 class="text-[1.125rem] font-semibold text-ink mb-2">{{ item[0] }}</h3>
-                    <p class="text-base text-ink/76 leading-relaxed">{{ item[1] }}</p>
-                </article>
-                {% endfor %}
-            </div>
-            <div>
-                {% for item in right_col %}
-                <article class="py-5 {% if not loop.last %}border-b border-line/20{% endif %}">
-                    <h3 class="text-[1.125rem] font-semibold text-ink mb-2">{{ item[0] }}</h3>
-                    <p class="text-base text-ink/76 leading-relaxed">{{ item[1] }}</p>
-                </article>
-                {% endfor %}
-            </div>
         </div>
     </div>
 </section>

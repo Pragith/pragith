@@ -69,35 +69,41 @@
                 <section>
                     <div class="flex items-center gap-4 mb-6">
                         <span class="text-4xl font-bold text-line/40 font-display">01</span>
-                        <h2 class="font-display text-2xl font-bold text-ink">Problem Space & Constraints</h2>
+                        <h2 class="font-display text-2xl font-bold text-ink">Problem</h2>
                     </div>
                     <div class="prose prose-lg prose-slate max-w-none text-ink/70 leading-relaxed">
-                        {{ work.challenge }}
+                        {{ work.problem }}
                     </div>
                 </section>
 
-                <!-- Section 2: Architecture -->
+                <!-- Section 2: Approach -->
                 <section>
                     <div class="flex items-center gap-4 mb-6">
                         <span class="text-4xl font-bold text-line/40 font-display">02</span>
-                        <h2 class="font-display text-2xl font-bold text-ink">System Architecture</h2>
+                        <h2 class="font-display text-2xl font-bold text-ink">Approach</h2>
                     </div>
                     <div class="prose prose-lg prose-slate max-w-none text-ink/70 leading-relaxed">
-                        {{ work.solution }}
+                        {{ work.approach }}
                     </div>
-
-                    <!-- Placeholder for Diagram if we had one -->
-                    <div class="mt-8 bg-surface border border-dashed border-line/40 p-8 rounded-sm text-center">
-                        <p class="text-sm font-mono text-ink/40">[Architecture Diagram Placeholder]</p>
+                </section>
+                
+                <!-- Section 3: Implementation Decisions -->
+                <section>
+                    <div class="flex items-center gap-4 mb-6">
+                        <span class="text-4xl font-bold text-line/40 font-display">03</span>
+                        <h2 class="font-display text-2xl font-bold text-ink">Implementation Decisions</h2>
+                    </div>
+                    <div class="prose prose-lg prose-slate max-w-none text-ink/70 leading-relaxed">
+                        {{ work.implementation_decisions }}
                     </div>
                 </section>
 
-                <!-- Section 3: Outcomes -->
+                <!-- Section 4: Outcomes -->
                 <section class="bg-accent/5 border-l-4 border-accent p-8 rounded-r-sm">
                     <div class="flex items-center gap-4 mb-6">
                         <span
                             class="text-sm font-bold bg-accent text-white px-2 py-1 rounded-sm uppercase tracking-wider">Results</span>
-                        <h2 class="font-display text-xl font-bold text-ink">Performance & Impact</h2>
+                        <h2 class="font-display text-xl font-bold text-ink">Outcome</h2>
                     </div>
                     <div class="prose prose-lg prose-slate max-w-none text-ink/80 font-medium">
                         {{ work.outcome }}

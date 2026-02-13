@@ -12,15 +12,7 @@
             --section-py-desktop: 80px;
         }
 
-        html,
-        body,
-        * {
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            -webkit-touch-callout: none;
-        }
+
 
         .site-container {
             max-width: var(--container-max);
@@ -65,6 +57,15 @@
             background-color: rgb(var(--color-surface) / 0.35);
         }
 
+        .footer-theme {
+            background-color: #111;
+            color: #eee;
+        }
+        .dark .footer-theme {
+            background-color: #000;
+            color: #fff;
+        }
+
         .h1-display {
             font-size: clamp(2.25rem, 4.2vw, 3rem);
             line-height: 1.08;
@@ -107,13 +108,6 @@
             letter-spacing: -0.02em;
             color: rgb(var(--color-ink));
             margin-bottom: 1rem;
-        }
-
-        .page-hero-rule {
-            width: 5rem;
-            height: 4px;
-            background: rgb(var(--color-accent));
-            margin-bottom: 1.5rem;
         }
 
         .page-hero-subtitle {
@@ -291,24 +285,23 @@
             transform: none;
         }
     </style>
-    <title>{% block title %}Structured Automation & AI Systems · Rapid Delivery | Pragith Prakash{% endblock %}
-    </title>
+    <title>Senior AI & Data Engineer · Production Systems & Architecture | Pragith Prakash</title>
     <meta name="description"
-        content="{% block description %}Structured, production-ready AI systems delivered rapidly. 20–50 hour fixed-scope builds. Clean handover. No long-term lock-in.{% endblock %}">
+        content="{% block description %}Senior AI & Data Engineer. I design and ship production-grade AI systems, data platforms, and cloud infrastructure.{% endblock %}">
 
     <meta property="og:title"
-        content="{% block og_title %}Structured Automation & AI Systems · Rapid Delivery | Pragith Prakash{% endblock %}">
+        content="{% block og_title %}Senior AI & Data Engineer · Production Systems & Architecture | Pragith Prakash{% endblock %}">
     <meta property="og:description"
-        content="{% block og_description %}Structured, production-ready AI systems delivered rapidly. Fixed scope. Clean handover.{% endblock %}">
+        content="{% block og_description %}Senior AI & Data Engineer. I design and ship production-grade AI systems, data platforms, and cloud infrastructure.{% endblock %}">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="Pragith Prakash">
     <meta property="og:image" content="{% block og_image %}https://pragith.net/static/og-image.png{% endblock %}">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Structured Automation & AI Systems · Rapid Delivery | Pragith Prakash">
+    <meta name="twitter:title" content="Senior AI & Data Engineer · Production Systems & Architecture | Pragith Prakash">
     <meta name="twitter:description"
-        content="Structured, production-ready AI systems delivered rapidly. Fixed scope. Clean handover.">
+        content="Senior AI & Data Engineer. I design and ship production-grade AI systems, data platforms, and cloud infrastructure.">
     <meta name="twitter:image" content="https://pragith.net/static/og-image.png">
 
     <script>
@@ -376,13 +369,13 @@
         "@type": "Person",
         "name": "Pragith Prakash",
         "jobTitle": "Senior AI & Data Engineer",
-        "description": "Structured, production-ready AI systems delivered rapidly. Fixed-scope builds with clean handover.",
+        "description": "I design and ship production-grade AI systems, data platforms, and cloud infrastructure.",
         "url": "https://pragith.net",
         "sameAs": [
             "https://linkedin.com/in/pragith",
             "https://github.com/pragith"
         ],
-        "knowsAbout": ["AI Systems", "Data Engineering", "Operational Automation", "System Integration", "Production AI"],
+        "knowsAbout": ["AI Systems", "Data Engineering", "Production Systems", "System Integration", "Production AI"],
         "hasOccupation": {
             "@type": "Occupation",
             "name": "Senior AI & Data Engineer",
@@ -401,18 +394,11 @@
     {% set nav_cta = navigation_config.cta %}
     {% set nav_icon_map = {
     "/": "fa-house",
-    "/about": "fa-user",
     "/work": "fa-briefcase",
-    "/notes": "fa-pen",
-    "/contact": "fa-envelope",
-    "/pricing": "fa-dollar-sign",
-    "/agents": "fa-robot",
+    "/engagement": "fa-handshake",
+    "/writing": "fa-pencil-alt",
     "/speaking": "fa-microphone-lines",
-    "/training": "fa-chalkboard-user",
-    "/offerings": "fa-layer-group",
-    "/business": "fa-building",
-    "/business/automation": "fa-gears",
-    "/business/dashboards": "fa-chart-line"
+    "/contact": "fa-envelope"
     } %}
 
     <header class="w-full bg-page/95 backdrop-blur sticky top-0 z-50 border-b border-line/30 md:hidden">
@@ -500,7 +486,7 @@
         {% block content %}{% endblock %}
     </main>
 
-    <footer class="layout-offset bg-black text-white border-t border-white/10 mt-16">
+    <footer class="layout-offset footer-theme border-t border-white/10 mt-16">
         <div class="site-container py-12">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-8">
                 <div>
@@ -508,26 +494,9 @@
                     <ul class="space-y-3 text-sm text-white/65">
                         <li><a href="/" class="hover:text-white transition-colors inline-flex items-center gap-2"><i class="fa-solid fa-house text-[12px]" aria-hidden="true"></i><span>Home</span></a></li>
                         <li><a href="/work" class="hover:text-white transition-colors inline-flex items-center gap-2"><i class="fa-solid fa-briefcase text-[12px]" aria-hidden="true"></i><span>Work</span></a></li>
-                        <li><a href="/about" class="hover:text-white transition-colors inline-flex items-center gap-2"><i class="fa-solid fa-user text-[12px]" aria-hidden="true"></i><span>About</span></a></li>
-                        <li><a href="/notes" class="hover:text-white transition-colors inline-flex items-center gap-2"><i class="fa-solid fa-pen text-[12px]" aria-hidden="true"></i><span>Notes</span></a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-sm font-semibold mb-4 text-accent">Services</h3>
-                    <ul class="space-y-3 text-sm text-white/65">
-                        <li><a href="/agents" class="hover:text-white transition-colors inline-flex items-center gap-2"><i class="fa-solid fa-robot text-[12px]" aria-hidden="true"></i><span>How I Build</span></a></li>
-                        <li><a href="/business/automation" class="hover:text-white transition-colors inline-flex items-center gap-2"><i class="fa-solid fa-gears text-[12px]" aria-hidden="true"></i><span>Automation</span></a></li>
-                        <li><a href="/business/dashboards" class="hover:text-white transition-colors inline-flex items-center gap-2"><i class="fa-solid fa-chart-line text-[12px]" aria-hidden="true"></i><span>Dashboards</span></a></li>
-                        <li><a href="/training" class="hover:text-white transition-colors inline-flex items-center gap-2"><i class="fa-solid fa-chalkboard-user text-[12px]" aria-hidden="true"></i><span>Training</span></a></li>
+                        <li><a href="/engagement" class="hover:text-white transition-colors inline-flex items-center gap-2"><i class="fa-solid fa-handshake text-[12px]" aria-hidden="true"></i><span>Engagement</span></a></li>
+                        <li><a href="/writing" class="hover:text-white transition-colors inline-flex items-center gap-2"><i class="fa-solid fa-pencil-alt text-[12px]" aria-hidden="true"></i><span>Writing</span></a></li>
                         <li><a href="/speaking" class="hover:text-white transition-colors inline-flex items-center gap-2"><i class="fa-solid fa-microphone-lines text-[12px]" aria-hidden="true"></i><span>Speaking</span></a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-sm font-semibold mb-4 text-accent">Legal</h3>
-                    <ul class="space-y-3 text-sm text-white/65">
-                        <li><a href="/legal" class="hover:text-white transition-colors inline-flex items-center gap-2"><i class="fa-solid fa-file-contract text-[12px]" aria-hidden="true"></i><span>Terms</span></a></li>
-                        <li><a href="/privacy" class="hover:text-white transition-colors inline-flex items-center gap-2"><i class="fa-solid fa-shield-check text-[12px]" aria-hidden="true"></i><span>Privacy</span></a></li>
-                        <li><a href="/faq" class="hover:text-white transition-colors inline-flex items-center gap-2"><i class="fa-solid fa-circle-question text-[12px]" aria-hidden="true"></i><span>FAQ</span></a></li>
                     </ul>
                 </div>
                 <div>
