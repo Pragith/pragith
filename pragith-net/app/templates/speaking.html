@@ -3,78 +3,84 @@
 {% block title %}Speaking & Technical Keynotes | Pragith Prakash{% endblock %}
 {% block description %}AI, Data Engineering, and Cloud Architecture keynotes and technical talks by Pragith Prakash.
 Google Developer Group speaker and Senior AI Engineer.{% endblock %}
+{% block extra_head %}
+<link rel="canonical" href="https://pragith.net/speaking">
+{% endblock %}
 
 {% block content %}
 
-<section class="border-b border-line/20">
-    <div class="max-w-6xl mx-auto px-6 py-28">
-        <h1 class="font-display text-5xl font-bold text-ink mb-6">
-            Speaking & Technical Keynotes
-        </h1>
-        <p class="text-xl text-ink/70 max-w-4xl">
-            Conference talks, corporate keynotes, and deep technical sessions on AI systems,
-            data platforms, and distributed cloud architecture.
-        </p>
+<section class="border-b border-line/20" data-panel-title="Speaking">
+    <div class="max-w-6xl mx-auto px-6 py-24 sm:py-32">
+        <div class="max-w-4xl">
+            <h1 class="font-display text-5xl sm:text-6xl font-bold tracking-tight text-ink mb-6 leading-[1.1]">
+                Speaking & Technical Keynotes
+            </h1>
+            <p class="text-xl text-ink/80 mb-6 leading-relaxed max-w-3xl">
+                Conference talks and leadership briefings on AI systems, data platforms, and practical architecture decisions.
+            </p>
+            <div class="flex flex-wrap gap-6 items-center text-sm font-medium text-ink/60 mb-10">
+                <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent"></span>Keynotes and deep-dives</span>
+                <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent"></span>Technical and executive audiences</span>
+                <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent"></span>Remote or in-person</span>
+            </div>
+            <a href="/contact?project_type=Keynote"
+                class="inline-flex items-center justify-center text-sm font-semibold bg-ink text-page hover:bg-accent hover:text-black transition-all h-12 px-8"
+                data-analytics="cta-speaking-hero-discuss-event">
+                Discuss Event →
+            </a>
+        </div>
     </div>
 </section>
 
-<section class="py-24 border-b border-line/20 bg-surface/30">
-    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16">
+<section class="py-24 border-b border-line/20 bg-surface/30" data-panel-title="Topics & Formats">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-6">
 
-        <div>
-            <h2 class="font-display text-3xl font-bold mb-6">Popular Topics</h2>
-            <ul class="space-y-4 text-ink/70">
-                <li class="flex items-start gap-3"><span class="text-accent mt-0.5">›</span> Designing Production LLM
-                    Systems</li>
-                <li class="flex items-start gap-3"><span class="text-accent mt-0.5">›</span> AI Architecture Tradeoffs
-                    That Matter</li>
-                <li class="flex items-start gap-3"><span class="text-accent mt-0.5">›</span> Scaling Data Platforms
-                    Beyond the Hype</li>
-                <li class="flex items-start gap-3"><span class="text-accent mt-0.5">›</span> From Proof-of-Concept to
-                    Enterprise AI</li>
-                <li class="flex items-start gap-3"><span class="text-accent mt-0.5">›</span> Engineering Leadership in
-                    the Age of AI</li>
+        <div class="border border-line/30 bg-page p-8">
+            <h2 class="font-display text-2xl font-bold tracking-tight text-ink mb-6">Popular Topics</h2>
+            <ul class="space-y-3 text-ink/70 text-sm">
+                <li class="flex items-center gap-2"><span class="w-1 h-1 bg-accent rounded-full"></span> Designing production LLM systems</li>
+                <li class="flex items-center gap-2"><span class="w-1 h-1 bg-accent rounded-full"></span> AI architecture tradeoffs that matter</li>
+                <li class="flex items-center gap-2"><span class="w-1 h-1 bg-accent rounded-full"></span> Scaling data platforms beyond hype</li>
+                <li class="flex items-center gap-2"><span class="w-1 h-1 bg-accent rounded-full"></span> From proof-of-concept to production</li>
+                <li class="flex items-center gap-2"><span class="w-1 h-1 bg-accent rounded-full"></span> Engineering leadership in the age of AI</li>
             </ul>
         </div>
 
-        <div>
-            <h2 class="font-display text-3xl font-bold mb-6">Formats</h2>
-            <ul class="space-y-4 text-ink/70">
-                <li class="flex items-start gap-3"><span class="text-accent mt-0.5">›</span> Conference Keynotes (45–60
-                    minutes)</li>
-                <li class="flex items-start gap-3"><span class="text-accent mt-0.5">›</span> Technical Deep-Dive
-                    Sessions</li>
-                <li class="flex items-start gap-3"><span class="text-accent mt-0.5">›</span> Corporate Leadership
-                    Briefings</li>
-                <li class="flex items-start gap-3"><span class="text-accent mt-0.5">›</span> Panel Discussions</li>
-                <li class="flex items-start gap-3"><span class="text-accent mt-0.5">›</span> University Guest Lectures
-                </li>
+        <div class="border border-line/30 bg-page p-8">
+            <h2 class="font-display text-2xl font-bold tracking-tight text-ink mb-6">Formats</h2>
+            <ul class="space-y-3 text-ink/70 text-sm">
+                <li class="flex items-center gap-2"><span class="w-1 h-1 bg-accent rounded-full"></span> Conference keynote (45-60 min)</li>
+                <li class="flex items-center gap-2"><span class="w-1 h-1 bg-accent rounded-full"></span> Technical deep-dive session</li>
+                <li class="flex items-center gap-2"><span class="w-1 h-1 bg-accent rounded-full"></span> Corporate leadership briefing</li>
+                <li class="flex items-center gap-2"><span class="w-1 h-1 bg-accent rounded-full"></span> Panel discussion</li>
+                <li class="flex items-center gap-2"><span class="w-1 h-1 bg-accent rounded-full"></span> University guest lecture</li>
             </ul>
         </div>
 
     </div>
 </section>
 
-<section class="py-24 border-b border-line/20 text-center">
+<section class="py-24 border-b border-line/20" data-panel-title="Experience">
     <div class="max-w-4xl mx-auto px-6">
-        <h2 class="font-display text-3xl font-bold mb-6">
+        <h2 class="font-display text-4xl font-bold tracking-tight text-ink mb-4 text-center">
             Previous Experience
         </h2>
-        <p class="text-lg text-ink/70 leading-relaxed">
+        <p class="text-lg text-ink/70 leading-relaxed text-center">
             Google Developer Group sessions, technical community events, academic lectures,
             and enterprise architecture workshops.
         </p>
     </div>
 </section>
 
-<section class="bg-black text-white">
+<section class="bg-black text-white border-t border-white/10" data-panel-title="Book">
     <div class="max-w-6xl mx-auto px-6 py-24 text-center">
-        <h2 class="font-display text-4xl font-bold mb-6">
+        <h2 class="font-display text-4xl sm:text-5xl font-bold mb-6">
             Invite Me to Speak
         </h2>
+        <p class="text-white/60 mb-8 max-w-2xl mx-auto">Share your audience and event format. I will propose the right keynote structure.</p>
         <a href="/contact?project_type=Keynote"
             class="inline-flex items-center justify-center text-lg font-semibold bg-accent text-black hover:bg-white transition-all h-14 px-10 rounded-sm">
-            Discuss Event
+            Discuss Event →
         </a>
     </div>
 </section>

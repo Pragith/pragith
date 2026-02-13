@@ -33,6 +33,11 @@ class Settings(BaseSettings):
     GA_TAG: str = os.getenv("GA_TAG", "")
     HOTJAR_SITE_ID: str = os.getenv("HOTJAR_SITE_ID", "")
     CLARITY_PROJECT_ID: str = os.getenv("CLARITY_PROJECT_ID", "")
+
+    # Dashboard Demo Access
+    DASHBOARD_DEMO_URL: str = os.getenv("DASHBOARD_DEMO_URL", "https://dashboards.pragith.net")
+    DASHBOARD_DEMO_USER: str = os.getenv("DASHBOARD_DEMO_USER", "")
+    DASHBOARD_DEMO_PASSWORD: str = os.getenv("DASHBOARD_DEMO_PASSWORD", "")
     
     # Consulting
     HOURLY_RATE: float = float(os.getenv("HOURLY_RATE", "95.0"))

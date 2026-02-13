@@ -1,220 +1,336 @@
 {% extends "base.html" %}
-{% block title %}Executive Dashboards & Reporting Systems | Pragith Prakash{% endblock %}
+{% block title %}Executive Dashboards | Pragith Prakash{% endblock %}
 {% block canonical %}https://pragith.net/business/dashboards{% endblock %}
-{% block description %}Real-time executive dashboards, automated reporting, and secure system integration for
-established businesses. See your business performance clearly.{% endblock %}
-{% block og_title %}Executive Dashboards & Reporting | Pragith Prakash{% endblock %}
-{% block og_description %}Real-time dashboards, automated reports, and connected data sources for established
-businesses.{% endblock %}
+{% block description %}Executive KPI dashboards with defined scope, fixed delivery window, and production handover.{% endblock %}
+{% block og_title %}Executive KPI Dashboards | Pragith Prakash{% endblock %}
+{% block og_description %}Leadership visibility that updates automatically. No spreadsheet dependency.{% endblock %}
 
 {% block extra_head %}
 <meta property="og:image" content="https://pragith.net/static/og-image-dashboards.png">
+{% if recaptcha_site_key %}
+<script src="https://www.google.com/recaptcha/api.js?render={{ recaptcha_site_key }}"></script>
+{% endif %}
+<style>
+    #demo-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 80;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+        pointer-events: none;
+    }
+
+    #demo-modal .dm-backdrop {
+        position: absolute;
+        inset: 0;
+        background: rgba(2, 6, 23, 0.28);
+        backdrop-filter: blur(0px);
+        opacity: 0;
+        transition: opacity 220ms ease, backdrop-filter 260ms ease;
+    }
+
+    #demo-modal .dm-panel {
+        position: relative;
+        width: min(100%, 38rem);
+        transform: translateY(14px) scale(0.985);
+        opacity: 0;
+        transition: transform 240ms ease, opacity 220ms ease;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.24);
+    }
+
+    #demo-modal.dm-open {
+        pointer-events: auto;
+    }
+
+    #demo-modal.dm-open .dm-backdrop {
+        opacity: 1;
+        backdrop-filter: blur(10px);
+    }
+
+    #demo-modal.dm-open .dm-panel {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Executive Dashboard Services",
-  "description": "Real-time executive dashboards and automated reporting for established businesses",
+  "name": "Executive KPI Dashboard Build",
+  "description": "Real-time executive dashboard implementation with fixed-scope delivery",
   "provider": {
     "@type": "Person",
     "name": "Pragith Prakash"
   },
-  "areaServed": {
-    "@type": "AdministrativeArea",
-    "name": "North America"
-  },
-  "serviceType": "Business Intelligence & Dashboards"
+  "serviceType": "Business Intelligence and Reporting"
 }
 </script>
 {% endblock %}
 
 {% block content %}
-<!-- Hero -->
 <section class="border-b border-line/20" data-panel-title="Dashboards">
-    <div class="max-w-6xl mx-auto px-6 py-24 sm:py-32">
-        <div class="max-w-4xl">
-            <h1
-                class="font-display text-5xl sm:text-6xl font-bold tracking-tight text-ink mb-6 leading-[1.1] animate-fade-in animate-delay-100">
-                Stop Managing by Spreadsheet. See Your Business Clearly.
-            </h1>
-            <p class="text-xl sm:text-2xl text-ink/80 max-w-3xl mb-8 leading-relaxed animate-fade-in animate-delay-200">
-                Leadership makes decisions using outdated numbers and manually assembled reports.
-            </p>
-
-            <p class="text-ink/60 mb-10 max-w-2xl animate-fade-in animate-delay-300">
-                I build secure, real-time executive dashboards connected directly to your operational data.
-            </p>
-
-            <div
-                class="flex flex-wrap gap-6 items-center text-sm font-medium text-ink/60 mb-10 animate-fade-in animate-delay-400">
-                <span class="flex items-center gap-2">
-                    <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
-                    Delivered within a defined 2–4 week implementation window
-                </span>
-                <span class="flex items-center gap-2">
-                    <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
-                    Fixed scope
-                </span>
-                <span class="flex items-center gap-2">
-                    <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
-                    Mobile-ready
-                </span>
-            </div>
-
-            <div class="flex flex-wrap gap-4 animate-fade-in animate-delay-500 mb-12">
-                <a href="/contact"
-                    class="inline-flex items-center justify-center text-sm font-semibold bg-ink text-page hover:bg-accent hover:text-black transition-all h-12 px-8">
-                    Define the Dashboard Build →
-                </a>
-                <a href="https://dashboards.pragith.net" target="_blank" rel="noopener noreferrer"
-                    class="inline-flex items-center justify-center text-sm font-semibold border border-line bg-page hover:bg-surface transition-all h-12 px-8">
-                    Open Live Demo ↗
-                </a>
-            </div>
-
-            <div class="mb-12 border border-line/30 bg-surface/30 p-5 text-sm text-ink/70">
-                <p class="font-semibold text-ink mb-1">Superset Demo Environment</p>
-                <p>Demo dashboard access is provisioned after contact form submission. Demo login instructions are sent by email.</p>
-            </div>
-
-            <div class="animate-fade-in animate-delay-500">
-                <img src="{{ url_for('static', path='img/offering-dashboard.jpeg') }}"
-                    alt="Executive KPI Dashboard Interface"
-                    class="w-full h-auto border border-line/20 shadow-lg grayscale hover:grayscale-0 transition-all duration-500">
-            </div>
+    <div class="max-w-6xl mx-auto px-6 py-20 sm:py-28">
+        {% if demo_status == 'sent' %}
+        <div class="mb-8 border border-accent/30 bg-accent/10 p-4 text-sm text-ink">
+            Demo credentials sent. Check your inbox.
         </div>
-    </div>
-</section>
+        {% elif demo_status == 'recaptcha' %}
+        <div class="mb-8 border border-red-200 bg-red-50 p-4 text-sm text-ink">
+            reCAPTCHA verification failed. Please try again.
+        </div>
+        {% elif demo_status == 'error' %}
+        <div class="mb-8 border border-red-200 bg-red-50 p-4 text-sm text-ink">
+            Demo request failed. Please retry in a minute.
+        </div>
+        {% endif %}
 
-<!-- The Problem -->
-<section class="py-24 border-b border-line/20" data-panel-title="Visibility Gap">
-    <div class="max-w-6xl mx-auto px-6">
-        <div class="grid md:grid-cols-2 gap-16 items-start">
-            <div>
-                <h2 class="font-display text-3xl font-bold tracking-tight text-ink mb-6">The Visibility Gap</h2>
-                <div class="w-16 h-1 bg-accent mb-6"></div>
-                <p class="text-lg text-ink/70 leading-relaxed">
-                    Delayed visibility slows decision-making and increases financial risk.
+        <div class="grid lg:grid-cols-5 gap-8 lg:gap-10 items-start">
+            <div class="lg:col-span-3">
+                <p class="text-[10px] font-bold uppercase tracking-widest text-accent mb-4">Executive KPI Dashboard</p>
+                <h1 class="font-display text-5xl sm:text-6xl font-bold tracking-tight text-ink mb-6 leading-[1.05]">
+                    Leadership Visibility,
+                    <span class="block">Without Manual Reporting</span>
+                </h1>
+                <p class="text-xl text-ink/80 max-w-3xl leading-relaxed mb-8">
+                    Revenue, pipeline, and operational metrics update automatically so decisions are made on current signal.
                 </p>
-            </div>
-            <div class="space-y-4">
-                {% set pain_points = [
-                "Reporting depends on manual compilation",
-                "Data is stale by the time you see it",
-                "Metrics conflict across different tools",
-                "You cannot see performance from your phone",
-                "Decisions are made on \"feeling\" instead of fact"
-                ] %}
-                {% for item in pain_points %}
-                <div class="flex items-start gap-4 p-4 border-l-2 border-line/30 bg-surface/30">
-                    <span class="text-accent font-bold mt-0.5">⚠</span>
-                    <span class="text-ink/80">{{ item }}</span>
+
+                <div class="grid sm:grid-cols-3 gap-px border border-line/20 bg-line/20 mb-8">
+                    <div class="bg-page p-4">
+                        <p class="text-[10px] uppercase tracking-widest text-ink/50 mb-1">Scope</p>
+                        <p class="text-sm font-semibold text-ink">Defined Before Build</p>
+                    </div>
+                    <div class="bg-page p-4">
+                        <p class="text-[10px] uppercase tracking-widest text-ink/50 mb-1">Effort</p>
+                        <p class="text-sm font-semibold text-ink">20-50 Hours</p>
+                    </div>
+                    <div class="bg-page p-4">
+                        <p class="text-[10px] uppercase tracking-widest text-ink/50 mb-1">Delivery</p>
+                        <p class="text-sm font-semibold text-ink">2-4 Weeks</p>
+                    </div>
                 </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-</section>
 
-<!-- The Outcome -->
-<section class="py-24 border-b border-line/20 bg-surface/30" data-panel-title="What Changes">
-    <div class="max-w-6xl mx-auto px-6">
-        <div class="grid md:grid-cols-2 gap-16 items-start">
-            <div class="md:order-2">
-                <h2 class="font-display text-3xl font-bold tracking-tight text-ink mb-6">What Changes</h2>
-                <div class="w-16 h-1 bg-accent mb-6"></div>
-                <p class="text-lg text-ink/70 leading-relaxed mb-6">
-                    A single source of truth that updates itself.
-                </p>
-            </div>
-            <div class="space-y-4 md:order-1">
-                {% set outcomes = [
-                "Real-time revenue and pipeline visibility",
-                "Operational bottlenecks visible instantly",
-                "Automated daily/weekly PDF reports",
-                "Mobile access to core metrics",
-                "Zero manual data entry for reporting"
-                ] %}
-                {% for item in outcomes %}
-                <div class="flex items-start gap-4 p-4 border border-accent/20 bg-accent/5">
-                    <span class="text-accent font-bold mt-0.5">✓</span>
-                    <span class="text-ink">{{ item }}</span>
+                <div class="flex flex-wrap gap-4">
+                    <a href="/contact"
+                        class="inline-flex items-center justify-center text-sm font-semibold bg-ink text-page hover:bg-accent hover:text-black transition-all h-12 px-8"
+                        data-analytics="cta-dashboards-hero-define-build">
+                        Define the Build →
+                    </a>
+                    <button type="button" id="open-demo-modal"
+                        class="inline-flex items-center justify-center text-sm font-semibold border border-line bg-page hover:bg-surface transition-all h-12 px-8"
+                        data-analytics="cta-dashboards-hero-open-demo-modal">
+                        Open Live Demo ↗
+                    </button>
                 </div>
-                {% endfor %}
+            </div>
+
+            <div class="lg:col-span-2 space-y-4">
+                <div class="border border-line/30 bg-surface/30 p-6">
+                    <h2 class="font-display text-2xl font-bold tracking-tight text-ink mb-4">What Gets Built</h2>
+                    <ul class="space-y-2 text-sm text-ink/70">
+                        <li class="flex items-start gap-2"><span class="text-accent">•</span><span>KPI map and metric logic</span></li>
+                        <li class="flex items-start gap-2"><span class="text-accent">•</span><span>Source integrations and refresh jobs</span></li>
+                        <li class="flex items-start gap-2"><span class="text-accent">•</span><span>Executive and operational views</span></li>
+                        <li class="flex items-start gap-2"><span class="text-accent">•</span><span>Handover docs and walkthrough</span></li>
+                    </ul>
+                </div>
+                <div class="border border-accent/20 bg-accent/5 p-6">
+                    <p class="text-sm text-ink/75">
+                        Superset demo access is provisioned by email on request. Use the live demo CTA to receive credentials.
+                    </p>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Public Offer -->
-<section class="py-24 border-b border-line/20" data-panel-title="Public Offer">
+<section class="py-20 border-b border-line/20 bg-surface/30" data-panel-title="System Shift">
     <div class="max-w-6xl mx-auto px-6">
-        <div class="mb-16">
-            <h2 class="font-display text-4xl font-bold tracking-tight text-ink mb-4">Executive KPI Dashboard</h2>
-            <div class="w-20 h-1 bg-accent mb-4"></div>
-            <p class="text-ink/60">Defined scope. Structured delivery cycles.</p>
-        </div>
-
-        <div class="border-2 border-line/20 p-8 bg-page">
-            <h3 class="font-display text-2xl font-bold text-ink mb-4">Real-time revenue and operational visibility</h3>
-            <ul class="space-y-2 text-ink/70 text-sm mb-6">
-                <li class="flex items-center gap-2"><span class="w-1 h-1 bg-ink/40 rounded-full"></span> Live revenue
-                    and pipeline metrics</li>
-                <li class="flex items-center gap-2"><span class="w-1 h-1 bg-ink/40 rounded-full"></span> Automated
-                    refresh without manual spreadsheet work</li>
-                <li class="flex items-center gap-2"><span class="w-1 h-1 bg-ink/40 rounded-full"></span> Mobile-ready
-                    executive KPI visibility</li>
-                <li class="flex items-center gap-2"><span class="w-1 h-1 bg-ink/40 rounded-full"></span> Defined
-                    handover with documentation</li>
-            </ul>
-            <p class="text-xs uppercase tracking-wide text-ink/50">Fixed-scope engagement. Dedicated project focus.</p>
+        <div class="grid lg:grid-cols-2 gap-6">
+            <div class="border border-line/30 bg-page p-6">
+                <h3 class="font-display text-2xl font-bold text-ink mb-4">Before</h3>
+                <ul class="space-y-2 text-sm text-ink/70">
+                    <li class="flex items-start gap-2"><span class="text-accent">⚠</span><span>Manual spreadsheet assembly each week</span></li>
+                    <li class="flex items-start gap-2"><span class="text-accent">⚠</span><span>Conflicting numbers between tools</span></li>
+                    <li class="flex items-start gap-2"><span class="text-accent">⚠</span><span>Leadership decisions on stale snapshots</span></li>
+                </ul>
+            </div>
+            <div class="border border-accent/20 bg-accent/5 p-6">
+                <h3 class="font-display text-2xl font-bold text-ink mb-4">After</h3>
+                <ul class="space-y-2 text-sm text-ink/85">
+                    <li class="flex items-start gap-2"><span class="text-accent">✓</span><span>KPI data refreshes automatically</span></li>
+                    <li class="flex items-start gap-2"><span class="text-accent">✓</span><span>Single metric definition per decision area</span></li>
+                    <li class="flex items-start gap-2"><span class="text-accent">✓</span><span>Decision-ready visibility on demand</span></li>
+                </ul>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- Data Sources -->
-<section class="py-24 border-b border-line/20 bg-surface/30" data-panel-title="Integrations">
+<section class="py-20 border-b border-line/20" data-panel-title="Flow">
     <div class="max-w-6xl mx-auto px-6">
-        <h2 class="font-display text-3xl font-bold tracking-tight text-ink mb-12 text-center">Connected to Your Tools
-        </h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 opacity-70">
-            <div class="text-center p-6 border border-line/20 bg-page">
-                <div class="font-bold text-ink">CRMs</div>
-                <div class="text-xs text-ink/60 mt-2">Salesforce, HubSpot, Pipedrive</div>
+        <h2 class="font-display text-4xl font-bold tracking-tight text-ink mb-8">Delivery Flow</h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {% set steps = [
+            "Define KPI scope and data ownership.",
+            "Implement source connectors and transforms.",
+            "Design dashboard views and alert/report logic.",
+            "Deploy, validate, and hand over operations."
+            ] %}
+            {% for step in steps %}
+            <div class="border border-line/30 bg-page p-5">
+                <p class="text-[10px] font-bold uppercase tracking-widest text-accent mb-2">Step {{ loop.index }}</p>
+                <p class="text-sm text-ink/75">{{ step }}</p>
             </div>
-            <div class="text-center p-6 border border-line/20 bg-page">
-                <div class="font-bold text-ink">Finance</div>
-                <div class="text-xs text-ink/60 mt-2">Xero, QuickBooks, Stripe</div>
-            </div>
-            <div class="text-center p-6 border border-line/20 bg-page">
-                <div class="font-bold text-ink">Operations</div>
-                <div class="text-xs text-ink/60 mt-2">Monday.com, ClickUp, Jira</div>
-            </div>
-            <div class="text-center p-6 border border-line/20 bg-page">
-                <div class="font-bold text-ink">Databases</div>
-                <div class="text-xs text-ink/60 mt-2">Postgres, MySQL, BigQuery</div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>
 
-<!-- CTA -->
-<section class="bg-black text-white border-t border-white/10" data-panel-title="Define Build">
+<section class="bg-black text-white border-t border-white/10" data-panel-title="CTA">
     <div class="max-w-6xl mx-auto px-6 py-24 text-center">
-        <h2 class="font-display text-4xl sm:text-5xl font-bold mb-8">Stop Flying Blind</h2>
-        <div class="max-w-xl mx-auto text-left bg-white/5 p-8 border border-white/10 mb-10">
-            <p class="text-sm font-bold text-accent uppercase tracking-wider mb-4">Please be ready to describe:</p>
-            <ul class="space-y-2 text-white/80 mb-0">
-                <li>• Current data silos</li>
-                <li>• The "blind spot" in your operations</li>
-                <li>• Desired timeline</li>
-            </ul>
+        <h2 class="font-display text-4xl sm:text-5xl font-bold mb-6">Define the Dashboard Build</h2>
+        <p class="text-white/60 mb-8 max-w-2xl mx-auto">Capacity is limited by delivery windows to keep implementation quality high.</p>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="/contact"
+                class="inline-flex items-center justify-center text-lg font-semibold bg-accent text-black hover:bg-white transition-all h-14 px-10 rounded-sm"
+                data-analytics="cta-dashboards-footer-define-build">
+                Define the Build →
+            </a>
+            <button type="button" id="open-demo-modal-footer"
+                class="inline-flex items-center justify-center text-lg font-semibold border border-white/20 text-white hover:bg-white hover:text-black transition-all h-14 px-10 rounded-sm"
+                data-analytics="cta-dashboards-footer-open-demo-modal">
+                Open Live Demo ↗
+            </button>
         </div>
-        <p class="text-white/60 mb-8">If the scope is clear, I will outline the integration plan.</p>
-        <a href="/contact"
-            class="inline-flex items-center justify-center text-lg font-semibold bg-accent text-black hover:bg-white transition-all h-14 px-10 rounded-sm">
-            Define the Dashboard Build
-        </a>
     </div>
 </section>
+
+<div id="demo-modal" aria-hidden="true">
+    <div class="dm-backdrop" data-modal-close></div>
+    <div class="dm-panel border border-line/30 bg-page p-6 sm:p-8">
+        <div class="flex items-start justify-between gap-4 mb-6">
+            <div>
+                <h3 class="font-display text-2xl font-bold text-ink">Request Demo Credentials</h3>
+                <p class="text-sm text-ink/60 mt-2">Credentials for dashboards.pragith.net will be sent by email.</p>
+            </div>
+            <button type="button" class="text-ink/50 hover:text-ink" data-modal-close aria-label="Close">✕</button>
+        </div>
+
+        <form action="/demo-access" method="POST" id="demo-access-form" class="space-y-4">
+            <div>
+                <label for="demo_name" class="block text-sm font-bold text-ink mb-2">Name</label>
+                <input id="demo_name" name="name" type="text" required
+                    class="block w-full border-2 border-line/20 bg-page px-4 py-3 text-ink focus:outline-none focus:border-accent">
+            </div>
+            <div>
+                <label for="demo_email" class="block text-sm font-bold text-ink mb-2">Work Email</label>
+                <input id="demo_email" name="email" type="email" required
+                    class="block w-full border-2 border-line/20 bg-page px-4 py-3 text-ink focus:outline-none focus:border-accent">
+            </div>
+            <div class="grid sm:grid-cols-2 gap-4">
+                <div>
+                    <label for="demo_company" class="block text-sm font-bold text-ink mb-2">Company</label>
+                    <input id="demo_company" name="company" type="text"
+                        class="block w-full border-2 border-line/20 bg-page px-4 py-3 text-ink focus:outline-none focus:border-accent">
+                </div>
+                <div>
+                    <label for="demo_role" class="block text-sm font-bold text-ink mb-2">Role</label>
+                    <input id="demo_role" name="role" type="text"
+                        class="block w-full border-2 border-line/20 bg-page px-4 py-3 text-ink focus:outline-none focus:border-accent">
+                </div>
+            </div>
+            <div>
+                <label for="demo_notes" class="block text-sm font-bold text-ink mb-2">Use Case (Optional)</label>
+                <textarea id="demo_notes" name="notes" rows="3"
+                    class="block w-full border-2 border-line/20 bg-page px-4 py-3 text-ink focus:outline-none focus:border-accent"
+                    placeholder="What do you want to evaluate in the demo?"></textarea>
+            </div>
+
+            <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+            <input type="hidden" name="g-recaptcha-response" value="">
+            <input type="hidden" name="utm_source" value="">
+            <input type="hidden" name="utm_medium" value="">
+            <input type="hidden" name="utm_campaign" value="">
+            <input type="hidden" name="utm_content" value="">
+            <input type="hidden" name="ref_page" value="/business/dashboards">
+            <input type="hidden" name="cta_id" value="cta-dashboards-demo-modal">
+
+            <button type="submit"
+                class="w-full inline-flex items-center justify-center text-sm font-semibold bg-ink text-page hover:bg-accent hover:text-black transition-all h-12"
+                data-analytics="submit-demo-access-form">
+                Send Demo Credentials
+            </button>
+        </form>
+    </div>
+</div>
+
+<script>
+(function () {
+    const modal = document.getElementById('demo-modal');
+    const form = document.getElementById('demo-access-form');
+    if (!modal || !form) return;
+
+    const modalOpeners = [document.getElementById('open-demo-modal'), document.getElementById('open-demo-modal-footer')];
+
+    function openModal() {
+        modal.classList.add('dm-open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('overflow-hidden');
+    }
+
+    function closeModal() {
+        modal.classList.remove('dm-open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('overflow-hidden');
+    }
+
+    modalOpeners.forEach((btn) => {
+        if (btn) btn.addEventListener('click', openModal);
+    });
+
+    modal.querySelectorAll('[data-modal-close]').forEach((el) => {
+        el.addEventListener('click', closeModal);
+    });
+
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && modal.classList.contains('dm-open')) {
+            closeModal();
+        }
+    });
+
+    const qs = new URLSearchParams(window.location.search);
+    const defaults = (window.appMarketing && window.appMarketing.utm_defaults) || {};
+
+    function setHidden(name, value) {
+        const el = form.querySelector(`input[name="${name}"]`);
+        if (el) el.value = value || '';
+    }
+
+    setHidden('utm_source', qs.get('utm_source') || defaults.source || 'pragith_net');
+    setHidden('utm_medium', qs.get('utm_medium') || defaults.medium || 'website_cta');
+    setHidden('utm_campaign', qs.get('utm_campaign') || defaults.campaign || 'inbound_consulting');
+    setHidden('utm_content', qs.get('utm_content') || 'dashboard_demo_modal');
+
+    form.addEventListener('submit', function (event) {
+        const tokenInput = form.querySelector('input[name="g-recaptcha-response"]');
+        const siteKey = '{{ recaptcha_site_key }}';
+
+        if (form.dataset.recaptchaSubmitting === '1') return;
+        if (!siteKey || typeof grecaptcha === 'undefined') return;
+
+        event.preventDefault();
+        grecaptcha.ready(function () {
+            grecaptcha.execute(siteKey, { action: 'demo_access' }).then(function (token) {
+                tokenInput.value = token;
+                form.dataset.recaptchaSubmitting = '1';
+                form.submit();
+            });
+        });
+    });
+})();
+</script>
 {% endblock %}

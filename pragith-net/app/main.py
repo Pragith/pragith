@@ -125,6 +125,10 @@ async def work_detail(request: Request, slug: str):
         raise HTTPException(status_code=404, detail="Project not found")
     return templates.TemplateResponse("work_detail.html", {"request": request, "work": work_item})
 
+@app.get("/about", response_class=HTMLResponse)
+async def about(request: Request):
+    return templates.TemplateResponse("about.html", {"request": request})
+
 @app.get("/build", response_class=RedirectResponse)
 async def build_page(request: Request):
     return RedirectResponse(url="/agents", status_code=301)
@@ -366,7 +370,53 @@ async def business_whatsapp_automation(request: Request):
 
 @app.get("/business/dashboards", response_class=HTMLResponse)
 async def business_dashboards(request: Request):
-    return templates.TemplateResponse("business/dashboards.html", {"request": request})
+    demo_status = request.query_params.get("demo", "").strip()
+    return templates.TemplateResponse(
+        "business/dashboards.html",
+        {"request": request, "demo_status": demo_status},
+    )
+
+
+@app.post("/demo-access", response_class=HTMLResponse)
+@limiter.limit("5/minute")
+async def demo_access_submit(
+    request: Request,
+    name: str = Form(...),
+    email: str = Form(...),
+    company: str = Form(""),
+    role: str = Form(""),
+    notes: str = Form(""),
+    utm_source: str = Form(""),
+    utm_medium: str = Form(""),
+    utm_campaign: str = Form(""),
+    utm_content: str = Form(""),
+    ref_page: str = Form(""),
+    cta_id: str = Form(""),
+    website: str = Form(""),
+    recaptcha_response: str = Form(alias="g-recaptcha-response", default=""),
+):
+    if website:
+        return RedirectResponse("/business/dashboards", status_code=303)
+
+    if settings.RECAPTCHA_SECRET_KEY and not mailer_service.verify_recaptcha(recaptcha_response):
+        return RedirectResponse("/business/dashboards?demo=recaptcha", status_code=303)
+
+    success = mailer_service.send_dashboard_demo_access_email(
+        name=name,
+        email=email,
+        company=company,
+        role=role,
+        notes=notes,
+        ref_page=ref_page,
+        cta_id=cta_id,
+        utm_source=utm_source,
+        utm_medium=utm_medium,
+        utm_campaign=utm_campaign,
+        utm_content=utm_content,
+    )
+    if success:
+        return RedirectResponse("/business/dashboards?demo=sent", status_code=303)
+    return RedirectResponse("/business/dashboards?demo=error", status_code=303)
 
 def _get_client_ip(request: Request) -> str:
     for header in ("cf-connecting-ip", "x-forwarded-for", "x-real-ip"):

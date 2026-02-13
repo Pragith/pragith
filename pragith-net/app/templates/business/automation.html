@@ -229,39 +229,40 @@ lead routing, approval workflows, and repetitive administrative tasks.{% endbloc
 <!-- How Engagement Works -->
 <section class="py-24 border-b border-line/20" data-panel-title="Process">
     <div class="max-w-6xl mx-auto px-6">
-        <div class="max-w-3xl">
-            <h2 class="font-display text-3xl font-bold tracking-tight text-ink mb-8">How Engagement Works</h2>
-            <ol class="space-y-6 mb-12 relative border-l-2 border-line/20 pl-8 ml-4">
-                {% set steps = [
-                "You describe the operational bottleneck.",
-                "I define the exact system to be built.",
-                "Scope, timeline, and deliverables are agreed in writing.",
-                "Implementation begins.",
-                "The system is deployed and handed over."
-                ] %}
-                {% for step in steps %}
-                <li class="relative">
-                    <span
-                        class="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-page border-2 border-accent"></span>
-                    <p class="text-lg text-ink/80">{{ step }}</p>
-                </li>
-                {% endfor %}
-            </ol>
+        <div class="mb-12">
+            <h2 class="font-display text-4xl font-bold tracking-tight text-ink mb-3">How Engagement Works</h2>
+            <p class="text-ink/60">Structured delivery. Clear checkpoints. No open-ended consulting.</p>
+        </div>
 
-            <div class="bg-ink text-page p-8 rounded-sm">
-                <div class="grid sm:grid-cols-3 gap-8">
-                    <div>
-                        <div class="text-xs font-bold text-accent uppercase tracking-wider mb-1">Duration</div>
-                        <div class="text-xl font-bold">Defined Execution</div>
-                    </div>
-                    <div>
-                        <div class="text-xs font-bold text-accent uppercase tracking-wider mb-1">Scope</div>
-                        <div class="text-xl font-bold">Fixed</div>
-                    </div>
-                    <div>
-                        <div class="text-xs font-bold text-accent uppercase tracking-wider mb-1">Availability</div>
-                        <div class="text-xl font-bold">Limited</div>
-                    </div>
+        {% set steps = [
+        "You define the operational bottleneck and desired outcome.",
+        "I map the exact automation system and implementation scope.",
+        "Scope, deliverables, and delivery window are confirmed in writing.",
+        "Build, deployment, and handover are completed in a defined cycle."
+        ] %}
+
+        <div class="grid md:grid-cols-2 gap-6 mb-10">
+            {% for step in steps %}
+            <div class="border border-line/30 bg-page p-6">
+                <div class="text-[10px] font-bold text-accent uppercase tracking-widest mb-3">Step {{ loop.index }}</div>
+                <p class="text-sm text-ink/80">{{ step }}</p>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="border border-line/30 bg-surface/30 p-6">
+            <div class="grid sm:grid-cols-3 gap-6 text-sm">
+                <div>
+                    <div class="text-[10px] font-bold text-accent uppercase tracking-widest mb-2">Duration</div>
+                    <div class="font-semibold text-ink">2-4 Week Build Window</div>
+                </div>
+                <div>
+                    <div class="text-[10px] font-bold text-accent uppercase tracking-widest mb-2">Scope</div>
+                    <div class="font-semibold text-ink">Defined Before Build</div>
+                </div>
+                <div>
+                    <div class="text-[10px] font-bold text-accent uppercase tracking-widest mb-2">Capacity</div>
+                    <div class="font-semibold text-ink">Limited Concurrent Projects</div>
                 </div>
             </div>
         </div>

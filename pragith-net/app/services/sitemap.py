@@ -30,6 +30,7 @@ class SitemapService:
         # High priority pages
         self.add_url("/", priority=1.0, changefreq="weekly")
         self.add_url("/work", priority=0.9, changefreq="weekly")
+        self.add_url("/about", priority=0.8, changefreq="monthly")
         self.add_url("/blog", priority=0.9, changefreq="daily")
         
         # Business pages
