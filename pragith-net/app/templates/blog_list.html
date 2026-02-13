@@ -1,23 +1,23 @@
 {% extends "base.html" %}
 
 {% block extra_head %}
-<link rel="canonical" href="https://pragith.net/blog">
+<link rel="canonical" href="https://pragith.net/notes">
 {% endblock %}
-{% block title %}Blog | Pragith Prakash{% endblock %}
-{% block canonical %}https://pragith.net/blog{% endblock %}
+{% block title %}Notes | Pragith Prakash{% endblock %}
+{% block canonical %}https://pragith.net/notes{% endblock %}
 {% block content %}
 <section class="py-20 border-t border-line/20">
     <div class="max-w-4xl mx-auto px-6">
-        <div class="mb-12">
-            <h1 class="font-display text-3xl font-bold tracking-tight text-ink mb-4">Systems & Automation Notes</h1>
-            <div class="w-20 h-1 bg-accent mb-6"></div>
-            <p class="text-lg text-ink/60">Operational engineering for real-world businesses.</p>
+        <div class="mb-8">
+            <h1 class="page-hero-title">Systems & Automation Notes</h1>
+            <div class="page-hero-rule"></div>
+            <p class="page-hero-subtitle">Operational engineering for real-world businesses.</p>
         </div>
 
         <!-- Year Navigation -->
-        <div class="mb-12 flex flex-wrap gap-2">
+        <div class="mb-8 flex flex-wrap gap-2">
             {% for year in years %}
-            <a href="/blog?year={{ year }}" class="px-4 py-2 text-sm font-mono font-medium rounded-sm border transition-all 
+            <a href="/notes?year={{ year }}" class="px-4 py-2 text-sm font-mono font-medium rounded-sm border transition-all 
                       {% if year == selected_year %}
                         bg-ink text-page border-ink
                       {% else %}
@@ -34,14 +34,14 @@
             <span
                 class="inline-flex items-center border border-line/30 px-2 py-1 text-xs font-medium text-ink bg-accent/10">
                 #{{ tag }}
-                <a href="/blog" class="ml-1 hover:text-accent">&times;</a>
+                <a href="/notes" class="ml-1 hover:text-accent">&times;</a>
             </span>
         </div>
         {% endif %}
 
         <div class="space-y-12">
             {% for post in posts %}
-            <a href="/blog/{{ post.slug }}" class="block">
+            <a href="/notes/{{ post.slug }}" class="block">
                 <article class="relative group">
                     <div class="flex flex-col sm:flex-row gap-4 sm:gap-8">
                         <div class="sm:w-32 shrink-0">

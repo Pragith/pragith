@@ -1,7 +1,6 @@
 {% extends "base.html" %}
-{% block title %}Operations Automation for Business | Pragith Prakash{% endblock %}
-{% block description %}Structured operational automation for established businesses. Automate customer communication,
-lead routing, approval workflows, and repetitive administrative tasks.{% endblock %}
+{% block title %}Operational Automation Systems | Pragith Prakash{% endblock %}
+{% block description %}Fixed-scope operational automation for teams handling lead routing, follow-up, approvals, and reporting workflows.{% endblock %}
 {% block extra_head %}
 <link rel="canonical" href="https://pragith.net/business/automation">
 <meta property="og:image" content="https://pragith.net/static/og-image-automation.png">
@@ -9,15 +8,11 @@ lead routing, approval workflows, and repetitive administrative tasks.{% endbloc
 {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Business Automation Services",
-  "description": "Automated lead response, CRM sync, and approval workflows for established businesses",
+  "name": "Operational Automation Systems",
+  "description": "Fixed-scope automation builds for routing, follow-up, and execution workflows",
   "provider": {
     "@type": "Person",
     "name": "Pragith Prakash"
-  },
-  "areaServed": {
-    "@type": "AdministrativeArea",
-    "name": "North America"
   },
   "serviceType": "Business Process Automation"
 }
@@ -25,300 +20,113 @@ lead routing, approval workflows, and repetitive administrative tasks.{% endbloc
 {% endblock %}
 
 {% block content %}
-<!-- Hero -->
-<section class="border-b border-line/20" data-panel-title="Automation">
-    <div class="max-w-6xl mx-auto px-6 py-24 sm:py-32">
-        <div class="max-w-4xl">
-            <h1
-                class="font-display text-5xl sm:text-6xl font-bold tracking-tight text-ink mb-6 leading-[1.1] animate-fade-in animate-delay-100">
-                Automate the Work That Slows Your Business
-            </h1>
-            <div class="text-xl text-ink/80 max-w-3xl mb-8 leading-relaxed space-y-2 animate-fade-in animate-delay-200">
-                <p>Manual lead routing.</p>
-                <p>Delayed customer replies.</p>
-                <p>Staff forwarding messages between systems.</p>
-                <p>Reports built from spreadsheets every week.</p>
+<section class="section-block border-b border-line/20">
+    <div class="site-container grid lg:grid-cols-2 gap-12 items-center">
+        <div data-animate>
+            <!-- <p class="meta-text uppercase tracking-[0.14em] text-accent font-semibold mb-4">Automation</p> -->
+            <h1 class="page-hero-title">Automate the Work That Slows Your Business</h1>
+            <div class="page-hero-rule"></div>
+            <p class="page-hero-subtitle mb-8">Production-grade automation systems for teams that need consistent lead response, coordinated execution, and clean reporting without manual handoffs.</p>
+            <div class="grid sm:grid-cols-2 gap-3 mb-8">
+                <div class="border border-line/30 bg-page px-4 py-3 body-md text-ink/80">Manual lead routing</div>
+                <div class="border border-line/30 bg-page px-4 py-3 body-md text-ink/80">Delayed customer replies</div>
+                <div class="border border-line/30 bg-page px-4 py-3 body-md text-ink/80">Cross-tool follow-up gaps</div>
+                <div class="border border-line/30 bg-page px-4 py-3 body-md text-ink/80">Spreadsheet-heavy reporting</div>
             </div>
-            <p class="text-lg font-medium text-ink mb-8 animate-fade-in animate-delay-300">
-                These issues compound as volume increases.
-                What works at 50 leads breaks at 500.
-            </p>
-
-            <p class="text-ink/60 mb-10 max-w-2xl animate-fade-in animate-delay-300">
-                I design and implement fixed-scope automation systems that remove operational friction.
-            </p>
-
-            <div
-                class="flex flex-wrap gap-6 items-center text-sm font-medium text-ink/60 mb-10 animate-fade-in animate-delay-400">
-                <span class="flex items-center gap-2">
-                    <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
-                    Delivered within a defined 2–4 week implementation window
-                </span>
-                <span class="flex items-center gap-2">
-                    <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
-                    Limited capacity per cycle
-                </span>
-            </div>
-
-            <div class="flex flex-wrap gap-4 animate-fade-in animate-delay-500">
-                <a href="/contact"
-                    class="inline-flex items-center justify-center text-sm font-semibold bg-ink text-page hover:bg-accent hover:text-black transition-all h-12 px-8">
-                    Define the Build →
-                </a>
-            </div>
+            <a href="/contact" class="btn btn-primary" data-analytics="cta-automation-hero-define-build">
+                <i class="fa-solid fa-gears" aria-hidden="true"></i>
+                <span>Define Automation Build</span>
+            </a>
         </div>
-    </div>
-</section>
-
-<!-- Breaks + Outcomes (Compact Accordions) -->
-<section class="py-16 border-b border-line/20 bg-surface/20" data-panel-title="Breakpoints">
-    <div class="max-w-6xl mx-auto px-6">
-        <div class="mb-8">
-            <h2 class="font-display text-3xl font-bold tracking-tight text-ink mb-3">Operational Reality</h2>
-            <p class="text-ink/70">Compact view of what breaks and what changes after implementation.</p>
-        </div>
-
-        {% set breaks = [
-        "Leads coming from multiple channels with no structured routing",
-        "WhatsApp and email handled manually",
-        "CRM updates happening late or inconsistently",
-        "Approval workflows managed over chat",
-        "Revenue and pipeline reports assembled manually",
-        "Staff duplicating data across tools"
-        ] %}
-        {% set changes = [
-        "Leads are routed instantly to the right person",
-        "Customer inquiries trigger structured follow-up",
-        "CRM updates happen automatically",
-        "Approval workflows move without manual chasing",
-        "Dashboards update in real time",
-        "Reporting no longer requires weekly spreadsheet work"
-        ] %}
-
-        <div class="grid md:grid-cols-2 gap-6">
-            <details open class="border border-line/30 bg-page">
-                <summary class="cursor-pointer list-none px-5 py-4 flex items-center justify-between">
-                    <span class="font-display text-xl font-bold text-ink">What Usually Breaks</span>
-                    <span class="text-ink/40 text-xs uppercase tracking-wider">Expand</span>
-                </summary>
-                <div class="px-5 pb-5">
-                    <p class="text-sm text-ink/70 mb-4">Most growing businesses struggle with the same friction points.
-                        These issues compound as volume increases.</p>
-                    <ul class="space-y-2">
-                        {% for item in breaks %}
-                        <li class="flex items-start gap-3 text-sm text-ink/80"><span
-                                class="text-accent font-bold mt-0.5">⚠</span><span>{{ item }}</span></li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </details>
-
-            <details open class="border border-accent/30 bg-accent/5">
-                <summary class="cursor-pointer list-none px-5 py-4 flex items-center justify-between">
-                    <span class="font-display text-xl font-bold text-ink">What Changes After Implementation</span>
-                    <span class="text-ink/40 text-xs uppercase tracking-wider">Expand</span>
-                </summary>
-                <div class="px-5 pb-5">
-                    <p class="text-sm text-ink/70 mb-4">Your team stops chasing messages and updating spreadsheets. The
-                        system executes defined logic without manual intervention.</p>
-                    <ul class="space-y-2">
-                        {% for item in changes %}
-                        <li class="flex items-start gap-3 text-sm text-ink"><span
-                                class="text-accent font-bold mt-0.5">✓</span><span>{{ item }}</span></li>
-                        {% endfor %}
-                    </ul>
-                </div>
-            </details>
-        </div>
-    </div>
-</section>
-
-<!-- Common Fixed-Scope Builds -->
-<section class="py-24 border-b border-line/20" data-panel-title="Public Offers">
-    <div class="max-w-6xl mx-auto px-6">
-        <div class="mb-16">
-            <h2 class="font-display text-4xl font-bold tracking-tight text-ink mb-4">Defined Automation Builds</h2>
-            <div class="w-20 h-1 bg-accent mb-4"></div>
-            <p class="text-ink/60">These are repeatable engagement patterns, not experiments.</p>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-8">
-            <!-- Build 1 -->
-            <div class="border-2 border-line/20 p-8 bg-page group hover:border-accent transition-colors">
-                <div class="mb-6 overflow-hidden border border-line/10">
-                    <img src="{{ url_for('static', path='img/offering-lead-whatsapp-automation.jpeg') }}"
-                        alt="WhatsApp Automation Flow"
-                        class="w-full h-48 object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
-                </div>
-                <h3 class="font-display text-2xl font-bold text-ink mb-2">Lead and WhatsApp Automation</h3>
-                <div class="text-sm font-bold text-accent uppercase tracking-wider mb-6">Defined delivery cycle
-                </div>
-                <ul class="space-y-2 text-ink/70 text-sm mb-6">
-                    <li class="flex items-center gap-2"><span class="w-1 h-1 bg-ink/40 rounded-full"></span>
-                        Multi-channel lead capture</li>
-                    <li class="flex items-center gap-2"><span class="w-1 h-1 bg-ink/40 rounded-full"></span> Structured
-                        qualification logic</li>
-                    <li class="flex items-center gap-2"><span class="w-1 h-1 bg-ink/40 rounded-full"></span> Automatic
-                        routing to team</li>
-                    <li class="flex items-center gap-2"><span class="w-1 h-1 bg-ink/40 rounded-full"></span> CRM
-                        synchronization</li>
-                </ul>
-            </div>
-
-            <!-- Build 2 -->
-            <div class="border-2 border-line/20 p-8 bg-page group hover:border-accent transition-colors">
-                <div class="mb-6 overflow-hidden border border-line/10">
-                    <img src="{{ url_for('static', path='img/offering-appointment.jpeg') }}"
-                        alt="Appointment Booking System"
-                        class="w-full h-48 object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
-                </div>
-                <h3 class="font-display text-2xl font-bold text-ink mb-2">24/7 Booking Automation</h3>
-                <div class="text-sm font-bold text-accent uppercase tracking-wider mb-6">Defined delivery cycle
-                </div>
-                <ul class="space-y-2 text-ink/70 text-sm mb-6">
-                    <li class="flex items-center gap-2"><span class="w-1 h-1 bg-ink/40 rounded-full"></span> Structured
-                        auto-responses</li>
-                    <li class="flex items-center gap-2"><span class="w-1 h-1 bg-ink/40 rounded-full"></span>
-                        Qualification logic</li>
-                    <li class="flex items-center gap-2"><span class="w-1 h-1 bg-ink/40 rounded-full"></span> Follow-up
-                        sequences</li>
-                    <li class="flex items-center gap-2"><span class="w-1 h-1 bg-ink/40 rounded-full"></span> Internal
-                        notification triggers</li>
-                </ul>
-            </div>
-
-            <!-- Build 3 -->
-            <div class="border-2 border-line/20 p-8 bg-page group hover:border-accent transition-colors">
-                <div class="mb-6 overflow-hidden border border-line/10">
-                    <img src="{{ url_for('static', path='img/offering-ai-voice-receptionist.jpeg') }}"
-                        alt="AI Voice Receptionist"
-                        class="w-full h-48 object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
-                </div>
-                <h3 class="font-display text-2xl font-bold text-ink mb-2">AI Voice Receptionist</h3>
-                <div class="text-sm font-bold text-accent uppercase tracking-wider mb-6">2–4 week defined build window
-                </div>
-                <ul class="space-y-2 text-ink/70 text-sm mb-6">
-                    <li class="flex items-center gap-2"><span class="w-1 h-1 bg-ink/40 rounded-full"></span> AI call
-                        answering</li>
-                    <li class="flex items-center gap-2"><span class="w-1 h-1 bg-ink/40 rounded-full"></span> Booking on
-                        call</li>
-                    <li class="flex items-center gap-2"><span class="w-1 h-1 bg-ink/40 rounded-full"></span> Call logs
-                        to CRM</li>
-                    <li class="flex items-center gap-2"><span class="w-1 h-1 bg-ink/40 rounded-full"></span> After-hours
-                        handling</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="mt-12 p-8 bg-surface/50 border border-line/20 text-center">
-            <h4 class="font-bold text-ink mb-4">Each build is:</h4>
-            <div class="flex flex-wrap justify-center gap-8 text-sm text-ink/70">
-                <span class="flex items-center gap-2"><span class="text-accent">✓</span> Defined before execution</span>
-                <span class="flex items-center gap-2"><span class="text-accent">✓</span> Delivered
-                    production-ready</span>
-                <span class="flex items-center gap-2"><span class="text-accent">✓</span> Documented</span>
-                <span class="flex items-center gap-2"><span class="text-accent">✓</span> Transferred fully</span>
-            </div>
-            <div class="mt-6 text-sm font-mono text-ink/40 uppercase tracking-wider">
-                Structured consulting cycles. Defined AI programs.
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- How Engagement Works -->
-<section class="py-24 border-b border-line/20" data-panel-title="Process">
-    <div class="max-w-6xl mx-auto px-6">
-        <div class="mb-12">
-            <h2 class="font-display text-4xl font-bold tracking-tight text-ink mb-3">How Engagement Works</h2>
-            <p class="text-ink/60">Structured delivery. Clear checkpoints. No open-ended consulting.</p>
-        </div>
-
-        {% set steps = [
-        "You define the operational bottleneck and desired outcome.",
-        "I map the exact automation system and implementation scope.",
-        "Scope, deliverables, and delivery window are confirmed in writing.",
-        "Build, deployment, and handover are completed in a defined cycle."
-        ] %}
-
-        <div class="grid md:grid-cols-2 gap-6 mb-10">
-            {% for step in steps %}
-            <div class="border border-line/30 bg-page p-6">
-                <div class="text-[10px] font-bold text-accent uppercase tracking-widest mb-3">Step {{ loop.index }}</div>
-                <p class="text-sm text-ink/80">{{ step }}</p>
-            </div>
-            {% endfor %}
-        </div>
-
-        <div class="border border-line/30 bg-surface/30 p-6">
-            <div class="grid sm:grid-cols-3 gap-6 text-sm">
-                <div>
-                    <div class="text-[10px] font-bold text-accent uppercase tracking-widest mb-2">Duration</div>
-                    <div class="font-semibold text-ink">2-4 Week Build Window</div>
-                </div>
-                <div>
-                    <div class="text-[10px] font-bold text-accent uppercase tracking-widest mb-2">Scope</div>
-                    <div class="font-semibold text-ink">Defined Before Build</div>
-                </div>
-                <div>
-                    <div class="text-[10px] font-bold text-accent uppercase tracking-widest mb-2">Capacity</div>
-                    <div class="font-semibold text-ink">Limited Concurrent Projects</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Is This For You -->
-<section class="py-24 border-b border-line/20 bg-surface/30" data-panel-title="Fit Check">
-    <div class="max-w-6xl mx-auto px-6">
-        <div class="grid md:grid-cols-2 gap-16">
-            <div>
-                <h3 class="font-display text-2xl font-bold text-ink mb-6">Is This For You?</h3>
-                <div class="space-y-3">
-                    {% for item in ["You are a business owner or operations lead", "You have recurring operational
-                    friction", "You want a defined build", "You want production-grade systems"] %}
-                    <div class="flex items-start gap-3">
-                        <span class="text-green-600 font-bold">✓</span>
-                        <span class="text-ink/80">{{ item }}</span>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-            <div>
-                <h3 class="font-display text-2xl font-bold text-ink/60 mb-6">Out of Scope</h3>
-                <div class="space-y-3">
-                    {% for item in ["Purely exploratory research", "Open-ended transformation programs", "Hourly ad-hoc
-                    support"] %}
-                    <div class="flex items-start gap-3">
-                        <span class="text-ink/30 font-bold">×</span>
-                        <span class="text-ink/60">{{ item }}</span>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- CTA -->
-<section class="bg-black text-white border-t border-white/10" data-panel-title="Define Build">
-    <div class="max-w-6xl mx-auto px-6 py-24 text-center">
-        <h2 class="font-display text-4xl sm:text-5xl font-bold mb-8">Define the Build</h2>
-        <div class="max-w-xl mx-auto text-left bg-white/5 p-8 border border-white/10 mb-10">
-            <p class="text-sm font-bold text-accent uppercase tracking-wider mb-4">Please be ready to describe:</p>
-            <ul class="space-y-2 text-white/80 mb-0">
-                <li>• Your business type</li>
-                <li>• The operational bottleneck</li>
-                <li>• Desired timeline</li>
+        <div class="border border-line/30 bg-surface/35 p-7" style="padding:1.75rem;" data-animate>
+            <h2 class="font-display font-semibold h3-display text-ink mb-4">Delivery Profile</h2>
+            <ul class="space-y-3 body-md text-ink/80">
+                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-accent mt-1" aria-hidden="true"></i><span>Scope defined before build start</span></li>
+                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-accent mt-1" aria-hidden="true"></i><span>2-4 week implementation window</span></li>
+                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-accent mt-1" aria-hidden="true"></i><span>Limited active builds per cycle</span></li>
+                <li class="flex items-start gap-2"><i class="fa-solid fa-check text-accent mt-1" aria-hidden="true"></i><span>Production handover with documentation</span></li>
             </ul>
         </div>
-        <p class="text-white/60 mb-8">If the problem fits a defined build window, I will outline scope and next steps.
-        </p>
-        <a href="/contact"
-            class="inline-flex items-center justify-center text-lg font-semibold bg-accent text-black hover:bg-white transition-all h-14 px-10 rounded-sm">
-            Define the Build
-        </a>
+    </div>
+</section>
+
+<section class="section-block tone-alt border-b border-line/20">
+    <div class="site-container">
+        <div class="max-w-3xl mb-10" data-animate>
+            <h2 class="font-display font-semibold h2-display text-ink mb-3">Operational Reality</h2>
+            <p class="body-md text-ink/70">Before and after implementation, focused on execution impact.</p>
+        </div>
+        {% set breaks = [
+        "Leads arrive from multiple channels without structured ownership",
+        "Messages are handled manually across email and chat",
+        "CRM records are updated late or inconsistently",
+        "Approval workflows depend on manual follow-up",
+        "Weekly reports require spreadsheet assembly"
+        ] %}
+        {% set changes = [
+        "Lead routing runs automatically by logic and ownership",
+        "Customer follow-up starts instantly with defined triggers",
+        "CRM updates sync in near real-time",
+        "Approval steps advance without manual chasing",
+        "Dashboards update without spreadsheet work"
+        ] %}
+        <div class="grid md:grid-cols-2 gap-5">
+            <article class="border border-line/30 bg-page p-6" data-animate>
+                <h3 class="font-display font-semibold h3-display text-ink mb-4">What Usually Breaks</h3>
+                <ul class="space-y-3 body-md text-ink/78">
+                    {% for item in breaks %}
+                    <li class="flex items-start gap-2"><i class="fa-regular fa-triangle-exclamation text-accent mt-1" aria-hidden="true"></i><span>{{ item }}</span></li>
+                    {% endfor %}
+                </ul>
+            </article>
+            <article class="border border-accent/35 bg-page p-6" data-animate>
+                <h3 class="font-display font-semibold h3-display text-ink mb-4">What Changes After Implementation</h3>
+                <ul class="space-y-3 body-md text-ink/82">
+                    {% for item in changes %}
+                    <li class="flex items-start gap-2"><i class="fa-regular fa-check text-accent mt-1" aria-hidden="true"></i><span>{{ item }}</span></li>
+                    {% endfor %}
+                </ul>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="section-block border-b border-line/20">
+    <div class="site-container">
+        <div class="max-w-3xl mb-10" data-animate>
+            <h2 class="font-display font-semibold h2-display text-ink mb-3">Implementation Areas</h2>
+            <p class="body-md text-ink/70">Common build targets for operational teams.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-5">
+            <article class="border border-line/30 bg-page p-6" data-animate>
+                <i class="fa-regular fa-message-lines text-accent mb-3" aria-hidden="true"></i>
+                <h3 class="font-display font-semibold h3-display text-ink mb-2">Lead + Reply Flows</h3>
+                <p class="body-md text-ink/75">Capture, classify, and route inbound leads with follow-up logic tied to channel and intent.</p>
+            </article>
+            <article class="border border-line/30 bg-page p-6" data-animate>
+                <i class="fa-regular fa-sitemap text-accent mb-3" aria-hidden="true"></i>
+                <h3 class="font-display font-semibold h3-display text-ink mb-2">Workflow Orchestration</h3>
+                <p class="body-md text-ink/75">Move approvals, assignments, and updates through defined states without manual coordination loops.</p>
+            </article>
+            <article class="border border-line/30 bg-page p-6" data-animate>
+                <i class="fa-regular fa-chart-line-up text-accent mb-3" aria-hidden="true"></i>
+                <h3 class="font-display font-semibold h3-display text-ink mb-2">Execution Visibility</h3>
+                <p class="body-md text-ink/75">Create live operational views of queue depth, response times, and completion status.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="section-block tone-alt border-b border-line/20">
+    <div class="site-container">
+        <div class="border border-line/30 bg-page p-8 sm:p-10 text-center" data-animate>
+            <h2 class="font-display font-semibold h2-display text-ink mb-4">Ready to Define the Automation Build?</h2>
+            <p class="body-md text-ink/70 max-w-2xl mx-auto mb-7">Share your process constraints, tools, and implementation timeline.</p>
+            <a href="/contact" class="btn btn-primary" data-analytics="cta-automation-footer-define-build">
+                <i class="fa-solid fa-envelope-open-text" aria-hidden="true"></i>
+                <span>Open Build Intake</span>
+            </a>
+        </div>
     </div>
 </section>
 {% endblock %}

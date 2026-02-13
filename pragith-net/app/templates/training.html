@@ -1,221 +1,138 @@
 {% extends "base.html" %}
 
-{% block title %}Enterprise AI & Data Engineering Training | Pragith Prakash{% endblock %}
-{% block description %}Enterprise-grade AI, Data Engineering, and Cloud Architecture training delivered by a Senior AI
-Engineer, Google Developer Group leader, and Adjunct Professor. Production systems and architecture-first execution.{%
-endblock %}
+{% block title %}Enterprise AI & Data Training | Pragith Prakash{% endblock %}
+{% block description %}Architecture-first AI and data engineering training for technical teams building production systems.{% endblock %}
 
 {% block extra_head %}
 <link rel="canonical" href="https://pragith.net/training">
 {% endblock %}
 
-{% block og_title %}Enterprise AI & Data Engineering Training | Pragith Prakash{% endblock %}
-{% block og_description %}Architecture-first corporate AI & Data bootcamps led by a certified multi-cloud engineer and
-public speaker. Built for production teams.{% endblock %}
+{% block og_title %}Enterprise AI & Data Training | Pragith Prakash{% endblock %}
+{% block og_description %}Practical, production-focused training for engineering teams: AI systems, data platforms, and cloud architecture.{% endblock %}
 
 {% block content %}
+<section class="section-block border-b border-line/20">
+    <div class="max-w-[1040px] mx-auto px-6 md:px-8">
+        <h1 class="page-hero-title">Enterprise AI & Data Engineering Training</h1>
+        <div class="page-hero-rule"></div>
+        <p class="page-hero-subtitle mb-8">Architecture-first training for teams building production AI and data systems.</p>
 
-<!-- Hero -->
-<section class="border-b border-line/20">
-    <div class="max-w-6xl mx-auto px-6 py-24 sm:py-32">
-        <h1 class="font-display text-5xl sm:text-6xl font-bold tracking-tight text-ink mb-6 leading-[1.1]">
-            Enterprise AI & Data Engineering Training
-        </h1>
-        <p class="text-xl sm:text-2xl text-ink/80 max-w-4xl mb-10 leading-relaxed">
-            Delivered by a Senior AI Engineer, Google Developer Group leader, Adjunct Professor, and
-            certified multi-cloud architect. <br><br>
-            Focused on production systems, architectural discipline, and operational constraints.
-        </p>
+        <div class="grid sm:grid-cols-3 gap-5 max-w-3xl">
+            <div class="border border-line/25 bg-page p-6" style="padding:1.5rem;">
+                <p class="text-xs uppercase tracking-wide text-ink/50 mb-1">Format</p>
+                <p class="text-base text-ink"><i class="fa-solid fa-user-group text-accent mr-2" aria-hidden="true"></i>Team cohorts</p>
+            </div>
+            <div class="border border-line/25 bg-page p-6" style="padding:1.5rem;">
+                <p class="text-xs uppercase tracking-wide text-ink/50 mb-1">Focus</p>
+                <p class="text-base text-ink"><i class="fa-solid fa-gears text-accent mr-2" aria-hidden="true"></i>Production execution</p>
+            </div>
+            <div class="border border-line/25 bg-page p-6" style="padding:1.5rem;">
+                <p class="text-xs uppercase tracking-wide text-ink/50 mb-1">Delivery</p>
+                <p class="text-base text-ink"><i class="fa-solid fa-calendar-days text-accent mr-2" aria-hidden="true"></i>Custom schedule</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-        <div class="flex flex-wrap gap-4">
-            <a href="/contact"
-                class="inline-flex items-center justify-center text-sm font-semibold bg-ink text-page hover:bg-accent hover:text-black transition-all h-12 px-8">
-                Request Training Overview →
+<section class="section-block border-b border-line/20 bg-surface/30">
+    <div class="max-w-[1040px] mx-auto px-6 md:px-8">
+        <h2 class="text-[1.95rem] font-semibold text-ink mb-3">What Teams Learn</h2>
+        <p class="text-base text-ink/62 mb-10">Curriculum is scoped around your current stack, constraints, and delivery goals.</p>
+
+        <div class="grid md:grid-cols-2 gap-7">
+            <article class="border border-line/25 bg-page p-8">
+                <h3 class="text-[1.2rem] font-semibold text-ink mb-4 inline-flex items-center gap-2"><i class="fa-solid fa-brain text-accent" aria-hidden="true"></i>Production AI Systems</h3>
+                <ul class="space-y-3 text-base text-ink/78">
+                    <li>LLM system architecture and retrieval patterns</li>
+                    <li>Evaluation and guardrail design</li>
+                    <li>Inference cost and latency tradeoffs</li>
+                </ul>
+            </article>
+
+            <article class="border border-line/25 bg-page p-8">
+                <h3 class="text-[1.2rem] font-semibold text-ink mb-4 inline-flex items-center gap-2"><i class="fa-solid fa-database text-accent" aria-hidden="true"></i>Modern Data Platforms</h3>
+                <ul class="space-y-3 text-base text-ink/78">
+                    <li>Batch and streaming architecture decisions</li>
+                    <li>Data quality and reliability patterns</li>
+                    <li>Governance, lineage, and model-ready data</li>
+                </ul>
+            </article>
+
+            <article class="border border-line/25 bg-page p-8">
+                <h3 class="text-[1.2rem] font-semibold text-ink mb-4 inline-flex items-center gap-2"><i class="fa-solid fa-cloud-arrow-up text-accent" aria-hidden="true"></i>Cloud & Distributed Systems</h3>
+                <ul class="space-y-3 text-base text-ink/78">
+                    <li>Kubernetes and workload orchestration</li>
+                    <li>Resilience and failure-mode planning</li>
+                    <li>Infrastructure design for scale</li>
+                </ul>
+            </article>
+
+            <article class="border border-line/25 bg-page p-8">
+                <h3 class="text-[1.2rem] font-semibold text-ink mb-4 inline-flex items-center gap-2"><i class="fa-solid fa-code-branch text-accent" aria-hidden="true"></i>MLOps & Platform Workflows</h3>
+                <ul class="space-y-3 text-base text-ink/78">
+                    <li>CI/CD for data and ML systems</li>
+                    <li>Model monitoring and drift detection</li>
+                    <li>Release strategies and rollback safety</li>
+                </ul>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="section-block border-b border-line/20">
+    <div class="max-w-[1040px] mx-auto px-6 md:px-8">
+        <h2 class="text-[1.95rem] font-semibold text-ink mb-3">Engagement Model</h2>
+        <p class="text-base text-ink/62 mb-10">Clear structure from discovery to post-session execution support.</p>
+
+        <div class="grid md:grid-cols-3 gap-7">
+            <article class="border border-line/25 bg-page p-6">
+                <h3 class="text-[1.15rem] font-semibold text-ink mb-2 inline-flex items-center gap-2"><i class="fa-solid fa-magnifying-glass text-accent" aria-hidden="true"></i>1. Technical Discovery</h3>
+                <p class="text-base text-ink/76 leading-relaxed">Scope current architecture, team maturity, and delivery objectives.</p>
+            </article>
+            <article class="border border-line/25 bg-page p-6">
+                <h3 class="text-[1.15rem] font-semibold text-ink mb-2 inline-flex items-center gap-2"><i class="fa-solid fa-diagram-project text-accent" aria-hidden="true"></i>2. Curriculum Design</h3>
+                <p class="text-base text-ink/76 leading-relaxed">Map practical modules to your systems, tools, and constraints.</p>
+            </article>
+            <article class="border border-line/25 bg-page p-6">
+                <h3 class="text-[1.15rem] font-semibold text-ink mb-2 inline-flex items-center gap-2"><i class="fa-solid fa-square-check text-accent" aria-hidden="true"></i>3. Delivery + Handover</h3>
+                <p class="text-base text-ink/76 leading-relaxed">Run sessions, share references, and align immediate implementation actions.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="section-block border-b border-line/20 bg-surface/30">
+    <div class="max-w-[1040px] mx-auto px-6 md:px-8">
+        <h2 class="text-[1.95rem] font-semibold text-ink mb-3">Outcomes</h2>
+        <p class="text-base text-ink/62 mb-10">Teams leave with implementation clarity, not abstract theory.</p>
+
+        <div class="grid md:grid-cols-3 gap-7">
+            <article class="border border-line/25 bg-page p-6" style="padding:1.5rem;">
+                <h3 class="text-[1.15rem] font-semibold text-ink mb-3 inline-flex items-center gap-2"><i class="fa-solid fa-compass-drafting text-accent" aria-hidden="true"></i>Architecture Clarity</h3>
+                <p class="text-base text-ink/76">Clear decisions on patterns, tooling, and tradeoffs before build commitments.</p>
+            </article>
+            <article class="border border-line/25 bg-page p-6" style="padding:1.5rem;">
+                <h3 class="text-[1.15rem] font-semibold text-ink mb-3 inline-flex items-center gap-2"><i class="fa-solid fa-shield-check text-accent" aria-hidden="true"></i>Lower Delivery Risk</h3>
+                <p class="text-base text-ink/76">Teams identify failure modes earlier and implement guardrails with intent.</p>
+            </article>
+            <article class="border border-line/25 bg-page p-6" style="padding:1.5rem;">
+                <h3 class="text-[1.15rem] font-semibold text-ink mb-3 inline-flex items-center gap-2"><i class="fa-solid fa-gauge-high text-accent" aria-hidden="true"></i>Faster Execution</h3>
+                <p class="text-base text-ink/76">Better operating rhythm across engineering, platform, and data functions.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="section-block border-t border-line/20">
+    <div class="max-w-[1040px] mx-auto px-6 md:px-8">
+        <div class="border border-line/25 bg-page p-8 sm:p-10 text-center">
+            <h2 class="text-[1.95rem] font-semibold text-ink mb-4">Request Training Scope</h2>
+            <p class="text-base text-ink/68 mb-8 max-w-2xl mx-auto">Share team size, current stack, and target capability. I will propose a structured training plan.</p>
+            <a href="/contact?project_type=Training" class="btn btn-primary" data-analytics="cta-training-request-scope">
+                <i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i>
+                <span>Request Training Scope</span>
             </a>
         </div>
     </div>
 </section>
-
-<!-- Authority Section -->
-<section class="py-20 border-b border-line/20 bg-surface/30">
-    <div class="max-w-6xl mx-auto px-6">
-        <div class="grid md:grid-cols-2 gap-16 items-center">
-            <div>
-                <h2 class="font-display text-3xl font-bold tracking-tight text-ink mb-6">Training Approach
-                </h2>
-                <div class="w-16 h-1 bg-accent mb-6"></div>
-                <p class="text-lg text-ink/70 leading-relaxed mb-6">
-                    Structured systems thinking grounded in real-world implementation across AI platforms,
-                    distributed systems, and enterprise data stacks.
-                </p>
-                <p class="text-lg text-ink/70 leading-relaxed">
-                    Every session is designed around architectural tradeoffs, failure modes, and cost realities.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 gap-4">
-                {% set credentials = [
-                "Senior AI & Data Engineering Leader",
-                "Google Cloud Certified Professional Data Engineer",
-                "Google Cloud Certified Professional Cloud Architect",
-                "AWS Certified Cloud Practitioner",
-                "Google Developer Group Organizer & Speaker",
-                "Adjunct Professor (Cloud & Data Systems)"
-                ] %}
-                {% for item in credentials %}
-                <div class="flex items-center gap-3 p-4 border border-line/20 bg-page">
-                    <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
-                    <span class="font-bold text-ink">{{ item }}</span>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Training Philosophy -->
-<section class="py-24 border-b border-line/20">
-    <div class="max-w-5xl mx-auto px-6 text-center">
-        <h2 class="font-display text-4xl font-bold tracking-tight text-ink mb-6">Training Philosophy</h2>
-        <p class="text-xl text-ink/70 leading-relaxed max-w-3xl mx-auto">
-            Architecture-first implementation with practical constraints,
-            reliability discipline, and cost-aware design.
-        </p>
-    </div>
-</section>
-
-<!-- Core Tracks -->
-<section class="py-24 border-b border-line/20 bg-surface/30">
-    <div class="max-w-6xl mx-auto px-6">
-        <h2 class="font-display text-4xl font-bold tracking-tight text-ink mb-16">
-            Core Training Tracks
-        </h2>
-
-        <div class="grid md:grid-cols-2 gap-10">
-
-            <div class="bg-page p-8 border border-line/20">
-                <h3 class="font-display text-2xl font-bold text-ink mb-6">
-                    Production AI Systems
-                </h3>
-                <ul class="space-y-3 text-sm text-ink/70">
-                    <li>LLM system architecture & RAG pipelines</li>
-                    <li>Agent orchestration & workflow reliability</li>
-                    <li>Inference scaling & GPU economics</li>
-                    <li>Evaluation frameworks & guardrails</li>
-                </ul>
-            </div>
-
-            <div class="bg-page p-8 border border-line/20">
-                <h3 class="font-display text-2xl font-bold text-ink mb-6">
-                    Modern Data Platforms
-                </h3>
-                <ul class="space-y-3 text-sm text-ink/70">
-                    <li>Batch vs streaming architectural tradeoffs</li>
-                    <li>Data reliability engineering practices</li>
-                    <li>Warehouse & lakehouse design patterns</li>
-                    <li>Governance, metadata & lineage systems</li>
-                </ul>
-            </div>
-
-            <div class="bg-page p-8 border border-line/20">
-                <h3 class="font-display text-2xl font-bold text-ink mb-6">
-                    Distributed Systems & Cloud Architecture
-                </h3>
-                <ul class="space-y-3 text-sm text-ink/70">
-                    <li>Kubernetes for data & AI workloads</li>
-                    <li>Failure modeling & resiliency patterns</li>
-                    <li>Infrastructure as Code discipline</li>
-                    <li>Multi-cloud design considerations</li>
-                </ul>
-            </div>
-
-            <div class="bg-page p-8 border border-line/20">
-                <h3 class="font-display text-2xl font-bold text-ink mb-6">
-                    MLOps & Platform Engineering
-                </h3>
-                <ul class="space-y-3 text-sm text-ink/70">
-                    <li>CI/CD for ML systems</li>
-                    <li>Model versioning & feature stores</li>
-                    <li>Drift detection & monitoring</li>
-                    <li>Production rollout strategies</li>
-                </ul>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- Who It Is For -->
-<section class="py-24 border-b border-line/20">
-    <div class="max-w-6xl mx-auto px-6">
-        <h2 class="font-display text-3xl font-bold tracking-tight text-ink mb-12 text-center">
-            Designed For
-        </h2>
-
-        {% set audience = [
-        "Engineering Teams building production AI",
-        "Data Platform Teams modernizing architecture",
-        "Cloud Architects responsible for scalability",
-        "Technical Leads driving AI adoption",
-        "Organizations transitioning from POC to Production"
-        ] %}
-
-        <div class="grid md:grid-cols-2 gap-6">
-            {% for item in audience %}
-            <div class="p-6 border border-line/20 bg-surface/20 font-semibold text-ink">
-                {{ item }}
-            </div>
-            {% endfor %}
-        </div>
-    </div>
-</section>
-
-<!-- Outcomes -->
-<section class="py-24 border-b border-line/20 bg-surface/30">
-    <div class="max-w-6xl mx-auto px-6 text-center">
-        <h2 class="font-display text-3xl font-bold tracking-tight text-ink mb-12">
-            Measurable Outcomes
-        </h2>
-
-        <div class="grid sm:grid-cols-3 gap-10">
-            <div>
-                <h3 class="font-bold text-ink mb-3">Architectural Clarity</h3>
-                <p class="text-sm text-ink/60">
-                    Teams understand tradeoffs before committing to implementation.
-                </p>
-            </div>
-            <div>
-                <h3 class="font-bold text-ink mb-3">Reduced Production Risk</h3>
-                <p class="text-sm text-ink/60">
-                    Failure modes identified early. Guardrails designed upfront.
-                </p>
-            </div>
-            <div>
-                <h3 class="font-bold text-ink mb-3">Lower Infrastructure Costs</h3>
-                <p class="text-sm text-ink/60">
-                    Compute, storage, and inference optimized intentionally.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- CTA -->
-<section class="bg-black text-white">
-    <div class="max-w-6xl mx-auto px-6 py-24 text-center">
-        <h2 class="font-display text-4xl font-bold mb-6">
-            Custom Curriculum Available
-        </h2>
-        <p class="text-white/70 mb-10 max-w-3xl mx-auto">
-            Training is scoped after a short architecture discussion.
-            Every engagement is aligned to your current platform maturity and constraints.
-        </p>
-
-        <a href="/contact"
-            class="inline-flex items-center justify-center text-lg font-semibold bg-accent text-black hover:bg-white transition-all h-14 px-10 rounded-sm">
-            Schedule a Scope Discussion
-        </a>
-    </div>
-</section>
-
 {% endblock %}

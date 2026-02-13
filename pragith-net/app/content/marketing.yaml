@@ -3,7 +3,7 @@ utm_defaults:
   medium: website_cta
   campaign: inbound_consulting
 
-default_project_type: Lead and WhatsApp Automation
+default_project_type: Defined-Scope Build
 
 project_type_rules:
   - contains: /business/dashboards

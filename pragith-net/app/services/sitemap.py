@@ -31,7 +31,7 @@ class SitemapService:
         self.add_url("/", priority=1.0, changefreq="weekly")
         self.add_url("/work", priority=0.9, changefreq="weekly")
         self.add_url("/about", priority=0.8, changefreq="monthly")
-        self.add_url("/blog", priority=0.9, changefreq="daily")
+        self.add_url("/notes", priority=0.9, changefreq="daily")
         
         # Business pages
         self.add_url("/business", priority=0.8, changefreq="monthly")
@@ -54,7 +54,7 @@ class SitemapService:
         """Add blog posts to the sitemap."""
         for post in posts:
             self.add_url(
-                f"/blog/{post.slug}",
+                f"/notes/{post.slug}",
                 priority=0.7,
                 changefreq="monthly"
             )

@@ -3,19 +3,6 @@ function toggleMobileMenu() {
     document.getElementById('mobile-menu').classList.toggle('hidden');
 }
 
-// Content protection: disable common copy/select interactions globally.
-document.addEventListener('copy', function (e) { e.preventDefault(); }, true);
-document.addEventListener('cut', function (e) { e.preventDefault(); }, true);
-document.addEventListener('contextmenu', function (e) { e.preventDefault(); }, true);
-document.addEventListener('selectstart', function (e) { e.preventDefault(); }, true);
-document.addEventListener('dragstart', function (e) { e.preventDefault(); }, true);
-document.addEventListener('keydown', function (e) {
-    const key = (e.key || '').toLowerCase();
-    if ((e.ctrlKey || e.metaKey) && (key === 'c' || key === 'x' || key === 'a' || key === 's' || key === 'u' || key === 'p')) {
-        e.preventDefault();
-    }
-}, true);
-
 // Theme toggle
 function toggleTheme() {
     var d = document.documentElement.classList;
@@ -69,30 +56,6 @@ document.addEventListener('click', function (event) {
         buttons.forEach(btn => btn.setAttribute('aria-expanded', 'false'));
     }
 });
-
-// Intersection Observer for animations (if needed)
-if ('IntersectionObserver' in window) {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate-in');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    // Observe elements with data-animate attribute
-    document.addEventListener('DOMContentLoaded', () => {
-        document.querySelectorAll('[data-animate]').forEach(el => {
-            observer.observe(el);
-        });
-    });
-}
 
 function trackEvent(eventName, params) {
     if (typeof window.gtag !== 'function') return;

@@ -10,4 +10,4 @@ Yes, I have observed one thing  -  by blogging, you can improve your writing ski
 
 So, I encourage all my readers to go and start blogging. It is very easy to start your own. Simply sign up on [WordPress](http://wordpress.com/signup/) and your blog is ready.
 
-If you are having any trouble starting the blog or getting confused with the interface, you can always contact me at **pragith@pragith.net**.
+If you are having any trouble starting the blog or getting confused with the interface, you can always contact me.

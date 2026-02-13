@@ -4,6 +4,7 @@ from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse, RedirectResponse, Response
 from fastapi.middleware.trustedhost import TrustedHostMiddleware
 from starlette.middleware.base import BaseHTTPMiddleware
+from urllib.parse import quote
 from slowapi import Limiter, _rate_limit_exceeded_handler
 from slowapi.util import get_remote_address
 from slowapi.errors import RateLimitExceeded
@@ -41,12 +42,13 @@ class SecurityHeadersMiddleware(BaseHTTPMiddleware):
         response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
         response.headers["Content-Security-Policy"] = (
             "default-src 'self'; "
-            "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google.com https://www.gstatic.com https://static.hotjar.com https://script.hotjar.com https://t.contentsquare.net https://www.clarity.ms; "
+            "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google.com https://www.gstatic.com https://static.hotjar.com https://script.hotjar.com https://t.contentsquare.net https://www.clarity.ms https://scripts.clarity.ms; "
             "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
             "font-src 'self' https://fonts.gstatic.com; "
             "img-src 'self' data: https://*.hotjar.com https://*.contentsquare.net https://www.clarity.ms https://c.clarity.ms; "
             "frame-src https://www.google.com https://calendly.com; "
-            "connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://*.hotjar.com wss://*.hotjar.com https://*.contentsquare.net https://www.clarity.ms https://c.clarity.ms"
+            "connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://*.hotjar.com wss://*.hotjar.com https://*.contentsquare.net https://www.clarity.ms https://c.clarity.ms https://b.clarity.ms; "
+            "worker-src 'self' blob:"
         )
         return response
 
@@ -76,6 +78,41 @@ templates.env.globals["nav_mode"] = settings.NAV_MODE
 templates.env.globals["nav_offset_top"] = settings.NAV_OFFSET_TOP
 templates.env.globals["nav_offset_left"] = settings.NAV_OFFSET_LEFT
 templates.env.globals["nav_left_width"] = settings.NAV_LEFT_WIDTH
+
+
+def _contact_meta(project_type: str = "", ref_page: str = "", cta_id: str = "") -> dict:
+    signal = " ".join([
+        (project_type or "").strip().lower(),
+        (ref_page or "").strip().lower(),
+        (cta_id or "").strip().lower(),
+    ])
+
+    title = "Start Your Build Inquiry"
+    subtitle = "Qualified intake for defined-scope operational builds."
+
+    if "dashboard" in signal:
+        title = "Define the Dashboard Build"
+        subtitle = "Qualified intake for executive KPI dashboard implementation."
+    elif "training" in signal:
+        title = "Request Corporate Training"
+        subtitle = "Qualified intake for enterprise AI and data training engagements."
+    elif "keynote" in signal or "speaking" in signal:
+        title = "Discuss Speaking Engagement"
+        subtitle = "Share event format, audience, and outcomes to scope the right session."
+    elif "voice receptionist" in signal:
+        title = "Define the Voice Receptionist Build"
+        subtitle = "Qualified intake for AI voice receptionist implementation."
+    elif "booking" in signal:
+        title = "Define the Booking Automation Build"
+        subtitle = "Qualified intake for 24/7 booking automation implementation."
+    elif "whatsapp" in signal:
+        title = "Define the WhatsApp Automation Build"
+        subtitle = "Qualified intake for lead and WhatsApp automation implementation."
+    elif "automation" in signal:
+        title = "Define the Automation Build"
+        subtitle = "Qualified intake for fixed-scope operational automation implementation."
+
+    return {"title": title, "subtitle": subtitle}
 
 # Context Processor for common variables
 @app.middleware("http")
@@ -146,8 +183,8 @@ async def stack(request: Request):
 
 from typing import Optional
 
-@app.get("/blog", response_class=HTMLResponse)
-async def blog_list(request: Request, year: Optional[int] = None):
+@app.get("/notes", response_class=HTMLResponse)
+async def notes_list(request: Request, year: Optional[int] = None):
     all_posts = blog_service.get_all()
     
     # Extract years
@@ -168,13 +205,13 @@ async def blog_list(request: Request, year: Optional[int] = None):
         "current_year": current_year
     })
 
-@app.get("/blog/tag/{tag}", response_class=HTMLResponse)
-async def blog_tag(request: Request, tag: str):
+@app.get("/notes/tag/{tag}", response_class=HTMLResponse)
+async def notes_tag(request: Request, tag: str):
     posts = blog_service.get_by_tag(tag)
     return templates.TemplateResponse("blog_list.html", {"request": request, "posts": posts, "tag": tag})
 
-@app.get("/blog/{slug}", response_class=HTMLResponse)
-async def blog_detail(request: Request, slug: str):
+@app.get("/notes/{slug}", response_class=HTMLResponse)
+async def notes_detail(request: Request, slug: str):
     post = blog_service.get_by_slug(slug)
     if not post:
         raise HTTPException(status_code=404, detail="Post not found")
@@ -187,7 +224,8 @@ async def contact(request: Request):
     project_type = q.get("project_type", "").strip()
     if not project_type:
         ref_page = (q.get("ref_page", "") or "").lower()
-        project_type = marketing_service.resolve_project_type(ref_page)
+        if ref_page:
+            project_type = marketing_service.resolve_project_type(ref_page)
 
     inquiry_type = q.get("inquiry_type", "").strip() or "Within 90 days"
     decision_authority = q.get("decision_authority", "").strip()
@@ -231,6 +269,7 @@ async def contact(request: Request):
         "cta_id": cta_id,
         "package": package,
     }
+    contact_meta = _contact_meta(project_type=project_type, ref_page=ref_page, cta_id=cta_id)
 
     return templates.TemplateResponse("contact.html", {
         "request": request,
@@ -238,6 +277,7 @@ async def contact(request: Request):
         "recaptcha_site_key": settings.RECAPTCHA_SITE_KEY,
         "calendly_url": settings.CALENDLY_URL,
         "form": form_defaults,
+        "contact_meta": contact_meta,
     })
 
 
@@ -261,6 +301,7 @@ async def contact_submit(
     ref_page: str = Form(""),
     cta_id: str = Form(""),
     package: str = Form(""),
+    submit_channel: str = Form("email"),
     website: str = Form(""),
     recaptcha_response: str = Form(alias="g-recaptcha-response", default="")
 ):
@@ -270,6 +311,7 @@ async def contact_submit(
     
     # Verify captcha (skip if no key configured)
     if settings.RECAPTCHA_SECRET_KEY and not mailer_service.verify_recaptcha(recaptcha_response):
+        contact_meta = _contact_meta(project_type=project_type, ref_page=ref_page, cta_id=cta_id)
         return templates.TemplateResponse("contact.html", {
             "request": request, 
             "error": "reCAPTCHA verification failed. Please try again.",
@@ -292,6 +334,7 @@ async def contact_submit(
                 "package": package,
             },
             "recaptcha_site_key": settings.RECAPTCHA_SITE_KEY,
+            "contact_meta": contact_meta,
         })
 
     enriched_message = message
@@ -322,6 +365,15 @@ async def contact_submit(
     success = mailer_service.send_contact_email(name, email, inquiry_type, enriched_message)
 
     if success:
+        if (submit_channel or "").strip().lower() == "both":
+            whatsapp_message = (
+                f"Hi Pragith, this is {name}. "
+                f"I submitted the contact form for {project_type or 'a defined build'} "
+                f"({inquiry_type}). "
+                f"Company: {company or '-'} | Email: {email} | Challenge: {challenge_type or '-'}."
+            )
+            wa_url = f"https://wa.me/971585912858?text={quote(whatsapp_message)}"
+            return RedirectResponse(url=wa_url, status_code=303)
         return templates.TemplateResponse("contact_success.html", {"request": request})
     else:
         return templates.TemplateResponse("contact.html", {

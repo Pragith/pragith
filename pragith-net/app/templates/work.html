@@ -9,13 +9,14 @@
 <section class="py-20 border-t border-line/20 min-h-screen">
     <div class="max-w-7xl mx-auto px-6">
         <div class="mb-20">
-            <div
+            <!-- <div
                 class="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-accent/5 text-accent text-xs font-mono font-medium mb-6">
                 <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
                 SYSTEM_REGISTRY
-            </div>
-            <h1 class="font-display text-4xl sm:text-5xl font-bold tracking-tight text-ink mb-6">Engineered Systems</h1>
-            <p class="text-xl text-ink/60 max-w-2xl font-light">
+            </div> -->
+            <h1 class="page-hero-title">Engineered Systems</h1>
+            <div class="page-hero-rule"></div>
+            <p class="page-hero-subtitle">
                 Production-grade infrastructure, data platforms, and distributed systems.
                 Built for scale, reliability, and observability.
             </p>
@@ -50,10 +51,7 @@
                     <div class="flex-1">
                         <h2
                             class="font-display text-2xl font-bold text-ink mb-4 group-hover:text-accent transition-colors">
-                            <a href="/work/{{ work.slug }}" class="focus:outline-none">
-                                <span class="absolute inset-0 z-10" aria-hidden="true"></span>
-                                {{ work.title }}
-                            </a>
+                            {{ work.title }}
                         </h2>
                         <p class="text-ink/60 mb-8 leading-relaxed max-w-3xl">{{ work.summary }}</p>
 
@@ -65,14 +63,6 @@
                         </div>
                     </div>
 
-                    <!-- Action Icon -->
-                    <div
-                        class="shrink-0 self-start md:self-center opacity-0 group-hover:opacity-100 transition-opacity -translate-x-4 group-hover:translate-x-0 duration-300">
-                        <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                        </svg>
-                    </div>
                 </div>
             </div>
             {% endfor %}
