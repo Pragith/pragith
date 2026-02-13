@@ -31,12 +31,11 @@ class SitemapService:
         self.add_url("/", priority=1.0, changefreq="weekly")
         self.add_url("/work", priority=0.9, changefreq="weekly")
         self.add_url("/blog", priority=0.9, changefreq="daily")
-        self.add_url("/pricing", priority=0.8, changefreq="weekly")
-        self.add_url("/offerings", priority=0.8, changefreq="weekly")
         
         # Business pages
         self.add_url("/business", priority=0.8, changefreq="monthly")
         self.add_url("/business/automation", priority=0.8, changefreq="monthly")
+        self.add_url("/business/whatsapp-automation", priority=0.8, changefreq="monthly")
         self.add_url("/business/dashboards", priority=0.8, changefreq="monthly")
         
         # Method pages

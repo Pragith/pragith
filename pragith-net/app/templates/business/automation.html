@@ -26,7 +26,7 @@ lead routing, approval workflows, and repetitive administrative tasks.{% endbloc
 
 {% block content %}
 <!-- Hero -->
-<section class="border-b border-line/20">
+<section class="border-b border-line/20" data-panel-title="Automation">
     <div class="max-w-6xl mx-auto px-6 py-24 sm:py-32">
         <div class="max-w-4xl">
             <h1
@@ -74,73 +74,67 @@ lead routing, approval workflows, and repetitive administrative tasks.{% endbloc
     </div>
 </section>
 
-<!-- What Usually Breaks -->
-<section class="py-24 border-b border-line/20">
+<!-- Breaks + Outcomes (Compact Accordions) -->
+<section class="py-16 border-b border-line/20 bg-surface/20" data-panel-title="Breakpoints">
     <div class="max-w-6xl mx-auto px-6">
-        <div class="grid md:grid-cols-2 gap-16 items-start">
-            <div>
-                <h2 class="font-display text-3xl font-bold tracking-tight text-ink mb-6">What Usually Breaks</h2>
-                <div class="w-16 h-1 bg-accent mb-6"></div>
-                <p class="text-lg text-ink/70 leading-relaxed">
-                    Most growing businesses struggle with the same friction points. These issues compound as volume
-                    increases.
-                </p>
-            </div>
-            <div class="space-y-4">
-                {% set breaks = [
-                "Leads coming from multiple channels with no structured routing",
-                "WhatsApp and email handled manually",
-                "CRM updates happening late or inconsistently",
-                "Approval workflows managed over chat",
-                "Revenue and pipeline reports assembled manually",
-                "Staff duplicating data across tools"
-                ] %}
-                {% for item in breaks %}
-                <div class="flex items-start gap-4 p-4 border-l-2 border-line/30 bg-surface/30">
-                    <span class="text-accent font-bold mt-0.5">⚠</span>
-                    <span class="text-ink/80">{{ item }}</span>
-                </div>
-                {% endfor %}
-            </div>
+        <div class="mb-8">
+            <h2 class="font-display text-3xl font-bold tracking-tight text-ink mb-3">Operational Reality</h2>
+            <p class="text-ink/70">Compact view of what breaks and what changes after implementation.</p>
         </div>
-    </div>
-</section>
 
-<!-- What Changes -->
-<section class="py-24 border-b border-line/20 bg-surface/30">
-    <div class="max-w-6xl mx-auto px-6">
-        <div class="grid md:grid-cols-2 gap-16 items-start">
-            <div class="md:order-2">
-                <h2 class="font-display text-3xl font-bold tracking-tight text-ink mb-6">What Changes After
-                    Implementation</h2>
-                <div class="w-16 h-1 bg-accent mb-6"></div>
-                <p class="text-lg text-ink/70 leading-relaxed mb-6">
-                    Your team stops chasing messages and updating spreadsheets.
-                    The system executes defined logic without manual intervention.
-                </p>
-            </div>
-            <div class="space-y-4 md:order-1">
-                {% set changes = [
-                "Leads are routed instantly to the right person",
-                "Customer inquiries trigger structured follow-up",
-                "CRM updates happen automatically",
-                "Approval workflows move without manual chasing",
-                "Dashboards update in real time",
-                "Reporting no longer requires weekly spreadsheet work"
-                ] %}
-                {% for item in changes %}
-                <div class="flex items-start gap-4 p-4 border border-accent/20 bg-accent/5">
-                    <span class="text-accent font-bold mt-0.5">✓</span>
-                    <span class="text-ink">{{ item }}</span>
+        {% set breaks = [
+        "Leads coming from multiple channels with no structured routing",
+        "WhatsApp and email handled manually",
+        "CRM updates happening late or inconsistently",
+        "Approval workflows managed over chat",
+        "Revenue and pipeline reports assembled manually",
+        "Staff duplicating data across tools"
+        ] %}
+        {% set changes = [
+        "Leads are routed instantly to the right person",
+        "Customer inquiries trigger structured follow-up",
+        "CRM updates happen automatically",
+        "Approval workflows move without manual chasing",
+        "Dashboards update in real time",
+        "Reporting no longer requires weekly spreadsheet work"
+        ] %}
+
+        <div class="grid md:grid-cols-2 gap-6">
+            <details open class="border border-line/30 bg-page">
+                <summary class="cursor-pointer list-none px-5 py-4 flex items-center justify-between">
+                    <span class="font-display text-xl font-bold text-ink">What Usually Breaks</span>
+                    <span class="text-ink/40 text-xs uppercase tracking-wider">Expand</span>
+                </summary>
+                <div class="px-5 pb-5">
+                    <p class="text-sm text-ink/70 mb-4">Most growing businesses struggle with the same friction points. These issues compound as volume increases.</p>
+                    <ul class="space-y-2">
+                        {% for item in breaks %}
+                        <li class="flex items-start gap-3 text-sm text-ink/80"><span class="text-accent font-bold mt-0.5">⚠</span><span>{{ item }}</span></li>
+                        {% endfor %}
+                    </ul>
                 </div>
-                {% endfor %}
-            </div>
+            </details>
+
+            <details open class="border border-accent/30 bg-accent/5">
+                <summary class="cursor-pointer list-none px-5 py-4 flex items-center justify-between">
+                    <span class="font-display text-xl font-bold text-ink">What Changes After Implementation</span>
+                    <span class="text-ink/40 text-xs uppercase tracking-wider">Expand</span>
+                </summary>
+                <div class="px-5 pb-5">
+                    <p class="text-sm text-ink/70 mb-4">Your team stops chasing messages and updating spreadsheets. The system executes defined logic without manual intervention.</p>
+                    <ul class="space-y-2">
+                        {% for item in changes %}
+                        <li class="flex items-start gap-3 text-sm text-ink"><span class="text-accent font-bold mt-0.5">✓</span><span>{{ item }}</span></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </details>
         </div>
     </div>
 </section>
 
 <!-- Common Fixed-Scope Builds -->
-<section class="py-24 border-b border-line/20">
+<section class="py-24 border-b border-line/20" data-panel-title="Public Offers">
     <div class="max-w-6xl mx-auto px-6">
         <div class="mb-16">
             <h2 class="font-display text-4xl font-bold tracking-tight text-ink mb-4">Defined Automation Builds</h2>
@@ -204,14 +198,14 @@ lead routing, approval workflows, and repetitive administrative tasks.{% endbloc
                 <span class="flex items-center gap-2"><span class="text-accent">✓</span> Transferred fully</span>
             </div>
             <div class="mt-6 text-sm font-mono text-ink/40 uppercase tracking-wider">
-                No open-ended consulting cycles. No exploratory AI programs.
+                Structured consulting cycles. Defined AI programs.
             </div>
         </div>
     </div>
 </section>
 
 <!-- How Engagement Works -->
-<section class="py-24 border-b border-line/20">
+<section class="py-24 border-b border-line/20" data-panel-title="Process">
     <div class="max-w-6xl mx-auto px-6">
         <div class="max-w-3xl">
             <h2 class="font-display text-3xl font-bold tracking-tight text-ink mb-8">How Engagement Works</h2>
@@ -253,15 +247,14 @@ lead routing, approval workflows, and repetitive administrative tasks.{% endbloc
 </section>
 
 <!-- Is This For You -->
-<section class="py-24 border-b border-line/20 bg-surface/30">
+<section class="py-24 border-b border-line/20 bg-surface/30" data-panel-title="Fit Check">
     <div class="max-w-6xl mx-auto px-6">
         <div class="grid md:grid-cols-2 gap-16">
             <div>
                 <h3 class="font-display text-2xl font-bold text-ink mb-6">Is This For You?</h3>
                 <div class="space-y-3">
                     {% for item in ["You are a business owner or operations lead", "You have recurring operational
-                    friction", "You want a defined build, not experimentation", "You want production-grade systems, not
-                    prototypes"] %}
+                    friction", "You want a defined build", "You want production-grade systems"] %}
                     <div class="flex items-start gap-3">
                         <span class="text-green-600 font-bold">✓</span>
                         <span class="text-ink/80">{{ item }}</span>
@@ -270,10 +263,9 @@ lead routing, approval workflows, and repetitive administrative tasks.{% endbloc
                 </div>
             </div>
             <div>
-                <h3 class="font-display text-2xl font-bold text-ink/60 mb-6">Is This Not For You?</h3>
+                <h3 class="font-display text-2xl font-bold text-ink/60 mb-6">Out of Scope</h3>
                 <div class="space-y-3">
-                    {% for item in ["You are exploring AI out of curiosity", "You want an undefined transformation
-                    program", "You are seeking hourly ad-hoc support"] %}
+                    {% for item in ["Purely exploratory research", "Open-ended transformation programs", "Hourly ad-hoc support"] %}
                     <div class="flex items-start gap-3">
                         <span class="text-ink/30 font-bold">×</span>
                         <span class="text-ink/60">{{ item }}</span>
@@ -286,7 +278,7 @@ lead routing, approval workflows, and repetitive administrative tasks.{% endbloc
 </section>
 
 <!-- CTA -->
-<section class="bg-black text-white border-t border-white/10">
+<section class="bg-black text-white border-t border-white/10" data-panel-title="Define Build">
     <div class="max-w-6xl mx-auto px-6 py-24 text-center">
             <h2 class="font-display text-4xl sm:text-5xl font-bold mb-8">Define the Build</h2>
         <div class="max-w-xl mx-auto text-left bg-white/5 p-8 border border-white/10 mb-10">
