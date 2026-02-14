@@ -1,0 +1,2088 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Content Snapshot - 20260213_202824</title>
+    <style>
+        body {
+            font-family: 'Inter', monospace;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #0A0A0A;
+            color: #fff;
+        }
+        h1 { color: #E8590C; }
+        .file-section {
+            background: #111;
+            margin: 30px 0;
+            padding: 20px;
+            border: 2px solid #333;
+        }
+        .file-header {
+            background: #000;
+            color: #E8590C;
+            padding: 10px 15px;
+            margin: -20px -20px 20px -20px;
+            font-weight: bold;
+            font-size: 16px;
+            border-bottom: 1px solid #333;
+        }
+        .file-path {
+            color: #E8590C;
+            opacity: 0.7;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+        .file-content {
+            background: #0A0A0A;
+            border-left: 4px solid #E8590C;
+            padding: 15px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            color: #ccc;
+        }
+        .separator {
+            border-top: 1px dashed #333;
+            margin: 30px 0;
+        }
+        .index {
+            background: #111;
+            border: 2px solid #333;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .index h2 {
+            margin-top: 0;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+            color: #E8590C;
+        }
+        .index ul {
+            list-style: none;
+            padding: 0;
+        }
+        .index li {
+            padding: 5px 0;
+        }
+        .index a {
+            color: #ccc;
+            text-decoration: none;
+        }
+        .index a:hover {
+            color: #E8590C;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Website Content Snapshot</h1>
+    <p><strong>Generated:</strong> 2026-02-13 20:28:24</p>
+    <p><strong>Total Files:</strong> 18</p>
+    
+    <div class="index">
+        <h2>File Index</h2>
+        <ul>
+            <li><a href="#file-1">1. 404.html</a></li>
+            <li><a href="#file-2">2. 500.html</a></li>
+            <li><a href="#file-3">3. about.html</a></li>
+            <li><a href="#file-4">4. base.html</a></li>
+            <li><a href="#file-5">5. business/dashboards.html</a></li>
+            <li><a href="#file-6">6. contact.html</a></li>
+            <li><a href="#file-7">7. contact_success.html</a></li>
+            <li><a href="#file-8">8. engagement.html</a></li>
+            <li><a href="#file-9">9. faq.html</a></li>
+            <li><a href="#file-10">10. index.html</a></li>
+            <li><a href="#file-11">11. legal.html</a></li>
+            <li><a href="#file-12">12. live_demos.html</a></li>
+            <li><a href="#file-13">13. partials/dashboard_demo_modal.html</a></li>
+            <li><a href="#file-14">14. privacy.html</a></li>
+            <li><a href="#file-15">15. solutions.html</a></li>
+            <li><a href="#file-16">16. speaking.html</a></li>
+            <li><a href="#file-17">17. training.html</a></li>
+            <li><a href="#file-18">18. work.html</a></li>
+        </ul>
+    </div>
+
+
+    <div class="file-section" id="file-1">
+        <div class="file-header">
+            404.html
+            <div class="file-path">404.html</div>
+        </div>
+        <div class="file-content">{% extends "base.html" %}
+{% block title %}Page Not Found | Pragith Prakash{% endblock %}
+{% block extra_head %}
+&lt;meta name="robots" content="noindex"&gt;{% endblock %}
+{% block content %}
+&lt;section class="py-20 border-t border-line/20"&gt;
+    &lt;div class="max-w-3xl mx-auto px-6 text-center"&gt;
+        &lt;h1 class="font-display text-8xl font-bold text-ink mb-4"&gt;404&lt;/h1&gt;
+        &lt;p class="text-2xl text-ink mb-4"&gt;Page Not Found&lt;/p&gt;
+        &lt;p class="text-ink/60 mb-8 max-w-lg mx-auto"&gt;
+            The page you're looking for doesn't exist or has been moved.
+        &lt;/p&gt;
+
+        &lt;!-- Quick Links --&gt;
+        &lt;div class="mb-8"&gt;
+            &lt;h2 class="text-sm font-semibold text-ink/40 uppercase tracking-wider mb-6"&gt;Try These Instead&lt;/h2&gt;
+            &lt;div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto"&gt;
+                &lt;a href="/" class="border-2 border-line/20 p-4 bg-surface hover:border-accent transition-colors"&gt;
+                    &lt;div class="text-sm font-bold text-ink mb-1"&gt;Home&lt;/div&gt;
+                    &lt;div class="text-xs text-ink/50"&gt;Start here&lt;/div&gt;
+                &lt;/a&gt;
+                &lt;a href="/work" class="border-2 border-line/20 p-4 bg-surface hover:border-accent transition-colors"&gt;
+                    &lt;div class="text-sm font-bold text-ink mb-1"&gt;Work&lt;/div&gt;
+                    &lt;div class="text-xs text-ink/50"&gt;Case studies&lt;/div&gt;
+                &lt;/a&gt;
+                &lt;a href="/agents" class="border-2 border-line/20 p-4 bg-surface hover:border-accent transition-colors"&gt;
+                    &lt;div class="text-sm font-bold text-ink mb-1"&gt;How I Work&lt;/div&gt;
+                    &lt;div class="text-xs text-ink/50"&gt;My process&lt;/div&gt;
+                &lt;/a&gt;
+                &lt;a href="/notes" class="border-2 border-line/20 p-4 bg-surface hover:border-accent transition-colors"&gt;
+                    &lt;div class="text-sm font-bold text-ink mb-1"&gt;Notes&lt;/div&gt;
+                    &lt;div class="text-xs text-ink/50"&gt;Articles&lt;/div&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- CTA --&gt;
+        &lt;div class="flex flex-wrap justify-center gap-4"&gt;
+            &lt;a href="/"
+                class="inline-flex items-center justify-center text-sm font-semibold border border-line/30 bg-surface text-ink hover:bg-ink hover:text-page transition-all h-10 px-6"&gt;
+                ← Return Home
+            &lt;/a&gt;
+            &lt;a href="/contact"
+                class="inline-flex items-center justify-center text-sm font-semibold bg-ink text-page hover:bg-accent hover:text-black transition-all h-10 px-6"&gt;
+                Contact Me →
+            &lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+{% endblock %}</div>
+    </div>
+    
+    <div class="separator"></div>
+
+    <div class="file-section" id="file-2">
+        <div class="file-header">
+            500.html
+            <div class="file-path">500.html</div>
+        </div>
+        <div class="file-content">{% extends "base.html" %}
+{% block title %}Server Error | Pragith Prakash{% endblock %}
+{% block extra_head %}
+&lt;meta name="robots" content="noindex"&gt;{% endblock %}
+{% block content %}
+&lt;section class="py-20 border-t border-line/20"&gt;
+    &lt;div class="max-w-3xl mx-auto px-6 text-center"&gt;
+        &lt;h1 class="font-display text-8xl font-bold text-ink mb-4"&gt;500&lt;/h1&gt;
+        &lt;p class="text-2xl text-ink mb-4"&gt;Internal Server Error&lt;/p&gt;
+        &lt;p class="text-ink/60 mb-8 max-w-lg mx-auto"&gt;
+            Something went wrong on our end. This has been logged and I'll look into it.
+        &lt;/p&gt;
+
+        &lt;!-- Quick Links --&gt;
+        &lt;div class="mb-8"&gt;
+            &lt;h2 class="text-sm font-semibold text-ink/40 uppercase tracking-wider mb-6"&gt;What You Can Do&lt;/h2&gt;
+            &lt;div class="grid sm:grid-cols-3 gap-4 max-w-2xl mx-auto"&gt;
+                &lt;a href="/" class="border-2 border-line/20 p-4 bg-surface hover:border-accent transition-colors"&gt;
+                    &lt;div class="text-sm font-bold text-ink mb-1"&gt;Return Home&lt;/div&gt;
+                    &lt;div class="text-xs text-ink/50"&gt;Start fresh&lt;/div&gt;
+                &lt;/a&gt;
+                &lt;a href="javascript:history.back()"
+                    class="border-2 border-line/20 p-4 bg-surface hover:border-accent transition-colors"&gt;
+                    &lt;div class="text-sm font-bold text-ink mb-1"&gt;Go Back&lt;/div&gt;
+                    &lt;div class="text-xs text-ink/50"&gt;Previous page&lt;/div&gt;
+                &lt;/a&gt;
+                &lt;a href="/contact" class="border-2 border-accent bg-accent/10 p-4 hover:bg-accent/20 transition-colors"&gt;
+                    &lt;div class="text-sm font-bold text-ink mb-1"&gt;Report Issue&lt;/div&gt;
+                    &lt;div class="text-xs text-ink/50"&gt;Let me know&lt;/div&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Additional Links --&gt;
+        &lt;div class="mb-8"&gt;
+            &lt;h2 class="text-sm font-semibold text-ink/40 uppercase tracking-wider mb-6"&gt;Or Browse&lt;/h2&gt;
+            &lt;div class="flex flex-wrap justify-center gap-3 text-sm"&gt;
+                &lt;a href="/work" class="text-ink hover:text-accent transition-colors"&gt;Work&lt;/a&gt;
+                &lt;span class="text-ink/20"&gt;·&lt;/span&gt;
+                &lt;a href="/agents" class="text-ink hover:text-accent transition-colors"&gt;How I Work&lt;/a&gt;
+                &lt;span class="text-ink/20"&gt;·&lt;/span&gt;
+                &lt;a href="/business" class="text-ink hover:text-accent transition-colors"&gt;Business&lt;/a&gt;
+                &lt;span class="text-ink/20"&gt;·&lt;/span&gt;
+                &lt;a href="/notes" class="text-ink hover:text-accent transition-colors"&gt;Notes&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- CTA --&gt;
+        &lt;a href="/contact"
+            class="inline-flex items-center justify-center text-sm font-semibold bg-ink text-page hover:bg-accent hover:text-black transition-all h-10 px-6"&gt;
+            Report Issue →
+        &lt;/a&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+{% endblock %}</div>
+    </div>
+    
+    <div class="separator"></div>
+
+    <div class="file-section" id="file-3">
+        <div class="file-header">
+            about.html
+            <div class="file-path">about.html</div>
+        </div>
+        <div class="file-content">{% extends "base.html" %}
+{% block title %}About | Pragith Prakash{% endblock %}
+{% block description %}Independent software engineer building dashboards, automation systems, and AI-integrated workflows.{% endblock %}
+{% block extra_head %}
+&lt;link rel="canonical" href="https://pragith.net/about"&gt;
+{% endblock %}
+
+{% block content %}
+&lt;section class="section-block border-b border-line/20"&gt;
+    &lt;div class="site-container"&gt;
+        &lt;div class="max-w-4xl"&gt;
+            &lt;h1 class="page-hero-title"&gt;About&lt;/h1&gt;
+            &lt;p class="page-hero-subtitle mb-8"&gt;Independent software engineer building dashboards, automation systems, and AI-integrated workflows.&lt;/p&gt;
+            &lt;p class="body-md text-ink/80 mb-6"&gt;Rate: $95 USD per hour. Independent freelance delivery.&lt;/p&gt;
+
+            &lt;p class="body-md text-ink/80 mb-6"&gt;
+                I design and deliver operational software systems used by teams running real workflows. The work centers on clear data models, reliable integrations, and maintainable deployment practices.
+            &lt;/p&gt;
+            &lt;p class="body-md text-ink/80 mb-10"&gt;
+                AI tools are used internally to accelerate implementation and validation. In production, AI components are integrated where they improve summarization, reporting intelligence, enrichment, or process optimization.
+            &lt;/p&gt;
+
+            &lt;div class="grid md:grid-cols-2 gap-5"&gt;
+                &lt;article class="border border-line/30 bg-page p-6"&gt;
+                    &lt;h2 class="font-display font-semibold h3-display text-ink mb-3"&gt;Engineering Background&lt;/h2&gt;
+                    &lt;ul class="space-y-2 body-md text-ink/78"&gt;
+                        &lt;li&gt;- Software and data systems engineering&lt;/li&gt;
+                        &lt;li&gt;- Dashboard and analytics platform delivery&lt;/li&gt;
+                        &lt;li&gt;- Workflow automation and orchestration&lt;/li&gt;
+                        &lt;li&gt;- Production reliability and handover&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/article&gt;
+                &lt;article class="border border-line/30 bg-page p-6"&gt;
+                    &lt;h2 class="font-display font-semibold h3-display text-ink mb-3"&gt;Deployment Experience&lt;/h2&gt;
+                    &lt;ul class="space-y-2 body-md text-ink/78"&gt;
+                        &lt;li&gt;- Cloud deployment and operations&lt;/li&gt;
+                        &lt;li&gt;- Data pipeline implementation&lt;/li&gt;
+                        &lt;li&gt;- API integration and service wiring&lt;/li&gt;
+                        &lt;li&gt;- Documentation and team handover&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/article&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="section-block border-b border-line/20"&gt;
+    &lt;div class="site-container"&gt;
+        &lt;div class="border border-line/30 bg-page p-7 sm:p-10 text-center"&gt;
+            &lt;h2 class="font-display font-semibold h2-display text-ink mb-3"&gt;Book a Discovery Call&lt;/h2&gt;
+            &lt;p class="body-md text-ink/70 max-w-2xl mx-auto mb-6"&gt;$95 USD per hour. Independent freelance delivery.&lt;/p&gt;
+            &lt;a href="/contact" class="btn btn-primary w-full sm:w-auto"&gt;Start Your Project&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+{% endblock %}
+</div>
+    </div>
+    
+    <div class="separator"></div>
+
+    <div class="file-section" id="file-4">
+        <div class="file-header">
+            base.html
+            <div class="file-path">base.html</div>
+        </div>
+        <div class="file-content">&lt;!DOCTYPE html&gt;
+&lt;html lang="en" class="antialiased"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;style&gt;
+        :root {
+            --container-max: 1120px;
+            --section-py-mobile: 40px;
+            --section-py-tablet: 56px;
+            --section-py-desktop: 80px;
+        }
+
+
+
+        .site-container {
+            max-width: var(--container-max);
+            margin-inline: auto;
+            padding-inline: 1.5rem;
+        }
+
+        .layout-offset {
+            min-width: 0;
+        }
+
+        @media (min-width: 768px) {
+            .layout-offset {
+                margin-left: 250px;
+                padding-left: 3rem;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .site-container {
+                padding-inline: 2rem;
+            }
+        }
+
+        .section-block {
+            padding-block: var(--section-py-mobile);
+        }
+
+        @media (min-width: 768px) {
+            .section-block {
+                padding-block: var(--section-py-tablet);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .section-block {
+                padding-block: var(--section-py-desktop);
+            }
+        }
+
+        .tone-alt {
+            background-color: rgb(var(--color-surface) / 0.35);
+        }
+
+        :root {
+            --container-max: 1120px;
+            --section-py-mobile: 40px;
+            --section-py-tablet: 56px;
+            --section-py-desktop: 80px;
+            --color-footer-bg: 250 250 249; /* light gray for footer in light mode */
+            --color-footer-text: 15 23 42; /* dark blue for text in light mode */
+        }
+
+        .dark {
+            --color-footer-bg: 15 23 42; /* dark blue for footer in dark mode */
+            --color-footer-text: 241 245 249; /* light gray for text in dark mode */
+        }
+
+        .footer-theme {
+            background-color: rgb(var(--color-footer-bg));
+            color: rgb(var(--color-footer-text));
+        }
+
+        .h1-display {
+            font-size: clamp(2.25rem, 4.2vw, 3rem);
+            line-height: 1.08;
+            letter-spacing: -0.02em;
+        }
+
+        .h2-display {
+            font-size: clamp(1.75rem, 2.8vw, 2rem);
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+        }
+
+        .h3-display {
+            font-size: clamp(1.25rem, 2vw, 1.375rem);
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+        }
+
+        .body-lg {
+            font-size: 1.125rem;
+            line-height: 1.55;
+        }
+
+        .body-md {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .meta-text {
+            font-size: 0.875rem;
+            line-height: 1.5;
+            color: rgb(var(--color-ink) / 0.65);
+        }
+
+        .page-hero-title {
+            font-family: var(--font-display);
+            font-size: 1.875rem;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            color: rgb(var(--color-ink));
+            margin-bottom: 1rem;
+        }
+
+        .page-hero-subtitle {
+            font-size: 1.125rem;
+            color: rgb(var(--color-ink) / 0.6);
+            max-width: 42rem;
+            font-weight: 400;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            min-height: 2.75rem;
+            padding: 0.62rem 1rem;
+            border: 1px solid rgb(var(--color-line) / 0.45);
+            border-radius: 0.55rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            line-height: 1;
+            white-space: nowrap;
+            transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease, box-shadow 220ms ease,
+                transform 180ms ease;
+        }
+
+        .nav-action-btn {
+            min-height: 2.45rem;
+            padding: 0.5rem 0.9rem;
+            font-size: 0.84rem;
+            width: 100%;
+            box-sizing: border-box;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: rgb(var(--color-surface) / 0.8);
+        }
+
+        .btn-primary {
+            background: rgb(var(--color-ink));
+            color: rgb(var(--color-page));
+            border-color: rgb(var(--color-ink));
+        }
+
+        .btn-primary:hover {
+            background: rgb(var(--color-accent));
+            border-color: rgb(var(--color-accent));
+            color: #0b1224;
+        }
+
+        .btn-secondary {
+            border-color: rgb(var(--color-line) / 0.7);
+            color: rgb(var(--color-ink));
+            background: transparent;
+        }
+
+        .btn-secondary:hover {
+            background: rgb(var(--color-surface) / 0.8);
+        }
+
+        .btn-whatsapp {
+            border-color: #25D366;
+            color: #229b4a;
+            background: transparent;
+        }
+
+        .btn-whatsapp:hover {
+            background: rgba(37, 211, 102, 0.1);
+            border-color: #1ea851;
+            color: #1e8f43;
+            box-shadow: 0 3px 10px rgba(37, 211, 102, 0.12);
+        }
+
+        .theme-toggle {
+            position: relative;
+            overflow: hidden;
+            min-height: 2.6rem;
+            width: 2.6rem;
+            border: 1px solid rgb(var(--color-line) / 0.45);
+            color: rgb(var(--color-ink));
+            transition: border-color 180ms ease, color 180ms ease, box-shadow 220ms ease;
+        }
+
+        .theme-toggle-wide {
+            width: 100%;
+            min-height: 2.45rem;
+            border-radius: 0.55rem;
+        }
+
+        .sidebar-actions .btn,
+        .sidebar-actions .theme-toggle-wide {
+            width: 100%;
+        }
+
+        .sidebar-actions {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0.6rem;
+            width: 100%;
+            max-width: 13.5rem;
+            margin-inline: auto;
+        }
+
+        .sidebar-actions .btn i,
+        .sidebar-actions .theme-toggle i {
+            width: 1rem;
+            text-align: center;
+            flex: 0 0 1rem;
+        }
+
+        .theme-toggle:hover {
+            color: rgb(var(--color-accent));
+            border-color: rgb(var(--color-accent) / 0.55);
+        }
+
+        .theme-toggle svg {
+            position: absolute;
+            inset: 0;
+            margin: auto;
+            width: 1.1rem;
+            height: 1.1rem;
+            transition: opacity 220ms ease, transform 280ms ease;
+        }
+
+        .theme-toggle .icon-sun {
+            opacity: 0;
+            transform: rotate(-110deg) scale(0.55);
+        }
+
+        .theme-toggle .icon-moon {
+            opacity: 1;
+            transform: rotate(0deg) scale(1);
+        }
+
+        .dark .theme-toggle .icon-sun {
+            opacity: 1;
+            transform: rotate(0deg) scale(1);
+        }
+
+        .dark .theme-toggle .icon-moon {
+            opacity: 0;
+            transform: rotate(110deg) scale(0.55);
+        }
+
+        .nav-link {
+            font-size: 0.9375rem;
+            font-weight: 500;
+            color: rgb(var(--color-ink) / 0.9);
+            transition: color 180ms ease;
+        }
+
+        .nav-link:hover {
+            color: rgb(var(--color-accent));
+        }
+
+        .nav-icon {
+            font-size: 0.95rem;
+            opacity: 0.75;
+        }
+    &lt;/style&gt;
+    &lt;title&gt;AI-Accelerated Software &amp; Data Solutions | Pragith Prakash&lt;/title&gt;
+    &lt;meta name="description"
+        content="{% block description %}I build dashboards, automation systems, and AI-integrated workflows. $95 USD/hour freelance software development with live demos.{% endblock %}"&gt;
+
+    &lt;meta property="og:title"
+        content="{% block og_title %}AI-Accelerated Software &amp; Data Solutions | Pragith Prakash{% endblock %}"&gt;
+    &lt;meta property="og:description"
+        content="{% block og_description %}I build dashboards, automation systems, and AI-integrated workflows. $95 USD/hour freelance software development with live demos.{% endblock %}"&gt;
+    &lt;meta property="og:type" content="website"&gt;
+    &lt;meta property="og:locale" content="en_US"&gt;
+    &lt;meta property="og:site_name" content="Pragith Prakash"&gt;
+    &lt;meta property="og:image" content="{% block og_image %}https://pragith.net/static/og-image.png{% endblock %}"&gt;
+
+    &lt;meta name="twitter:card" content="summary_large_image"&gt;
+    &lt;meta name="twitter:title" content="AI-Accelerated Software &amp; Data Solutions | Pragith Prakash"&gt;
+    &lt;meta name="twitter:description"
+        content="I build dashboards, automation systems, and AI-integrated workflows. $95 USD/hour freelance software development with live demos."&gt;
+    &lt;meta name="twitter:image" content="https://pragith.net/static/og-image.png"&gt;
+
+    &lt;script&gt;
+        (function () {
+            var d = document.documentElement.classList;
+            if (localStorage.theme === 'dark' || (!('theme' in localStorage) &amp;&amp; window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                d.add('dark');
+            } else {
+                d.remove('dark');
+            }
+        })();
+    &lt;/script&gt;
+
+    &lt;link rel="stylesheet" href="/static/css/style.min.css"&gt;
+    &lt;link rel="stylesheet" href="/static/fontawesome/css/all.css"&gt;
+    &lt;link rel="stylesheet" href="/theme.css"&gt;
+    &lt;link rel="icon" type="image/x-icon" href="/static/favicon.ico"&gt;
+    &lt;link rel="sitemap" type="application/xml" href="/sitemap.xml"&gt;
+
+    &lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+    &lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
+    &lt;link rel="stylesheet" href="{{ theme.fonts_url|safe }}" media="print" onload="this.media='all'"&gt;
+
+    {% if ga_tag %}
+    &lt;script&gt;
+        window.gaTag = '{{ ga_tag }}';
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function () { dataLayer.push(arguments); };
+        window.gtag('js', new Date());
+        window.gtag('config', window.gaTag, { anonymize_ip: true });
+    &lt;/script&gt;
+    &lt;script async src="https://www.googletagmanager.com/gtag/js?id={{ ga_tag }}"&gt;&lt;/script&gt;
+    {% endif %}
+
+    {% if clarity_project_id %}
+    &lt;script type="text/javascript"&gt;
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "{{ clarity_project_id }}");
+    &lt;/script&gt;
+    {% endif %}
+
+    {% block extra_head %}{% endblock %}
+
+    &lt;script type="application/ld+json"&gt;
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Pragith Prakash",
+        "jobTitle": "Independent Software Engineer",
+        "description": "Freelance software engineer building dashboards, automation systems, and AI-integrated workflows.",
+        "url": "https://pragith.net",
+        "sameAs": [
+            "https://linkedin.com/in/pragith",
+            "https://github.com/pragith"
+        ],
+        "knowsAbout": ["Dashboards", "Automation Systems", "AI-Integrated Workflows", "System Integration", "Data Engineering"],
+        "hasOccupation": {
+            "@type": "Occupation",
+            "name": "Independent Software Engineer",
+            "occupationLocation": {
+                "@type": "Country",
+                "name": "North America"
+            }
+        }
+    }
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body class="flex flex-col min-h-screen transition-colors duration-200 bg-page text-ink"&gt;
+    {% set nav_links = navigation_config.links %}
+    {% set nav_brand = navigation_config.brand %}
+    {% set nav_cta = navigation_config.cta %}
+    {% set nav_icon_map = {
+    "/": "fa-house",
+    "/solutions": "fa-bullseye",
+    "/live-demos": "fa-play",
+    "/work": "fa-briefcase",
+    "/about": "fa-user",
+    "/contact": "fa-envelope"
+    } %}
+
+    &lt;header class="w-full bg-page/95 backdrop-blur sticky top-0 z-50 border-b border-line/30 md:hidden"&gt;
+        &lt;div class="site-container h-18 min-h-[72px] flex items-center justify-between gap-4"&gt;
+            &lt;a href="{{ nav_brand.href }}" class="font-display text-xl font-semibold text-ink hover:text-accent transition-colors inline-flex items-center gap-2"&gt;
+                &lt;i class="fa-solid fa-circle-dot text-accent text-sm" aria-hidden="true"&gt;&lt;/i&gt;
+                &lt;span&gt;{{ nav_brand.label }}&lt;/span&gt;
+            &lt;/a&gt;
+
+            &lt;div class="flex items-center gap-2 sm:gap-3"&gt;
+                &lt;button onclick="toggleTheme()" class="theme-toggle inline-flex items-center justify-center" aria-label="Toggle dark mode"&gt;
+                    &lt;svg class="icon-moon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"&gt;
+                        &lt;path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /&gt;
+                    &lt;/svg&gt;
+                    &lt;svg class="icon-sun" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"&gt;
+                        &lt;path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /&gt;
+                    &lt;/svg&gt;
+                &lt;/button&gt;
+                &lt;button id="mobile-menu-toggle" class="w-10 h-10 inline-flex items-center justify-center border border-line/40 text-ink hover:text-accent transition-colors" aria-label="Toggle menu" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"&gt;
+                    &lt;i class="fa-solid fa-bars" aria-hidden="true"&gt;&lt;/i&gt;
+                &lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div id="mobile-menu" class="hidden border-t border-line/30 bg-page"&gt;
+            &lt;nav class="site-container py-4 flex flex-col gap-2"&gt;
+                {% for item in nav_links %}
+                {% set nav_icon = nav_icon_map.get(item.href, "fa-compass") %}
+                &lt;a href="{{ item.href }}" class="nav-link py-2 inline-flex items-center gap-2"&gt;
+                    &lt;i class="fa-solid {{ nav_icon }} nav-icon" aria-hidden="true"&gt;&lt;/i&gt;
+                    &lt;span&gt;{{ item.label }}&lt;/span&gt;
+                &lt;/a&gt;
+                {% endfor %}
+                &lt;a href="{{ nav_cta.href }}" class="btn btn-primary nav-action-btn mt-2 justify-center" data-analytics="cta-nav-start-project"&gt;
+                    &lt;i class="fa-solid fa-calendar-lines-pen" aria-hidden="true"&gt;&lt;/i&gt;
+                    &lt;span&gt;{{ nav_cta.label }}&lt;/span&gt;
+                &lt;/a&gt;
+                &lt;a href="https://wa.me/971585912858?text=Hi%20Pragith%2C%20I%E2%80%99d%20like%20to%20discuss%20a%20dashboard%20or%20software%20project."
+                    target="_blank" rel="noopener noreferrer"
+                    class="btn btn-whatsapp nav-action-btn mt-2 justify-center" data-analytics="cta-nav-mobile-whatsapp"&gt;
+                    &lt;i class="fa-brands fa-whatsapp" aria-hidden="true"&gt;&lt;/i&gt;
+                    &lt;span&gt;WhatsApp Message&lt;/span&gt;
+                &lt;/a&gt;
+            &lt;/nav&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+    &lt;aside class="hidden md:flex fixed inset-y-0 left-0 w-[250px] flex-col bg-page border-r border-line/30 z-40 overflow-y-auto"&gt;
+            &lt;div class="px-6 py-8"&gt;
+                &lt;a href="{{ nav_brand.href }}" class="font-display text-xl font-semibold text-ink hover:text-accent transition-colors inline-flex items-center gap-2"&gt;
+                    &lt;i class="fa-solid fa-circle-dot text-accent text-sm" aria-hidden="true"&gt;&lt;/i&gt;
+                    &lt;span&gt;{{ nav_brand.label }}&lt;/span&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+            &lt;nav class="px-6 pb-6 flex flex-col gap-2"&gt;
+                {% for item in nav_links %}
+                {% set nav_icon = nav_icon_map.get(item.href, "fa-compass") %}
+                &lt;a href="{{ item.href }}" class="nav-link py-2 inline-flex items-center gap-2"&gt;
+                    &lt;i class="fa-solid {{ nav_icon }} nav-icon" aria-hidden="true"&gt;&lt;/i&gt;
+                    &lt;span&gt;{{ item.label }}&lt;/span&gt;
+                &lt;/a&gt;
+                {% endfor %}
+            &lt;/nav&gt;
+            &lt;div class="px-6 mt-auto pb-8 sidebar-actions"&gt;
+                &lt;a href="{{ nav_cta.href }}" class="btn btn-primary nav-action-btn justify-center" data-analytics="cta-nav-start-project"&gt;
+                    &lt;i class="fa-solid fa-calendar-lines-pen" aria-hidden="true"&gt;&lt;/i&gt;
+                    &lt;span&gt;{{ nav_cta.label }}&lt;/span&gt;
+                &lt;/a&gt;
+                &lt;a href="https://wa.me/971585912858?text=Hi%20Pragith%2C%20I%E2%80%99d%20like%20to%20discuss%20a%20dashboard%20or%20software%20project."
+                    target="_blank" rel="noopener noreferrer"
+                    class="btn btn-whatsapp nav-action-btn justify-center" data-analytics="cta-nav-sidebar-whatsapp"&gt;
+                    &lt;i class="fa-brands fa-whatsapp" aria-hidden="true"&gt;&lt;/i&gt;
+                    &lt;span&gt;WhatsApp Message&lt;/span&gt;
+                &lt;/a&gt;
+                &lt;button onclick="toggleTheme()" class="theme-toggle theme-toggle-wide nav-action-btn inline-flex items-center justify-center border border-line/40" aria-label="Toggle dark mode"&gt;
+                    &lt;svg class="icon-moon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"&gt;
+                        &lt;path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /&gt;
+                    &lt;/svg&gt;
+                    &lt;svg class="icon-sun" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"&gt;
+                        &lt;path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /&gt;
+                    &lt;/svg&gt;
+                &lt;/button&gt;
+            &lt;/div&gt;
+    &lt;/aside&gt;
+
+    &lt;main id="app-main" class="layout-offset flex-grow"&gt;
+        {% block content %}{% endblock %}
+    &lt;/main&gt;
+
+    &lt;footer class="layout-offset footer-theme border-t border-white/10 mt-16"&gt;
+        &lt;div class="site-container py-12"&gt;
+            &lt;div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-8"&gt;
+                &lt;div&gt;
+                    &lt;h3 class="text-sm font-semibold mb-4 text-accent"&gt;Site&lt;/h3&gt;
+                    &lt;ul class="space-y-3 text-sm text-white/65"&gt;
+                        &lt;li&gt;&lt;a href="/" class="hover:text-white transition-colors inline-flex items-center gap-2"&gt;&lt;i class="fa-solid fa-house text-[12px]" aria-hidden="true"&gt;&lt;/i&gt;&lt;span&gt;Home&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="/solutions" class="hover:text-white transition-colors inline-flex items-center gap-2"&gt;&lt;i class="fa-solid fa-bullseye text-[12px]" aria-hidden="true"&gt;&lt;/i&gt;&lt;span&gt;Solutions&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="/live-demos" class="hover:text-white transition-colors inline-flex items-center gap-2"&gt;&lt;i class="fa-solid fa-play text-[12px]" aria-hidden="true"&gt;&lt;/i&gt;&lt;span&gt;Live Demos&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="/work" class="hover:text-white transition-colors inline-flex items-center gap-2"&gt;&lt;i class="fa-solid fa-briefcase text-[12px]" aria-hidden="true"&gt;&lt;/i&gt;&lt;span&gt;Work&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="/about" class="hover:text-white transition-colors inline-flex items-center gap-2"&gt;&lt;i class="fa-solid fa-user text-[12px]" aria-hidden="true"&gt;&lt;/i&gt;&lt;span&gt;About&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="/contact" class="hover:text-white transition-colors inline-flex items-center gap-2"&gt;&lt;i class="fa-solid fa-envelope text-[12px]" aria-hidden="true"&gt;&lt;/i&gt;&lt;span&gt;Contact&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;h3 class="text-sm font-semibold mb-4 text-accent"&gt;Connect&lt;/h3&gt;
+                    &lt;ul class="space-y-3 text-sm text-white/65"&gt;
+                        &lt;li&gt;&lt;a href="https://linkedin.com/in/pragith" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors inline-flex items-center gap-2"&gt;&lt;i class="fa-brands fa-linkedin text-[12px]" aria-hidden="true"&gt;&lt;/i&gt;&lt;span&gt;LinkedIn&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="https://github.com/pragith" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors inline-flex items-center gap-2"&gt;&lt;i class="fa-brands fa-github text-[12px]" aria-hidden="true"&gt;&lt;/i&gt;&lt;span&gt;GitHub&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="/contact" class="hover:text-white transition-colors inline-flex items-center gap-2"&gt;&lt;i class="fa-solid fa-envelope text-[12px]" aria-hidden="true"&gt;&lt;/i&gt;&lt;span&gt;Contact&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-sm text-white/45"&gt;
+                &lt;p&gt;&amp;copy; {{ now().year }} Pragith Prakash&lt;/p&gt;
+                &lt;p&gt;Dashboards. Automation. AI-Integrated Systems. $95/hr.&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+
+    &lt;script src="/static/js/main.js" defer&gt;&lt;/script&gt;
+    &lt;script&gt;
+        window.appMarketing = {{ marketing_config | tojson }};
+    &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</div>
+    </div>
+    
+    <div class="separator"></div>
+
+    <div class="file-section" id="file-5">
+        <div class="file-header">
+            dashboards.html
+            <div class="file-path">business/dashboards.html</div>
+        </div>
+        <div class="file-content">{% extends "base.html" %}
+{% block title %}Business Intelligence Dashboards | Pragith Prakash{% endblock %}
+{% block description %}Freelance Superset-based KPI dashboard development billed hourly.{% endblock %}
+{% block og_title %}Business Intelligence Dashboards | Pragith Prakash{% endblock %}
+{% block og_description %}Superset-based KPI dashboards with clean data models and reliable deployment.{% endblock %}
+
+{% block extra_head %}
+&lt;link rel="canonical" href="https://pragith.net/business/dashboards"&gt;
+&lt;meta property="og:image" content="https://pragith.net/static/og-image-dashboards.png"&gt;
+&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Business Intelligence Dashboard Development",
+  "description": "Freelance Superset-based KPI dashboard development billed hourly.",
+  "provider": {
+    "@type": "Person",
+    "name": "Pragith Prakash"
+  },
+  "serviceType": "Business Intelligence and Reporting"
+}
+&lt;/script&gt;
+{% endblock %}
+
+{% block content %}
+&lt;section class="section-block border-b border-line/20"&gt;
+    &lt;div class="site-container"&gt;
+        &lt;div class="max-w-4xl"&gt;
+            &lt;h1 class="page-hero-title"&gt;Business Intelligence Dashboards Built for Real Teams&lt;/h1&gt;
+            &lt;p class="page-hero-subtitle mb-3"&gt;Superset-based KPI dashboards with clean data models and reliable deployment.&lt;/p&gt;
+            &lt;p class="body-md text-ink/70 mb-8"&gt;Rate: $95 USD per hour. Typical dashboard builds range from focused KPI views to full reporting systems.&lt;/p&gt;
+
+            &lt;div class="flex flex-col sm:flex-row gap-3"&gt;
+                &lt;button type="button" class="btn btn-primary w-full sm:w-auto" data-open-demo-modal data-cta-id="dashboards-hero-live-demo"&gt;View Live Dashboard&lt;/button&gt;
+                &lt;a href="/contact" class="btn btn-secondary w-full sm:w-auto"&gt;Book Discovery Call&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="section-block tone-alt border-b border-line/20"&gt;
+    &lt;div class="site-container"&gt;
+        &lt;div class="max-w-3xl mb-8"&gt;
+            &lt;h2 class="font-display font-semibold h2-display text-ink mb-3"&gt;What You Get&lt;/h2&gt;
+        &lt;/div&gt;
+        &lt;div class="grid md:grid-cols-2 gap-5"&gt;
+            &lt;article class="border border-line/30 bg-page p-6"&gt;
+                &lt;ul class="space-y-3 body-md text-ink/82"&gt;
+                    &lt;li class="flex items-start gap-2"&gt;&lt;i class="fa-regular fa-check text-accent mt-1" aria-hidden="true"&gt;&lt;/i&gt;&lt;span&gt;Automated KPI refresh&lt;/span&gt;&lt;/li&gt;
+                    &lt;li class="flex items-start gap-2"&gt;&lt;i class="fa-regular fa-check text-accent mt-1" aria-hidden="true"&gt;&lt;/i&gt;&lt;span&gt;Centralized metric definitions&lt;/span&gt;&lt;/li&gt;
+                    &lt;li class="flex items-start gap-2"&gt;&lt;i class="fa-regular fa-check text-accent mt-1" aria-hidden="true"&gt;&lt;/i&gt;&lt;span&gt;Role-based dashboard views&lt;/span&gt;&lt;/li&gt;
+                    &lt;li class="flex items-start gap-2"&gt;&lt;i class="fa-regular fa-check text-accent mt-1" aria-hidden="true"&gt;&lt;/i&gt;&lt;span&gt;Data pipeline integration&lt;/span&gt;&lt;/li&gt;
+                    &lt;li class="flex items-start gap-2"&gt;&lt;i class="fa-regular fa-check text-accent mt-1" aria-hidden="true"&gt;&lt;/i&gt;&lt;span&gt;Deployment + documentation&lt;/span&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/article&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="section-block border-b border-line/20"&gt;
+    &lt;div class="site-container"&gt;
+        &lt;div class="max-w-3xl mb-8"&gt;
+            &lt;h2 class="font-display font-semibold h2-display text-ink mb-3"&gt;How a Dashboard Project Works&lt;/h2&gt;
+        &lt;/div&gt;
+        {% set steps = [
+        "Define KPI goals and data sources",
+        "Implement connectors and transformations",
+        "Build dashboard views",
+        "Deploy and document"
+        ] %}
+        &lt;div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5"&gt;
+            {% for step in steps %}
+            &lt;article class="border border-line/30 bg-page p-6"&gt;
+                &lt;p class="meta-text uppercase tracking-[0.12em] text-accent font-semibold mb-3"&gt;Step {{ loop.index }}&lt;/p&gt;
+                &lt;p class="body-md text-ink/82"&gt;{{ step }}&lt;/p&gt;
+            &lt;/article&gt;
+            {% endfor %}
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="section-block tone-alt border-b border-line/20"&gt;
+    &lt;div class="site-container"&gt;
+        &lt;div class="border border-line/30 bg-page p-8 sm:p-10 text-center"&gt;
+            &lt;h2 class="font-display font-semibold h2-display text-ink mb-4"&gt;Start a Dashboard Project&lt;/h2&gt;
+            &lt;p class="body-md text-ink/70 max-w-2xl mx-auto mb-7"&gt;Share KPI priorities, data sources, and reporting requirements.&lt;/p&gt;
+            &lt;div class="flex flex-col sm:flex-row gap-3 justify-center"&gt;
+                &lt;button type="button" class="btn btn-primary w-full sm:w-auto" data-open-demo-modal data-cta-id="dashboards-footer-live-demo"&gt;View Live Dashboard&lt;/button&gt;
+                &lt;a href="/contact" class="btn btn-secondary w-full sm:w-auto"&gt;Start Project Discussion&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+{% include "partials/dashboard_demo_modal.html" %}
+{% endblock %}
+</div>
+    </div>
+    
+    <div class="separator"></div>
+
+    <div class="file-section" id="file-6">
+        <div class="file-header">
+            contact.html
+            <div class="file-path">contact.html</div>
+        </div>
+        <div class="file-content">{% extends "base.html" %}
+
+{% block extra_head %}
+&lt;link rel="canonical" href="https://pragith.net/contact"&gt;
+{% if recaptcha_site_key %}
+&lt;script src="https://www.google.com/recaptcha/api.js?render={{ recaptcha_site_key }}"&gt;&lt;/script&gt;
+{% endif %}
+{% endblock %}
+{% block title %}Contact | Pragith Prakash{% endblock %}
+
+{% block content %}
+&lt;section class="py-16 sm:py-20 border-b border-line/20"&gt;
+    &lt;div class="max-w-6xl mx-auto px-6"&gt;
+        &lt;div class="text-center mb-10"&gt;
+            &lt;h1 class="font-display text-4xl sm:text-5xl font-bold tracking-tight text-ink mb-4"&gt;Start Your Project&lt;/h1&gt;
+            &lt;p class="text-lg text-ink/60 mb-6"&gt;$95 USD per hour. Milestone-based delivery.&lt;/p&gt;
+            {% if error %}
+            &lt;p class="text-sm text-rose-600 dark:text-rose-400"&gt;{{ error }}&lt;/p&gt;
+            {% endif %}
+        &lt;/div&gt;
+
+        &lt;div class="grid lg:grid-cols-3 gap-6 items-start"&gt;
+            &lt;aside class="border border-line/20 bg-surface/30 p-6"&gt;
+                &lt;p class="text-[10px] font-bold uppercase tracking-widest text-accent mb-3"&gt;How It Works&lt;/p&gt;
+                &lt;ul class="space-y-2 text-sm text-ink/70"&gt;
+                    &lt;li&gt;&lt;span class="text-accent mr-2"&gt;•&lt;/span&gt;Share what you need built.&lt;/li&gt;
+                    &lt;li&gt;&lt;span class="text-accent mr-2"&gt;•&lt;/span&gt;Include timeline and budget range if available.&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/aside&gt;
+
+            &lt;form id="contact-form" action="/contact" method="POST" class="lg:col-span-2 border border-line/20 bg-page p-7 space-y-5" style="text-align:left;"&gt;
+                &lt;div class="grid sm:grid-cols-2 gap-5"&gt;
+                    &lt;div&gt;
+                        &lt;label for="name" class="block text-sm font-semibold text-ink mb-2" style="text-align:left;"&gt;Name&lt;/label&gt;
+                        &lt;input type="text" name="name" id="name" required value="{{ form.name if form else '' }}"
+                            class="block w-full border border-line/30 bg-page px-4 py-3 text-ink placeholder-ink/30 focus:outline-none focus:border-accent transition-colors"&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;label for="email" class="block text-sm font-semibold text-ink mb-2" style="text-align:left;"&gt;Work Email&lt;/label&gt;
+                        &lt;input type="email" name="email" id="email" required value="{{ form.email if form else '' }}"
+                            class="block w-full border border-line/30 bg-page px-4 py-3 text-ink placeholder-ink/30 focus:outline-none focus:border-accent transition-colors"&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;div class="grid sm:grid-cols-2 gap-5"&gt;
+                    &lt;div&gt;
+                        &lt;label for="company" class="block text-sm font-semibold text-ink mb-2" style="text-align:left;"&gt;Company&lt;/label&gt;
+                        &lt;input type="text" name="company" id="company" required value="{{ form.company if form else '' }}"
+                            class="block w-full border border-line/30 bg-page px-4 py-3 text-ink placeholder-ink/30 focus:outline-none focus:border-accent transition-colors"&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;label for="timeline" class="block text-sm font-semibold text-ink mb-2" style="text-align:left;"&gt;Timeline&lt;/label&gt;
+                        &lt;select name="timeline" id="timeline" required
+                            class="block w-full border border-line/30 bg-page px-4 py-3 text-ink focus:outline-none focus:border-accent appearance-none transition-colors"&gt;
+                            &lt;option value="Within 30 days" {% if form and form.timeline == "Within 30 days" %}selected{% endif %}&gt;Within 30 days&lt;/option&gt;
+                            &lt;option value="Within 90 days" {% if form and form.timeline == "Within 90 days" %}selected{% endif %}&gt;Within 90 days&lt;/option&gt;
+                            &lt;option value="This quarter" {% if form and form.timeline == "This quarter" %}selected{% endif %}&gt;This quarter&lt;/option&gt;
+                            &lt;option value="Others" {% if form and form.timeline == "Others" %}selected{% endif %}&gt;Others&lt;/option&gt;
+                        &lt;/select&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;div&gt;
+                    &lt;label for="what_do_you_need_built" class="block text-sm font-semibold text-ink mb-2" style="text-align:left;"&gt;What do you need built?&lt;/label&gt;
+                    &lt;textarea name="what_do_you_need_built" id="what_do_you_need_built" rows="4" placeholder="Describe what you need built."
+                        class="block w-full border border-line/30 bg-page px-4 py-3 text-ink placeholder-ink/30 focus:outline-none focus:border-accent transition-colors"&gt;{{ form.what_do_you_need_built if form else '' }}&lt;/textarea&gt;
+                &lt;/div&gt;
+                
+                &lt;div&gt;
+                    &lt;label for="budget_range" class="block text-sm font-semibold text-ink mb-2" style="text-align:left;"&gt;Budget Range (Optional)&lt;/label&gt;
+                    &lt;input type="text" name="budget_range" id="budget_range" value="{{ form.budget_range if form else '' }}"
+                        class="block w-full border border-line/30 bg-page px-4 py-3 text-ink placeholder-ink/30 focus:outline-none focus:border-accent transition-colors"&gt;
+                &lt;/div&gt;
+
+                &lt;input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off"&gt;
+                &lt;input type="hidden" name="utm_source" value="{{ form.utm_source if form else '' }}"&gt;
+                &lt;input type="hidden" name="utm_medium" value="{{ form.utm_medium if form else '' }}"&gt;
+                &lt;input type="hidden" name="utm_campaign" value="{{ form.utm_campaign if form else '' }}"&gt;
+                &lt;input type="hidden" name="utm_content" value="{{ form.utm_content if form else '' }}"&gt;
+                &lt;input type="hidden" name="ref_page" value="{{ form.ref_page if form else '' }}"&gt;
+                &lt;input type="hidden" name="cta_id" value="{{ form.cta_id if form else '' }}"&gt;
+                &lt;input type="hidden" name="g-recaptcha-response" id="contact-recaptcha-response"&gt;
+
+                &lt;div class="grid sm:grid-cols-2 gap-3 pt-1"&gt;
+                    &lt;button type="submit" name="submit_channel" value="email"
+                        class="w-full inline-flex items-center justify-center gap-2 text-sm font-semibold border border-line/30 text-ink hover:bg-surface transition-all h-12"
+                        data-analytics="submit-contact-form-email"&gt;
+                        &lt;i class="fa-solid fa-envelope" aria-hidden="true"&gt;&lt;/i&gt;
+                        Send Intake
+                    &lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/form&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+&lt;script&gt;
+    (function () {
+        var form = document.getElementById('contact-form');
+        if (!form) return;
+
+        var recaptchaSiteKey = "{{ recaptcha_site_key or '' }}";
+        var recaptchaInput = document.getElementById('contact-recaptcha-response');
+
+        form.addEventListener('submit', function (event) {
+            if (!recaptchaSiteKey || typeof grecaptcha === 'undefined') return;
+            event.preventDefault();
+            grecaptcha.ready(function () {
+                grecaptcha.execute(recaptchaSiteKey, { action: 'submit_contact' }).then(function (token) {
+                    if (recaptchaInput) recaptchaInput.value = token;
+                    form.submit();
+                });
+            });
+        });
+    })();
+&lt;/script&gt;
+{% endblock %}
+</div>
+    </div>
+    
+    <div class="separator"></div>
+
+    <div class="file-section" id="file-7">
+        <div class="file-header">
+            contact_success.html
+            <div class="file-path">contact_success.html</div>
+        </div>
+        <div class="file-content">{% extends "base.html" %}
+{% block title %}Message Sent | Pragith Prakash{% endblock %}
+{% block content %}
+&lt;section class="py-20 border-t border-line/20"&gt;
+    &lt;div class="max-w-2xl mx-auto px-6 text-center"&gt;
+        &lt;div class="mx-auto flex items-center justify-center h-12 w-12 border-2 border-line bg-accent mb-6"&gt;
+            &lt;svg class="h-6 w-6 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor"&gt;
+                &lt;path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /&gt;
+            &lt;/svg&gt;
+        &lt;/div&gt;
+        &lt;h2 class="font-display text-3xl font-bold tracking-tight text-ink mb-4"&gt;Message Sent&lt;/h2&gt;
+        &lt;p class="text-lg text-ink/60 mb-10"&gt;Thank you for reaching out. I will review your message and get back to you
+            within 24–48 hours.&lt;/p&gt;
+        &lt;a href="/"
+            class="inline-flex items-center justify-center text-sm font-semibold bg-ink text-page hover:bg-accent hover:text-black transition-all h-10 px-6"&gt;Return
+            Home →&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+{% endblock %}</div>
+    </div>
+    
+    <div class="separator"></div>
+
+    <div class="file-section" id="file-8">
+        <div class="file-header">
+            engagement.html
+            <div class="file-path">engagement.html</div>
+        </div>
+        <div class="file-content">{% extends "base.html" %}
+
+{% block extra_head %}
+&lt;link rel="canonical" href="https://pragith.net/agents"&gt;
+
+{% endblock %}
+
+{% block title %}Defined-Scope Engineering Engagements | Pragith Prakash{% endblock %}
+{% block canonical %}https://pragith.net/engagement{% endblock %}
+
+{% block content %}
+&lt;section class="py-20 border-t border-line/20"&gt;
+    &lt;div class="max-w-6xl mx-auto px-6"&gt;
+        &lt;!-- Hero --&gt;
+        &lt;div class="mb-20"&gt;
+            &lt;h1 class="page-hero-title"&gt;
+                Defined-Scope Engineering Engagements
+            &lt;/h1&gt;
+            
+            &lt;p class="page-hero-subtitle mb-8"&gt;
+              Structured builds for production AI and data systems.
+            &lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Engagement Types --&gt;
+        &lt;div class="mb-24"&gt;
+            &lt;h2 class="font-display text-2xl font-bold text-ink mb-8"&gt;Engagement Types&lt;/h2&gt;
+            &lt;div class="grid md:grid-cols-3 gap-4"&gt;
+                &lt;div class="border-2 border-line/20 p-8 bg-surface"&gt;
+                    &lt;h3 class="font-bold text-ink mb-3"&gt;Architecture Design Sprint&lt;/h3&gt;
+                &lt;/div&gt;
+                &lt;div class="border-2 border-line/20 p-8 bg-surface"&gt;
+                    &lt;h3 class="font-bold text-ink mb-3"&gt;System Build&lt;/h3&gt;
+                &lt;/div&gt;
+                &lt;div class="border-2 border-line/20 p-8 bg-surface"&gt;
+                    &lt;h3 class="font-bold text-ink mb-3"&gt;Technical Audit&lt;/h3&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- What You Can Expect --&gt;
+        &lt;div class="mb-24"&gt;
+            &lt;h2 class="font-display text-2xl font-bold text-ink mb-8"&gt;What You Can Expect&lt;/h2&gt;
+            &lt;div class="grid md:grid-cols-2 gap-4"&gt;
+                &lt;div class="border-2 border-line/20 p-8 bg-surface"&gt;
+                    &lt;h3 class="font-bold text-ink mb-3"&gt;Clear scoping&lt;/h3&gt;
+                &lt;/div&gt;
+                &lt;div class="border-2 border-line/20 p-8 bg-surface"&gt;
+                    &lt;h3 class="font-bold text-ink mb-3"&gt;Architecture documentation&lt;/h3&gt;
+                &lt;/div&gt;
+                &lt;div class="border-2 border-line/20 p-8 bg-surface"&gt;
+                    &lt;h3 class="font-bold text-ink mb-3"&gt;Deployment discipline&lt;/h3&gt;
+                &lt;/div&gt;
+                &lt;div class="border-2 border-line/20 p-8 bg-surface"&gt;
+                    &lt;h3 class="font-bold text-ink mb-3"&gt;Clean handover&lt;/h3&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- What I Do Not Do --&gt;
+        &lt;div class="mb-24"&gt;
+            &lt;h2 class="font-display text-2xl font-bold text-ink mb-8"&gt;What I Do Not Do&lt;/h2&gt;
+            &lt;div class="grid md:grid-cols-3 gap-4"&gt;
+                &lt;div class="border-2 border-line/20 p-8 bg-surface"&gt;
+                    &lt;h3 class="font-bold text-ink mb-3"&gt;Hourly task tickets&lt;/h3&gt;
+                &lt;/div&gt;
+                &lt;div class="border-2 border-line/20 p-8 bg-surface"&gt;
+                    &lt;h3 class="font-bold text-ink mb-3"&gt;Long-term unstructured retainers&lt;/h3&gt;
+                &lt;/div&gt;
+                &lt;div class="border-2 border-line/20 p-8 bg-surface"&gt;
+                    &lt;h3 class="font-bold text-ink mb-3"&gt;Prototype-only experiments&lt;/h3&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;!-- How We Begin --&gt;
+        &lt;div class="border-2 border-line/30 p-12 bg-surface text-center"&gt;
+            &lt;h3 class="font-display text-2xl font-bold text-ink mb-4"&gt;How We Begin&lt;/h3&gt;
+            &lt;p class="text-ink/60 mb-8 max-w-lg mx-auto"&gt;
+                All engagements start with a paid, 1-hour architecture and scoping session.
+            &lt;/p&gt;
+            &lt;div class="flex flex-wrap justify-center gap-4"&gt;
+                &lt;a href="/contact" class="btn btn-primary"&gt;
+                    Start the Intake
+                &lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+{% endblock %}
+</div>
+    </div>
+    
+    <div class="separator"></div>
+
+    <div class="file-section" id="file-9">
+        <div class="file-header">
+            faq.html
+            <div class="file-path">faq.html</div>
+        </div>
+        <div class="file-content">{% extends "base.html" %}
+
+{% block extra_head %}
+&lt;link rel="canonical" href="https://pragith.net/faq"&gt;
+{% endblock %}
+{% block title %}FAQ | Pragith Prakash{% endblock %}
+{% block canonical %}https://pragith.net/faq{% endblock %}
+{% block content %}
+&lt;section class="py-20 border-t border-line/20"&gt;
+    &lt;div class="max-w-3xl mx-auto px-6"&gt;
+        &lt;h1 class="font-display text-3xl font-bold tracking-tight text-ink mb-8"&gt;Frequently Asked Questions&lt;/h1&gt;
+        &lt;div class="space-y-12"&gt;
+            {% set faqs = [
+            {"q": "How do you bill?", "a": "$95 USD per hour. Work is milestone-based and scoped collaboratively."},
+            {"q": "What is typical project size?", "a": "Projects range from focused feature builds to multi-month system implementations depending on complexity."},
+            {"q": "Who owns the IP?", "a": "You do. All code and documentation transfer upon payment."},
+            {"q": "Do you use AI?", "a": "Yes. AI tools are used internally to accelerate delivery and improve solution quality."}
+            ] %}
+            {% for faq in faqs %}
+            &lt;div&gt;
+                &lt;h3 class="font-bold text-ink mb-2"&gt;{{ faq.q }}&lt;/h3&gt;
+                &lt;p class="text-ink/60"&gt;{{ faq.a }}&lt;/p&gt;
+            &lt;/div&gt;
+            {% endfor %}
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+{% endblock %}</div>
+    </div>
+    
+    <div class="separator"></div>
+
+    <div class="file-section" id="file-10">
+        <div class="file-header">
+            index.html
+            <div class="file-path">index.html</div>
+        </div>
+        <div class="file-content">{% extends "base.html" %}
+{% block extra_head %}
+&lt;link rel="canonical" href="https://pragith.net/"&gt;
+{% endblock %}
+
+{% block title %}AI-Accelerated Software &amp; Data Solutions | Pragith Prakash{% endblock %}
+{% block description %}Dashboards, automation systems, AI-powered workflows, and production-ready deployments.{% endblock %}
+
+{% block content %}
+&lt;section class="section-block border-b border-line/20"&gt;
+    &lt;div class="site-container"&gt;
+        &lt;div class="max-w-3xl"&gt;
+            &lt;h1 class="font-display font-semibold h1-display text-ink mb-5"&gt;AI-Accelerated Software &amp; Data Solutions&lt;/h1&gt;
+            &lt;p class="body-lg text-ink/80 max-w-xl mb-8"&gt;Dashboards, automation systems, and AI-integrated workflows built for operational teams.&lt;/p&gt;
+            &lt;p class="body-md text-ink/60 max-w-xl mb-8"&gt;
+                {% if currency_code and currency_rate and currency_symbol %}
+                Approximately {{ currency_symbol }} {{ (hourly_rate_usd * currency_rate)|round(0, 'ceil') }} per hour. Clean builds. Production-ready deployment.
+                {% else %}
+                $95 USD/hour. Clean builds. Production-ready deployment.
+                {% endif %}
+            &lt;/p&gt;
+            &lt;div class="flex flex-col sm:flex-row gap-3"&gt;
+                &lt;a href="/contact" class="btn btn-primary w-full sm:w-auto"&gt;
+                    &lt;span&gt;Book a Discovery Call&lt;/span&gt;
+                &lt;/a&gt;
+                &lt;button type="button" class="btn btn-secondary w-full sm:w-auto" data-open-demo-modal data-cta-id="home-hero-dashboard-demo"&gt;
+                    &lt;span&gt;View Dashboard Demo&lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section id="live-demos" class="section-block tone-alt border-b border-line/20"&gt;
+    &lt;div class="site-container"&gt;
+        &lt;div class="max-w-3xl mb-8"&gt;
+            &lt;h2 class="font-display font-semibold h2-display text-ink mb-2"&gt;Live Deployments&lt;/h2&gt;
+            &lt;p class="body-md text-ink/70"&gt;Live environments demonstrating deployment quality and production readiness.&lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;div class="grid md:grid-cols-1 gap-5"&gt;
+            &lt;article class="border border-line/30 bg-page p-6"&gt;
+                &lt;h3 class="font-display font-semibold h3-display text-ink mb-2"&gt;Superset Dashboard Instance&lt;/h3&gt;
+                &lt;p class="body-md text-ink/78 mb-4"&gt;Live Superset deployment with KPI modeling, refresh pipelines, and executive reporting views.&lt;/p&gt;
+                &lt;button type="button" class="btn btn-secondary" data-open-demo-modal data-cta-id="home-live-deployments-dashboard"&gt;View Live Dashboard&lt;/button&gt;
+            &lt;/article&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section id="solutions" class="section-block tone-alt border-b border-line/20"&gt;
+    &lt;div class="site-container"&gt;
+        &lt;div class="max-w-3xl mb-8"&gt;
+            &lt;h2 class="font-display font-semibold h2-display text-ink mb-2"&gt;What I Build&lt;/h2&gt;
+        &lt;/div&gt;
+
+        &lt;div class="grid md:grid-cols-3 gap-5"&gt;
+            &lt;article class="border border-line/30 bg-page p-6"&gt;
+                &lt;h3 class="font-display font-semibold h3-display text-ink mb-2"&gt;Business Intelligence Dashboards&lt;/h3&gt;
+                &lt;ul class="space-y-1 body-md text-ink/80"&gt;
+                    &lt;li&gt;- Superset deployments&lt;/li&gt;
+                    &lt;li&gt;- KPI tracking systems&lt;/li&gt;
+                    &lt;li&gt;- Revenue dashboards&lt;/li&gt;
+                    &lt;li&gt;- Marketing performance reporting&lt;/li&gt;
+                    &lt;li&gt;- SQL / BigQuery / API integrations&lt;/li&gt;
+                    &lt;li&gt;- Hosted or self-managed options&lt;/li&gt;
+                &lt;/ul&gt;
+                &lt;button type="button" class="btn btn-secondary mt-4" data-open-demo-modal data-cta-id="home-solutions-dashboard-card"&gt;View Live Dashboard&lt;/button&gt;
+            &lt;/article&gt;
+            &lt;article class="border border-line/30 bg-page p-6"&gt;
+                &lt;h3 class="font-display font-semibold h3-display text-ink mb-2"&gt;Automation &amp; System Integration&lt;/h3&gt;
+                &lt;ul class="space-y-1 body-md text-ink/80"&gt;
+                    &lt;li&gt;- API integrations&lt;/li&gt;
+                    &lt;li&gt;- Data pipeline automation&lt;/li&gt;
+                    &lt;li&gt;- Reporting automation&lt;/li&gt;
+                    &lt;li&gt;- Internal workflow systems&lt;/li&gt;
+                    &lt;li&gt;- Tool orchestration&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/article&gt;
+            &lt;article class="border border-line/30 bg-page p-6"&gt;
+                &lt;h3 class="font-display font-semibold h3-display text-ink mb-2"&gt;AI-Integrated Systems&lt;/h3&gt;
+                &lt;p class="body-md text-ink/80"&gt;AI tools and agent-based systems are used internally to accelerate development and improve solution quality.&lt;/p&gt;
+                &lt;p class="body-md text-ink/80 mt-4"&gt;Where appropriate, AI components are deployed inside production workflows for:&lt;/p&gt;
+                &lt;ul class="space-y-1 body-md text-ink/80 mt-2"&gt;
+                    &lt;li&gt;- Summarization&lt;/li&gt;
+                    &lt;li&gt;- Reporting intelligence&lt;/li&gt;
+                    &lt;li&gt;- Process optimization&lt;/li&gt;
+                    &lt;li&gt;- Data enrichment&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/article&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="section-block border-b border-line/20"&gt;
+    &lt;div class="site-container"&gt;
+        &lt;div class="max-w-3xl mb-8"&gt;
+            &lt;h2 class="font-display font-semibold h2-display text-ink mb-2"&gt;How I Work&lt;/h2&gt;
+        &lt;/div&gt;
+        &lt;div class="grid md:grid-cols-3 gap-5"&gt;
+            &lt;article class="border border-line/30 bg-page p-6"&gt;
+                &lt;p class="body-md text-ink/75"&gt;1-hour paid discovery &amp; scoping session ($95)&lt;/p&gt;
+            &lt;/article&gt;
+            &lt;article class="border border-line/30 bg-page p-6"&gt;
+                &lt;p class="body-md text-ink/75"&gt;Scope defined collaboratively&lt;/p&gt;
+            &lt;/article&gt;
+            &lt;article class="border border-line/30 bg-page p-6"&gt;
+                &lt;p class="body-md text-ink/75"&gt;Hourly billing at $95 USD&lt;/p&gt;
+            &lt;/article&gt;
+            &lt;article class="border border-line/30 bg-page p-6"&gt;
+                &lt;p class="body-md text-ink/75"&gt;Weekly updates&lt;/p&gt;
+            &lt;/article&gt;
+            &lt;article class="border border-line/30 bg-page p-6"&gt;
+                &lt;p class="body-md text-ink/75"&gt;Clean documentation&lt;/p&gt;
+            &lt;/article&gt;
+            &lt;article class="border border-line/30 bg-page p-6"&gt;
+                &lt;p class="body-md text-ink/75"&gt;Deployment assistance&lt;/p&gt;
+            &lt;/article&gt;
+            &lt;article class="border border-line/30 bg-page p-6"&gt;
+                &lt;p class="body-md text-ink/75"&gt;Client owns the system&lt;/p&gt;
+            &lt;/article&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="section-block border-b border-line/20"&gt;
+    &lt;div class="site-container"&gt;
+        &lt;div class="border border-line/30 bg-page p-7 sm:p-10 text-center"&gt;
+            &lt;h2 class="font-display font-semibold h2-display text-ink mb-3"&gt;Book a Discovery Call&lt;/h2&gt;
+            &lt;p class="body-md text-ink/70 max-w-2xl mx-auto mb-6"&gt;
+                $95 USD per hour.
+            &lt;/p&gt;
+            &lt;div class="flex flex-col sm:flex-row gap-3 justify-center"&gt;
+                &lt;a href="/contact" class="btn btn-primary w-full sm:w-auto"&gt;&lt;span&gt;Start Your Project&lt;/span&gt;&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+{% include "partials/dashboard_demo_modal.html" %}
+{% endblock %}
+</div>
+    </div>
+    
+    <div class="separator"></div>
+
+    <div class="file-section" id="file-11">
+        <div class="file-header">
+            legal.html
+            <div class="file-path">legal.html</div>
+        </div>
+        <div class="file-content">{% extends "base.html" %}
+
+{% block extra_head %}
+&lt;link rel="canonical" href="https://pragith.net/legal"&gt;
+{% endblock %}
+{% block title %}Legal | Pragith Prakash{% endblock %}
+{% block content %}
+&lt;section class="py-20 border-t border-line/20"&gt;
+    &lt;div class="max-w-3xl mx-auto px-6"&gt;
+        &lt;h1 class="font-display text-3xl font-bold tracking-tight text-ink mb-4"&gt;Legal &amp; Terms&lt;/h1&gt;
+        &lt;div class="w-20 h-1 bg-accent mb-8"&gt;&lt;/div&gt;
+        &lt;div class="space-y-8 text-base text-ink/70 leading-relaxed
+            [&amp;_h3]:font-display [&amp;_h3]:text-lg [&amp;_h3]:font-bold [&amp;_h3]:text-ink [&amp;_h3]:mt-8 [&amp;_h3]:mb-3
+            [&amp;_strong]:text-ink [&amp;_strong]:font-semibold
+            [&amp;_ul]:list-disc [&amp;_ul]:pl-6 [&amp;_li]:pl-1"&gt;
+            &lt;p&gt;&lt;strong&gt;Effective Date:&lt;/strong&gt; February 2025&lt;/p&gt;
+            &lt;h3&gt;Terms of Engagement&lt;/h3&gt;
+            &lt;p&gt;All consulting engagements are governed by a Master Services Agreement (MSA) or Statement of Work (SOW)
+                signed prior to the commencement of work. No work begins without a signed agreement.&lt;/p&gt;
+            &lt;h3&gt;Confidentiality&lt;/h3&gt;
+            &lt;p&gt;I maintain strict confidentiality regarding all client data, trade secrets, and business logic. Standard
+                security practices are employed to protect all shared assets. Mutual NDAs are available upon request.
+            &lt;/p&gt;
+            &lt;h3&gt;Payment Terms&lt;/h3&gt;
+            &lt;p&gt;Invoices are due upon receipt unless otherwise specified in the MSA. Late payments may incur interest at
+                the rate specified in the agreement.&lt;/p&gt;
+            &lt;h3&gt;Limitation of Liability&lt;/h3&gt;
+            &lt;p&gt;Consulting services are provided on an advisory basis. I shall not be liable for any indirect,
+                incidental, or consequential damages arising from the use of advice, recommendations, or deliverables
+                provided during an engagement. Total liability is limited to the fees paid for the specific engagement
+                in question.&lt;/p&gt;
+            &lt;h3&gt;No Legal, Financial, or Regulatory Advice&lt;/h3&gt;
+            &lt;p&gt;Services provided are technical in nature. Nothing in any engagement constitutes legal, financial, tax,
+                or regulatory advice. Clients should seek independent professional counsel for such matters.&lt;/p&gt;
+            &lt;h3&gt;Intellectual Property&lt;/h3&gt;
+            &lt;p&gt;Upon full payment, all code, documentation, and artifacts produced during the engagement become the
+                client's exclusive property, unless otherwise specified in the MSA. Pre-existing intellectual property,
+                tools, and frameworks remain the property of their respective owners.&lt;/p&gt;
+            &lt;h3&gt;Governing Law&lt;/h3&gt;
+            &lt;p&gt;Unless otherwise specified in the MSA, these terms shall be governed by the laws of Canada. For
+                engagements conducted within the UAE, the laws of the relevant emirate may apply as mutually agreed.&lt;/p&gt;
+            &lt;h3&gt;Dispute Resolution&lt;/h3&gt;
+            &lt;p&gt;Any disputes arising under these terms shall first be addressed through good-faith negotiation. If
+                unresolved, disputes may be referred to mediation or arbitration as specified in the applicable MSA.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+{% endblock %}</div>
+    </div>
+    
+    <div class="separator"></div>
+
+    <div class="file-section" id="file-12">
+        <div class="file-header">
+            live_demos.html
+            <div class="file-path">live_demos.html</div>
+        </div>
+        <div class="file-content">{% extends "base.html" %}
+
+{% block content %}
+&lt;section class="section-block border-b border-line/20"&gt;
+    &lt;div class="site-container"&gt;
+        &lt;div class="max-w-3xl mb-10"&gt;
+            &lt;h1 class="page-hero-title"&gt;Production Superset Instance&lt;/h1&gt;
+            &lt;p class="page-hero-subtitle"&gt;Live system demonstrating dashboard deployment quality and reliable day-to-day operation.&lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;article class="border border-line/30 bg-page p-6 sm:p-8 max-w-4xl"&gt;
+            &lt;h2 class="font-display font-semibold h3-display text-ink mb-4"&gt;Superset Dashboard Instance&lt;/h2&gt;
+
+            &lt;div class="grid sm:grid-cols-2 gap-6 mb-6"&gt;
+                &lt;div&gt;
+                    &lt;p class="meta-text uppercase tracking-[0.12em] text-accent font-semibold mb-2"&gt;What It Demonstrates&lt;/p&gt;
+                    &lt;p class="body-md text-ink/78"&gt;Automated KPI refresh, stable data workflows, and role-based dashboard views.&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;p class="meta-text uppercase tracking-[0.12em] text-accent font-semibold mb-2"&gt;Stack Used&lt;/p&gt;
+                    &lt;p class="body-md text-ink/78"&gt;Apache Superset, SQL, Python-based data pipeline integrations.&lt;/p&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class="mb-7"&gt;
+                &lt;p class="meta-text uppercase tracking-[0.12em] text-accent font-semibold mb-2"&gt;Who It Is Relevant For&lt;/p&gt;
+                &lt;p class="body-md text-ink/78"&gt;Teams that need dependable KPI dashboards without manual reporting loops.&lt;/p&gt;
+            &lt;/div&gt;
+
+            &lt;div class="flex flex-col sm:flex-row gap-3"&gt;
+                &lt;button type="button" class="btn btn-primary w-full sm:w-auto" data-open-demo-modal data-cta-id="live-demos-primary-open"&gt;Open Live Dashboard&lt;/button&gt;
+                &lt;a href="/contact" class="btn btn-secondary w-full sm:w-auto"&gt;Book Discovery Call&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/article&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+{% include "partials/dashboard_demo_modal.html" %}
+{% endblock %}
+</div>
+    </div>
+    
+    <div class="separator"></div>
+
+    <div class="file-section" id="file-13">
+        <div class="file-header">
+            dashboard_demo_modal.html
+            <div class="file-path">partials/dashboard_demo_modal.html</div>
+        </div>
+        <div class="file-content">{% set demo_state = demo_status if demo_status is defined else request.query_params.get("demo", "") %}
+{% if demo_state == "sent" %}
+&lt;div class="site-container mb-6"&gt;
+    &lt;div class="border border-emerald-500/35 bg-emerald-50 dark:bg-emerald-900/20 px-4 py-3 text-sm text-emerald-800 dark:text-emerald-200"&gt;
+        Demo credentials have been sent to your email.
+    &lt;/div&gt;
+&lt;/div&gt;
+{% elif demo_state == "recaptcha" %}
+&lt;div class="site-container mb-6"&gt;
+    &lt;div class="border border-amber-500/35 bg-amber-50 dark:bg-amber-900/20 px-4 py-3 text-sm text-amber-800 dark:text-amber-200"&gt;
+        reCAPTCHA verification failed. Please try again.
+    &lt;/div&gt;
+&lt;/div&gt;
+{% elif demo_state == "error" %}
+&lt;div class="site-container mb-6"&gt;
+    &lt;div class="border border-rose-500/35 bg-rose-50 dark:bg-rose-900/20 px-4 py-3 text-sm text-rose-800 dark:text-rose-200"&gt;
+        Unable to send demo access right now. Please try again.
+    &lt;/div&gt;
+&lt;/div&gt;
+{% endif %}
+
+&lt;div id="dashboard-demo-modal" class="fixed inset-0 z-[80] hidden"&gt;
+    &lt;div data-demo-modal-close class="absolute inset-0 bg-black/50"&gt;&lt;/div&gt;
+    &lt;div class="relative min-h-full flex items-center justify-center px-4 py-8"&gt;
+        &lt;div class="w-full max-w-xl border border-line/40 bg-page p-6 sm:p-7 shadow-2xl"&gt;
+            &lt;div class="flex items-start justify-between gap-4 mb-5"&gt;
+                &lt;div&gt;
+                    &lt;h3 class="font-display font-semibold h3-display text-ink mb-1"&gt;Request Dashboard Demo Access&lt;/h3&gt;
+                    &lt;p class="body-md text-ink/70"&gt;Credentials are sent by email after verification.&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;button type="button" data-demo-modal-close class="btn btn-secondary !min-h-9 !px-3" aria-label="Close modal"&gt;
+                    &lt;i class="fa-solid fa-xmark" aria-hidden="true"&gt;&lt;/i&gt;
+                &lt;/button&gt;
+            &lt;/div&gt;
+
+            &lt;form id="dashboard-demo-form" method="POST" action="/demo-access" class="space-y-4"&gt;
+                &lt;div class="grid sm:grid-cols-2 gap-4"&gt;
+                    &lt;div&gt;
+                        &lt;label for="demo-name" class="block text-sm font-semibold text-ink mb-2"&gt;Name&lt;/label&gt;
+                        &lt;input id="demo-name" name="name" type="text" required class="block w-full border border-line/30 bg-page px-4 py-3 text-ink focus:outline-none focus:border-accent transition-colors"&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;label for="demo-email" class="block text-sm font-semibold text-ink mb-2"&gt;Work Email&lt;/label&gt;
+                        &lt;input id="demo-email" name="email" type="email" required class="block w-full border border-line/30 bg-page px-4 py-3 text-ink focus:outline-none focus:border-accent transition-colors"&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;div class="grid sm:grid-cols-2 gap-4"&gt;
+                    &lt;div&gt;
+                        &lt;label for="demo-company" class="block text-sm font-semibold text-ink mb-2"&gt;Company&lt;/label&gt;
+                        &lt;input id="demo-company" name="company" type="text" class="block w-full border border-line/30 bg-page px-4 py-3 text-ink focus:outline-none focus:border-accent transition-colors"&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                        &lt;label for="demo-role" class="block text-sm font-semibold text-ink mb-2"&gt;Role&lt;/label&gt;
+                        &lt;input id="demo-role" name="role" type="text" class="block w-full border border-line/30 bg-page px-4 py-3 text-ink focus:outline-none focus:border-accent transition-colors"&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;div&gt;
+                    &lt;label for="demo-notes" class="block text-sm font-semibold text-ink mb-2"&gt;Notes (Optional)&lt;/label&gt;
+                    &lt;textarea id="demo-notes" name="notes" rows="3" class="block w-full border border-line/30 bg-page px-4 py-3 text-ink focus:outline-none focus:border-accent transition-colors"&gt;&lt;/textarea&gt;
+                &lt;/div&gt;
+
+                &lt;input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off"&gt;
+                &lt;input type="hidden" name="utm_source" value="{{ request.query_params.get('utm_source', '') }}"&gt;
+                &lt;input type="hidden" name="utm_medium" value="{{ request.query_params.get('utm_medium', '') }}"&gt;
+                &lt;input type="hidden" name="utm_campaign" value="{{ request.query_params.get('utm_campaign', '') }}"&gt;
+                &lt;input type="hidden" name="utm_content" value="{{ request.query_params.get('utm_content', '') }}"&gt;
+                &lt;input type="hidden" name="ref_page" value="{{ request.url.path }}"&gt;
+                &lt;input type="hidden" name="cta_id" id="demo-cta-id" value=""&gt;
+                &lt;input type="hidden" name="return_to" value="{{ request.url.path }}"&gt;
+                &lt;input type="hidden" name="g-recaptcha-response" id="demo-recaptcha-response"&gt;
+
+                &lt;button type="submit" class="btn btn-primary w-full" data-analytics="submit-demo-access-form"&gt;
+                    &lt;i class="fa-solid fa-envelope-open-text" aria-hidden="true"&gt;&lt;/i&gt;
+                    &lt;span&gt;Send Dashboard Access&lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/form&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+{% if recaptcha_site_key %}
+&lt;script src="https://www.google.com/recaptcha/api.js?render={{ recaptcha_site_key }}"&gt;&lt;/script&gt;
+{% endif %}
+&lt;script&gt;
+    (function () {
+        var modal = document.getElementById('dashboard-demo-modal');
+        if (!modal) return;
+
+        var form = document.getElementById('dashboard-demo-form');
+        var ctaInput = document.getElementById('demo-cta-id');
+        var recaptchaInput = document.getElementById('demo-recaptcha-response');
+        var recaptchaSiteKey = "{{ recaptcha_site_key or '' }}";
+
+        function openModal(ctaId) {
+            if (ctaInput) ctaInput.value = ctaId || '';
+            modal.classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        document.querySelectorAll('[data-open-demo-modal]').forEach(function (trigger) {
+            trigger.addEventListener('click', function () {
+                openModal(trigger.getAttribute('data-cta-id'));
+            });
+        });
+
+        modal.querySelectorAll('[data-demo-modal-close]').forEach(function (node) {
+            node.addEventListener('click', closeModal);
+        });
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape' &amp;&amp; !modal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+
+        if (form) {
+            form.addEventListener('submit', function (event) {
+                if (!recaptchaSiteKey || typeof grecaptcha === 'undefined') return;
+                event.preventDefault();
+                grecaptcha.ready(function () {
+                    grecaptcha.execute(recaptchaSiteKey, { action: 'submit_demo_access' }).then(function (token) {
+                        if (recaptchaInput) recaptchaInput.value = token;
+                        form.submit();
+                    });
+                });
+            });
+        }
+    })();
+&lt;/script&gt;
+</div>
+    </div>
+    
+    <div class="separator"></div>
+
+    <div class="file-section" id="file-14">
+        <div class="file-header">
+            privacy.html
+            <div class="file-path">privacy.html</div>
+        </div>
+        <div class="file-content">{% extends "base.html" %}
+
+{% block extra_head %}
+&lt;link rel="canonical" href="https://pragith.net/privacy"&gt;
+{% endblock %}
+{% block title %}Privacy Policy | Pragith Prakash{% endblock %}
+{% block content %}
+&lt;section class="py-20 border-t border-line/20"&gt;
+    &lt;div class="max-w-3xl mx-auto px-6"&gt;
+        &lt;h1 class="font-display text-3xl font-bold tracking-tight text-ink mb-4"&gt;Privacy Policy&lt;/h1&gt;
+        &lt;div class="w-20 h-1 bg-accent mb-8"&gt;&lt;/div&gt;
+        &lt;div class="space-y-8 text-base text-ink/70 leading-relaxed
+            [&amp;_h3]:font-display [&amp;_h3]:text-lg [&amp;_h3]:font-bold [&amp;_h3]:text-ink [&amp;_h3]:mt-8 [&amp;_h3]:mb-3
+            [&amp;_strong]:text-ink [&amp;_strong]:font-semibold
+            [&amp;_ul]:list-disc [&amp;_ul]:pl-6 [&amp;_li]:pl-1"&gt;
+            &lt;p&gt;&lt;strong&gt;Effective Date:&lt;/strong&gt; February 2024&lt;/p&gt;
+            &lt;h3&gt;Overview&lt;/h3&gt;
+            &lt;p&gt;I respect your privacy. This website is designed to be minimal and non-intrusive.&lt;/p&gt;
+            &lt;h3&gt;Data Collection&lt;/h3&gt;
+            &lt;p&gt;&lt;strong&gt;Contact Form:&lt;/strong&gt; If you submit the contact form, I collect your name, email, inquiry type,
+                and message solely for the purpose of replying to you.&lt;/p&gt;
+            &lt;p&gt;&lt;strong&gt;Analytics:&lt;/strong&gt; This site may use minimal, privacy-focused analytics (server logs) to track
+                performance. No invasive cookies are used.&lt;/p&gt;
+            &lt;h3&gt;Third-Party Services&lt;/h3&gt;
+            &lt;ul&gt;
+                &lt;li&gt;&lt;strong&gt;Google reCAPTCHA:&lt;/strong&gt; Used to prevent spam on the contact form. Subject to Google's
+                    Privacy Policy and Terms of Use.&lt;/li&gt;
+                &lt;li&gt;&lt;strong&gt;Calendly:&lt;/strong&gt; Used for scheduling. If you use the booking widget, your data is
+                    processed by Calendly.&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;h3&gt;Data Sharing&lt;/h3&gt;
+            &lt;p&gt;I do not sell, trade, or transfer your personally identifiable information to outside parties.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+{% endblock %}</div>
+    </div>
+    
+    <div class="separator"></div>
+
+    <div class="file-section" id="file-15">
+        <div class="file-header">
+            solutions.html
+            <div class="file-path">solutions.html</div>
+        </div>
+        <div class="file-content">{% extends "base.html" %}
+
+{% block content %}
+&lt;section class="section-block border-b border-line/20"&gt;
+    &lt;div class="site-container"&gt;
+        &lt;div class="max-w-3xl"&gt;
+            &lt;h1 class="page-hero-title"&gt;Solutions&lt;/h1&gt;
+            &lt;p class="page-hero-subtitle"&gt;Dashboards, automation systems, and AI-integrated workflows built for operational teams.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="section-block tone-alt border-b border-line/20"&gt;
+    &lt;div class="site-container"&gt;
+        &lt;div class="grid md:grid-cols-3 gap-5"&gt;
+            &lt;article class="border border-line/30 bg-page p-6"&gt;
+                &lt;h2 class="font-display font-semibold h3-display text-ink mb-3"&gt;Business Intelligence Dashboards&lt;/h2&gt;
+                &lt;p class="body-md text-ink/78 mb-4"&gt;Decision-ready KPI systems with clear metric definitions and reliable refresh pipelines.&lt;/p&gt;
+                &lt;ul class="space-y-1 body-md text-ink/78 mb-5"&gt;
+                    &lt;li&gt;- Superset deployments&lt;/li&gt;
+                    &lt;li&gt;- SQL, BigQuery, and API integrations&lt;/li&gt;
+                    &lt;li&gt;- Executive and operating views&lt;/li&gt;
+                &lt;/ul&gt;
+                &lt;div class="flex flex-col sm:flex-row gap-3"&gt;
+                    &lt;button type="button" class="btn btn-secondary w-full sm:w-auto" data-open-demo-modal data-cta-id="solutions-dashboard-demo"&gt;View Live Dashboard&lt;/button&gt;
+                    &lt;a href="/business/dashboards" class="btn btn-primary w-full sm:w-auto"&gt;View Dashboard Build&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/article&gt;
+
+            &lt;article class="border border-line/30 bg-page p-6"&gt;
+                &lt;h2 class="font-display font-semibold h3-display text-ink mb-3"&gt;Automation &amp; Integration&lt;/h2&gt;
+                &lt;p class="body-md text-ink/78 mb-4"&gt;Operational workflows that remove repetitive manual handoffs and reporting overhead.&lt;/p&gt;
+                &lt;ul class="space-y-1 body-md text-ink/78 mb-5"&gt;
+                    &lt;li&gt;- Lead routing and follow-up logic&lt;/li&gt;
+                    &lt;li&gt;- API orchestration across tools&lt;/li&gt;
+                    &lt;li&gt;- Reporting and update automation&lt;/li&gt;
+                &lt;/ul&gt;
+                &lt;a href="/contact?project_type=Automation" class="btn btn-primary w-full sm:w-auto"&gt;Discuss Automation System&lt;/a&gt;
+            &lt;/article&gt;
+
+            &lt;article class="border border-line/30 bg-page p-6"&gt;
+                &lt;h2 class="font-display font-semibold h3-display text-ink mb-3"&gt;AI-Integrated Workflows&lt;/h2&gt;
+                &lt;p class="body-md text-ink/78 mb-4"&gt;AI components integrated where useful to improve quality, speed, and operational visibility.&lt;/p&gt;
+                &lt;ul class="space-y-1 body-md text-ink/78 mb-5"&gt;
+                    &lt;li&gt;- Summarization and reporting intelligence&lt;/li&gt;
+                    &lt;li&gt;- Process optimization support&lt;/li&gt;
+                    &lt;li&gt;- Data enrichment in live workflows&lt;/li&gt;
+                &lt;/ul&gt;
+                &lt;a href="/contact?project_type=AI%20Workflow%20Demo" class="btn btn-primary w-full sm:w-auto"&gt;Request AI Demo Access&lt;/a&gt;
+            &lt;/article&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="section-block border-b border-line/20"&gt;
+    &lt;div class="site-container"&gt;
+        &lt;div class="border border-line/30 bg-page p-7 sm:p-10 text-center"&gt;
+            &lt;h2 class="font-display font-semibold h2-display text-ink mb-3"&gt;Book a Discovery Call&lt;/h2&gt;
+            &lt;p class="body-md text-ink/70 max-w-2xl mx-auto mb-6"&gt;$95 USD per hour. Milestone-based execution and production handover.&lt;/p&gt;
+            &lt;a href="/contact" class="btn btn-primary w-full sm:w-auto"&gt;Start Your Project&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+{% include "partials/dashboard_demo_modal.html" %}
+{% endblock %}
+</div>
+    </div>
+    
+    <div class="separator"></div>
+
+    <div class="file-section" id="file-16">
+        <div class="file-header">
+            speaking.html
+            <div class="file-path">speaking.html</div>
+        </div>
+        <div class="file-content">{% extends "base.html" %}
+
+{% block title %}Speaking &amp; Technical Keynotes | Pragith Prakash{% endblock %}
+{% block description %}AI, Data Engineering, and Cloud Architecture keynotes and technical talks by Pragith Prakash.
+Google Developer Group speaker and Senior AI Engineer.{% endblock %}
+{% block extra_head %}
+&lt;link rel="canonical" href="https://pragith.net/speaking"&gt;
+{% endblock %}
+
+{% block content %}
+
+&lt;section class="border-b border-line/20" data-panel-title="Speaking"&gt;
+    &lt;div class="max-w-6xl mx-auto px-6 py-16 sm:py-20"&gt;
+        &lt;div class="max-w-4xl"&gt;
+            &lt;h1 class="page-hero-title"&gt;
+                Speaking &amp; Technical Keynotes
+            &lt;/h1&gt;
+            
+            &lt;p class="page-hero-subtitle mb-6"&gt;
+                Conference talks and leadership briefings on AI systems, data platforms, and practical architecture decisions.
+            &lt;/p&gt;
+            &lt;div class="flex flex-wrap gap-6 items-center text-sm font-medium text-ink/60 mb-10"&gt;
+                &lt;span class="flex items-center gap-2"&gt;&lt;span class="w-1.5 h-1.5 rounded-full bg-accent"&gt;&lt;/span&gt;Keynotes and deep-dives&lt;/span&gt;
+                &lt;span class="flex items-center gap-2"&gt;&lt;span class="w-1.5 h-1.5 rounded-full bg-accent"&gt;&lt;/span&gt;Technical and executive audiences&lt;/span&gt;
+                &lt;span class="flex items-center gap-2"&gt;&lt;span class="w-1.5 h-1.5 rounded-full bg-accent"&gt;&lt;/span&gt;Remote or in-person&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;a href="/contact?project_type=Keynote"
+                class="inline-flex items-center justify-center text-sm font-semibold bg-ink text-page hover:bg-accent hover:text-black transition-all h-12 px-8"
+                data-analytics="cta-speaking-hero-discuss-event"&gt;
+                Discuss Event →
+            &lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="py-16 border-b border-line/20 bg-surface/30" data-panel-title="Topics &amp; Formats"&gt;
+    &lt;div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-6"&gt;
+
+        &lt;div class="border border-line/30 bg-page p-8"&gt;
+            &lt;h2 class="font-display text-2xl font-bold tracking-tight text-ink mb-6"&gt;Popular Topics&lt;/h2&gt;
+            &lt;ul class="space-y-3 text-ink/70 text-sm"&gt;
+                &lt;li class="flex items-center gap-2"&gt;&lt;span class="w-1 h-1 bg-accent rounded-full"&gt;&lt;/span&gt; Designing production LLM systems&lt;/li&gt;
+                &lt;li class="flex items-center gap-2"&gt;&lt;span class="w-1 h-1 bg-accent rounded-full"&gt;&lt;/span&gt; AI architecture tradeoffs that matter&lt;/li&gt;
+                &lt;li class="flex items-center gap-2"&gt;&lt;span class="w-1 h-1 bg-accent rounded-full"&gt;&lt;/span&gt; Scaling data platforms beyond hype&lt;/li&gt;
+                &lt;li class="flex items-center gap-2"&gt;&lt;span class="w-1 h-1 bg-accent rounded-full"&gt;&lt;/span&gt; From proof-of-concept to production&lt;/li&gt;
+                &lt;li class="flex items-center gap-2"&gt;&lt;span class="w-1 h-1 bg-accent rounded-full"&gt;&lt;/span&gt; Engineering leadership in the age of AI&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+
+        &lt;div class="border border-line/30 bg-page p-8"&gt;
+            &lt;h2 class="font-display text-2xl font-bold tracking-tight text-ink mb-6"&gt;Formats&lt;/h2&gt;
+            &lt;ul class="space-y-3 text-ink/70 text-sm"&gt;
+                &lt;li class="flex items-center gap-2"&gt;&lt;span class="w-1 h-1 bg-accent rounded-full"&gt;&lt;/span&gt; Conference keynote (45-60 min)&lt;/li&gt;
+                &lt;li class="flex items-center gap-2"&gt;&lt;span class="w-1 h-1 bg-accent rounded-full"&gt;&lt;/span&gt; Technical deep-dive session&lt;/li&gt;
+                &lt;li class="flex items-center gap-2"&gt;&lt;span class="w-1 h-1 bg-accent rounded-full"&gt;&lt;/span&gt; Corporate leadership briefing&lt;/li&gt;
+                &lt;li class="flex items-center gap-2"&gt;&lt;span class="w-1 h-1 bg-accent rounded-full"&gt;&lt;/span&gt; Panel discussion&lt;/li&gt;
+                &lt;li class="flex items-center gap-2"&gt;&lt;span class="w-1 h-1 bg-accent rounded-full"&gt;&lt;/span&gt; University guest lecture&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="py-16 border-b border-line/20" data-panel-title="Experience"&gt;
+    &lt;div class="max-w-4xl mx-auto px-6"&gt;
+        &lt;h2 class="font-display text-4xl font-bold tracking-tight text-ink mb-4 text-center"&gt;
+            Previous Experience
+        &lt;/h2&gt;
+        &lt;p class="text-lg text-ink/70 leading-relaxed text-center"&gt;
+            Google Developer Group sessions, technical community events, academic lectures,
+            and enterprise architecture workshops.
+        &lt;/p&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="py-16 border-t border-line/20 bg-surface/30" data-panel-title="Book"&gt;
+    &lt;div class="max-w-6xl mx-auto px-6"&gt;
+        &lt;div class="border border-line/30 bg-page p-10 text-center"&gt;
+        &lt;h2 class="font-display text-4xl sm:text-4xl font-bold text-ink mb-6"&gt;
+            Invite Me to Speak
+        &lt;/h2&gt;
+        &lt;p class="text-ink/70 mb-8 max-w-2xl mx-auto"&gt;Share your audience and event format. I will propose the right keynote structure.&lt;/p&gt;
+        &lt;a href="/contact?project_type=Keynote"
+            class="inline-flex items-center justify-center text-lg font-semibold bg-ink text-page hover:bg-accent hover:text-black transition-all h-14 px-10 rounded-sm"&gt;
+            Discuss Event →
+        &lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+{% endblock %}
+</div>
+    </div>
+    
+    <div class="separator"></div>
+
+    <div class="file-section" id="file-17">
+        <div class="file-header">
+            training.html
+            <div class="file-path">training.html</div>
+        </div>
+        <div class="file-content">{% extends "base.html" %}
+
+{% block title %}Enterprise AI &amp; Data Training | Pragith Prakash{% endblock %}
+{% block description %}Architecture-first AI and data engineering training for technical teams building production systems.{% endblock %}
+
+{% block extra_head %}
+&lt;link rel="canonical" href="https://pragith.net/training"&gt;
+{% endblock %}
+
+{% block og_title %}Enterprise AI &amp; Data Training | Pragith Prakash{% endblock %}
+{% block og_description %}Practical, production-focused training for engineering teams: AI systems, data platforms, and cloud architecture.{% endblock %}
+
+{% block content %}
+&lt;section class="section-block border-b border-line/20"&gt;
+    &lt;div class="max-w-[1040px] mx-auto px-6 md:px-8"&gt;
+        &lt;h1 class="page-hero-title"&gt;Enterprise AI &amp; Data Engineering Training&lt;/h1&gt;
+        
+        &lt;p class="page-hero-subtitle mb-8"&gt;Architecture-first training for teams building production AI and data systems.&lt;/p&gt;
+
+        &lt;div class="grid sm:grid-cols-3 gap-5 max-w-3xl"&gt;
+            &lt;div class="border border-line/25 bg-page p-6" style="padding:1.5rem;"&gt;
+                &lt;p class="text-xs uppercase tracking-wide text-ink/50 mb-1"&gt;Format&lt;/p&gt;
+                &lt;p class="text-base text-ink"&gt;&lt;i class="fa-solid fa-user-group text-accent mr-2" aria-hidden="true"&gt;&lt;/i&gt;Team cohorts&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="border border-line/25 bg-page p-6" style="padding:1.5rem;"&gt;
+                &lt;p class="text-xs uppercase tracking-wide text-ink/50 mb-1"&gt;Focus&lt;/p&gt;
+                &lt;p class="text-base text-ink"&gt;&lt;i class="fa-solid fa-gears text-accent mr-2" aria-hidden="true"&gt;&lt;/i&gt;Production execution&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="border border-line/25 bg-page p-6" style="padding:1.5rem;"&gt;
+                &lt;p class="text-xs uppercase tracking-wide text-ink/50 mb-1"&gt;Delivery&lt;/p&gt;
+                &lt;p class="text-base text-ink"&gt;&lt;i class="fa-solid fa-calendar-days text-accent mr-2" aria-hidden="true"&gt;&lt;/i&gt;Custom schedule&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="section-block border-b border-line/20 bg-surface/30"&gt;
+    &lt;div class="max-w-[1040px] mx-auto px-6 md:px-8"&gt;
+        &lt;h2 class="text-[1.95rem] font-semibold text-ink mb-3"&gt;What Teams Learn&lt;/h2&gt;
+        &lt;p class="text-base text-ink/62 mb-10"&gt;Curriculum is scoped around your current stack, constraints, and delivery goals.&lt;/p&gt;
+
+        &lt;div class="grid md:grid-cols-2 gap-7"&gt;
+            &lt;article class="border border-line/25 bg-page p-8"&gt;
+                &lt;h3 class="text-[1.2rem] font-semibold text-ink mb-4 inline-flex items-center gap-2"&gt;&lt;i class="fa-solid fa-brain text-accent" aria-hidden="true"&gt;&lt;/i&gt;Production AI Systems&lt;/h3&gt;
+                &lt;ul class="space-y-3 text-base text-ink/78"&gt;
+                    &lt;li&gt;LLM system architecture and retrieval patterns&lt;/li&gt;
+                    &lt;li&gt;Evaluation and guardrail design&lt;/li&gt;
+                    &lt;li&gt;Inference cost and latency tradeoffs&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/article&gt;
+
+            &lt;article class="border border-line/25 bg-page p-8"&gt;
+                &lt;h3 class="text-[1.2rem] font-semibold text-ink mb-4 inline-flex items-center gap-2"&gt;&lt;i class="fa-solid fa-database text-accent" aria-hidden="true"&gt;&lt;/i&gt;Modern Data Platforms&lt;/h3&gt;
+                &lt;ul class="space-y-3 text-base text-ink/78"&gt;
+                    &lt;li&gt;Batch and streaming architecture decisions&lt;/li&gt;
+                    &lt;li&gt;Data quality and reliability patterns&lt;/li&gt;
+                    &lt;li&gt;Governance, lineage, and model-ready data&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/article&gt;
+
+            &lt;article class="border border-line/25 bg-page p-8"&gt;
+                &lt;h3 class="text-[1.2rem] font-semibold text-ink mb-4 inline-flex items-center gap-2"&gt;&lt;i class="fa-solid fa-cloud-arrow-up text-accent" aria-hidden="true"&gt;&lt;/i&gt;Cloud &amp; Distributed Systems&lt;/h3&gt;
+                &lt;ul class="space-y-3 text-base text-ink/78"&gt;
+                    &lt;li&gt;Kubernetes and workload orchestration&lt;/li&gt;
+                    &lt;li&gt;Resilience and failure-mode planning&lt;/li&gt;
+                    &lt;li&gt;Infrastructure design for scale&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/article&gt;
+
+            &lt;article class="border border-line/25 bg-page p-8"&gt;
+                &lt;h3 class="text-[1.2rem] font-semibold text-ink mb-4 inline-flex items-center gap-2"&gt;&lt;i class="fa-solid fa-code-branch text-accent" aria-hidden="true"&gt;&lt;/i&gt;MLOps &amp; Platform Workflows&lt;/h3&gt;
+                &lt;ul class="space-y-3 text-base text-ink/78"&gt;
+                    &lt;li&gt;CI/CD for data and ML systems&lt;/li&gt;
+                    &lt;li&gt;Model monitoring and drift detection&lt;/li&gt;
+                    &lt;li&gt;Release strategies and rollback safety&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/article&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="section-block border-b border-line/20"&gt;
+    &lt;div class="max-w-[1040px] mx-auto px-6 md:px-8"&gt;
+        &lt;h2 class="text-[1.95rem] font-semibold text-ink mb-3"&gt;Engagement Model&lt;/h2&gt;
+        &lt;p class="text-base text-ink/62 mb-10"&gt;Clear structure from discovery to post-session execution support.&lt;/p&gt;
+
+        &lt;div class="grid md:grid-cols-3 gap-7"&gt;
+            &lt;article class="border border-line/25 bg-page p-6"&gt;
+                &lt;h3 class="text-[1.15rem] font-semibold text-ink mb-2 inline-flex items-center gap-2"&gt;&lt;i class="fa-solid fa-magnifying-glass text-accent" aria-hidden="true"&gt;&lt;/i&gt;1. Technical Discovery&lt;/h3&gt;
+                &lt;p class="text-base text-ink/76 leading-relaxed"&gt;Scope current architecture, team maturity, and delivery objectives.&lt;/p&gt;
+            &lt;/article&gt;
+            &lt;article class="border border-line/25 bg-page p-6"&gt;
+                &lt;h3 class="text-[1.15rem] font-semibold text-ink mb-2 inline-flex items-center gap-2"&gt;&lt;i class="fa-solid fa-diagram-project text-accent" aria-hidden="true"&gt;&lt;/i&gt;2. Curriculum Design&lt;/h3&gt;
+                &lt;p class="text-base text-ink/76 leading-relaxed"&gt;Map practical modules to your systems, tools, and constraints.&lt;/p&gt;
+            &lt;/article&gt;
+            &lt;article class="border border-line/25 bg-page p-6"&gt;
+                &lt;h3 class="text-[1.15rem] font-semibold text-ink mb-2 inline-flex items-center gap-2"&gt;&lt;i class="fa-solid fa-square-check text-accent" aria-hidden="true"&gt;&lt;/i&gt;3. Delivery + Handover&lt;/h3&gt;
+                &lt;p class="text-base text-ink/76 leading-relaxed"&gt;Run sessions, share references, and align immediate implementation actions.&lt;/p&gt;
+            &lt;/article&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="section-block border-b border-line/20 bg-surface/30"&gt;
+    &lt;div class="max-w-[1040px] mx-auto px-6 md:px-8"&gt;
+        &lt;h2 class="text-[1.95rem] font-semibold text-ink mb-3"&gt;Outcomes&lt;/h2&gt;
+        &lt;p class="text-base text-ink/62 mb-10"&gt;Teams leave with implementation clarity, not abstract theory.&lt;/p&gt;
+
+        &lt;div class="grid md:grid-cols-3 gap-7"&gt;
+            &lt;article class="border border-line/25 bg-page p-6" style="padding:1.5rem;"&gt;
+                &lt;h3 class="text-[1.15rem] font-semibold text-ink mb-3 inline-flex items-center gap-2"&gt;&lt;i class="fa-solid fa-compass-drafting text-accent" aria-hidden="true"&gt;&lt;/i&gt;Architecture Clarity&lt;/h3&gt;
+                &lt;p class="text-base text-ink/76"&gt;Clear decisions on patterns, tooling, and tradeoffs before build commitments.&lt;/p&gt;
+            &lt;/article&gt;
+            &lt;article class="border border-line/25 bg-page p-6" style="padding:1.5rem;"&gt;
+                &lt;h3 class="text-[1.15rem] font-semibold text-ink mb-3 inline-flex items-center gap-2"&gt;&lt;i class="fa-solid fa-shield-check text-accent" aria-hidden="true"&gt;&lt;/i&gt;Lower Delivery Risk&lt;/h3&gt;
+                &lt;p class="text-base text-ink/76"&gt;Teams identify failure modes earlier and implement guardrails with intent.&lt;/p&gt;
+            &lt;/article&gt;
+            &lt;article class="border border-line/25 bg-page p-6" style="padding:1.5rem;"&gt;
+                &lt;h3 class="text-[1.15rem] font-semibold text-ink mb-3 inline-flex items-center gap-2"&gt;&lt;i class="fa-solid fa-gauge-high text-accent" aria-hidden="true"&gt;&lt;/i&gt;Faster Execution&lt;/h3&gt;
+                &lt;p class="text-base text-ink/76"&gt;Better operating rhythm across engineering, platform, and data functions.&lt;/p&gt;
+            &lt;/article&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section class="section-block border-t border-line/20"&gt;
+    &lt;div class="max-w-[1040px] mx-auto px-6 md:px-8"&gt;
+        &lt;div class="border border-line/25 bg-page p-8 sm:p-10 text-center"&gt;
+            &lt;h2 class="text-[1.95rem] font-semibold text-ink mb-4"&gt;Request Training Scope&lt;/h2&gt;
+            &lt;p class="text-base text-ink/68 mb-8 max-w-2xl mx-auto"&gt;Share team size, current stack, and target capability. I will propose a structured training plan.&lt;/p&gt;
+            &lt;a href="/contact?project_type=Training" class="btn btn-primary" data-analytics="cta-training-request-scope"&gt;
+                &lt;i class="fa-solid fa-chalkboard-user" aria-hidden="true"&gt;&lt;/i&gt;
+                &lt;span&gt;Request Training Scope&lt;/span&gt;
+            &lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+{% endblock %}
+</div>
+    </div>
+    
+    <div class="separator"></div>
+
+    <div class="file-section" id="file-18">
+        <div class="file-header">
+            work.html
+            <div class="file-path">work.html</div>
+        </div>
+        <div class="file-content">{% extends "base.html" %}
+
+{% block extra_head %}
+&lt;link rel="canonical" href="https://pragith.net/work"&gt;
+{% endblock %}
+{% block title %}Engineered Systems | Pragith Prakash{% endblock %}
+{% block canonical %}https://pragith.net/work{% endblock %}
+{% block content %}
+&lt;section class="py-20 border-t border-line/20 min-h-screen"&gt;
+    &lt;div class="max-w-7xl mx-auto px-6"&gt;
+        &lt;div class="mb-20"&gt;
+            &lt;!-- &lt;div
+                class="inline-flex items-center gap-2 px-3 py-1 rounded-sm bg-accent/5 text-accent text-xs font-mono font-medium mb-6"&gt;
+                &lt;span class="w-2 h-2 rounded-full bg-accent animate-pulse"&gt;&lt;/span&gt;
+                SYSTEM_REGISTRY
+            &lt;/div&gt; --&gt;
+            &lt;h1 class="page-hero-title"&gt;Engineered Systems&lt;/h1&gt;
+            
+            &lt;p class="page-hero-subtitle"&gt;
+                Production-grade infrastructure, data platforms, and distributed systems.
+                Built for scale, reliability, and observability.
+            &lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;div class="grid gap-px bg-line/20 border border-line/20"&gt;
+            {% for work in works %}
+            &lt;div class="group relative bg-page hover:bg-surface transition-colors p-8 sm:p-12"&gt;
+                &lt;div class="flex flex-col md:flex-row gap-8 md:gap-12 md:items-start"&gt;
+                    &lt;!-- Technical Meta Column --&gt;
+                    &lt;div
+                        class="w-full md:w-64 shrink-0 flex flex-col gap-4 border-l-2 border-line/30 pl-6 md:border-l-0 md:pl-0 md:border-r-2 md:pr-6 md:text-right"&gt;
+                        &lt;div&gt;
+                            &lt;span
+                                class="block text-[10px] font-bold uppercase tracking-widest text-ink/40 mb-1"&gt;Domain&lt;/span&gt;
+                            &lt;span class="font-mono text-sm text-ink"&gt;{{ work.industry }}&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div&gt;
+                            &lt;span
+                                class="block text-[10px] font-bold uppercase tracking-widest text-ink/40 mb-1"&gt;Role&lt;/span&gt;
+                            &lt;span class="font-mono text-sm text-ink"&gt;{{ work.role }}&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div&gt;
+                            &lt;span
+                                class="block text-[10px] font-bold uppercase tracking-widest text-ink/40 mb-1"&gt;Status&lt;/span&gt;
+                            &lt;span
+                                class="font-mono text-xs text-green-600 bg-green-500/10 px-2 py-0.5 rounded-full inline-block"&gt;PRODUCTION&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;!-- Content Column --&gt;
+                    &lt;div class="flex-1"&gt;
+                        &lt;h2
+                            class="font-display text-2xl font-bold text-ink mb-4 group-hover:text-accent transition-colors"&gt;
+                            {{ work.title }}
+                        &lt;/h2&gt;
+                        &lt;p class="text-ink/60 mb-8 leading-relaxed max-w-3xl"&gt;{{ work.summary }}&lt;/p&gt;
+
+                        &lt;!-- Tech Stack Grid --&gt;
+                        &lt;div class="flex flex-wrap gap-2"&gt;
+                            {% for tech in work.stack %}
+                            &lt;span class="arch-node"&gt;{{ tech }}&lt;/span&gt;
+                            {% endfor %}
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+            &lt;/div&gt;
+            {% endfor %}
+        &lt;/div&gt;
+
+        &lt;!-- Consulting CTA --&gt;
+        &lt;div class="mt-24 border border-line/20 bg-surface/30 p-12 text-center relative overflow-hidden"&gt;
+            &lt;div class="absolute inset-0 bg-grid-pattern opacity-[0.03] pointer-events-none"&gt;&lt;/div&gt;
+            &lt;div class="relative z-10"&gt;
+                &lt;h3 class="font-display text-2xl font-bold text-ink mb-4"&gt;Require Architectural Leadership?&lt;/h3&gt;
+                &lt;p class="text-ink/60 mb-8 max-w-xl mx-auto"&gt;
+                    I engage with teams building complex data and AI systems.
+                    From architectural review to full implementation.
+                &lt;/p&gt;
+                &lt;a href="/contact"
+                    class="inline-flex items-center justify-center text-sm font-semibold bg-ink text-page hover:bg-accent hover:text-black transition-all h-12 px-8 shadow-sm"&gt;
+                    Initialize Consultation →
+                &lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+{% endblock %}
+</div>
+    </div>
+    
+    <div class="separator"></div>
+
+
+    <footer style="text-align: center; margin-top: 50px; padding: 20px; border-top: 1px solid #333; color: #666;">
+        <p>End of Website Content Snapshot</p>
+        <p style="font-size: 12px;">Generated by pragith.net helper script</p>
+    </footer>
+</body>
+</html>

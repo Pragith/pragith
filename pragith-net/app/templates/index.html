@@ -9,158 +9,132 @@
 {% block content %}
 <section class="section-block border-b border-line/20">
     <div class="site-container">
-        <div class="max-w-3xl" data-animate>
+        <div class="max-w-3xl">
             <h1 class="font-display font-semibold h1-display text-ink mb-5">AI-Accelerated Software & Data Solutions</h1>
-            <p class="body-lg text-ink/80 max-w-xl mb-8">Dashboards, automation systems, AI-powered workflows, and production-ready deployments.</p>
-            <p class="body-md text-ink/60 max-w-xl mb-8">Built fast. Structured cleanly. Delivered with documentation.</p>
+            <p class="body-lg text-ink/80 max-w-xl mb-8">Dashboards, automation systems, and AI-integrated workflows built for operational teams.</p>
+            <p class="body-md text-ink/60 max-w-xl mb-8">
+                {% if currency_code and currency_rate and currency_symbol %}
+                Approximately {{ currency_symbol }} {{ (hourly_rate_usd * currency_rate)|round(0, 'ceil') }} per hour. Clean builds. Production-ready deployment.
+                {% else %}
+                $95 USD/hour. Clean builds. Production-ready deployment.
+                {% endif %}
+            </p>
             <div class="flex flex-col sm:flex-row gap-3">
                 <a href="/contact" class="btn btn-primary w-full sm:w-auto">
                     <span>Book a Discovery Call</span>
                 </a>
-                <a href="#live-demos" class="btn btn-secondary w-full sm:w-auto">
-                    <span>View Live Demos</span>
-                </a>
+                <button type="button" class="btn btn-secondary w-full sm:w-auto" data-open-demo-modal data-cta-id="home-hero-dashboard-demo">
+                    <span>View Dashboard Demo</span>
+                </button>
             </div>
-        </div>
-    </div>
-</section>
-
-<section id="solutions" class="section-block tone-alt border-b border-line/20">
-    <div class="site-container">
-        <div class="max-w-3xl mb-8" data-animate>
-            <h2 class="font-display font-semibold h2-display text-ink mb-2">What I Build</h2>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-5">
-            <article class="border border-line/30 bg-page p-6" data-animate>
-                <h3 class="font-display font-semibold h3-display text-ink mb-2">Business Intelligence Dashboards</h3>
-                <ul class="space-y-1 body-md text-ink/80">
-                    <li>- Superset deployments</li>
-                    <li>- Revenue & marketing dashboards</li>
-                    <li>- Data warehouse integrations</li>
-                    <li>- GA4 / BigQuery / SQL / API pipelines</li>
-                    <li>- Hosted or self-managed</li>
-                </ul>
-                <a href="https://dashboards.pragith.net" class="btn btn-secondary mt-4">View Dashboard Demo</a>
-            </article>
-            <article class="border border-line/30 bg-page p-6" data-animate>
-                <h3 class="font-display font-semibold h3-display text-ink mb-2">AI-Enhanced Internal Tools</h3>
-                <ul class="space-y-1 body-md text-ink/80">
-                    <li>- AI agent integrations</li>
-                    <li>- Data summarization workflows</li>
-                    <li>- Automated reporting</li>
-                    <li>- LLM-powered internal assistants</li>
-                    <li>- Structured API-connected tools</li>
-                </ul>
-            </article>
-            <article class="border border-line/30 bg-page p-6" data-animate>
-                <h3 class="font-display font-semibold h3-display text-ink mb-2">Automation & System Integration</h3>
-                <ul class="space-y-1 body-md text-ink/80">
-                    <li>- CRM integration (e.g., Twenty CRM)</li>
-                    <li>- Lead routing</li>
-                    <li>- Operational workflows</li>
-                    <li>- API orchestration</li>
-                    <li>- Reporting automation</li>
-                </ul>
-            </article>
-        </div>
-    </div>
-</section>
-
-<section class="section-block border-b border-line/20">
-    <div class="site-container">
-        <div class="max-w-3xl mb-8" data-animate>
-            <h2 class="font-display font-semibold h2-display text-ink mb-2">How I Work</h2>
-        </div>
-        <div class="grid md:grid-cols-3 gap-5">
-            <article class="border border-line/30 bg-page p-6" data-animate>
-                <p class="body-md text-ink/75">Discovery call</p>
-            </article>
-            <article class="border border-line/30 bg-page p-6" data-animate>
-                <p class="body-md text-ink/75">Scope definition</p>
-            </article>
-            <article class="border border-line/30 bg-page p-6" data-animate>
-                <p class="body-md text-ink/75">Milestone-based delivery</p>
-            </article>
-            <article class="border border-line/30 bg-page p-6" data-animate>
-                <p class="body-md text-ink/75">$95 USD per hour</p>
-            </article>
-            <article class="border border-line/30 bg-page p-6" data-animate>
-                <p class="body-md text-ink/75">Weekly updates</p>
-            </article>
-            <article class="border border-line/30 bg-page p-6" data-animate>
-                <p class="body-md text-ink/75">Clean documentation</p>
-            </article>
-            <article class="border border-line/30 bg-page p-6" data-animate>
-                <p class="body-md text-ink/75">You own the system</p>
-            </article>
         </div>
     </div>
 </section>
 
 <section id="live-demos" class="section-block tone-alt border-b border-line/20">
     <div class="site-container">
-        <div class="max-w-3xl mb-8" data-animate>
-            <h2 class="font-display font-semibold h2-display text-ink mb-2">Live Systems</h2>
-            <p class="body-md text-ink/70">These are live environments demonstrating deployment capability.</p>
+        <div class="max-w-3xl mb-8">
+            <h2 class="font-display font-semibold h2-display text-ink mb-2">Live Deployments</h2>
+            <p class="body-md text-ink/70">Live environments demonstrating deployment quality and production readiness.</p>
         </div>
-        <div class="grid md:grid-cols-2 gap-5">
-            <a href="https://dashboards.pragith.net" class="border border-line/30 bg-page p-6 block hover:border-accent/50 transition-colors" data-animate>
-                <h3 class="font-display font-semibold h3-display text-ink mb-2">Dashboards (Superset demo)</h3>
-            </a>
+
+        <div class="grid md:grid-cols-1 gap-5">
+            <article class="border border-line/30 bg-page p-6">
+                <h3 class="font-display font-semibold h3-display text-ink mb-2">Superset Dashboard Instance</h3>
+                <p class="body-md text-ink/78 mb-4">Live Superset deployment with KPI modeling, refresh pipelines, and executive reporting views.</p>
+                <button type="button" class="btn btn-secondary" data-open-demo-modal data-cta-id="home-live-deployments-dashboard">View Live Dashboard</button>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section id="solutions" class="section-block tone-alt border-b border-line/20">
+    <div class="site-container">
+        <div class="max-w-3xl mb-8">
+            <h2 class="font-display font-semibold h2-display text-ink mb-2">What I Build</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-5">
+            <article class="border border-line/30 bg-page p-6">
+                <h3 class="font-display font-semibold h3-display text-ink mb-2">Business Intelligence Dashboards</h3>
+                <ul class="space-y-1 body-md text-ink/80">
+                    <li>- Superset deployments</li>
+                    <li>- KPI tracking systems</li>
+                    <li>- Revenue dashboards</li>
+                    <li>- Marketing performance reporting</li>
+                    <li>- SQL / BigQuery / API integrations</li>
+                    <li>- Hosted or self-managed options</li>
+                </ul>
+                <button type="button" class="btn btn-secondary mt-4" data-open-demo-modal data-cta-id="home-solutions-dashboard-card">View Live Dashboard</button>
+            </article>
+            <article class="border border-line/30 bg-page p-6">
+                <h3 class="font-display font-semibold h3-display text-ink mb-2">Automation & System Integration</h3>
+                <ul class="space-y-1 body-md text-ink/80">
+                    <li>- API integrations</li>
+                    <li>- Data pipeline automation</li>
+                    <li>- Reporting automation</li>
+                    <li>- Internal workflow systems</li>
+                    <li>- Tool orchestration</li>
+                </ul>
+            </article>
+            <article class="border border-line/30 bg-page p-6">
+                <h3 class="font-display font-semibold h3-display text-ink mb-2">AI-Integrated Systems</h3>
+                <p class="body-md text-ink/80">AI tools and agent-based systems are used internally to accelerate development and improve solution quality.</p>
+                <p class="body-md text-ink/80 mt-4">Where appropriate, AI components are deployed inside production workflows for:</p>
+                <ul class="space-y-1 body-md text-ink/80 mt-2">
+                    <li>- Summarization</li>
+                    <li>- Reporting intelligence</li>
+                    <li>- Process optimization</li>
+                    <li>- Data enrichment</li>
+                </ul>
+            </article>
         </div>
     </div>
 </section>
 
 <section class="section-block border-b border-line/20">
     <div class="site-container">
-        <div class="max-w-3xl mb-8" data-animate>
-            <h2 class="font-display font-semibold h2-display text-ink mb-2">Selected Project Examples</h2>
+        <div class="max-w-3xl mb-8">
+            <h2 class="font-display font-semibold h2-display text-ink mb-2">How I Work</h2>
         </div>
-        <div class="grid md:grid-cols-2 gap-5">
-            <article class="border border-line/30 bg-page p-6" data-animate>
-                <h3 class="font-display font-semibold h3-display text-ink mb-2">Problem</h3>
-                <p class="body-md text-ink/75">...</p>
+        <div class="grid md:grid-cols-3 gap-5">
+            <article class="border border-line/30 bg-page p-6">
+                <p class="body-md text-ink/75">1-hour paid discovery & scoping session ($95)</p>
             </article>
-            <article class="border border-line/30 bg-page p-6" data-animate>
-                <h3 class="font-display font-semibold h3-display text-ink mb-2">Approach</h3>
-                <p class="body-md text-ink/75">...</p>
+            <article class="border border-line/30 bg-page p-6">
+                <p class="body-md text-ink/75">Scope defined collaboratively</p>
             </article>
-            <article class="border border-line/30 bg-page p-6" data-animate>
-                <h3 class="font-display font-semibold h3-display text-ink mb-2">Stack</h3>
-                <p class="body-md text-ink/75">...</p>
+            <article class="border border-line/30 bg-page p-6">
+                <p class="body-md text-ink/75">Hourly billing at $95 USD</p>
             </article>
-            <article class="border border-line/30 bg-page p-6" data-animate>
-                <h3 class="font-display font-semibold h3-display text-ink mb-2">Result</h3>
-                <p class="body-md text-ink/75">...</p>
+            <article class="border border-line/30 bg-page p-6">
+                <p class="body-md text-ink/75">Weekly updates</p>
             </article>
-        </div>
-    </div>
-</section>
-
-<section class="section-block tone-alt border-b border-line/20">
-    <div class="site-container">
-        <div class="max-w-3xl" data-animate>
-            <h2 class="font-display font-semibold h2-display text-ink mb-2">About</h2>
-            <p class="body-md text-ink/70">
-                Short, professional, builder-focused. Years of experience in cloud, data, and AI. I use AI to accelerate engineering.
-            </p>
+            <article class="border border-line/30 bg-page p-6">
+                <p class="body-md text-ink/75">Clean documentation</p>
+            </article>
+            <article class="border border-line/30 bg-page p-6">
+                <p class="body-md text-ink/75">Deployment assistance</p>
+            </article>
+            <article class="border border-line/30 bg-page p-6">
+                <p class="body-md text-ink/75">Client owns the system</p>
+            </article>
         </div>
     </div>
 </section>
 
 <section class="section-block border-b border-line/20">
     <div class="site-container">
-        <div class="border border-line/30 bg-page p-7 sm:p-10 text-center" data-animate>
+        <div class="border border-line/30 bg-page p-7 sm:p-10 text-center">
             <h2 class="font-display font-semibold h2-display text-ink mb-3">Book a Discovery Call</h2>
             <p class="body-md text-ink/70 max-w-2xl mx-auto mb-6">
                 $95 USD per hour.
             </p>
             <div class="flex flex-col sm:flex-row gap-3 justify-center">
-                <a href="/contact" class="btn btn-primary w-full sm:w-auto"><span>Start Your Build</span></a>
+                <a href="/contact" class="btn btn-primary w-full sm:w-auto"><span>Start Your Project</span></a>
             </div>
         </div>
     </div>
 </section>
+{% include "partials/dashboard_demo_modal.html" %}
 {% endblock %}
-

@@ -1,0 +1,136 @@
+{% set demo_state = demo_status if demo_status is defined else request.query_params.get("demo", "") %}
+{% if demo_state == "sent" %}
+<div class="site-container mb-6">
+    <div class="border border-emerald-500/35 bg-emerald-50 dark:bg-emerald-900/20 px-4 py-3 text-sm text-emerald-800 dark:text-emerald-200">
+        Demo credentials have been sent to your email.
+    </div>
+</div>
+{% elif demo_state == "recaptcha" %}
+<div class="site-container mb-6">
+    <div class="border border-amber-500/35 bg-amber-50 dark:bg-amber-900/20 px-4 py-3 text-sm text-amber-800 dark:text-amber-200">
+        reCAPTCHA verification failed. Please try again.
+    </div>
+</div>
+{% elif demo_state == "error" %}
+<div class="site-container mb-6">
+    <div class="border border-rose-500/35 bg-rose-50 dark:bg-rose-900/20 px-4 py-3 text-sm text-rose-800 dark:text-rose-200">
+        Unable to send demo access right now. Please try again.
+    </div>
+</div>
+{% endif %}
+
+<div id="dashboard-demo-modal" class="fixed inset-0 z-[80] hidden">
+    <div data-demo-modal-close class="absolute inset-0 bg-black/50"></div>
+    <div class="relative min-h-full flex items-center justify-center px-4 py-8">
+        <div class="w-full max-w-xl border border-line/40 bg-page p-6 sm:p-7 shadow-2xl">
+            <div class="flex items-start justify-between gap-4 mb-5">
+                <div>
+                    <h3 class="font-display font-semibold h3-display text-ink mb-1">Request Dashboard Demo Access</h3>
+                    <p class="body-md text-ink/70">Credentials are sent by email after verification.</p>
+                </div>
+                <button type="button" data-demo-modal-close class="btn btn-secondary !min-h-9 !px-3" aria-label="Close modal">
+                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+            </div>
+
+            <form id="dashboard-demo-form" method="POST" action="/demo-access" class="space-y-4">
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div>
+                        <label for="demo-name" class="block text-sm font-semibold text-ink mb-2">Name</label>
+                        <input id="demo-name" name="name" type="text" required class="block w-full border border-line/30 bg-page px-4 py-3 text-ink focus:outline-none focus:border-accent transition-colors">
+                    </div>
+                    <div>
+                        <label for="demo-email" class="block text-sm font-semibold text-ink mb-2">Work Email</label>
+                        <input id="demo-email" name="email" type="email" required class="block w-full border border-line/30 bg-page px-4 py-3 text-ink focus:outline-none focus:border-accent transition-colors">
+                    </div>
+                </div>
+
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div>
+                        <label for="demo-company" class="block text-sm font-semibold text-ink mb-2">Company</label>
+                        <input id="demo-company" name="company" type="text" class="block w-full border border-line/30 bg-page px-4 py-3 text-ink focus:outline-none focus:border-accent transition-colors">
+                    </div>
+                    <div>
+                        <label for="demo-role" class="block text-sm font-semibold text-ink mb-2">Role</label>
+                        <input id="demo-role" name="role" type="text" class="block w-full border border-line/30 bg-page px-4 py-3 text-ink focus:outline-none focus:border-accent transition-colors">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="demo-notes" class="block text-sm font-semibold text-ink mb-2">Notes (Optional)</label>
+                    <textarea id="demo-notes" name="notes" rows="3" class="block w-full border border-line/30 bg-page px-4 py-3 text-ink focus:outline-none focus:border-accent transition-colors"></textarea>
+                </div>
+
+                <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+                <input type="hidden" name="utm_source" value="{{ request.query_params.get('utm_source', '') }}">
+                <input type="hidden" name="utm_medium" value="{{ request.query_params.get('utm_medium', '') }}">
+                <input type="hidden" name="utm_campaign" value="{{ request.query_params.get('utm_campaign', '') }}">
+                <input type="hidden" name="utm_content" value="{{ request.query_params.get('utm_content', '') }}">
+                <input type="hidden" name="ref_page" value="{{ request.url.path }}">
+                <input type="hidden" name="cta_id" id="demo-cta-id" value="">
+                <input type="hidden" name="return_to" value="{{ request.url.path }}">
+                <input type="hidden" name="g-recaptcha-response" id="demo-recaptcha-response">
+
+                <button type="submit" class="btn btn-primary w-full" data-analytics="submit-demo-access-form">
+                    <i class="fa-solid fa-envelope-open-text" aria-hidden="true"></i>
+                    <span>Send Dashboard Access</span>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% if recaptcha_site_key %}
+<script src="https://www.google.com/recaptcha/api.js?render={{ recaptcha_site_key }}"></script>
+{% endif %}
+<script>
+    (function () {
+        var modal = document.getElementById('dashboard-demo-modal');
+        if (!modal) return;
+
+        var form = document.getElementById('dashboard-demo-form');
+        var ctaInput = document.getElementById('demo-cta-id');
+        var recaptchaInput = document.getElementById('demo-recaptcha-response');
+        var recaptchaSiteKey = "{{ recaptcha_site_key or '' }}";
+
+        function openModal(ctaId) {
+            if (ctaInput) ctaInput.value = ctaId || '';
+            modal.classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        document.querySelectorAll('[data-open-demo-modal]').forEach(function (trigger) {
+            trigger.addEventListener('click', function () {
+                openModal(trigger.getAttribute('data-cta-id'));
+            });
+        });
+
+        modal.querySelectorAll('[data-demo-modal-close]').forEach(function (node) {
+            node.addEventListener('click', closeModal);
+        });
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+
+        if (form) {
+            form.addEventListener('submit', function (event) {
+                if (!recaptchaSiteKey || typeof grecaptcha === 'undefined') return;
+                event.preventDefault();
+                grecaptcha.ready(function () {
+                    grecaptcha.execute(recaptchaSiteKey, { action: 'submit_demo_access' }).then(function (token) {
+                        if (recaptchaInput) recaptchaInput.value = token;
+                        form.submit();
+                    });
+                });
+            });
+        }
+    })();
+</script>

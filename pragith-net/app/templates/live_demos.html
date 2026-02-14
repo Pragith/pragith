@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="section-block border-b border-line/20">
+    <div class="site-container">
+        <div class="max-w-3xl mb-10">
+            <h1 class="page-hero-title">Production Superset Instance</h1>
+            <p class="page-hero-subtitle">Live system demonstrating dashboard deployment quality and reliable day-to-day operation.</p>
+        </div>
+
+        <article class="border border-line/30 bg-page p-6 sm:p-8 max-w-4xl">
+            <h2 class="font-display font-semibold h3-display text-ink mb-4">Superset Dashboard Instance</h2>
+
+            <div class="grid sm:grid-cols-2 gap-6 mb-6">
+                <div>
+                    <p class="meta-text uppercase tracking-[0.12em] text-accent font-semibold mb-2">What It Demonstrates</p>
+                    <p class="body-md text-ink/78">Automated KPI refresh, stable data workflows, and role-based dashboard views.</p>
+                </div>
+                <div>
+                    <p class="meta-text uppercase tracking-[0.12em] text-accent font-semibold mb-2">Stack Used</p>
+                    <p class="body-md text-ink/78">Apache Superset, SQL, Python-based data pipeline integrations.</p>
+                </div>
+            </div>
+
+            <div class="mb-7">
+                <p class="meta-text uppercase tracking-[0.12em] text-accent font-semibold mb-2">Who It Is Relevant For</p>
+                <p class="body-md text-ink/78">Teams that need dependable KPI dashboards without manual reporting loops.</p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-3">
+                <button type="button" class="btn btn-primary w-full sm:w-auto" data-open-demo-modal data-cta-id="live-demos-primary-open">Open Live Dashboard</button>
+                <a href="/contact" class="btn btn-secondary w-full sm:w-auto">Book Discovery Call</a>
+            </div>
+        </article>
+    </div>
+</section>
+{% include "partials/dashboard_demo_modal.html" %}
+{% endblock %}

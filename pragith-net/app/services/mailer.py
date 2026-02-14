@@ -12,15 +12,6 @@ class MailerService:
             server.login(settings.SMTP_USER, settings.SMTP_PASSWORD)
         return server
 
-    def _demo_credentials_block(self) -> str:
-        return (
-            "Dashboard Demo Credentials\n"
-            "--------------------------\n"
-            f"URL: {settings.DASHBOARD_DEMO_URL}\n"
-            f"Username: {settings.DASHBOARD_DEMO_USER or '[not configured]'}\n"
-            f"Password: {settings.DASHBOARD_DEMO_PASSWORD or '[not configured]'}"
-        )
-
     def verify_recaptcha(self, token: str) -> bool:
         """
         Verifies reCAPTCHA v3 token with Google.
@@ -83,6 +74,15 @@ class MailerService:
             print(f"Failed to send email: {e}")
             return False
 
+    def _demo_credentials_block(self) -> str:
+        return (
+            "Dashboard Demo Credentials\n"
+            "--------------------------\n"
+            f"URL: {settings.DASHBOARD_DEMO_URL}\n"
+            f"Username: {settings.DASHBOARD_DEMO_USER or '[not configured]'}\n"
+            f"Password: {settings.DASHBOARD_DEMO_PASSWORD or '[not configured]'}"
+        )
+
     def send_dashboard_demo_access_email(
         self,
         name: str,
@@ -97,11 +97,6 @@ class MailerService:
         utm_campaign: str,
         utm_content: str,
     ) -> bool:
-        """
-        Sends:
-        1) Internal notification to MAIL_TO with requester details + demo credentials
-        2) Requester email with demo credentials
-        """
         try:
             demo_block = self._demo_credentials_block()
 
@@ -137,7 +132,7 @@ class MailerService:
             requester_body = f"""
             Hi {name},
 
-            Thanks for requesting demo access. You can use the credentials below:
+            Thanks for requesting dashboard demo access. You can use the credentials below:
 
             {demo_block}
 

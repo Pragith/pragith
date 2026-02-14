@@ -6,26 +6,42 @@
 <script src="https://www.google.com/recaptcha/api.js?render={{ recaptcha_site_key }}"></script>
 {% endif %}
 {% endblock %}
-{% block title %}{{ contact_meta.title if contact_meta else 'Start Your Build Inquiry' }} | Pragith Prakash{% endblock %}
+{% block title %}Contact | Pragith Prakash{% endblock %}
 
 {% block content %}
 <section class="py-16 sm:py-20 border-b border-line/20">
     <div class="max-w-6xl mx-auto px-6">
         <div class="text-center mb-10">
-            <h1 class="font-display text-4xl sm:text-5xl font-bold tracking-tight text-ink mb-4">{{ contact_meta.title if contact_meta else 'Start Your Build Inquiry' }}</h1>
-            <p class="text-lg text-ink/60 mb-6">{{ contact_meta.subtitle if contact_meta else 'Qualified intake for defined-scope operational builds.' }}</p>
+            <h1 class="font-display text-4xl sm:text-5xl font-bold tracking-tight text-ink mb-4">Start Your Project</h1>
+            <p class="text-lg text-ink/60 mb-6">$95 USD per hour. Milestone-based delivery.</p>
+            {% if error %}
+            <p class="text-sm text-rose-600 dark:text-rose-400">{{ error }}</p>
+            {% endif %}
         </div>
 
         <div class="grid lg:grid-cols-3 gap-6 items-start">
             <aside class="border border-line/20 bg-surface/30 p-6">
-                <p class="text-[10px] font-bold uppercase tracking-widest text-accent mb-3">Before You Submit</p>
+                <p class="text-[10px] font-bold uppercase tracking-widest text-accent mb-3">How It Works</p>
                 <ul class="space-y-2 text-sm text-ink/70">
-                    <li><span class="text-accent mr-2">•</span>This form is for defined-scope builds only.</li>
-                    <li><span class="text-accent mr-2">•</span>Concise operational context helps faster scoping.</li>
+                    <li><span class="text-accent mr-2">•</span>Share what you need built.</li>
+                    <li><span class="text-accent mr-2">•</span>Include timeline and budget range if available.</li>
                 </ul>
             </aside>
 
-            <form action="/contact" method="POST" class="lg:col-span-2 border border-line/20 bg-page p-7 space-y-5" style="text-align:left;">
+            <form id="contact-form" action="/contact" method="POST" class="lg:col-span-2 border border-line/20 bg-page p-7 space-y-5" style="text-align:left;">
+                <div class="grid sm:grid-cols-2 gap-5">
+                    <div>
+                        <label for="name" class="block text-sm font-semibold text-ink mb-2" style="text-align:left;">Name</label>
+                        <input type="text" name="name" id="name" required value="{{ form.name if form else '' }}"
+                            class="block w-full border border-line/30 bg-page px-4 py-3 text-ink placeholder-ink/30 focus:outline-none focus:border-accent transition-colors">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-semibold text-ink mb-2" style="text-align:left;">Work Email</label>
+                        <input type="email" name="email" id="email" required value="{{ form.email if form else '' }}"
+                            class="block w-full border border-line/30 bg-page px-4 py-3 text-ink placeholder-ink/30 focus:outline-none focus:border-accent transition-colors">
+                    </div>
+                </div>
+
                 <div class="grid sm:grid-cols-2 gap-5">
                     <div>
                         <label for="company" class="block text-sm font-semibold text-ink mb-2" style="text-align:left;">Company</label>
@@ -57,13 +73,13 @@
                 </div>
 
                 <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
-                <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
                 <input type="hidden" name="utm_source" value="{{ form.utm_source if form else '' }}">
                 <input type="hidden" name="utm_medium" value="{{ form.utm_medium if form else '' }}">
                 <input type="hidden" name="utm_campaign" value="{{ form.utm_campaign if form else '' }}">
                 <input type="hidden" name="utm_content" value="{{ form.utm_content if form else '' }}">
                 <input type="hidden" name="ref_page" value="{{ form.ref_page if form else '' }}">
                 <input type="hidden" name="cta_id" value="{{ form.cta_id if form else '' }}">
+                <input type="hidden" name="g-recaptcha-response" id="contact-recaptcha-response">
 
                 <div class="grid sm:grid-cols-2 gap-3 pt-1">
                     <button type="submit" name="submit_channel" value="email"
@@ -77,31 +93,24 @@
         </div>
     </div>
 </section>
-
-{% if recaptcha_site_key %}
 <script>
-    document.querySelector('form[action="/contact"]').addEventListener('submit', function (e) {
-        var form = this;
-        var submitter = e.submitter;
+    (function () {
+        var form = document.getElementById('contact-form');
+        if (!form) return;
 
-        if (form.dataset.recaptchaVerified === '1') {
-            form.dataset.recaptchaVerified = '0';
-            return;
-        }
+        var recaptchaSiteKey = "{{ recaptcha_site_key or '' }}";
+        var recaptchaInput = document.getElementById('contact-recaptcha-response');
 
-        e.preventDefault();
-
-        grecaptcha.ready(function () {
-            grecaptcha.execute('{{ recaptcha_site_key }}', { action: 'contact' }).then(function (token) {
-                document.getElementById('g-recaptcha-response').value = token;
-                form.dataset.recaptchaVerified = '1';
-                if (typeof form.requestSubmit === 'function' && submitter) {
-                    form.requestSubmit(submitter);
-                } else {
+        form.addEventListener('submit', function (event) {
+            if (!recaptchaSiteKey || typeof grecaptcha === 'undefined') return;
+            event.preventDefault();
+            grecaptcha.ready(function () {
+                grecaptcha.execute(recaptchaSiteKey, { action: 'submit_contact' }).then(function (token) {
+                    if (recaptchaInput) recaptchaInput.value = token;
                     form.submit();
-                }
+                });
             });
         });
-    });
+    })();
 </script>
-{% endif %}
+{% endblock %}

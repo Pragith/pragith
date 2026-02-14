@@ -42,12 +42,12 @@ class SecurityHeadersMiddleware(BaseHTTPMiddleware):
         response.headers["Referrer-Policy"] = "strict-origin-when-cross-origin"
         response.headers["Content-Security-Policy"] = (
             "default-src 'self'; "
-            "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google.com https://www.gstatic.com https://static.hotjar.com https://script.hotjar.com https://t.contentsquare.net https://www.clarity.ms https://scripts.clarity.ms; "
+            "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google.com https://www.gstatic.com https://www.clarity.ms https://scripts.clarity.ms; "
             "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
             "font-src 'self' https://fonts.gstatic.com; "
-            "img-src 'self' data: https://*.hotjar.com https://*.contentsquare.net https://www.clarity.ms https://c.clarity.ms; "
+            "img-src 'self' data: https://www.clarity.ms https://c.clarity.ms; "
             "frame-src https://www.google.com https://calendly.com; "
-            "connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://*.hotjar.com wss://*.hotjar.com https://*.contentsquare.net https://www.clarity.ms https://c.clarity.ms https://b.clarity.ms; "
+            "connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://www.clarity.ms https://c.clarity.ms https://b.clarity.ms; "
             "worker-src 'self' blob:"
         )
         return response
@@ -69,7 +69,6 @@ theme_service = ThemeService(settings.THEME)
 templates.env.globals["theme"] = theme_service
 templates.env.globals["show_products"] = settings.SHOW_PRODUCTS
 templates.env.globals["ga_tag"] = settings.GA_TAG
-templates.env.globals["hotjar_site_id"] = settings.HOTJAR_SITE_ID
 templates.env.globals["clarity_project_id"] = settings.CLARITY_PROJECT_ID
 templates.env.globals["recaptcha_site_key"] = settings.RECAPTCHA_SITE_KEY
 templates.env.globals["marketing_config"] = marketing_service.get_client_config()
@@ -87,12 +86,12 @@ def _contact_meta(project_type: str = "", ref_page: str = "", cta_id: str = "") 
         (cta_id or "").strip().lower(),
     ])
 
-    title = "Start Your Build Inquiry"
-    subtitle = "Qualified intake for defined-scope operational builds."
+    title = "Start Your Project"
+    subtitle = "Share your goals, current systems, and delivery timeline."
 
     if "dashboard" in signal:
-        title = "Define the Dashboard Build"
-        subtitle = "Qualified intake for executive KPI dashboard implementation."
+        title = "Discuss Dashboard System"
+        subtitle = "Share KPI priorities, data sources, and reporting goals."
     elif "training" in signal:
         title = "Request Corporate Training"
         subtitle = "Qualified intake for enterprise AI and data training engagements."
@@ -100,17 +99,17 @@ def _contact_meta(project_type: str = "", ref_page: str = "", cta_id: str = "") 
         title = "Discuss Speaking Engagement"
         subtitle = "Share event format, audience, and outcomes to scope the right session."
     elif "voice receptionist" in signal:
-        title = "Define the Voice Receptionist Build"
-        subtitle = "Qualified intake for AI voice receptionist implementation."
+        title = "Discuss Voice Receptionist System"
+        subtitle = "Share call flow, routing rules, and handover expectations."
     elif "booking" in signal:
-        title = "Define the Booking Automation Build"
-        subtitle = "Qualified intake for 24/7 booking automation implementation."
+        title = "Discuss Booking Automation System"
+        subtitle = "Share booking flow, constraints, and operational requirements."
     elif "whatsapp" in signal:
-        title = "Define the WhatsApp Automation Build"
-        subtitle = "Qualified intake for lead and WhatsApp automation implementation."
+        title = "Discuss WhatsApp Automation System"
+        subtitle = "Share lead flow, response logic, and workflow requirements."
     elif "automation" in signal:
-        title = "Define the Automation Build"
-        subtitle = "Qualified intake for fixed-scope operational automation implementation."
+        title = "Discuss Automation System"
+        subtitle = "Share the workflow you want to automate and expected outcomes."
 
     return {"title": title, "subtitle": subtitle}
 
@@ -148,7 +147,27 @@ async def sitemap():
 
 @app.get("/", response_class=HTMLResponse)
 async def home(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request, "ga_tag": settings.GA_TAG})
+    ip_address = _get_client_ip(request)
+    local_rate, currency_code, currency_symbol = await convert_rate(1.0, ip_address)
+    return templates.TemplateResponse("index.html", {
+        "request": request,
+        "ga_tag": settings.GA_TAG,
+        "currency_code": currency_code,
+        "currency_symbol": currency_symbol,
+        "currency_rate": local_rate,
+        "hourly_rate_usd": 95.0,
+    })
+
+@app.get("/solutions", response_class=HTMLResponse)
+async def solutions(request: Request):
+    return templates.TemplateResponse("solutions.html", {"request": request})
+
+
+@app.get("/live-demos", response_class=HTMLResponse)
+async def live_demos(request: Request):
+    demo_status = request.query_params.get("demo", "").strip()
+    return templates.TemplateResponse("live_demos.html", {"request": request, "demo_status": demo_status})
+
 
 @app.get("/engagement", response_class=HTMLResponse)
 async def engagement(request: Request):
@@ -161,12 +180,7 @@ async def work(request: Request):
     works = work_service.get_all()
     return templates.TemplateResponse("work.html", {"request": request, "works": works})
 
-@app.get("/work/{slug}", response_class=HTMLResponse)
-async def work_detail(request: Request, slug: str):
-    work_item = work_service.get_by_slug(slug)
-    if not work_item:
-        raise HTTPException(status_code=404, detail="Project not found")
-    return templates.TemplateResponse("work_detail.html", {"request": request, "work": work_item})
+
 
 @app.get("/about", response_class=HTMLResponse)
 async def about(request: Request):
@@ -217,93 +231,25 @@ async def writing_detail(request: Request, slug: str):
         raise HTTPException(status_code=404, detail="Post not found")
     return templates.TemplateResponse("blog_detail.html", {"request": request, "post": post})
 
-def _contact_meta(project_type: str = "", ref_page: str = "", cta_id: str = "") -> dict:
-    signal = " ".join([
-        (project_type or "").strip().lower(),
-        (ref_page or "").strip().lower(),
-        (cta_id or "").strip().lower(),
-    ])
-
-    title = "Start Your Build Inquiry"
-    subtitle = "Qualified intake for defined-scope operational builds."
-
-    if "dashboard" in signal:
-        title = "Define the Dashboard Build"
-        subtitle = "Qualified intake for executive KPI dashboard implementation."
-    elif "training" in signal:
-        title = "Request Corporate Training"
-        subtitle = "Qualified intake for enterprise AI and data training engagements."
-    elif "keynote" in signal or "speaking" in signal:
-        title = "Discuss Speaking Engagement"
-        subtitle = "Share event format, audience, and outcomes to scope the right session."
-    elif "voice receptionist" in signal:
-        title = "Define the Voice Receptionist Build"
-        subtitle = "Qualified intake for AI voice receptionist implementation."
-    elif "booking" in signal:
-        title = "Define the Booking Automation Build"
-        subtitle = "Qualified intake for 24/7 booking automation implementation."
-    elif "whatsapp" in signal:
-        title = "Define the WhatsApp Automation Build"
-        subtitle = "Qualified intake for lead and WhatsApp automation implementation."
-    elif "automation" in signal:
-        title = "Define the Automation Build"
-        subtitle = "Qualified intake for fixed-scope operational automation implementation."
-
-    return {"title": title, "subtitle": subtitle}
-
 @app.get("/contact", response_class=HTMLResponse)
 async def contact(request: Request):
     q = request.query_params
-
-    project_type = q.get("project_type", "").strip()
-    if not project_type:
-        ref_page = (q.get("ref_page", "") or "").lower()
-        if ref_page:
-            project_type = marketing_service.resolve_project_type(ref_page)
-
-    inquiry_type = q.get("inquiry_type", "").strip() or "Within 90 days"
-    decision_authority = q.get("decision_authority", "").strip()
-    challenge_type = q.get("challenge_type", "").strip()
-    team_size = q.get("team_size", "").strip()
-    package = q.get("package", "").strip()
-    outcome = q.get("outcome", "").strip()
-    ref_page = q.get("ref_page", "").strip()
-    utm_source = q.get("utm_source", "").strip()
-    utm_medium = q.get("utm_medium", "").strip()
-    utm_campaign = q.get("utm_campaign", "").strip()
-    utm_content = q.get("utm_content", "").strip()
-    cta_id = q.get("cta_id", "").strip()
-
-    prefill_message = q.get("message", "").strip()
-    if not prefill_message:
-        lines = ["I want to discuss a scoped build."]
-        if package:
-            lines.append(f"Package of interest: {package}")
-        if outcome:
-            lines.append(f"Target outcome: {outcome}")
-        if ref_page:
-            lines.append(f"Ref page: {ref_page}")
-        prefill_message = "\n".join(lines)
 
     form_defaults = {
         "name": q.get("name", ""),
         "email": q.get("email", ""),
         "company": q.get("company", ""),
-        "team_size": team_size,
-        "project_type": project_type,
-        "inquiry_type": inquiry_type,
-        "decision_authority": decision_authority,
-        "challenge_type": challenge_type,
-        "message": prefill_message,
-        "utm_source": utm_source,
-        "utm_medium": utm_medium,
-        "utm_campaign": utm_campaign,
-        "utm_content": utm_content,
-        "ref_page": ref_page,
-        "cta_id": cta_id,
-        "package": package,
+        "timeline": q.get("timeline", ""),
+        "what_do_you_need_built": q.get("what_do_you_need_built", ""),
+        "budget_range": q.get("budget_range", ""),
+        "utm_source": q.get("utm_source", ""),
+        "utm_medium": q.get("utm_medium", ""),
+        "utm_campaign": q.get("utm_campaign", ""),
+        "utm_content": q.get("utm_content", ""),
+        "ref_page": q.get("ref_page", ""),
+        "cta_id": q.get("cta_id", ""),
     }
-    contact_meta = _contact_meta(project_type=project_type, ref_page=ref_page, cta_id=cta_id)
+    contact_meta = _contact_meta()
 
     return templates.TemplateResponse("contact.html", {
         "request": request,
@@ -321,70 +267,57 @@ async def contact_submit(
     request: Request,
     name: str = Form(...),
     email: str = Form(...),
-    inquiry_type: str = Form(...),
-    message: str = Form(""),
     company: str = Form(""),
-    team_size: str = Form(""),
-    project_type: str = Form(""),
-    decision_authority: str = Form(...),
-    challenge_type: str = Form(...),
+    timeline: str = Form(""),
+    what_do_you_need_built: str = Form(""),
+    budget_range: str = Form(""),
     utm_source: str = Form(""),
     utm_medium: str = Form(""),
     utm_campaign: str = Form(""),
     utm_content: str = Form(""),
     ref_page: str = Form(""),
     cta_id: str = Form(""),
-    package: str = Form(""),
-    submit_channel: str = Form("email"),
     website: str = Form(""),
     recaptcha_response: str = Form(alias="g-recaptcha-response", default="")
 ):
     # Honeypot check  -  bots fill hidden fields
     if website:
         return RedirectResponse("/contact", status_code=303)
-    
-    # Verify captcha (skip if no key configured)
-    if settings.RECAPTCHA_SECRET_KEY and not mailer_service.verify_recaptcha(recaptcha_response):
-        contact_meta = _contact_meta(project_type=project_type, ref_page=ref_page, cta_id=cta_id)
-        return templates.TemplateResponse("contact.html", {
-            "request": request, 
-            "error": "reCAPTCHA verification failed. Please try again.",
-            "form": {
-                "name": name,
-                "email": email,
-                "company": company,
-                "team_size": team_size,
-                "project_type": project_type,
-                "inquiry_type": inquiry_type,
-                "decision_authority": decision_authority,
-                "challenge_type": challenge_type,
-                "message": message,
-                "utm_source": utm_source,
-                "utm_medium": utm_medium,
-                "utm_campaign": utm_campaign,
-                "utm_content": utm_content,
-                "ref_page": ref_page,
-                "cta_id": cta_id,
-                "package": package,
-            },
-            "recaptcha_site_key": settings.RECAPTCHA_SITE_KEY,
-            "contact_meta": contact_meta,
-        })
 
-    enriched_message = message
+    if settings.RECAPTCHA_SECRET_KEY and not mailer_service.verify_recaptcha(recaptcha_response):
+        contact_meta = _contact_meta(ref_page=ref_page, cta_id=cta_id)
+        return templates.TemplateResponse(
+            "contact.html",
+            {
+                "request": request,
+                "error": "reCAPTCHA verification failed. Please try again.",
+                "form": {
+                    "name": name,
+                    "email": email,
+                    "company": company,
+                    "timeline": timeline,
+                    "what_do_you_need_built": what_do_you_need_built,
+                    "budget_range": budget_range,
+                    "utm_source": utm_source,
+                    "utm_medium": utm_medium,
+                    "utm_campaign": utm_campaign,
+                    "utm_content": utm_content,
+                    "ref_page": ref_page,
+                    "cta_id": cta_id,
+                },
+                "recaptcha_site_key": settings.RECAPTCHA_SITE_KEY,
+                "contact_meta": contact_meta,
+            },
+        )
+    
+    enriched_message = what_do_you_need_built
     metadata = []
     if company:
         metadata.append(f"Company: {company}")
-    if project_type:
-        metadata.append(f"Project Type: {project_type}")
-    if decision_authority:
-        metadata.append(f"Decision Authority: {decision_authority}")
-    if challenge_type:
-        metadata.append(f"Primary Challenge: {challenge_type}")
-    if team_size:
-        metadata.append(f"Team Size: {team_size}")
-    if package:
-        metadata.append(f"Package: {package}")
+    if timeline:
+        metadata.append(f"Timeline: {timeline}")
+    if budget_range:
+        metadata.append(f"Budget Range: {budget_range}")
     if ref_page:
         metadata.append(f"Ref Page: {ref_page}")
     if cta_id:
@@ -394,20 +327,11 @@ async def contact_submit(
             f"UTM: source={utm_source or '-'} medium={utm_medium or '-'} campaign={utm_campaign or '-'} content={utm_content or '-'}"
         )
     if metadata:
-        enriched_message = f"{message}\n\n---\n" + "\n".join(metadata)
+        enriched_message = f"{what_do_you_need_built}\n\n---\n" + "\n".join(metadata)
 
-    success = mailer_service.send_contact_email(name, email, inquiry_type, enriched_message)
+    success = mailer_service.send_contact_email(name, email, "New Intake Form Submission", enriched_message)
 
     if success:
-        if (submit_channel or "").strip().lower() == "both":
-            whatsapp_message = (
-                f"Hi Pragith, this is {name}. "
-                f"I submitted the contact form for {project_type or 'a defined build'} "
-                f"({inquiry_type}). "
-                f"Company: {company or '-'} | Email: {email} | Challenge: {challenge_type or '-'}."
-            )
-            wa_url = f"https://wa.me/971585912858?text={quote(whatsapp_message)}"
-            return RedirectResponse(url=wa_url, status_code=303)
         return templates.TemplateResponse("contact_success.html", {"request": request})
     else:
         return templates.TemplateResponse("contact.html", {
@@ -417,19 +341,15 @@ async def contact_submit(
                 "name": name,
                 "email": email,
                 "company": company,
-                "team_size": team_size,
-                "project_type": project_type,
-                "inquiry_type": inquiry_type,
-                "decision_authority": decision_authority,
-                "challenge_type": challenge_type,
-                "message": message,
+                "timeline": timeline,
+                "what_do_you_need_built": what_do_you_need_built,
+                "budget_range": budget_range,
                 "utm_source": utm_source,
                 "utm_medium": utm_medium,
                 "utm_campaign": utm_campaign,
                 "utm_content": utm_content,
                 "ref_page": ref_page,
                 "cta_id": cta_id,
-                "package": package,
             },
             "recaptcha_site_key": settings.RECAPTCHA_SITE_KEY,
         })
@@ -437,7 +357,15 @@ async def contact_submit(
 
 @app.get("/faq", response_class=HTMLResponse)
 async def faq(request: Request):
-    return templates.TemplateResponse("faq.html", {"request": request})
+    ip_address = _get_client_ip(request)
+    local_rate, currency_code, currency_symbol = await convert_rate(1.0, ip_address)
+    return templates.TemplateResponse("faq.html", {
+        "request": request,
+        "currency_code": currency_code,
+        "currency_symbol": currency_symbol,
+        "currency_rate": local_rate,
+        "hourly_rate_usd": 95.0,
+    })
 
 @app.get("/legal", response_class=HTMLResponse)
 async def legal(request: Request):
@@ -461,7 +389,6 @@ async def business_dashboards(request: Request):
         {"request": request, "demo_status": demo_status},
     )
 
-
 @app.post("/demo-access", response_class=HTMLResponse)
 @limiter.limit("5/minute")
 async def demo_access_submit(
@@ -477,14 +404,17 @@ async def demo_access_submit(
     utm_content: str = Form(""),
     ref_page: str = Form(""),
     cta_id: str = Form(""),
+    return_to: str = Form("/live-demos"),
     website: str = Form(""),
     recaptcha_response: str = Form(alias="g-recaptcha-response", default=""),
 ):
+    safe_return_to = return_to if return_to.startswith("/") and not return_to.startswith("//") else "/live-demos"
+
     if website:
-        return RedirectResponse("/business/dashboards", status_code=303)
+        return RedirectResponse(safe_return_to, status_code=303)
 
     if settings.RECAPTCHA_SECRET_KEY and not mailer_service.verify_recaptcha(recaptcha_response):
-        return RedirectResponse("/business/dashboards?demo=recaptcha", status_code=303)
+        return RedirectResponse(f"{safe_return_to}?demo=recaptcha", status_code=303)
 
     success = mailer_service.send_dashboard_demo_access_email(
         name=name,
@@ -500,8 +430,9 @@ async def demo_access_submit(
         utm_content=utm_content,
     )
     if success:
-        return RedirectResponse("/business/dashboards?demo=sent", status_code=303)
-    return RedirectResponse("/business/dashboards?demo=error", status_code=303)
+        return RedirectResponse(f"{safe_return_to}?demo=sent", status_code=303)
+    return RedirectResponse(f"{safe_return_to}?demo=error", status_code=303)
+
 
 def _get_client_ip(request: Request) -> str:
     for header in ("cf-connecting-ip", "x-forwarded-for", "x-real-ip"):
