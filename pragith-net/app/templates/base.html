@@ -268,7 +268,38 @@
             color: var(--color-cloud-mist);
             letter-spacing: -0.01em;
         }
-    </style>
+    
+    @media (max-width: 768px) {
+        :root {
+            --text-display: 40px;
+            --leading-display: 1.1;
+            --tracking-display: -0.4px;
+            --text-heading-lg: 32px;
+            --section-gap: 40px;
+        }
+        .nav-content {
+            flex-direction: column;
+            height: auto;
+            padding: 15px 0;
+            gap: 10px;
+        }
+        .nav-links {
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .section-padding {
+            padding: 40px 0;
+        }
+        .btn-primary, .btn-ghost {
+            display: block;
+            width: 100%;
+            text-align: center;
+            margin: 0 0 12px 0 !important;
+        }
+    }
+
+</style>
     {% block extra_head %}{% endblock %}
 </head>
 <body>

@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% block title %}Apps & Tools | Pragith Prakash{% endblock %}
+{% block description %}Internal tools and public applications built by Pragith AI Inc.{% endblock %}
+
+{% block extra_head %}
+<style>
+    .apps-hero {
+        text-align: center;
+        padding-top: 120px;
+        padding-bottom: 60px;
+        background: var(--surface-pure-white);
+    }
+
+    .apps-title {
+        font-family: var(--font-sf-pro-display);
+        font-size: var(--text-heading-lg);
+        font-weight: 600;
+        line-height: var(--leading-heading-lg);
+        letter-spacing: var(--tracking-heading-lg);
+        color: var(--color-midnight-graphite);
+        margin-bottom: 24px;
+    }
+
+    .apps-subtitle {
+        font-family: var(--font-sf-pro-text);
+        font-size: var(--text-heading);
+        font-weight: 400;
+        line-height: var(--leading-heading);
+        letter-spacing: var(--tracking-heading);
+        color: var(--color-cloud-mist);
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .app-list {
+        max-width: 800px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .app-item {
+        background: var(--surface-frost-gray);
+        border-radius: var(--radius-cards);
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .app-item h3 {
+        font-family: var(--font-sf-pro-display);
+        font-size: 32px;
+        font-weight: 600;
+        color: var(--color-midnight-graphite);
+    }
+    
+    .app-item p {
+        font-family: var(--font-sf-pro-text);
+        font-size: 17px;
+        line-height: 1.4;
+        color: var(--color-midnight-graphite);
+    }
+
+    @media (max-width: 768px) {
+        .apps-hero {
+            padding-top: 60px;
+            padding-bottom: 40px;
+        }
+        .apps-subtitle {
+            font-size: 20px;
+            padding: 0 20px;
+        }
+        .app-item {
+            padding: 24px;
+        }
+        .app-item h3 {
+            font-size: 26px;
+        }
+    }
+
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="apps-hero">
+    <div class="container">
+        <h1 class="apps-title">Apps & Tools.</h1>
+        <p class="apps-subtitle">Software and internal systems built for high-velocity operations.</p>
+    </div>
+</section>
+
+<section class="section-padding surface-white">
+    <div class="container">
+        <div class="app-list">
+            <div class="app-item">
+                <h3>TriviaX</h3>
+                <p>A high-performance application stack built natively to demonstrate scalable architecture. TriviaX serves as both a public-facing platform and a testing ground for zero-downtime deployment pipelines and advanced caching strategies.</p>
+                <a href="https://triviax.club" target="_blank" class="text-link" style="font-weight: 600;">Visit TriviaX &rsaquo;</a>
+            </div>
+            
+            <div class="app-item">
+                <h3>Caffeinated</h3>
+                <p>An internal orchestration utility built to manage system state and sleep prevention for local orchestration agents. It ensures our localized models and fleet supervisors remain active during long-running batch operations without manual intervention.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

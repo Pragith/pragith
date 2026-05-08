@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+
+{% block title %}AI Fleet | Pragith Prakash{% endblock %}
+{% block description %}The Pragith AI Inc Fleet: Our custom orchestrator agents and capabilities.{% endblock %}
+
+{% block extra_head %}
+<style>
+    .ai-hero {
+        text-align: center;
+        padding-top: 120px;
+        padding-bottom: 60px;
+        background: var(--surface-pure-white);
+    }
+
+    .ai-title {
+        font-family: var(--font-sf-pro-display);
+        font-size: var(--text-heading-lg);
+        font-weight: 600;
+        line-height: var(--leading-heading-lg);
+        letter-spacing: var(--tracking-heading-lg);
+        color: var(--color-midnight-graphite);
+        margin-bottom: 24px;
+    }
+
+    .ai-subtitle {
+        font-family: var(--font-sf-pro-text);
+        font-size: var(--text-heading);
+        font-weight: 400;
+        line-height: var(--leading-heading);
+        letter-spacing: var(--tracking-heading);
+        color: var(--color-cloud-mist);
+        max-width: 700px;
+        margin: 0 auto 40px;
+    }
+    
+    .agent-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: var(--element-gap);
+        margin-top: 40px;
+    }
+    
+    .agent-card {
+        background: var(--surface-frost-gray);
+        border-radius: var(--radius-cards);
+        padding: 32px;
+    }
+    
+    .agent-name {
+        font-family: var(--font-sf-pro-display);
+        font-size: 28px;
+        font-weight: 600;
+        color: var(--color-midnight-graphite);
+        margin-bottom: 12px;
+    }
+    
+    .agent-role {
+        font-family: var(--font-sf-pro-text);
+        color: var(--color-vivid-blue);
+        font-weight: 600;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 16px;
+        display: block;
+    }
+    
+    .agent-desc {
+        font-family: var(--font-sf-pro-text);
+        font-size: 17px;
+        line-height: 1.29;
+        color: var(--color-midnight-graphite);
+    }
+
+    @media (max-width: 768px) {
+        .ai-hero {
+            padding-top: 60px;
+            padding-bottom: 40px;
+        }
+        .ai-subtitle {
+            font-size: 20px;
+            padding: 0 20px;
+        }
+        .agent-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="ai-hero">
+    <div class="container">
+        <h1 class="ai-title">The Pragith AI Inc Fleet.</h1>
+        <p class="ai-subtitle">We operate with extreme velocity. Our agentic fleet executes massive objectives across architecture, orchestration, and business logic within hours.</p>
+    </div>
+</section>
+
+<section class="section-padding surface-white">
+    <div class="container">
+        <h2 style="font-family: var(--font-sf-pro-display); font-size: 32px; text-align: center; margin-bottom: 20px;">Fleet Capabilities</h2>
+        
+        <div class="agent-grid">
+            <div class="agent-card">
+                <span class="agent-role">Orchestration</span>
+                <h3 class="agent-name">OpenClaw</h3>
+                <p class="agent-desc">Our foundational multi-agent infrastructure. OpenClaw allows for highly synchronized agent environments handling everything from DevOps to complex API integrations without hallucination.</p>
+            </div>
+            
+            <div class="agent-card">
+                <span class="agent-role">Execution</span>
+                <h3 class="agent-name">Hermes</h3>
+                <p class="agent-desc">The primary execution framework. Hermes focuses on direct, precise code generation and system management, ensuring that deployments are clean and functional.</p>
+            </div>
+            
+            <div class="agent-card">
+                <span class="agent-role">Support</span>
+                <h3 class="agent-name">Triage & Analysis</h3>
+                <p class="agent-desc">Specialized sub-agents that handle PR triage, code review, and automated issue resolution directly within our GitLab environment, dramatically reducing cycle times.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

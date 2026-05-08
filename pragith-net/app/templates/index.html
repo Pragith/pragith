@@ -109,6 +109,27 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
+
+    @media (max-width: 768px) {
+        .hero-container {
+            padding-top: 60px;
+            padding-bottom: 40px;
+        }
+        .hero-subtitle {
+            font-size: 20px;
+            margin-bottom: 24px;
+        }
+        .feature-card-title {
+            font-size: 28px;
+        }
+        .process-card-title {
+            font-size: 22px;
+        }
+        .feature-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
 </style>
 {% endblock %}
 

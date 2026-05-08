@@ -492,6 +492,14 @@ async def training_corporate(request: Request):
 async def training_bootcamps(request: Request):
     return templates.TemplateResponse("training/bootcamps.html", {"request": request})
 
+@app.get("/ai", response_class=HTMLResponse)
+async def ai_fleet(request: Request):
+    return templates.TemplateResponse("ai.html", {"request": request})
+
+@app.get("/apps", response_class=HTMLResponse)
+async def apps_hub(request: Request):
+    return templates.TemplateResponse("apps.html", {"request": request})
+
 @app.get("/speaking", response_class=HTMLResponse)
 async def speaking(request: Request):
     return templates.TemplateResponse("speaking.html", {"request": request})
