@@ -1,82 +1,134 @@
 {% set demo_state = demo_status if demo_status is defined else request.query_params.get("demo", "") %}
 {% if demo_state == "sent" %}
-<div class="site-container mb-6">
-    <div class="border border-emerald-500/35 bg-emerald-50 dark:bg-emerald-900/20 px-4 py-3 text-sm text-emerald-800 dark:text-emerald-200">
+<div class="container" style="margin-bottom: 24px;">
+    <div style="border: 1px solid var(--color-sky-teal); background: var(--surface-frost-gray); padding: 12px 16px; font-family: var(--font-sf-pro-text); font-size: 14px; color: var(--color-midnight-graphite); border-radius: var(--radius-default);">
         Demo credentials have been sent to your email.
     </div>
 </div>
 {% elif demo_state == "recaptcha" %}
-<div class="site-container mb-6">
-    <div class="border border-amber-500/35 bg-amber-50 dark:bg-amber-900/20 px-4 py-3 text-sm text-amber-800 dark:text-amber-200">
+<div class="container" style="margin-bottom: 24px;">
+    <div style="border: 1px solid var(--color-flame-orange); background: var(--surface-frost-gray); padding: 12px 16px; font-family: var(--font-sf-pro-text); font-size: 14px; color: var(--color-flame-orange); border-radius: var(--radius-default);">
         reCAPTCHA verification failed. Please try again.
     </div>
 </div>
 {% elif demo_state == "error" %}
-<div class="site-container mb-6">
-    <div class="border border-rose-500/35 bg-rose-50 dark:bg-rose-900/20 px-4 py-3 text-sm text-rose-800 dark:text-rose-200">
+<div class="container" style="margin-bottom: 24px;">
+    <div style="border: 1px solid var(--color-sunset-orange); background: var(--surface-frost-gray); padding: 12px 16px; font-family: var(--font-sf-pro-text); font-size: 14px; color: var(--color-sunset-orange); border-radius: var(--radius-default);">
         Unable to send demo access right now. Please try again.
     </div>
 </div>
 {% endif %}
 
-<div id="dashboard-demo-modal" class="fixed inset-0 z-[80] hidden">
-    <div data-demo-modal-close class="absolute inset-0 bg-black/50"></div>
-    <div class="relative min-h-full flex items-center justify-center px-4 py-8">
-        <div class="w-full max-w-xl border border-line/40 bg-page p-6 sm:p-7 shadow-2xl">
-            <div class="flex items-start justify-between gap-4 mb-5">
+<style>
+    .modal-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 80;
+        display: none;
+        background-color: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+    }
+    
+    .modal-overlay:not(.hidden) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .modal-container {
+        position: relative;
+        width: 100%;
+        max-width: 600px;
+        background-color: var(--surface-pure-white);
+        border-radius: var(--radius-cards);
+        padding: 40px;
+        box-shadow: var(--shadow-xl);
+        margin: 20px;
+    }
+    
+    .modal-close-btn {
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        background: transparent;
+        border: none;
+        color: var(--color-cloud-mist);
+        cursor: pointer;
+        font-size: 24px;
+        line-height: 1;
+        padding: 4px;
+    }
+    
+    .modal-close-btn:hover {
+        color: var(--color-midnight-graphite);
+    }
+
+    @media (max-width: 640px) {
+        .modal-container {
+            padding: 24px;
+            margin: 10px;
+        }
+        #dashboard-demo-form > div {
+            grid-template-columns: 1fr !important;
+            gap: 16px !important;
+        }
+    }
+
+</style>
+
+<div id="dashboard-demo-modal" class="modal-overlay hidden">
+    <div data-demo-modal-close style="position: absolute; inset: 0;"></div>
+    <div class="modal-container">
+        <button type="button" data-demo-modal-close class="modal-close-btn" aria-label="Close modal">&times;</button>
+        
+        <div style="margin-bottom: 32px;">
+            <h3 style="font-family: var(--font-sf-pro-display); font-size: 28px; font-weight: 600; color: var(--color-midnight-graphite); margin-bottom: 8px;">Request Dashboard Demo Access</h3>
+            <p style="font-family: var(--font-sf-pro-text); font-size: 14px; color: var(--color-cloud-mist);">Credentials are sent by email after verification.</p>
+        </div>
+
+        <form id="dashboard-demo-form" method="POST" action="/demo-access" style="display: flex; flex-direction: column; gap: 20px;">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                 <div>
-                    <h3 class="font-display font-semibold h3-display text-ink mb-1">Request Dashboard Demo Access</h3>
-                    <p class="body-md text-ink/70">Credentials are sent by email after verification.</p>
+                    <label for="demo-name" style="display: block; font-family: var(--font-sf-pro-text); font-size: 14px; font-weight: 600; margin-bottom: 8px; color: var(--color-midnight-graphite);">Name</label>
+                    <input id="demo-name" name="name" type="text" required style="width: 100%; border: 1px solid var(--color-steel-accent); border-radius: var(--radius-default); padding: 12px 16px; font-family: var(--font-arial); font-size: 13px;">
                 </div>
-                <button type="button" data-demo-modal-close class="btn btn-secondary !min-h-9 !px-3" aria-label="Close modal">
-                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-                </button>
+                <div>
+                    <label for="demo-email" style="display: block; font-family: var(--font-sf-pro-text); font-size: 14px; font-weight: 600; margin-bottom: 8px; color: var(--color-midnight-graphite);">Work Email</label>
+                    <input id="demo-email" name="email" type="email" required style="width: 100%; border: 1px solid var(--color-steel-accent); border-radius: var(--radius-default); padding: 12px 16px; font-family: var(--font-arial); font-size: 13px;">
+                </div>
             </div>
 
-            <form id="dashboard-demo-form" method="POST" action="/demo-access" class="space-y-4">
-                <div class="grid sm:grid-cols-2 gap-4">
-                    <div>
-                        <label for="demo-name" class="block text-sm font-semibold text-ink mb-2">Name</label>
-                        <input id="demo-name" name="name" type="text" required class="block w-full border border-line/30 bg-page px-4 py-3 text-ink focus:outline-none focus:border-accent transition-colors">
-                    </div>
-                    <div>
-                        <label for="demo-email" class="block text-sm font-semibold text-ink mb-2">Work Email</label>
-                        <input id="demo-email" name="email" type="email" required class="block w-full border border-line/30 bg-page px-4 py-3 text-ink focus:outline-none focus:border-accent transition-colors">
-                    </div>
-                </div>
-
-                <div class="grid sm:grid-cols-2 gap-4">
-                    <div>
-                        <label for="demo-company" class="block text-sm font-semibold text-ink mb-2">Company</label>
-                        <input id="demo-company" name="company" type="text" class="block w-full border border-line/30 bg-page px-4 py-3 text-ink focus:outline-none focus:border-accent transition-colors">
-                    </div>
-                    <div>
-                        <label for="demo-role" class="block text-sm font-semibold text-ink mb-2">Role</label>
-                        <input id="demo-role" name="role" type="text" class="block w-full border border-line/30 bg-page px-4 py-3 text-ink focus:outline-none focus:border-accent transition-colors">
-                    </div>
-                </div>
-
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                 <div>
-                    <label for="demo-notes" class="block text-sm font-semibold text-ink mb-2">Notes (Optional)</label>
-                    <textarea id="demo-notes" name="notes" rows="3" class="block w-full border border-line/30 bg-page px-4 py-3 text-ink focus:outline-none focus:border-accent transition-colors"></textarea>
+                    <label for="demo-company" style="display: block; font-family: var(--font-sf-pro-text); font-size: 14px; font-weight: 600; margin-bottom: 8px; color: var(--color-midnight-graphite);">Company</label>
+                    <input id="demo-company" name="company" type="text" style="width: 100%; border: 1px solid var(--color-steel-accent); border-radius: var(--radius-default); padding: 12px 16px; font-family: var(--font-arial); font-size: 13px;">
                 </div>
+                <div>
+                    <label for="demo-role" style="display: block; font-family: var(--font-sf-pro-text); font-size: 14px; font-weight: 600; margin-bottom: 8px; color: var(--color-midnight-graphite);">Role</label>
+                    <input id="demo-role" name="role" type="text" style="width: 100%; border: 1px solid var(--color-steel-accent); border-radius: var(--radius-default); padding: 12px 16px; font-family: var(--font-arial); font-size: 13px;">
+                </div>
+            </div>
 
-                <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
-                <input type="hidden" name="utm_source" value="{{ request.query_params.get('utm_source', '') }}">
-                <input type="hidden" name="utm_medium" value="{{ request.query_params.get('utm_medium', '') }}">
-                <input type="hidden" name="utm_campaign" value="{{ request.query_params.get('utm_campaign', '') }}">
-                <input type="hidden" name="utm_content" value="{{ request.query_params.get('utm_content', '') }}">
-                <input type="hidden" name="ref_page" value="{{ request.url.path }}">
-                <input type="hidden" name="cta_id" id="demo-cta-id" value="">
-                <input type="hidden" name="return_to" value="{{ request.url.path }}">
-                <input type="hidden" name="g-recaptcha-response" id="demo-recaptcha-response">
+            <div>
+                <label for="demo-notes" style="display: block; font-family: var(--font-sf-pro-text); font-size: 14px; font-weight: 600; margin-bottom: 8px; color: var(--color-midnight-graphite);">Notes (Optional)</label>
+                <textarea id="demo-notes" name="notes" rows="3" style="width: 100%; border: 1px solid var(--color-steel-accent); border-radius: var(--radius-default); padding: 12px 16px; font-family: var(--font-arial); font-size: 13px; resize: vertical; min-height: 80px;"></textarea>
+            </div>
 
-                <button type="submit" class="btn btn-primary w-full" data-analytics="submit-demo-access-form">
-                    <i class="fa-solid fa-envelope-open-text" aria-hidden="true"></i>
-                    <span>Send Dashboard Access</span>
-                </button>
-            </form>
-        </div>
+            <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
+            <input type="hidden" name="utm_source" value="{{ request.query_params.get('utm_source', '') }}">
+            <input type="hidden" name="utm_medium" value="{{ request.query_params.get('utm_medium', '') }}">
+            <input type="hidden" name="utm_campaign" value="{{ request.query_params.get('utm_campaign', '') }}">
+            <input type="hidden" name="utm_content" value="{{ request.query_params.get('utm_content', '') }}">
+            <input type="hidden" name="ref_page" value="{{ request.url.path }}">
+            <input type="hidden" name="cta_id" id="demo-cta-id" value="">
+            <input type="hidden" name="return_to" value="{{ request.url.path }}">
+            <input type="hidden" name="g-recaptcha-response" id="demo-recaptcha-response">
+
+            <button type="submit" style="background-color: var(--color-vivid-blue); color: var(--color-pure-white); font-family: var(--font-sf-pro-text); font-size: 17px; font-weight: 400; border-radius: var(--radius-buttons); padding: 11px 22px; border: none; cursor: pointer; width: 100%; margin-top: 10px;">
+                Send Dashboard Access
+            </button>
+        </form>
     </div>
 </div>
 
@@ -96,16 +148,17 @@
         function openModal(ctaId) {
             if (ctaInput) ctaInput.value = ctaId || '';
             modal.classList.remove('hidden');
-            document.body.classList.add('overflow-hidden');
+            document.body.style.overflow = 'hidden';
         }
 
         function closeModal() {
             modal.classList.add('hidden');
-            document.body.classList.remove('overflow-hidden');
+            document.body.style.overflow = '';
         }
 
         document.querySelectorAll('[data-open-demo-modal]').forEach(function (trigger) {
-            trigger.addEventListener('click', function () {
+            trigger.addEventListener('click', function (e) {
+                e.preventDefault();
                 openModal(trigger.getAttribute('data-cta-id'));
             });
         });

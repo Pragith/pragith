@@ -497,6 +497,10 @@ async def ai_fleet(request: Request):
     return templates.TemplateResponse("ai.html", {"request": request})
 
 @app.get("/apps", response_class=HTMLResponse)
+@app.get("/apps/caffeinated", response_class=HTMLResponse)
+async def caffeinated_app(request: Request):
+    return templates.TemplateResponse("apps/caffeinate-d.html", {"request": request})
+
 async def apps_hub(request: Request):
     return templates.TemplateResponse("apps.html", {"request": request})
 
