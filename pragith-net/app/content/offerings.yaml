@@ -5,23 +5,18 @@ offerings:
     outcome: A clear blueprint for OpenClaw and Hermes integration.
     estimated_hours: Milestone-based engagement
     base_hours: 20
-    price_usd_min: 2500
-    price_usd_max: 5000
-
+        
   - slug: system-build-engagement
     title: End-to-End Orchestrator Deployment
     target_client: Teams ready for production AI agents
     outcome: A live, documented, multi-agent orchestrator system.
     estimated_hours: Milestone-based implementation plan
     base_hours: 80
-    price_usd_min: 10000
-    price_usd_max: 25000
-
+        
   - slug: technical-audit-stabilization
     title: Infrastructure & BI Stabilization
     target_client: Teams with failing pipelines or dashboards
     outcome: A stabilized, high-velocity data layer and BI stack.
     estimated_hours: Milestone-based audit and stabilization
     base_hours: 40
-    price_usd_min: 5000
-    price_usd_max: 10000
+        

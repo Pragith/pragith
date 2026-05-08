@@ -180,11 +180,7 @@
     <div class="container">
         <h1 class="contact-title">Start Your Project.</h1>
         <p class="contact-subtitle">
-            {% if currency_code and currency_rate and currency_symbol %}
-            ~{{ currency_symbol }}{{ (hourly_rate_usd * currency_rate)|round(0, 'ceil') }}/hr. Milestone-based delivery.
-            {% else %}
-            $95 USD per hour. Milestone-based delivery.
-            {% endif %}
+            Billed Hourly. Milestone-based delivery.
         </p>
         {% if error %}
         <p class="error-msg">{{ error }}</p>
