@@ -1,29 +1,28 @@
 {% extends "base.html" %}
 
 {% block title %}Pragith Prakash | AI-Accelerated Software & Data Solutions{% endblock %}
-{% block description %}End-to-end OpenClaw, Hermes, Orchestrator Agents, and production-ready deployments.{% endblock %}
+{% block description %}Most software projects die in Jira. I build systems that ship. End-to-end AI fleets, executive dashboards, and silent automation.{% endblock %}
 
 {% block extra_head %}
 <style>
-    /* Index specific styles */
     .hero-container {
         text-align: center;
-        padding-top: 120px;
-        padding-bottom: 80px;
+        padding-top: 140px;
+        padding-bottom: 100px;
     }
 
     .hero-title {
         font-family: var(--font-sf-pro-display);
-        font-size: var(--text-display); /* 80px */
+        font-size: var(--text-display);
         font-weight: 600;
-        line-height: var(--leading-display); /* 1.07 */
-        letter-spacing: var(--tracking-display); /* -0.8px */
+        line-height: var(--leading-display);
+        letter-spacing: var(--tracking-display);
         color: var(--color-midnight-graphite);
         margin-bottom: 24px;
     }
 
     .hero-subtitle {
-        font-family: var(--font-sf-pro-display); /* Using display for larger impactful subhead */
+        font-family: var(--font-sf-pro-display);
         font-size: 28px;
         font-weight: 400;
         line-height: 1.05;
@@ -31,6 +30,15 @@
         color: var(--color-midnight-graphite);
         max-width: 700px;
         margin: 0 auto 40px;
+    }
+    
+    .hero-philosophy {
+        font-family: var(--font-sf-pro-text);
+        font-size: 18px;
+        color: var(--color-cloud-mist);
+        max-width: 600px;
+        margin: 0 auto 40px;
+        line-height: 1.4;
     }
 
     .hero-price {
@@ -41,108 +49,33 @@
         margin-top: 24px;
     }
 
-    .section-header {
-        text-align: center;
-        margin-bottom: 60px;
-    }
-
-    .section-title {
-        font-family: var(--font-sf-pro-display);
-        font-size: var(--text-heading-lg); /* 44px */
-        font-weight: 600;
-        line-height: var(--leading-heading-lg); /* 1.14 */
-        letter-spacing: var(--tracking-heading-lg); /* -0.484px */
-        color: var(--color-midnight-graphite);
-    }
-
-    .feature-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 24px; /* Slightly larger than element gap for larger cards, but standard for grids */
-    }
-
-    .feature-card {
-        background-color: var(--surface-pure-white);
-        border-radius: 28px;
-        padding: 14px; /* Enforced by spec */
-    }
-
-    .feature-card-inner {
-        padding: 26px; /* Inner padding to offset outer */
-    }
-
-    .feature-card-title {
-        font-family: var(--font-sf-pro-display);
-        font-size: 40px;
-        font-weight: 400;
-        line-height: 1.05;
-        letter-spacing: -0.4px;
-        color: var(--color-midnight-graphite);
-        margin-bottom: 12px;
-    }
-
-    .feature-card-text {
-        font-family: var(--font-sf-pro-text);
-        font-size: 17px;
-        font-weight: 400;
-        line-height: 1.29;
-        letter-spacing: -0.42px;
-        color: var(--color-midnight-graphite);
-    }
-    
-    .process-card {
-        background-color: var(--surface-frost-gray);
-        border-radius: 28px;
-        padding: 14px;
-    }
-    
-    .process-card-title {
-        font-family: var(--font-sf-pro-display);
-        font-size: 28px;
-        font-weight: 600;
-        color: var(--color-midnight-graphite);
-        margin-bottom: 12px;
-    }
-    
-    .gradient-text {
-        background: var(--color-deep-sea-gradient);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
-
     @media (max-width: 768px) {
         .hero-container {
-            padding-top: 60px;
-            padding-bottom: 40px;
+            padding-top: 80px;
+            padding-bottom: 60px;
         }
         .hero-subtitle {
-            font-size: 20px;
-            margin-bottom: 24px;
-        }
-        .feature-card-title {
-            font-size: 28px;
-        }
-        .process-card-title {
             font-size: 22px;
+            padding: 0 20px;
         }
-        .feature-grid {
-            grid-template-columns: 1fr;
+        .hero-philosophy {
+            font-size: 16px;
+            padding: 0 20px;
         }
     }
-
 </style>
 {% endblock %}
 
 {% block content %}
-<!-- Hero Section -->
-<section class="surface-white section-gap">
-    <div class="container hero-container">
+<section class="surface-white" style="min-height: calc(100vh - 150px); display: flex; align-items: center;">
+    <div class="container hero-container w-full">
         <h1 class="hero-title">Intelligence. Deployed.</h1>
-        <p class="hero-subtitle">End-to-end Orchestrator Agents, OpenClaw infrastructure, and Hermes fleet deployments.</p>
+        <p class="hero-subtitle">Most software projects die in Jira.<br>I build systems that actually ship.</p>
+        <p class="hero-philosophy">Software shouldn't be a black box of endless sprints. I build clean, autonomous, production-grade systems. One engineer, extreme velocity, zero corporate bloat. You get the keys, the documentation, and the momentum.</p>
         
-        <div style="margin-top: 40px;">
-            <a href="mailto:contact@pragith.net" class="btn-primary">Book a Discovery Call</a>
-            <a href="#orchestrators" class="btn-ghost">View Capabilities</a>
+        <div>
+            <a href="/contact" class="btn-primary">Book a Discovery Call</a>
+            <a href="/ai" class="btn-ghost">Explore the AI Fleet</a>
         </div>
         
         <p class="hero-price">
@@ -152,72 +85,6 @@
             $95 USD/hr. Precise builds. Zero noise.
             {% endif %}
         </p>
-    </div>
-</section>
-
-<!-- Capabilities Section -->
-<section id="orchestrators" class="surface-gray section-padding section-gap">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-title">Core Capabilities.</h2>
-        </div>
-
-        <div class="feature-grid">
-            <div class="feature-card">
-                <div class="feature-card-inner">
-                    <span class="badge-new">New</span>
-                    <h3 class="feature-card-title">Agentic Fleets.</h3>
-                    <p class="feature-card-text">Complete deployment of OpenClaw and Hermes orchestrator agents. I build multi-agent systems that coordinate, reason, and execute complex workflows.</p>
-                </div>
-            </div>
-            
-            <div class="feature-card" id="dashboards">
-                <div class="feature-card-inner">
-                    <h3 class="feature-card-title">Executive BI.</h3>
-                    <p class="feature-card-text">Production-grade Apache Superset deployments. Clean KPI tracking, revenue modeling, and API integrations that give leadership immediate visibility.</p>
-                </div>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-card-inner">
-                    <h3 class="feature-card-title">System Routing.</h3>
-                    <p class="feature-card-text">High-velocity lead routing and automation. I connect disparate systems into unified, silent pipelines that operate without manual intervention.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Process Section -->
-<section id="process" class="surface-white section-padding section-gap">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-title">The Process.</h2>
-            <p class="hero-price" style="font-size: 18px; margin-top: 10px;">No endless scoping. No bloated teams. Just clear momentum.</p>
-        </div>
-
-        <div class="feature-grid" style="max-width: 900px; margin: 0 auto;">
-            <div class="process-card">
-                <div class="feature-card-inner">
-                    <h3 class="process-card-title">1. Discovery</h3>
-                    <p class="feature-card-text">A focused, 1-hour paid session ($95) to map the exact architecture and requirements.</p>
-                </div>
-            </div>
-            
-            <div class="process-card">
-                <div class="feature-card-inner">
-                    <h3 class="process-card-title">2. Execution</h3>
-                    <p class="feature-card-text">Hourly billing. Weekly updates. Clean code pushed directly to your infrastructure.</p>
-                </div>
-            </div>
-            
-            <div class="process-card">
-                <div class="feature-card-inner">
-                    <h3 class="process-card-title">3. Handoff</h3>
-                    <p class="feature-card-text">You own the system entirely. Fully documented and ready for production scale.</p>
-                </div>
-            </div>
-        </div>
     </div>
 </section>
 {% endblock %}

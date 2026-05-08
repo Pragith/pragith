@@ -1,95 +1,140 @@
 {% extends "base.html" %}
-{% block title %}Business Intelligence Dashboards | Pragith Prakash{% endblock %}
-{% block description %}Freelance Superset-based KPI dashboard development billed hourly.{% endblock %}
-{% block og_title %}Business Intelligence Dashboards | Pragith Prakash{% endblock %}
-{% block og_description %}Superset-based KPI dashboards with clean data models and reliable deployment.{% endblock %}
+
+{% block title %}Executive BI & Dashboards | Pragith Prakash{% endblock %}
+{% block description %}Production-grade Apache Superset deployments. Stop guessing. Get clear, undeniable visibility.{% endblock %}
 
 {% block extra_head %}
-<link rel="canonical" href="https://pragith.net/business/dashboards">
-<meta property="og:image" content="https://pragith.net/static/og-image-dashboards.png">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Business Intelligence Dashboard Development",
-  "description": "Freelance Superset-based KPI dashboard development billed hourly.",
-  "provider": {
-    "@type": "Person",
-    "name": "Pragith Prakash"
-  },
-  "serviceType": "Business Intelligence and Reporting"
-}
-</script>
+<style>
+    .dash-hero {
+        text-align: center;
+        padding-top: 120px;
+        padding-bottom: 60px;
+        background: var(--surface-pure-white);
+    }
+
+    .dash-title {
+        font-family: var(--font-sf-pro-display);
+        font-size: var(--text-heading-lg);
+        font-weight: 600;
+        line-height: var(--leading-heading-lg);
+        letter-spacing: var(--tracking-heading-lg);
+        color: var(--color-midnight-graphite);
+        margin-bottom: 24px;
+    }
+
+    .dash-subtitle {
+        font-family: var(--font-sf-pro-text);
+        font-size: var(--text-heading);
+        font-weight: 400;
+        line-height: var(--leading-heading);
+        letter-spacing: var(--tracking-heading);
+        color: var(--color-cloud-mist);
+        max-width: 600px;
+        margin: 0 auto 40px;
+    }
+
+    .dash-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding-bottom: 80px;
+    }
+
+    .dash-content h2 {
+        font-family: var(--font-sf-pro-display);
+        font-size: 32px;
+        color: var(--color-midnight-graphite);
+        margin-bottom: 20px;
+        margin-top: 40px;
+    }
+
+    .dash-content p {
+        font-family: var(--font-sf-pro-text);
+        font-size: 17px;
+        line-height: 1.5;
+        color: var(--color-midnight-graphite);
+        margin-bottom: 20px;
+    }
+
+    .dash-content ul {
+        list-style-type: none;
+        padding: 0;
+        margin-bottom: 30px;
+    }
+
+    .dash-content li {
+        font-family: var(--font-sf-pro-text);
+        font-size: 17px;
+        line-height: 1.5;
+        color: var(--color-midnight-graphite);
+        margin-bottom: 10px;
+        padding-left: 20px;
+        position: relative;
+    }
+
+    .dash-content li::before {
+        content: "•";
+        color: var(--color-vivid-blue);
+        position: absolute;
+        left: 0;
+    }
+
+    .demo-box {
+        background: var(--surface-frost-gray);
+        border-radius: var(--radius-cards);
+        padding: 40px;
+        text-align: center;
+        margin-top: 60px;
+    }
+
+    @media (max-width: 768px) {
+        .dash-hero {
+            padding-top: 60px;
+            padding-bottom: 40px;
+        }
+        .dash-subtitle {
+            font-size: 20px;
+            padding: 0 20px;
+        }
+        .dash-content {
+            padding: 0 20px 40px;
+        }
+        .demo-box {
+            padding: 24px;
+        }
+    }
+</style>
 {% endblock %}
 
 {% block content %}
-<section class="section-block border-b border-line/20">
-    <div class="site-container">
-        <div class="max-w-4xl">
-            <h1 class="page-hero-title">Business Intelligence Dashboards Built for Real Teams</h1>
-            <p class="page-hero-subtitle mb-3">Superset-based KPI dashboards with clean data models and reliable deployment.</p>
-            <p class="body-md text-ink/70 mb-8">Rate: $95 USD per hour. Typical dashboard builds range from focused KPI views to full reporting systems.</p>
+<section class="dash-hero">
+    <div class="container">
+        <h1 class="dash-title">Executive BI.</h1>
+        <p class="dash-subtitle">Stop guessing. I build Apache Superset environments that connect directly to your data truth.</p>
+    </div>
+</section>
 
-            <div class="flex flex-col sm:flex-row gap-3">
-                <button type="button" class="btn btn-primary w-full sm:w-auto" data-open-demo-modal data-cta-id="dashboards-hero-live-demo">View Live Dashboard</button>
-                <a href="/contact" class="btn btn-secondary w-full sm:w-auto">Book Discovery Call</a>
-            </div>
+<section class="surface-white section-gap">
+    <div class="container dash-content">
+        <p>No vanity metrics. Just clear, undeniable visibility for executive leadership. I deploy production-grade BI stacks that ingest, process, and display your core operational data without the licensing bloat of proprietary tools.</p>
+        
+        <h2>What gets built</h2>
+        <ul>
+            <li>Secure, self-hosted Apache Superset deployments mapped to your infrastructure.</li>
+            <li>Custom API and Database integration (Postgres, BigQuery, external SaaS).</li>
+            <li>Revenue modeling and KPI tracking designed for immediate C-Suite reading.</li>
+            <li>Automated data pipelines that refresh silently in the background.</li>
+        </ul>
+
+        <h2>The approach</h2>
+        <p>This is not a dashboarding "service" where you rent access. This is a system build. I map the data, deploy the infrastructure, build the initial dashboards, and hand over the keys. You own the BI stack entirely.</p>
+
+        <div class="demo-box">
+            <h3 style="font-family: var(--font-sf-pro-display); font-size: 24px; margin-bottom: 16px;">View the Live Environment</h3>
+            <p style="margin-bottom: 24px;">I maintain a live Superset instance populated with sample executive data to demonstrate deployment quality and speed.</p>
+            <button type="button" class="btn-primary" data-open-demo-modal data-cta-id="dashboards-demo-btn">Access Live Dashboard</button>
         </div>
     </div>
 </section>
 
-<section class="section-block tone-alt border-b border-line/20">
-    <div class="site-container">
-        <div class="max-w-3xl mb-8">
-            <h2 class="font-display font-semibold h2-display text-ink mb-3">What You Get</h2>
-        </div>
-        <div class="grid md:grid-cols-2 gap-5">
-            <article class="border border-line/30 bg-page p-6">
-                <ul class="space-y-3 body-md text-ink/82">
-                    <li class="flex items-start gap-2"><i class="fa-regular fa-check text-accent mt-1" aria-hidden="true"></i><span>Automated KPI refresh</span></li>
-                    <li class="flex items-start gap-2"><i class="fa-regular fa-check text-accent mt-1" aria-hidden="true"></i><span>Centralized metric definitions</span></li>
-                    <li class="flex items-start gap-2"><i class="fa-regular fa-check text-accent mt-1" aria-hidden="true"></i><span>Role-based dashboard views</span></li>
-                    <li class="flex items-start gap-2"><i class="fa-regular fa-check text-accent mt-1" aria-hidden="true"></i><span>Data pipeline integration</span></li>
-                    <li class="flex items-start gap-2"><i class="fa-regular fa-check text-accent mt-1" aria-hidden="true"></i><span>Deployment + documentation</span></li>
-                </ul>
-            </article>
-        </div>
-    </div>
-</section>
-
-<section class="section-block border-b border-line/20">
-    <div class="site-container">
-        <div class="max-w-3xl mb-8">
-            <h2 class="font-display font-semibold h2-display text-ink mb-3">How a Dashboard Project Works</h2>
-        </div>
-        {% set steps = [
-        "Define KPI goals and data sources",
-        "Implement connectors and transformations",
-        "Build dashboard views",
-        "Deploy and document"
-        ] %}
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-            {% for step in steps %}
-            <article class="border border-line/30 bg-page p-6">
-                <p class="meta-text uppercase tracking-[0.12em] text-accent font-semibold mb-3">Step {{ loop.index }}</p>
-                <p class="body-md text-ink/82">{{ step }}</p>
-            </article>
-            {% endfor %}
-        </div>
-    </div>
-</section>
-
-<section class="section-block tone-alt border-b border-line/20">
-    <div class="site-container">
-        <div class="border border-line/30 bg-page p-8 sm:p-10 text-center">
-            <h2 class="font-display font-semibold h2-display text-ink mb-4">Start a Dashboard Project</h2>
-            <p class="body-md text-ink/70 max-w-2xl mx-auto mb-7">Share KPI priorities, data sources, and reporting requirements.</p>
-            <div class="flex flex-col sm:flex-row gap-3 justify-center">
-                <button type="button" class="btn btn-primary w-full sm:w-auto" data-open-demo-modal data-cta-id="dashboards-footer-live-demo">View Live Dashboard</button>
-                <a href="/contact" class="btn btn-secondary w-full sm:w-auto">Start Project Discussion</a>
-            </div>
-        </div>
-    </div>
-</section>
 {% include "partials/dashboard_demo_modal.html" %}
 {% endblock %}
