@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block title %}About | Pragith Prakash{% endblock %}
+{% block description %}Independent Software Engineer building autonomous systems, AI fleets, and high-velocity business logic.{% endblock %}
+
+{% block extra_head %}
+<style>
+    .about-hero {
+        text-align: center;
+        padding-top: 120px;
+        padding-bottom: 60px;
+        background: var(--surface-pure-white);
+    }
+
+    .about-title {
+        font-family: var(--font-sf-pro-display);
+        font-size: var(--text-heading-lg);
+        font-weight: 600;
+        line-height: var(--leading-heading-lg);
+        letter-spacing: var(--tracking-heading-lg);
+        color: var(--color-midnight-graphite);
+        margin-bottom: 24px;
+    }
+
+    .about-subtitle {
+        font-family: var(--font-sf-pro-text);
+        font-size: var(--text-heading);
+        font-weight: 400;
+        line-height: var(--leading-heading);
+        letter-spacing: var(--tracking-heading);
+        color: var(--color-cloud-mist);
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .about-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding-bottom: 80px;
+    }
+
+    .about-content h2 {
+        font-family: var(--font-sf-pro-display);
+        font-size: 32px;
+        color: var(--color-midnight-graphite);
+        margin-bottom: 20px;
+        margin-top: 40px;
+    }
+
+    .about-content p {
+        font-family: var(--font-sf-pro-text);
+        font-size: 17px;
+        line-height: 1.5;
+        color: var(--color-midnight-graphite);
+        margin-bottom: 20px;
+    }
+
+    @media (max-width: 768px) {
+        .about-hero {
+            padding-top: 60px;
+            padding-bottom: 40px;
+        }
+        .about-subtitle {
+            font-size: 20px;
+            padding: 0 20px;
+        }
+        .about-content {
+            padding: 0 20px;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="about-hero">
+    <div class="container">
+        <h1 class="about-title">Pragith Prakash.</h1>
+        <p class="about-subtitle">Engineer. Architect. Operator.</p>
+    </div>
+</section>
+
+<section class="surface-white section-gap">
+    <div class="container about-content">
+        <p>I am an Independent Software Engineer and the founder of Pragith AI Inc. I build autonomous, agent-native systems that execute complex logic with extreme velocity.</p>
+        
+        <h2>The History</h2>
+        <p>I have been writing and building online since 2007. What started as basic web logs has evolved into deploying sovereign GPU infrastructure, standardizing MCP (Model Context Protocol) interactions, and building highly synchronized multi-agent environments.</p>
+
+        <h2>The Ethos</h2>
+        <p>Software shouldn't require bloated teams or endless scoping cycles. I operate as a single engineer leveraging powerful orchestrator fleets (OpenClaw, Hermes). This structure allows me to map an architecture, generate the execution logic, and deploy production-grade systems in a fraction of the traditional time.</p>
+        <p>When I build a system for you—whether it's an Executive BI stack, a WhatsApp routing automation, or an agentic integration—you own the keys, the documentation, and the complete source truth.</p>
+    </div>
+</section>
+{% endblock %}
