@@ -1,507 +1,296 @@
 <!DOCTYPE html>
-<html lang="en" class="antialiased">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Pragith Prakash{% endblock %}</title>
+    <meta name="description" content="{% block description %}{% endblock %}">
+    
     <style>
+        /* CSS Custom Properties from DESIGN.md */
         :root {
-            --container-max: 1120px;
-            --section-py-mobile: 40px;
-            --section-py-tablet: 56px;
-            --section-py-desktop: 80px;
+          /* Colors */
+          --color-midnight-graphite: #1d1d1f;
+          --color-cloud-mist: #6b6c6c;
+          --color-pure-white: #ffffff;
+          --color-frost-gray: #f3f6f6;
+          --color-steel-accent: #cccfcf;
+          --color-dark-charcoal: #313131;
+          --color-slate-echo: #444545;
+          --color-alabaster: #e8e8ed;
+          --color-pure-black: #000000;
+          --color-light-pearl: #dedfe2;
+          --color-ocean-blue: #0066cc;
+          --color-sky-teal: #00a1b3;
+          --color-royal-violet: #8668ff;
+          --color-sunset-orange: #ed6300;
+          --color-flame-orange: #b64400;
+          --color-vivid-blue: #0071e3;
+          --color-deep-sea-gradient: #004c94;
+          --color-spectrum-gradient: #0090f7;
+
+          /* Typography — Font Families */
+          --font-sf-pro-text: 'SF Pro Text', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+          --font-sf-pro-display: 'SF Pro Display', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+          --font-arial: 'Arial', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+          /* Typography — Scale */
+          --text-body: 14px;
+          --leading-body: 1.29;
+          --tracking-body: -0.168px;
+          --text-subheading: 18px;
+          --leading-subheading: 1.24;
+          --tracking-subheading: -0.342px;
+          --text-heading-sm: 20px;
+          --leading-heading-sm: 1.2;
+          --tracking-heading-sm: -0.4px;
+          --text-heading: 24px;
+          --leading-heading: 1.18;
+          --tracking-heading: -0.288px;
+          --text-heading-lg: 44px;
+          --leading-heading-lg: 1.14;
+          --tracking-heading-lg: -0.484px;
+          --text-display: 80px;
+          --leading-display: 1.07;
+          --tracking-display: -0.8px;
+          --text-display-xl: 160px;
+          --leading-display-xl: 0.88;
+          --tracking-display-xl: -0.8px;
+
+          /* Spacing */
+          --spacing-4: 4px;
+          --spacing-6: 6px;
+          --spacing-8: 8px;
+          --spacing-9: 9px;
+          --spacing-10: 10px;
+          --spacing-11: 11px;
+          --spacing-13: 13px;
+          --spacing-14: 14px;
+          --spacing-19: 19px;
+          --spacing-20: 20px;
+          --spacing-25: 25px;
+          --spacing-28: 28px;
+          --spacing-30: 30px;
+          --spacing-40: 40px;
+          --spacing-44: 44px;
+          --spacing-83: 83px;
+
+          /* Layout */
+          --section-gap: 70px;
+          --card-padding: 14px;
+          --element-gap: 10px;
+
+          /* Border Radius */
+          --radius-xl: 12px;
+          --radius-3xl: 24px;
+          --radius-3xl-2: 28px;
+          --radius-3xl-3: 32px;
+          --radius-3xl-4: 36px;
+          --radius-full: 170px;
+          --radius-full-2: 980px;
+
+          /* Shadows */
+          --shadow-subtle: rgba(0, 0, 0, 0.11) 0px 0px 1px 0px inset;
+          --shadow-xl: rgba(0, 0, 0, 0.05) 0px 0px 35px 20px;
+
+          /* Surfaces */
+          --surface-pure-white: #ffffff;
+          --surface-frost-gray: #f3f6f6;
+          --surface-alabaster: #e8e8ed;
         }
 
-
-
-        .site-container {
-            max-width: var(--container-max);
-            margin-inline: auto;
-            padding-inline: 1.5rem;
+        /* Global Resets & Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
-        .layout-offset {
-            min-width: 0;
+        body {
+            background-color: var(--surface-pure-white);
+            color: var(--color-midnight-graphite);
+            font-family: var(--font-sf-pro-text);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        @media (min-width: 768px) {
-            .layout-offset {
-                margin-left: 250px;
-                padding-left: 3rem;
-            }
+        .container {
+            max-width: 1024px; /* Centered model providing clear boundaries */
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
-        @media (min-width: 768px) {
-            .site-container {
-                padding-inline: 2rem;
-            }
+        /* Navigation */
+        .global-nav {
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--color-steel-accent);
         }
 
-        .section-block {
-            padding-block: var(--section-py-mobile);
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 44px;
         }
 
-        @media (min-width: 768px) {
-            .section-block {
-                padding-block: var(--section-py-tablet);
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .section-block {
-                padding-block: var(--section-py-desktop);
-            }
-        }
-
-        .tone-alt {
-            background-color: rgb(var(--color-surface) / 0.35);
-        }
-
-        :root {
-            --container-max: 1120px;
-            --section-py-mobile: 40px;
-            --section-py-tablet: 56px;
-            --section-py-desktop: 80px;
-            --color-footer-bg: 250 250 249; /* light gray for footer in light mode */
-            --color-footer-text: 15 23 42; /* dark blue for text in light mode */
-        }
-
-        .dark {
-            --color-footer-bg: 15 23 42; /* dark blue for footer in dark mode */
-            --color-footer-text: 241 245 249; /* light gray for text in dark mode */
-        }
-
-        .footer-theme {
-            background-color: rgb(var(--color-footer-bg));
-            color: rgb(var(--color-footer-text));
-        }
-
-        .h1-display {
-            font-size: clamp(2.25rem, 4.2vw, 3rem);
-            line-height: 1.08;
-            letter-spacing: -0.02em;
-        }
-
-        .h2-display {
-            font-size: clamp(1.75rem, 2.8vw, 2rem);
-            line-height: 1.15;
-            letter-spacing: -0.02em;
-        }
-
-        .h3-display {
-            font-size: clamp(1.25rem, 2vw, 1.375rem);
-            line-height: 1.2;
+        .nav-brand {
+            font-family: var(--font-sf-pro-text);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--color-midnight-graphite);
+            text-decoration: none;
             letter-spacing: -0.01em;
         }
 
-        .body-lg {
-            font-size: 1.125rem;
-            line-height: 1.55;
-        }
-
-        .body-md {
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        .meta-text {
-            font-size: 0.875rem;
-            line-height: 1.5;
-            color: rgb(var(--color-ink) / 0.65);
-        }
-
-        .page-hero-title {
-            font-family: var(--font-display);
-            font-size: 1.875rem;
-            font-weight: 700;
-            line-height: 1.2;
-            letter-spacing: -0.02em;
-            color: rgb(var(--color-ink));
-            margin-bottom: 1rem;
-        }
-
-        .page-hero-subtitle {
-            font-size: 1.125rem;
-            color: rgb(var(--color-ink) / 0.6);
-            max-width: 42rem;
-            font-weight: 400;
-            line-height: 1.6;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            min-height: 2.75rem;
-            padding: 0.62rem 1rem;
-            border: 1px solid rgb(var(--color-line) / 0.45);
-            border-radius: 0.55rem;
-            font-size: 0.9rem;
-            font-weight: 600;
-            line-height: 1;
-            white-space: nowrap;
-            transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease, box-shadow 220ms ease,
-                transform 180ms ease;
-        }
-
-        .nav-action-btn {
-            min-height: 2.45rem;
-            padding: 0.5rem 0.9rem;
-            font-size: 0.84rem;
-            width: 100%;
-            box-sizing: border-box;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .btn:hover {
-            background: rgb(var(--color-surface) / 0.8);
-        }
-
-        .btn-primary {
-            background: rgb(var(--color-ink));
-            color: rgb(var(--color-page));
-            border-color: rgb(var(--color-ink));
-        }
-
-        .btn-primary:hover {
-            background: rgb(var(--color-accent));
-            border-color: rgb(var(--color-accent));
-            color: #0b1224;
-        }
-
-        .btn-secondary {
-            border-color: rgb(var(--color-line) / 0.7);
-            color: rgb(var(--color-ink));
-            background: transparent;
-        }
-
-        .btn-secondary:hover {
-            background: rgb(var(--color-surface) / 0.8);
-        }
-
-        .btn-whatsapp {
-            border-color: #25D366;
-            color: #229b4a;
-            background: transparent;
-        }
-
-        .btn-whatsapp:hover {
-            background: rgba(37, 211, 102, 0.1);
-            border-color: #1ea851;
-            color: #1e8f43;
-            box-shadow: 0 3px 10px rgba(37, 211, 102, 0.12);
-        }
-
-        .theme-toggle {
-            position: relative;
-            overflow: hidden;
-            min-height: 2.6rem;
-            width: 2.6rem;
-            border: 1px solid rgb(var(--color-line) / 0.45);
-            color: rgb(var(--color-ink));
-            transition: border-color 180ms ease, color 180ms ease, box-shadow 220ms ease;
-        }
-
-        .theme-toggle-wide {
-            width: 100%;
-            min-height: 2.45rem;
-            border-radius: 0.55rem;
-        }
-
-        .sidebar-actions .btn,
-        .sidebar-actions .theme-toggle-wide {
-            width: 100%;
-        }
-
-        .sidebar-actions {
+        .nav-links {
             display: flex;
-            flex-direction: column;
-            align-items: stretch;
-            gap: 0.6rem;
-            width: 100%;
-            max-width: 13.5rem;
-            margin-inline: auto;
-        }
-
-        .sidebar-actions .btn i,
-        .sidebar-actions .theme-toggle i {
-            width: 1rem;
-            text-align: center;
-            flex: 0 0 1rem;
-        }
-
-        .theme-toggle:hover {
-            color: rgb(var(--color-accent));
-            border-color: rgb(var(--color-accent) / 0.55);
-        }
-
-        .theme-toggle svg {
-            position: absolute;
-            inset: 0;
-            margin: auto;
-            width: 1.1rem;
-            height: 1.1rem;
-            transition: opacity 220ms ease, transform 280ms ease;
-        }
-
-        .theme-toggle .icon-sun {
-            opacity: 0;
-            transform: rotate(-110deg) scale(0.55);
-        }
-
-        .theme-toggle .icon-moon {
-            opacity: 1;
-            transform: rotate(0deg) scale(1);
-        }
-
-        .dark .theme-toggle .icon-sun {
-            opacity: 1;
-            transform: rotate(0deg) scale(1);
-        }
-
-        .dark .theme-toggle .icon-moon {
-            opacity: 0;
-            transform: rotate(110deg) scale(0.55);
+            gap: 20px;
         }
 
         .nav-link {
-            font-size: 0.9375rem;
-            font-weight: 500;
-            color: rgb(var(--color-ink) / 0.9);
-            transition: color 180ms ease;
+            color: var(--color-slate-echo);
+            font-family: var(--font-sf-pro-text);
+            font-size: 12px;
+            text-decoration: none;
+            letter-spacing: -0.01em;
+            padding: 0 10px;
+            transition: color 0.2s;
         }
 
         .nav-link:hover {
-            color: rgb(var(--color-accent));
+            color: var(--color-midnight-graphite);
         }
 
-        .nav-icon {
-            font-size: 0.95rem;
-            opacity: 0.75;
+        /* Components from DESIGN.md */
+        .btn-primary {
+            background-color: var(--color-vivid-blue);
+            color: var(--color-pure-white);
+            font-family: var(--font-sf-pro-text);
+            font-weight: 400;
+            font-size: 17px;
+            line-height: 1.18;
+            letter-spacing: -0.16px;
+            border-radius: 28px;
+            padding: 11px 22px;
+            text-decoration: none;
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--color-ocean-blue);
+        }
+
+        .btn-ghost {
+            background-color: transparent;
+            color: var(--color-vivid-blue);
+            font-family: var(--font-sf-pro-text);
+            font-weight: 400;
+            font-size: 17px;
+            line-height: 1.18;
+            letter-spacing: -0.16px;
+            border-radius: 28px;
+            padding: 11px 22px;
+            text-decoration: none;
+            display: inline-block;
+            border: 1px solid var(--color-vivid-blue);
+            cursor: pointer;
+            margin-left: var(--element-gap);
+        }
+
+        .text-link {
+            font-family: var(--font-sf-pro-text);
+            color: var(--color-ocean-blue);
+            font-weight: 400;
+            text-decoration: none;
+        }
+
+        .text-link:hover {
+            text-decoration: underline;
+        }
+
+        .badge-new {
+            color: var(--color-flame-orange);
+            font-family: var(--font-sf-pro-text);
+            font-size: 12px;
+            font-weight: 400;
+            background: transparent;
+            padding: 0;
+            border-radius: 0;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        /* Layout Utilities */
+        .section-gap {
+            margin-bottom: var(--section-gap);
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .surface-white {
+            background-color: var(--surface-pure-white);
+        }
+
+        .surface-gray {
+            background-color: var(--surface-frost-gray);
+        }
+        
+        /* Typography Utilities */
+        .text-cloud {
+            color: var(--color-cloud-mist);
+        }
+        
+        .text-midnight {
+            color: var(--color-midnight-graphite);
+        }
+
+        /* Footer */
+        .global-footer {
+            background-color: var(--surface-frost-gray);
+            padding: 40px 0;
+            border-top: 1px solid var(--color-steel-accent);
+            text-align: center;
+        }
+
+        .footer-text {
+            font-family: var(--font-sf-pro-text);
+            font-size: 12px;
+            color: var(--color-cloud-mist);
+            letter-spacing: -0.01em;
         }
     </style>
-    <title>AI-Accelerated Software & Data Solutions | Pragith Prakash</title>
-    <meta name="description"
-        content="{% block description %}I build dashboards, automation systems, and AI-integrated workflows. $95 USD/hour freelance software development with live demos.{% endblock %}">
-
-    <meta property="og:title"
-        content="{% block og_title %}AI-Accelerated Software & Data Solutions | Pragith Prakash{% endblock %}">
-    <meta property="og:description"
-        content="{% block og_description %}I build dashboards, automation systems, and AI-integrated workflows. $95 USD/hour freelance software development with live demos.{% endblock %}">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="en_US">
-    <meta property="og:site_name" content="Pragith Prakash">
-    <meta property="og:image" content="{% block og_image %}https://pragith.net/static/og-image.png{% endblock %}">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="AI-Accelerated Software & Data Solutions | Pragith Prakash">
-    <meta name="twitter:description"
-        content="I build dashboards, automation systems, and AI-integrated workflows. $95 USD/hour freelance software development with live demos.">
-    <meta name="twitter:image" content="https://pragith.net/static/og-image.png">
-
-    <script>
-        (function () {
-            var d = document.documentElement.classList;
-            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                d.add('dark');
-            } else {
-                d.remove('dark');
-            }
-        })();
-    </script>
-
-    <link rel="stylesheet" href="/static/css/style.min.css">
-    <link rel="stylesheet" href="/static/fontawesome/css/all.css">
-    <link rel="stylesheet" href="/theme.css">
-    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
-    <link rel="sitemap" type="application/xml" href="/sitemap.xml">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="{{ theme.fonts_url|safe }}" media="print" onload="this.media='all'">
-
-    {% if ga_tag %}
-    <script>
-        window.gaTag = '{{ ga_tag }}';
-        window.dataLayer = window.dataLayer || [];
-        window.gtag = function () { dataLayer.push(arguments); };
-        window.gtag('js', new Date());
-        window.gtag('config', window.gaTag, { anonymize_ip: true });
-    </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ ga_tag }}"></script>
-    {% endif %}
-
-    {% if clarity_project_id %}
-    <script type="text/javascript">
-        (function (c, l, a, r, i, t, y) {
-            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
-            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
-            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
-        })(window, document, "clarity", "script", "{{ clarity_project_id }}");
-    </script>
-    {% endif %}
-
     {% block extra_head %}{% endblock %}
-
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Pragith Prakash",
-        "jobTitle": "Independent Software Engineer",
-        "description": "Freelance software engineer building dashboards, automation systems, and AI-integrated workflows.",
-        "url": "https://pragith.net",
-        "sameAs": [
-            "https://linkedin.com/in/pragith",
-            "https://github.com/pragith"
-        ],
-        "knowsAbout": ["Dashboards", "Automation Systems", "AI-Integrated Workflows", "System Integration", "Data Engineering"],
-        "hasOccupation": {
-            "@type": "Occupation",
-            "name": "Independent Software Engineer",
-            "occupationLocation": {
-                "@type": "Country",
-                "name": "North America"
-            }
-        }
-    }
-    </script>
 </head>
-
-<body class="flex flex-col min-h-screen transition-colors duration-200 bg-page text-ink">
-    {% set nav_links = navigation_config.links %}
-    {% set nav_brand = navigation_config.brand %}
-    {% set nav_cta = navigation_config.cta %}
-    {% set nav_icon_map = {
-    "/": "fa-house",
-    "/solutions": "fa-bullseye",
-    "/live-demos": "fa-play",
-    "/work": "fa-briefcase",
-    "/about": "fa-user",
-    "/contact": "fa-envelope"
-    } %}
-
-    <header class="w-full bg-page/95 backdrop-blur sticky top-0 z-50 border-b border-line/30 md:hidden">
-        <div class="site-container h-18 min-h-[72px] flex items-center justify-between gap-4">
-            <a href="{{ nav_brand.href }}" class="font-display text-xl font-semibold text-ink hover:text-accent transition-colors inline-flex items-center gap-2">
-                <i class="fa-solid fa-circle-dot text-accent text-sm" aria-hidden="true"></i>
-                <span>{{ nav_brand.label }}</span>
-            </a>
-
-            <div class="flex items-center gap-2 sm:gap-3">
-                <button onclick="toggleTheme()" class="theme-toggle inline-flex items-center justify-center" aria-label="Toggle dark mode">
-                    <svg class="icon-moon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                    </svg>
-                    <svg class="icon-sun" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                    </svg>
-                </button>
-                <button id="mobile-menu-toggle" class="w-10 h-10 inline-flex items-center justify-center border border-line/40 text-ink hover:text-accent transition-colors" aria-label="Toggle menu" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
-                    <i class="fa-solid fa-bars" aria-hidden="true"></i>
-                </button>
+<body>
+    <nav class="global-nav">
+        <div class="container nav-content">
+            <a href="/" class="nav-brand">Pragith Prakash</a>
+            <div class="nav-links">
+                <a href="#orchestrators" class="nav-link">Orchestrators</a>
+                <a href="#dashboards" class="nav-link">Dashboards</a>
+                <a href="#process" class="nav-link">Process</a>
             </div>
         </div>
-        <div id="mobile-menu" class="hidden border-t border-line/30 bg-page">
-            <nav class="site-container py-4 flex flex-col gap-2">
-                {% for item in nav_links %}
-                {% set nav_icon = nav_icon_map.get(item.href, "fa-compass") %}
-                <a href="{{ item.href }}" class="nav-link py-2 inline-flex items-center gap-2">
-                    <i class="fa-solid {{ nav_icon }} nav-icon" aria-hidden="true"></i>
-                    <span>{{ item.label }}</span>
-                </a>
-                {% endfor %}
-                <a href="{{ nav_cta.href }}" class="btn btn-primary nav-action-btn mt-2 justify-center" data-analytics="cta-nav-start-project">
-                    <i class="fa-solid fa-calendar-lines-pen" aria-hidden="true"></i>
-                    <span>{{ nav_cta.label }}</span>
-                </a>
-                <a href="https://wa.me/971585912858?text=Hi%20Pragith%2C%20I%E2%80%99d%20like%20to%20discuss%20a%20dashboard%20or%20software%20project."
-                    target="_blank" rel="noopener noreferrer"
-                    class="btn btn-whatsapp nav-action-btn mt-2 justify-center" data-analytics="cta-nav-mobile-whatsapp">
-                    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-                    <span>WhatsApp Message</span>
-                </a>
-            </nav>
-        </div>
-    </header>
-    <aside class="hidden md:flex fixed inset-y-0 left-0 w-[250px] flex-col bg-page border-r border-line/30 z-40 overflow-y-auto">
-            <div class="px-6 py-8">
-                <a href="{{ nav_brand.href }}" class="font-display text-xl font-semibold text-ink hover:text-accent transition-colors inline-flex items-center gap-2">
-                    <i class="fa-solid fa-circle-dot text-accent text-sm" aria-hidden="true"></i>
-                    <span>{{ nav_brand.label }}</span>
-                </a>
-            </div>
-            <nav class="px-6 pb-6 flex flex-col gap-2">
-                {% for item in nav_links %}
-                {% set nav_icon = nav_icon_map.get(item.href, "fa-compass") %}
-                <a href="{{ item.href }}" class="nav-link py-2 inline-flex items-center gap-2">
-                    <i class="fa-solid {{ nav_icon }} nav-icon" aria-hidden="true"></i>
-                    <span>{{ item.label }}</span>
-                </a>
-                {% endfor %}
-            </nav>
-            <div class="px-6 mt-auto pb-8 sidebar-actions">
-                <a href="{{ nav_cta.href }}" class="btn btn-primary nav-action-btn justify-center" data-analytics="cta-nav-start-project">
-                    <i class="fa-solid fa-calendar-lines-pen" aria-hidden="true"></i>
-                    <span>{{ nav_cta.label }}</span>
-                </a>
-                <a href="https://wa.me/971585912858?text=Hi%20Pragith%2C%20I%E2%80%99d%20like%20to%20discuss%20a%20dashboard%20or%20software%20project."
-                    target="_blank" rel="noopener noreferrer"
-                    class="btn btn-whatsapp nav-action-btn justify-center" data-analytics="cta-nav-sidebar-whatsapp">
-                    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-                    <span>WhatsApp Message</span>
-                </a>
-                <button onclick="toggleTheme()" class="theme-toggle theme-toggle-wide nav-action-btn inline-flex items-center justify-center border border-line/40" aria-label="Toggle dark mode">
-                    <svg class="icon-moon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                    </svg>
-                    <svg class="icon-sun" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                    </svg>
-                </button>
-            </div>
-    </aside>
+    </nav>
 
-    <main id="app-main" class="layout-offset flex-grow">
+    <main>
         {% block content %}{% endblock %}
     </main>
 
-    <footer class="layout-offset footer-theme border-t border-white/10 mt-16">
-        <div class="site-container py-12">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-8">
-                <div>
-                    <h3 class="text-sm font-semibold mb-4 text-accent">Site</h3>
-                    <ul class="space-y-3 text-sm text-white/65">
-                        <li><a href="/" class="hover:text-white transition-colors inline-flex items-center gap-2"><i class="fa-solid fa-house text-[12px]" aria-hidden="true"></i><span>Home</span></a></li>
-                        <li><a href="/solutions" class="hover:text-white transition-colors inline-flex items-center gap-2"><i class="fa-solid fa-bullseye text-[12px]" aria-hidden="true"></i><span>Solutions</span></a></li>
-                        <li><a href="/live-demos" class="hover:text-white transition-colors inline-flex items-center gap-2"><i class="fa-solid fa-play text-[12px]" aria-hidden="true"></i><span>Live Demos</span></a></li>
-                        <li><a href="/work" class="hover:text-white transition-colors inline-flex items-center gap-2"><i class="fa-solid fa-briefcase text-[12px]" aria-hidden="true"></i><span>Work</span></a></li>
-                        <li><a href="/about" class="hover:text-white transition-colors inline-flex items-center gap-2"><i class="fa-solid fa-user text-[12px]" aria-hidden="true"></i><span>About</span></a></li>
-                        <li><a href="/contact" class="hover:text-white transition-colors inline-flex items-center gap-2"><i class="fa-solid fa-envelope text-[12px]" aria-hidden="true"></i><span>Contact</span></a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-sm font-semibold mb-4 text-accent">Connect</h3>
-                    <ul class="space-y-3 text-sm text-white/65">
-                        <li><a href="https://linkedin.com/in/pragith" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors inline-flex items-center gap-2"><i class="fa-brands fa-linkedin text-[12px]" aria-hidden="true"></i><span>LinkedIn</span></a></li>
-                        <li><a href="https://github.com/pragith" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors inline-flex items-center gap-2"><i class="fa-brands fa-github text-[12px]" aria-hidden="true"></i><span>GitHub</span></a></li>
-                        <li><a href="/contact" class="hover:text-white transition-colors inline-flex items-center gap-2"><i class="fa-solid fa-envelope text-[12px]" aria-hidden="true"></i><span>Contact</span></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-sm text-white/45">
-                <p>&copy; {{ now().year }} Pragith Prakash</p>
-                <p>Dashboards. Automation. AI-Integrated Systems. $95/hr.</p>
-            </div>
+    <footer class="global-footer">
+        <div class="container">
+            <p class="footer-text">Copyright © 2026 Pragith AI Inc. All rights reserved.</p>
         </div>
     </footer>
-
-    <script src="/static/js/main.js" defer></script>
-    <script>
-        window.appMarketing = {{ marketing_config | tojson }};
-    </script>
 </body>
-
 </html>

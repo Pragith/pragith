@@ -3,7 +3,7 @@ utm_defaults:
   medium: website_cta
   campaign: inbound_consulting
 
-default_project_type: Software System Build
+default_project_type: Agentic Fleet Build
 
 project_type_rules:
   - contains: /business/dashboards
@@ -13,8 +13,8 @@ project_type_rules:
   - contains: /training
     project_type: Corporate Training
   - contains: /business/automation
-    project_type: Lead and WhatsApp Automation
+    project_type: Agentic Orchestration
   - contains: /offerings
-    project_type: Lead and WhatsApp Automation
+    project_type: OpenClaw/Hermes Integration
   - contains: /packages/
-    project_type: Lead and WhatsApp Automation
+    project_type: System Architecture

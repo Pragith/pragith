@@ -1,27 +1,27 @@
 offerings:
-  - slug: architecture-design-sprint
-    title: Architecture Design Sprint
-    target_client: Teams with a defined problem
-    outcome: A clear technical plan for a production-grade system.
-    estimated_hours: Milestone-based engagement (initial discovery and architecture phase)
+  - slug: agentic-fleet-architecture
+    title: Agentic Fleet Architecture
+    target_client: Teams needing autonomous workflows
+    outcome: A clear blueprint for OpenClaw and Hermes integration.
+    estimated_hours: Milestone-based engagement
     base_hours: 20
     price_usd_min: 2500
     price_usd_max: 5000
 
   - slug: system-build-engagement
-    title: System Build Engagement
-    target_client: Teams with a clear architecture plan
-    outcome: A production-ready system, deployed and documented.
+    title: End-to-End Orchestrator Deployment
+    target_client: Teams ready for production AI agents
+    outcome: A live, documented, multi-agent orchestrator system.
     estimated_hours: Milestone-based implementation plan
     base_hours: 80
     price_usd_min: 10000
     price_usd_max: 25000
 
   - slug: technical-audit-stabilization
-    title: Technical Audit & Stabilization
-    target_client: Teams with existing systems under strain
-    outcome: A detailed audit report and a plan for stabilization.
-    estimated_hours: Milestone-based audit and stabilization plan
+    title: Infrastructure & BI Stabilization
+    target_client: Teams with failing pipelines or dashboards
+    outcome: A stabilized, high-velocity data layer and BI stack.
+    estimated_hours: Milestone-based audit and stabilization
     base_hours: 40
     price_usd_min: 5000
     price_usd_max: 10000
