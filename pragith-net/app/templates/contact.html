@@ -5,53 +5,207 @@
 {% if recaptcha_site_key %}
 <script src="https://www.google.com/recaptcha/api.js?render={{ recaptcha_site_key }}"></script>
 {% endif %}
+<style>
+    .contact-hero {
+        text-align: center;
+        padding-top: 120px;
+        padding-bottom: 60px;
+        background: var(--surface-pure-white);
+    }
+
+    .contact-title {
+        font-family: var(--font-sf-pro-display);
+        font-size: var(--text-heading-lg);
+        font-weight: 600;
+        line-height: var(--leading-heading-lg);
+        letter-spacing: var(--tracking-heading-lg);
+        color: var(--color-midnight-graphite);
+        margin-bottom: 24px;
+    }
+
+    .contact-subtitle {
+        font-family: var(--font-sf-pro-text);
+        font-size: var(--text-heading);
+        font-weight: 400;
+        line-height: var(--leading-heading);
+        letter-spacing: var(--tracking-heading);
+        color: var(--color-cloud-mist);
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--element-gap);
+        max-width: 800px;
+        margin: 0 auto;
+        padding-bottom: 80px;
+    }
+
+    @media (min-width: 768px) {
+        .contact-grid {
+            grid-template-columns: 1fr 2fr;
+            gap: var(--spacing-28);
+        }
+    }
+
+    .contact-sidebar {
+        background: var(--surface-frost-gray);
+        border-radius: var(--radius-cards);
+        padding: var(--card-padding);
+    }
+    
+    .contact-sidebar-inner {
+        padding: 26px;
+    }
+
+    .contact-sidebar h3 {
+        font-family: var(--font-sf-pro-display);
+        font-size: var(--text-heading-sm);
+        margin-bottom: 16px;
+        color: var(--color-midnight-graphite);
+    }
+
+    .contact-sidebar p {
+        font-family: var(--font-sf-pro-text);
+        font-size: var(--text-body);
+        color: var(--color-cloud-mist);
+        line-height: var(--leading-body);
+        margin-bottom: 12px;
+    }
+
+    .contact-form-container {
+        background: var(--surface-pure-white);
+    }
+
+    .form-group {
+        margin-bottom: var(--spacing-20);
+    }
+
+    .form-row {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--spacing-20);
+    }
+
+    @media (min-width: 640px) {
+        .form-row {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    .form-label {
+        display: block;
+        font-family: var(--font-sf-pro-text);
+        font-size: var(--text-body);
+        font-weight: 600;
+        color: var(--color-midnight-graphite);
+        margin-bottom: var(--spacing-8);
+    }
+
+    .form-input, .form-select, .form-textarea {
+        width: 100%;
+        background-color: transparent;
+        border: 1px solid var(--color-steel-accent);
+        border-radius: var(--radius-default);
+        padding: 12px 16px;
+        font-family: var(--font-arial);
+        font-size: 13px;
+        color: var(--color-pure-black);
+        transition: border-color 0.2s;
+    }
+    
+    .form-textarea {
+        resize: vertical;
+        min-height: 100px;
+    }
+
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+        outline: none;
+        border-color: var(--color-vivid-blue);
+    }
+
+    .form-submit {
+        width: 100%;
+        background-color: var(--color-vivid-blue);
+        color: var(--color-pure-white);
+        font-family: var(--font-sf-pro-text);
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 1.18;
+        letter-spacing: -0.16px;
+        border-radius: var(--radius-buttons);
+        padding: 11px 22px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.2s;
+        margin-top: var(--spacing-10);
+    }
+
+    .form-submit:hover {
+        background-color: var(--color-ocean-blue);
+    }
+    
+    .error-msg {
+        color: var(--color-sunset-orange);
+        font-family: var(--font-sf-pro-text);
+        font-size: var(--text-body);
+        margin-top: 10px;
+    }
+</style>
 {% endblock %}
 {% block title %}Contact | Pragith Prakash{% endblock %}
 
 {% block content %}
-<section class="py-16 sm:py-20 border-b border-line/20">
-    <div class="max-w-6xl mx-auto px-6">
-        <div class="text-center mb-10">
-            <h1 class="font-display text-4xl sm:text-5xl font-bold tracking-tight text-ink mb-4">Start Your Project</h1>
-            <p class="text-lg text-ink/60 mb-6">$95 USD per hour. Milestone-based delivery.</p>
-            {% if error %}
-            <p class="text-sm text-rose-600 dark:text-rose-400">{{ error }}</p>
+<section class="contact-hero">
+    <div class="container">
+        <h1 class="contact-title">Start Your Project.</h1>
+        <p class="contact-subtitle">
+            {% if currency_code and currency_rate and currency_symbol %}
+            ~{{ currency_symbol }}{{ (hourly_rate_usd * currency_rate)|round(0, 'ceil') }}/hr. Milestone-based delivery.
+            {% else %}
+            $95 USD per hour. Milestone-based delivery.
             {% endif %}
-        </div>
+        </p>
+        {% if error %}
+        <p class="error-msg">{{ error }}</p>
+        {% endif %}
+    </div>
+</section>
 
-        <div class="grid lg:grid-cols-3 gap-6 items-start">
-            <aside class="border border-line/20 bg-surface/30 p-6">
-                <p class="text-[10px] font-bold uppercase tracking-widest text-accent mb-3">How It Works</p>
-                <ul class="space-y-2 text-sm text-ink/70">
-                    <li><span class="text-accent mr-2">•</span>Share what you need built.</li>
-                    <li><span class="text-accent mr-2">•</span>Include timeline and budget range if available.</li>
-                </ul>
-            </aside>
+<section class="container">
+    <div class="contact-grid">
+        <aside class="contact-sidebar">
+            <div class="contact-sidebar-inner">
+                <h3>How It Works</h3>
+                <p>1. Share the core problem or what you need built.</p>
+                <p>2. Include your timeline constraints and budget range if known.</p>
+                <p>3. We'll schedule a paid discovery session to map the architecture.</p>
+            </div>
+        </aside>
 
-            <form id="contact-form" action="/contact" method="POST" class="lg:col-span-2 border border-line/20 bg-page p-7 space-y-5" style="text-align:left;">
-                <div class="grid sm:grid-cols-2 gap-5">
-                    <div>
-                        <label for="name" class="block text-sm font-semibold text-ink mb-2" style="text-align:left;">Name</label>
-                        <input type="text" name="name" id="name" required value="{{ form.name if form else '' }}"
-                            class="block w-full border border-line/30 bg-page px-4 py-3 text-ink placeholder-ink/30 focus:outline-none focus:border-accent transition-colors">
+        <div class="contact-form-container">
+            <form id="contact-form" action="/contact" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" name="name" id="name" required value="{{ form.name if form else '' }}" class="form-input">
                     </div>
-                    <div>
-                        <label for="email" class="block text-sm font-semibold text-ink mb-2" style="text-align:left;">Work Email</label>
-                        <input type="email" name="email" id="email" required value="{{ form.email if form else '' }}"
-                            class="block w-full border border-line/30 bg-page px-4 py-3 text-ink placeholder-ink/30 focus:outline-none focus:border-accent transition-colors">
+                    <div class="form-group">
+                        <label for="email" class="form-label">Work Email</label>
+                        <input type="email" name="email" id="email" required value="{{ form.email if form else '' }}" class="form-input">
                     </div>
                 </div>
 
-                <div class="grid sm:grid-cols-2 gap-5">
-                    <div>
-                        <label for="company" class="block text-sm font-semibold text-ink mb-2" style="text-align:left;">Company</label>
-                        <input type="text" name="company" id="company" required value="{{ form.company if form else '' }}"
-                            class="block w-full border border-line/30 bg-page px-4 py-3 text-ink placeholder-ink/30 focus:outline-none focus:border-accent transition-colors">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="company" class="form-label">Company</label>
+                        <input type="text" name="company" id="company" required value="{{ form.company if form else '' }}" class="form-input">
                     </div>
-                    <div>
-                        <label for="timeline" class="block text-sm font-semibold text-ink mb-2" style="text-align:left;">Timeline</label>
-                        <select name="timeline" id="timeline" required
-                            class="block w-full border border-line/30 bg-page px-4 py-3 text-ink focus:outline-none focus:border-accent appearance-none transition-colors">
+                    <div class="form-group">
+                        <label for="timeline" class="form-label">Timeline</label>
+                        <select name="timeline" id="timeline" required class="form-select">
                             <option value="Within 30 days" {% if form and form.timeline == "Within 30 days" %}selected{% endif %}>Within 30 days</option>
                             <option value="Within 90 days" {% if form and form.timeline == "Within 90 days" %}selected{% endif %}>Within 90 days</option>
                             <option value="This quarter" {% if form and form.timeline == "This quarter" %}selected{% endif %}>This quarter</option>
@@ -60,16 +214,14 @@
                     </div>
                 </div>
 
-                <div>
-                    <label for="what_do_you_need_built" class="block text-sm font-semibold text-ink mb-2" style="text-align:left;">What do you need built?</label>
-                    <textarea name="what_do_you_need_built" id="what_do_you_need_built" rows="4" placeholder="Describe what you need built."
-                        class="block w-full border border-line/30 bg-page px-4 py-3 text-ink placeholder-ink/30 focus:outline-none focus:border-accent transition-colors">{{ form.what_do_you_need_built if form else '' }}</textarea>
+                <div class="form-group">
+                    <label for="what_do_you_need_built" class="form-label">What do you need built?</label>
+                    <textarea name="what_do_you_need_built" id="what_do_you_need_built" placeholder="Describe the architecture or problem..." class="form-textarea">{{ form.what_do_you_need_built if form else '' }}</textarea>
                 </div>
                 
-                <div>
-                    <label for="budget_range" class="block text-sm font-semibold text-ink mb-2" style="text-align:left;">Budget Range (Optional)</label>
-                    <input type="text" name="budget_range" id="budget_range" value="{{ form.budget_range if form else '' }}"
-                        class="block w-full border border-line/30 bg-page px-4 py-3 text-ink placeholder-ink/30 focus:outline-none focus:border-accent transition-colors">
+                <div class="form-group">
+                    <label for="budget_range" class="form-label">Budget Range (Optional)</label>
+                    <input type="text" name="budget_range" id="budget_range" value="{{ form.budget_range if form else '' }}" class="form-input">
                 </div>
 
                 <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
@@ -81,18 +233,14 @@
                 <input type="hidden" name="cta_id" value="{{ form.cta_id if form else '' }}">
                 <input type="hidden" name="g-recaptcha-response" id="contact-recaptcha-response">
 
-                <div class="grid sm:grid-cols-2 gap-3 pt-1">
-                    <button type="submit" name="submit_channel" value="email"
-                        class="w-full inline-flex items-center justify-center gap-2 text-sm font-semibold border border-line/30 text-ink hover:bg-surface transition-all h-12"
-                        data-analytics="submit-contact-form-email">
-                        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-                        Send Intake
-                    </button>
-                </div>
+                <button type="submit" name="submit_channel" value="email" class="form-submit">
+                    Submit Project Request
+                </button>
             </form>
         </div>
     </div>
 </section>
+
 <script>
     (function () {
         var form = document.getElementById('contact-form');
