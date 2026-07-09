@@ -47,7 +47,7 @@
 <td valign="top">
 
 <pre>
-pragith@github
+Pragith Prakash
 ------------------------------
 
 OS:              Windows 11, macOS, Linux, Android
@@ -76,34 +76,14 @@ Contact:
   LinkedIn:      linkedin.com/in/pragith
   Website:       https://pragith.net
   GitHub:        github.com/pragith
-</pre>
-
-</td>
-  </tr>
-</table>
-
----
-
-## What I build
+  
+What I build
 
 I work across data platforms, cloud infrastructure, AI systems, and automation.
+* Data Engineering: Pipelines, warehouses, orchestration, APIs, analytics platforms
+* AI Engineering: LLM apps, agents, RAG systems, MLOps, evaluation workflows
+* Cloud: AWS, Google Cloud, Azure
+* DevOps: Docker, Kubernetes, Terraform, CI/CD, observability
+* Education: Technical courses, workshops, mentoring, cloud/data enablement
+</pre>
 
-| Area | Focus |
-|---|---|
-| Data Engineering | Pipelines, warehouses, orchestration, APIs, analytics platforms |
-| AI Engineering | LLM apps, agents, RAG systems, MLOps, evaluation workflows |
-| Cloud | AWS, Google Cloud, Azure |
-| DevOps | Docker, Kubernetes, Terraform, CI/CD, observability |
-| Education | Technical courses, workshops, mentoring, cloud/data enablement |
-
----
-
-## Current interests
-
-```text
-[+] Agentic AI systems
-[+] Self-hosted LLM infrastructure
-[+] Data automation platforms
-[+] Cloud-native architecture
-[+] Developer productivity tooling
-[+] Educational AI products
