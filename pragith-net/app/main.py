@@ -58,6 +58,15 @@ app.add_middleware(SecurityHeadersMiddleware)
 from pathlib import Path
 _APP_DIR = Path(__file__).parent
 app.mount("/static", StaticFiles(directory=str(_APP_DIR / "static")), name="static")
+# Agent Keyboard: self-contained static app (index.html/style.css/app.js),
+# source of truth lives in agent-fleet and is bind-mounted in via
+# docker-compose.yml (see the "web" service's volumes). html=True serves
+# index.html for the bare "/apps/agent-keyboard" path.
+app.mount(
+    "/apps/agent-keyboard",
+    StaticFiles(directory=str(_APP_DIR / "static" / "agent-keyboard"), html=True),
+    name="agent-keyboard",
+)
 templates = Jinja2Templates(directory=str(_APP_DIR / "templates"))
 
 from datetime import datetime
