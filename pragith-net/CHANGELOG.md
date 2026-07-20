@@ -10,4 +10,3 @@
 - Corrected Agent Keyboard to Prototype and Caffeinate-d to Beta with its actual source/release state.
 - Added canonical URLs, Open Graph metadata, Person and Vriksh structured data, robots rules and a sitemap containing only live canonical routes.
 - Added route, redirect, SEO, content-policy, project-status, pronoun and contact-form acceptance tests.
-- Reframed ai.pragith.net as a noindexed personal experiments area without corporate or fictional-staff claims.
