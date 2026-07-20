@@ -1,8 +1,8 @@
 # pragith.net
 
-The personal consulting platform and engineering portfolio for Pragith Prakash, Principal Data & AI Engineer.
+The personal professional website of Pragith Prakash, AI Forward Deployed Engineer, consultant and educator.
 
-This is a production-grade, minimalist monolith built with FastAPI, Tailwind CSS, and Docker. It is designed for high performance, security, and ease of deployment.
+The site is a server-rendered FastAPI application with a Jinja2 frontend, the Fruit theme and a Docker deployment.
 
 ## Tech Stack
 
@@ -10,7 +10,7 @@ This is a production-grade, minimalist monolith built with FastAPI, Tailwind CSS
 - **Frontend**: Tailwind CSS, HTML5
 - **Infrastructure**: Docker, Docker Compose
 - **Package Management**: [uv](https://github.com/astral-sh/uv)
-- **Security**: Gunicorn + Uvicorn, Secure Headers, Rate Limiting, Google reCAPTCHA v2
+- **Security**: Uvicorn, security headers, rate limiting and Google reCAPTCHA v3
 
 ## Project Structure
 

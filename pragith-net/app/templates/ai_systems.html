@@ -1,11 +1,11 @@
 {% extends "base.html" %}
-{% block content %}<section class="hero compact"><div class="container"><p class="eyebrow">AI Systems and Automation</p><h1>AI engineering with explicit operating boundaries</h1><p class="lede">I build AI-assisted systems that connect models to approved data and tools, measure behaviour, expose failures and keep consequential actions under appropriate control.</p></div></section><section class="section"><div class="container grid grid-2">
+{% block content %}<section class="hero compact"><div class="container"><h1>AI systems need ordinary engineering discipline.</h1><p class="lede">I connect models to approved data and tools, define the outputs they must return, and add the controls needed to deploy and support the workflow.</p></div></section><section class="section"><div class="container"><div class="editorial-list">
 {% for title,body in [
-('Orchestration','Define model, tool and workflow boundaries with structured inputs, outputs and state transitions.'),
-('Model and tool selection','Choose local or cloud execution based on capability, privacy, latency, cost and operational ownership.'),
-('Evaluation','Test task performance, regressions, grounding and failure cases using representative data and reviewable results.'),
-('Observability','Track requests, tool calls, latency, cost, errors and decision points without exposing sensitive payloads.'),
-('Access and approval','Apply least-privilege access, approval gates and audit trails around external actions and protected data.'),
-('Failure and cost controls','Use timeouts, retries, fallbacks, budgets and graceful degradation instead of assuming autonomous correctness.')
-] %}<article class="card"><h2>{{ title }}</h2><p>{{ body }}</p></article>{% endfor %}
-</div></section><section class="section surface"><div class="container"><h2>Local and cloud execution</h2><p class="section-intro">The right execution model depends on workload and constraints. I evaluate self-hosted and managed options without treating either as a default ideology.</p><a class="btn btn-primary" href="/contact">Discuss an AI system</a></div></section>{% endblock %}
+('Orchestration','I define model, tool and workflow boundaries with explicit inputs, outputs and state transitions.'),
+('Model and tool selection','I choose local or cloud execution based on task quality, privacy, latency, cost and who will operate it.'),
+('Evaluation','I test representative tasks, regressions, grounding and known failure cases, then keep the results reviewable.'),
+('Observability','I track requests, tool calls, latency, cost, errors and approval decisions without logging sensitive payloads.'),
+('Access and approval','I apply least-privilege access, approval gates and audit trails around external actions and protected data.'),
+('Failure and cost controls','I use timeouts, retries, fallbacks, budgets and graceful degradation because model output can fail.')
+] %}<article class="editorial-entry"><h2>{{ title }}</h2><p>{{ body }}</p></article>{% endfor %}
+</div></div></section><section class="section surface"><div class="container section-split"><h2>Local or managed models?</h2><div><p class="section-intro">The workload decides. I compare task quality, data restrictions, latency, infrastructure cost and team ownership before choosing self-hosted or managed inference.</p><a class="btn btn-primary" href="/contact">Discuss an AI system</a></div></div></section>{% endblock %}

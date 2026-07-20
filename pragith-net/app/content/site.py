@@ -18,23 +18,23 @@ CLOUD_PLATFORMS = ["AWS", "Google Cloud", "Microsoft Azure", "Databricks"]
 
 CAPABILITIES = [
     {
-        "title": "AI Engineering",
-        "summary": "Applied AI systems that connect models to governed data, tools and operational workflows.",
+        "title": "AI systems",
+        "summary": "I connect models to approved data and tools, then add evaluation, permissions, telemetry and human review around the workflow.",
         "href": "/services/ai-systems",
     },
     {
-        "title": "Data Platforms",
-        "summary": "Batch, streaming and analytics platforms designed for reliability, traceability and practical ownership.",
+        "title": "Data platforms",
+        "summary": "I build and troubleshoot batch, streaming and analytical systems using Python, SQL, Spark, Kafka, Airflow and cloud data services.",
         "href": "/services#data-platforms",
     },
     {
-        "title": "Cloud / MLOps / DevOps",
-        "summary": "Cloud architecture, delivery automation, observability and production support across major platforms.",
+        "title": "Cloud delivery and operations",
+        "summary": "I work across AWS, Google Cloud, Azure and Databricks on infrastructure, CI/CD, model delivery, observability and incidents.",
         "href": "/services#cloud-platforms",
     },
     {
-        "title": "Technical Education",
-        "summary": "Workshops, graduate instruction and team enablement grounded in real engineering constraints.",
+        "title": "Teaching",
+        "summary": "I teach Python, statistics, machine learning, data engineering and cloud architecture through courses, workshops and team programs.",
         "href": "/teaching",
     },
 ]
@@ -190,12 +190,12 @@ EXPERIENCE = [
 ]
 
 SERVICES = [
-    ("ai-systems", "AI Engineering and Agentic Systems", "Model and tool orchestration, retrieval, structured output, evaluation, observability, approval gates and secure integration with business systems."),
-    ("data-platforms", "Data Platform Engineering", "Architecture and implementation for batch, streaming, lakehouse, warehouse and analytics platforms, including reliability and ownership."),
-    ("cloud-platforms", "MLOps, DevOps and Cloud Architecture", "Delivery automation, infrastructure as code, model operations, containers, observability and production debugging across AWS, Google Cloud, Azure and Databricks."),
-    ("forward-deployed", "Forward-Deployed Engineering", "Hands-on work alongside product, security, data and platform teams to move from an ambiguous problem to an operating system."),
-    ("analytics", "Analytics and Executive BI", "Source integration, governed data models, semantic layers, decision-focused dashboards and maintainable reporting operations."),
-    ("training", "Engineering Training and Enablement", "Technical workshops, curriculum development, team enablement and applied instruction across data, AI, cloud and software delivery."),
+    ("ai-systems", "AI systems and agent workflows", "Model and tool orchestration, retrieval, structured output, evaluation, observability, approval gates and secure integration with existing systems."),
+    ("data-platforms", "Data platforms", "Architecture and implementation for batch, streaming, lakehouse, warehouse and analytics workloads, including release and operational ownership."),
+    ("cloud-platforms", "MLOps, DevOps and cloud architecture", "Infrastructure as code, model delivery, containers, observability and production debugging across AWS, Google Cloud, Azure and Databricks."),
+    ("forward-deployed", "Forward-deployed implementation", "Hands-on architecture, coding and debugging alongside product, security, data and platform teams."),
+    ("analytics", "Analytics and executive BI", "Source integration, governed models, semantic layers, dashboards, access control and maintainable reporting operations."),
+    ("training", "Technical education", "Workshops, curriculum development and team instruction across data, AI, cloud and software delivery."),
 ]
 
 INDEXABLE_PATHS = [

@@ -104,6 +104,29 @@ def test_published_pages_exclude_banned_marketing_language():
         assert phrase.lower() not in published
 
 
+def test_public_pages_do_not_render_repeated_label_components():
+    published = "\n".join(client.get(path).text.lower() for path in INDEXABLE_PATHS)
+    for pattern in ("eyebrow", "overline", "kicker", "margin-title", "home-intro"):
+        assert pattern not in published
+
+
+def test_homepage_uses_personal_editorial_language():
+    html = client.get("/").text
+    assert "Hello, I’m Pragith." in html
+    assert "I take AI and data systems from architecture into production." in html
+    assert "Work I can describe in public." in html
+    assert "What I can do for you" not in html
+    assert 'aria-roledescription="carousel"' in html
+    assert 'data-previous' in html and 'data-next' in html
+
+
+def test_mobile_navigation_has_an_accessible_toggle():
+    html = client.get("/").text
+    assert 'class="nav-toggle"' in html
+    assert 'aria-expanded="false"' in html
+    assert 'aria-controls="nav-links"' in html
+
+
 def test_personal_pages_do_not_use_first_person_plural():
     personal_paths = [path for path in INDEXABLE_PATHS if path != "/business"]
     for path in personal_paths:

@@ -19,3 +19,9 @@
 - Restored source-aware Contact form prefilling for speaking, teaching, AI, platform and analytics journeys while preserving URL tags through submission.
 - Corrected the contact protection to use the configured reCAPTCHA v3 key and validate both score and action; reCAPTCHA is now loaded only on the Contact page.
 - Removed Headmaster from the public project portfolio.
+- Removed the repeated small-label heading pattern from every public page and deleted its shared styling.
+- Rewrote public page copy to use specific technologies, responsibilities, operating constraints and first-person experience instead of slogans or feature-list cadence.
+- Replaced stacked homepage case studies with an accessible carousel supporting buttons, arrow keys, touch gestures and a live position indicator.
+- Reduced shared hero, section and entry spacing to improve desktop reading density while retaining the Fruit typography, palette and portrait-led presentation.
+- Replaced the horizontally scrolling mobile navigation with a labelled Menu/Close control and a two-column navigation panel.
+- Increased the Fruit link-blue contrast on frost-gray surfaces to meet WCAG AA contrast requirements.
