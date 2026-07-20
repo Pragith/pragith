@@ -10,4 +10,6 @@
 - Corrected Agent Keyboard to Prototype and Caffeinate-d to Beta with its actual source/release state.
 - Added canonical URLs, Open Graph metadata, Person and Vriksh structured data, robots rules and a sitemap containing only live canonical routes.
 - Added route, redirect, SEO, content-policy, project-status, pronoun and contact-form acceptance tests.
-- Reworked the presentation from a card-led commercial landing page into a warm editorial portfolio with personal narrative and portrait photography.
+- Reworked the presentation from a card-led commercial landing page into a personal editorial portfolio with narrative sections and portrait photography.
+- Restored the Fruit visual system—SF typography, white canvas, graphite text, Apple blue, frost-gray surfaces and restrained product-style polish—without restoring the commercial landing-page structure.
+- Added Velvet IPTV Player as a Production project linked to velvet.plus.

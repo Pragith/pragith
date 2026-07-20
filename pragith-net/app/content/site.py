@@ -122,6 +122,15 @@ CASE_STUDIES = [
 
 PROJECTS = [
     {
+        "slug": "velvet",
+        "title": "Velvet IPTV Player",
+        "status": "Production",
+        "summary": "A cross-platform IPTV and STB media player with native support for Stalker Portals and Ministra.",
+        "version": "Velvet 5.3.12",
+        "href": "https://velvet.plus",
+        "link_label": "Visit Velvet",
+    },
+    {
         "slug": "headmaster",
         "title": "Headmaster",
         "status": "Beta",
