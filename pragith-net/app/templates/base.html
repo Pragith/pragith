@@ -1,351 +1,97 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Pragith Prakash{% endblock %}</title>
-    <meta name="description" content="{% block description %}{% endblock %}">
-    
-    <style>
-        /* CSS Custom Properties from DESIGN.md */
-        :root {
-          /* Colors */
-          --color-midnight-graphite: #1d1d1f;
-          --color-cloud-mist: #6b6c6c;
-          --color-pure-white: #ffffff;
-          --color-frost-gray: #f3f6f6;
-          --color-steel-accent: #cccfcf;
-          --color-dark-charcoal: #313131;
-          --color-slate-echo: #444545;
-          --color-alabaster: #e8e8ed;
-          --color-pure-black: #000000;
-          --color-light-pearl: #dedfe2;
-          --color-ocean-blue: #0066cc;
-          --color-sky-teal: #00a1b3;
-          --color-royal-violet: #8668ff;
-          --color-sunset-orange: #ed6300;
-          --color-flame-orange: #b64400;
-          --color-vivid-blue: #0071e3;
-          --color-deep-sea-gradient: #004c94;
-          --color-spectrum-gradient: #0090f7;
-
-          /* Typography — Font Families */
-          --font-sf-pro-text: 'SF Pro Text', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-          --font-sf-pro-display: 'SF Pro Display', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-          --font-arial: 'Arial', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-
-          /* Typography — Scale */
-          --text-body: 14px;
-          --leading-body: 1.29;
-          --tracking-body: -0.168px;
-          --text-subheading: 18px;
-          --leading-subheading: 1.24;
-          --tracking-subheading: -0.342px;
-          --text-heading-sm: 20px;
-          --leading-heading-sm: 1.2;
-          --tracking-heading-sm: -0.4px;
-          --text-heading: 24px;
-          --leading-heading: 1.18;
-          --tracking-heading: -0.288px;
-          --text-heading-lg: 44px;
-          --leading-heading-lg: 1.14;
-          --tracking-heading-lg: -0.484px;
-          --text-display: 80px;
-          --leading-display: 1.07;
-          --tracking-display: -0.8px;
-          --text-display-xl: 160px;
-          --leading-display-xl: 0.88;
-          --tracking-display-xl: -0.8px;
-
-          /* Spacing */
-          --spacing-4: 4px;
-          --spacing-6: 6px;
-          --spacing-8: 8px;
-          --spacing-9: 9px;
-          --spacing-10: 10px;
-          --spacing-11: 11px;
-          --spacing-13: 13px;
-          --spacing-14: 14px;
-          --spacing-19: 19px;
-          --spacing-20: 20px;
-          --spacing-25: 25px;
-          --spacing-28: 28px;
-          --spacing-30: 30px;
-          --spacing-40: 40px;
-          --spacing-44: 44px;
-          --spacing-83: 83px;
-
-          /* Layout */
-          --section-gap: 70px;
-          --card-padding: 14px;
-          --element-gap: 10px;
-
-          /* Border Radius */
-          --radius-xl: 12px;
-          --radius-3xl: 24px;
-          --radius-3xl-2: 28px;
-          --radius-3xl-3: 32px;
-          --radius-3xl-4: 36px;
-          --radius-full: 170px;
-          --radius-full-2: 980px;
-
-          /* Shadows */
-          --shadow-subtle: rgba(0, 0, 0, 0.11) 0px 0px 1px 0px inset;
-          --shadow-xl: rgba(0, 0, 0, 0.05) 0px 0px 35px 20px;
-
-          /* Surfaces */
-          --surface-pure-white: #ffffff;
-          --surface-frost-gray: #f3f6f6;
-          --surface-alabaster: #e8e8ed;
-        }
-
-        /* Global Resets & Base Styles */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            background-color: var(--surface-pure-white);
-            color: var(--color-midnight-graphite);
-            font-family: var(--font-sf-pro-text);
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        .container {
-            max-width: 1024px; /* Centered model providing clear boundaries */
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Navigation */
-        .global-nav {
-            background-color: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid var(--color-steel-accent);
-        }
-
-        .nav-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 44px;
-        }
-
-        .nav-brand {
-            font-family: var(--font-sf-pro-text);
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--color-midnight-graphite);
-            text-decoration: none;
-            letter-spacing: -0.01em;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 20px;
-        }
-
-        .nav-link {
-            color: var(--color-slate-echo);
-            font-family: var(--font-sf-pro-text);
-            font-size: 12px;
-            text-decoration: none;
-            letter-spacing: -0.01em;
-            padding: 0 10px;
-            transition: color 0.2s;
-        }
-
-        .nav-link:hover {
-            color: var(--color-midnight-graphite);
-        }
-
-        /* Components from DESIGN.md */
-        .btn-primary {
-            background-color: var(--color-vivid-blue);
-            color: var(--color-pure-white);
-            font-family: var(--font-sf-pro-text);
-            font-weight: 400;
-            font-size: 17px;
-            line-height: 1.18;
-            letter-spacing: -0.16px;
-            border-radius: 28px;
-            padding: 11px 22px;
-            text-decoration: none;
-            display: inline-block;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-        
-        .btn-primary:hover {
-            background-color: var(--color-ocean-blue);
-        }
-
-        .btn-ghost {
-            background-color: transparent;
-            color: var(--color-vivid-blue);
-            font-family: var(--font-sf-pro-text);
-            font-weight: 400;
-            font-size: 17px;
-            line-height: 1.18;
-            letter-spacing: -0.16px;
-            border-radius: 28px;
-            padding: 11px 22px;
-            text-decoration: none;
-            display: inline-block;
-            border: 1px solid var(--color-vivid-blue);
-            cursor: pointer;
-            margin-left: var(--element-gap);
-        }
-
-        .text-link {
-            font-family: var(--font-sf-pro-text);
-            color: var(--color-ocean-blue);
-            font-weight: 400;
-            text-decoration: none;
-        }
-
-        .text-link:hover {
-            text-decoration: underline;
-        }
-
-        .badge-new {
-            color: var(--color-flame-orange);
-            font-family: var(--font-sf-pro-text);
-            font-size: 12px;
-            font-weight: 400;
-            background: transparent;
-            padding: 0;
-            border-radius: 0;
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        /* Layout Utilities */
-        .section-gap {
-            margin-bottom: var(--section-gap);
-        }
-
-        .section-padding {
-            padding: 80px 0;
-        }
-
-        .surface-white {
-            background-color: var(--surface-pure-white);
-        }
-
-        .surface-gray {
-            background-color: var(--surface-frost-gray);
-        }
-        
-        /* Typography Utilities */
-        .text-cloud {
-            color: var(--color-cloud-mist);
-        }
-        
-        .text-midnight {
-            color: var(--color-midnight-graphite);
-        }
-
-        /* Footer */
-        .global-footer {
-            background-color: var(--surface-frost-gray);
-            padding: 40px 0;
-            border-top: 1px solid var(--color-steel-accent);
-            text-align: center;
-        }
-
-        .footer-text {
-            font-family: var(--font-sf-pro-text);
-            font-size: 12px;
-            color: var(--color-cloud-mist);
-            letter-spacing: -0.01em;
-        }
-    
-    @media (max-width: 768px) {
-        :root {
-            --text-display: 40px;
-            --leading-display: 1.1;
-            --tracking-display: -0.4px;
-            --text-heading-lg: 32px;
-            --section-gap: 40px;
-        }
-        .nav-content {
-            flex-direction: column;
-            height: auto;
-            padding: 15px 0;
-            gap: 10px;
-        }
-        .nav-links {
-            gap: 12px;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .section-padding {
-            padding: 40px 0;
-        }
-        .btn-primary, .btn-ghost {
-            display: block;
-            width: 100%;
-            text-align: center;
-            margin: 0 0 12px 0 !important;
-        }
-    }
-
-</style>
-    {% block extra_head %}{% endblock %}
-
-    {% if ga_tag %}
-    <script>
-        window.gaTag = '{{ ga_tag }}';
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', window.gaTag, { anonymize_ip: true });
-    </script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{ ga_tag }}"></script>
-    {% endif %}
-
-    {% if clarity_project_id %}
-    <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-        })(window, document, "clarity", "script", "{{ clarity_project_id }}");
-    </script>
-    {% endif %}
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page_title }}</title>
+  <meta name="description" content="{{ page_description }}">
+  <meta name="robots" content="{{ robots }}">
+  <link rel="canonical" href="{{ canonical_url }}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Pragith Prakash">
+  <meta property="og:title" content="{{ page_title }}">
+  <meta property="og:description" content="{{ page_description }}">
+  <meta property="og:url" content="{{ canonical_url }}">
+  <meta property="og:image" content="https://pragith.net/static/favicon.ico">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ page_title }}">
+  <meta name="twitter:description" content="{{ page_description }}">
+  <link rel="icon" href="/static/favicon.ico">
+  {% if recaptcha_site_key %}<script src="https://www.google.com/recaptcha/api.js" async defer></script>{% endif %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Pragith Prakash",
+    "url": "https://pragith.net",
+    "jobTitle": "AI Forward Deployed Engineer",
+    "sameAs": ["https://www.linkedin.com/in/pragith/", "https://github.com/Pragith"],
+    "knowsAbout": ["AI systems", "Data platforms", "MLOps", "DevOps", "Cloud architecture", "Executive analytics", "Technical education"]
+  }
+  </script>
+  {% block structured_data %}{% endblock %}
+  <style>
+    :root{--ink:#1d1d1f;--muted:#65676b;--surface:#f3f6f6;--line:#d9dcdd;--blue:#0071e3;--blue-dark:#0059b3;--white:#fff;--max:1120px}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:"SF Pro Text",ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--white);line-height:1.55;-webkit-font-smoothing:antialiased}
+    a{color:var(--blue);text-underline-offset:3px} img{max-width:100%;height:auto}
+    .skip-link{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:8px 12px;z-index:2000}.skip-link:focus{left:8px}
+    .container{width:min(var(--max),calc(100% - 40px));margin-inline:auto}
+    .global-nav{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.92);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+    .nav-content{min-height:58px;display:flex;align-items:center;gap:20px}.nav-brand{font-weight:700;color:var(--ink);text-decoration:none;white-space:nowrap}
+    .nav-links{display:flex;align-items:center;justify-content:flex-end;gap:4px;flex:1;flex-wrap:wrap}.nav-link{font-size:13px;color:#3f4144;text-decoration:none;padding:6px 7px;border-radius:8px}.nav-link:hover,.nav-link[aria-current="page"]{color:var(--ink);background:var(--surface)}
+    .nav-resume{border:1px solid var(--blue);color:var(--blue);padding:6px 10px}
+    main{min-height:70vh}.hero{padding:104px 0 84px}.hero.compact{padding:76px 0 54px}.eyebrow{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);margin-bottom:16px}
+    h1{font-size:clamp(42px,7vw,78px);line-height:1.02;letter-spacing:-.045em;max-width:1000px}h2{font-size:clamp(28px,4vw,44px);line-height:1.1;letter-spacing:-.03em;margin-bottom:20px}h3{font-size:21px;line-height:1.25;margin-bottom:10px}
+    .lede{font-size:clamp(19px,2.3vw,25px);line-height:1.45;color:var(--muted);max-width:850px;margin-top:24px}.copy{font-size:17px;color:#3f4144;max-width:780px}.copy p+p{margin-top:18px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}.btn{display:inline-block;border-radius:999px;padding:11px 20px;font-size:16px;text-decoration:none;border:1px solid var(--blue)}.btn-primary{background:var(--blue);color:#fff}.btn-primary:hover{background:var(--blue-dark)}.btn-secondary{color:var(--blue);background:#fff}
+    .section{padding:76px 0}.surface{background:var(--surface)}.section-intro{max-width:760px;color:var(--muted);font-size:18px;margin-bottom:34px}
+    .grid{display:grid;gap:20px}.grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}.grid-4{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px}.surface .card{box-shadow:0 10px 30px rgba(0,0,0,.035)}.card p{color:var(--muted)}.card-link{display:inline-block;margin-top:16px;font-weight:600;text-decoration:none}
+    .proof{border-block:1px solid var(--line);background:#fff}.proof-grid{display:grid;grid-template-columns:repeat(4,1fr)}.proof-item{padding:26px 20px;border-right:1px solid var(--line)}.proof-item:last-child{border-right:0}.proof-label{font-weight:700;display:block;margin-bottom:5px}.proof-detail{color:var(--muted);font-size:14px}
+    .status{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#555;background:var(--surface);border:1px solid var(--line);padding:4px 9px;border-radius:999px;margin-bottom:14px}
+    .timeline{border-left:2px solid var(--line);padding-left:28px}.timeline-item{position:relative;padding:0 0 42px}.timeline-item:before{content:"";position:absolute;left:-36px;top:7px;width:14px;height:14px;background:var(--blue);border:4px solid #fff;border-radius:50%}.timeline-period{font-size:14px;font-weight:700;color:var(--blue);margin-bottom:6px}.timeline-context{color:var(--muted);font-size:15px;margin-bottom:10px}
+    .detail-list{display:grid;grid-template-columns:180px 1fr;gap:22px 28px}.detail-list dt{font-weight:700}.detail-list dd{color:#3f4144;border-bottom:1px solid var(--line);padding-bottom:22px}.tag-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}.tag{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:5px 10px;font-size:13px}
+    .cert-list,.plain-list{padding-left:20px}.cert-list li,.plain-list li{margin:9px 0;color:#3f4144}
+    form{max-width:760px}.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.field{margin-bottom:18px}.field label{display:block;font-weight:600;margin-bottom:7px}.field input,.field select,.field textarea{width:100%;font:inherit;border:1px solid #b8bdc0;border-radius:10px;padding:12px;background:#fff}.field textarea{min-height:150px;resize:vertical}.honeypot{position:absolute;left:-9999px}.error{color:#a21b1b;background:#fff2f2;padding:12px;border-radius:10px;margin-bottom:18px}
+    .notice{background:#f7fbff;border-left:4px solid var(--blue);padding:18px 20px;margin:24px 0;color:#3f4144}.print-only{display:none}
+    .global-footer{padding:48px 0;background:var(--surface);border-top:1px solid var(--line)}.footer-grid{display:flex;justify-content:space-between;align-items:flex-start;gap:30px}.footer-links{display:flex;gap:18px;flex-wrap:wrap}.footer-links a,.footer-note{font-size:13px;color:var(--muted)}
+    @media(max-width:920px){.nav-content{align-items:flex-start;padding-block:12px}.nav-links{gap:2px}.grid-4,.grid-3{grid-template-columns:repeat(2,1fr)}.proof-grid{grid-template-columns:repeat(2,1fr)}.proof-item:nth-child(2){border-right:0}.proof-item:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+    @media(max-width:650px){.container{width:min(100% - 28px,var(--max))}.nav-content{display:block}.nav-brand{display:block;margin-bottom:8px}.nav-links{justify-content:flex-start}.nav-link{font-size:12px;padding:5px 6px}.hero{padding:70px 0 60px}.section{padding:58px 0}.grid-2,.grid-3,.grid-4,.field-grid,.proof-grid{grid-template-columns:1fr}.proof-item{border-right:0;border-bottom:1px solid var(--line)}.detail-list{grid-template-columns:1fr;gap:7px}.detail-list dd{margin-bottom:14px}.footer-grid{display:block}.footer-links{margin-top:20px}}
+    @media print{.global-nav,.global-footer,.no-print,.actions{display:none!important}.hero,.section{padding:20px 0}.print-only{display:block}body{font-size:11pt}.container{width:100%}h1{font-size:30pt}.timeline-item{break-inside:avoid}}
+  </style>
 </head>
 <body>
-    <nav class="global-nav">
-        <div class="container nav-content">
-            <a href="/" class="nav-brand">Pragith Prakash</a>
-            <div class="nav-links">
-                <a href="/about" class="nav-link">About</a>
-                <a href="/ai" class="nav-link">AI Fleet</a>
-                <a href="/business/dashboards" class="nav-link">Executive BI</a>
-                <a href="/apps" class="nav-link">Apps & Tools</a>
-                <a href="/contact" class="nav-link">Contact</a>
-            </div>
-        </div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="global-nav">
+    <nav class="container nav-content" aria-label="Primary navigation">
+      <a class="nav-brand" href="/">Pragith Prakash</a>
+      <div class="nav-links">
+        {% set current = request.url.path %}
+        <a class="nav-link" href="/" {% if current == '/' %}aria-current="page"{% endif %}>Home</a>
+        <a class="nav-link" href="/about" {% if current == '/about' %}aria-current="page"{% endif %}>About</a>
+        <a class="nav-link" href="/experience" {% if current == '/experience' %}aria-current="page"{% endif %}>Experience</a>
+        <a class="nav-link" href="/case-studies" {% if current.startswith('/case-studies') %}aria-current="page"{% endif %}>Case Studies</a>
+        <a class="nav-link" href="/services" {% if current.startswith('/services') %}aria-current="page"{% endif %}>Services</a>
+        <a class="nav-link" href="/teaching" {% if current == '/teaching' %}aria-current="page"{% endif %}>Teaching</a>
+        <a class="nav-link" href="/projects" {% if current.startswith('/projects') %}aria-current="page"{% endif %}>Projects / Labs</a>
+        <a class="nav-link" href="/writing" {% if current == '/writing' %}aria-current="page"{% endif %}>Writing</a>
+        <a class="nav-link" href="/contact" {% if current == '/contact' %}aria-current="page"{% endif %}>Contact</a>
+        <a class="nav-link nav-resume" href="/resume">Resume</a>
+      </div>
     </nav>
-
-    <main>
-        {% block content %}{% endblock %}
-    </main>
-
-    <footer class="global-footer">
-        <div class="container">
-            <p class="footer-text">Copyright © 2026 Pragith Prakash All rights reserved.</p>
-        </div>
-    </footer>
+  </header>
+  <main id="main">{% block content %}{% endblock %}</main>
+  <footer class="global-footer">
+    <div class="container footer-grid">
+      <div><strong>Pragith Prakash</strong><p class="footer-note">AI Forward Deployed Engineer, consultant and educator.</p></div>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/pragith/" rel="me">LinkedIn</a>
+        <a href="https://github.com/Pragith" rel="me">GitHub</a>
+        <a href="/privacy">Privacy</a><a href="/legal">Legal</a>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

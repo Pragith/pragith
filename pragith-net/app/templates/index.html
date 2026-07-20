@@ -1,86 +1,24 @@
 {% extends "base.html" %}
-
-{% block title %}Pragith Prakash | AI-Accelerated Software & Data Solutions{% endblock %}
-{% block description %}Systems that ship. End-to-end AI fleets, executive dashboards, and silent automation built for extreme velocity.{% endblock %}
-
-{% block extra_head %}
-<style>
-    .hero-container {
-        text-align: center;
-        padding-top: 140px;
-        padding-bottom: 100px;
-    }
-
-    .hero-title {
-        font-family: var(--font-sf-pro-display);
-        font-size: var(--text-display);
-        font-weight: 600;
-        line-height: var(--leading-display);
-        letter-spacing: var(--tracking-display);
-        color: var(--color-midnight-graphite);
-        margin-bottom: 24px;
-    }
-
-    .hero-subtitle {
-        font-family: var(--font-sf-pro-display);
-        font-size: 28px;
-        font-weight: 400;
-        line-height: 1.05;
-        letter-spacing: -0.015em;
-        color: var(--color-midnight-graphite);
-        max-width: 700px;
-        margin: 0 auto 40px;
-    }
-    
-    .hero-philosophy {
-        font-family: var(--font-sf-pro-text);
-        font-size: 18px;
-        color: var(--color-cloud-mist);
-        max-width: 600px;
-        margin: 0 auto 40px;
-        line-height: 1.4;
-    }
-
-    .hero-price {
-        font-family: var(--font-sf-pro-text);
-        font-size: var(--text-body);
-        line-height: var(--leading-body);
-        color: var(--color-cloud-mist);
-        margin-top: 24px;
-    }
-
-    @media (max-width: 768px) {
-        .hero-container {
-            padding-top: 80px;
-            padding-bottom: 60px;
-        }
-        .hero-subtitle {
-            font-size: 22px;
-            padding: 0 20px;
-        }
-        .hero-philosophy {
-            font-size: 16px;
-            padding: 0 20px;
-        }
-    }
-</style>
-{% endblock %}
-
 {% block content %}
-<section class="surface-white" style="min-height: calc(100vh - 150px); display: flex; align-items: center;">
-    <div class="container hero-container w-full">
-        <h1 class="hero-title">Intelligence. Deployed.</h1>
-        <p class="hero-subtitle">Architecture that executes.<br>Systems that ship.</p>
-        <p class="hero-philosophy">I build autonomous, production-grade systems with extreme velocity. From localized agentic fleets to executive BI stacks, you receive clean documentation, full ownership, and the momentum to move beyond the whiteboard.</p>
-        
-        <div>
-            <a href="/contact" class="btn-primary">Book a Discovery Call</a>
-            <a href="/ai" class="btn-ghost">Explore the AI Fleet</a>
-        </div>
-        
-        <p class="hero-price">
-            Billed Hourly. Precise builds. Absolute focus.
-        </p>
-    </div>
-</section>
+<section class="hero"><div class="container">
+  <h1>AI Forward Deployed Engineer, Consultant and Educator</h1>
+  <p class="lede">I design, build and operate data platforms, AI systems and cloud automation across AWS, Google Cloud, Azure and Databricks. My work covers architecture, implementation, production debugging and team enablement.</p>
+  <div class="actions"><a class="btn btn-primary" href="/contact">Discuss a project</a><a class="btn btn-secondary" href="/case-studies">View case studies</a><a class="btn btn-secondary" href="/experience">Experience</a></div>
+</div></section>
+<section class="proof" aria-label="Professional evidence"><div class="container proof-grid">
+  <div class="proof-item"><span class="proof-label">{{ experience_label }}</span><span class="proof-detail">Professional engineering experience since 2012</span></div>
+  <div class="proof-item"><span class="proof-label">Four cloud ecosystems</span><span class="proof-detail">{{ cloud_platforms|join(' · ') }}</span></div>
+  <div class="proof-item"><span class="proof-label">Five certifications</span><span class="proof-detail">Google Cloud · Databricks · AWS</span></div>
+  <div class="proof-item"><span class="proof-label">Teaching and enablement</span><span class="proof-detail">Graduate instruction, bootcamps, workshops and mentoring</span></div>
+</div></section>
+<section class="section surface"><div class="container"><p class="eyebrow">Capabilities</p><h2>Engineering across the delivery lifecycle</h2><div class="grid grid-4">
+{% for item in capabilities %}<article class="card"><h3>{{ item.title }}</h3><p>{{ item.summary }}</p><a class="card-link" href="{{ item.href }}">Explore capability →</a></article>{% endfor %}
+</div></div></section>
+<section class="section"><div class="container"><p class="eyebrow">Selected work</p><h2>Evidence from complex engineering environments</h2><p class="section-intro">Client and employer identities are intentionally anonymized. The architecture, responsibilities and published scale are based on verified career source material.</p><div class="grid grid-3">
+{% for item in case_studies %}<article class="card"><h3>{{ item.title }}</h3><p>{{ item.preview }}</p><a class="card-link" href="/case-studies/{{ item.slug }}">Read case study →</a></article>{% endfor %}
+</div><div class="actions"><a class="btn btn-secondary" href="/case-studies">All case studies</a></div></div></section>
+<section class="section surface"><div class="container"><p class="eyebrow">Projects / Labs</p><h2>Selected tools and experiments</h2><div class="grid grid-3">
+{% for item in projects %}<article class="card"><span class="status">{{ item.status }}</span><h3>{{ item.title }}</h3><p>{{ item.summary }}</p><a class="card-link" href="{{ item.href }}">{{ item.link_label }} →</a></article>{% endfor %}
+</div></div></section>
+<section class="section"><div class="container"><h2>Need an engineer who can work from architecture through production debugging?</h2><p class="section-intro">I work with engineering, product, security and governance teams on AI, data and cloud systems that need hands-on delivery.</p><a class="btn btn-primary" href="/contact">Start with a fit assessment</a></div></section>
 {% endblock %}
