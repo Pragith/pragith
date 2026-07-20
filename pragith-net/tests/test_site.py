@@ -8,6 +8,7 @@ from fastapi.testclient import TestClient
 from app.content.site import CERTIFICATIONS, INDEXABLE_PATHS
 from app.config import settings
 from app.main import app
+from app.services.mailer import mailer_service
 
 
 client = TestClient(app, base_url="http://localhost")
@@ -148,6 +149,8 @@ def test_contact_page_preserves_internal_attribution():
         "utm_medium": "internal_cta",
         "utm_campaign": "contact",
         "utm_content": "discuss-training",
+        "tag1": "",
+        "tag2": "",
     }
     for field, value in expected.items():
         assert f'name="{field}" value="{value}"' in html
@@ -155,6 +158,29 @@ def test_contact_page_preserves_internal_attribution():
     teaching = client.get("/teaching").text
     assert "contact_cta_click" in teaching
     assert "utm_medium: 'internal_cta'" in teaching
+
+
+def test_contact_page_smartly_prefills_from_source_tags():
+    html = client.get(
+        "/contact?ref_page=speaking&cta_id=invite-pragith-to-speak&"
+        "tag1=speaking&tag2=invite-pragith-to-speak"
+    ).text
+    assert "<option selected>Speaking engagement</option>" in html
+    assert "I’d like to discuss a speaking engagement." in html
+    assert "Event and audience:" in html
+    assert 'name="tag1" value="speaking"' in html
+    assert 'name="tag2" value="invite-pragith-to-speak"' in html
+
+
+def test_recaptcha_v3_is_loaded_only_for_the_contact_form():
+    contact = client.get("/contact").text
+    home = client.get("/").text
+    if settings.RECAPTCHA_SITE_KEY:
+        assert "recaptcha/api.js?render=" in contact
+        assert 'id="contact-recaptcha-response"' in contact
+        assert "grecaptcha.execute(siteKey, {action: 'submit_contact'})" in contact
+        assert 'class="g-recaptcha"' not in contact
+        assert "recaptcha/api.js" not in home
 
 
 def test_contact_submission_uses_selected_engagement(monkeypatch):
@@ -179,6 +205,8 @@ def test_contact_submission_uses_selected_engagement(monkeypatch):
         "utm_medium": "internal_cta",
         "utm_campaign": "contact",
         "utm_content": "discuss-training",
+        "tag1": "speaking",
+        "tag2": "discuss-training",
     })
     assert response.status_code == 200
     assert "Message received" in response.text
@@ -186,6 +214,38 @@ def test_contact_submission_uses_selected_engagement(monkeypatch):
     assert "Source page: speaking" in captured["body"]
     assert "CTA: discuss-training" in captured["body"]
     assert "UTM campaign: contact" in captured["body"]
+    assert "Tag 1: speaking" in captured["body"]
+    assert "Tag 2: discuss-training" in captured["body"]
+
+
+def test_recaptcha_v3_requires_score_and_expected_action(monkeypatch):
+    class Response:
+        def __init__(self, payload):
+            self.payload = payload
+
+        def raise_for_status(self):
+            return None
+
+        def json(self):
+            return self.payload
+
+    payload = {"success": True, "score": 0.9, "action": "submit_contact"}
+
+    def fake_post(url, data, timeout):
+        assert url.endswith("/recaptcha/api/siteverify")
+        assert data["response"] == "browser-token"
+        assert timeout == 5
+        return Response(payload)
+
+    monkeypatch.setattr("app.services.mailer.settings.RECAPTCHA_SECRET_KEY", "test-secret")
+    monkeypatch.setattr("app.services.mailer.requests.post", fake_post)
+    assert mailer_service.verify_recaptcha("browser-token") is True
+
+    payload["action"] = "different_action"
+    assert mailer_service.verify_recaptcha("browser-token") is False
+
+    payload.update(action="submit_contact", score=0.1)
+    assert mailer_service.verify_recaptcha("browser-token") is False
 
 
 def test_unknown_route_is_a_noindexed_404():

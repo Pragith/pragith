@@ -16,3 +16,5 @@
 - Restored conditional Google Analytics and Microsoft Clarity instrumentation from environment configuration, with regression coverage.
 - Added automatic GA4 attribution to internal Contact links using standard UTM parameters, a `contact_cta_click` event, and source/CTA context preserved through form submission.
 - Expanded the analytics Content Security Policy to cover Google Analytics and Microsoft Clarity collection endpoints.
+- Restored source-aware Contact form prefilling for speaking, teaching, AI, platform and analytics journeys while preserving URL tags through submission.
+- Corrected the contact protection to use the configured reCAPTCHA v3 key and validate both score and action; reCAPTCHA is now loaded only on the Contact page.

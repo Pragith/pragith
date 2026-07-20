@@ -50,7 +50,8 @@ class SecurityHeadersMiddleware(BaseHTTPMiddleware):
                 "https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; "
                 "img-src 'self' data: https:; frame-src https://www.google.com; "
                 "connect-src 'self' https://www.googletagmanager.com https://*.google-analytics.com "
-                "https://*.analytics.google.com https://*.clarity.ms; worker-src 'self' blob:"
+                "https://*.analytics.google.com https://*.clarity.ms https://www.google.com "
+                "https://www.gstatic.com; worker-src 'self' blob:"
             ),
         })
         return response
@@ -72,7 +73,6 @@ templates.env.globals.update({
     "theme": theme_service,
     "ga_tag": settings.GA_TAG,
     "clarity_project_id": settings.CLARITY_PROJECT_ID,
-    "recaptcha_site_key": settings.RECAPTCHA_SITE_KEY,
     "canonical_title": CANONICAL_TITLE,
     "experience_label": EXPERIENCE_LABEL,
     "certifications": CERTIFICATIONS,
@@ -272,18 +272,51 @@ async def business(request: Request):
 
 @app.get("/contact", response_class=HTMLResponse)
 async def contact(request: Request):
-    tracking = {
-        field: request.query_params.get(field, "")
-        for field in (
-            "ref_page", "cta_id", "utm_source", "utm_medium",
-            "utm_campaign", "utm_content",
+    query = request.query_params
+    tracking_fields = (
+        "ref_page", "cta_id", "utm_source", "utm_medium",
+        "utm_campaign", "utm_content", "tag1", "tag2",
+    )
+    tracking = {field: query.get(field, "").strip() for field in tracking_fields}
+    signal = " ".join(
+        tracking[field] for field in ("ref_page", "cta_id", "utm_content", "tag1", "tag2")
+    ).lower()
+
+    engagement_type = query.get("engagement_type", "").strip()
+    message = query.get("message", "").strip()
+    if any(term in signal for term in ("speaking", "speaker", "keynote", "talk")):
+        engagement_type = engagement_type or "Speaking engagement"
+        message = message or (
+            "I’d like to discuss a speaking engagement.\n\n"
+            "Event and audience:\nPreferred format and date:\nDesired outcome:"
         )
+    elif any(term in signal for term in ("teaching", "training", "workshop", "enablement")):
+        engagement_type = engagement_type or "Teaching / workshop"
+        message = message or (
+            "I’d like to discuss technical training or a workshop.\n\n"
+            "Audience and current experience:\nTopics or systems involved:\n"
+            "Preferred timing and outcome:"
+        )
+    elif any(term in signal for term in ("architecture", "ai-system", "analytics", "dashboard", "platform")):
+        engagement_type = engagement_type or "Paid architecture / discovery session"
+        message = message or (
+            "I’d like to discuss an architecture or implementation challenge.\n\n"
+            "Current system:\nPrimary constraint:\nDesired outcome:"
+        )
+
+    form = {
+        "name": query.get("name", ""),
+        "email": query.get("email", ""),
+        "company": query.get("company", ""),
+        "timeline": query.get("timeline", ""),
+        "engagement_type": engagement_type or "Initial fit assessment",
+        "message": message,
     }
     return render(
         request, "contact.html",
         title="Contact Pragith Prakash",
         description="Discuss an AI, data platform, cloud architecture, analytics or technical education engagement with Pragith Prakash.",
-        canonical_path="/contact", form={}, tracking=tracking,
+        canonical_path="/contact", form=form, tracking=tracking,
         recaptcha_site_key=settings.RECAPTCHA_SITE_KEY,
     )
 
@@ -305,6 +338,8 @@ async def contact_submit(
     utm_medium: str = Form(""),
     utm_campaign: str = Form(""),
     utm_content: str = Form(""),
+    tag1: str = Form(""),
+    tag2: str = Form(""),
     recaptcha_response: str = Form(alias="g-recaptcha-response", default=""),
 ):
     if website:
@@ -314,7 +349,9 @@ async def contact_submit(
         return render(
             request, "contact.html", title="Contact Pragith Prakash",
             description="Contact Pragith Prakash.", canonical_path="/contact",
-            error="reCAPTCHA verification failed.", form=form_data, tracking=form_data,
+            error="reCAPTCHA verification failed. Please try again.",
+            form=form_data, tracking=form_data,
+            recaptcha_site_key=settings.RECAPTCHA_SITE_KEY,
         )
     attribution = (
         f"Source page: {ref_page or 'direct'}\n"
@@ -322,7 +359,9 @@ async def contact_submit(
         f"UTM source: {utm_source}\n"
         f"UTM medium: {utm_medium}\n"
         f"UTM campaign: {utm_campaign}\n"
-        f"UTM content: {utm_content}"
+        f"UTM content: {utm_content}\n"
+        f"Tag 1: {tag1}\n"
+        f"Tag 2: {tag2}"
     )
     body = (
         f"Engagement: {engagement_type}\nCompany: {company}\nTimeline: {timeline}\n\n"
@@ -336,7 +375,9 @@ async def contact_submit(
     return render(
         request, "contact.html", title="Contact Pragith Prakash",
         description="Contact Pragith Prakash.", canonical_path="/contact",
-        error="The message could not be sent. Please try again.", form=form_data, tracking=form_data,
+        error="The message could not be sent. Please try again.",
+        form=form_data, tracking=form_data,
+        recaptcha_site_key=settings.RECAPTCHA_SITE_KEY,
     )
 
 

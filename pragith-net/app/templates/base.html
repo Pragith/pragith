@@ -18,7 +18,7 @@
   <meta name="twitter:description" content="{{ page_description }}">
   <link rel="icon" href="/static/favicon.ico">
   <link rel="stylesheet" href="/theme.css">
-  {% if recaptcha_site_key %}<script src="https://www.google.com/recaptcha/api.js" async defer></script>{% endif %}
+  {% if recaptcha_site_key %}<script src="https://www.google.com/recaptcha/api.js?render={{ recaptcha_site_key|urlencode }}" async defer></script>{% endif %}
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -91,6 +91,8 @@
         const attribution = {
           ref_page: sourcePage,
           cta_id: ctaId,
+          tag1: sourcePage,
+          tag2: ctaId,
           utm_source: 'pragith_net',
           utm_medium: 'internal_cta',
           utm_campaign: 'contact',
@@ -107,6 +109,8 @@
               link_url: destination.href,
               ref_page: sourcePage,
               cta_id: ctaId,
+              tag1: sourcePage,
+              tag2: ctaId,
               transport_type: 'beacon',
             });
           }

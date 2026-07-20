@@ -12,7 +12,7 @@ class MailerService:
             server.login(settings.SMTP_USER, settings.SMTP_PASSWORD)
         return server
 
-    def verify_recaptcha(self, token: str) -> bool:
+    def verify_recaptcha(self, token: str, expected_action: str = "submit_contact") -> bool:
         """
         Verifies reCAPTCHA v3 token with Google.
         Returns True if score >= 0.5 (likely human).
@@ -27,18 +27,23 @@ class MailerService:
         }
         
         try:
-            resp = requests.post('https://www.google.com/recaptcha/api/siteverify', data=payload)
+            resp = requests.post(
+                'https://www.google.com/recaptcha/api/siteverify',
+                data=payload,
+                timeout=5,
+            )
             resp.raise_for_status()
             result = resp.json()
             
             # v3 returns a score between 0.0 (bot) and 1.0 (human)
             success = result.get('success', False)
             score = result.get('score', 0.0)
+            action = result.get('action', '')
             
             print(f"reCAPTCHA v3 score: {score}")
             
             # Threshold: 0.5 is recommended by Google
-            return success and score >= 0.5
+            return success and score >= 0.5 and action == expected_action
         except Exception as e:
             print(f"reCAPTCHA verification failed: {e}")
             return False
