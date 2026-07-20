@@ -116,7 +116,7 @@ def test_projects_are_honest_about_maturity():
     projects = client.get("/projects").text
     assert "Velvet IPTV Player" in projects and "Production" in projects
     assert "https://velvet.plus" in projects
-    assert "Headmaster" in projects and "Beta" in projects
+    assert "Headmaster" not in projects
     assert "Caffeinate-d" in projects and "Source version 0.2.0" in projects
     assert "Agent Keyboard" in projects and "Prototype" in projects
     assert "The CLI bridge is not implemented" in projects

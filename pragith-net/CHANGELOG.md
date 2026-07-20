@@ -18,3 +18,4 @@
 - Expanded the analytics Content Security Policy to cover Google Analytics and Microsoft Clarity collection endpoints.
 - Restored source-aware Contact form prefilling for speaking, teaching, AI, platform and analytics journeys while preserving URL tags through submission.
 - Corrected the contact protection to use the configured reCAPTCHA v3 key and validate both score and action; reCAPTCHA is now loaded only on the Contact page.
+- Removed Headmaster from the public project portfolio.

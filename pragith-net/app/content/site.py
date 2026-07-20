@@ -131,15 +131,6 @@ PROJECTS = [
         "link_label": "Visit Velvet",
     },
     {
-        "slug": "headmaster",
-        "title": "Headmaster",
-        "status": "Beta",
-        "summary": "A portable, OIDC-gated administration interface for Headscale with nodes, users, routes, policy and audit workflows.",
-        "version": "0.1.1",
-        "href": "https://github.com/Pragith/headmaster",
-        "link_label": "View repository",
-    },
-    {
         "slug": "caffeinate-d",
         "title": "Caffeinate-d",
         "status": "Beta",
