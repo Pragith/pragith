@@ -1,2 +1,75 @@
 {% extends "base.html" %}
-{% block content %}<section class="hero compact"><div class="container"><p class="eyebrow">Contact</p><h1>Tell me what needs to work.</h1><p class="lede">Share the system, constraint or team outcome you are working toward. I will respond with whether there is a fit and the most useful next step.</p></div></section><section class="section"><div class="container grid grid-2"><div><h2>Engagement options</h2><div class="copy"><p><strong>Initial fit assessment:</strong> a brief conversation to establish alignment.</p><p><strong>Paid architecture or discovery:</strong> a working session with concrete decisions and next steps.</p><p><strong>Hourly engineering:</strong> implementation, debugging or technical leadership as needs evolve.</p><p><strong>Milestone delivery:</strong> bounded stages with agreed deliverables and acceptance criteria.</p></div><div class="actions"><a class="btn btn-secondary" href="https://www.linkedin.com/in/pragith/">LinkedIn</a><a class="btn btn-secondary" href="https://github.com/Pragith">GitHub</a></div></div><div><h2>Project enquiry</h2>{% if error %}<p class="error">{{ error }}</p>{% endif %}<form method="post" action="/contact"><div class="field-grid"><div class="field"><label for="name">Name</label><input id="name" name="name" required value="{{ form.get('name','') }}"></div><div class="field"><label for="email">Email</label><input id="email" type="email" name="email" required value="{{ form.get('email','') }}"></div></div><div class="field"><label for="company">Organization</label><input id="company" name="company" value="{{ form.get('company','') }}"></div><div class="field"><label for="engagement_type">What kind of conversation?</label><select id="engagement_type" name="engagement_type"><option>Initial fit assessment</option><option>Paid architecture / discovery session</option><option>Hourly engineering</option><option>Milestone delivery</option><option>Teaching / workshop</option><option>Other</option></select></div><div class="field"><label for="timeline">Timeline</label><input id="timeline" name="timeline" value="{{ form.get('timeline','') }}"></div><div class="field"><label for="message">Context, constraints and desired outcome</label><textarea id="message" name="message" required>{{ form.get('message','') }}</textarea></div><div class="honeypot" aria-hidden="true"><label for="website">Website</label><input id="website" name="website" tabindex="-1" autocomplete="off"></div>{% if recaptcha_site_key %}<div class="g-recaptcha" data-sitekey="{{ recaptcha_site_key }}"></div>{% endif %}<button class="btn btn-primary" type="submit">Send enquiry</button></form></div></div></section>{% endblock %}
+{% block content %}
+<section class="hero compact">
+  <div class="container">
+    <p class="eyebrow">Contact</p>
+    <h1>Tell me what needs to work.</h1>
+    <p class="lede">Share the system, constraint or team outcome you are working toward. I will respond with whether there is a fit and the most useful next step.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="container grid grid-2">
+    <div>
+      <h2>Engagement options</h2>
+      <div class="copy">
+        <p><strong>Initial fit assessment:</strong> a brief conversation to establish alignment.</p>
+        <p><strong>Paid architecture or discovery:</strong> a working session with concrete decisions and next steps.</p>
+        <p><strong>Hourly engineering:</strong> implementation, debugging or technical leadership as needs evolve.</p>
+        <p><strong>Milestone delivery:</strong> bounded stages with agreed deliverables and acceptance criteria.</p>
+      </div>
+      <div class="actions">
+        <a class="btn btn-secondary" href="https://www.linkedin.com/in/pragith/">LinkedIn</a>
+        <a class="btn btn-secondary" href="https://github.com/Pragith">GitHub</a>
+      </div>
+    </div>
+    <div>
+      <h2>Project enquiry</h2>
+      {% if error %}<p class="error">{{ error }}</p>{% endif %}
+      <form method="post" action="/contact">
+        {% for field in ("ref_page", "cta_id", "utm_source", "utm_medium", "utm_campaign", "utm_content") %}
+        <input type="hidden" name="{{ field }}" value="{{ form.get(field, tracking.get(field, '')) }}">
+        {% endfor %}
+        <div class="field-grid">
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" required value="{{ form.get('name','') }}">
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" required value="{{ form.get('email','') }}">
+          </div>
+        </div>
+        <div class="field">
+          <label for="company">Organization</label>
+          <input id="company" name="company" value="{{ form.get('company','') }}">
+        </div>
+        <div class="field">
+          <label for="engagement_type">What kind of conversation?</label>
+          <select id="engagement_type" name="engagement_type">
+            <option>Initial fit assessment</option>
+            <option>Paid architecture / discovery session</option>
+            <option>Hourly engineering</option>
+            <option>Milestone delivery</option>
+            <option>Teaching / workshop</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="timeline">Timeline</label>
+          <input id="timeline" name="timeline" value="{{ form.get('timeline','') }}">
+        </div>
+        <div class="field">
+          <label for="message">Context, constraints and desired outcome</label>
+          <textarea id="message" name="message" required>{{ form.get('message','') }}</textarea>
+        </div>
+        <div class="honeypot" aria-hidden="true">
+          <label for="website">Website</label>
+          <input id="website" name="website" tabindex="-1" autocomplete="off">
+        </div>
+        {% if recaptcha_site_key %}<div class="g-recaptcha" data-sitekey="{{ recaptcha_site_key }}"></div>{% endif %}
+        <button class="btn btn-primary" type="submit">Send enquiry</button>
+      </form>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -6,6 +6,7 @@ from xml.etree import ElementTree
 from fastapi.testclient import TestClient
 
 from app.content.site import CERTIFICATIONS, INDEXABLE_PATHS
+from app.config import settings
 from app.main import app
 
 
@@ -35,6 +36,17 @@ def test_every_indexable_route_is_successful_and_canonical():
         assert '<script type="application/ld+json">' in html
 
 
+def test_configured_analytics_are_rendered():
+    html = client.get("/").text
+    if settings.GA_TAG:
+        assert "https://www.googletagmanager.com/gtag/js?id=" in html
+        assert settings.GA_TAG in html
+        assert "anonymize_ip" in html
+    if settings.CLARITY_PROJECT_ID:
+        assert "https://www.clarity.ms/tag/" in html
+        assert settings.CLARITY_PROJECT_ID in html
+
+
 def test_sitemap_contains_only_successful_indexable_routes():
     response = client.get("/sitemap.xml")
     assert response.status_code == 200
@@ -56,7 +68,10 @@ def test_legacy_routes_redirect_to_canonical_pages():
         "/work": "/case-studies",
         "/notes": "/writing",
         "/training": "/teaching",
-        "/speaking": "/teaching",
+        "/speaking": (
+            "/teaching?ref=speaking&utm_source=pragith_net&"
+            "utm_medium=legacy_redirect&utm_campaign=speaking"
+        ),
     }
     for old, new in expected.items():
         response = client.get(old, follow_redirects=False)
@@ -120,6 +135,28 @@ def test_contact_form_uses_approved_engagement_models():
     assert "$95" not in html
 
 
+def test_contact_page_preserves_internal_attribution():
+    html = client.get(
+        "/contact?ref_page=teaching&cta_id=discuss-training&"
+        "utm_source=pragith_net&utm_medium=internal_cta&"
+        "utm_campaign=contact&utm_content=discuss-training"
+    ).text
+    expected = {
+        "ref_page": "teaching",
+        "cta_id": "discuss-training",
+        "utm_source": "pragith_net",
+        "utm_medium": "internal_cta",
+        "utm_campaign": "contact",
+        "utm_content": "discuss-training",
+    }
+    for field, value in expected.items():
+        assert f'name="{field}" value="{value}"' in html
+
+    teaching = client.get("/teaching").text
+    assert "contact_cta_click" in teaching
+    assert "utm_medium: 'internal_cta'" in teaching
+
+
 def test_contact_submission_uses_selected_engagement(monkeypatch):
     captured = {}
 
@@ -136,10 +173,19 @@ def test_contact_submission_uses_selected_engagement(monkeypatch):
         "engagement_type": "Paid architecture / discovery session",
         "timeline": "This quarter",
         "message": "We need to review a data platform architecture.",
+        "ref_page": "speaking",
+        "cta_id": "discuss-training",
+        "utm_source": "pragith_net",
+        "utm_medium": "internal_cta",
+        "utm_campaign": "contact",
+        "utm_content": "discuss-training",
     })
     assert response.status_code == 200
     assert "Message received" in response.text
     assert "Paid architecture / discovery session" in captured["body"]
+    assert "Source page: speaking" in captured["body"]
+    assert "CTA: discuss-training" in captured["body"]
+    assert "UTM campaign: contact" in captured["body"]
 
 
 def test_unknown_route_is_a_noindexed_404():

@@ -13,3 +13,6 @@
 - Reworked the presentation from a card-led commercial landing page into a personal editorial portfolio with narrative sections and portrait photography.
 - Restored the Fruit visual system—SF typography, white canvas, graphite text, Apple blue, frost-gray surfaces and restrained product-style polish—without restoring the commercial landing-page structure.
 - Added Velvet IPTV Player as a Production project linked to velvet.plus.
+- Restored conditional Google Analytics and Microsoft Clarity instrumentation from environment configuration, with regression coverage.
+- Added automatic GA4 attribution to internal Contact links using standard UTM parameters, a `contact_cta_click` event, and source/CTA context preserved through form submission.
+- Expanded the analytics Content Security Policy to cover Google Analytics and Microsoft Clarity collection endpoints.

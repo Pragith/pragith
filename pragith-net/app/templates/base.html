@@ -32,6 +32,25 @@
   }
   </script>
   {% block structured_data %}{% endblock %}
+  {% if ga_tag %}
+  <script>
+    window.gaTag = {{ ga_tag|tojson }};
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', window.gaTag, {anonymize_ip: true});
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ ga_tag|urlencode }}"></script>
+  {% endif %}
+  {% if clarity_project_id %}
+  <script>
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window,document,"clarity","script",{{ clarity_project_id|tojson }});
+  </script>
+  {% endif %}
   <style>
     :root{--paper:var(--surface-pure-white,#fff);--paper-deep:var(--surface-frost-gray,#f3f6f6);--ink:var(--color-midnight-graphite,#1d1d1f);--muted:var(--color-cloud-mist,#6b6c6c);--rule:var(--color-steel-accent,#cccfcf);--rust:var(--color-vivid-blue,#0071e3);--rust-dark:var(--color-ocean-blue,#0066cc);--white:var(--color-pure-white,#fff);--max:1120px}
     *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{background:var(--paper);color:var(--ink);font-family:var(--font-sf-pro-text),ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}a{color:var(--rust);text-underline-offset:4px;text-decoration-thickness:1px}img{max-width:100%;height:auto}.skip-link{position:absolute;left:-999px;top:8px;background:var(--ink);color:var(--white);padding:8px 12px;z-index:2000}.skip-link:focus{left:8px}.container{width:min(var(--max),calc(100% - 64px));margin-inline:auto}
@@ -56,5 +75,44 @@
   <header class="global-nav"><nav class="container nav-content" aria-label="Primary navigation"><a class="nav-brand" href="/">Pragith Prakash</a><div class="nav-links">{% set current = request.url.path %}<a class="nav-link" href="/" {% if current == '/' %}aria-current="page"{% endif %}>Home</a><a class="nav-link" href="/about" {% if current == '/about' %}aria-current="page"{% endif %}>About</a><a class="nav-link" href="/experience" {% if current == '/experience' %}aria-current="page"{% endif %}>Experience</a><a class="nav-link" href="/case-studies" {% if current.startswith('/case-studies') %}aria-current="page"{% endif %}>Case Studies</a><a class="nav-link" href="/services" {% if current.startswith('/services') %}aria-current="page"{% endif %}>Services</a><a class="nav-link" href="/teaching" {% if current == '/teaching' %}aria-current="page"{% endif %}>Teaching</a><a class="nav-link" href="/projects" {% if current.startswith('/projects') %}aria-current="page"{% endif %}>Projects / Labs</a><a class="nav-link" href="/writing" {% if current == '/writing' %}aria-current="page"{% endif %}>Writing</a><a class="nav-link" href="/contact" {% if current == '/contact' %}aria-current="page"{% endif %}>Contact</a><a class="nav-link nav-resume" href="/resume">Resume</a></div></nav></header>
   <main id="main">{% block content %}{% endblock %}</main>
   <footer class="global-footer"><div class="container footer-grid"><div><strong>Pragith Prakash</strong><p class="footer-note">AI Forward Deployed Engineer, consultant and educator.</p></div><div class="footer-links"><a href="https://www.linkedin.com/in/pragith/" rel="me">LinkedIn</a><a href="https://github.com/Pragith" rel="me">GitHub</a><a href="/privacy">Privacy</a><a href="/legal">Legal</a></div></div></footer>
+  <script>
+    (() => {
+      if (window.location.pathname === '/contact') return;
+
+      const sourcePage = new URLSearchParams(window.location.search).get('ref')
+        || window.location.pathname.replace(/^\/+|\/+$/g, '').replaceAll('/', '-')
+        || 'home';
+
+      document.querySelectorAll('a[href^="/contact"]').forEach((link) => {
+        const destination = new URL(link.getAttribute('href'), window.location.origin);
+        const ctaId = link.dataset.cta
+          || link.textContent.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
+          || 'contact';
+        const attribution = {
+          ref_page: sourcePage,
+          cta_id: ctaId,
+          utm_source: 'pragith_net',
+          utm_medium: 'internal_cta',
+          utm_campaign: 'contact',
+          utm_content: ctaId,
+        };
+
+        Object.entries(attribution).forEach(([key, value]) => {
+          if (!destination.searchParams.has(key)) destination.searchParams.set(key, value);
+        });
+        link.href = `${destination.pathname}${destination.search}${destination.hash}`;
+        link.addEventListener('click', () => {
+          if (typeof window.gtag === 'function') {
+            window.gtag('event', 'contact_cta_click', {
+              link_url: destination.href,
+              ref_page: sourcePage,
+              cta_id: ctaId,
+              transport_type: 'beacon',
+            });
+          }
+        });
+      });
+    })();
+  </script>
 </body>
 </html>

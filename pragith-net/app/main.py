@@ -49,8 +49,8 @@ class SecurityHeadersMiddleware(BaseHTTPMiddleware):
                 "https://www.clarity.ms https://scripts.clarity.ms; style-src 'self' 'unsafe-inline' "
                 "https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; "
                 "img-src 'self' data: https:; frame-src https://www.google.com; "
-                "connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com "
-                "https://www.clarity.ms https://c.clarity.ms https://b.clarity.ms; worker-src 'self' blob:"
+                "connect-src 'self' https://www.googletagmanager.com https://*.google-analytics.com "
+                "https://*.analytics.google.com https://*.clarity.ms; worker-src 'self' blob:"
             ),
         })
         return response
@@ -272,11 +272,19 @@ async def business(request: Request):
 
 @app.get("/contact", response_class=HTMLResponse)
 async def contact(request: Request):
+    tracking = {
+        field: request.query_params.get(field, "")
+        for field in (
+            "ref_page", "cta_id", "utm_source", "utm_medium",
+            "utm_campaign", "utm_content",
+        )
+    }
     return render(
         request, "contact.html",
         title="Contact Pragith Prakash",
         description="Discuss an AI, data platform, cloud architecture, analytics or technical education engagement with Pragith Prakash.",
-        canonical_path="/contact", form={}, recaptcha_site_key=settings.RECAPTCHA_SITE_KEY,
+        canonical_path="/contact", form={}, tracking=tracking,
+        recaptcha_site_key=settings.RECAPTCHA_SITE_KEY,
     )
 
 
@@ -291,17 +299,35 @@ async def contact_submit(
     timeline: str = Form(""),
     message: str = Form(""),
     website: str = Form(""),
+    ref_page: str = Form(""),
+    cta_id: str = Form(""),
+    utm_source: str = Form(""),
+    utm_medium: str = Form(""),
+    utm_campaign: str = Form(""),
+    utm_content: str = Form(""),
     recaptcha_response: str = Form(alias="g-recaptcha-response", default=""),
 ):
     if website:
         return RedirectResponse("/contact", status_code=303)
+    form_data = await request.form()
     if settings.RECAPTCHA_SECRET_KEY and not mailer_service.verify_recaptcha(recaptcha_response):
         return render(
             request, "contact.html", title="Contact Pragith Prakash",
             description="Contact Pragith Prakash.", canonical_path="/contact",
-            error="reCAPTCHA verification failed.", form=await request.form(),
+            error="reCAPTCHA verification failed.", form=form_data, tracking=form_data,
         )
-    body = f"Engagement: {engagement_type}\nCompany: {company}\nTimeline: {timeline}\n\n{message}"
+    attribution = (
+        f"Source page: {ref_page or 'direct'}\n"
+        f"CTA: {cta_id or 'direct'}\n"
+        f"UTM source: {utm_source}\n"
+        f"UTM medium: {utm_medium}\n"
+        f"UTM campaign: {utm_campaign}\n"
+        f"UTM content: {utm_content}"
+    )
+    body = (
+        f"Engagement: {engagement_type}\nCompany: {company}\nTimeline: {timeline}\n\n"
+        f"{message}\n\nAttribution\n{attribution}"
+    )
     if mailer_service.send_contact_email(name, email, "Website enquiry", body):
         return render(
             request, "contact_success.html", title="Message received | Pragith Prakash",
@@ -310,7 +336,7 @@ async def contact_submit(
     return render(
         request, "contact.html", title="Contact Pragith Prakash",
         description="Contact Pragith Prakash.", canonical_path="/contact",
-        error="The message could not be sent. Please try again.", form=await request.form(),
+        error="The message could not be sent. Please try again.", form=form_data, tracking=form_data,
     )
 
 
@@ -333,7 +359,10 @@ REDIRECTS = {
     "/work": "/case-studies",
     "/notes": "/writing",
     "/training": "/teaching",
-    "/speaking": "/teaching",
+    "/speaking": (
+        "/teaching?ref=speaking&utm_source=pragith_net&"
+        "utm_medium=legacy_redirect&utm_campaign=speaking"
+    ),
     "/packages": "/services",
 }
 

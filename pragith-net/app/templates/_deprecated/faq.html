@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block extra_head %}
+<link rel="canonical" href="https://pragith.net/faq">
+{% endblock %}
+{% block title %}FAQ | Pragith Prakash{% endblock %}
+{% block canonical %}https://pragith.net/faq{% endblock %}
+{% block content %}
+<section class="py-20 border-t border-line/20">
+    <div class="max-w-3xl mx-auto px-6">
+        <h1 class="font-display text-3xl font-bold tracking-tight text-ink mb-8">Frequently Asked Questions</h1>
+        <div class="space-y-12">
+            {% set faqs = [
+            {"q": "How do you bill?", "a": "$95 USD per hour. Work is milestone-based and scoped collaboratively."},
+            {"q": "What is typical project size?", "a": "Projects range from focused feature builds to multi-month system implementations depending on complexity."},
+            {"q": "Who owns the IP?", "a": "You do. All code and documentation transfer upon payment."},
+            {"q": "Do you use AI?", "a": "Yes. AI tools are used internally to accelerate delivery and improve solution quality."}
+            ] %}
+            {% for faq in faqs %}
+            <div>
+                <h3 class="font-bold text-ink mb-2">{{ faq.q }}</h3>
+                <p class="text-ink/60">{{ faq.a }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
